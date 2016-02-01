@@ -1,0 +1,47 @@
+.fancy-select {
+    position: relative;
+    z-index: 9;
+    text-transform: uppercase;
+    color: #666
+}
+
+.fancy-select.disabled {
+    opacity: .5
+}
+
+.fancy-select .listWrap{width:100%;}
+
+.fancy-select .options {
+    width: 100%;
+    position: absolute;
+    font-size: 14px;
+    left: 0;
+    opacity: 0;
+    filter: ~"alpha(opacity:0)";
+    z-index: 50;
+    overflow: auto;
+    background: #61c0e2;
+    transition: opacity .3s ease-out,top .3s ease-out;
+}
+
+.fancy-select .options.open {
+    opacity: 1;
+    filter: ~"alpha(opacity:100)";
+}
+
+.fancy-select .options li {
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+    border-top: 1px solid #fff;
+    transition: all 150ms ease-out
+}
+
+.fancy-select .options li:first-child{
+    border-top:none;
+}
+
+.fancy-select .options li:hover {
+    background-color: #46a4c5
+}

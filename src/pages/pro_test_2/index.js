@@ -1,0 +1,87 @@
+/* 建议这里都引入 */
+require('../../assets/less/common.less');
+require('./index.less');
+var $ = window.$ || require("jquery");
+
+//工具类方法
+var util = require("../../assets/components/util");
+
+//公共方法
+var common = require("../../assets/components/common");
+
+
+/* 可选，视需求而定 */
+var questions = require("./questions.json");
+
+var tmpl = require("./templates/list.ejs");
+
+var cookie = require("../../assets/components/cookie");
+var contentSlider = require("../../assets/components/contentSlider");
+
+
+//需要配置
+var allItems = questions.questions.length;
+$(".all").text(allItems);
+
+//保存所有答案
+var answer = cookie("answer") ? cookie("answer").split("") : [];
+
+if(answer.length == allItems){
+	_alert("你已经完成全部问题");
+	setTimeout(function(){
+		//window.location = "/";
+	},3000);
+}else if(answer.length){
+	_confirm("上次已经做到"+answer.length+"题，是否继续",{
+		cancel_txt : "重新开始",
+		btn_txt : "继续上次",
+		callback : function(){
+			renderSlider(answer.length);
+		},
+		cancelcallback : function(){
+			renderSlider(0);
+		}
+	});
+};
+
+function renderSlider(pageIndex){
+	contentSlider($("#qtestSliderWrap"),{
+		key : "questions",
+		tmpl : tmpl,
+		data : questions,
+		pageIndex : pageIndex,
+		allItems : allItems,
+		startCallback : function(pageIndex,$oldItem,$newItem){
+			answer.push($oldItem.find(".current").data("type"));
+			cookie("answer",answer.join(""),{expire : 356});
+		},
+		callback : function(pageIndex,$oldItem,$newItem){
+			if((pageIndex+1) == allItems){
+				$("#subTestFooter").fadeIn(100);
+				subAnswer();
+			}
+		},
+		nav : function(pageIndex){
+			$(".progressCount .current").text(Math.min(allItems,pageIndex+1));
+			var percent =Math.min(100,Number((pageIndex+1)/allItems*100).toFixed(2)) + "%";
+			$(".progressInner").stop(true,true).animate({width: percent});
+		}
+	});
+}
+
+
+
+function subAnswer(){
+	$("#subTestBtn").on("click",function(e){
+		e.preventDefault();
+		if(answer.length != allItems){
+			_alert("请完成所有选项才能提交");
+		}else{
+			console.log(answer,answer.length);
+		}
+	});
+}
+
+
+
+

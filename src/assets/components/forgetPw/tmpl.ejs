@@ -1,0 +1,47 @@
+<div class="modalCntWrap regModal taoModal g9">
+ <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">重置密码</span></h3>
+ <form class="modalSubCnt" id="forgetPwForm" onsubmit="return false;">
+
+<div class="inputRows">
+ <div class="row clearfix">
+    <div class="inputWrap inputTextWrap">
+      <span class="iconWrap"><i class="icon-user icon-phone"></i></span>
+      <input type="text" class="input form-control" id="mobible" name="mobible" maxLength="11" placeholder="请输入手机号" required autocomplete="off">
+    </div>
+ </div>
+ <div class="row clearfix">
+    <div class="inputWrap inputTextWrap">
+      <span class="iconWrap"><i class="icon-user icon-lock"></i></span>
+      <input type="password" class="input form-control" id="pw" name="pw" maxLength="11" placeholder="请输入密码" required autocomplete="off">
+    </div>
+ </div>
+  <div class="row clearfix">
+    <div class="inputWrap inputTextWrap">
+      <span class="iconWrap"><i class="icon-user icon-code"></i></span>
+      <input type="password" class="input form-control" id="pw" name="pw" maxLength="11" placeholder="请输入密码" required autocomplete="off">
+      <label class="usn verifyLabel active tc" id="verifyLabel">
+	        <em id="minCount" class="dn">
+	            <b class="orange n">
+	                <time>-</time>
+	                秒</b>后重新发送
+	        </em>
+	        <em class="n" id="activeStatus">发送验证码</em>
+	        <em id="reSend" class="dn">点击重新发送</em>
+	  </label>
+    </div>
+ </div>
+</div>
+
+ <div class="footerCnt">
+     <p id="errTxt" class="errTxt"></p>
+     <div class="row btnRow">
+       <button type="submit" class="btn btn-primary btn-block" id="forgetPwBtn">
+       		<em class="subTxt">重置密码</em></button>
+     </div>
+     <div class="row clearfix tc subLinksRow">
+        <a href="javascript:;" class="subLinks" id="m_goLogin">又想起来了！</a>
+     </div>
+ </div>
+
+</form>
+</div>

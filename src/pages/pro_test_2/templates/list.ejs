@@ -1,0 +1,27 @@
+<% for (var i = 0; i < questions.length; i++) { %>
+	<li class="contentSlider" data-index="<%= questions[i].index %>">
+		<% if(questions[i].index < 140 ) { %>
+			<h5>请选择你对这些工作内容的喜欢程度</h5>
+		<% }else{ %>
+			<h5>请选出你对完成这些活动或工作的把握程度</h5>
+		<% } %>
+		<p class="label"><em class="index"><%= questions[i].index+1 %></em>.<%= questions[i].question %></p>
+		<ol class="fieldsWrap clearfix">
+		<% if(questions[i].index < 140 ) { %>
+			<% for (var k = 0; k < 6; k++) { %>
+				<li data-type=<%= k+1 %> class="usn">
+					<i class="smileIcons smile_<%= k+1 %>"></i>
+					<span class="fieldTxt"><%= questions[i].answers[k] %></span>
+				</li>
+			<% } %>
+		<% }else if(questions[i].index <= 210){ %>
+			<% for (var j = 0; j < 6; j++) { %>
+				<li data-type=<%= j+1 %> class="usn" >
+					<i class="fisIcons fis_<%= j+1 %>"></i>
+					<span class="fieldTxt"><%= questions[i].answers[j] %></span>
+				</li>
+			<% } %>
+		<% } %>
+		</ol>
+	</li>
+<% } %>

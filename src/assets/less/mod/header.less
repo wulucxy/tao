@@ -1,0 +1,60 @@
+.link{color:@color-link;
+	&:hover{color:@color-hover;}
+}
+.topBar{background-color: #e9f2f5;border-top-width:5px; border-top-style:solid;border-top-color:@color-link;color:@color-link;padding:15px 0;}
+
+.thirdIcon{display: inline-block;vertical-align: middle;background-image: url(../../img/thirdIcon.png);background-repeat: no-repeat;width:30px;height: 26px;overflow: hidden;font:0/0 a;}
+.wxIcon{background-position: 0 0;}
+.qqIcon{background-position: -30px 0;}
+.wbIcon{background-position: -60px 0;}
+.icon-search{display: inline-block;vertical-align: middle;background-image: url(../../img/search.png);background-repeat: no-repeat;width: 21px;height: 21px;background-position: 0 0;}
+.logo .imgWrap{padding-right: 15px;}
+.province{display:inline-block;padding-left: 15px;border-left:1px solid @color-blue;line-height: 36px;position: relative;top:-2px;}
+
+.g-login{margin-top: 10px;}
+.thirdLogin{
+	line-height: 36px;
+	& > a{margin-right: 14px;}
+}
+.m-login{padding-left: 14px;border-left:1px solid @color-blue;}
+.hd-login{
+	font-size: 18px;line-height:26px;color: #fff;border-radius: 4px;padding:5px 14px;background-color: @color-blue;
+	.link{color:#fff;}
+}
+
+.header nav{background-color: @color-blue;border-bottom:1px solid #4ba0be;}
+.navList{float: left;font-size: 18px;
+	&>a{line-height: 72px;padding:0 24px;}
+	&.current{background-color: #46a4c5;}
+	a{color: #fff;display: block;}
+}
+
+.navList a, .fancy-select .options a{color: #fff;display: block;}
+
+
+.s-search{
+	 > div{padding-top: 18px;}
+	 .input-group{margin-left: -1px;}
+	 .form-control{color: #65adc4;display: inline-block;width: auto;}
+	 .btn-select{background-color: #96d7ec;color: #1d718f;
+	 	&:hover{
+	 		color: @color-hover;
+			.caret{border-top-color:@color-hover;}
+	 	}
+	 }
+	.btn,.form-control{border-radius: 0;border-color: #4c9db7;font-size: 16px;height: 36px;}
+	.btn-search{background-color: #1d718f;border:none;padding-left: 10px;padding-right: 10px;
+		&:hover{
+			background-color:#2387AB;
+		}
+	}
+	.caret{border-top-color: #1d718f;border-width: 6px;position: relative;top:-2px;}
+}
+
+.navLists .fancy-select .options{
+	top: 64px;
+	display: none;	
+}
+.navLists .fancy-select .options.open{
+	top: 72px;	
+}
