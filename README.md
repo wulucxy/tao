@@ -1,4 +1,4 @@
-# taoFE项目框架
+# taoFE项目框架(仅供个人学习使用)
 
 > taoFE项目以gulp作为脚手架，提供本地开发、webpack打包、java环境服务、数据mock等功能
 
