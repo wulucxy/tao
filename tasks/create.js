@@ -6,14 +6,6 @@ var fs = Promise.promisifyAll(require('fs-extra'));
 
 var dest = process.cwd();
 
-// -n 后面携带的项目工程名字
-if (!args.n) {
-	console.log('请使用 -n 参数设置项目名称， 比如 -n test');
-	process.exit(0);
-}
-var projectName = args.n.toString();
-var examplePath = path.resolve(dest, 'src', 'example');
-
 function generateStructure(project){
   return fs.copyAsync(examplePath, project,{clobber: true})
     .then(function(err){
@@ -23,7 +15,14 @@ function generateStructure(project){
 
 module.exports = function () {
 	return function () {
-		
+		// -n 后面携带的项目工程名字
+		if (!args.n) {
+			console.log('请使用 -n 参数设置项目名称， 比如 -n test');
+			process.exit(0);
+		}
+		var projectName = args.n.toString();
+		var examplePath = path.resolve(dest, 'src', 'example');
+
 		if (projectName) {
 			dest = path.resolve(dest, 'src', 'pages',projectName);
 		}
