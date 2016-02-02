@@ -52,6 +52,7 @@
 									<input type="text" class="input form-control" id="province" name="province" required value=${province.name} readonly>
 								</div>
 							</div>
+							<div class="errInfo"></div>
 						</div>
 						
 						<div class="row clearfix">
@@ -74,6 +75,7 @@
 									</label>
 								</div>
 							</div>
+							<div class="errInfo"></div>
 						</div>
 
 
@@ -103,6 +105,7 @@
 									</label>
 								</div>
 							</div>
+							<div class="errInfo"></div>
 						</div>
 
 						
@@ -114,10 +117,11 @@
 								<span class="fieldWrap">
 									<input type="text" class="input form-control dib c-9" id="score" name="score" placeholder="请输入高考分数" pattern="^[0-9]{1,3}" required> &nbsp;分
 								</span>
-								<span class="p-error">高考分数为1-3位数字，请重新填写</span>
-								<span class="p-error-empty">高考分数不能为空</span>
 							</div>
-						
+							<div class="errInfo">
+							<span class="p-error">高考分数为1-3位数字，请重新填写</span>
+							<span class="p-error-empty">高考分数不能为空</span>
+							</div>
 						</div>
 
 						<div class="row clearfix inline">
@@ -128,8 +132,10 @@
 								<span class="fieldWrap">
 									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}" required> &nbsp;名
 								</span>
-								<span class="p-error">高考排名为1-8位数字，请重新填写</span>
-								<span class="p-error-empty">高考排名不能为空</span>
+							</div>
+							<div class="errInfo">
+							<span class="p-error">高考排名为1-8位数字，请重新填写</span>
+							<span class="p-error-empty">高考排名不能为空</span>
 							</div>
 						</div>
 						

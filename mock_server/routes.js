@@ -5,5 +5,6 @@ module.exports = {
 	'/assess3': 'assess_step_3.jsp',
 	'/pro1'   : 'pro_test_1.jsp',
 	'/pro2'   : 'pro_test_2.jsp',
-	'/pro3'   : 'pro_test_3.jsp'
+	'/pro3'   : 'pro_test_3.jsp',
+	'/user'   : 'user.jsp'
 };
