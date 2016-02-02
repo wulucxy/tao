@@ -69,9 +69,12 @@
 													<em class="vm">姓名：</em></label>
 												<div class="col2 inputWrap rel">
 													<div class="fieldWrap">
-														<input type="text" class="input form-control" id="name" name="name" required readonly>
+														<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error-empty">姓名不能为空</span>
+												 </div>
 											</div>
 											
 											<div class="row clearfix">
@@ -80,9 +83,13 @@
 													<em class="vm">手机号：</em></label>
 												<div class="col2 inputWrap rel">
 													<div class="fieldWrap">
-														<input type="text" class="input form-control" id="mobile" name="mobile" required readonly>
+														<input type="text" class="input form-control" id="mobile" name="mobile" required placeholder="请输入手机号">
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error">手机号为11位数字，请重新填写</span>
+													<span class="p-error-empty">手机号不能为空</span>
+												 </div>
 											</div>
 
 											<div class="row clearfix">
@@ -91,9 +98,12 @@
 													<em class="vm">生源地：</em></label>
 												<div class="col2 inputWrap rel">
 													<div class="fieldWrap">
-														<input type="text" class="input form-control" id="area" name="area" required readonly>
+														<input type="text" class="input form-control" id="area" name="area" required placeholder="请输入生源地">
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error-empty">生源地不能为空</span>
+												 </div>
 											</div>
 
 											<div class="row clearfix">
@@ -108,6 +118,9 @@
 															</select>
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error-empty">性别不能为空</span>
+												 </div>
 											</div>
 
 
@@ -117,15 +130,18 @@
 													<em class="vm">高中：</em></label>
 												<div class="col2 inputWrap rel">
 													<div class="fieldWrap">
-														<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly>
+														<input type="text" class="input form-control" id="highSchool" name="highSchool" required placeholder="请输入高中名称">
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error-empty">高中不能为空</span>
+												 </div>
 											</div>
 
 											<div class="row clearfix">
 												<label for="sex" class="control-label column col1 fl">
 													<i class="icon-location"></i>
-													<em class="vm">高中入学年份：</em></label>
+													<em class="vm">入学年份：</em></label>
 												<div class="col2 selectWrap rel">
 													<div class="fieldWrap">
 														<select class="form-control" name="highYear">
@@ -134,12 +150,15 @@
 															</select>
 													</div>
 												</div>
+												<div class="errInfo">
+													<span class="p-error-empty">高中入学年份不能为空</span>
+												 </div>
 											</div>
 											
 											<div class="footerCnt">
 												<p id="errTxt" class="errTxt"></p>
 
-												<div class="row btnRow">
+												<div class="row btnRow tc">
 								                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 								                        <em class="subTxt">下一步</em>
 								                    </button>

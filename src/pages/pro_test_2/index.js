@@ -42,7 +42,9 @@ if(answer.length == allItems){
 			renderSlider(0);
 		}
 	});
-};
+}else{
+	renderSlider(0);
+}
 
 function renderSlider(pageIndex){
 	contentSlider($("#qtestSliderWrap"),{
