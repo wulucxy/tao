@@ -22,6 +22,9 @@ var common = {
 		
 		mLogin.init();
 		mReg.init();
+
+		//加载更多
+		this.loadingMore();
 	},
 
 	//顶部导航
@@ -73,6 +76,19 @@ var common = {
       obj.html(errortxt).css({
         'visibility': 'visible'
       });
+    },
+
+    loadingMore : function(){
+    	var that = this;
+    	$(".btn-loading").on("click",function(e){
+    		e.preventDefault();
+    		var btn = $(this).closest(".btn");
+    		if(btn.hasClass("disabled")) return;
+    		btn.addClass("disabled loading");
+    		
+
+    	})
+
     }
 };
 

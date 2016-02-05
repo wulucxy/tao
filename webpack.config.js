@@ -47,7 +47,7 @@ var defaults = {
 		publicPath: '/'
 	},
 	externals :  {
-        "jquery": "jQuery"
+        //"jquery": "jQuery"
     },
 	resolve: {
 	     alias: {
