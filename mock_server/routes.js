@@ -8,6 +8,7 @@ module.exports = {
 	'/pro2'   : 'pro_test_2.jsp',
 	'/pro3'   : 'pro_test_3.jsp',
 	'/user'   : 'user.jsp',
+	'/case2'   : 'case_2.jsp',
 
 	//异步加载
 	'post::/loadmore/history' : 'mock::api/history.json',
