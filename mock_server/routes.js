@@ -1,4 +1,5 @@
 module.exports = {
+	// 页面路由
 	'/': 'home.jsp',
 	'/assess1': 'assess_step_1.jsp',
 	'/assess2': 'assess_step_2.jsp',
@@ -6,5 +7,9 @@ module.exports = {
 	'/pro1'   : 'pro_test_1.jsp',
 	'/pro2'   : 'pro_test_2.jsp',
 	'/pro3'   : 'pro_test_3.jsp',
-	'/user'   : 'user.jsp'
+	'/user'   : 'user.jsp',
+
+	//异步加载
+	'post::/loadmore/history' : 'mock::api/history.json',
+	'post::/loadmore/question' : 'mock::api/question.json'
 };

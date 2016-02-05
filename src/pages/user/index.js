@@ -12,6 +12,8 @@ var common = require("../../assets/components/common");
 
 //自定义功能写下面
 var tabs = require("../../assets/components/tabs");
+//加载更多模块
+var loadMore = require("../../assets/components/loadMore");
 
 //历史模块
 var history = require("./js/history");
@@ -31,6 +33,17 @@ $(".userInfoList").on("click","[data-link]",function(e){
 
 	linkObj.siblings().hide();
 	linkObj.show();
+});
+
+
+//加载更多
+$(".load-more-list").each(function(idx,ele){
+	if(idx == 0){
+		loadMore($(ele),{
+			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs")
+		});
+	}
+	
 });
 
 //历史模块调用

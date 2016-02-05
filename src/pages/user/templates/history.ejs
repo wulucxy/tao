@@ -1,0 +1,27 @@
+<% for (var i = 0; i < historyList.length; i++) { %>
+<div class="well clearfix" type ="<%= historyList[i].type %>">
+	<div class="media fl">
+		<div class="span fl">
+			<span class="btn btn-primary"><%= historyList[i].caseName %></span>
+		</div>
+		<div class="media-body g3 well_body">
+			<p>
+			<span class="label">订单号：</span><span class="field"><%= historyList[i].order %></span>
+			<span class="label">生成日期：</span><span class="field"><%= historyList[i].createTime %></span>
+			</p>
+			<p>
+			<span class="label">高考分数：</span><span class="field"><%= historyList[i].score %></span>
+			<span class="label">全省排名：</span><span class="field"><%= historyList[i].place %></span>
+			</p>
+		</div>
+	</div>
+	<div class="detailInfo fr">
+		<div class="row btnRow"><a href="#" class="btn btn-primary btn-medium" targe="_blank">付款</a></div>
+		<% if( historyList[i].detailUrl != '' ) { %>				
+				<a class="detailTxt" href="<%= historyList[i].detailUrl %>" target="_blank">查看详细信息</a>
+		<% }else{ %>
+				<a href="javascript:;" >&nbsp;</a>
+		<% } %>
+	</div>
+</div>
+<% } %>

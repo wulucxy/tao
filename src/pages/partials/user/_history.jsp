@@ -25,7 +25,7 @@
 		 </div>
 	</div>
 
-	<div class="wellWrapper load-more-list" id="historyWrapper">
+	<div class="wellWrapper load-more-list" id="historyWrapper" data-url="${param.loadMoreUrl}" data-tmpl="${param.loadMoreTmpl}">
 		<c:forEach var="list" items="${historyList}">
 		<div class="well clearfix" type ="${list.type}">
 			<div class="media fl">
@@ -57,7 +57,8 @@
 		</div>
 		</c:forEach>
 	</div>
-
+	
+	<!-- 加载更多模块 -->
 	<%@ include file = "/partials/_loadMore.jsp" %>
 
 </div>

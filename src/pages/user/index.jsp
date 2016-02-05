@@ -58,25 +58,44 @@
 							
 							<div class="contentWrap">
 								<!--  我的资料 -->
-								<%@ include file = "/partials/user/_myInfo.jsp" %>
+								<jsp:include page = "/partials/user/_myInfo.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+								</jsp:include>
 
 								<!--  历史方案 -->
-								<%@ include file = "/partials/user/_history.jsp" %>
+								<jsp:include page = "/partials/user/_history.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore/history" />
+									<jsp:param name="loadMoreTmpl" value="history" />
+								</jsp:include>
 
 								<!--  achivement -->
-								<%@ include file = "/partials/user/_achivement.jsp" %>
+								<jsp:include page = "/partials/user/_achivement.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+								</jsp:include>
 
 								<!--  我的收藏 -->
-								<%@ include file = "/partials/user/_collection.jsp" %>
+								<jsp:include page = "/partials/user/_collection.jsp">
+									<jsp:param name="loadMoreUrl_school" value="/loadmore/school" />
+									<jsp:param name="loadMoreUrl_info" value="/loadmore/info" />
+								</jsp:include>
 
 								<!--  我的提问 -->
-								<%@ include file = "/partials/user/_question.jsp" %>
+								<jsp:include page = "/partials/user/_question.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+									<jsp:param name="loadMoreTmpl" value="question" />
+								</jsp:include>
 
 								<!--  我的预约 -->
-								<%@ include file = "/partials/user/_book.jsp" %>
+								<jsp:include page = "/partials/user/_book.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+									<jsp:param name="loadMoreTmpl" value="book" />
+								</jsp:include>
 
 								<!--  我的优惠券 -->
-								<%@ include file = "/partials/user/_coupon.jsp" %>
+								<jsp:include page = "/partials/user/_coupon.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+									<jsp:param name="loadMoreTmpl" value="coupon" />
+								</jsp:include>
 							</div>
 						</div>
 					</div>			

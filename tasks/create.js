@@ -5,15 +5,17 @@ var path = require("path");
 var fs = Promise.promisifyAll(require('fs-extra'));
 
 var dest = process.cwd();
-
-function generateStructure(project){
-  return fs.copyAsync(examplePath, project,{clobber: true})
-    .then(function(err){
-      if (err) return console.error(err);
-    });
-}
+var examplePath;
 
 module.exports = function () {
+	
+	function generateStructure(project){
+	  return fs.copyAsync(examplePath, project,{clobber: true})
+	    .then(function(err){
+	      if (err) return console.error(err);
+	    });
+	}
+
 	return function () {
 		// -n 后面携带的项目工程名字
 		if (!args.n) {
@@ -21,7 +23,8 @@ module.exports = function () {
 			process.exit(0);
 		}
 		var projectName = args.n.toString();
-		var examplePath = path.resolve(dest, 'src', 'example');
+
+		examplePath = path.resolve(dest, 'src', 'example');
 
 		if (projectName) {
 			dest = path.resolve(dest, 'src', 'pages',projectName);

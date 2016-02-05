@@ -5,6 +5,8 @@ module.exports = {
 		// 历史方案
 		$("#caseType").on("change",function(){
 			var val = $(this).val();
+				
+			$(".btnLoadingWrap").toggle(!Number(val));
 
 			$("#historyWrapper .well").each(function(idx,ele){
 				var type = $(ele).attr("type");

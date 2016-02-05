@@ -20,7 +20,7 @@
 			<section class="tab-box schoolWrap current">
 				
 				<div class="schoolListWrap">
-					<ul class="schoolList load-more-list">
+					<ul class="schoolList load-more-list" data-url="${param.loadMoreUrl_school}" data-tmpl="${param.loadMoreTmpl_school}">
 						<li class="clearfix">
 							<div class="fl">
 							<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
@@ -51,7 +51,7 @@
 							
 						</li>
 					</ul>
-					<%@ include file = "/partials/_loadMore.jsp" %>
+					
 				</div>
 
 			</section>
@@ -124,7 +124,7 @@
 						</li>
 					</ul>
 					
-					<%@ include file = "/partials/_loadMore.jsp" %>
+					
 
 				</div>
 			</section>
