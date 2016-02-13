@@ -15,7 +15,7 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 		
-		<div class="container p_assess_1">
+		<div class="container p_assess">
 
 			<div class="content">
 				<h3 class="clearfix title">
@@ -35,9 +35,9 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li class="current"><a href="#"><em>输入基本信息</em></a></li>
-						<li><a href="#"><em>选择志愿信息</em></a></li>
-						<li><a href="#"><em>确认提交信息</em></a></li>
+						<li class="current"><a href="javascript:;"><em>输入基本信息</em></a></li>
+						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
+						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
 				</div>
 
@@ -85,21 +85,21 @@
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
 									
-									<label for="batch_0" class="label_radio inline">
+									<label for="batch_1" class="label_radio inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="batch_0" name="batch" checked required>
+									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required>
 									<em class="vm">第一批</em>
-									</label>
-
-									<label for="batch_1"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="batch_1" name="batch" required>
-									<em class="vm">第二批</em>
 									</label>
 
 									<label for="batch_2"  class="label_radio inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="batch_2" name="batch" required>
+									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
+									<em class="vm">第二批</em>
+									</label>
+
+									<label for="batch_3"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
 									<em class="vm">第三批</em>
 									</label>
 								</div>

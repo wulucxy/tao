@@ -110,6 +110,8 @@ var util = {
               $(this).removeClass('c_on');
           });
 
+          console.log($('.label_check input'));
+
           $('.label_check input:checked').each(function(){
               $(this).parent('label').addClass('c_on');
           });

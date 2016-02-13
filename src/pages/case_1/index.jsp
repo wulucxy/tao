@@ -34,21 +34,51 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
-						<li class="current"><a href="javascript:;"><em>选择志愿信息</em></a></li>
-						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
-						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
+						<li><a href="#"><em>输入基本信息</em></a></li>
+						<li class="current"><a href="#"><em>选择志愿信息</em></a></li>
+						<li><a href="#"><em>选择求学专业</em></a></li>
+						<li><a href="#"><em>确认提交信息</em></a></li>
 					</ul>
 				</div>
 
 				<div class="formWrap">
-					<form action="javascript:;" onsubmit="return false" autocomplete="off" id="caseForm_1" class="rel">
+					<form action="#" onsubmit="return false" autocomplete="off" id="caseForm_1" class="rel">
 						
 						<div class="selectContent clearfix" id="citySelectContainer">
 							<div class="column col1 fl">
 								<h4>请选择省份</h4>
 								<div class="selectWrap">
 									<ul class="prov">
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
+										<li data-value="1">北京</li>
+										<li data-value="2">上海</li>
 									</ul>
 								</div>
 							</div>
@@ -56,12 +86,27 @@
 								<h4>请选择城市</h4>
 								<div class="selectWrap">
 									<ul class="city">
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
+									<li data-value="1">北京</li>
+									<li data-value="2">上海</li>
 								</ul>
 								</div>
 							</div>
 							<div class="column col3 fl">
 								<h4>已选</h4>
-								<ul class="tagsWrap clearfix" id="tagsWrap">
+								<ul class="tagsWrap" id="tagsWrap">
 									
 								</ul>
 							</div>
@@ -69,7 +114,6 @@
 						</div>
 						
 						<div class="footerCnt">
-							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
 							 	<a class="btn btn-positive btn-primary btn-form">
 			                        <em class="subTxt">上一步</em>

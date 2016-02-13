@@ -1,8 +1,6 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 
-var cityList = require("./city");
-
 var citySelect = {
 	init : function(t,options){
 		var options = extend({
@@ -20,8 +18,6 @@ var citySelect = {
 		this.prov = t.find( '.prov' );
 	 	this.city = t.find( '.city' );
 	 	
-	 	//默认省索引为0
-	 	this.provIndex = 0;
 	 	//缓存
 	 	this.pageDataCache = {};
 
@@ -32,6 +28,8 @@ var citySelect = {
 		var that = this,o = that.options;
 		var temp_html=o.requiredProv || o.required;
 		this.city.empty().addClass("disabled");
+
+		return;
 		
 		//渲染省
 		this.provStart();
@@ -49,7 +47,14 @@ var citySelect = {
 		}
 
 		if(o.prov){
-			that.requestData.call(that,o.prov);		
+			that.ajaxRequest.call(that,o.prov,function(){
+				if(!!o.city){
+					that.city.val(o.city);
+					if(o.citySuccessCb){
+						o.citySuccessCb();
+					}
+				}
+			});		
 		}
 
 		//回调
@@ -63,23 +68,23 @@ var citySelect = {
 			$(this).siblings().removeClass(o.klass);
 			$(this).addClass(o.klass);
 
-			that.requestData.call(that,$(this).data("value"));
+			that.ajaxRequest.call(that,that.provIndex);
+		});
+
+		// 选择城市时发生事件
+		this.city.on("click","li",function(){
+			if(that.city.hasClass("disabled")) return;
+			that.cityIndex = that.city.find("li").index($(this));
+			$(this).siblings().removeClass(o.klass);
+			$(this).addClass(o.klass);
 		});
 	},
 
-	requestData : function(val,callback){									//请求change状态 city数据信息
+	ajaxRequest : function(val,callback){									//请求change状态 city数据信息
 		var that = this, $this = that.target,o=that.options;
 		
 		this.city.empty();
 		this.city.addClass("disabled");
-
-		that.provinceId = val;
-
-		//如果存在缓存数据
-		if(that.pageDataCache[val]){
-			that.cityStart(that.pageDataCache[val]);
-			return;
-		}
 
 		if(!o.url) return;
 
@@ -91,13 +96,16 @@ var citySelect = {
 				if(typeof res =="string"){
 					var res = $.parseJSON(res);
 				}
-				that.pageDataCache[val] = res;
+
 				that.cityStart.call(that,res);
+				if(callback){
+					callback();
+				}
 		 	},
 			error : function(err){
 				console.log(err);
 			}
-		});
+		})
 	},
 
 	provStart : function(){
@@ -125,13 +133,13 @@ var citySelect = {
 
 		var listLen = 0;
 		$.each(data.c,function(i,city){
-			temp_html+='<li><label><input type="checkbox" name="city" p="'+that.provinceId+'" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+			temp_html+='<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["id"]+'" ><em>'+city["name"]+'</em></label></li>';
 			listLen = i+1;
 		});
 		this.city.html(temp_html);
 		this.city.removeClass("disabled");
 
-		o.citySuccessCb && o.citySuccessCb.call(that,data.c);
+		o.citySuccessCb && o.citySuccessCb.call(that);
 	},
 
 };

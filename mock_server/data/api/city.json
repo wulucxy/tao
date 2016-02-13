@@ -1,0 +1,58 @@
+{	
+	"$$delay": 1000,
+	"c": [{
+			"name": "东城区",
+			"value" : 1
+		}, {
+			"name": "西城区",
+			"value" : 2
+		}, {
+			"name": "崇文区",
+			"value" : 3
+		}, {
+			"name": "宣武区",
+			"value" : 4
+		}, {
+			"name": "朝阳区",
+			"value" : 5
+		}, 
+		{	"name": "丰台区",
+			"value" : 6
+		}, {
+			"name": "石景山区",
+			"value" : 7
+		}, {
+			"name": "海淀区",
+			"value" : 8
+		}, {
+			"name": "门头沟区",
+			"value" : 9
+		}, {
+			"name": "房山区",
+			"value" : 10
+		}, {
+			"name": "通州区",
+			"value" : 11
+		}, {
+			"name": "顺义区",
+			"value" : 12
+		}, {
+			"name": "昌平区",
+			"value" : 13
+		}, {
+			"name": "大兴区",
+			"value" : 14
+		}, {
+			"name": "平谷区",
+			"value" : 15
+		}, {
+			"name": "怀柔区",
+			"value" : 16
+		}, {
+			"name": "密云县",
+			"value" : 17
+		}, {
+			"name": "延庆县",
+			"value" : 18
+		}]
+}

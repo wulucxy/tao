@@ -15,7 +15,7 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 		
-		<div class="container p_assess_1">
+		<div class="container p_assess">
 
 			<div class="content">
 				<h3 class="clearfix title">
@@ -35,20 +35,21 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="#"><em>输入基本信息</em></a></li>
-						<li class="current"><a href="#"><em>选择志愿信息</em></a></li>
-						<li><a href="#"><em>确认提交信息</em></a></li>
+						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
+						<li class="current"><a href="javascript:;"><em>选择志愿信息</em></a></li>
+						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
 				</div>
 
 				<div class="formWrap">
-					<form action="#" onsubmit="return false" autocomplete="off" id="assessForm_1" class="rel">
+					<form action="#" onsubmit="return false" autocomplete="off" id="assessForm_2" class="rel">
 						
 						<div class="c-select">
 							<div id="majorWrapper" class="rel"></div>
 						</div>
 						
 						<div class="footerCnt">
+							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>

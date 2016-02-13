@@ -9,8 +9,12 @@ module.exports = {
 	'/pro3'   : 'pro_test_3.jsp',
 	'/user'   : 'user.jsp',
 	'/case2'   : 'case_2.jsp',
+	'/case1'   : 'case_1.jsp',
+	'/case3'   : 'case_3.jsp',
+
 
 	//异步加载
 	'post::/loadmore/history' : 'mock::api/history.json',
-	'post::/loadmore/question' : 'mock::api/question.json'
+	'post::/loadmore/question' : 'mock::api/question.json',
+	'post::/getCity' : 'mock::api/city.json'
 };

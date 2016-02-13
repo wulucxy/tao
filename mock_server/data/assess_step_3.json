@@ -1,0 +1,10 @@
+{
+	"province" : {
+		"name" : "浙江",
+		"id" : "21"
+	},
+	"courseType": 1,
+	"batch" : 1,
+	"score" : 300,
+	"place" : 3000
+}
