@@ -15,7 +15,7 @@
 	  <div class="topBar">
 		<div class="container clearfix">
 			<div class="fl logo">
-				<a class="imgWrap dib" target="_blank" href="#">
+				<a class="imgWrap dib" target="_blank" href="/">
 					<img src="./img/logo.png" alt="logo" class="responsive">
 				</a>
 				<span class="province f18">浙江</span>
@@ -47,7 +47,7 @@
 		<nav>
 		   <div class="container clearfix">
 				<ul class="clearfix navLists fl">
-					<li class="navList current"><a href="#1">首页</a></li>
+					<li class="navList current"><a href="/">首页</a></li>
 					<li class="navList" data-toggle="dropdown">
 						<a href="#2" class="trigger">工具箱</a>
 						<div class="listWrap">
@@ -75,10 +75,19 @@
 					<li class="navList">
 						<a href="#3">资讯</a>
 					</li>
-					<li class="navList" >
-						<a href="#3">下载APP</a>
-						
-	
+					<li class="navList" data-toggle="dropdown" >
+						<a href="javascript:;" class="trigger">下载APP</a>
+						<div class="listWrap">
+							<ul class="options down-app-options">
+							<li class="floatTipWrap down-app-wrapper">
+								<div class="tipContent">
+									<img src="./img/equode.png" class="responsive">
+								</div>
+								<span class="mc mcTt"></span>
+								<span class="mc mcTt mcInner"></span>
+							</li>
+							</ul>
+						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
 						<a href="#5">公众号</a>

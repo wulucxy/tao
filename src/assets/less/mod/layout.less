@@ -13,6 +13,9 @@ html,body{background-color: @color-body;}
 .prefix() {content: " "; display: block; width: 0; height: 0;position: absolute;border-top: 20px solid transparent;border-bottom: 20px solid transparent;}
 
 .container{width:1000px;margin:0 auto;}
+.taoIcon{
+	.lookIcon();background-image: url(../../img/taoIcon.png);
+}
 
 .c-2{width: 20%;}
 .c-3{width: 30%;}
@@ -92,4 +95,35 @@ html,body{background-color: @color-body;}
 
 .bg{font-size: 16px;color:#333;padding-left: 10px;line-height: 34px;}
 .bg-f1{background-color: #f1f1f1;}
+
+.m-nav{
+	border:1px solid #e2e2e2;
+	.btn-default{width:66px;padding:0;line-height: 20px;font-size: 13px;height:22px;user-select:none;}
+	.btn-x{width:10px;height: 10px;background-position: 0 0;position: absolute;right:6px;top:6px;}
+	.btn-arrow-up{width:13px;height: 7px;background-position: -13px -10px;}
+	.btn-arrow-down{width:13px;height: 7px;background-position: 0px -10px;}
+	.crumb{
+		line-height: 22px;border-bottom: 1px solid #e2e2e2;padding:10px;
+		.tags{position: relative;float:left;color:#fff;background-color: @color-blue;padding:0 24px 0 7px;line-height: 22px;margin-right: 10px;
+			
+			&:hover{background-color: @color-hover;}
+		}
+	}
+	.row{padding:10px;border-bottom: 1px dashed #e2e2e2;position: relative;
+		.body{padding-left:72px;padding-right: 88px;height:22px;overflow: hidden;}
+		.head,.foot{position: absolute;}
+		.head{left:10px;top:10px;}
+		.foot{right:10px;top:10px;}
+		.itemLists{margin-right: -16px;}
+		.item{color:#333;margin-right: 16px;}
+		&.expand-mode .body{height:auto;}
+		&.last{border-bottom: none;}
+	}
+
+	.show-less{display: none;}
+	.expand-mode{
+		.show-less{display: inline-block;}
+		.show-more{display: none;}
+	}
+}
 

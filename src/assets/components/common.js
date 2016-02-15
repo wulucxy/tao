@@ -1,7 +1,7 @@
 var $ = window.$ || require("jquery");
 
 //回到顶部
-var gotoTop  = require("./gototop");
+var sideBar  = require("./sideBar");
 
 //弹窗模块
 var modalBox = require("./modalBox");
@@ -13,15 +13,20 @@ var mLogin = require("./login/");
 //注册模块
 var mReg = require("./reg/");
 
+//商品筛选模块
+var mNav = require("./mNav");
+
 var common = {
 
 	init : function(){
 		//导航栏dropdown
 		this.dropdown();
-		gotoTop();
 		
 		mLogin.init();
 		mReg.init();
+
+		//搜索条件
+		mNav.init();
 	},
 
 	//顶部导航

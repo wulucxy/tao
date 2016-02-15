@@ -19,7 +19,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高考方案评估
+						高考方案定制
 						<em class="underLine"></em>	
 					</span>
 					<div class="fr f16 g6">

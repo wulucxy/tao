@@ -11,7 +11,7 @@ Plugin.prototype = {
    	init : function(o){
     	var that = this,$this = that.target;
     	// 分页默认从第1页开始
-    	that.pager = 1;
+    	that.pager = o.pager;
 
     	//模板地址
     	that.tmpl = o.tmpl;
@@ -33,9 +33,9 @@ Plugin.prototype = {
 	fetch : function(){
 		var that = this,o = that.options,$this = that.target;
 		$.ajax({
-			url : $this.data("url"),
+			url : o.url || $this.data("url"),
 			type : "post",
-			data : {pager : that.pager},
+			data : {page : that.pager},
 			success : function(res){
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
@@ -48,7 +48,6 @@ Plugin.prototype = {
 
 	renderData : function(res){
 		var that = this;
-		console.log(that.tmpl(res));
 		return that.tmpl(res);
 	},
 
@@ -57,7 +56,6 @@ Plugin.prototype = {
 
 		if(!!res){
 			var _html = that.renderData(res);
-			console.log(_html);
 			if(that.pager == 1){
 				$this.empty().append(_html);
 			}else{
@@ -67,7 +65,7 @@ Plugin.prototype = {
 			that.pager++;
 
 			//最后一页
-			if(that.pager > res.pageCount){
+			if(that.pager > res.count){
 				that.btn.addClass("loading-all");
 			};
 
@@ -82,6 +80,8 @@ Plugin.prototype = {
 
  var loadMore = function(target,o){
  	var settings=extend({
+ 		url : "",
+ 		pager : 1,
 		button : ".btn-loading",
 		callback : null
 	},o);
