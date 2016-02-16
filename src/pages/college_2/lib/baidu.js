@@ -1,0 +1,30 @@
+var extend =  require('object-assign');
+
+var baidu = {
+
+	init : function(wrapper,options){
+		var options = extend({
+			location : {
+				lat : "116.404",
+				lng : "39.915"
+			}
+		},options);
+
+		this.wrapper = wrapper;
+		this.options = options;
+		this.renderMap();
+	},
+
+	renderMap : function(){
+		var that = this,o = that.options;
+		var map = new BMap.Map(this.wrapper);          // 创建地图实例  
+		console.log(o.location.lat, o.location.lng);
+		var point = new BMap.Point(o.location.lat, o.location.lng);  // 创建点坐标 
+		map.centerAndZoom(point, 15); 
+		var marker = new BMap.Marker(point);        // 创建标注    
+		map.addOverlay(marker);                     // 将标注添加到地图中
+	}
+
+};
+
+module.exports = baidu;

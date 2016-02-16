@@ -11,16 +11,10 @@ var common = require("../../assets/components/common");
 
 
 //自定义功能写下面
-
-//加载更多模块
-var loadMore = require("../../assets/components/loadMore");
-
 //切换顶部nav高亮
 common.switchNav(2);
 
 //数据绑定
 var dataSet = require("./lib/dataSet");
 
-dataSet.init({
-	pager : 1
-});
+dataSet.init();

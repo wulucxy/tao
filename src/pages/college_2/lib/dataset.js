@@ -45,7 +45,7 @@ var dataSet = {
         that.requestData();
 	},
 
-	requestData : function(btn){
+	requestData : function(){
 		var that = this,o = that.options;
 
 		var _data = {
@@ -68,13 +68,7 @@ var dataSet = {
 					var res = $.parseJSON(res);
 				}
 
-                //如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pageObject[_key]++;
-                }else{
-                    that.pageObject[_key] = 1;
-                }
-				
+				that.pageObject[_key]++;
 				that.loadList(res,that.pageObject[_key]);
 			}
 		});
@@ -84,9 +78,7 @@ var dataSet = {
 		var that = this,o = that.options;
 		var _html = tmpl(data);
 
-        console.log(pager);
-
-		if(pager == 1){
+		if(pager == 2){
 			$(".schoolList").empty().html(_html);
 		}else{
 			$(".schoolList").append(_html);
@@ -110,6 +102,8 @@ var dataSet = {
         };
 
         this.options = o;
+
+        this.pager = o.pager;
 
         //保存分页对象
         this.pageObject = {};
@@ -171,7 +165,7 @@ var dataSet = {
     		var btn = $(this).closest(".btn");
     		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
     		btn.addClass("disabled loading");
-    		that.requestData(btn);
+    		that.requestData();
     	});
     }
 };

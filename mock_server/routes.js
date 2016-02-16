@@ -12,11 +12,13 @@ module.exports = {
 	'/case1'   : 'case_1.jsp',
 	'/case3'   : 'case_3.jsp',
 	'/college'   : 'college.jsp',
+	'/college2'   : 'college_2.jsp',
 
 
 	//异步加载
 	'post::/loadmore/history' : 'mock::api/history.json',
 	'post::/loadmore/question' : 'mock::api/question.json',
 	'post::/getCity' : 'mock::api/city.json',
-	'post::/data/college' : 'mock::api/college.json'
+	'post::/data/college' : 'mock::api/college.json',
+	'post::/data/college/majors' : 'mock::api/major.json'
 };
