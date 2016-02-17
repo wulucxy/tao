@@ -43,7 +43,6 @@ $(".load-more-list").each(function(idx,ele){
 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs")
 		});
 	}
-	
 });
 
 //历史模块调用

@@ -14,6 +14,8 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 		
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${province.id}">
 		<!-- 学校id -->
 		<input type="hidden" name="collegeId" value="${collegeId}">
 

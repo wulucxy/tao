@@ -8,6 +8,7 @@ var major = {
         this.pageObject = {};
 
         this.collegeId = $("[name=collegeId]").val();
+        this.province = $("[name=province]").val();
 
 		//this.requestData();
 		this.bindEvt();
@@ -26,7 +27,7 @@ var major = {
 		_data.page = that.pageObject[_key];
 
 		$.ajax({
-			url : "/data/college/majors",
+			url : that.province + "/data/college/"+that.collegeId+"/majors",
 			type : "post",
 			data : _data,
 			success : function(res){

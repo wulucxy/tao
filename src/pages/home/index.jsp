@@ -264,7 +264,7 @@
 									<i class="icon-tools"></i>
 								</span>
 								<div class="media-body">
-									<h5 class="badgeRow">高考方案定制<span class="badge"><i class="icon-nee"></i>
+									<h5 class="neeRow">高考方案定制<span class="badge"><i class="icon-nee"></i>
 									<em class="vm">买一送二</em></span></h5>
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									

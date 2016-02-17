@@ -15,16 +15,15 @@ var questions = require("./questions.json");
 
 var tmpl = require("./templates/list.ejs");
 
-var cookie = require("../../assets/components/cookie");
+var Cookies = require("js-cookie");
 var contentSlider = require("../../assets/components/contentSlider");
-
 
 //需要配置
 var allItems = questions.questions.length;
 $(".all").text(allItems);
 
 //保存所有答案
-var answer = cookie("answer") ? cookie("answer").split("") : [];
+var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 
 if(answer.length == allItems){
 	_alert("你已经完成全部问题");
@@ -32,13 +31,14 @@ if(answer.length == allItems){
 		//window.location = "/";
 	},3000);
 }else if(answer.length){
-	_confirm("上次已经做到"+answer.length+"题，是否继续",{
+	_confirm("上次已经做到"+(answer.length+1)+"题，是否继续",{
 		cancel_txt : "重新开始",
 		btn_txt : "继续上次",
 		callback : function(){
 			renderSlider(answer.length);
 		},
 		cancelcallback : function(){
+			answer = [];
 			renderSlider(0);
 		}
 	});
@@ -53,14 +53,26 @@ function renderSlider(pageIndex){
 		data : questions,
 		pageIndex : pageIndex,
 		allItems : allItems,
+		speed : 20,
 		startCallback : function(pageIndex,$oldItem,$newItem){
 			answer.push($oldItem.find(".current").data("type"));
-			cookie("answer",answer.join(""),{expire : 356});
+			Cookies.set("answer",answer.join(""),{expire : 356});
 		},
 		callback : function(pageIndex,$oldItem,$newItem){
-			if((pageIndex+1) == allItems){
+			if((pageIndex+1) >= allItems){
 				$("#subTestFooter").fadeIn(100);
 				subAnswer();
+			}
+
+			//140题以后
+			if((pageIndex+1) >= 140){
+				if($(".qtestSliderWrap").hasClass("part1")){
+					$(".qtestSliderWrap").removeClass("part1").addClass("part2");
+				}
+			}else{
+				if($(".qtestSliderWrap").hasClass("part2")){
+					$(".qtestSliderWrap").removeClass("part2").addClass("part1");
+				}
 			}
 		},
 		nav : function(pageIndex){

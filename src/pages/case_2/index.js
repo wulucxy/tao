@@ -11,11 +11,32 @@ var common = require("../../assets/components/common");
 
 
 //自定义功能写下面
+//弹窗模板
+var tmpl_detail = require("../../assets/templates/detail.ejs");
+var tmpl_questions = require("../../assets/templates/questions.ejs");
+
 //自定义滚动插件
 var scroll = require("../../assets/components/scroll");
 
 //数据绑定
 var dataSet = require("./lib/dataSet");
+
+//详情弹窗
+$("[data-trigger]").on("click",function(e){
+    e.preventDefault();
+    var btn = $(e.target).closest(".trigger");
+    var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
+
+    modalBox( btn.get(0), {
+          html:tmpl(),
+          klass : 'w540 shadow',
+          closeByOverlay : false,
+          completeCallback : function(){ 
+            
+          }
+      });
+});
+
 
 //将原有的数据传入
 dataSet.init({

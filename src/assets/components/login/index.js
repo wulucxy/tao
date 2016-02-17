@@ -24,16 +24,17 @@ var login = {
 	},
 
 	Box : function(btn){
-		modalBox( btn.get(0), {
+		modalBox( btn, {
 	        html:tmpl_login({}),
 	        klass : 'w540 shadow',
 	        closeByOverlay : false,
-	        completeCallback : function(){ 
+	        completeCallback : function(){
+	        	var self = btn; 
 	        	//去注册
 	        	$("#m_goReg").on("click",function(e){
 	        		e.preventDefault();
 	        		var btn = $(this);
-	        		$(".btn-close").trigger("click");
+	        		$(self).data("modalBox")._close(true);
 
 	        		setTimeout(function(){
 	        			mReg.Box(btn);
@@ -45,7 +46,7 @@ var login = {
 	        	$("#m_goForgetPw").on("click",function(e){
 	        		e.preventDefault();
 	        		var btn = $(this);
-	        		$(".btn-close").trigger("click");
+	        		$(self).data("modalBox")._close(true);
 
 	        		setTimeout(function(){
 	        			mForget.Box(btn);

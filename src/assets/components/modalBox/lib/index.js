@@ -88,15 +88,18 @@ var modalBox = function(target,options){
         _overlay : function(){
             var that = this, o=that.options;
             var w=$(window).width(),h=$(document).height();
-            var overlay= $('<div/>', {
+            if(!$('#modalBox-overlay').length){
+                var overlay= $('<div/>', {
                                 'id': 'modalBox-overlay',
                                 'class': "modalBox-overlay"
                             }).css({'zIndex':o.zIndex-2,
                                     'width':w,
                                      'height':h,
                                     'background':o.overlayBg}).appendTo(document.body)
+            }
 
-                that.overlay=$('#modalBox-overlay');
+             that.overlay=$('#modalBox-overlay');
+            
         }, 
 
         _listener : function(){
@@ -116,7 +119,7 @@ var modalBox = function(target,options){
             }
         },
 
-        _close : function(){                                //overlay关闭方法
+        _close : function(bool){                                //overlay关闭方法
             var that = this, o=that.options;
             clearTimeout(that.closeTimer);
             if(o.beforeCloseCallback){
@@ -125,7 +128,8 @@ var modalBox = function(target,options){
             that.closeTimer=setTimeout( function () {
                 that.container.removeClass('modalBox-show');
                 that.container.remove();
-                if ( o.overlay ){
+
+                if ( o.overlay && typeof bool != 'boolean' ){
                     that.overlay.remove();
                     that.closed=true;
                 }
@@ -147,7 +151,7 @@ var modalBox = function(target,options){
             }
             that.modal = modal;
 
-            if(!!that.closed && !$('#'+mb+'-overlay').is(':visible') ){
+            if(!!that.closed){
                 that.geneRateContent();
                 modal.show().appendTo(that.content);
                 if(o.startCallback){
@@ -171,10 +175,10 @@ var modalBox = function(target,options){
                 }
                 if(browser.isModernBrower){
                     that.container.addClass('trans50')
-                }
-            }else{
-                that.container.css({'marginLeft':-that.container.width()/2,'marginTop':-tmpSize.height/2})
-            }   
+                }else{
+                    that.container.css({'marginLeft':-that.container.width()/2,'marginTop':-tmpSize.height/2})
+                }   
+            }
             that.container.css({'zIndex':o.zIndex});
 
             //windows 下一像素高度导致弹窗字体模糊

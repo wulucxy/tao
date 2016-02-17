@@ -43,7 +43,7 @@ function contentSlider(target,options){
         this.li = this.ul.find('>li');
 
         if(browser.isModernBrower){
-          this.li.css( 'transition', 'opacity ' + o.speed + 'ms '+o.easing);
+          this.li.css( 'transition', 'left ' + o.speed + 'ms '+o.easing);
         }
         //默认进来列表隐藏
         if(that.startPoint == 0){
@@ -52,9 +52,9 @@ function contentSlider(target,options){
         //其他情况下将下一块列表的首屏展示设置在右侧
         }else{
           this.li.eq( this.count).nextAll().hide();
-          this.li.eq( this.count).css({"left":"0%","transition":"none"});
+          this.li.eq( this.count).css({"left":"100%","transition":"none"});
           setTimeout(function(){
-            that.li.eq( that.count).css({"left":"0%",'transition':'opacity ' + o.speed + 'ms '+o.easing});
+            that.li.eq( that.count).css({"left":"0%",'transition':'left ' + o.speed + 'ms '+o.easing});
           },20);
           
         }
@@ -122,12 +122,12 @@ function contentSlider(target,options){
             that.transitionEnd($oldItem,$newItem);
 
             setTimeout( function() {
-              $oldItem.css( 'opacity', '0');
-              $newItem.css( 'opacity', '1' );
+              $oldItem.css( 'left', '-100%');
+              $newItem.css( 'left', '0%' );
             }, 25 );
         }else{
-            $oldItem.animate({'opacity':'0'},that.options.speed);
-            $newItem.animate({'opacity':'1'},that.options.speed,that.transitionEnd.call(that,$oldItem,$newItem));
+            $oldItem.animate({'left':'-100%'},400);
+            $newItem.animate({'left':'0%'},400,that.transitionEnd.call(that,$oldItem,$newItem));
         }
       },
 
@@ -141,6 +141,8 @@ function contentSlider(target,options){
           if(btn.hasClass(o.klass)) return;
           if(!!that.isAnimating) return;
 
+          console.log("=====开始动画 isAnimating"+that.isAnimating+"=====");
+
           btn.siblings(o.trigger).removeClass(o.klass);
           btn.addClass(o.klass);
 
@@ -152,7 +154,7 @@ function contentSlider(target,options){
           var $newItem = that.li.eq( that.idx );
 
           //初始化nextItem位置
-          $newItem.css( 'opacity', '0' );
+          $newItem.css( 'left', '100%' );
           $newItem.show();
 
           //点击回调

@@ -17,7 +17,7 @@
 	 <div class="container proTestWrapper">
 		<section class="s-proTest">
 			<div class="content">
-				<h3 class="clearfix title badgeRow">
+				<h3 class="clearfix title neeRow">
 					<span class="fl s-title">
 						<span class="vm">专业选择测试</span>
 						<span class="badge"><i class="icon-nee"></i>

@@ -26,11 +26,12 @@ var reg = {
 	        klass : 'w540 shadow',
 	        closeByOverlay : false,
 	        completeCallback : function(){ 
+	        	var self = btn; 
 	        	//去注册
 	        	$("#m_goLogin").on("click",function(e){
 	        		e.preventDefault();
 	        		var btn = $(this);
-	        		$(".btn-close").trigger("click");
+	        		$(self).data("modalBox")._close(true);
 
 	        		setTimeout(function(){
 	        			login.Box(btn);

@@ -17,7 +17,7 @@
 	 <div class="container proTestWrapper">
 		<section class="s-proTest">
 			<div class="content">
-				<h3 class="clearfix title badgeRow">
+				<h3 class="clearfix title neeRow">
 					<span class="fl s-title">
 						<span class="vm">专业选择测试</span>
 						<span class="badge"><i class="icon-nee"></i>
@@ -27,7 +27,9 @@
 				</h3>
 				
 				<div class="contentWrap">
-					<div id="qtestSliderWrap" class="qtestSliderWrap">
+					<div id="qtestSliderWrap" class="qtestSliderWrap part1">
+						<h5 class="title1">请选择你对这些工作内容的喜欢程度</h5>
+						<h5 class="title2">请选出你对完成这些活动或工作的把握程度</h5>
 						<ul class="rel ovh">
 							
 							

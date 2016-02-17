@@ -21,5 +21,7 @@ module.exports = {
 				return item.toggle(match);
 			});
 		});
+
+		$(".btn-loading").trigger("click");
 	}
-}
+};

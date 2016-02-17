@@ -59,8 +59,10 @@ var dataSet = {
 		var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
 		_data.page = that.pageObject[_key];
 
+        var provinceId = $("[name=province]").val();
+
 		$.ajax({
-			url : "/data/college",
+			url : provinceId + "/data/college",
 			type : "post",
 			data : _data,
 			success : function(res){

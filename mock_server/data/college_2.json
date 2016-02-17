@@ -1,4 +1,8 @@
 {
+    "province" : {
+        "name" : "浙江",
+        "id" : "1"
+    },
     "collegeId":"1",         
     "collegeName":"",      
     "collegeType":{"type":1,"name":"综合"},

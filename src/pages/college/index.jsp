@@ -13,7 +13,10 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
+		
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${province.id}">
+
 		<div class="container dbWrapper college">
 			<div class="content">
 				<h3 class="clearfix title">
