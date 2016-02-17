@@ -41,6 +41,7 @@ Plugin.prototype = {
                    var res = $.parseJSON(res);
                 }
 
+
                 that.insertData.call(that,res);
 			}
 		});
@@ -52,9 +53,8 @@ Plugin.prototype = {
 	},
 
 	insertData : function(res){
-		var that = this,$this = that.target;
-
-		if(!!res){
+		var that = this,$this = that.target,o = that.options;
+		if(res[o.listAttr].length){
 			var _html = that.renderData(res);
 			if(that.pager == 1){
 				$this.empty().append(_html);
@@ -70,7 +70,8 @@ Plugin.prototype = {
 			};
 
 		}else{
-			that.target.html('<p class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></p>');
+			that.target.html('<div class="no_transList"><p class="tc mb10"><i class="noListIcon"></i></p><em class="g9">暂无数据</em></div>');
+			$(".btn-loading").length && $(".btn-loading").hide();
 		}
 
 
@@ -83,7 +84,8 @@ Plugin.prototype = {
  		url : "",
  		pager : 1,
 		button : ".btn-loading",
-		callback : null
+		callback : null,
+		listAttr : ""
 	},o);
 
 	return $(target).each(function(index) {

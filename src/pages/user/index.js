@@ -40,7 +40,8 @@ $(".userInfoList").on("click","[data-link]",function(e){
 $(".load-more-list").each(function(idx,ele){
 	if(idx == 0){
 		loadMore($(ele),{
-			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs")
+			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
+			listAttr : "historyList"
 		});
 	}
 });

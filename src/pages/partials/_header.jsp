@@ -90,10 +90,16 @@
 						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
-						<a href="#5">公众号</a>
+						<a href="#5" class="trigger">公众号</a>
 						<div class="listWrap">
-							<ul class="options">
-								<li class="ddlist"><a href="#">二维码</a></li>
+							<ul class="options down-app-options">
+							<li class="floatTipWrap down-app-wrapper">
+								<div class="tipContent">
+									<img src="./img/equode2.png" class="responsive">
+								</div>
+								<span class="mc mcTt"></span>
+								<span class="mc mcTt mcInner"></span>
+							</li>
 							</ul>
 						</div>
 					</li>
