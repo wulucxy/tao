@@ -147,6 +147,22 @@ var util = {
       };
     },
 
+    count : function(oCount,t,callback){
+       var timer = null;
+
+       var countdown = function () { 
+            if (t < 0) {                   //倒计时结束
+                clearInterval(timer);
+                if(callback){callback();}
+            } else {
+                oCount.html(t);   
+            }
+            t--;
+        };
+        countdown();
+        timer = setInterval(countdown, 1000); 
+    },
+
     //3.表单操作
     post : function(url, fields,isBlank) {
       var $form = $('<form>', {

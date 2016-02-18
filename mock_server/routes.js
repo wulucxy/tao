@@ -13,6 +13,7 @@ module.exports = {
 	'/case3'   : 'case_3.jsp',
 	'/college'   : 'college.jsp',
 	'/college2'   : 'college_2.jsp',
+	'/404'   : 'error.jsp',
 
 
 	//异步加载
