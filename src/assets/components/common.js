@@ -16,6 +16,9 @@ var mReg = require("./reg/");
 //商品筛选模块
 var mNav = require("./mNav");
 
+//收藏
+var fav = require("./favorite");
+
 var common = {
 
 	init : function(){
@@ -27,6 +30,9 @@ var common = {
 
 		//搜索条件
 		mNav.init();
+
+		//收藏条件
+		fav.init();
 	},
 
 	//顶部导航

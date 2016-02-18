@@ -106,7 +106,7 @@
 
 				<div class="row btnRow tc">
                     <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
-                        <em class="subTxt">下一步</em>
+                        <em class="subTxt">提&nbsp;交</em>
                     </button>
       			</div>
 

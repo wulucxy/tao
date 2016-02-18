@@ -15,6 +15,10 @@ var tabs = require("../../assets/components/tabs");
 //加载更多模块
 var loadMore = require("../../assets/components/loadMore");
 
+
+//历史模块
+var archive = require("./js/archive");
+
 //历史模块
 var history = require("./js/history");
 
@@ -45,6 +49,9 @@ $(".load-more-list").each(function(idx,ele){
 		});
 	}
 });
+
+//我的资料
+archive.init();
 
 //历史模块调用
 history.init();

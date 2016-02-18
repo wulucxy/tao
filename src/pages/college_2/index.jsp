@@ -19,6 +19,9 @@
 		<!-- 学校id -->
 		<input type="hidden" name="collegeId" value="${collegeId}">
 
+		<!-- favorId,如果有的话 -->
+		<input type="hidden" name="favorId" value="${favorId}">
+
 		<div class="container dbWrapper college">
 			<div class="content">
 				<h3 class="clearfix title">
@@ -33,7 +36,7 @@
 						<div class="contentWrap">
 							<h4 class="clearfix">
 								<em class="vm">清华大学</em>
-								<a href="javascript:;" class="btn btn-primary btn-mid fr"><i class="taoIcon favIcon"></i><em class="vm">收藏</em></a>
+								<a href="javascript:;" class="btn btn-primary btn-mid fr btn-fav" data-favtype="1"><i class="taoIcon favIcon"></i><em class="vm unfavedTxt">收藏</em><em class="vm favedTxt">已收藏</em></a>
 							</h4>
 
 							<div class="wellWrapper tabs" id="collegeWrapper">

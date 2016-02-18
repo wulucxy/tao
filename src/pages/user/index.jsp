@@ -13,7 +13,10 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
+		
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${province.id}">
+
 		<div class="container ovh">
 			<div class="content">
 				<h3 class="clearfix title">
@@ -74,10 +77,7 @@
 								</jsp:include>
 
 								<!--  我的收藏 -->
-								<jsp:include page = "/partials/user/_collection.jsp">
-									<jsp:param name="loadMoreUrl_school" value="/loadmore/school" />
-									<jsp:param name="loadMoreUrl_info" value="/loadmore/info" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_collection.jsp" %>
 
 								<!--  我的提问 -->
 								<jsp:include page = "/partials/user/_question.jsp">

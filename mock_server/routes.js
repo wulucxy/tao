@@ -20,5 +20,7 @@ module.exports = {
 	'post::/loadmore/question' : 'mock::api/question.json',
 	'post::/getCity' : 'mock::api/city.json',
 	'post::/1/data/college' : 'mock::api/college.json',
-	'post::/1/data/college/1/majors' : 'mock::api/major.json'
+	'post::/1/data/college/1/majors' : 'mock::api/major.json',
+	'post::/1/profile/favor/college/add' : 'mock::api/addFav.json',
+	'post::/1/profile/favor/college/delete' : 'mock::api/delFav.json'
 };
