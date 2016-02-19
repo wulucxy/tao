@@ -1,0 +1,12 @@
+{
+    "code" : 200,
+    "userId": "",      
+    "userName":"",     
+    "userAvatar":"",   
+    "mobile":"",        
+    "token":"",         
+    "province":21,       
+    "sex":0,             
+    "highSchool":"",   
+    "highYear":2012    
+}

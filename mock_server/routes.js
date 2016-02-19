@@ -23,5 +23,8 @@ module.exports = {
 	'post::/1/data/college' : 'mock::api/college.json',
 	'post::/1/data/college/1/majors' : 'mock::api/major.json',
 	'post::/1/profile/favor/college/add' : 'mock::api/addFav.json',
-	'post::/1/profile/favor/college/delete' : 'mock::api/delFav.json'
+	'post::/1/profile/favor/college/delete' : 'mock::api/delFav.json',
+	'post::/auth/signin' : 'mock::api/siginin.json',
+	'post::/auth/requestCode' : 'mock::api/code.json',
+	'post::/auth/signup' : 'mock::api/signup.json'
 };

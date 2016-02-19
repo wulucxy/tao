@@ -29,11 +29,13 @@
 .icon-lock{background-position: -20px 0;}
 .icon-code{background-position: -40px 0;}
 
-.inputTextWrap{position: relative;padding-left: 64px;}
-.inputTextWrap .iconWrap{position: absolute;width:64px;height:72px;line-height:72px;left:0;top:0;text-align: center;}
+.inputTextWrap,.selectTextWrap{position: relative;padding-left: 64px;}
+.inputTextWrap .iconWrap,.selectTextWrap .iconWrap{position: absolute;width:64px;height:64px;line-height:64px;left:0;top:0;text-align: center;}
 .inputTextWrap .form-control{
-	height: 72px;padding: 16px 0;font-size: 16px;line-height: 1.3333333;border-radius: 6px;border:none;
+	height: 64px;padding: 12px 0;font-size: 16px;line-height: 1.3333333;border-radius: 6px;border:none;
 }
+
+.selectTextWrap{height: 64px;padding-top: 15px;padding-right: 15px;}
 
 .taoModal .modalSubCnt{margin:20px 18px 0;}
 .txtModal .modalSubCnt{
@@ -53,7 +55,7 @@
 .openIconList {text-align: justify;margin-top: 36px;height: 32px;}
 .openIconList>a {display: inline-block}
 
-.verifyLabel{position: absolute;right:16px;top:18px;font-size: 14px;border-radius: 8px;color: #fff;background-color: @color-blue;line-height: 36px;width: 100px;cursor:pointer;
+.verifyLabel{position: absolute;right:16px;top:14px;font-size: 12px;border-radius: 8px;color: #fff;background-color: @color-blue;line-height: 36px;width: 100px;cursor:pointer;
 	&:hover{background-color: @color-hover;}
 }
 .row .verifyLabel{color: #fff;}

@@ -1,19 +1,24 @@
-<div class="modalCntWrap loginModal taoModal g9">
+<div class="modalCntWrap loginModal taoModal g9 modalForm">
  <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">登录</span></h3>
- <form class="modalSubCnt" id="loginForm" onsubmit="return false;">
+ <form class="modalSubCnt" id="loginForm" onsubmit="return false;" autocomplete="off">
 
 <div class="inputRows">
  <div class="row clearfix">
     <div class="inputWrap inputTextWrap">
       <span class="iconWrap"><i class="icon-user icon-phone"></i></span>
-      <input type="text" class="input form-control" id="mobible" name="mobible" maxLength="11" placeholder="请输入手机号" required autocomplete="off">
+      <input type="tel" class="input form-control" id="mobile" name="mobile" maxLength="11" placeholder="请输入手机号" required autocomplete="off">
     </div>
+    <span class="p-error">手机号为11位数字格式</span>
+    <span class="p-error-empty">手机号不能为空</span>
  </div>
+
  <div class="row clearfix">
     <div class="inputWrap inputTextWrap">
       <span class="iconWrap"><i class="icon-user icon-lock"></i></span>
       <input type="password" class="input form-control" id="pw" name="pw" maxLength="11" placeholder="请输入密码" required autocomplete="off">
     </div>
+    <span class="p-error">密码为4-20位数字或字母格式</span>
+    <span class="p-error-empty">密码不能为空</span>
  </div>
 </div>
 
