@@ -1,0 +1,15 @@
+<div class="modalCntWrap taoModal g9 majorListModal">
+ <h3 class="clearfix">
+ <a href="javascript:;" class="icons btn-close fr"></a>
+ <span class="fl"><em class="majorName"><%= name %></em>&nbsp;包含的专业</span>
+</h3>
+
+<div class="majorListWrap">
+  <div class="majorList">
+  	  <% for (var i = 0; i < list.length; i++) { %>
+      <span class="btn btn-default btn-list"><%= list[i].name %></span>
+      <% } %>
+  </div>
+</div>
+
+</div>

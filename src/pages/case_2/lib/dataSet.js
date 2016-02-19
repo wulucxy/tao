@@ -33,9 +33,19 @@ var dataSet = {
         }
         
         //选中城市列表
-        var lis = $.map(that.state.selected,function (item) {
-            return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
-        });
+        var lis = [];
+        if(!that.state.selected.length){
+            lis.push('<li class="noList">动动手指，在左边选择求学地区吧！</li>');
+            $(".btn-positive").addClass("diasabled");
+        }else{
+            lis = $.map(that.state.selected,function (item) {
+                return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+            });
+            if($(".btn-positive").hasClass("diasabled")){
+                $(".btn-positive").removeClass("diasabled"); 
+            }
+        }
+        
 
        $('#tagsWrap').html(lis.join('')); 
     },

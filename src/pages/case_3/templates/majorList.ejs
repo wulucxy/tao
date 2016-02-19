@@ -1,0 +1,28 @@
+<div class="row">
+	<p class="g6 mb12">本科大类：</p>
+
+	<% for (var i = 0; i < subs[0].subs.length; i++) { %>
+	<label class="label_radio">
+		<em class="icon-eye" data-supType=<%= subs[0].id %> data-majorId=<%= subs[0].subs[i].id %> data-name="<%= subs[0].subs[i].name %>" ></em>
+		<input type="radio" class="input form-control" id="majorType<%= subs[0].id %>_<%= subs[0].subs[i].id %>" name="majorType" required>
+		<em class="vm"><%= subs[0].subs[i].name %></em>
+		<em class="icon-yes">
+			<i></i>
+		</em>
+	</label>
+	<% } %>
+</div>
+<div class="row">
+	<p class="g6 mb12">专科大类：</p>
+
+	<% for (var m = 0; m < subs[1].subs.length; m++) { %>
+	<label class="label_radio">
+		<em class="icon-eye" data-supType=<%= subs[1].id %> data-majorId=<%= subs[1].subs[m].id %> data-name="<%= subs[1].subs[m].name %>" ></em>
+		<input type="radio" class="input form-control" id="majorType<%= subs[1].id %>_<%= subs[1].subs[m].id %>" name="majorType" required>
+		<em class="vm"><%= subs[1].subs[m].name %></em>
+		<em class="icon-yes">
+			<i></i>
+		</em>
+	</label>
+	<% } %>
+</div>

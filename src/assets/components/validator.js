@@ -78,6 +78,7 @@
         that.reg= /^radio|checkbox/;
 
         // 自动校验，更新submit按钮的状态
+        // 
         if(o.autoValidate){
           that.onSubmitFn();
         }

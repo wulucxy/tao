@@ -26,5 +26,6 @@ module.exports = {
 	'post::/1/profile/favor/college/delete' : 'mock::api/delFav.json',
 	'post::/auth/signin' : 'mock::api/siginin.json',
 	'post::/auth/requestCode' : 'mock::api/code.json',
-	'post::/auth/signup' : 'mock::api/signup.json'
+	'post::/auth/signup' : 'mock::api/signup.json',
+	'get::1/data/major/all'  : 'mock::api/majorList.json'
 };

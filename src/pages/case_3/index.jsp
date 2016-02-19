@@ -13,8 +13,11 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
-		<div class="container p_case_2">
+
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${province.id}">
+
+		<div class="container p_case_3">
 
 			<div class="content">
 				<h3 class="clearfix title">
@@ -40,75 +43,13 @@
 						<li><a href="#"><em>确认提交信息</em></a></li>
 					</ul>
 				</div>
+				
 
-				<div class="formWrap">
-					<form action="#" onsubmit="return false" autocomplete="off" id="caseForm_2" class="rel">
+				<div class="preloading formWrap" id="caseFormWrapper">
+					<form action="#" onsubmit="return false" autocomplete="off" id="caseForm_3" class="rel contentWrap">
 						
 						<div class="selectContent clearfix" id="majorSelectWrapper">
-							<div class="row">
-								<p class="g6 mb12">本科大类：</p>
-
-								<label for="majorType1_1" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType1_1" name="majorType" required>
-									<em class="vm">理科</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-								<label for="majorType1_2" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType1_2" name="majorType" required>
-									<em class="vm">经济学</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-
-								<label for="majorType1_3" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType1_3" name="majorType" required>
-									<em class="vm">经济学</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-							</div>
-							<div class="row">
-								<p class="g6 mb12">专科大类：</p>
-
-								<label for="majorType2_1" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType2_1" name="majorType" required>
-									<em class="vm">理科</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-								<label for="majorType2_2" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType2_2" name="majorType" required>
-									<em class="vm">经济学</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-
-								<label for="majorType2_3" class="label_radio">
-									<em class="icon_radio"></em>
-									<input type="radio" class="input form-control" id="majorType2_3" name="majorType" required>
-									<em class="vm">经济学</em>
-									<em class="icon-yes">
-										<i></i>
-									</em>
-								</label>
-
-							</div>
+							
 
 						</div>
 						
@@ -117,7 +58,7 @@
 							 	<a class="btn btn-positive btn-primary btn-form">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button class="btn btn-positive btn-form" id="verifyBtn">
+			                    <button class="btn btn-positive btn-form" id="verifyBtn" type="submit">
 			                        <em class="subTxt">确定</em>
 			                    </button>
                   			</div>
