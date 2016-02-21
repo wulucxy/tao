@@ -16,6 +16,7 @@ module.exports = {
 	'/404'   : 'error.jsp',
 	'/info'   : 'info.jsp',
 	'/infoDetail'   : 'infoDetail.jsp',
+	'/book'   : 'bookService.jsp',
 
 	//异步加载
 	'post::/loadmore/history' : 'mock::api/history.json',

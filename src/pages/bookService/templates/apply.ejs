@@ -1,0 +1,87 @@
+<div class="modalCntWrap taoModal g9 modalForm">
+ <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">预约申请</span></h3>
+ <form class="modalSubCnt" id="bookForm" onsubmit="return false;" autocomplete="off">
+
+<div class="row clearfix">
+  <label for="province" class="control-label column col1 fl">
+    <i class="icon-location"></i>
+    <em class="vm">姓名：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
+    </div>
+  </div>
+</div>
+
+<div class="row clearfix">
+  <label for="province" class="control-label column col1 fl">
+    <i class="icon-location"></i>
+    <em class="vm">联系电话：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <input type="tel" class="input form-control" id="mobile" name="mobile" required placeholder="请输入联系电话">
+    </div>
+  </div>
+</div>
+
+<div class="row clearfix">
+  <label for="province" class="control-label column col1 fl">
+    <i class="icon-location"></i>
+    <em class="vm">报考地区：</em></label>
+  <div class="col2 selectWrap rel">
+    <div class="fieldWrap">
+      <select class="form-control" name="sex">
+          <option value="1">男</option>
+          <option value="2">女</option>
+        </select>
+    </div>
+  </div>
+</div>
+
+<div class="row clearfix">
+  <label for="courseType" class="control-label column col1 fl">
+    <i class="icon-location icon-book"></i>
+    <em class="vm">高考科目：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <label for="courseType_1"  class="label_radio inline">
+      <em class="icon-radio"></em>
+      <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked required>
+      <em class="vm">理科</em>
+      </label>
+
+      <label for="courseType_0" class="label_radio inline">
+      <em class="icon-radio"></em>
+      <input type="radio" class="input form-control" id="courseType_0" name="courseType" required>
+      <em class="vm">文科</em>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row clearfix inline">
+  <label for="score" class="control-label column col1 fl">
+    <i class="icon-location icon-fenshu"></i>
+    <em class="vm">高考分数：</em></label>
+  <div class="col2 inputWrap rel">
+    <span class="fieldWrap db">
+      <input type="text" class="input form-control dib" id="score" name="score" placeholder="请输入高考分数(分)" pattern="^[0-9]{1,3}" required>
+    </span>
+  </div>
+</div>
+
+<div class="row clearfix inline">
+   <textarea class="form-control" placeholder="请填写预约内容" rows="3"></textarea>
+</div>
+
+<div class="footerCnt">
+  <div class="row btnRow tc">
+    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
+        <em class="subTxt">提&nbsp;交</em>
+    </button>
+  </div>
+
+</div>
+
+</form>
+</div>

@@ -1,0 +1,16 @@
+{
+	"province" : {
+		"name" : "浙江",
+		"id" : "21"
+	},
+	"adList" : [
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        }
+    ]
+}
