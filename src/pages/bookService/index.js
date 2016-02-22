@@ -70,13 +70,13 @@ var book = {
 					return;
 				}
 
-				
+
 
 			},
 			error : function(){
 				warn("网络错误，请稍后再试");
 			}
-		})
+		});
 	}
 
 };

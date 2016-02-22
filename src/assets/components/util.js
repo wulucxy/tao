@@ -151,7 +151,7 @@ var util = {
        var timer = null;
 
        var countdown = function () { 
-            if (t < 0) {                   //倒计时结束
+            if (t <= 0) {                   //倒计时结束
                 clearInterval(timer);
                 if(callback){callback();}
             } else {

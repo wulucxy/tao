@@ -17,6 +17,7 @@ module.exports = {
 	'/info'   : 'info.jsp',
 	'/infoDetail'   : 'infoDetail.jsp',
 	'/book'   : 'bookService.jsp',
+	'/book2'   : 'bookService_success.jsp',
 
 	//异步加载
 	'post::/loadmore/history' : 'mock::api/history.json',
