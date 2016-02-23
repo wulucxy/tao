@@ -17,7 +17,7 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${province.id}">
 
-		<div class="container dbWrapper college">
+		<div class="container dbWrapper db">
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
@@ -39,7 +39,7 @@
 					        </div>
 				        </div>
 						
-						<div class="m-nav clearfix">
+						<div class="m-nav clearfix college">
 							<div class="crumb clearfix">
 								<a href="javascript:;" class="fr btn btn-default" data-action="clearAll">清空所有</a>
 								<span class="cat-text fl">已选择：</span>

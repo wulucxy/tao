@@ -22,7 +22,7 @@
 		<!-- favorId,如果有的话 -->
 		<input type="hidden" name="favorId" value="${favorId}">
 
-		<div class="container dbWrapper college">
+		<div class="container dbWrapper db">
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">

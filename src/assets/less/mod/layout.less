@@ -116,11 +116,17 @@ html,body{background-color: @color-body;}
 		.head,.foot{position: absolute;}
 		.head{left:10px;top:10px;}
 		.foot{right:10px;top:10px;}
-		.itemLists{margin-right: -16px;}
-		.item{color:#333;margin-right: 16px;}
+		.item{
+			color:#333;margin-right: 16px;
+			&:hover{color: #666;}
+			&.current{color: @color-blue;}
+		}
 		&.expand-mode .body{height:auto;}
 		&.last{border-bottom: none;}
 	}
+
+	&.college .itemLists{margin-right: -16px;}
+	&.college .item{}
 
 	.show-less{display: none;}
 	.expand-mode{
