@@ -31,5 +31,6 @@ module.exports = {
 	'post::/auth/signin' : 'mock::api/siginin.json',
 	'post::/auth/requestCode' : 'mock::api/code.json',
 	'post::/auth/signup' : 'mock::api/signup.json',
-	'get::1/data/major/all'  : 'mock::api/majorList.json'
+	'get::1/data/major/all'  : 'mock::api/majorList.json',
+	'post::/1/data/major' :  'mock::api/majors.json'
 };

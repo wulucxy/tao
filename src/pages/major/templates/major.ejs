@@ -1,0 +1,13 @@
+<% if (majors.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+<% for (var i = 0; i < majors.length; i++) { %>
+<li class="clearfix">
+	<div class="bg bg-f1"><%= majors[i].name %>：<%= majors[i].subs.length %>个</div>
+	<div class="majorBtnRow">
+		<% for (var j = 0; j < majors[i].subs.length; j++) { %>
+		<a href="#" data-id="<%= majors[i].subs[j].id %>" class="btn btn-primary btn-mid"><%= majors[i].subs[j].name %></a>
+		<% } %>
+	</div>
+</li>
+<% }} %>

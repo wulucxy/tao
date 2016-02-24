@@ -60,21 +60,21 @@
 								</div>
 								
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="1:">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="bachelor:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="1:1">哲学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:2">经济学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:3">法学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:4">教育学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:5">文学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:6">历史</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:7">力学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:8">工学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:9">农学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:10">医学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:11">管理学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="1:0">不选本科</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:1">哲学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:2">经济学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:3">法学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:4">教育学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:5">文学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:6">历史</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:7">力学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:8">工学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:9">农学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:10">医学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:11">管理学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:0">不选本科</a>
 										</div>
 									</div>
 								</div>
@@ -95,20 +95,20 @@
 									</a>
 								</div>
 								
-								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="2:">不限</a>
+								<div class="body media last">
+									<a class="fl item" href="javascript:;" data-action="add" data-value="junior:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">农林牧渔大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">交通运输大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">生化与药品大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">土建大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">材料与能源大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">医药卫生大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">法律大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">艺术设计传媒大类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="2:1">电子信息大类</a>										
-										<a href="javascript:;" class="item" data-action="add" data-value="2:0">不选专科</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">农林牧渔大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">交通运输大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">生化与药品大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">土建大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">材料与能源大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">医药卫生大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">法律大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">艺术设计传媒大类</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:1">电子信息大类</a>										
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:0">不选专科</a>
 										</div>
 									</div>
 								</div>

@@ -1,6 +1,6 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
-var tmpl = require("../templates/school.ejs");
+var tmpl = require("../templates/major.ejs");
 
 var dataSet = { 
 	render : function(){
@@ -23,11 +23,8 @@ var dataSet = {
 
         if(!$("input[name=city]").length){
         	var inputList = [];
-        	inputList.push('<input type="hidden" name="city">');
-        	inputList.push('<input type="hidden" name="collegeType">');
-        	inputList.push('<input type="hidden" name="ownerType">');
-        	inputList.push('<input type="hidden" name="level">');
-        	inputList.push('<input type="hidden" name="feature">');
+        	inputList.push('<input type="hidden" name="bachelor">');
+        	inputList.push('<input type="hidden" name="junior">');
         	$(".crumb").append(inputList.join(""));
         }
 
@@ -36,11 +33,6 @@ var dataSet = {
     		$('[name='+item.type+']').val(item.value || "");
     		_key += $('[name='+item.type+']').val();
     	});
-
-    	//分页
-    	if(!that.pageObject[_key]){
-    		that.pageObject[_key] = 1;
-    	}
     	 
         that.requestData();
 	},
@@ -49,20 +41,16 @@ var dataSet = {
 		var that = this,o = that.options;
 
 		var _data = {
-			city : $("[name=city]").val(),
-			collegeType : $("[name=collegeType]").val(),
-			ownerType : $("[name=ownerType]").val(),
-			level : $("[name=level]").val(),
-			feature : $("[name=feature]").val()
+			bachelor : $("[name=bachelor]").val(),
+			junior : $("[name=junior]").val()
 		};
 
-		var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
-		_data.page = that.pageObject[_key];
+        if(_data.bachelor == "" && _data.junior == "") return;
 
         var provinceId = $("[name=province]").val();
 
 		$.ajax({
-			url : provinceId + "/data/college",
+			url : provinceId + "/data/major",
 			type : "post",
 			data : _data,
 			success : function(res){
@@ -70,34 +58,17 @@ var dataSet = {
 					var res = $.parseJSON(res);
 				}
 
-                //如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pageObject[_key]++;
-                }else{
-                    that.pageObject[_key] = 1;
-                }
-				
-				that.loadList(res,that.pageObject[_key]);
+               
+				that.loadList(res);
 			}
 		});
 	},
 
-	loadList : function(data,pager){
+	loadList : function(data){
 		var that = this,o = that.options;
 		var _html = tmpl(data);
 
-		if(pager == 1){
-			$(".schoolList").empty().html(_html);
-		}else{
-			$(".schoolList").append(_html);
-		}
-
-		$(".btn-loading").removeClass("loading disabled");
-
-		//最后一页
-		if(pager > data.count){
-			$(".btn-loading").addClass("loading-all");
-		};
+		$(".majorList").empty().html(_html);
 	},
 
 	updateUI : function() {
@@ -110,9 +81,6 @@ var dataSet = {
         };
 
         this.options = o;
-
-        //保存分页对象
-        this.pageObject = {};
 
         this.bindEvt();
         this.updateUI();
@@ -127,7 +95,16 @@ var dataSet = {
     		var type = link.data("value").split(":")[0],
     			val =  link.data("value").split(":")[1];
 
-    		if(link.hasClass("current") || val == "" || $("[name="+type+"]").val() ) return;
+    		if(link.hasClass("current") || val == "" ) return;
+            link.siblings().removeClass("current");
+
+            $.each(that.state.tagList,function(idx,item){
+                if(type == item.type){
+                    that.state.tagList.splice(idx,1);
+                    return false;
+                }
+            });
+
     		link.addClass("current");
 
 			that.state.tagList.push({
@@ -164,14 +141,6 @@ var dataSet = {
             });
 
 			that.updateUI();  		
-    	});
-
-    	$(".btn-loading").on("click",function(e){
-    		e.preventDefault();
-    		var btn = $(this).closest(".btn");
-    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-    		btn.addClass("disabled loading");
-    		that.requestData(btn);
     	});
     }
 };

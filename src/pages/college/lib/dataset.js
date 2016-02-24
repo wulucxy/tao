@@ -127,7 +127,16 @@ var dataSet = {
     		var type = link.data("value").split(":")[0],
     			val =  link.data("value").split(":")[1];
 
-    		if(link.hasClass("current") || val == "" || $("[name="+type+"]").val() ) return;
+    		if(link.hasClass("current") || val == "" ) return;
+            link.siblings().removeClass("current");
+
+            $.each(that.state.tagList,function(idx,item){
+                if(type == item.type){
+                    that.state.tagList.splice(idx,1);
+                    return false;
+                }
+            });
+
     		link.addClass("current");
 
 			that.state.tagList.push({
