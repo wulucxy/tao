@@ -54,9 +54,12 @@
         }
     ],
 
-    "caseBox" : [
-        {"userCount" : "33333"},{},{},{}
-    ],
+    "userCount" : {
+        "evaluateStep" : "1234",
+        "bookStep" : "1234",
+        "majorExam" : "1234",
+        "abordData" : "1234"
+    },
 
     "adList" : [
         {

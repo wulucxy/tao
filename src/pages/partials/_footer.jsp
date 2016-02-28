@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <footer class="footer">
@@ -7,12 +7,12 @@
 		<div class="col1 fl column">
 			<h4 class="h4">工具箱</h4>
 			<div class="tagLists f-lh">
-				<a href="#1" class="links" target="_blank">成绩管理</a>
-				<a href="#2" class="links" target="_blank">高校问答</a>
-				<a href="#3" class="links" target="_blank">高考方案定制</a>
-				<a href="#4" class="links" target="_blank">专业选择测试</a>
-				<a href="#5" class="links" target="_blank">高考志愿评估</a>
-				<a href="#6" class="links" target="_blank">留学方案定制</a>
+				<a href="/box/score_management" class="links" target="_blank">成绩管理</a>
+				<a href="/box/college_faq" class="links" target="_blank">高校问答</a>
+				<a href="/box/plan/book_step1" class="links" target="_blank">高考方案定制</a>
+				<a href="/box/plan/major_exam1" class="links" target="_blank">专业选择测试</a>
+				<a href="/box/plan/evaluate_step1" class="links" target="_blank">高考志愿评估</a>
+				<a href="/library/aboard_data" class="links" target="_blank">留学方案定制</a>
 				<a href="#7" class="links" target="_blank">志愿填报服务预约</a>
 			</div>
 
@@ -20,11 +20,11 @@
 		<div class="col2 fl column">
 			<h4 class="h4">资料库</h4>
 			<div class="tagLists f-lh">
-				<a href="#1" class="links" target="_blank">高校数据库</a>
-				<a href="#2" class="links" target="_blank">科目数据库</a>
-				<a href="#3" class="links" target="_blank">专业数据库</a>
-				<a href="#4" class="links" target="_blank">海外院校库</a>
-				<a href="#5" class="links" target="_blank">分数线数据库</a>
+				<a href="/library/college" class="links" target="_blank">高校数据库</a>
+				<a href="/library/subject" class="links" target="_blank">科目数据库</a>
+				<a href="/library/major" class="links" target="_blank">专业数据库</a>
+				<a href="/library/aboard_data" class="links" target="_blank">海外院校库</a>
+				<a href="/library/score_line" class="links" target="_blank">分数线数据库</a>
 			</div>
 		</div>
 		<div class="col3 column fl f-lh">

@@ -19,9 +19,9 @@ glob.sync('./tasks/*.js').forEach(function (file) {
 
 
 gulp.task('build', function (cb) {
-	runSequence('webpack',cb);
+	runSequence('webpack','copyTag',cb);
 });
 
 gulp.task('server', function (cb) {
-	runSequence('webpack','mock-server', cb);
+	runSequence('build','mock-server', cb);
 });

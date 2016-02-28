@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -281,8 +282,8 @@
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">8953</em>&nbsp;名学生</span>
-										<a href="#" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.bookStep}</em>&nbsp;名学生</span>
+										<a href="/box/plan/book_step1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
 							</li>
@@ -296,8 +297,8 @@
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">8953</em>&nbsp;名学生</span>
-										<a href="#" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.evaluateStep}</em>&nbsp;名学生</span>
+										<a href="/box/plan/evaluate_step1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
 							</li>
@@ -312,8 +313,8 @@
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">8953</em>&nbsp;名学生</span>
-										<a href="#" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.majorExam}</em>&nbsp;名学生</span>
+										<a href="/box/plan/major_exam1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
 							</li>
@@ -327,8 +328,8 @@
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">8953</em>&nbsp;名学生</span>
-										<a href="#" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.abordData}</em>&nbsp;名学生</span>
+										<a href="/box/plan/aboard" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
 							</li>

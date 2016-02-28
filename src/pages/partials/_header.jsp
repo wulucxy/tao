@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!--[if lte IE 9]>
@@ -49,31 +49,31 @@
 				<ul class="clearfix navLists fl">
 					<li class="navList current"><a href="/">首页</a></li>
 					<li class="navList" data-toggle="dropdown">
-						<a href="#2" class="trigger">工具箱</a>
+						<a href="javascript:;" class="trigger">工具箱</a>
 						<div class="listWrap">
 							<ul class="options">
-								<li class="ddlist"><a href="#">高考方案定制</a></li>
-								<li class="ddlist"><a href="#">高考志愿评估</a></li>
-								<li class="ddlist"><a href="#">成绩管理</a></li>
-								<li class="ddlist"><a href="#">专业测试</a></li>
-								<li class="ddlist"><a href="#">留学方案定制</a></li>
+								<li class="ddlist"><a href="/box/plan/book_step1">高考方案定制</a></li>
+								<li class="ddlist"><a href="/box/plan/evaluate_step1">高考志愿评估</a></li>
+								<li class="ddlist"><a href="/box/score_management">成绩管理</a></li>
+								<li class="ddlist"><a href="/box/plan/major_exam1">专业测试</a></li>
+								<li class="ddlist"><a href="/box/plan/aboard">留学方案定制</a></li>
 							</ul>
 						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
-						<a href="#3" class="trigger">资料库</a>
+						<a href="javascript:;" class="trigger">资料库</a>
 						<div class="listWrap">
 							<ul class="options">
-								<li class="ddlist"><a href="#">院校数据库</a></li>
-								<li class="ddlist"><a href="#">专业数据库</a></li>
-								<li class="ddlist"><a href="#">科目数据库</a></li>
-								<li class="ddlist"><a href="#">分数线数据库</a></li>
+								<li class="ddlist"><a href="/library/college">院校数据库</a></li>
+								<li class="ddlist"><a href="/library/major">专业数据库</a></li>
+								<li class="ddlist"><a href="/library/subject">科目数据库</a></li>
+								<li class="ddlist"><a href="/library/score_line">分数线数据库</a></li>
 								<li class="ddlist"><a href="#">海外院校库</a></li>
 							</ul>
 						</div>
 					</li>
 					<li class="navList">
-						<a href="#3">资讯</a>
+						<a href="/info">资讯</a>
 					</li>
 					<li class="navList" data-toggle="dropdown" >
 						<a href="javascript:;" class="trigger">下载APP</a>
@@ -90,7 +90,7 @@
 						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
-						<a href="#5" class="trigger">公众号</a>
+						<a href="javascript:;" class="trigger">公众号</a>
 						<div class="listWrap">
 							<ul class="options down-app-options">
 							<li class="floatTipWrap down-app-wrapper">
