@@ -19,18 +19,22 @@ module.exports = {
 	'/book'   : 'bookService.jsp',
 	'/book2'   : 'bookService_success.jsp',
 	'/major'   : 'major.jsp',
+	'/major2'   : 'major_2.jsp',
 
 	//异步加载
+	'post::/loadmore/test' : 'mock::api/test.json',
 	'post::/loadmore/history' : 'mock::api/history.json',
 	'post::/loadmore/question' : 'mock::api/question.json',
 	'post::/getCity' : 'mock::api/city.json',
 	'post::/1/data/college' : 'mock::api/college.json',
 	'post::/1/data/college/1/majors' : 'mock::api/major.json',
 	'post::/1/profile/favor/college/add' : 'mock::api/addFav.json',
-	'post::/1/profile/favor/college/delete' : 'mock::api/delFav.json',
+	'post::/1/profile/favor/major/add' : 'mock::api/addFav.json',
+	'post::/1/profile/favor/delete' : 'mock::api/delFav.json',
 	'post::/auth/signin' : 'mock::api/siginin.json',
-	'post::/auth/requestCode' : 'mock::api/code.json',
+	'post::/auth/requestCode' : 'mock::ap/profile/favor/major/addi/code.json',
 	'post::/auth/signup' : 'mock::api/signup.json',
 	'get::1/data/major/all'  : 'mock::api/majorList.json',
-	'post::/1/data/major' :  'mock::api/majors.json'
+	'post::/1/data/major' :  'mock::api/majors.json',
+	'post::/1/data/major/college':  'mock::api/college.json'
 };

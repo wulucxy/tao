@@ -40,11 +40,12 @@
 								<ul class="userInfoList">
 									<li class="current"><a href="javascript:;" data-link="myInfo">我的资料</a></li>
 									<li><a href="javascript:;" data-link="history">历史方案</a></li>
-									<li><a href="javascript:;" data-link="achivement">我的成绩</a></li>
+									<li><a href="javascript:;" data-link="test">历史测试</a></li>
+									<!-- <li><a href="javascript:;" data-link="achivement">我的成绩</a></li> -->
 									<li><a href="javascript:;" data-link="collection">我的收藏</a></li>
 									<li><a href="javascript:;" data-link="question">我的提问</a></li>
-									<li><a href="javascript:;" data-link="book">我的预约</a></li>
-									<li class="last"><a href="javascript:;" data-link="coupon">优惠券</a></li>
+									<li class="last"><a href="javascript:;" data-link="book">我的预约</a></li>
+									<!-- <li class="last"><a href="javascript:;" data-link="coupon">优惠券</a></li> -->
 								</ul>
 								<div class="kefu">
 									<p>客服电话：</p>
@@ -71,10 +72,16 @@
 									<jsp:param name="loadMoreTmpl" value="history" />
 								</jsp:include>
 
-								<!--  achivement -->
-								<jsp:include page = "/partials/user/_achivement.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore" />
+								<!--  历史测试 -->
+								<jsp:include page = "/partials/user/_test.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore/test" />
+									<jsp:param name="loadMoreTmpl" value="test" />
 								</jsp:include>
+
+								<!--  achivement -->
+								<!-- <jsp:include page = "/partials/user/_achivement.jsp">
+									<jsp:param name="loadMoreUrl" value="/loadmore" />
+								</jsp:include> -->
 
 								<!--  我的收藏 -->
 								<%@ include file = "/partials/user/_collection.jsp" %>
@@ -92,10 +99,10 @@
 								</jsp:include>
 
 								<!--  我的优惠券 -->
-								<jsp:include page = "/partials/user/_coupon.jsp">
+								<!-- <jsp:include page = "/partials/user/_coupon.jsp">
 									<jsp:param name="loadMoreUrl" value="/loadmore" />
 									<jsp:param name="loadMoreTmpl" value="coupon" />
-								</jsp:include>
+								</jsp:include> -->
 							</div>
 						</div>
 					</div>			

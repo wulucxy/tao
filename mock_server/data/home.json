@@ -53,6 +53,11 @@
             "moment":"1小时前"
         }
     ],
+
+    "caseBox" : [
+        {"userCount" : "33333"},{},{},{}
+    ],
+
     "adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",
@@ -64,5 +69,52 @@
             "imgUrl" : "http://placehold.it/300x260",
             "href" : "#5"
         }
+    ],
+    "collegeList" : [
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "imgHref": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        }
+
     ]
 }

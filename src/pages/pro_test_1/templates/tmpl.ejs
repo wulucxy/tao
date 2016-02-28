@@ -1,0 +1,39 @@
+<div class="modalCntWrap verifyCodeModal taoModal g9">
+ <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">授权码</span></h3>
+ <form class="modalSubCnt" id="verifyCodeForm" onsubmit="return false;">
+
+<!-- <div class="inputRows">
+   <div class="row clearfix">
+    <div class="inputWrap inputTextWrap">
+      <span class="iconWrap"><i class="icon-user icon-code"></i><em class="vm">授权码：</em></span>
+      <input type="text" class="input form-control" id="code" name="code" maxLength="6" placeholder="请输入授权码" required autocomplete="off">
+    </div>
+     <span class="p-error"授权码为6位字母、数字格式</span>
+    <span class="p-error-empty">授权码不能为空</span>
+ </div>
+   -->
+  <div class="row clearfix">
+      <label for="verifyCode" class="control-label g3 column col1 fl">
+        <i class="icon-code"></i>
+        <em class="vm">授权码：</em></label>
+      <div class="col2 inputWrap rel">
+        <div class="fieldWrap">
+          <input type="text" class="input form-control" id="name" name="name" maxlength="6" required placeholder="请输入授权码" pattern="^\w{6}">
+        </div>
+      </div>
+      <div class="errInfo">
+        <span class="p-error">授权码为6位字母、数字格式</span>
+        <span class="p-error-empty">授权码不能为空</span>
+      </div>
+  </div>
+
+ <div class="footerCnt">
+     <p id="errTxt" class="errTxt"></p>
+     <div class="row btnRow">
+       <button type="submit" class="btn btn-positive btn-form" id="verifyCode">
+       		<em class="subTxt">确定</em></button>
+     </div>
+ </div>
+
+</form>
+</div>

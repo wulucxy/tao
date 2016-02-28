@@ -25,9 +25,35 @@ var fav = {
     	if(type == 1 && !btn.hasClass("faved")){
     		that.addFavCollege(btn,type);
     	}else if(type == 1 && btn.hasClass("faved")){
-    		that.removeFavCollege(btn,type);
+    		that.removeFav(btn,type);
     	}
 
+        //收藏专业
+        if(type == 2 && !btn.hasClass("faved")){
+            that.addFavMajor(btn,type);
+        }else if(type == 2 && btn.hasClass("faved")){
+            that.removeFav(btn,type);
+        }
+
+    },
+
+    addFavMajor : function(btn,type){
+        var that = this;
+        $.ajax({
+                url : that.province+"/profile/favor/major/add",
+                type : "post",
+                data : {collegeId : $("[name=majorId]").val(),favorType : type},
+                success : function(res){
+                    if(typeof res == "string"){
+                        var res = $.parseJSON(res);
+                    }
+
+                    if(res.code==200){
+                        btn.addClass("faved");
+                        $("[name=favorId]").val(res.favorId);
+                    }
+                }
+            });
     },
 
     addFavCollege : function(btn,type){
@@ -49,10 +75,10 @@ var fav = {
     		});
     },
 
-    removeFavCollege : function(btn,type){
+    removeFav : function(btn,type){
     	var that = this;
     	$.ajax({
-    			url : that.province+"/profile/favor/college/delete",
+    			url : that.province+"/profile/favor/delete",
     			type : "post",
     			data : {favorId : $("[name=favorId]").val()},
     			success : function(res){

@@ -17,7 +17,6 @@
 					  <option value="0">不限</option>
 					  <option value="1">高考方案定制</option>
 					  <option value="2">高考志愿评估</option>
-					  <option value="3">专业选择测试</option>
 				</select>
 			</div>
 		</div>

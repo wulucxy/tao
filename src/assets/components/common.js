@@ -44,7 +44,7 @@ var common = {
 		});
 
 		dropdown($("#selectSwitch"),{
-			event : "click",
+			event : "hover",
 			selectMode : true
 		});
 

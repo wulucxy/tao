@@ -71,6 +71,18 @@
 			</li>
 		</ul>
 	</section>
+
+	<section class="s-carousel">
+		<div class="collegeWrap container ovh">
+		<ul class="collegeList clearfix">
+			<c:forEach var="list" items="${collegeList}">
+				<li class="college"><a href="${list.href}" target="_blank">
+					<img src="${list.imgUrl}" >
+				</a></li>
+			</c:forEach>
+		</ul>
+		</div>
+	</section>
 	
 	<section class="ovh s-recommend">
 	  <div class="container ovh">
@@ -295,7 +307,7 @@
 									<i class="icon-tools"></i>
 								</span>
 								<div class="media-body">
-									<h5>专业选择测试<span class="badge"><i class="icon-nee"></i>
+									<h5 class="neeRow">专业选择测试<span class="badge"><i class="icon-nee"></i>
 									<em class="vm">教育部考试中心独家授权</em></span></h5>
 									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
 									

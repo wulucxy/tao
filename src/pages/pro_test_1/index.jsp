@@ -36,7 +36,7 @@
 					
 					<div class="footerCnt">
 						<div class="row btnRow">
-		                    <a href="/pro2" class="btn btn-positive btn-form" id="goProTest">
+		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
 		                        <em class="subTxt">开始测试</em>
 		                    </a>
 		      			</div>

@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="fr clearfix g-login">
-				<div class="thirdLogin fl f14">
+				<!-- <div class="thirdLogin fl f14">
 					<a href="#" class="weixin link">
 						<span class="thirdIcon wxIcon">&nbps;</span><span class="vm">微信登录</span>
 					</a>
@@ -32,7 +32,7 @@
 					<a href="#" class="weibo link">
 						<span class="thirdIcon wbIcon">&nbps;</span><span class="vm">微博登录</span>
 					</a>
-				</div>
+				</div> -->
 				<div class="m-login fr">
 					<div class="hd-login">
 						<a href="javascript:;" class="loginBtn link" id="login">登录</a>

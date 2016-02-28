@@ -43,7 +43,7 @@ var defaults = {
 	entry: entries,
 	output: {
 		path: distPath,
-		filename: 'assets/js/[name].js',
+		filename: 'static/taoWeb/js/[name].js',
 		publicPath: '/'
 	},
 	externals :  {

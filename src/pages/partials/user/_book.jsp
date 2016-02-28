@@ -18,9 +18,10 @@
 						<span>王小胖</span>
 						<span>杭州</span><span>1333333333</span>
 						<span>理科</span><span>40000</span>
+						<span>专家面对面服务</span>
 					</p>
 					<p>
-						你好，我想咨询下志愿填报问题
+						27号上午10点
 					</p>
 				</div>
 			</div>
@@ -38,10 +39,10 @@
 					<p>
 						<span>王小胖</span>
 						<span>杭州</span><span>1333333333</span>
-						<span>理科</span><span>40000</span>
+						<span>理科</span><span>40000</span><span>专家面对面服务</span>
 					</p>
 					<p>
-						你好，我想咨询下志愿填报问题
+						27号上午10点
 					</p>
 				</div>
 			</div>
@@ -59,10 +60,10 @@
 					<p>
 						<span>王小胖</span>
 						<span>杭州</span><span>1333333333</span>
-						<span>理科</span><span>40000</span>
+						<span>理科</span><span>40000</span><span>专家面对面服务</span>
 					</p>
 					<p>
-						你好，我想咨询下志愿填报问题
+						27号上午10点
 					</p>
 				</div>
 			</div>
@@ -84,10 +85,10 @@
 					<p>
 						<span>王小胖</span>
 						<span>杭州</span><span>1333333333</span>
-						<span>理科</span><span>40000</span>
+						<span>理科</span><span>40000</span><span>专家面对面服务</span>
 					</p>
 					<p>
-						你好，我想咨询下志愿填报问题
+						27号上午10点
 					</p>
 				</div>
 			</div>

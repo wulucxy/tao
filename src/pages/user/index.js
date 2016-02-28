@@ -47,6 +47,11 @@ $(".load-more-list").each(function(idx,ele){
 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
 			listAttr : "historyList"
 		});
+	}else if(idx == 1){
+		loadMore($(ele),{
+			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
+			listAttr : "codes"
+		});
 	}
 });
 

@@ -4,7 +4,7 @@
 
 <div class="row clearfix">
   <label for="province" class="control-label column col1 fl">
-    <i class="icon-location icon-user"></i>
+    <i class="icon-location icon-newuser"></i>
     <em class="vm">姓名：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
@@ -15,7 +15,7 @@
 
 <div class="row clearfix">
   <label for="province" class="control-label column col1 fl">
-    <i class="icon-location icon-phone"></i>
+    <i class="icon-location icon-newphone"></i>
     <em class="vm">联系电话：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
@@ -70,9 +70,41 @@
   </div>
 </div>
 
-<div class="row clearfix inline">
-   <textarea class="form-control" placeholder="请填写预约内容" name="content" rows="3" required></textarea>
+<div class="row clearfix">
+  <label for="bookType" class="control-label column col1 fl">
+    <i class="icon-location icon-book"></i>
+    <em class="vm">预约内容：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap bookCnt">
+      <label for="bookType_1"  class="label_radio inline">
+      <em class="icon-radio"></em>
+      <input type="radio" class="input form-control" id="bookType_1" name="bookType" checked required>
+      <em class="vm">专家线上服务</em>
+      </label>
+
+      <label for="bookType_0" class="label_radio inline">
+      <em class="icon-radio"></em>
+      <input type="radio" class="input form-control" id="bookType_0" name="bookType" required>
+      <em class="vm">专家面对面服务</em>
+      </label>
+    </div>
+  </div>
 </div>
+
+<div class="row clearfix">
+  <label for="booktime" class="control-label column col1 fl">
+    <i class="icon-location icon-phone"></i>
+    <em class="vm">预约时间：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <input type="tel" class="input form-control" id="booktime" name="booktime" required placeholder="预约时间">
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row clearfix inline">
+   <textarea class="form-control" placeholder="请填写预约内容" name="content" rows="3" required></textarea>
+</div> -->
 
 <div class="footerCnt">
   <div class="row btnRow tc">

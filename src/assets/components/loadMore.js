@@ -15,13 +15,14 @@ Plugin.prototype = {
 
     	//模板地址
     	that.tmpl = o.tmpl;
-    	that.btn = $(".btn-loading");
+    	that.btn = that.target.closest(".content").find(".btn-loading");
 
     	if(Object.prototype.toString.call(that.tmpl) != '[object Function]'){
     		return;
     	}
 
-    	that.btn.on("click",function(e){
+    	that.btn.off().on("click",function(e){
+    		console.log("btn is clicked");
     		e.preventDefault();
     		var btn = $(this).closest(".btn");
     		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
@@ -40,7 +41,6 @@ Plugin.prototype = {
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
                 }
-
 
                 that.insertData.call(that,res);
 			}

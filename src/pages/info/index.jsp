@@ -18,7 +18,7 @@
 			<div class="column fl col1">
 				<a target="_blank"class="infoLink big">
 					<span class="imgWrap">
-					<img src="./img/1.png" class="responsive">
+					<img src="./img/3.png" class="responsive">
 					</span>
 					<div class="figbar te">
 						参加2017年新高考的考生们，从现在起，规划 你的升学方向吧</div>
@@ -38,7 +38,7 @@
 					<div class="column fl col1 mr10">
 						<a target="_blank" class="infoLink sml">
 							<span class="imgWrap">
-								<img src="./img/3.png" class="responsive">
+								<img src="./img/1.png" class="responsive">
 							</span>
 							<div class="figbar">
 						<em class="vm w99 dib">参加2017年新高考的考生们，从现在起，规划 你的升学方向吧</em><em class="pixel1 vm"></em></div></a>
@@ -67,8 +67,8 @@
 										全部资讯
 										<em class="underLine"></em>	
 									</span>
-									<a href="#" class="link fr more" target="_blank">更多&gt;&gt;</a>
-								</h3>
+<!-- 									<a href="#" class="link fr more" target="_blank">更多&gt;&gt;</a>
+ -->								</h3>
 								<ul class="infoList load-more-list">
 						
 									<li>

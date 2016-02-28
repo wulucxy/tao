@@ -13,3 +13,8 @@ var common = require("../../assets/components/common");
 /* 可选，视需求而定 */
 var slider = require("../../assets/components/unslider");
 slider($("#bannerShow"));
+
+
+var carousel = require("./lib/carousel");
+
+carousel.init();

@@ -37,12 +37,10 @@
 								</div>
 								
 								<div class="shareComponents tc">
-									<em class="vm">分享到：</em>
-									<a href="" class="btn btn-outlined btn-default bd vm">微信</a>
+									<%@ include file = "/partials/_share.jsp" %>
 								</div>
-
-							</div>
-							
+								
+							</div>							
 						</div>
 					</div>
 				</div>
@@ -161,9 +159,10 @@
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>
-
+	
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+
 	</body>
 </html>
