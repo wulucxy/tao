@@ -22,7 +22,7 @@
 				<c:forEach var="banner" items="${bannerList}">
 				   <li class="picSlide" data-pic = "${banner.imgUrl}" >
 				   <c:choose>
-				    <c:when test="${banner.imgHrel}">
+				    <c:when test="${banner.imgHref}">
 				   		<a href="${banner.imgHref}" target="_blank" >&nbsp;</a>
 					</c:when>
 					<c:otherwise>
