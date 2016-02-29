@@ -125,7 +125,8 @@ webpackJsonp([13],{
 			$.ajax({
 				url : "/v2/client/"+provinceId + "/data/major",
 				type : "post",
-				data : _data,
+	            contentType: "application/json",
+				data : JSON.stringify(_data),
 				success : function(res){
 					if(typeof res == "string"){
 						var res = $.parseJSON(res);

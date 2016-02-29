@@ -19252,20 +19252,21 @@
 		    $.ajax({
 		        url: "/v2/client/auth/signup",
 		        type: "post",
-		        data: {
+		        contentType: "application/json",
+		        data: JSON.stringify({
 		          code : $("[name=code]").val(),
 		          mobile: $("[name=mobile]").val(),
 		          pw: userUtil.encrypt($("[name=pw]").val()),
 		          province :  $("#provinceId").val()
-		        },
+		        }),
 		        success: function(res) {
 		          if (typeof res == "string") {
 		            var res = $.parseJSON(res);
 		          }
 	
-		          if(res.code == 200){
+		          if(!res.code){
 		          	setTimeout(function(){
-		          		//window.location = "/";
+		          		window.location = "/";
 		          	},400);
 		          }else{
 		          	var oError = $('.errTxt');
@@ -19387,7 +19388,8 @@
 	        $.ajax({
 	            url: sendSMSUrl || "/v2/client/auth/requestCode",
 	            type: 'POST',
-	            data: _data,
+	            contentType: "application/json",
+	            data: JSON.stringify(_data),
 	            success : function(data){
 	             //发送短信验证码成功
 	             if(typeof data == "string"){
@@ -19477,21 +19479,22 @@
 			var that = this;
 		    btn.addClass('disabled');
 		    $.ajax({
-		        url: "/auth/resetPassword",
+		        url: "/v2/client/auth/resetPassword",
 		        type: "post",
-		        data: {
+		        contentType: "application/json",
+		        data: JSON.stringify({
 		          code : $("[name=code]").val(),
 		          mobile: $("[name=mobile]").val(),
 		          pw: userUtil.encrypt($("[name=pw]").val())
-		        },
+		        }),
 		        success: function(res) {
 		          if (typeof res == "string") {
 		            var res = $.parseJSON(res);
 		          }
 	
-		          if(res.code == 200){
+		          if(!res.code){
 		          	setTimeout(function(){
-		          		//window.location = "/";
+		          		window.location = "/";
 		          	},400);
 		          }else{
 		          	var oError = $('.errTxt');
@@ -19602,13 +19605,14 @@
 	        $.ajax({
 	                url : "/v2/client/"+that.province+"/profile/favor/major/add",
 	                type : "post",
-	                data : {collegeId : $("[name=majorId]").val(),favorType : type},
+	                contentType: "application/json",
+	                data : JSON.stringify({collegeId : $("[name=majorId]").val(),favorType : type}),
 	                success : function(res){
 	                    if(typeof res == "string"){
 	                        var res = $.parseJSON(res);
 	                    }
 	
-	                    if(res.code==200){
+	                    if(!res.code){
 	                        btn.addClass("faved");
 	                        $("[name=favorId]").val(res.favorId);
 	                    }
@@ -19621,13 +19625,14 @@
 	    	$.ajax({
 	    			url : "/v2/client/"+that.province+"/profile/favor/college/add",
 	    			type : "post",
-	    			data : {collegeId : $("[name=college]").val(),favorType : type},
+	                contentType: "application/json",
+	    			data : JSON.stringIfy({collegeId : $("[name=college]").val(),favorType : type}),
 	    			success : function(res){
 	    				if(typeof res == "string"){
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	    				if(res.code==200){
+	    				if(!res.code){
 	    					btn.addClass("faved");
 	    					$("[name=favorId]").val(res.favorId);
 	    				}
@@ -19640,13 +19645,14 @@
 	    	$.ajax({
 	    			url : "/v2/client/"+that.province+"/profile/favor/delete",
 	    			type : "post",
-	    			data : {favorId : $("[name=favorId]").val()},
+	                contentType: "application/json",
+	    			data : JSON.stringify({favorId : $("[name=favorId]").val()}),
 	    			success : function(res){
 	    				if(typeof res == "string"){
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	    				if(res.code==200){
+	    				if(!res.code){
 	    					btn.removeClass("faved");
 	    					$("[name=favorId]").val("");
 	    				}

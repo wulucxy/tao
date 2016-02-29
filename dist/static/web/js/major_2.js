@@ -177,7 +177,8 @@ webpackJsonp([17],{
 			$.ajax({
 				url : "/v2/client/"+that.province + "/data/major/college",
 				type : "post",
-				data : _data,
+				contentType: "application/json",
+				data : JSON.stringify(_data),
 				success : function(res){
 					if(typeof res == "string"){
 						var res = $.parseJSON(res);

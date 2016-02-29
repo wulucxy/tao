@@ -85,20 +85,21 @@ var reg = {
 	    $.ajax({
 	        url: "/v2/client/auth/signup",
 	        type: "post",
-	        data: {
+	        contentType: "application/json",
+	        data: JSON.stringify({
 	          code : $("[name=code]").val(),
 	          mobile: $("[name=mobile]").val(),
 	          pw: userUtil.encrypt($("[name=pw]").val()),
 	          province :  $("#provinceId").val()
-	        },
+	        }),
 	        success: function(res) {
 	          if (typeof res == "string") {
 	            var res = $.parseJSON(res);
 	          }
 
-	          if(res.code == 200){
+	          if(!res.code){
 	          	setTimeout(function(){
-	          		//window.location = "/";
+	          		window.location = "/";
 	          	},400);
 	          }else{
 	          	var oError = $('.errTxt');

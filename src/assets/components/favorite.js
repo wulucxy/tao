@@ -42,13 +42,14 @@ var fav = {
         $.ajax({
                 url : "/v2/client/"+that.province+"/profile/favor/major/add",
                 type : "post",
-                data : {collegeId : $("[name=majorId]").val(),favorType : type},
+                contentType: "application/json",
+                data : JSON.stringify({collegeId : $("[name=majorId]").val(),favorType : type}),
                 success : function(res){
                     if(typeof res == "string"){
                         var res = $.parseJSON(res);
                     }
 
-                    if(res.code==200){
+                    if(!res.code){
                         btn.addClass("faved");
                         $("[name=favorId]").val(res.favorId);
                     }
@@ -61,13 +62,14 @@ var fav = {
     	$.ajax({
     			url : "/v2/client/"+that.province+"/profile/favor/college/add",
     			type : "post",
-    			data : {collegeId : $("[name=college]").val(),favorType : type},
+                contentType: "application/json",
+    			data : JSON.stringIfy({collegeId : $("[name=college]").val(),favorType : type}),
     			success : function(res){
     				if(typeof res == "string"){
     					var res = $.parseJSON(res);
     				}
 
-    				if(res.code==200){
+    				if(!res.code){
     					btn.addClass("faved");
     					$("[name=favorId]").val(res.favorId);
     				}
@@ -80,13 +82,14 @@ var fav = {
     	$.ajax({
     			url : "/v2/client/"+that.province+"/profile/favor/delete",
     			type : "post",
-    			data : {favorId : $("[name=favorId]").val()},
+                contentType: "application/json",
+    			data : JSON.stringify({favorId : $("[name=favorId]").val()}),
     			success : function(res){
     				if(typeof res == "string"){
     					var res = $.parseJSON(res);
     				}
 
-    				if(res.code==200){
+    				if(!res.code){
     					btn.removeClass("faved");
     					$("[name=favorId]").val("");
     				}

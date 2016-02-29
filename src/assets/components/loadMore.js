@@ -36,7 +36,8 @@ Plugin.prototype = {
 		$.ajax({
 			url : o.url || $this.data("url"),
 			type : "post",
-			data : {page : that.pager},
+			contentType: "application/json",
+			data : JSON.stringify({page : that.pager}),
 			success : function(res){
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);

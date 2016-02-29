@@ -65,21 +65,22 @@ var reg = {
 		var that = this;
 	    btn.addClass('disabled');
 	    $.ajax({
-	        url: "/auth/resetPassword",
+	        url: "/v2/client/auth/resetPassword",
 	        type: "post",
-	        data: {
+	        contentType: "application/json",
+	        data: JSON.stringify({
 	          code : $("[name=code]").val(),
 	          mobile: $("[name=mobile]").val(),
 	          pw: userUtil.encrypt($("[name=pw]").val())
-	        },
+	        }),
 	        success: function(res) {
 	          if (typeof res == "string") {
 	            var res = $.parseJSON(res);
 	          }
 
-	          if(res.code == 200){
+	          if(!res.code){
 	          	setTimeout(function(){
-	          		//window.location = "/";
+	          		window.location = "/";
 	          	},400);
 	          }else{
 	          	var oError = $('.errTxt');

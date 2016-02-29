@@ -57,15 +57,16 @@ var book = {
 		var that = this;
 		var province = $("[name=province]").val();
 		$.ajax({
-			url : province+"/tzy/appointment/create",
+			url : "/v2/client/"+province+"/tzy/appointment/create",
 			type : "post",
+			contentType: "application/json",
 			data : $("bookForm").serialize(),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
 
-				if(res.code != 200){
+				if(res.code){
 					warn(res.msg);
 					return;
 				}

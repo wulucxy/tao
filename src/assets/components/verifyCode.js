@@ -78,7 +78,8 @@ var verify = {
         $.ajax({
             url: sendSMSUrl || "/v2/client/auth/requestCode",
             type: 'POST',
-            data: _data,
+            contentType: "application/json",
+            data: JSON.stringify(_data),
             success : function(data){
              //发送短信验证码成功
              if(typeof data == "string"){

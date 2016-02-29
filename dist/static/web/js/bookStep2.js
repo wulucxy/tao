@@ -650,7 +650,8 @@ webpackJsonp([2],{
 	        $.ajax({
 	            url : o.url,
 	            type : "post",
-	            data : {provinceId:val},
+	            contentType: "application/json",
+	            data : JSON.stringify({provinceId:val}),
 	            success : function(res){
 	                if(typeof res =="string"){
 	                    var res = $.parseJSON(res);
