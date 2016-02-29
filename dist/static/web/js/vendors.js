@@ -11983,7 +11983,7 @@
 		            var res = $.parseJSON(res);
 		          }
 	
-		          if(res.code == 200){
+		          if(!res.code){
 		          	setTimeout(function(){
 		          		window.location = "/";
 		          	},400);
