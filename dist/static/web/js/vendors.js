@@ -11985,7 +11985,7 @@
 	
 		          if(res.code == 200){
 		          	setTimeout(function(){
-		          		//window.location = "/";
+		          		window.location = "/";
 		          	},400);
 		          }else{
 		          	var oError = $('.errTxt');
