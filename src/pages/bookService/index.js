@@ -56,11 +56,22 @@ var book = {
 	postBookInfo : function(){
 		var that = this;
 		var province = $("[name=province]").val();
+
+		var data = {
+			name : $("[name=name]").val(),
+			mobile : $("[name=mobile]").val(),
+			province : $("[name=province]").val(),
+			courseType : $("[name=courseType]:checked").val(),
+			score : $("[name=score]").val(),
+			bookType : $("[name=bookType]:checked").val(),
+			booktime : $("[name=booktime]").val()
+		};
+
 		$.ajax({
 			url : "/v2/client/"+province+"/tzy/appointment/create",
 			type : "post",
 			contentType: "application/json",
-			data : $("bookForm").serialize(),
+			data : JSON.stringify(data),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
@@ -70,8 +81,6 @@ var book = {
 					warn(res.msg);
 					return;
 				}
-
-
 
 			},
 			error : function(){
