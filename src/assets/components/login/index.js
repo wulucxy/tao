@@ -92,10 +92,11 @@ var login = {
 	    $.ajax({
 	        url: "/v2/client/auth/signin",
 	        type: "post",
-	        data: {
+	        data: JSON.stringify({
 	          mobile: $("[name=mobile]").val(),
 	          pw: userUtil.encrypt($("[name=pw]").val())
-	        },
+	        }),
+	        contentType: "application/json",
 	        success: function(res) {
 	          if (typeof res == "string") {
 	            var res = $.parseJSON(res);
@@ -103,7 +104,7 @@ var login = {
 
 	          if(res.code == 200){
 	          	setTimeout(function(){
-	          		window.location = "/";
+	          		//window.location = "/";
 	          	},400);
 	          }else{
 	          	var oError = $('.errTxt');
