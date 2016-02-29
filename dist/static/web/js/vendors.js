@@ -11466,7 +11466,7 @@
 			var that = this;
 		    btn.addClass('disabled');
 		    $.ajax({
-		        url: "/auth/signin",
+		        url: "/v2/client/auth/signin",
 		        type: "post",
 		        data: {
 		          mobile: $("[name=mobile]").val(),
@@ -18744,7 +18744,7 @@
 			var that = this;
 		    btn.addClass('disabled');
 		    $.ajax({
-		        url: "/auth/signup",
+		        url: "/v2/client/auth/signup",
 		        type: "post",
 		        data: {
 		          code : $("[name=code]").val(),
@@ -18879,7 +18879,7 @@
 	      var _data = {mobile: document.getElementById('mobile').value};
 	
 	        $.ajax({
-	            url: sendSMSUrl || "/auth/requestCode",
+	            url: sendSMSUrl || "/v2/client/auth/requestCode",
 	            type: 'POST',
 	            data: _data,
 	            success : function(data){
@@ -19094,7 +19094,7 @@
 	    addFavMajor : function(btn,type){
 	        var that = this;
 	        $.ajax({
-	                url : that.province+"/profile/favor/major/add",
+	                url : "/v2/client/"+that.province+"/profile/favor/major/add",
 	                type : "post",
 	                data : {collegeId : $("[name=majorId]").val(),favorType : type},
 	                success : function(res){
@@ -19113,7 +19113,7 @@
 	    addFavCollege : function(btn,type){
 	    	var that = this;
 	    	$.ajax({
-	    			url : that.province+"/profile/favor/college/add",
+	    			url : "/v2/client/"+that.province+"/profile/favor/college/add",
 	    			type : "post",
 	    			data : {collegeId : $("[name=college]").val(),favorType : type},
 	    			success : function(res){
@@ -19132,7 +19132,7 @@
 	    removeFav : function(btn,type){
 	    	var that = this;
 	    	$.ajax({
-	    			url : that.province+"/profile/favor/delete",
+	    			url : "/v2/client/"+that.province+"/profile/favor/delete",
 	    			type : "post",
 	    			data : {favorId : $("[name=favorId]").val()},
 	    			success : function(res){

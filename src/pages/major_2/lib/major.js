@@ -22,7 +22,7 @@ var major = {
 		};
 
 		$.ajax({
-			url : that.province + "/data/major/college",
+			url : "/v2/client/"+that.province + "/data/major/college",
 			type : "post",
 			data : _data,
 			success : function(res){

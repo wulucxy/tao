@@ -68,13 +68,13 @@
 
 								<!--  历史方案 -->
 								<jsp:include page = "/partials/user/_history.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore/history" />
+									<jsp:param name="loadMoreUrl" value="/v2/client/loadmore/history" />
 									<jsp:param name="loadMoreTmpl" value="history" />
 								</jsp:include>
 
 								<!--  历史测试 -->
 								<jsp:include page = "/partials/user/_test.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore/test" />
+									<jsp:param name="loadMoreUrl" value="/v2/client/loadmore/test" />
 									<jsp:param name="loadMoreTmpl" value="test" />
 								</jsp:include>
 

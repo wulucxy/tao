@@ -62,7 +62,7 @@ var dataSet = {
         var provinceId = $("[name=province]").val();
 
 		$.ajax({
-			url : provinceId + "/data/college",
+			url : "/v2/client/"+provinceId + "/data/college",
 			type : "post",
 			data : _data,
 			success : function(res){

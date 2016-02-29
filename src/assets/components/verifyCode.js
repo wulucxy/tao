@@ -76,7 +76,7 @@ var verify = {
       var _data = {mobile: document.getElementById('mobile').value};
 
         $.ajax({
-            url: sendSMSUrl || "/auth/requestCode",
+            url: sendSMSUrl || "/v2/client/auth/requestCode",
             type: 'POST',
             data: _data,
             success : function(data){

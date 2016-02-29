@@ -88,7 +88,7 @@ webpackJsonp([13],{
 	        var provinceId = $("[name=province]").val();
 	
 			$.ajax({
-				url : provinceId + "/data/major",
+				url : "/v2/client/"+provinceId + "/data/major",
 				type : "post",
 				data : _data,
 				success : function(res){

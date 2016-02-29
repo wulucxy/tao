@@ -46,7 +46,7 @@ webpackJsonp([2],{
 	//将原有的数据传入
 	dataSet.init({
 		klass : "current",
-		url : "/getCity",
+		url : "/v2/client/getCity",
 		startCallback : function(){
 			var self = this;
 			scroll($(".prov"),{

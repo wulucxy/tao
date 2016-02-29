@@ -27,7 +27,7 @@ var major = {
 		_data.page = that.pageObject[_key];
 
 		$.ajax({
-			url : that.province + "/data/college/"+that.collegeId+"/majors",
+			url : "/v2/client/"+that.province + "/data/college/"+that.collegeId+"/majors",
 			type : "post",
 			data : _data,
 			success : function(res){

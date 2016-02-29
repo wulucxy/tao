@@ -90,7 +90,7 @@ var login = {
 		var that = this;
 	    btn.addClass('disabled');
 	    $.ajax({
-	        url: "/auth/signin",
+	        url: "/v2/client/auth/signin",
 	        type: "post",
 	        data: {
 	          mobile: $("[name=mobile]").val(),

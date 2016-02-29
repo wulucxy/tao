@@ -30,7 +30,7 @@ webpackJsonp([3],{
 		requestData : function(){
 			var that = this;
 			$.ajax({
-				url : provinceId + "/data/major/all",
+				url : "/v2/client/"+provinceId + "/v2/client/data/major/all",
 				type : "get",
 				success : function(res){
 					if(typeof rs == "string"){

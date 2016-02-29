@@ -40,7 +40,7 @@ var fav = {
     addFavMajor : function(btn,type){
         var that = this;
         $.ajax({
-                url : that.province+"/profile/favor/major/add",
+                url : "/v2/client/"+that.province+"/profile/favor/major/add",
                 type : "post",
                 data : {collegeId : $("[name=majorId]").val(),favorType : type},
                 success : function(res){
@@ -59,7 +59,7 @@ var fav = {
     addFavCollege : function(btn,type){
     	var that = this;
     	$.ajax({
-    			url : that.province+"/profile/favor/college/add",
+    			url : "/v2/client/"+that.province+"/profile/favor/college/add",
     			type : "post",
     			data : {collegeId : $("[name=college]").val(),favorType : type},
     			success : function(res){
@@ -78,7 +78,7 @@ var fav = {
     removeFav : function(btn,type){
     	var that = this;
     	$.ajax({
-    			url : that.province+"/profile/favor/delete",
+    			url : "/v2/client/"+that.province+"/profile/favor/delete",
     			type : "post",
     			data : {favorId : $("[name=favorId]").val()},
     			success : function(res){

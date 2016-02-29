@@ -83,7 +83,7 @@ var reg = {
 		var that = this;
 	    btn.addClass('disabled');
 	    $.ajax({
-	        url: "/auth/signup",
+	        url: "/v2/client/auth/signup",
 	        type: "post",
 	        data: {
 	          code : $("[name=code]").val(),
