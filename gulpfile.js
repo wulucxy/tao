@@ -9,8 +9,11 @@ var opts = {
 	paths: {
 		base: path.resolve(__dirname, 'src','pages'),
 		dist: path.resolve(__dirname, 'dist')
-	}
+	},
+	env: args.e || 'dev'
 };
+
+process.env.NODE_ENV = opts.env;
 
 glob.sync('./tasks/*.js').forEach(function (file) {
 	var name = file.replace(/\.\/tasks\/(.*).js$/, '$1');
@@ -24,4 +27,14 @@ gulp.task('build', function (cb) {
 
 gulp.task('server', function (cb) {
 	runSequence('build','mock-server', cb);
+});
+
+gulp.task('deploy', function (cb) {
+	if (opts.env !== 'production') process.env.NODE_ENV = 'test';
+	runSequence(
+		'build', 
+		'deploy-jsp', 
+		'deploy-static', 
+		cb
+	);
 });

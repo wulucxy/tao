@@ -10,7 +10,8 @@ module.exports = function (opts) {
 		var files = glob.sync(opts.paths.base + '/**/*.js');
 
 		if (files.length) {
-			var config = require('../webpack.config');
+			//var config = require('../webpack.config');
+			var config = require('../config/webpack.config.' + process.env.NODE_ENV + '.js');
 
 			var dest = process.cwd();
 			fs.removeSync(path.join(dest, 'dist'));
