@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.2f421bb3.css" rel="stylesheet"><link href="/static/web/css/home.074fe30d.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.2f421bb3.css" rel="stylesheet"><link href="/static/web/css/home.f43aa574.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -167,7 +167,7 @@
 						<ul class="archiveList clearfix">
 							<li>
 								<div class="pad">
-									<div class="grid">
+									<a class="grid db" target="_blank" href="/library/college">
 										<div class="top">
 											<i class="icon-archive"></i>
 											<em class="mc mcBt"></em>
@@ -178,12 +178,12 @@
 												院校数据库能够给你提供全新的院校检索功能，获得你想要的院校相关所有数据。
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</li>
 							<li>
 								<div class="pad">
-									<div class="grid">
+									<a class="grid db" target="_blank" href="/library/major">
 										<div class="top">
 											<i class="icon-archive"></i>
 											<em class="mc mcBt"></em>
@@ -194,12 +194,12 @@
 												专业数据库的价值在于你能够通过自己喜好的专业来迅速地寻找对应地高校。
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</li>
 							<li>
 								<div class="pad">
-									<div class="grid">
+									<a class="grid db" target="_blank" href="/library/subject">
 										<div class="top">
 											<i class="icon-archive"></i>
 											<em class="mc mcBt"></em>
@@ -210,12 +210,12 @@
 												科目数据库与全国范围内的高校、专业相关联，新高考科目选择与专业报考的关联轻松获得。
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</li>
 							<li>
 								<div class="pad">
-									<div class="grid">
+									<a class="grid db" target="_blank" href="/library/score_line">
 										<div class="top">
 											<i class="icon-archive"></i>
 											<em class="mc mcBt"></em>
@@ -225,12 +225,12 @@
 											<div class="db-content">分数线数据库通过可视化查询,直观地查看近3年高校投档线和专业录取分数线的变化趋势。
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</li>
 							<li>
 								<div class="pad">
-									<div class="grid">
+									<a class="grid db" target="_blank" href="/library/aboard_data">
 										<div class="top">
 											<i class="icon-archive"></i>
 											<em class="mc mcBt"></em>
@@ -241,7 +241,7 @@
 												海外院校库打造涵盖全球范围内上万所热门院校的报考权威数据库。
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</li>
 						</ul>

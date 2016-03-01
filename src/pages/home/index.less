@@ -82,7 +82,7 @@
 	margin:0 -6px 16px;
 	li{float: left;width:20%;}
 	.pad{padding:0 6px;}
-	.grid{height: 240px;position: relative;border:1px solid #eaeaea;box-shadow: 0 1px 1px #ccc;background-color: #f7f6f6;
+	.grid{height: 240px;position: relative;border:1px solid #eaeaea;box-shadow: 0 1px 1px #ccc;background-color: #f7f6f6;transition:0.4s box-shadow ease;
 		.top{
 			position: relative;background-color: #fff;line-height: 96px;height: 96px;text-align: center;
 			.mc{border-top-color: #f3f3f3;left:50%;margin-left: -8px;margin-top: -1px;}
@@ -90,6 +90,9 @@
 		.bot{
 			h4{color:#333;font-size: 18px;text-align: center;margin: 12px 0;}
 			.db-content{font-size: 13px;line-height: 2;color: #666;padding:0 6px;}
+		}
+		&:hover{
+    		box-shadow: 0 0 8px 2px #ccc
 		}
 	}
 }
