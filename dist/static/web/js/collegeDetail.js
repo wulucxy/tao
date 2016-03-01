@@ -4,25 +4,25 @@ webpackJsonp([6],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(11);
-	__webpack_require__(119);
-	var $ = window.$ || __webpack_require__(31);
+	__webpack_require__(12);
+	__webpack_require__(118);
+	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
-	var util = __webpack_require__(32);
+	var util = __webpack_require__(33);
 	
 	//公共方法
-	var common = __webpack_require__(33);
+	var common = __webpack_require__(34);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(122);
+	var tabs = __webpack_require__(121);
 	
 	//百度地图
-	var baidu = __webpack_require__(123);
+	var baidu = __webpack_require__(122);
 	
 	//报考专业
-	var major =  __webpack_require__(124);
+	var major =  __webpack_require__(123);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -50,18 +50,18 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 119:
+/***/ 118:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 122:
+/***/ 121:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(31);
-	var extend =  __webpack_require__(36);
+	var $ = window.$ || __webpack_require__(32);
+	var extend =  __webpack_require__(37);
 	 
 	function Plugin(t,o){
 			this.target=t;
@@ -129,10 +129,10 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 123:
+/***/ 122:
 /***/ function(module, exports, __webpack_require__) {
 
-	var extend =  __webpack_require__(36);
+	var extend =  __webpack_require__(37);
 	
 	var baidu = {
 	
@@ -165,12 +165,12 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 124:
+/***/ 123:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(31);
-	var extend =  __webpack_require__(36);
-	var tmpl = __webpack_require__(125);
+	var $ = window.$ || __webpack_require__(32);
+	var extend =  __webpack_require__(37);
+	var tmpl = __webpack_require__(124);
 	
 	var major = {
 		init : function(o){
@@ -270,7 +270,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 125:
+/***/ 124:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

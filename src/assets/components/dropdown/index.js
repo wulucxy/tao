@@ -1,8 +1,6 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 
-require("./dropdown.less");
-
 function Dropdown(t, o) {
     this.target = t;
     this.options = o;

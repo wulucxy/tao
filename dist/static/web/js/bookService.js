@@ -4,20 +4,20 @@ webpackJsonp([0],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(11);
-	__webpack_require__(28);
-	var $ = window.$ || __webpack_require__(31);
+	__webpack_require__(12);
+	__webpack_require__(29);
+	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
-	var util = __webpack_require__(32);
+	var util = __webpack_require__(33);
 	
 	//公共方法
-	var common = __webpack_require__(33);
+	var common = __webpack_require__(34);
 	
 	
 	//自定义功能写下面
-	var tmpl = __webpack_require__(95);
-	__webpack_require__(48);
+	var tmpl = __webpack_require__(94);
+	__webpack_require__(49);
 	
 	
 	var book = {
@@ -105,14 +105,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 28:
+/***/ 29:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 95:
+/***/ 94:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

@@ -4,27 +4,27 @@ webpackJsonp([3],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(11);
-	__webpack_require__(102);
-	var $ = window.$ || __webpack_require__(31);
+	__webpack_require__(12);
+	__webpack_require__(101);
+	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
-	var util = __webpack_require__(32);
+	var util = __webpack_require__(33);
 	
 	//公共方法
-	var common = __webpack_require__(33);
+	var common = __webpack_require__(34);
 	
 	
 	//自定义功能写下面
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(100);
-	var tmpl_questions = __webpack_require__(101);
+	var tmpl_detail = __webpack_require__(99);
+	var tmpl_questions = __webpack_require__(100);
 	
 	//自定义滚动插件
-	var scroll = __webpack_require__(104);
+	var scroll = __webpack_require__(103);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(108);
+	var dataSet = __webpack_require__(107);
 	
 	//详情弹窗
 	$("[data-trigger]").on("click",function(e){
@@ -67,23 +67,23 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 102:
+/***/ 101:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 104:
+/***/ 103:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(105);
+	__webpack_require__(104);
 	
-	var $ = window.$ || __webpack_require__(31);
-	var extend =  __webpack_require__(36);
+	var $ = window.$ || __webpack_require__(32);
+	var extend =  __webpack_require__(37);
 	
 	//mousewheel
-	__webpack_require__(107);
+	__webpack_require__(106);
 	
 	function scroll(target,options){
 	
@@ -269,17 +269,17 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 105:
+/***/ 104:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 107:
+/***/ 106:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(31);
+	var $ = window.$ || __webpack_require__(32);
 	
 	var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
 	    toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -485,12 +485,12 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 108:
+/***/ 107:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(31);
-	var extend =  __webpack_require__(36);
-	var provList = __webpack_require__(109);
+	var $ = window.$ || __webpack_require__(32);
+	var extend =  __webpack_require__(37);
+	var provList = __webpack_require__(108);
 	
 	var dataSet = {
 	
@@ -701,7 +701,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 109:
+/***/ 108:
 /***/ function(module, exports) {
 
 	module.exports = [

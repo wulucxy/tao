@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.4d42d23e.css" rel="stylesheet"><link href="/static/web/css/bookStep2.3b82619d.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.2f421bb3.css" rel="stylesheet"><link href="/static/web/css/bookStep2.3b82619d.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
