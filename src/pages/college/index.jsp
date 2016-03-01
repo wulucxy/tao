@@ -17,6 +17,9 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${province.id}">
 
+		<!-- 保存province属性 -->
+		<input type="hidden" name="userId" value="${userId}">
+
 		<div class="container dbWrapper db">
 			<div class="content">
 				<h3 class="clearfix title">

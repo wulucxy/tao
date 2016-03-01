@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.aaff9434.css" rel="stylesheet"><link href="/static/web/css/college.d8d6c43c.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -16,6 +16,9 @@
 		
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${province.id}">
+
+		<!-- 保存province属性 -->
+		<input type="hidden" name="userId" value="${userId}">
 
 		<div class="container dbWrapper db">
 			<div class="content">

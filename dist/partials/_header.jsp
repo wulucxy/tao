@@ -34,11 +34,31 @@
 					</a>
 				</div> -->
 				<div class="m-login fr">
-					<div class="hd-login">
-						<a href="javascript:;" class="loginBtn link" id="login">登录</a>
-						/
-						<a href="javascript:;" class="regBtn link" id="reg">注册</a>
-					</div>
+					<c:choose>
+				    <c:when test="${islogin==1}">
+				   		<div class="hd-user">
+				   			<a href="/user" class="dib user-l link">
+							<span class="imgWrap minlogo vm">
+								<img src="/static/web/img/minlogo.png" class="responsive">
+							</span>
+							<em class="vm">个人中心</em>
+							</a>
+							<a href="/user" class="dib user-r link">
+							<span class="imgWrap exit">
+								<img src="/static/web/img/exit.png" class="responsive">
+							</span>
+							<em class="vm">注销</em>
+							</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="hd-login">
+							<a href="javascript:;" class="loginBtn link" id="login">登录</a>
+							/
+							<a href="javascript:;" class="regBtn link" id="reg">注册</a>
+						</div>
+					</c:otherwise>
+				   </c:choose>
 				</div>
 			</div>
 		 </div>

@@ -1,5 +1,6 @@
 {
-	"bannerList" : [
+	"islogin" : "1",
+    "bannerList" : [
         {
             "imgHref": "#1",
             "imgUrl": "http://placehold.it/1920x360"

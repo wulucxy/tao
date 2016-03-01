@@ -28,6 +28,7 @@ module.exports = {
 	"/library/subject" : "subject.jsp",
 	"/library/score_line": "scoreLine.jsp",
 	"/library/aboard_data": "abordData.jsp",
+	"/login": "login.jsp",
 	//异步加载
 	'post::/v2/client/loadmore/test' : 'mock::api/test.json',
 	'post::/v2/client/loadmore/history' : 'mock::api/history.json',
