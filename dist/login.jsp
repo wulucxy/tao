@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.aaff9434.css" rel="stylesheet"><link href="/static/web/css/login.bf0b73e7.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.aaff9434.css" rel="stylesheet"><link href="/static/web/css/login.ff9fbbbb.css" rel="stylesheet"></head>
 <body>
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
@@ -18,7 +18,7 @@
 			
 			<div class="formWrap">
 				<form action="#" onsubmit="return false" id="loginForm" >
-					
+					<div class="inputRows">
 					 <div class="row clearfix">
 					    <div class="inputWrap inputTextWrap">
 					      <span class="iconWrap"><i class="icon-user icon-phone"></i></span>
@@ -36,6 +36,7 @@
 					    <span class="p-error">密码为4-20位数字或字母格式</span>
 					    <span class="p-error-empty">密码不能为空</span>
 					 </div>
+					</div>
 					
 					 <div class="footerCnt">
 					     <p id="errTxt" class="errTxt"></p>
@@ -69,6 +70,10 @@
 
 		</div>
 
+	</div>
+
+	<div class="bBar tc">
+		Copyrights © 2014-2016 浙江日报新闻发展有限公司版权所有 ｜ 服务热线：0571-85311211
 	</div>
 	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/login.js"></script></body>
 </html>

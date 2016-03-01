@@ -35,7 +35,7 @@
 				</div> -->
 				<div class="m-login fr">
 					<c:choose>
-				    <c:when test="${islogin==1}">
+				    <c:when test="${user.islogin=='1'}">
 				   		<div class="hd-user">
 				   			<a href="/user" class="dib user-l link">
 							<span class="imgWrap minlogo vm">

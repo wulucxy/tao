@@ -16,6 +16,7 @@ webpackJsonp([13],{
 	
 	
 	//自定义功能写下面
+	__webpack_require__(48);
 
 /***/ },
 
