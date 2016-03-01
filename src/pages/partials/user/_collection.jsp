@@ -23,7 +23,7 @@
 					<ul class="schoolList">
 						
 						<c:choose>
-						<c:when test="${colleges == []}">
+						<c:when test="${colleges == null}">
 					   		<li class="no_transList"><i class="noListIcon"></i><em class="vm g9">暂无记录</em></li>
 						</c:when>
 						<c:otherwise>
