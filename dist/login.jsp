@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.aaff9434.css" rel="stylesheet"><link href="/static/web/css/login.ff9fbbbb.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.4d42d23e.css" rel="stylesheet"><link href="/static/web/css/login.34e43b8b.css" rel="stylesheet"></head>
 <body>
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">

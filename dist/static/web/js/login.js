@@ -17,6 +17,11 @@ webpackJsonp([13],{
 	
 	//自定义功能写下面
 	__webpack_require__(48);
+	
+	var login = __webpack_require__(47);
+	
+	login.loginEvt();
+	login.forget_reg_Evt();
 
 /***/ },
 

@@ -36,33 +36,41 @@ var login = {
 	        closeByOverlay : false,
 	        completeCallback : function(){
 	        	var self = btn; 
-	        	//去注册
-	        	$("#m_goReg").on("click",function(e){
-	        		e.preventDefault();
-	        		var btn = $(this);
-	        		$(self).data("modalBox")._close(true);
-
-	        		setTimeout(function(){
-	        			mReg.Box(btn);
-	        		},400);
-
-	        	});
-
-	        	//忘记密码
-	        	$("#m_goForgetPw").on("click",function(e){
-	        		e.preventDefault();
-	        		var btn = $(this);
-	        		$(self).data("modalBox")._close(true);
-
-	        		setTimeout(function(){
-	        			mForget.Box(btn);
-	        		},400);
-
-	        	});
-
+	        
 	        	that.loginEvt();
+	        	that.forget_reg_Evt(btn);
 	        }
 	    });
+	},
+
+	forget_reg_Evt : function(button){
+		var self = button;		
+		//去注册
+    	$("#m_goReg").on("click",function(e){
+    		e.preventDefault();
+    		var btn = $(this);
+    		if($(self).data("modalBox")){
+    			$(self).data("modalBox")._close(true);
+    		}
+    		
+    		setTimeout(function(){
+    			mReg.Box(btn);
+    		},400);
+
+    	});
+
+    	//忘记密码
+    	$("#m_goForgetPw").on("click",function(e){
+    		e.preventDefault();
+    		var btn = $(this);
+    		if($(self).data("modalBox")){
+    			$(self).data("modalBox")._close(true);
+    		}
+    		setTimeout(function(){
+    			mForget.Box(btn);
+    		},400);
+
+    	});
 	},
 
 	loginEvt : function(){
