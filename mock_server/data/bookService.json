@@ -1,8 +1,10 @@
 {
-	"province" : {
-		"name" : "浙江",
-		"id" : "21"
-	},
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "21"
+        }
+    }, 
 	"adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",

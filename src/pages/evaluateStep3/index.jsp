@@ -50,7 +50,7 @@
 									<em class="vm">高考所在地：</em></label>
 								<div class="col2 inputWrap rel">
 									<div class="fieldWrap">
-										<span class="onlyTxt">${province.name}</span>
+										<span class="onlyTxt">${user.province.name}</span>
 									</div>
 								</div>
 							</div>

@@ -9,7 +9,7 @@ module.exports = {
 	"/box/plan/major_exam3"   : 'majorExam3.jsp',
 	'/user'   : 'user.jsp',
 	"/box/plan/book_step2"   : 'bookStep2.jsp',
-	"/box/plan/book_step1"   : 'evaluateStep1.jsp',
+	"/box/plan/book_step1"   : 'bookStep1.jsp',
 	"/box/plan/book_step3"   : 'bookStep3.jsp',
 	"/box/plan/book_step4"   : 'bookStep4.jsp',
 	"/library/college"   : 'college.jsp',

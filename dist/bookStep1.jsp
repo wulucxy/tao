@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.4d42d23e.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.a757c7c5.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.4d42d23e.css" rel="stylesheet"><link href="/static/web/css/bookStep1.db0b6445.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -23,7 +23,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高考志愿评估
+						高考方案定制
 						<em class="underLine"></em>	
 					</span>
 					<div class="fr f16 g6">
@@ -40,6 +40,7 @@
 					<ul class="clearfix">
 						<li class="current"><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
+						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
 				</div>
@@ -52,7 +53,7 @@
 								<em class="vm">高考所在地：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
-									<input type="text" class="input form-control" id="province" name="province" required value="${user.province.name}" readonly>
+									<input type="text" class="input form-control" id="province" name="province" required value=${user.province.name} readonly>
 								</div>
 							</div>
 							<div class="errInfo"></div>
@@ -165,5 +166,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/evaluateStep1.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/bookStep1.js"></script></body>
 </html>

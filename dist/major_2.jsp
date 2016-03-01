@@ -15,7 +15,7 @@
 	<div class="mainContainer">
 		
 		<!-- 保存province属性 -->
-		<input type="hidden" name="province" value="${province.id}">
+		<input type="hidden" name="province" value="${user.province.code}">
 		<!-- 学校id -->
 		<input type="hidden" name="majorId" value="${majorId}">
 

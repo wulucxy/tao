@@ -1,5 +1,11 @@
 {
-	"islogin" : "1",
+	"user":{
+        "isLogin" : 1,
+        "province" : {
+            "name" : "浙江",
+            "code" : "21"
+        }
+    },
     "bannerList" : [
         {
             "imgHref": "#1",

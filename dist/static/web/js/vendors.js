@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		21:0
+/******/ 		22:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"bookService","1":"bookService_success","2":"bookStep2","3":"bookStep3","4":"college","5":"collegeDetail","6":"error","7":"evaluateStep1","8":"evaluateStep2","9":"evaluateStep3","10":"home","11":"info","12":"infoDetail","13":"login","14":"major","15":"majorExam1","16":"majorExam2","17":"majorExam3","18":"major_2","19":"score","20":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"bookService","1":"bookService_success","2":"bookStep1","3":"bookStep2","4":"bookStep3","5":"college","6":"collegeDetail","7":"error","8":"evaluateStep1","9":"evaluateStep2","10":"evaluateStep3","11":"home","12":"info","13":"infoDetail","14":"login","15":"major","16":"majorExam1","17":"majorExam2","18":"majorExam3","19":"major_2","20":"score","21":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

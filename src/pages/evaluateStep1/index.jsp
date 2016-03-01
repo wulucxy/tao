@@ -16,7 +16,7 @@
 	<div class="mainContainer">
 		
 		<!-- 保存province属性 -->
-		<input type="hidden" name="province" value="${province.id}">
+		<input type="hidden" name="province" value="${user.province.code}">
 
 		<div class="container p_assess">
 
@@ -52,7 +52,7 @@
 								<em class="vm">高考所在地：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
-									<input type="text" class="input form-control" id="province" name="province" required value=${province.name} readonly>
+									<input type="text" class="input form-control" id="province" name="province" required value="${user.province.name}" readonly>
 								</div>
 							</div>
 							<div class="errInfo"></div>

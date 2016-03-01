@@ -1,6 +1,8 @@
 {
-	"province" : {
-		"name" : "浙江",
-		"id" : "1"
-	}
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "21"
+        }
+    }
 }
