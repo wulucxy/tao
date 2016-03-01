@@ -16,7 +16,7 @@ webpackJsonp([21],{
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(121);
+	var tabs = __webpack_require__(116);
 	//加载更多模块
 	var loadMore = __webpack_require__(331);
 	
@@ -81,7 +81,7 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 121:
+/***/ 116:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(32);
@@ -339,7 +339,7 @@ webpackJsonp([21],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(32);
-	var tabs = __webpack_require__(121);
+	var tabs = __webpack_require__(116);
 	
 	var collection = {
 		init : function(){

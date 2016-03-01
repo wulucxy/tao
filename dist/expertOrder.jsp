@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.9e55f5bd.css" rel="stylesheet"><link href="/static/web/css/bookService.fb2c90d2.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.6ab25b5b.css" rel="stylesheet"><link href="/static/web/css/expertOrder.fb2c90d2.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -63,5 +63,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/bookService.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/expertOrder.js"></script></body>
 </html>

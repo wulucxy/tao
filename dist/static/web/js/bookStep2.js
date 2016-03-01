@@ -1,11 +1,11 @@
-webpackJsonp([3],{
+webpackJsonp([1],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(12);
-	__webpack_require__(101);
+	__webpack_require__(96);
 	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
@@ -17,14 +17,14 @@ webpackJsonp([3],{
 	
 	//自定义功能写下面
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(99);
-	var tmpl_questions = __webpack_require__(100);
+	var tmpl_detail = __webpack_require__(94);
+	var tmpl_questions = __webpack_require__(95);
 	
 	//自定义滚动插件
-	var scroll = __webpack_require__(103);
+	var scroll = __webpack_require__(98);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(107);
+	var dataSet = __webpack_require__(102);
 	
 	//详情弹窗
 	$("[data-trigger]").on("click",function(e){
@@ -67,23 +67,23 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 101:
+/***/ 96:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 103:
+/***/ 98:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(104);
+	__webpack_require__(99);
 	
 	var $ = window.$ || __webpack_require__(32);
 	var extend =  __webpack_require__(37);
 	
 	//mousewheel
-	__webpack_require__(106);
+	__webpack_require__(101);
 	
 	function scroll(target,options){
 	
@@ -269,14 +269,14 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 104:
+/***/ 99:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 106:
+/***/ 101:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(32);
@@ -485,12 +485,12 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 107:
+/***/ 102:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(32);
 	var extend =  __webpack_require__(37);
-	var provList = __webpack_require__(108);
+	var provList = __webpack_require__(103);
 	
 	var dataSet = {
 	
@@ -701,7 +701,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 108:
+/***/ 103:
 /***/ function(module, exports) {
 
 	module.exports = [

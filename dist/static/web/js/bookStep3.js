@@ -1,11 +1,11 @@
-webpackJsonp([4],{
+webpackJsonp([2],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(12);
-	__webpack_require__(109);
+	__webpack_require__(104);
 	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
@@ -15,8 +15,8 @@ webpackJsonp([4],{
 	var common = __webpack_require__(34);
 	
 	//自定义功能写下面
-	var tmpl_list = __webpack_require__(112);
-	var tmpl_detail = __webpack_require__(113);
+	var tmpl_list = __webpack_require__(107);
+	var tmpl_detail = __webpack_require__(108);
 	__webpack_require__(49);
 	
 	var provinceId = $("[name=province]").val();
@@ -123,14 +123,14 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 109:
+/***/ 104:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 112:
+/***/ 107:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -178,7 +178,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 113:
+/***/ 108:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
