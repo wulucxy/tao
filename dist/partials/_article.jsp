@@ -3,14 +3,15 @@
 
 <article>
 	<div class="head">
-		<h4>做好职业规划 成就美好未来</h4>
+		<h4>${title}</h4>
 		<div class="subTitle clearfix">
-			<span class="fl tag">2017新高考</span>
-			<span class="fr moment">1小时前</span>
+			<c:forEach var="tag" items="${tagList}">
+			  <span class="fl tag mr10">${tag}</span>
+			</c:forEach>
+			<span class="fr moment">${moment}</span>
 		</div>
 	</div>
 	
-	${aa}
 	<div class="body">
 		${context}
 	</div>
