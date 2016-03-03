@@ -277,9 +277,8 @@
 									<i class="icon-tools"></i>
 								</span>
 								<div class="media-body">
-									<h5 class="neeRow">高考方案定制<span class="badge"><i class="icon-nee"></i>
-									<em class="vm">买一送二</em></span></h5>
-									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
+									<h5 class="">高考方案定制</h5>
+									<div class="txt">通过考生输入的信息和报考意向，按照专家团队根据志愿填报规则设计的公式，科学运用大数据，进行运算、匹配，提供完整的志愿填报个性化参考方案。</div>
 									
 									<div class="detail clearfix">
 										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.bookStep}</em>&nbsp;名学生</span>
@@ -294,7 +293,7 @@
 								</span>
 								<div class="media-body">
 									<h5>高考志愿评估</h5>
-									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
+									<div class="txt">根据考生预备填报的高校与专业志愿，按照专家团队根据志愿填报规则设计的公式，科学运用大数据，对志愿填报给出报考风险的科学评估。</div>
 									
 									<div class="detail clearfix">
 										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.evaluateStep}</em>&nbsp;名学生</span>
@@ -310,7 +309,7 @@
 								<div class="media-body">
 									<h5 class="neeRow">专业选择测试<span class="badge"><i class="icon-nee"></i>
 									<em class="vm">教育部考试中心独家授权</em></span></h5>
-									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
+									<div class="txt">由国家教育部考试中心定制，独家授权“淘志愿”，测试结果将生成科学的报告书，并向学生个性化推荐大学专业，供广大考生和家长在志愿填报时参考。</div>
 									
 									<div class="detail clearfix">
 										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.majorExam}</em>&nbsp;名学生</span>
@@ -325,7 +324,7 @@
 								</span>
 								<div class="media-body">
 									<h5>留学方案定制</h5>
-									<div class="txt">根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。</div>
+									<div class="txt">输入留学的个人相关信息以及意向留学国家和留学层次，即可获得一份为你定制的留学院校和专业列表，最便捷地为你的出国留学提供参考方案。</div>
 									
 									<div class="detail clearfix">
 										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.abordData}</em>&nbsp;名学生</span>

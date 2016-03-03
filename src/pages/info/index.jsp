@@ -16,42 +16,45 @@
 	
 		<div class="jimu container clearfix">
 			<div class="column fl col1">
-				<a target="_blank"class="infoLink big">
+				<a target="_blank"class="infoLink big" href="${bannerList.big.url}">
 					<span class="imgWrap">
-					<img src="./img/3.png" class="responsive">
+					<img src="${bannerList.big.imgUrl}" class="responsive">
 					</span>
 					<div class="figbar te">
-						参加2017年新高考的考生们，从现在起，规划 你的升学方向吧</div>
+						${bannerList.big.title}</div>
 				</a>
 			</div>
 			<div class="column fr col2">
 				<div class="top">
-					<a target="_blank" class="infoLink mid">
+					<a target="_blank" class="infoLink mid" href="${bannerList.middle.url}">
 						<span class="imgWrap">
-							<img src="./img/2.png" class="responsive">
+							<img src="${bannerList.middle.imgUrl}" class="responsive">
 						</span>
 						<div class="figbar">
-						参加2017年新高考的考生们，从现在起，规划 你的升学方向吧</div>
+						${bannerList.middle.title}</div>
 					</a>
 				</div>
+
 				<div class="bot clearfix mt10">
-					<div class="column fl col1 mr10">
-						<a target="_blank" class="infoLink sml">
+					<c:forEach var="list" items="${bannerList.smallList}">
+					<div class="column fl col">
+						<a target="_blank" class="infoLink sml" href="${list.url}">
 							<span class="imgWrap">
-								<img src="./img/1.png" class="responsive">
+								<img src="${list.imgUrl}" class="responsive">
 							</span>
 							<div class="figbar">
-						<em class="vm w99 dib">参加2017年新高考的考生们，从现在起，规划 你的升学方向吧</em><em class="pixel1 vm"></em></div></a>
-						
+						<em class="vm w99 dib">${list.title}</em><em class="pixel1 vm"></em></div></a>	
 					</div>
-					<div class="column fl col2">
+					</c:forEach>	
+
+					<!-- <div class="column fl col">
 						<a target="_blank"class="infoLink sml">
 							<span class="imgWrap">
 								<img src="./img/4.png" class="responsive">
 							</span>
 							<div class="figbar">
 						<em class="vm w99 dib">参加2017年新高考</em><em class="pixel1 vm"></em></div></a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -92,45 +95,6 @@
 										</div>
 									   </li>
 									</c:forEach>
-									<li>
-										<div class="media">
-											<span class="fl imgWrap">
-												<img src="http://placehold.it/130X130" class="responsive">
-											</span>
-											<div class="media-body">
-													<div class="detailTitle">
-														参加2017年新高考的考生们，从现在起，规划你的升学方向吧！
-													</div>
-													<div class="clearfix detailSub g6">
-														<span class="fl article-tag">2017高考</span>
-														<span class="fr moment">1小时前</span>
-													</div>
-													<a class="db detailCnt" target="_blank">
-														根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。
-													</a>
-											</div>
-										</div>
-									</li>
-
-									<li>
-										<div class="media">
-											<span class="fl imgWrap">
-												<img src="http://placehold.it/130X130" class="responsive">
-											</span>
-											<div class="media-body">
-													<div class="detailTitle">
-														参加2017年新高考的考生们，从现在起，规划你的升学方向吧！
-													</div>
-													<div class="clearfix detailSub g6">
-														<span class="fl article-tag">2017高考</span>
-														<span class="fr moment">1小时前</span>
-													</div>
-													<a class="db detailCnt" target="_blank">
-														根据考生输入志愿一项，按照志愿填报专家团队设计多公式运算后进行精准匹配，对考生志愿的学校和专业分别给予风险等级评估，以帮助考生规避志愿填报风险。
-													</a>
-											</div>
-										</div>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -182,7 +146,7 @@
 							</div>
 						</section>
 						<section class="directs mt20 mb20">
-							<div class="">
+							<div>
 								<ul>	
 									<c:forEach var="list" items="${adList}">
 									<li><a href="${list.href}" target="_blank">

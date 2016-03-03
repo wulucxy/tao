@@ -113,7 +113,7 @@
 							<div class="">
 								<ul>
 									<c:forEach var="list" items="${adList}">
-									<li><a href="${list.href}" target="_blank">
+									<li class="mb10"><a href="${list.href}" target="_blank">
 										<img src="${list.imgUrl}" >
 									</a></li>
 									</c:forEach>
