@@ -1,4 +1,11 @@
 {
+	 "user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        }
+    },
+    "newsId" : "2222",
 	 "adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",
@@ -11,5 +18,7 @@
     "moment" : "1小时前",
     "upCount" : 111,
     "downCount" : 111,
-    "likeCount" : 111
+    "likeCount" : 111,
+    "up" : 0,
+    "down" : 0
 }

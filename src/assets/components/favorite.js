@@ -35,6 +35,13 @@ var fav = {
             that.removeFav(btn,type);
         }
 
+        //收藏资讯
+        if(type == 3 && !btn.hasClass("faved")){
+            that.addFavInfo(btn,type);
+        }else if(type == 3 && btn.hasClass("faved")){
+            that.removeFav(btn,type);
+        }
+
     },
 
     addFavMajor : function(btn,type){
@@ -53,6 +60,33 @@ var fav = {
                         btn.addClass("faved");
                         $("[name=favorId]").val(res.favorId);
                     }
+                }
+            });
+    },
+
+    addFavInfo : function(btn,type){
+        var that = this;
+        $.ajax({
+                url : "/v2/client/"+that.province+"/profile/favor/news/add",
+                type : "post",
+                contentType: "application/json",
+                data : JSON.stringify({newsId : $("[name=newsId]").val(),favorType : type}),
+                success : function(res){
+                    if(typeof res == "string"){
+                        var res = $.parseJSON(res);
+                    }
+
+                    if(!res.code){
+                        btn.addClass("faved");
+                        $("[name=favorId]").val(res.favorId);
+
+                        //回调
+                        if($("#likeCount").length){
+                            $("#likeCount").text(Number($("#likeCount").text()) + 1);
+                        }
+                    }
+
+
                 }
             });
     },
@@ -92,6 +126,11 @@ var fav = {
     				if(!res.code){
     					btn.removeClass("faved");
     					$("[name=favorId]").val("");
+
+                        //回调
+                        if($("#likeCount").length){
+                            $("#likeCount").text(Number($("#likeCount").text()) - 1);
+                        }
     				}
     			}
     		});

@@ -6,14 +6,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.1cba6008.css" rel="stylesheet"><link href="/static/web/css/infoDetail.f7a77be8.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.68780be9.css" rel="stylesheet"><link href="/static/web/css/infoDetail.e8db09d2.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
+		
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
+		<!-- 保存province属性 -->
+		<input type="hidden" name="newsId" value="${newsId}">
+
+		<!-- favorId,如果有的话 -->
+		<input type="hidden" name="favorId" value="${favorId}">
+
 		<div class="container ovh">
 			<div class="f-layout clearfix">
 				<div class="column c-66 fl">
@@ -22,17 +31,22 @@
 							<%@ include file = "/partials/_article.jsp" %>
 							<div class="thirdParts">
 								<div class="procons tc">
-									<a href="javascript:;" class="btn btn-primary pros" data-type="1">
+									<a href="javascript:;" class="btn btn-primary up" btn-type="${up}">
 										<i class="taoIcon icon-pro"></i>
 										<em class="vm">支持(<span id="upCount">${upCount}</span>)</em>
 									</a>
-									<a href="javascript:;" class="btn btn-negative cons" data-type="2">
+									<a href="javascript:;" class="btn btn-negative down" btn-type="${down}">
 										<i class="taoIcon icon-con"></i>
 										<em class="vm">反对(<span id="downCount">${downCount}</span>)</em>
 									</a>
-									<a href="javascript:;" class="btn btn-negative last">
+									<!-- <a href="javascript:;" class="btn btn-negative last" data-favtype="1">
 										<i class="taoIcon icon-fav"></i>
 										<em class="vm">收藏(<span id="likeCount">${likeCount}</span>)</em>
+									</a> -->
+
+									<a href="javascript:;" class="btn btn-negative btn-fav last" data-favtype="3">
+										<i class="taoIcon favIcon"></i>
+										<em class="vm unfavedTxt">收藏(<span id="likeCount">${likeCount}</span>)</em>
 									</a>
 								</div>
 								

@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		22:0
+/******/ 		21:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"bookStep1","1":"bookStep2","2":"bookStep3","3":"college","4":"collegeDetail","5":"error","6":"evaluateStep1","7":"evaluateStep2","8":"evaluateStep3","9":"expertOrder","10":"expertOrderSuccess","11":"home","12":"info","13":"infoDetail","14":"login","15":"major","16":"majorExam1","17":"majorExam2","18":"majorExam3","19":"major_2","20":"score","21":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"bookStep1","1":"bookStep2","2":"bookStep3","3":"college","4":"collegeDetail","5":"error","6":"evaluateStep1","7":"evaluateStep2","8":"evaluateStep3","9":"expertOrder","10":"expertOrderSuccess","11":"home","12":"info","13":"infoDetail","14":"login","15":"major","16":"majorExam1","17":"majorExam2","18":"major_2","19":"score","20":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -19102,6 +19102,13 @@
 	            that.removeFav(btn,type);
 	        }
 	
+	        //收藏资讯
+	        if(type == 3 && !btn.hasClass("faved")){
+	            that.addFavInfo(btn,type);
+	        }else if(type == 3 && btn.hasClass("faved")){
+	            that.removeFav(btn,type);
+	        }
+	
 	    },
 	
 	    addFavMajor : function(btn,type){
@@ -19120,6 +19127,33 @@
 	                        btn.addClass("faved");
 	                        $("[name=favorId]").val(res.favorId);
 	                    }
+	                }
+	            });
+	    },
+	
+	    addFavInfo : function(btn,type){
+	        var that = this;
+	        $.ajax({
+	                url : "/v2/client/"+that.province+"/profile/favor/news/add",
+	                type : "post",
+	                contentType: "application/json",
+	                data : JSON.stringify({newsId : $("[name=newsId]").val(),favorType : type}),
+	                success : function(res){
+	                    if(typeof res == "string"){
+	                        var res = $.parseJSON(res);
+	                    }
+	
+	                    if(!res.code){
+	                        btn.addClass("faved");
+	                        $("[name=favorId]").val(res.favorId);
+	
+	                        //回调
+	                        if($("#likeCount").length){
+	                            $("#likeCount").text(Number($("#likeCount").text()) + 1);
+	                        }
+	                    }
+	
+	
 	                }
 	            });
 	    },
@@ -19159,6 +19193,11 @@
 	    				if(!res.code){
 	    					btn.removeClass("faved");
 	    					$("[name=favorId]").val("");
+	
+	                        //回调
+	                        if($("#likeCount").length){
+	                            $("#likeCount").text(Number($("#likeCount").text()) - 1);
+	                        }
 	    				}
 	    			}
 	    		});

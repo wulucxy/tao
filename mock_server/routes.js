@@ -43,5 +43,7 @@ module.exports = {
 	'post::/v2/client/auth/signup' : 'mock::api/signup.json',
 	'get::/v2/client1/data/major/all'  : 'mock::api/majorList.json',
 	'post::/v2/client/1/data/major' :  'mock::api/majors.json',
-	'post::/v2/client/1/data/major/college':  'mock::api/college.json'
+	'post::/v2/client/1/news/down':  'mock::api/down.json',
+	'post::/v2/client/1/news/up':  'mock::api/up.json',
+	'post::/v2/client/1/profile/favor/news/add' : 'mock::api/addInfoFav.json'
 };
