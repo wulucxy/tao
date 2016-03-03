@@ -105,7 +105,7 @@ function postAnswer(btn,answer){
 		url : "/v2/client/"+provinceId + "/tzy/mtest/submit",
 		type  : "post",
 		contentType: "application/json",
-		data : JSON.stringify({code : $("[name=code]").val(),answer:answer}),
+		data : JSON.stringify({code : $("[name=code]").val(),answer:answer.join("")}),
 		success : function(res){
 			if(typeof res == "string"){
 				var res = $.parseJSON(res);
