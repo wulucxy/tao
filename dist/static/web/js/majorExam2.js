@@ -93,6 +93,7 @@ webpackJsonp([17],{
 	function subAnswer(){
 		$("#subTestBtn").on("click",function(e){
 			e.preventDefault();
+			var btn = $(e.target);
 			if(answer.length != allItems){
 				_alert("请完成所有选项才能提交");
 			}else{
