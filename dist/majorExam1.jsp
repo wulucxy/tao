@@ -13,7 +13,10 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-		
+	
+	<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
+
 	 <div class="container proTestWrapper">
 		<section class="s-proTest">
 			<div class="content">

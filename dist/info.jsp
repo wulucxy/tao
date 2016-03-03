@@ -73,13 +73,13 @@
 								</h3>
 								<ul class="infoList">
 									<c:forEach var="list" items="${infoList}">
-									   <li>
+									   <li class="">
 									   	 <div class="media">
 											<span class="fl imgWrap">
 												<img src="${list.imgUrl}">
 											</span>
 											<div class="media-body">
-													<div class="detailTitle">
+													<div class="detailTitle ellipsis">
 														${list.title}
 													</div>
 													<div class="clearfix detailSub g6">

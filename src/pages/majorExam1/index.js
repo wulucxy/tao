@@ -24,7 +24,7 @@ var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 if(answer.length == allItems){
 	_alert("你已经完成全部问题");
 	setTimeout(function(){
-		//window.location = "/";
+		window.location = "/box/plan/major_exam3";
 	},3000);
 }else if(answer.length){
 	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/pro2"});
@@ -38,6 +38,31 @@ if(answer.length == allItems){
 	});
 }
 
+function subCodeAction(btn,oForm){
+	var provinceId = $("[name=province]").val();
+	$.ajax({
+		url : "/v2/client/"+provinceId + "/tzy/mtest/code",
+		type  : "post",
+		contentType: "application/json",
+		data : JSON.stringify({code : $("#code").val()}),
+		success : function(res){
+			if(typeof res == "string"){
+				var res = $.parseJSON(res);
+			}
+
+			if(!res.code){
+				window.location.href = "/box/plan/major_exam2";
+			}else{
+				common.showError($("#errTxt"),res.msg);
+				return;
+			}
+		},
+		error : function(){
+			warn("网络错误，请稍后重试");
+		}
+	})
+
+};
 
 function verifyCodeModal(btn){
 	modalBox(btn,{
@@ -49,10 +74,13 @@ function verifyCodeModal(btn){
         	
         	$("#verifyCodeForm").validator({
         		errorParent: '.row',
+        		focusinCallback: function() {
+		          common.hideError($('.errTxt'));
+		        },
 			    successCallback: function(e) {
 			      var target = $(e.target).closest('.btn');
 			      //执行到下一步操作
-			      
+			      subCodeAction(target,$("#verifyCodeForm"));
 
 			    },
 			  
