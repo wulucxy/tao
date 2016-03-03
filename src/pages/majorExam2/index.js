@@ -102,7 +102,7 @@ function subAnswer(){
 function postAnswer(btn,answer){
 	var provinceId = $("[name=province]").val();
 	$.ajax({
-		url : "/v2/client/"+provinceId + "/mtest/submit",
+		url : "/v2/client/"+provinceId + "/tzy/mtest/submit",
 		type  : "post",
 		contentType: "application/json",
 		data : JSON.stringify({code : $("[name=code]").val(),answer:answer}),
