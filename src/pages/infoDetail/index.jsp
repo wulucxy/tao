@@ -24,15 +24,15 @@
 								<div class="procons tc">
 									<a href="javascript:;" class="btn btn-primary pros" data-type="1">
 										<i class="taoIcon icon-pro"></i>
-										<em class="vm">支持(1234)</em>
+										<em class="vm">支持(<span id="upCount">${upCount}</span>)</em>
 									</a>
 									<a href="javascript:;" class="btn btn-negative cons" data-type="2">
 										<i class="taoIcon icon-con"></i>
-										<em class="vm">反对(1234)</em>
+										<em class="vm">反对(<span id="downCount">${downCount}</span>)</em>
 									</a>
 									<a href="javascript:;" class="btn btn-negative last">
 										<i class="taoIcon icon-fav"></i>
-										<em class="vm">收藏(1234)</em>
+										<em class="vm">收藏(<span id="likeCount">${likeCount}</span>)</em>
 									</a>
 								</div>
 								

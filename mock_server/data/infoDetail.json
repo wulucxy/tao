@@ -8,5 +8,8 @@
     "context" : "<p style=\"text-align: left; line-height: 28px; font-size: 14px; text-indent: 2em;\">&nbsp;22222<\/p>",
     "title" : "title",
     "tagList" : [1,2,3,4],
-    "moment" : "1小时前"
+    "moment" : "1小时前",
+    "upCount" : 111,
+    "downCount" : 111,
+    "likeCount" : 111
 }
