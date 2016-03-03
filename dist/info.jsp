@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.68780be9.css" rel="stylesheet"><link href="/static/web/css/info.08cfd57b.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.68780be9.css" rel="stylesheet"><link href="/static/web/css/info.583abc33.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -132,7 +132,7 @@
 								</h3>
 								
 								<ul class="timelineList">
-									<c:forEach var="list" items="${hotList1}">
+									<c:forEach var="list" items="${hotList}">
 									   <li class="timeline media">
 									   <span class="label fl">
 											${list.time}

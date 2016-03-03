@@ -132,7 +132,7 @@
 								</h3>
 								
 								<ul class="timelineList">
-									<c:forEach var="list" items="${hotList1}">
+									<c:forEach var="list" items="${hotList}">
 									   <li class="timeline media">
 									   <span class="label fl">
 											${list.time}
