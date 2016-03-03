@@ -24,13 +24,13 @@ webpackJsonp([13],{
 		e.preventDefault();
 		var btn = $(this);
 		updown(btn,1);
-	})
+	});
 	
 	$(document).on("click",'.down',function(e){
 		e.preventDefault();
 		var btn = $(this);
 		updown(btn,2);
-	})
+	});
 	
 	function updown(btn,type){
 		if(btn.hasClass("active") ||  $("[btn-type=1]").length){
