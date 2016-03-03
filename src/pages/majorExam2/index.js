@@ -91,11 +91,39 @@ function subAnswer(){
 		if(answer.length != allItems){
 			_alert("请完成所有选项才能提交");
 		}else{
-			console.log(answer,answer.length);
+			if(btn.hasClass("disabled")) return;
+			btn.addClass("disabled");
+			postAnswer(btn,answer);
 		}
 	});
 }
 
+function postAnswer(btn,answer){
+	var provinceId = $("[name=province]").val();
+	$.ajax({
+		url : "/v2/client/"+provinceId + "/mtest/submit",
+		type  : "post",
+		contentType: "application/json",
+		data : JSON.stringify({code : $("[name=code]").val(),answer:answer}),
+		success : function(res){
+			if(typeof res == "string"){
+				var res = $.parseJSON(res);
+			}
+
+			if(!res.code){
+				window.location.href = "/box/plan/major_exam3";
+			}else{
+				common.showError($("#errTxt"),res.msg);
+				btn.removeClass("disabled");
+				return;
+			}
+		},
+		error : function(){
+			btn.removeClass("disabled");
+			warn("网络错误，请稍后重试");
+		}
+	});
+};
 
 
 
