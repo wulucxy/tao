@@ -67,10 +67,31 @@
 										全部资讯
 										<em class="underLine"></em>	
 									</span>
-<!-- 									<a href="#" class="link fr more" target="_blank">更多&gt;&gt;</a>
- -->								</h3>
-								<ul class="infoList load-more-list">
-						
+								</h3>
+								<ul class="infoList">
+									<c:forEach var="list" items="${infoList}">
+									   <li>
+									   	 <div class="media">
+											<span class="fl imgWrap">
+												<img src="${list.imgUrl}">
+											</span>
+											<div class="media-body">
+													<div class="detailTitle">
+														${list.title}
+													</div>
+													<div class="clearfix detailSub g6">
+													<c:forEach var="tag" items="${tagList}">
+														<span class="fl article-tag mr10">${tag}</span>
+													</c:forEach>
+													<span class="fr moment">${list.time}</span>
+													</div>
+													<a class="db detailCnt" href="${list.url}" target="_blank">
+														${list.context}
+													</a>
+											</div>
+										</div>
+									   </li>
+									</c:forEach>
 									<li>
 										<div class="media">
 											<span class="fl imgWrap">
@@ -147,50 +168,27 @@
 								</h3>
 								
 								<ul class="timelineList">
-									<li class="timeline media">
-										<span class="label fl">
-											12-31
+									<c:forEach var="list" items="${hotList1}">
+									   <li class="timeline media">
+									   <span class="label fl">
+											${list.time}
 										</span>
-										<div class="media-body"><a href="#" target="_blank">
-											关于新学考、选考25个问题的权威解答都在这 里了！你的升学方向...
+										<div class="media-body"><a href="${list.url}" target="_blank">
+											${list.title}
 										</a></div>
-									</li>
-									<li class="timeline media">
-										<span class="label fl">
-											12-31
-										</span>
-										<div class="media-body"><a href="#" target="_blank">
-											关于新学考、选考25个问题的权威解答都在这 里了！你的升学方向...
-										</a></div>
-									</li>
-									<li class="timeline media">
-										<span class="label fl">
-											12-31
-										</span>
-										<div class="media-body"><a href="#" target="_blank">
-											关于新学考、选考25个问题的权威解答都在这 里了！你的升学方向...
-										</a></div>
-									</li>
-									<li class="timeline media">
-										<span class="label fl">
-											12-31
-										</span>
-										<div class="media-body"><a href="#" target="_blank">
-											关于新学考、选考25个问题的权威解答都在这 里了！你的升学方向...
-										</a></div>
-									</li>
-
+									   </li>
+									</c:forEach>
 								</ul>
 							</div>
 						</section>
 						<section class="directs mt20 mb20">
 							<div class="">
-								<ul>
-									
-									<li><a href="#5" target="_blank">
-										<img src="http://placehold.it/300x260">
+								<ul>	
+									<c:forEach var="list" items="${adList}">
+									<li><a href="${list.href}" target="_blank">
+										<img src="${list.imgUrl}" >
 									</a></li>
-									
+									</c:forEach>
 								</ul>
 							</div>
 						</section>
