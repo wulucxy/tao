@@ -28,7 +28,7 @@ var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 if(answer.length == allItems){
 	_alert("你已经完成全部问题");
 	setTimeout(function(){
-		//window.location = "/";
+		window.location = "/box/plan/major_exam3";
 	},3000);
 }else if(answer.length){
 	_confirm("上次已经做到"+(answer.length+1)+"题，是否继续",{
