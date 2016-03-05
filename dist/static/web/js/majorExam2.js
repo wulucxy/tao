@@ -62,11 +62,17 @@ webpackJsonp([17],{
 			startCallback : function(pageIndex,$oldItem,$newItem){
 				answer.push($oldItem.find(".current").data("type"));
 				Cookies.set("answer",answer.join(""),{expire : 356});
+	
+	
+				if((pageIndex+1) >= allItems){
+					subAnswer();
+				};
 			},
 			callback : function(pageIndex,$oldItem,$newItem){
+				console.log(pageIndex);
 				if((pageIndex+1) >= allItems){
 					$("#subTestFooter").fadeIn(100);
-					subAnswer();
+					//subAnswer();
 				}
 	
 				//140题以后

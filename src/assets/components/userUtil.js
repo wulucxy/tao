@@ -5,7 +5,7 @@ var CryptoJS = require('crypto-js');
 
 module.exports = {
 	encrypt: function(pwd) {
-      return CryptoJS.MD5(pwd).toString(CryptoJS.enc.Base64);
+      return CryptoJS.MD5(pwd).toString();
     },
 
 	//控制公共表单错误展示和隐藏
