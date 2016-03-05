@@ -85,10 +85,13 @@ var verify = {
              if(typeof data == "string"){
               var data = $.parseJSON(data);
              }
-             if(data.code != "200"){
+             if(data.code){
               that.clearTimeCount();
               warn(data.msg);
              }
+            },
+            error : function(){
+            	warn("短信发送失败，请稍后重试");
             }
         });
 	}

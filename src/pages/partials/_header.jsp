@@ -43,7 +43,7 @@
 							</span>
 							<em class="vm">个人中心</em>
 							</a>
-							<a href="/user" class="dib user-r link">
+							<a href="/signout" class="dib user-r link">
 							<span class="imgWrap exit">
 								<img src="./img/exit.png" class="responsive">
 							</span>

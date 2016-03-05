@@ -34,6 +34,30 @@ var reg = {
 	        html:tmpl({}),
 	        klass : 'w540 shadow',
 	        closeByOverlay : false,
+	        startCallback : function(){
+	        	$.ajax({
+	        		url : "/v2/client/system/area",
+	        		type : "get",
+	        		contentType: "application/json",
+	        		success : function(res){
+	        			if(typeof res == "string"){
+	        				var res = $.parseJSON(res);
+	        			}
+
+	        			var optionList = [];
+
+	        			$.each(res,function(idx,ele){
+	        				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
+	        			});
+
+	        			$("#provinceId").empty();
+	        			$("#provinceId").append(optionList.join(""));
+	        		},
+	        		error : function(){
+	        			warn("网络请求失败，请稍后重试");
+	        		}
+	        	});
+	        },
 	        completeCallback : function(){ 
 	        	var self = btn; 
 	        	//去注册

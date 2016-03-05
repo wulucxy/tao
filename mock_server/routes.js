@@ -46,5 +46,8 @@ module.exports = {
 	'post::/v2/client/1/news/down':  'mock::api/down.json',
 	'post::/v2/client/1/news/up':  'mock::api/up.json',
 	'post::/v2/client/1/profile/favor/news/add' : 'mock::api/addInfoFav.json',
-	'post::/v2/client/1/tzy/mtest/code' : 'mock::api/verifyCode.json'
+	'post::/v2/client/1/tzy/mtest/code' : 'mock::api/verifyCode.json',
+	'/v2/client/system/area' : 'mock::api/cityList.json'
+
+
 };
