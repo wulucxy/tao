@@ -18869,7 +18869,7 @@
 		timeCount :function(){
 		    var that = this;
 		    clearInterval(that.smsTimer);
-		    var t=6;
+		    var t=60;
 	
 		      var count = function () { 
 		          if (t <= 0) {                   //倒计时结束
