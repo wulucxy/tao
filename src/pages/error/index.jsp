@@ -34,7 +34,7 @@
 		</div>
 
 	</div>
-	<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 
 	</body>
 </html>

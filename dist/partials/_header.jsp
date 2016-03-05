@@ -9,7 +9,7 @@
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 
 	<header class="header">
 	  <div class="topBar">
