@@ -11916,7 +11916,7 @@
 	
 	module.exports = {
 		encrypt: function(pwd) {
-	      return CryptoJS.MD5(pwd).toString();
+	      return CryptoJS.MD5(pwd).toString().toUpperCase();
 	    },
 	
 		//控制公共表单错误展示和隐藏

@@ -22,7 +22,6 @@ Plugin.prototype = {
     	}
 
     	that.btn.off().on("click",function(e){
-    		console.log("btn is clicked");
     		e.preventDefault();
     		var btn = $(this).closest(".btn");
     		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
