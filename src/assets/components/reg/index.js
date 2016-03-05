@@ -36,7 +36,7 @@ var reg = {
 	        closeByOverlay : false,
 	        startCallback : function(){
 	        	$.ajax({
-	        		url : "/v2/client/system/area",
+	        		url : "/system/area",
 	        		type : "get",
 	        		contentType: "application/json",
 	        		success : function(res){
