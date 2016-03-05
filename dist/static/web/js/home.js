@@ -59,7 +59,11 @@ webpackJsonp([11],{
 	        this.ul.css({position: 'relative', left: 0, width: (len * 100) + '%'}); 
 	        this.li.css({'float': 'left', width: (100 / len) + '%'}); 
 	
-	        this.li.find("a").css({"backgroundImage":"url("+this.li.data("pic")+")"});
+	        $.each(this.li,function(idx,ele){
+	          var $ele = $(ele);
+	          $ele.find("a").css({"backgroundImage":"url("+$ele.data("pic")+")"});
+	        });
+	        //this.li.find("a").css({"backgroundImage":"url("+this.li.data("pic")+")"});
 	
 	        o.nav && this.nav();
 	      },
