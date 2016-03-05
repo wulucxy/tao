@@ -34,7 +34,7 @@ var reg = {
 	        	});
 
 	        	var oError = $(".errTxt");
-	        	verify.init(oError);
+	        	verify.init(oError,{type : 1});
 	        	that.forgetEvt();
 	        }
 	    });	

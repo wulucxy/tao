@@ -18838,11 +18838,17 @@
 
 	var $ = window.$ || __webpack_require__(32);
 	var userUtil = __webpack_require__(51);
+	var extend =  __webpack_require__(37);
 	
 	var telReg = /^1\d{10}$/;
 	var verify = {
-		init : function(oError){
+		init : function(oError,settings){
 			var that = this;
+	
+			that.settings = extend({
+				type : 0
+			},settings);
+	
 			that.oLabel = $('#verifyLabel'), 
 			that.oCount = $('#minCount'), 
 			that.oActive = $("#activeStatus"),
@@ -18911,7 +18917,7 @@
 		requestCode : function(sendSMSUrl){
 		  var that = this;
 			//公共参数
-	      var _data = {mobile: document.getElementById('mobile').value};
+	      var _data = {mobile: document.getElementById('mobile').value,type:that.settings.type};
 	
 	        $.ajax({
 	            url: sendSMSUrl || "/v2/client/auth/requestCode",
@@ -18928,8 +18934,8 @@
 	              warn(data.msg);
 	             }
 	            },
-	            error : function(){
-	            	warn("短信发送失败，请稍后重试");
+	            error : function(err){
+	            	warn(JSON.stringify(err) || "短信发送失败，请稍后重试");
 	            }
 	        });
 		}
@@ -18979,7 +18985,7 @@
 		        	});
 	
 		        	var oError = $(".errTxt");
-		        	verify.init(oError);
+		        	verify.init(oError,{type : 1});
 		        	that.forgetEvt();
 		        }
 		    });	
