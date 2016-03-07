@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	</head>
+	<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.b9eb5aea.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -50,22 +50,10 @@
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="1">
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="1">
 									<em class="vm">添加专业</em>
-									<span>(<em class="count">1</em>/<em class="all">6</em>)</span>
+									<span class="vm">(<em class="count">1</em>/<em class="all">6</em>)</span>
 								</a>
 							</div>
-							<ul class="tagsWrap clearfix">
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
+							<ul class="tagsWrap clearfix showTagList">
 							</ul>
 							<input type="hidden" name="major1">
 						</div>
@@ -76,22 +64,11 @@
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="2">
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="2">
 									<em class="vm">添加专业</em>
-									<span>(<em class="count">1</em>/<em class="all">6</em>)</span>
+									<span class="vm">(<em class="count">1</em>/<em class="all">6</em>)</span>
 								</a>
 							</div>
-							<ul class="tagsWrap clearfix">
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
-								<li class="tagList" data-n="法学" data-value="1">
-									<span class="icon-close">X</span>
-									<span class="tagContent">法学</span>
-								</li>
+							<ul class="tagsWrap clearfix showTagList">
+								
 							</ul>
 
 						</div>

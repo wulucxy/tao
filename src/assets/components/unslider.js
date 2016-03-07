@@ -25,9 +25,10 @@ function unslider(target,options){
           var $ele = $(ele);
           $ele.find("a").css({"backgroundImage":"url("+$ele.data("pic")+")"});
         });
-        //this.li.find("a").css({"backgroundImage":"url("+this.li.data("pic")+")"});
 
-        o.nav && this.nav();
+        if(o.nav && len > 1){
+          this.nav();
+        }
       },
       nav : function(){
         var that = this, $this = that.target,o = that.options;

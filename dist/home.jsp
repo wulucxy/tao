@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/home.77eb6b8f.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -97,7 +97,7 @@
 								推荐阅读
 								<em class="underLine"></em>	
 							</span>
-							<a href="#" class="link fr more" target="_blank">更多>></a>
+							<a href="/info" class="link fr more" target="_blank">更多>></a>
 						</h3>
 
 						<ul class="listView recommendList clearfix">

@@ -97,7 +97,7 @@
 								推荐阅读
 								<em class="underLine"></em>	
 							</span>
-							<a href="#" class="link fr more" target="_blank">更多>></a>
+							<a href="/info" class="link fr more" target="_blank">更多>></a>
 						</h3>
 
 						<ul class="listView recommendList clearfix">

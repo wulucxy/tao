@@ -79,9 +79,9 @@
 												<img src="${list.imgUrl}">
 											</span>
 											<div class="media-body">
-													<div class="detailTitle ellipsis">
+													<a class="detailTitle ellipsis" href="${list.url}" target="_blank">
 														${list.title}
-													</div>
+													</a>
 													<div class="clearfix detailSub g6">
 													<c:forEach var="tag" items="${tagList}">
 														<span class="fl article-tag mr10">${tag}</span>

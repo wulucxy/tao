@@ -37,13 +37,13 @@ var dataSet = {
         var lis = [];
         if(!that.state.selected.length){
             lis.push('<li class="noList">动动手指，在左边选择求学地区吧！</li>');
-            $(".btn-positive").addClass("diasabled");
+            $(".btn-positive").addClass("disabled");
         }else{
             lis = $.map(that.state.selected,function (item) {
                 return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
             });
-            if($(".btn-positive").hasClass("diasabled")){
-                $(".btn-positive").removeClass("diasabled"); 
+            if($(".btn-positive").hasClass("disabled")){
+                $(".btn-positive").removeClass("disabled"); 
             }
         }
         

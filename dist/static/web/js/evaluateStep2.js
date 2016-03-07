@@ -26,13 +26,13 @@ webpackJsonp([7],{
 	var tmpl_questions = __webpack_require__(95);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(128);
-	var tmpl_list = __webpack_require__(341);
-	var tmpl_major = __webpack_require__(342);
-	var majors = __webpack_require__(343);
+	var tmpl_school = __webpack_require__(127);
+	var tmpl_list = __webpack_require__(128);
+	var tmpl_major = __webpack_require__(129);
+	var majors = __webpack_require__(130);
 	
 	//分页
-	var pagination = __webpack_require__(340);
+	var pagination = __webpack_require__(131);
 	//自定义滚动
 	var scroll = __webpack_require__(98);
 	
@@ -40,16 +40,62 @@ webpackJsonp([7],{
 	var school = {
 	
 	  init : function(o){
-	     
+	
+	      this.bindEvt();
+	
 	      this.pager = 1;
-	      this.cityDataCache = {};
+	      this.cityDataCache = [
+	        {},{},{},{},{}
+	      ];
 	      this.options = o;
 	
 	      this.state = {
-	        "majorList" : majors,
-	        "subMajorList" : [],
-	        "selected" : [],
-	        "selectList" : [
+	        "provList" : majors,
+	        "cityList" : [
+	          {
+	            "type" : 1,
+	            "list" : []
+	          },
+	          {
+	            "type" : 2,
+	            "list" : []
+	          },
+	          {
+	            "type" : 3,
+	            "list" : []
+	          },
+	          {
+	            "type" : 4,
+	            "list" : []
+	          },
+	          {
+	            "type" : 5,
+	            "list" : []
+	          }
+	        ],
+	        "selected" : [
+	          {
+	            "type" : 1,
+	            "list" : []
+	          },
+	          {
+	            "type" : 2,
+	            "list" : []
+	          },
+	          {
+	            "type" : 3,
+	            "list" : []
+	          },
+	          {
+	            "type" : 4,
+	            "list" : []
+	          },
+	          {
+	            "type" : 5,
+	            "list" : []
+	          }
+	        ],
+	        "zhiyuanList" : [
 	          {
 	            "type" : 1,
 	            "name" : "",
@@ -80,13 +126,12 @@ webpackJsonp([7],{
 	      };
 	
 	      this.render();
-	      this.bindEvt();
 	  },
 	
-	  render : function(){
+	  render : function(type){
 	    var that = this;
 	
-	      $.each(that.state.selectList,function(idx,item){
+	      $.each(that.state.zhiyuanList,function(idx,item){
 	          if(item.code && item.name){
 	            $("[major="+item.type+"]").val(item.name);
 	            $("[data-rel="+item.type+"]").addClass("active");
@@ -96,8 +141,8 @@ webpackJsonp([7],{
 	      });
 	
 	      //省列表
-	      if(that.state.majorList.length){
-	          var provLis = $.map(that.state.majorList,function(item){
+	      if(that.state.provList.length){
+	          var provLis = $.map(that.state.provList,function(item){
 	              return '<li data-value="'+item.code+'">'+item.name+'</li>';
 	          });
 	      }
@@ -109,36 +154,51 @@ webpackJsonp([7],{
 	      }
 	
 	      //城市列表
-	      if(that.state.subMajorList.length){
-	          var cityLis = $.map(that.state.subMajorList,function(city){
-	              if(city.status == 1){
-	                  return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
-	              }else{
-	                  return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
-	              }
-	          });
+	      if($(".city").length && that.state.cityList[that.modal.majorType-1].list){
 	
-	          $(".city").html(cityLis);
-	          that.options.completeCallback && that.options.completeCallback.call(that);
-	      }
+	        var cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
+	            if(city.status == 1){
+	                return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+	            }else{
+	                return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+	            }
+	        });
 	
-	      //选中城市列表
+	        $(".city").html(cityLis);
+	        that.options.completeCallback && that.options.completeCallback.call(that);
+	    }
+	
+	      //选中城市列表(弹窗)
 	      var lis = [];
-	      if(!that.state.selected.length){
-	          lis.push('<li class="noList">动动手指，在左边选择专业吧！</li>');
-	          $(".btn-positive").addClass("diasabled");
-	      }else{
-	          lis = $.map(that.state.selected,function (item) {
+	      if($(".city").length && !that.state.selected[that.modal.majorType-1].list.length){
+	          lis.push('<li class="noList"></li>');
+	          $(".btn-positive").addClass("disabled");
+	          $('#tagsWrap').html(lis.join('')); 
+	      }else if($(".city").length){
+	          lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
 	              return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
 	          });
-	          if($(".btn-positive").hasClass("diasabled")){
-	            $(".btn-positive").removeClass("diasabled"); 
+	          if($(".btn-positive").hasClass("disabled")){
+	            $(".btn-positive").removeClass("disabled"); 
 	          }
+	          if(that.state.selected[that.modal.majorType-1].list.length>=6){
+	            $("[name=city]").attr("disabled",true);
+	          }else{
+	            $("[name=city]").attr("disabled",false);
+	          }
+	          $('#tagsWrap').html(lis.join('')); 
 	      }
 	      
+	      //当前页面展示的选中专业
+	      if(typeof type != "undefined" && that.state.selected[type].list){
+	        var lis = $.map(that.state.selected[type].list,function (item) {
+	            return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+	        });
+	        $("[major="+(type+1)+"]").closest(".m-select").find(".tagsWrap").html(lis.join(""));
+	        $("[major="+(type+1)+"]").closest(".m-select").find(".count").text(lis.length);
+	      }else{
 	
-	     $('#tagsWrap').html(lis.join('')); 
-	
+	      }
 	  },
 	
 	  boxEvt : function(){
@@ -155,7 +215,7 @@ webpackJsonp([7],{
 	        that.requestCityData.call(that,$(this).data("value"));
 	    });
 	
-	    $(document).on("change","[name=city]",function(e){
+	    $(document).off().on("change","[name=city]",function(e){
 	         
 	        var ele = this,$ele = $(this);
 	
@@ -165,12 +225,14 @@ webpackJsonp([7],{
 	              n : $(ele).attr("n"),
 	              value : ele.value
 	          };
-	         
-	          that.state.selected.push(eleObj);
 	
-	          $.each(that.state.subMajorList,function(idx,item){
+	          //保存到当前志愿list列表中
+	          that.state.selected[that.modal.majorType-1].list.push(eleObj);
+	
+	          //分志愿类型处理，将当前志愿选中项列出来
+	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
 	              if(eleObj.value == item.value){
-	                  that.state.subMajorList[idx].status = 1;
+	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 1;
 	                   return false;
 	              }
 	          });
@@ -181,17 +243,18 @@ webpackJsonp([7],{
 	              value : ele.value
 	          };
 	
-	          $.each(that.state.selected,function(idx,item){
+	          //去除选择项
+	          $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
 	              if(eleObj.value == item.value){
-	                  that.state.selected.splice(idx,1);
+	                  that.state.selected[that.modal.majorType-1].list.splice(idx,1);
 	                   return false;
 	              }
 	          });
 	
 	
-	          $.each(that.state.subMajorList,function(idx,item){
+	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
 	              if(eleObj.value == item.value){
-	                  that.state.subMajorList[idx].status = 0;
+	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
 	                   return false;
 	              }
 	          });
@@ -201,16 +264,44 @@ webpackJsonp([7],{
 	        that.render();
 	    });
 	
+	    $(".s-major").off().on('click', '.icon-close', function (e) {
+	
+	        var $li = $(this).closest(".tagList");
+	        var val = $li.data("value"),n = $li.data("n");
+	            
+	        var ele = {
+	            n : n,
+	            value : val
+	        };
+	
+	       $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
+	            if(ele.value == item.value){
+	                that.state.selected[that.modal.majorType-1].list.splice(idx,1);
+	                return false;
+	            }
+	       });
+	
+	       $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
+	            if(ele.value == item.value){
+	                that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
+	                 return false;
+	            }
+	        });
+	
+	        
+	        that.render();
+	    });
+	
 	  },
 	
 	  requestCityData : function(val){
 	    var that = this,o = that.options;
 	
-	    if(that.cityDataCache[val]){
-	        that.state.subMajorList = that.cityDataCache[val];
-	        that.render();
-	        return;
-	    }
+	    // if(that.cityDataCache[that.modal.majorType-1][val]){
+	    //     that.state.cityList[that.modal.majorType-1].list = that.cityDataCache[that.modal.majorType-1][val];
+	    //     that.render();
+	    //     return;
+	    // }
 	
 	    $.ajax({
 	        url : o.url,
@@ -222,15 +313,15 @@ webpackJsonp([7],{
 	                var res = $.parseJSON(res);
 	            }
 	            
-	            if(!that.cityDataCache[val]){
-	                that.cityDataCache[val] = res.c;
-	            }
+	            // if(!that.cityDataCache[that.modal.majorType-1][val]){
+	            //     that.cityDataCache[that.modal.majorType-1][val] = res.c;
+	            // }
 	
 	            $.each(res.c,function(idx,ele){
 	                ele.status = 0;
 	            });
 	
-	            that.state.subMajorList = res.c;
+	            that.state.cityList[that.modal.majorType-1].list = res.c;
 	            that.render();
 	
 	        },
@@ -264,8 +355,52 @@ webpackJsonp([7],{
 	            }
 	          });
 	     }    
+	  },
+	
+	  updateRes : function(btn){
+	    var that = this;
+	    btn.find(".count").text(that.state.selected[that.modal.majorType-1].list.length);
+	    var lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
+	        return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+	    });
+	    btn.closest(".m-select").find(".tagsWrap").empty().html(lis.join(""));
+	  },
+	
+	  updateTags : function(btn){
+	    var that = this;
+	    var type = btn.data("rel") - 1;
+	    $(".showTagList").off().on("click",".icon-close",function(e){
+	
+	      e.preventDefault();
+	      var $li = $(this).closest(".tagList");
+	      var val = $li.data("value"),n = $li.data("n");
+	          
+	      var ele = {
+	          n : n,
+	          value : val
+	      };
+	
+	     $.each(that.state.selected[type].list,function(idx,item){
+	          if(ele.value == item.value){
+	              that.state.selected[type].list.splice(idx,1);
+	              return false;
+	          }
+	     });
+	
+	     $.each(that.state.cityList[type].list,function(idx,item){
+	          if(ele.value == item.value){
+	              that.state.cityList[type].list[idx].status = 0;
+	               return false;
+	          }
+	      });
+	
+	      
+	      that.render(type);
+	
+	    });
 	
 	  },
+	
 	
 	  requestData : function(pager){
 	    var that = this;
@@ -288,21 +423,28 @@ webpackJsonp([7],{
 	
 	  Evt : function(){
 	    var that = this;
-	    $(document).on("click",".schoolList",function(e){
+	    $(document).off().on("click",".schoolList",function(e){
 	      e.preventDefault();
 	      var $this = $(this);
 	      $this.siblings().removeClass("active");
 	      $this.addClass("active");
 	
-	      $.each(that.state.selectList,function(idx,ele){
+	      //清空选中cityList和selectedlist
+	      that.state.selected[that.modal.majorType-1].list = [];
+	      that.state.cityList[that.modal.majorType-1].list = [];
+	
+	      console.log(that.state.cityList[that.modal.majorType-1].list);
+	
+	      $.each(that.state.zhiyuanList,function(idx,ele){
 	        if(that.modal.majorType == ele.type){
-	          that.state.selectList[idx].name = $this.attr("name");
-	          that.state.selectList[idx].code = $this.attr("code");
+	          //保存志愿信息
+	          that.state.zhiyuanList[idx].name = $this.attr("name");
+	          that.state.zhiyuanList[idx].code = $this.attr("code");
 	        }
 	      });
 	
 	      $(".btn-close").trigger("click");
-	      that.render();
+	      that.render(that.modal.majorType-1);
 	    })
 	  },
 	
@@ -334,7 +476,7 @@ webpackJsonp([7],{
 	    });
 	
 	
-	    $(document).on("focusin",".addSchool",function(e){
+	    $(".addSchool").on("focusin",function(e){
 	      e.preventDefault();
 	      var oInput = $(e.target);
 	      if(oInput.hasClass("cur")) return;
@@ -374,7 +516,7 @@ webpackJsonp([7],{
 	
 	    });
 	
-	    $(document).on("click",".addMajor",function(e){
+	    $(".addMajor").on("click",function(e){
 	      e.preventDefault();
 	      var btn = $(e.target).closest(".btn");
 	      console.log(btn);
@@ -387,11 +529,23 @@ webpackJsonp([7],{
 	        startCallback : function(modal){
 	
 	          that.render();
+	        },
+	
+	        completeCallback : function(){
+	          $("#majorBtn").on("click",function(e){
+	            e.preventDefault();
+	
+	            if(that.state.selected.length > 6){
+	              warn("请重新选择选项");
+	              return;
+	            }
+	
+	            $(".btn-close").trigger("click");
+	            that.updateRes(btn);
+	            that.updateTags(btn);
+	          });
 	        }
 	      });
-	
-	
-	
 	
 	    });
 	  }
@@ -618,44 +772,9 @@ webpackJsonp([7],{
 /***/ },
 
 /***/ 99:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(100);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(28)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 100:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(14)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".scrollBeautifyDiv {\n  position: relative;\n  overflow: hidden;\n}\n.scrollBeautifyRail {\n  height: 100%;\n  position: absolute;\n  top: 0;\n  z-index: 90;\n}\n.scrollBeautifyBar {\n  position: absolute;\n  top: 0;\n  z-index: 99;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
@@ -869,55 +988,13 @@ webpackJsonp([7],{
 /***/ },
 
 /***/ 124:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(125);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(28)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 125:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(14)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(126) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.m-select .form-control {\n  width: 248px;\n  margin-right: 10px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-
-/***/ 126:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "static/web/img/location.png"
-
-/***/ },
-
-/***/ 128:
+/***/ 127:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -932,7 +1009,91 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 340:
+/***/ 128:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (list.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
+	 }else{ ;
+	__p += '\n	';
+	 for (var i = 0; i < list.length; i++) { ;
+	__p += '\n	 	<li class="schoolList" code="' +
+	((__t = ( list[i].code )) == null ? '' : __t) +
+	'" name="' +
+	((__t = ( list[i].name )) == null ? '' : __t) +
+	'"><em class="icon-check"></em><em class="vm">' +
+	((__t = ( list[i].name )) == null ? '' : __t) +
+	'</em></li>\n ';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 129:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '';
+	with (obj) {
+	__p += '<div class="modalCntWrap g9 modalForm">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">专业选择</span></h3>\n <form action="javascript:;" onsubmit="return false" autocomplete="off" id="majorForm" class="rel">\n            \n    <div class="selectContent s-major clearfix" id="majorContainer">\n      <div class="column col1 fl">\n        <h4>专业门类</h4>\n        <div class="selectWrap">\n          <ul class="prov">\n            \n          </ul>\n        </div>\n      </div>\n      <div class="column col2 fl">\n        <h4>专业</h4>\n        <div class="selectWrap">\n          <ul class="city">\n        </ul>\n        </div>\n      </div>\n      <div class="column col3 fl">\n        <h4>已选</h4>\n        <ul class="tagsWrap clearfix" id="tagsWrap">\n        </ul>\n      </div>\n\n    </div>\n            \n    <div class="footerCnt tc">\n      <p id="errTxt" class="errTxt"></p>\n      <div class="row btnRow">\n            <button type="submit" class="btn btn-positive btn-form" id="majorBtn">\n                <em class="subTxt">保存</em>\n            </button>\n          </div>\n    </div>\n\n  </form>\n</div>';
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 130:
+/***/ function(module, exports) {
+
+	module.exports = [
+		{"code":110000,"name":"北京"},
+		{"code":120000,"name":"天津"},
+		{"code":130000,"name":"河北省"},
+		{"code":140000,"name":"山西省"},
+		{"code":150000,"name":"内蒙古自治区"},
+		{"code":210000,"name":"辽宁省"},
+		{"code":220000,"name":"吉林省"},
+		{"code":230000,"name":"黑龙江省"},
+		{"code":310000,"name":"上海"},
+		{"code":320000,"name":"江苏省"},
+		{"code":330000,"name":"浙江省"},
+		{"code":340000,"name":"安徽省"},
+		{"code":350000,"name":"福建省"},
+		{"code":360000,"name":"江西省"},
+		{"code":370000,"name":"山东省"},
+		{"code":410000,"name":"河南省"},
+		{"code":420000,"name":"湖北省"},
+		{"code":430000,"name":"湖南省"},
+		{"code":440000,"name":"广东省"},
+		{"code":450000,"name":"广西壮族自治区"},
+		{"code":460000,"name":"海南省"},
+		{"code":500000,"name":"重庆"},
+		{"code":510000,"name":"四川省"},
+		{"code":520000,"name":"贵州省"},
+		{"code":530000,"name":"云南省"},
+		{"code":540000,"name":"西藏自治区"},
+		{"code":610000,"name":"陕西省"},
+		{"code":620000,"name":"甘肃省"},
+		{"code":630000,"name":"青海省"},
+		{"code":640000,"name":"宁夏回族自治区"},
+		{"code":650000,"name":"新疆维吾尔自治区"}
+	];
+
+/***/ },
+
+/***/ 131:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(32);
@@ -1085,90 +1246,6 @@ webpackJsonp([7],{
 	};	
 	
 	module.exports = pagination;
-
-/***/ },
-
-/***/ 341:
-/***/ function(module, exports) {
-
-	module.exports = function (obj) {
-	obj || (obj = {});
-	var __t, __p = '', __j = Array.prototype.join;
-	function print() { __p += __j.call(arguments, '') }
-	with (obj) {
-	__p += ' ';
-	 if (list.length == 0) { ;
-	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
-	 }else{ ;
-	__p += '\n	';
-	 for (var i = 0; i < list.length; i++) { ;
-	__p += '\n	 	<li class="schoolList" code="' +
-	((__t = ( list[i].code )) == null ? '' : __t) +
-	'" name="' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
-	'"><em class="icon-check"></em><em class="vm">' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
-	'</em></li>\n ';
-	 }} ;
-	
-	
-	}
-	return __p
-	}
-
-/***/ },
-
-/***/ 342:
-/***/ function(module, exports) {
-
-	module.exports = function (obj) {
-	obj || (obj = {});
-	var __t, __p = '';
-	with (obj) {
-	__p += '<div class="modalCntWrap g9 modalForm">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">专业选择</span></h3>\n <form action="javascript:;" onsubmit="return false" autocomplete="off" id="majorForm" class="rel">\n            \n    <div class="selectContent s-major clearfix" id="majorContainer">\n      <div class="column col1 fl">\n        <h4>专业门类</h4>\n        <div class="selectWrap">\n          <ul class="prov">\n            \n          </ul>\n        </div>\n      </div>\n      <div class="column col2 fl">\n        <h4>专业</h4>\n        <div class="selectWrap">\n          <ul class="city">\n        </ul>\n        </div>\n      </div>\n      <div class="column col3 fl">\n        <h4>已选</h4>\n        <ul class="tagsWrap clearfix" id="tagsWrap">\n        </ul>\n      </div>\n\n    </div>\n            \n    <div class="footerCnt tc">\n      <p id="errTxt" class="errTxt"></p>\n      <div class="row btnRow">\n            <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">\n                <em class="subTxt">下一步</em>\n            </button>\n          </div>\n    </div>\n\n  </form>\n</div>';
-	
-	}
-	return __p
-	}
-
-/***/ },
-
-/***/ 343:
-/***/ function(module, exports) {
-
-	module.exports = [
-		{"code":110000,"name":"北京"},
-		{"code":120000,"name":"天津"},
-		{"code":130000,"name":"河北省"},
-		{"code":140000,"name":"山西省"},
-		{"code":150000,"name":"内蒙古自治区"},
-		{"code":210000,"name":"辽宁省"},
-		{"code":220000,"name":"吉林省"},
-		{"code":230000,"name":"黑龙江省"},
-		{"code":310000,"name":"上海"},
-		{"code":320000,"name":"江苏省"},
-		{"code":330000,"name":"浙江省"},
-		{"code":340000,"name":"安徽省"},
-		{"code":350000,"name":"福建省"},
-		{"code":360000,"name":"江西省"},
-		{"code":370000,"name":"山东省"},
-		{"code":410000,"name":"河南省"},
-		{"code":420000,"name":"湖北省"},
-		{"code":430000,"name":"湖南省"},
-		{"code":440000,"name":"广东省"},
-		{"code":450000,"name":"广西壮族自治区"},
-		{"code":460000,"name":"海南省"},
-		{"code":500000,"name":"重庆"},
-		{"code":510000,"name":"四川省"},
-		{"code":520000,"name":"贵州省"},
-		{"code":530000,"name":"云南省"},
-		{"code":540000,"name":"西藏自治区"},
-		{"code":610000,"name":"陕西省"},
-		{"code":620000,"name":"甘肃省"},
-		{"code":630000,"name":"青海省"},
-		{"code":640000,"name":"宁夏回族自治区"},
-		{"code":650000,"name":"新疆维吾尔自治区"}
-	];
 
 /***/ }
 

@@ -22,13 +22,21 @@ var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 
 
 if(answer.length == allItems){
-	_alert("你已经完成全部问题");
-	setTimeout(function(){
-		window.location = "/box/plan/major_exam3";
-	},3000);
+	// _alert("你已经完成全部问题");
+	// setTimeout(function(){
+	// 	window.location = "/box/plan/major_exam3";
+	// },3000);
+	Cookies.remove('answer');
+	resetTest();
+
+
 }else if(answer.length){
 	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/pro2"});
 }else{
+	resetTest();
+}
+
+function resetTest(){
 	$("#goProTest").text("开始测试");
 	$("#goProTest").on("click",function(e){
 		e.preventDefault();
