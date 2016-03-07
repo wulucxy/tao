@@ -49,12 +49,14 @@ dataSet.init({
 			alwaysVisible : true
 		});
 
+		$(".prov").find("li").eq(0).trigger("click");
+	},
+	completeCallback : function(){
 		scroll($(".city"),{
 			height : $(".selectWrap").height(),
 			alwaysVisible : true
 		});
 
-		$(".prov").find("li").eq(0).trigger("click");
 	}
 });
 

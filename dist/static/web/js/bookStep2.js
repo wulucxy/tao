@@ -54,12 +54,14 @@ webpackJsonp([1],{
 				alwaysVisible : true
 			});
 	
+			$(".prov").find("li").eq(0).trigger("click");
+		},
+		completeCallback : function(){
 			scroll($(".city"),{
 				height : $(".selectWrap").height(),
 				alwaysVisible : true
 			});
 	
-			$(".prov").find("li").eq(0).trigger("click");
 		}
 	});
 	
@@ -68,9 +70,44 @@ webpackJsonp([1],{
 /***/ },
 
 /***/ 96:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(97);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(28)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 97:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".breadcrumb li {\n  width: 25%;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .btn-positive {\n  margin-right: 30px;\n}\n.selectContent .col1,\n.selectContent .col2 {\n  margin-right: 80px;\n}\n.selectContent h4 {\n  color: #333;\n  font-size: 16px;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n}\n.selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.selectWrap li:hover {\n  background-color: #ededed;\n}\n.prov li.current {\n  background-color: #ededed;\n}\n.scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.city.disabled {\n  background-color: #fff;\n}\n.city label {\n  cursor: pointer;\n  display: block;\n}\n.city label em,\n.city label input {\n  vertical-align: middle;\n}\n.city label em {\n  display: inline-block;\n  margin-left: 4px;\n}\n.tagsWrap {\n  margin-right: -32px;\n  width: 480px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.noList {\n  font-size: 14px;\n  color: #999;\n  margin: 20px 0 0 0;\n}\n", ""]);
+	
+	// exports
+
 
 /***/ },
 
@@ -116,7 +153,6 @@ webpackJsonp([1],{
 	      var barHeight = Math.max(($this.outerHeight() / $this[0].scrollHeight) * $this.outerHeight(), o.minBarHeight);  
 	     //获取未隐藏容器的高度比例，并按照比例设置bar的高度    scrollHeight为总高度（包括卷起的高度），outerwidth为容器可见高度
 	      that.bar.css({ height: barHeight + 'px' });
-	
 	      var display = barHeight == $this.outerHeight() ? 'none' : 'block';  //设置bar的可见性
 	      var railDisplay= (o.alwaysVisible && o.railVisible) ? 'block' : display;
 	      that.rail.css({display: railDisplay});
@@ -270,9 +306,44 @@ webpackJsonp([1],{
 /***/ },
 
 /***/ 99:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(100);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(28)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 100:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".scrollBeautifyDiv {\n  position: relative;\n  overflow: hidden;\n}\n.scrollBeautifyRail {\n  height: 100%;\n  position: absolute;\n  top: 0;\n  z-index: 90;\n}\n.scrollBeautifyBar {\n  position: absolute;\n  top: 0;\n  z-index: 99;\n}\n", ""]);
+	
+	// exports
+
 
 /***/ },
 
@@ -520,6 +591,7 @@ webpackJsonp([1],{
 	            });
 	
 	            $(".city").html(cityLis);
+	            that.options.completeCallback && that.options.completeCallback.call(that);
 	        }
 	        
 	        //选中城市列表

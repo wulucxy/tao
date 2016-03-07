@@ -1,6 +1,5 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
-var provList = require("./city");
 
 var dataSet = {
 
@@ -30,7 +29,6 @@ var dataSet = {
             });
 
             $(".city").html(cityLis);
-            that.options.completeCallback && that.options.completeCallback.call(that);
         }
         
         //选中城市列表

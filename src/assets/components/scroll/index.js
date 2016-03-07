@@ -37,7 +37,6 @@ function scroll(target,options){
       var barHeight = Math.max(($this.outerHeight() / $this[0].scrollHeight) * $this.outerHeight(), o.minBarHeight);  
      //获取未隐藏容器的高度比例，并按照比例设置bar的高度    scrollHeight为总高度（包括卷起的高度），outerwidth为容器可见高度
       that.bar.css({ height: barHeight + 'px' });
-
       var display = barHeight == $this.outerHeight() ? 'none' : 'block';  //设置bar的可见性
       var railDisplay= (o.alwaysVisible && o.railVisible) ? 'block' : display;
       that.rail.css({display: railDisplay});

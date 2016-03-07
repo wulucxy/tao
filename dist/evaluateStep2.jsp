@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.68780be9.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.f8a6debd.css" rel="stylesheet"></head>
+	</head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -44,8 +44,56 @@
 				<div class="formWrap">
 					<form action="#" onsubmit="return false" autocomplete="off" id="assessForm_2" class="rel">
 						
-						<div class="c-select">
-							<div id="majorWrapper" class="rel"></div>
+						<div class="m-select">
+							<div class="bg bg-f1">志愿学校1</div>
+							<div class="row inline">
+								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="1">
+								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="1">
+									<em class="vm">添加专业</em>
+									<span>(<em class="count">1</em>/<em class="all">6</em>)</span>
+								</a>
+							</div>
+							<ul class="tagsWrap clearfix">
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+							</ul>
+							<input type="hidden" name="major1">
+						</div>
+
+						<div class="m-select">
+							<div class="bg bg-f1">志愿学校2</div>
+							<div class="row inline">
+								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="2">
+								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="2">
+									<em class="vm">添加专业</em>
+									<span>(<em class="count">1</em>/<em class="all">6</em>)</span>
+								</a>
+							</div>
+							<ul class="tagsWrap clearfix">
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+								<li class="tagList" data-n="法学" data-value="1">
+									<span class="icon-close">X</span>
+									<span class="tagContent">法学</span>
+								</li>
+							</ul>
+
 						</div>
 						
 						<div class="footerCnt">

@@ -1,0 +1,6 @@
+ <% if (list.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>
+<% }else{ %>
+	<% for (var i = 0; i < list.length; i++) { %>
+	 	<li class="schoolList" code="<%= list[i].code %>" name="<%= list[i].name %>"><em class="icon-check"></em><em class="vm"><%= list[i].name %></em></li>
+ <% }} %>

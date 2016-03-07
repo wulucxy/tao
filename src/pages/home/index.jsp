@@ -88,7 +88,7 @@
 	<section class="ovh s-recommend">
 	  <div class="container ovh">
 		<div class="f-layout clearfix">
-			<div class="column c-7 fl">
+			<div class="column c-68 fl">
 				<div class="colPad">
 
 					<div class="content recommend">
@@ -126,7 +126,7 @@
 
 				</div>
 			</div>
-			<div class="column c-3 fl">
+			<div class="column c-32 fl">
 				<div class="colPad">
 					
 					<div class="countdown g3">
