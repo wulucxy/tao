@@ -131,7 +131,7 @@
 					
 					<div class="countdown g3">
 						<span class="imgWrap vm"><img src="/static/web/img/time.png" ></span>
-						<span class="vm f14">距离2016年高考还有<em class="cd-day">172</em>天</span>
+						<span class="vm f14">距离2016年高考还有<em class="cd-day">${countdown}</em>天</span>
 					</div>
 
 					<div class="directs">
@@ -281,7 +281,7 @@
 									<div class="txt">通过考生输入的信息和报考意向，按照专家团队根据志愿填报规则设计的公式，科学运用大数据，进行运算、匹配，提供完整的志愿填报个性化参考方案。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.bookStep}</em>&nbsp;名学生</span>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${number1}</em>&nbsp;名学生</span>
 										<a href="/box/plan/book_step1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
@@ -296,7 +296,7 @@
 									<div class="txt">根据考生预备填报的高校与专业志愿，按照专家团队根据志愿填报规则设计的公式，科学运用大数据，对志愿填报给出报考风险的科学评估。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.evaluateStep}</em>&nbsp;名学生</span>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${number2}</em>&nbsp;名学生</span>
 										<a href="/box/plan/evaluate_step1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
@@ -312,7 +312,7 @@
 									<div class="txt">由国家教育部考试中心定制，独家授权“淘志愿”，测试结果将生成科学的报告书，并向学生个性化推荐大学专业，供广大考生和家长在志愿填报时参考。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.majorExam}</em>&nbsp;名学生</span>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${number3}</em>&nbsp;名学生</span>
 										<a href="/box/plan/major_exam1" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>
@@ -327,7 +327,7 @@
 									<div class="txt">输入留学的个人相关信息以及意向留学国家和留学层次，即可获得一份为你定制的留学院校和专业列表，最便捷地为你的出国留学提供参考方案。</div>
 									
 									<div class="detail clearfix">
-										<span class="fl">已成功帮助&nbsp;<em class="red">${userCount.abordData}</em>&nbsp;名学生</span>
+										<span class="fl">已成功帮助&nbsp;<em class="red">${number4}</em>&nbsp;名学生</span>
 										<a href="/box/plan/aboard" target="_blank" class="btn btn-primary btn-medium fr">立即使用</a>
 									</div>
 								</div>

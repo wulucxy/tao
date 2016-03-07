@@ -134,9 +134,9 @@ webpackJsonp([7],{
 	      $.each(that.state.zhiyuanList,function(idx,item){
 	          if(item.code && item.name){
 	            $("[major="+item.type+"]").val(item.name);
-	            $("[data-rel="+item.type+"]").addClass("active");
+	            $("[data-rel="+item.type+"]").removeClass("disabled");
 	          }else{
-	            $("[data-rel="+item.type+"]").removeClass("active");
+	            $("[data-rel="+item.type+"]").addClass("disabled");
 	          }
 	      });
 	
@@ -155,7 +155,6 @@ webpackJsonp([7],{
 	
 	      //城市列表
 	      if($(".city").length && that.state.cityList[that.modal.majorType-1].list){
-	
 	        var cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
 	            if(city.status == 1){
 	                return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
@@ -174,7 +173,8 @@ webpackJsonp([7],{
 	          lis.push('<li class="noList"></li>');
 	          $(".btn-positive").addClass("disabled");
 	          $('#tagsWrap').html(lis.join('')); 
-	      }else if($(".city").length){
+	      }else if($(".city").length && that.state.selected[that.modal.majorType-1].list){
+	          console.log(that.modal.majorType,that.state.selected[that.modal.majorType-1].list);
 	          lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
 	              return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
 	          });
@@ -519,14 +519,15 @@ webpackJsonp([7],{
 	    $(".addMajor").on("click",function(e){
 	      e.preventDefault();
 	      var btn = $(e.target).closest(".btn");
-	      console.log(btn);
-	      if(!btn.hasClass("active")) return;
+	      if(btn.hasClass("disabled")) return;
 	
 	      modalBox(btn,{
 	        html : tmpl_major(),
 	        klass : 'w540 shadow',
 	        closeByOverlay : false,
 	        startCallback : function(modal){
+	          that.modal = modal;
+	          modal.majorType = btn.data("rel");
 	
 	          that.render();
 	        },
