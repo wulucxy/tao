@@ -116,5 +116,6 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+	<script src="//cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js"></script>
 	</body>
 </html>

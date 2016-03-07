@@ -85,30 +85,6 @@
 							</div>
 						</section>
 
-						<section class="hot">
-							<div class="content">
-								<h3 class="clearfix title">
-									<span class="fl s-title">
-										热门资讯
-										<em class="underLine"></em>	
-									</span>
-								</h3>
-								
-								<ul class="timelineList">
-									<c:forEach var="list" items="${hotList1}">
-									   <li class="timeline media">
-									   <span class="label fl">
-											${list.time}
-										</span>
-										<div class="media-body"><a href="${list.url}" target="_blank">
-											${list.title}
-										</a></div>
-									   </li>
-									</c:forEach>
-								</ul>
-							</div>
-						</section>
-
 						<section class="directs mt20 mb20">
 							<div class="">
 								<ul>

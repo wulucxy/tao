@@ -13,9 +13,10 @@
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
 					<em class="vm">头像：</em></label>
-				<div class="col2 inputWrap rel">
-					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
+				<div class="col2 avatarWrap rel">
+					<div class="avatar thumbnail rel" id="picker">
+						<img src="http://placehold.it/80x80" class="responsive">
+						<div class="info">编辑头像</div>
 					</div>
 				</div>
 				<div class="errInfo">

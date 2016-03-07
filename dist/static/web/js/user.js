@@ -30,6 +30,9 @@ webpackJsonp([20],{
 	//收藏模块
 	var collection = __webpack_require__(337);
 	
+	//图片上传模块
+	var uploader = __webpack_require__(338);
+	
 	// 导航切换
 	$(".userInfoList").on("click","[data-link]",function(e){
 		e.preventDefault();
@@ -49,12 +52,12 @@ webpackJsonp([20],{
 	$(".load-more-list").each(function(idx,ele){
 		if(idx == 0){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(338)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(340)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "historyList"
 			});
 		}else if(idx == 1){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(338)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(340)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "codes"
 			});
 		}
@@ -69,7 +72,10 @@ webpackJsonp([20],{
 	//收藏模块调用
 	collection.init();
 	
-	
+	//图片上传
+	uploader.init({
+		ele : $("#picker")
+	});
 	
 	
 	
@@ -359,11 +365,145 @@ webpackJsonp([20],{
 /***/ 338:
 /***/ function(module, exports, __webpack_require__) {
 
+	var $ = window.$ || __webpack_require__(32);
+	var extend = __webpack_require__(339);
+	var BASE_URL = "//localhost:9999/";
+	var uploader = {
+		init : function(settings){
+			this.settings = settings;
+			this.bindEvt();
+		},
+	
+		bindEvt : function(){
+			var that = this,o = that.settings;
+	
+			that.uploader = WebUploader.create({
+			    // swf文件路径
+			    swf: BASE_URL + 'js/Uploader.swf',
+	
+			    // 文件接收服务端。
+			    server: 'http://webuploader.duapp.com/server/fileupload.php',
+	
+			    // 选择文件的按钮。可选。
+			    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+			    pick: o.el,
+	
+			    // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+			    resize: false
+			});
+	
+			console.log(that.uploader);
+	
+		}
+	
+	
+	};
+	
+	module.exports = uploader;
+
+/***/ },
+
+/***/ 339:
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var hasOwn = Object.prototype.hasOwnProperty;
+	var toStr = Object.prototype.toString;
+	
+	var isArray = function isArray(arr) {
+		if (typeof Array.isArray === 'function') {
+			return Array.isArray(arr);
+		}
+	
+		return toStr.call(arr) === '[object Array]';
+	};
+	
+	var isPlainObject = function isPlainObject(obj) {
+		if (!obj || toStr.call(obj) !== '[object Object]') {
+			return false;
+		}
+	
+		var hasOwnConstructor = hasOwn.call(obj, 'constructor');
+		var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+		// Not own constructor property must be Object
+		if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+			return false;
+		}
+	
+		// Own properties are enumerated firstly, so to speed up,
+		// if last one is own, then all properties are own.
+		var key;
+		for (key in obj) {/**/}
+	
+		return typeof key === 'undefined' || hasOwn.call(obj, key);
+	};
+	
+	module.exports = function extend() {
+		var options, name, src, copy, copyIsArray, clone,
+			target = arguments[0],
+			i = 1,
+			length = arguments.length,
+			deep = false;
+	
+		// Handle a deep copy situation
+		if (typeof target === 'boolean') {
+			deep = target;
+			target = arguments[1] || {};
+			// skip the boolean and the target
+			i = 2;
+		} else if ((typeof target !== 'object' && typeof target !== 'function') || target == null) {
+			target = {};
+		}
+	
+		for (; i < length; ++i) {
+			options = arguments[i];
+			// Only deal with non-null/undefined values
+			if (options != null) {
+				// Extend the base object
+				for (name in options) {
+					src = target[name];
+					copy = options[name];
+	
+					// Prevent never-ending loop
+					if (target !== copy) {
+						// Recurse if we're merging plain objects or arrays
+						if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+							if (copyIsArray) {
+								copyIsArray = false;
+								clone = src && isArray(src) ? src : [];
+							} else {
+								clone = src && isPlainObject(src) ? src : {};
+							}
+	
+							// Never move original objects, clone them
+							target[name] = extend(deep, clone, copy);
+	
+						// Don't bring in undefined values
+						} else if (typeof copy !== 'undefined') {
+							target[name] = copy;
+						}
+					}
+				}
+			}
+		}
+	
+		// Return the modified object
+		return target;
+	};
+	
+
+
+/***/ },
+
+/***/ 340:
+/***/ function(module, exports, __webpack_require__) {
+
 	var map = {
-		"./college.ejs": 339,
-		"./history.ejs": 340,
-		"./info.ejs": 341,
-		"./test.ejs": 342
+		"./college.ejs": 341,
+		"./history.ejs": 342,
+		"./info.ejs": 343,
+		"./test.ejs": 344
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -376,12 +516,12 @@ webpackJsonp([20],{
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 338;
+	webpackContext.id = 340;
 
 
 /***/ },
 
-/***/ 339:
+/***/ 341:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -433,7 +573,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 340:
+/***/ 342:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -473,7 +613,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 341:
+/***/ 343:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -488,7 +628,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 342:
+/***/ 344:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

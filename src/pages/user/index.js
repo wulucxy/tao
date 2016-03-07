@@ -25,6 +25,9 @@ var history = require("./js/history");
 //收藏模块
 var collection = require("./js/collection");
 
+//图片上传模块
+var uploader = require("./js/uploader");
+
 // 导航切换
 $(".userInfoList").on("click","[data-link]",function(e){
 	e.preventDefault();
@@ -64,7 +67,10 @@ history.init();
 //收藏模块调用
 collection.init();
 
-
+//图片上传
+uploader.init({
+	ele : $("#picker")
+});
 
 
 
