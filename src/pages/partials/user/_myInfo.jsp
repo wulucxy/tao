@@ -12,6 +12,19 @@
 			<div class="row clearfix">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
+					<em class="vm">头像：</em></label>
+				<div class="col2 inputWrap rel">
+					<div class="fieldWrap">
+						<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
+					</div>
+				</div>
+				<div class="errInfo">
+					<span class="p-error-empty">姓名不能为空</span>
+				 </div>
+			</div>
+			<div class="row clearfix">
+				<label for="name" class="control-label column col1 fl">
+					<i class="icon-location"></i>
 					<em class="vm">姓名：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">

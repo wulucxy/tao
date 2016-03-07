@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/home.77eb6b8f.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/home.9ee16c61.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -78,7 +78,7 @@
 		<ul class="collegeList clearfix">
 			<c:forEach var="list" items="${collegeList}">
 				<li class="college"><a href="${list.href}" target="_blank">
-					<img src="${list.imgUrl}" >
+					<img src="${list.imgUrl}" class="responsive">
 				</a></li>
 			</c:forEach>
 		</ul>
@@ -131,7 +131,7 @@
 					
 					<div class="countdown g3">
 						<span class="imgWrap vm"><img src="/static/web/img/time.png" ></span>
-						<span class="vm f14">距离2016年高考还有<em class="cd-day">${countdown}</em>天</span>
+						<span class="vm f14">${countdown}</span>
 					</div>
 
 					<div class="directs">
