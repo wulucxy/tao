@@ -42,7 +42,7 @@ var info = {
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
-
+				$(".infoListWrap").removeClass("preloading");
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
                     that.pager++;
@@ -51,7 +51,9 @@ var info = {
                 }
 
 				that.loadList(res,that.pager);
-
+			},
+			error : function(){
+				$(".infoListWrap").removeClass("preloading");
 			}
 		});
 	},
@@ -93,6 +95,7 @@ var info = {
     		var btn = $(this);
     		if(btn.hasClass("active")) return;
     		btn.addClass("active");
+    		$(".infoListWrap").addClass("preloading");
     		that.tagIndex = btn.attr("code");
     		that.requestList();
     	});

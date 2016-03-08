@@ -73,7 +73,8 @@
 										<em class="underLine"></em>	
 									</span>
 								</h3>
-								<ul class="infoList load-more-list">
+								<div class="preloading infoListWrap">
+								<ul class="infoList load-more-list contentWrap">
 									<c:forEach var="list" items="${infoList}">
 									   <li class="">
 									   	 <div class="media">
@@ -98,6 +99,7 @@
 									   </li>
 									</c:forEach>
 								</ul>
+								</div>
 								<!-- 加载更多模块 -->
 								<%@ include file = "/partials/_loadMore.jsp" %>
 							</div>

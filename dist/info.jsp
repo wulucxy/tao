@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/info.d1d52a78.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/info.e76e54e5.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -73,7 +73,8 @@
 										<em class="underLine"></em>	
 									</span>
 								</h3>
-								<ul class="infoList load-more-list">
+								<div class="preloading infoListWrap">
+								<ul class="infoList load-more-list contentWrap">
 									<c:forEach var="list" items="${infoList}">
 									   <li class="">
 									   	 <div class="media">
@@ -98,6 +99,7 @@
 									   </li>
 									</c:forEach>
 								</ul>
+								</div>
 								<!-- 加载更多模块 -->
 								<%@ include file = "/partials/_loadMore.jsp" %>
 							</div>
