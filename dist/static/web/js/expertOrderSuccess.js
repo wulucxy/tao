@@ -4,15 +4,15 @@ webpackJsonp([10],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(12);
-	__webpack_require__(295);
-	var $ = window.$ || __webpack_require__(32);
+	__webpack_require__(13);
+	__webpack_require__(297);
+	var $ = window.$ || __webpack_require__(33);
 	
 	//工具类方法
-	var util = __webpack_require__(33);
+	var util = __webpack_require__(34);
 	
 	//公共方法
-	var common = __webpack_require__(34);
+	var common = __webpack_require__(35);
 	
 	
 	var book = {
@@ -35,7 +35,7 @@ webpackJsonp([10],{
 
 /***/ },
 
-/***/ 295:
+/***/ 297:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

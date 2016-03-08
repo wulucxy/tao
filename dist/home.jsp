@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/home.6d685440.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.55f30a74.css" rel="stylesheet"><link href="/static/web/css/home.c8549a7d.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -260,7 +260,7 @@
 	<section class="ovh s-tool">
 	  <div class="container ovh">
 		<div class="f-layout clearfix">
-			<div class="column c-7 fl">
+			<div class="column c-68 fl">
 				<div class="colPad">
 
 					<div class="content">
@@ -337,7 +337,7 @@
 
 				</div>
 			</div>
-			<div class="column c-3 fl">
+			<div class="column c-32 fl">
 				<div class="colPad">
 					<div class="content">
 						<h3 class="clearfix title">

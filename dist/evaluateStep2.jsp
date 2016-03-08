@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.ac3d5b1a.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.b9eb5aea.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.55f30a74.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.b9eb5aea.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>

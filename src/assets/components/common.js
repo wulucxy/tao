@@ -19,6 +19,9 @@ var mNav = require("./mNav");
 //收藏
 var fav = require("./favorite");
 
+//广告轮播
+var direct = require("./direct");
+
 var common = {
 
 	init : function(){
@@ -33,6 +36,11 @@ var common = {
 
 		//收藏条件
 		fav.init();
+
+		//广告轮播
+		if($(".directs").length){
+			direct($(".directs"));
+		}
 	},
 
 	//顶部导航

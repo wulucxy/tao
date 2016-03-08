@@ -8,7 +8,7 @@ var carousel = {
 
 		var settings=$.extend({
 			speed: 500,   
-			delay: 2000,  
+			delay: 20000,  
 			pause: true,
 			slideNum:6
 		},o);
