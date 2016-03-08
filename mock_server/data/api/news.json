@@ -1,0 +1,31 @@
+{
+	"infoList" : [
+		{
+			"newsUrl":"url",
+		  	"newsName":"标题",
+			"newsDate":"时间",
+			"newsIconUrl":"封面url",
+			"discription":"描述",
+			"imgUrl" : "http://placehold.it/130X130",
+			"newsTags":["标签1","标签2"]
+		},
+		{
+			"newsUrl":"url",
+		  	"newsName":"标题",
+			"newsDate":"时间",
+			"newsIconUrl":"封面url",
+			"discription":"描述",
+			"imgUrl" : "http://placehold.it/130X130",
+			"newsTags":["标签1","标签2"]
+		},
+		{
+			"newsUrl":"url",
+		  	"newsName":"标题",
+			"newsDate":"时间",
+			"newsIconUrl":"封面url",
+			"imgUrl" : "http://placehold.it/130X130",
+			"discription":"描述",
+			"newsTags":["标签1","标签2"]
+		}
+	]
+}

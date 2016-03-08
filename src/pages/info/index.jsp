@@ -13,7 +13,9 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
 		<div class="jimu container clearfix">
 			<div class="column fl col1">
 				<a target="_blank"class="infoLink big" href="${bannerList.big.url}">
@@ -71,7 +73,7 @@
 										<em class="underLine"></em>	
 									</span>
 								</h3>
-								<ul class="infoList">
+								<ul class="infoList load-more-list">
 									<c:forEach var="list" items="${infoList}">
 									   <li class="">
 									   	 <div class="media">
@@ -83,7 +85,7 @@
 														${list.title}
 													</a>
 													<div class="clearfix detailSub g6">
-													<c:forEach var="tag" items="${tagList}">
+													<c:forEach var="tag" items="${list.tagList}">
 														<span class="fl article-tag mr10">${tag}</span>
 													</c:forEach>
 													<span class="fr moment">${list.time}</span>
@@ -96,6 +98,8 @@
 									   </li>
 									</c:forEach>
 								</ul>
+								<!-- 加载更多模块 -->
+								<%@ include file = "/partials/_loadMore.jsp" %>
 							</div>
 						</div>
 					</div>
@@ -113,12 +117,9 @@
 								</div>
 								<div class="tagsWrap ovh">
 									<div class="tagsList">
-									<span class="btn btn-primary">全部资讯</span>
-									<span class="btn btn-primary">报考学堂</span>
-									<span class="btn btn-primary">专家讲座</span>
-									<span class="btn btn-primary">咨询会报告</span>
-									<span class="btn btn-primary">海外留学</span>
-									<span class="btn btn-primary">高考指南</span>
+									<c:forEach var="list" items="${tagList}">
+									<span class="btn btn-primary infoTag" code="${list.code}">${list.name}</span>
+									</c:forEach>
 									</div>
 								</div>
 							</section>

@@ -16,6 +16,95 @@ webpackJsonp([12],{
 	
 	
 	//自定义功能写下面
+	//
+	////加载更多模块
+	var loadMore = __webpack_require__(306);
+	var tmpl = __webpack_require__(307);
+	
+	var province = $("[name=province]").val();
+	
+	var info = {
+		init : function(){
+			//默认分页开始
+			this.pager = 1;
+			this.tagIndex = 0;
+			this.requestList();
+			this.bindEvt();
+		},
+		requestList : function(btn){
+			var that = this;
+	
+			var data = {
+				page : that.pager,
+				code : $(".infoTag").eq(that.tagIndex).attr("code")
+			};
+			$.ajax({
+				url : "/v2/client/"+province+"/news",
+				type : "post",
+				contentType: "application/json",
+				data : JSON.stringify(data),
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					//如果是点击加载更多，页码++，否则重置为1
+	                if(btn){
+	                    that.pager++;
+	                }else{
+	                    that.pager = 1;
+	                }
+	
+					that.loadList(res,that.pager);
+	
+				}
+			});
+		},
+		loadList : function(data,pager){
+			var that = this,o = that.options;
+			var _html = tmpl(data);
+	
+			if(pager == 1){
+				$(".infoList").empty().html(_html);
+			}else{
+				$(".infoList").append(_html);
+			}
+	
+			$(".btn-loading").removeClass("loading disabled");
+	
+			//最后一页
+			if(pager > data.count){
+				$(".btn-loading").addClass("loading-all");
+			};
+	
+			$(".infoTag").removeClass("active");
+			if($(".infoList .no_transList").length){
+				$(".btn-loading").addClass("loading-all");
+			}
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			$(".btn-loading").on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	    		that.requestList(btn);
+	    	});
+	
+	    	$(".infoTag").on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this);
+	    		if(btn.hasClass("active")) return;
+	    		btn.addClass("active");
+	    		that.tagIndex = btn.attr("code");
+	    		that.requestList();
+	    	});
+		}
+	};
+	
+	info.init();
 
 /***/ },
 
@@ -23,6 +112,151 @@ webpackJsonp([12],{
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 306:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(32);
+	var extend =  __webpack_require__(37);
+	 
+	function Plugin(t,o){
+			this.target=t;
+			this.options=o;
+			this.init(this.options);
+		   }
+	  
+	Plugin.prototype = {
+	   	init : function(o){
+	    	var that = this,$this = that.target;
+	    	// 分页默认从第1页开始
+	    	that.pager = o.pager;
+	
+	    	//模板地址
+	    	that.tmpl = o.tmpl;
+	    	that.btn = that.target.closest(".content").find(".btn-loading");
+	
+	    	if(Object.prototype.toString.call(that.tmpl) != '[object Function]'){
+	    		return;
+	    	}
+	
+	    	that.btn.off().on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	    		that.fetch.call(that);
+	    	});
+		},
+	
+		fetch : function(){
+			var that = this,o = that.options,$this = that.target;
+			$.ajax({
+				url : o.url || $this.data("url"),
+				type : "post",
+				contentType: "application/json",
+				data : JSON.stringify({page : that.pager}),
+				success : function(res){
+					if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                that.insertData.call(that,res);
+				}
+			});
+		},
+	
+		renderData : function(res){
+			var that = this;
+			return that.tmpl(res);
+		},
+	
+		insertData : function(res){
+			var that = this,$this = that.target,o = that.options;
+			if(res[o.listAttr].length){
+				var _html = that.renderData(res);
+				if(that.pager == 1){
+					$this.empty().append(_html);
+				}else{
+					$this.append(_html);
+				}
+	
+				that.pager++;
+	
+				//最后一页
+				if(that.pager > res.count){
+					that.btn.addClass("loading-all");
+				};
+	
+			}else{
+				that.target.html('<div class="no_transList"><p class="tc mb10"><i class="noListIcon"></i></p><em class="g9">暂无数据</em></div>');
+				$(".btn-loading").length && $(".btn-loading").hide();
+			}
+	
+	
+			that.btn.removeClass("loading disabled");
+		}
+	};
+	
+	 var loadMore = function(target,o){
+	 	var settings=extend({
+	 		url : "",
+	 		pager : 1,
+			button : ".btn-loading",
+			callback : null,
+			listAttr : ""
+		},o);
+	
+		return $(target).each(function(index) {
+			var me = $(this);  
+			return new Plugin(me,settings);
+		});
+	 };
+	
+	 module.exports = loadMore;
+
+/***/ },
+
+/***/ 307:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (infoList.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < infoList.length; i++) { ;
+	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
+	((__t = ( infoList[i].newsIconUrl )) == null ? '' : __t) +
+	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
+	((__t = ( infoList[i].newsUrl )) == null ? '' : __t) +
+	'" target="_blank">\n					' +
+	((__t = ( infoList[i].newsName )) == null ? '' : __t) +
+	'\n				</a>\n				<div class="clearfix detailSub g6">\n					';
+	 for (var k = 0; k < infoList[i].newsTags.length; k++) { ;
+	__p += '\n					<span class="fl article-tag mr10">' +
+	((__t = ( infoList[i].newsTags[k] )) == null ? '' : __t) +
+	'</span>\n					';
+	 } ;
+	__p += '\n				<span class="fr moment">' +
+	((__t = ( infoList[i].newsDate )) == null ? '' : __t) +
+	'</span>\n				</div>\n				<a class="db detailCnt" href="' +
+	((__t = ( infoList[i].newsUrl )) == null ? '' : __t) +
+	'" target="_blank">\n					' +
+	((__t = ( infoList[i].discription )) == null ? '' : __t) +
+	'\n				</a>\n		</div>\n	</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
 
 /***/ }
 

@@ -5,7 +5,7 @@ webpackJsonp([16],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(12);
-	__webpack_require__(316);
+	__webpack_require__(318);
 	var $ = window.$ || __webpack_require__(32);
 	
 	//工具类方法
@@ -16,8 +16,8 @@ webpackJsonp([16],{
 	
 	
 	/* 可选，视需求而定 */
-	var Cookies = __webpack_require__(319);
-	var tmpl = __webpack_require__(320);
+	var Cookies = __webpack_require__(321);
+	var tmpl = __webpack_require__(322);
 	
 	__webpack_require__(49);
 	
@@ -112,14 +112,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 316:
+/***/ 318:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 319:
+/***/ 321:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -271,7 +271,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 320:
+/***/ 322:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

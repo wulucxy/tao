@@ -1,4 +1,10 @@
 {
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        }
+    },
 	"hotList" : [
 	    {
 	    	"title" : "11",
@@ -20,6 +26,32 @@
 	    	"url" : "ddd",
 	    	"time" : "12-31"
 	    }
+    ],
+    "tagList" : [
+    	{
+    		"name" : "全部咨询",
+    		"code" : 1
+    	},
+    	{
+    		"name" : "全部咨询2",
+    		"code" : 2
+    	},
+    	{
+    		"name" : "全部咨询3",
+    		"code" : 3
+    	},
+    	{
+    		"name" : "全部咨询4",
+    		"code" : 4
+    	},
+    	{
+    		"name" : "全部咨询5",
+    		"code" : 5
+    	},
+    	{
+    		"name" : "全部咨6",
+    		"code" : 6
+    	}
     ],
     "adList" : [
         {
