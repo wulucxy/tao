@@ -28,6 +28,7 @@ module.exports = {
 	"/library/score_line": "scoreLine.jsp",
 	"/library/aboard_data": "abordData.jsp",
 	"/home/signin": "login.jsp",
+	"/uploader": "uploader.jsp",
 	//异步加载
 	'post::/v2/client/loadmore/test' : 'mock::api/test.json',
 	'post::/v2/client/loadmore/history' : 'mock::api/history.json',

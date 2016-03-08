@@ -1,11 +1,11 @@
-webpackJsonp([20],{
+webpackJsonp([21],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(13);
-	__webpack_require__(336);
+	__webpack_require__(339);
 	var $ = window.$ || __webpack_require__(33);
 	
 	//工具类方法
@@ -22,16 +22,16 @@ webpackJsonp([20],{
 	
 	
 	//历史模块
-	var archive = __webpack_require__(338);
+	var archive = __webpack_require__(341);
 	
 	//历史模块
-	var history = __webpack_require__(339);
+	var history = __webpack_require__(342);
 	
 	//收藏模块
-	var collection = __webpack_require__(340);
+	var collection = __webpack_require__(343);
 	
 	//图片上传模块
-	var uploader = __webpack_require__(341);
+	var uploader = __webpack_require__(344);
 	
 	// 导航切换
 	$(".userInfoList").on("click","[data-link]",function(e){
@@ -52,12 +52,12 @@ webpackJsonp([20],{
 	$(".load-more-list").each(function(idx,ele){
 		if(idx == 0){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(343)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(346)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "historyList"
 			});
 		}else if(idx == 1){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(343)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(346)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "codes"
 			});
 		}
@@ -262,14 +262,14 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 336:
+/***/ 339:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 338:
+/***/ 341:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
@@ -307,7 +307,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 339:
+/***/ 342:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
@@ -340,7 +340,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 340:
+/***/ 343:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
@@ -362,11 +362,11 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 341:
+/***/ 344:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
-	var extend = __webpack_require__(342);
+	var extend = __webpack_require__(345);
 	var BASE_URL = "//localhost:9999/";
 	var uploader = {
 		init : function(settings){
@@ -403,7 +403,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 342:
+/***/ 345:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -496,14 +496,14 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 343:
+/***/ 346:
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./college.ejs": 344,
-		"./history.ejs": 345,
-		"./info.ejs": 346,
-		"./test.ejs": 347
+		"./college.ejs": 347,
+		"./history.ejs": 348,
+		"./info.ejs": 349,
+		"./test.ejs": 350
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -516,12 +516,12 @@ webpackJsonp([20],{
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 343;
+	webpackContext.id = 346;
 
 
 /***/ },
 
-/***/ 344:
+/***/ 347:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -573,7 +573,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 345:
+/***/ 348:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -613,7 +613,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 346:
+/***/ 349:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -628,7 +628,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 347:
+/***/ 350:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

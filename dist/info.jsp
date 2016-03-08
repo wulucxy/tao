@@ -75,29 +75,7 @@
 								</h3>
 								<div class="preloading infoListWrap">
 								<ul class="infoList load-more-list contentWrap">
-									<c:forEach var="list" items="${infoList}">
-									   <li class="">
-									   	 <div class="media">
-											<span class="fl imgWrap">
-												<img src="${list.imgUrl}">
-											</span>
-											<div class="media-body">
-													<a class="detailTitle ellipsis" href="${list.url}" target="_blank">
-														${list.title}
-													</a>
-													<div class="clearfix detailSub g6">
-													<c:forEach var="tag" items="${list.tagList}">
-														<span class="fl article-tag mr10">${tag}</span>
-													</c:forEach>
-													<span class="fr moment">${list.time}</span>
-													</div>
-													<a class="db detailCnt" href="${list.url}" target="_blank">
-														${list.context}
-													</a>
-											</div>
-										</div>
-									   </li>
-									</c:forEach>
+									
 								</ul>
 								</div>
 								<!-- 加载更多模块 -->
