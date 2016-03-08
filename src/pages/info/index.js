@@ -29,15 +29,13 @@ var info = {
 	requestList : function(btn){
 		var that = this;
 
-		var data = {
-			page : that.pager,
-			code : $(".infoTag").eq(that.tagIndex).attr("code")
-		};
+		var parm = [];
+		parm.push("page="+that.pager);
+		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
+
 		$.ajax({
-			url : "/v2/client/"+province+"/news",
-			type : "post",
-			contentType: "application/json",
-			data : JSON.stringify(data),
+			url : "/v2/client/"+province+"/news?"+parm.join("&"),
+			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
