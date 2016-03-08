@@ -230,29 +230,29 @@ webpackJsonp([12],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	
-	 if (infoList.length == 0) { ;
+	 if (news.length == 0) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
 	 }else{ ;
 	__p += '\n';
-	 for (var i = 0; i < infoList.length; i++) { ;
+	 for (var i = 0; i < news.length; i++) { ;
 	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
-	((__t = ( infoList[i].newsIconUrl )) == null ? '' : __t) +
+	((__t = ( news[i].newsIconUrl )) == null ? '' : __t) +
 	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
-	((__t = ( infoList[i].newsUrl )) == null ? '' : __t) +
+	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n					' +
-	((__t = ( infoList[i].newsName )) == null ? '' : __t) +
+	((__t = ( news[i].newsName )) == null ? '' : __t) +
 	'\n				</a>\n				<div class="clearfix detailSub g6">\n					';
-	 for (var k = 0; k < infoList[i].newsTags.length; k++) { ;
+	 for (var k = 0; k < news[i].newsTags.length; k++) { ;
 	__p += '\n					<span class="fl article-tag mr10">' +
-	((__t = ( infoList[i].newsTags[k] )) == null ? '' : __t) +
+	((__t = ( news[i].newsTags[k] )) == null ? '' : __t) +
 	'</span>\n					';
 	 } ;
 	__p += '\n				<span class="fr moment">' +
-	((__t = ( infoList[i].newsDate )) == null ? '' : __t) +
+	((__t = ( news[i].newsDate )) == null ? '' : __t) +
 	'</span>\n				</div>\n				<a class="db detailCnt" href="' +
-	((__t = ( infoList[i].newsUrl )) == null ? '' : __t) +
+	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n					' +
-	((__t = ( infoList[i].discription )) == null ? '' : __t) +
+	((__t = ( news[i].discription )) == null ? '' : __t) +
 	'\n				</a>\n		</div>\n	</div>\n</li>\n';
 	 }} ;
 	

@@ -1,24 +1,24 @@
-<% if (infoList.length == 0) { %>
+<% if (news.length == 0) { %>
 	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
 <% }else{ %>
-<% for (var i = 0; i < infoList.length; i++) { %>
+<% for (var i = 0; i < news.length; i++) { %>
 <li>
    	 <div class="media">
 		<span class="fl imgWrap">
-			<img src="<%= infoList[i].newsIconUrl %>">
+			<img src="<%= news[i].newsIconUrl %>">
 		</span>
 		<div class="media-body">
-				<a class="detailTitle ellipsis" href="<%= infoList[i].newsUrl %>" target="_blank">
-					<%= infoList[i].newsName %>
+				<a class="detailTitle ellipsis" href="<%= news[i].newsUrl %>" target="_blank">
+					<%= news[i].newsName %>
 				</a>
 				<div class="clearfix detailSub g6">
-					<% for (var k = 0; k < infoList[i].newsTags.length; k++) { %>
-					<span class="fl article-tag mr10"><%= infoList[i].newsTags[k] %></span>
+					<% for (var k = 0; k < news[i].newsTags.length; k++) { %>
+					<span class="fl article-tag mr10"><%= news[i].newsTags[k] %></span>
 					<% } %>
-				<span class="fr moment"><%= infoList[i].newsDate %></span>
+				<span class="fr moment"><%= news[i].newsDate %></span>
 				</div>
-				<a class="db detailCnt" href="<%= infoList[i].newsUrl %>" target="_blank">
-					<%= infoList[i].discription %>
+				<a class="db detailCnt" href="<%= news[i].newsUrl %>" target="_blank">
+					<%= news[i].discription %>
 				</a>
 		</div>
 	</div>
