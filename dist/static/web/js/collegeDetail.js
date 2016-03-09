@@ -51,9 +51,51 @@ webpackJsonp([4],{
 /***/ },
 
 /***/ 115:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(116);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(29)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 116:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(15)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 20px 24px 36px;\n  margin-bottom: 30px;\n}\n.row.inline > * {\n  display: inline-block;\n}\n.contentWrap h4 {\n  font-weight: normal;\n  font-size: 18px;\n  margin-bottom: 24px;\n}\n.contentWrap .btn-mid {\n  width: 118px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 16px;\n}\n.detailInfos {\n  font-size: 13px;\n  color: #555;\n  line-height: 1.5;\n}\n.detailInfos .field {\n  display: inline-block;\n}\n.detailInfos .col {\n  float: left;\n  width: 33.3%;\n  margin-bottom: 14px;\n  font-size: 14px;\n  line-height: 18px;\n  height: 18px;\n}\n.detailInfos .col.c-6 {\n  width: 60%;\n}\n.baiduWrapper {\n  height: 260px;\n}\n.detailTxt {\n  margin-top: 16px;\n  line-height: 1.5;\n}\n.majorWrap .pad {\n  margin-right: -60px;\n}\n.majorWrap .bg {\n  padding: 14px 20px 0;\n}\n.majorWrap .bg .row {\n  margin-right: 60px;\n}\n.majorWrap .bg label {\n  width: 4em;\n}\n.majorWrap .row {\n  margin-bottom: 14px;\n}\n.majorWrap .selectWrap {\n  width: 180px;\n}\n.majorWrap .selectWrap .form-control {\n  width: 100%;\n}\n.row label {\n  font-size: 14px;\n  color: #666;\n}\n.majorLists {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 20px;\n  padding-top: 20px;\n}\n.majorList {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n  position: relative;\n}\n.majorList .next {\n  position: absolute;\n  top: 50%;\n  margin-top: -26px;\n  right: 10px;\n}\n.majorList h5 {\n  font-size: 15px;\n  color: #333;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.majorList .details {\n  margin-bottom: 20px;\n}\n.majorList .details span {\n  display: inline-block;\n  margin-right: 36px;\n  line-height: 18px;\n  height: 18px;\n}\n.majorList .details .label {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n  color: #666;\n}\n.majorList .details .field {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n}\n.majorList .btn-primary {\n  padding: 1px 12px;\n  border-radius: 0;\n}\n.icon-major {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(117) + ");\n  width: 24px;\n  height: 18px;\n}\n.icon-score {\n  background-position: 0 0;\n}\n.icon-term {\n  background-position: -24px 0;\n}\n.icon-human {\n  background-position: -48px 0;\n}\n.icon-hat {\n  background-position: -72px 0;\n}\n.next {\n  width: 18px;\n  height: 32px;\n  background-position: 0 -35px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+
+/***/ 117:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/major.png"
 
 /***/ },
 

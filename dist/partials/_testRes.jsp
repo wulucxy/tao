@@ -40,7 +40,7 @@ img{width:80%;margin:20px;}
 </style>
 <title>职业测试</title>
 
-<link href="/static/web/css/vendors.55f30a74.css" rel="stylesheet"></head>
+</head>
 	<body id="zycs">
 		<c:forEach items="${bjsbList}" var="unit" varStatus="status">
 			<c:if test="${ unit.key == 'ParaNoIndent'}">
