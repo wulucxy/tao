@@ -23,7 +23,6 @@ var info = {
 		//默认分页开始
 		this.pager = 1;
 		this.tagIndex = 0;
-		this.requestList();
 		this.bindEvt();
 	},
 	requestList : function(btn){
@@ -61,9 +60,11 @@ var info = {
 
 		if(pager == 1){
 			$(".infoList").empty().html(_html);
+			$(".s-title").text($(".infoTag.active").text());
 		}else{
 			$(".infoList").append(_html);
 		}
+
 
 		$(".btn-loading").removeClass("loading disabled");
 
@@ -72,7 +73,6 @@ var info = {
 			$(".btn-loading").addClass("loading-all");
 		};
 
-		$(".infoTag").removeClass("active");
 		if($(".infoList .no_transList").length){
 			$(".btn-loading").addClass("loading-all");
 		}
@@ -91,12 +91,15 @@ var info = {
     	$(".infoTag").on("click",function(e){
     		e.preventDefault();
     		var btn = $(this);
+    		btn.siblings().removeClass("active");
     		if(btn.hasClass("active")) return;
     		btn.addClass("active");
     		$(".infoListWrap").addClass("preloading");
     		that.tagIndex = btn.attr("code");
     		that.requestList();
     	});
+
+    	$(".infoTag").eq(0).trigger("click");
 	}
 };
 
