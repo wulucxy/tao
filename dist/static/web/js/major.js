@@ -27,44 +27,9 @@ webpackJsonp([15],{
 /***/ },
 
 /***/ 316:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(317);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 317:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(15)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .s-search {\n  margin-bottom: 20px;\n}\n.formWrap .s-search > div {\n  padding-top: 0;\n}\n.formWrap .s-search .form-control {\n  width: 100%;\n  background-color: #f9f9f9;\n}\n.formWrap .s-search .input-group-btn {\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.m-nav .btn-default > em {\n  display: inline-block;\n  margin-right: 3px;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.majorListWrap {\n  margin-top: 20px;\n}\n.majorListWrap .bg {\n  margin-bottom: 16px;\n}\n.majorListWrap li {\n  margin-bottom: 10px;\n}\n.majorListWrap .majorBtnRow .btn {\n  font-size: 13px;\n  width: 108px;\n  padding: 5px 0;\n  margin-right: 20px;\n  margin-bottom: 10px;\n  border-radius: 0;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
