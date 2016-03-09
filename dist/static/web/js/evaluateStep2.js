@@ -297,12 +297,6 @@ webpackJsonp([7],{
 	  requestCityData : function(val){
 	    var that = this,o = that.options;
 	
-	    // if(that.cityDataCache[that.modal.majorType-1][val]){
-	    //     that.state.cityList[that.modal.majorType-1].list = that.cityDataCache[that.modal.majorType-1][val];
-	    //     that.render();
-	    //     return;
-	    // }
-	
 	    $.ajax({
 	        url : o.url,
 	        type : "post",
@@ -313,9 +307,6 @@ webpackJsonp([7],{
 	                var res = $.parseJSON(res);
 	            }
 	            
-	            // if(!that.cityDataCache[that.modal.majorType-1][val]){
-	            //     that.cityDataCache[that.modal.majorType-1][val] = res.c;
-	            // }
 	
 	            $.each(res.c,function(idx,ele){
 	                ele.status = 0;
@@ -423,6 +414,8 @@ webpackJsonp([7],{
 	
 	  Evt : function(){
 	    var that = this;
+	
+	
 	    $(document).off().on("click",".schoolList",function(e){
 	      e.preventDefault();
 	      var $this = $(this);
@@ -432,8 +425,6 @@ webpackJsonp([7],{
 	      //清空选中cityList和selectedlist
 	      that.state.selected[that.modal.majorType-1].list = [];
 	      that.state.cityList[that.modal.majorType-1].list = [];
-	
-	      console.log(that.state.cityList[that.modal.majorType-1].list);
 	
 	      $.each(that.state.zhiyuanList,function(idx,ele){
 	        if(that.modal.majorType == ele.type){
@@ -487,8 +478,10 @@ webpackJsonp([7],{
 	        klass : 'w540 shadow',
 	        closeByOverlay : false,
 	        startCallback : function(modal){
-	
+	          //指向
 	          that.modal = modal;
+	          that.modal.ref = this;
+	
 	          modal.majorType = oInput.attr("major");
 	          that.requestData(that.pager);
 	          

@@ -105,9 +105,9 @@ var modalBox = function(target,options){
         _listener : function(){
             var that = this, o=that.options;
             if(!!o.closeBtn && typeof o.closeBtn==='string' && !!$(o.closeBtn).length){
-                $(document).on('click',o.closeBtn,$.proxy(that._close,that));   
+                $(o.closeBtn).off().on('click',$.proxy(that._close,that));   
             }
-            that.overlay.on('click',function(e){
+            that.overlay.off().on('click',function(e){
                 if(o.closeByOverlay){
                     that._close();
                 }
