@@ -58,7 +58,7 @@
 					<em class="vm">生源地：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="area" name="area" required placeholder="请输入生源地">
+						<input type="text" class="input form-control" id="area" name="area" required value="${user.province.name}" readonly>
 					</div>
 				</div>
 				<div class="errInfo">

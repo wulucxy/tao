@@ -75,7 +75,7 @@
 								<li class="ddlist"><a href="/box/plan/book_step1">高考方案定制</a></li>
 								<li class="ddlist"><a href="/box/plan/evaluate_step1">高考志愿评估</a></li>
 								<li class="ddlist"><a href="/box/score_management">成绩管理</a></li>
-								<li class="ddlist"><a href="/box/plan/major_exam1">专业测试</a></li>
+								<li class="ddlist"><a href="/box/plan/major_exam1">专业选择测试</a></li>
 								<li class="ddlist"><a href="/box/plan/aboard">留学方案定制</a></li>
 							</ul>
 						</div>

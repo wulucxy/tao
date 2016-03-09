@@ -32,6 +32,29 @@ var book = {
 					});
 
 					util.setupLabel();
+
+					$.ajax({
+		        		url : "/system/city",
+		        		type : "get",
+		        		contentType: "application/json",
+		        		success : function(res){
+		        			if(typeof res == "string"){
+		        				var res = $.parseJSON(res);
+		        			}
+
+		        			var optionList = [];
+
+		        			$.each(res,function(idx,ele){
+		        				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
+		        			});
+
+		        			$("[name=city]").empty();
+		        			$("[name=city]").append(optionList.join(""));
+		        		},
+		        		error : function(){
+		        			warn("网络请求失败，请稍后重试");
+		        		}
+		        	});
 		        },
 		        completeCallback : function(){
  					that.formAction(btn);
