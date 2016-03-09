@@ -64,23 +64,52 @@
 								<i class="icon-location icon-book"></i>
 								<em class="vm">高考科目：</em></label>
 							<div class="col2 inputWrap rel">
-								<div class="fieldWrap">
-									<label for="courseType_1"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="courseType_1" name="courseType" checked required>
-									<em class="vm">理科</em>
-									</label>
+								<div class="fieldWrap">  
+								<c:choose>
+								   <c:when test="${courseType == 0 }">
+										<label for="courseType_0" class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
+										<em class="vm">理科</em>
+										</label>
 
-									<label for="courseType_0" class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="courseType_0" name="courseType" required>
-									<em class="vm">文科</em>
-									</label>
+										<label for="courseType_1"  class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
+										<em class="vm">文科</em>
+										</label>
+									</c:when>
+									<c:when test="${courseType == 1 }">
+										<label for="courseType_0" class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0"  required>
+										<em class="vm">理科</em>
+										</label>
+
+										<label for="courseType_1"  class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" checked required>
+										<em class="vm">文科</em>
+										</label>
+									</c:when>
+									<c:otherwise>
+										<label for="courseType_0" class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
+										<em class="vm">理科</em>
+										</label>
+
+										<label for="courseType_1"  class="label_radio inline">
+										<em class="icon-radio"></em>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
+										<em class="vm">文科</em>
+										</label>
+									</c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 							<div class="errInfo"></div>
 						</div>
-
 
 						<div class="row clearfix">
 							<label for="courseType" class="control-label column col1 fl">
@@ -88,7 +117,8 @@
 								<em class="vm">报考批次：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
-									
+								<c:choose>
+								   <c:when test="${batch == 1 }">
 									<label for="batch_1" class="label_radio inline">
 									<em class="icon-radio"></em>
 									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required>
@@ -106,6 +136,65 @@
 									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
 									<em class="vm">第三批</em>
 									</label>
+									</c:when>
+									<c:when test="${batch == 2 }">
+									<label for="batch_1" class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" required>
+									<em class="vm">第一批</em>
+									</label>
+
+									<label for="batch_2"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" checked required>
+									<em class="vm">第二批</em>
+									</label>
+
+									<label for="batch_3"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
+									<em class="vm">第三批</em>
+									</label>
+									</c:when>
+									<c:when test="${batch == 3 }">
+									<label for="batch_1" class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" required>
+									<em class="vm">第一批</em>
+									</label>
+
+									<label for="batch_2"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
+									<em class="vm">第二批</em>
+									</label>
+
+									<label for="batch_3"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" checked required>
+									<em class="vm">第三批</em>
+									</label>
+									</c:when>
+									<c:otherwise>
+									<label for="batch_1" class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required>
+									<em class="vm">第一批</em>
+									</label>
+
+									<label for="batch_2"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
+									<em class="vm">第二批</em>
+									</label>
+
+									<label for="batch_3"  class="label_radio inline">
+									<em class="icon-radio"></em>
+									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
+									<em class="vm">第三批</em>
+									</label>
+									</c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 							<div class="errInfo"></div>
@@ -118,7 +207,7 @@
 								<em class="vm">高考分数：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-									<input type="text" class="input form-control dib c-9" id="score" name="score" placeholder="请输入高考分数" pattern="^[0-9]{1,3}" required> &nbsp;分
+								<input type="text" class="input form-control dib c-9" id="score" name="score" placeholder="请输入高考分数" pattern="^[0-9]{1,3}" value="${score}" required> &nbsp;分
 								</span>
 							</div>
 							<div class="errInfo">
@@ -133,7 +222,7 @@
 								<em class="vm">高考排名：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}" required> &nbsp;名
+									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}" value="${place}" required> &nbsp;名
 								</span>
 							</div>
 							<div class="errInfo">

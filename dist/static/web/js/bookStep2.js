@@ -501,7 +501,7 @@ webpackJsonp([2],{
 	        //省列表
 	        if(that.state.provList.length){
 	            var provLis = $.map(that.state.provList,function(item){
-	                return '<li data-value="'+item.v+'">'+item.p+'</li>';
+	                return '<li data-code="'+item.code+'">'+item.name+'</li>';
 	            });
 	        }
 	
@@ -514,9 +514,9 @@ webpackJsonp([2],{
 	        if(that.state.cityList.length){
 	            var cityLis = $.map(that.state.cityList,function(city){
 	                if(city.status == 1){
-	                    return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+	                    return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
 	                }else{
-	                    return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+	                    return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
 	                }
 	            });
 	
@@ -531,7 +531,7 @@ webpackJsonp([2],{
 	            $(".btn-positive").addClass("disabled");
 	        }else{
 	            lis = $.map(that.state.selected,function (item) {
-	                return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+	                return '<li class="tagList" data-n="'+item.n+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
 	            });
 	            if($(".btn-positive").hasClass("disabled")){
 	                $(".btn-positive").removeClass("disabled"); 
@@ -617,29 +617,29 @@ webpackJsonp([2],{
 	            $(this).addClass(o.klass);
 	
 	            that.city.empty();
-	            that.requestData.call(that,$(this).data("value"));
+	            that.requestData.call(that,$(this).data("code"));
 	        });
 	
 	        $(document).on('click', '.icon-close', function (e) {
 	
 	            var $li = $(this).closest(".tagList");
-	            var val = $li.data("value"),n = $li.data("n");
+	            var val = $li.data("code"),n = $li.data("n");
 	                
 	            var ele = {
 	                n : n,
-	                value : val
+	                code : val
 	            };
 	
 	
 	           $.each(that.state.selected,function(idx,item){
-	                if(ele.value == item.value){
+	                if(ele.code == item.code){
 	                    that.state.selected.splice(idx,1);
 	                    return false;
 	                }
 	           });
 	
 	           $.each(that.state.cityList,function(idx,item){
-	                if(ele.value == item.value){
+	                if(ele.code == item.code){
 	                    that.state.cityList[idx].status = 0;
 	                     return false;
 	                }
@@ -657,13 +657,13 @@ webpackJsonp([2],{
 	            var eleObj = {
 	                p : $(ele).attr("p"),
 	                n : $(ele).attr("n"),
-	                value : ele.value
+	                code : ele.value
 	            };
 	           
 	            that.state.selected.push(eleObj);
 	
 	            $.each(that.state.cityList,function(idx,item){
-	                if(eleObj.value == item.value){
+	                if(eleObj.code == item.code){
 	                    that.state.cityList[idx].status = 1;
 	                     return false;
 	                }
@@ -672,11 +672,11 @@ webpackJsonp([2],{
 	          }else{
 	            var eleObj = {
 	                n : $(ele).attr("n"),
-	                value : ele.value
+	                code : ele.value
 	            };
 	
 	            $.each(that.state.selected,function(idx,item){
-	                if(eleObj.value == item.value){
+	                if(eleObj.code == item.code){
 	                    that.state.selected.splice(idx,1);
 	                     return false;
 	                }
@@ -684,7 +684,7 @@ webpackJsonp([2],{
 	
 	
 	            $.each(that.state.cityList,function(idx,item){
-	                if(eleObj.value == item.value){
+	                if(eleObj.code == item.code){
 	                    that.state.cityList[idx].status = 0;
 	                     return false;
 	                }
