@@ -22,8 +22,8 @@
 				<c:forEach var="banner" items="${bannerList}">
 				   <li class="picSlide" data-pic = "${banner.imgUrl}" >
 				   <c:choose>
-				    <c:when test="${banner.imgHref != null}">
-				   		<a href="${banner.imgHref}" target="_blank" >&nbsp;</a>
+				    <c:when test="${banner.href != null}">
+				   		<a href="${banner.href}" target="_blank" >&nbsp;</a>
 					</c:when>
 					<c:otherwise>
 						<a href="javascript:;" >&nbsp;</a>
@@ -348,13 +348,13 @@
 						</h3>
 						
 						<div class="coopLists">
-							<div class="imgWrap coop tc">
+							<a class="imgWrap coop tc" target="_blank" href="//www.strong-study.com/">
 								<img src="./img/nee.png" class="responsive">
-							</div>
+							</a>
 
-							<div class="imgWrap coop">
+							<a class="imgWrap coop" target="_blank" href="//www.strong-study.com/">
 								<img src="./img/sq.png" class="responsive">
-							</div>
+							</a>
 						</div>
 						
 

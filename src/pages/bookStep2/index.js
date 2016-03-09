@@ -41,7 +41,7 @@ $("[data-trigger]").on("click",function(e){
 //将原有的数据传入
 dataSet.init({
 	klass : "current",
-	url : "/v2/client/getCity",
+	url : "/system/city",
 	startCallback : function(){
 		var self = this;
 		scroll($(".prov"),{

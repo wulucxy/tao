@@ -18,7 +18,7 @@
 				<a class="imgWrap dib" target="_blank" href="/">
 					<img src="/static/web/img/logo.png" alt="logo" class="responsive">
 				</a>
-				<span class="province f18">浙江</span>
+				<span class="province f18">${user.province.name}</span>
 			</div>
 
 			<div class="fr clearfix g-login">
@@ -35,15 +35,15 @@
 				</div> -->
 				<div class="m-login fr">
 					<c:choose>
-				    <c:when test="${user.isLogin=='1'}">
+				    <c:when test="${user.isLogin == 1}">
 				   		<div class="hd-user">
 				   			<a href="/user" class="dib user-l link">
-							<span class="imgWrap minlogo vm">
-								<img src="/static/web/img/minlogo.png" class="responsive">
+							<span class="imgWrap minAvatar vm">
+								<img src="${user.userAvatar}" class="responsive">
 							</span>
 							<em class="vm">个人中心</em>
 							</a>
-							<a href="/signout" class="dib user-r link">
+							<a href="javascript:;" class="dib user-r link" id="signout">
 							<span class="imgWrap exit">
 								<img src="/static/web/img/exit.png" class="responsive">
 							</span>
@@ -92,7 +92,7 @@
 							</ul>
 						</div>
 					</li>
-					<li class="navList">
+					<li class="navList no-dropdown">
 						<a href="/info">资讯</a>
 					</li>
 					<li class="navList" data-toggle="dropdown" >
@@ -112,7 +112,7 @@
 					<li class="navList" data-toggle="dropdown">
 						<a href="javascript:;" class="trigger">公众号</a>
 						<div class="listWrap">
-							<ul class="options down-app-options">
+							<ul class="options down-app-options gzh-app-options">
 							<li class="floatTipWrap down-app-wrapper">
 								<div class="tipContent">
 									<img src="/static/web/img/equode2.png" class="responsive">

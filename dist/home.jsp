@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.d83dfa4f.css" rel="stylesheet"><link href="/static/web/css/home.c8549a7d.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.23e69af9.css" rel="stylesheet"><link href="/static/web/css/home.92017a9e.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -22,8 +22,8 @@
 				<c:forEach var="banner" items="${bannerList}">
 				   <li class="picSlide" data-pic = "${banner.imgUrl}" >
 				   <c:choose>
-				    <c:when test="${banner.imgHref != null}">
-				   		<a href="${banner.imgHref}" target="_blank" >&nbsp;</a>
+				    <c:when test="${banner.href != null}">
+				   		<a href="${banner.href}" target="_blank" >&nbsp;</a>
 					</c:when>
 					<c:otherwise>
 						<a href="javascript:;" >&nbsp;</a>
@@ -348,13 +348,13 @@
 						</h3>
 						
 						<div class="coopLists">
-							<div class="imgWrap coop tc">
+							<a class="imgWrap coop tc" target="_blank" href="//www.strong-study.com/">
 								<img src="/static/web/img/nee.png" class="responsive">
-							</div>
+							</a>
 
-							<div class="imgWrap coop">
+							<a class="imgWrap coop" target="_blank" href="//www.strong-study.com/">
 								<img src="/static/web/img/sq.png" class="responsive">
-							</div>
+							</a>
 						</div>
 						
 

@@ -1,14 +1,20 @@
 {
 	"user":{
-        "isLogin" : 1,
         "province" : {
             "name" : "浙江",
             "code" : "21"
-        }
+        },
+        "isLogin" : "1",
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userId" : "name"
     },
     "bannerList" : [
         {
-            "imgHref": "3333",
+            "href": "3333",
             "imgUrl": "http://placehold.it/1920x360"
         }
 	],

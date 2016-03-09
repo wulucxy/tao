@@ -22,6 +22,9 @@ var fav = require("./favorite");
 //广告轮播
 var direct = require("./direct");
 
+//cookie
+var Cookies = require("js-cookie");
+
 var common = {
 
 	init : function(){
@@ -37,10 +40,21 @@ var common = {
 		//收藏条件
 		fav.init();
 
+		this.bindEvt();
+	},
+
+	bindEvt : function(){
+		var that = this;
 		//广告轮播
 		if($(".directs").length){
 			direct($(".directs"));
 		}
+
+		$("#signout").on("click",function(){
+			Cookies.remove("answer");
+			window.location = "/signout";
+			return false;
+		});
 	},
 
 	//顶部导航
@@ -48,7 +62,11 @@ var common = {
 		var dropdown = require("./dropdown");
 
 		dropdown($("[data-toggle=dropdown]"),{
-			event : "hover"
+			event : "hover",
+			clickHandle : function(nav){
+				$(".navList").removeClass("current");
+				nav.addClass("current");
+			}
 		});
 
 		dropdown($("#selectSwitch"),{
@@ -56,22 +74,29 @@ var common = {
 			selectMode : true
 		});
 
-		$(".navList>a")
-		.on("mouseenter",function(){
-			 $(".navList").removeClass("current");
-			 $(this).closest(".navList").addClass("current");
-
-			 if($(this).parent().siblings(".navList").hasClass("open")){
-			 	$(this).parent().siblings(".navList").removeClass("open");
-			 	$(this).parent().siblings(".navList").find(".open").removeClass("open");
-			 }
-			
-		})
-		.on("mouseleave",function(e){
-			e.stopPropagation();
-			var $ele = $(this).closest(".navList");
-			$ele.removeClass("current");
+		$(".no-dropdown").hover(function(){
+			$(".navList").removeClass("current");
+			$(this).addClass("current");
+		},function(){
+			$(this).removeClass("current");
 		});
+
+		// $(".navList>a")
+		// .on("mouseover",function(){
+		// 	 $(".navList").removeClass("current");
+		// 	 $(this).closest(".navList").addClass("current");
+
+		// 	 if($(this).parent().siblings(".navList").hasClass("open")){
+		// 	 	$(this).parent().siblings(".navList").removeClass("open");
+		// 	 	$(this).parent().siblings(".navList").find(".open").removeClass("open");
+		// 	 }
+			
+		// })
+		// .on("mouseout",function(e){
+		// 	e.stopPropagation();
+		// 	var $ele = $(this).closest(".navList");
+		// 	$ele.removeClass("current");
+		// });
 	},
 
 	//顶部导航切换

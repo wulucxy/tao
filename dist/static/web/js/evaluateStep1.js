@@ -5,7 +5,7 @@ webpackJsonp([6],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(13);
-	__webpack_require__(124);
+	__webpack_require__(126);
 	var $ = window.$ || __webpack_require__(33);
 	
 	//工具类方法
@@ -19,8 +19,8 @@ webpackJsonp([6],{
 	__webpack_require__(50);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(96);
-	var tmpl_questions = __webpack_require__(97);
+	var tmpl_detail = __webpack_require__(100);
+	var tmpl_questions = __webpack_require__(101);
 	
 	//checkbox定制
 	$('.label_radio').click(function(){
@@ -71,7 +71,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 124:
+/***/ 126:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

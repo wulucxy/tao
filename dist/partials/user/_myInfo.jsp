@@ -43,7 +43,7 @@
 					<em class="vm">手机号：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="mobile" name="mobile" required placeholder="请输入手机号">
+						<input type="text" class="input form-control" id="mobile" name="mobile" required value="${user.mobile}" readonly>
 					</div>
 				</div>
 				<div class="errInfo">

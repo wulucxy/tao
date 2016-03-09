@@ -49,7 +49,7 @@
 					        <a href="javascript:;" class="subLinks" id="m_goReg">立即注册</a>
 					     </div>
 
-					     <div class="openLogin row">
+					     <!-- <div class="openLogin row">
 					        <div class="line"><span class="h3">第三方登录</span></div>
 					        <div class="openIconList">
 					          <a href="#" class="weixin link">
@@ -63,7 +63,7 @@
 					          </a>
 					          <span class="justify_fix"></span>
 					        </div>
-					    </div>
+					    </div> -->
 					 </div>
 				</form>
 			</div>

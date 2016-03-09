@@ -1,11 +1,11 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(13);
-	__webpack_require__(98);
+	__webpack_require__(102);
 	var $ = window.$ || __webpack_require__(33);
 	
 	//工具类方法
@@ -17,14 +17,14 @@ webpackJsonp([1],{
 	
 	//自定义功能写下面
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(96);
-	var tmpl_questions = __webpack_require__(97);
+	var tmpl_detail = __webpack_require__(100);
+	var tmpl_questions = __webpack_require__(101);
 	
 	//自定义滚动插件
-	var scroll = __webpack_require__(100);
+	var scroll = __webpack_require__(104);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(104);
+	var dataSet = __webpack_require__(108);
 	
 	//详情弹窗
 	$("[data-trigger]").on("click",function(e){
@@ -46,7 +46,7 @@ webpackJsonp([1],{
 	//将原有的数据传入
 	dataSet.init({
 		klass : "current",
-		url : "/v2/client/getCity",
+		url : "/system/city",
 		startCallback : function(){
 			var self = this;
 			scroll($(".prov"),{
@@ -69,23 +69,23 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 98:
+/***/ 102:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 100:
+/***/ 104:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(101);
+	__webpack_require__(105);
 	
 	var $ = window.$ || __webpack_require__(33);
 	var extend =  __webpack_require__(38);
 	
 	//mousewheel
-	__webpack_require__(103);
+	__webpack_require__(107);
 	
 	function scroll(target,options){
 	
@@ -270,14 +270,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 101:
+/***/ 105:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 103:
+/***/ 107:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
@@ -486,12 +486,12 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 104:
+/***/ 108:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(33);
 	var extend =  __webpack_require__(38);
-	var provList = __webpack_require__(105);
+	var provList = __webpack_require__(109);
 	
 	var dataSet = {
 	
@@ -703,42 +703,10 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 105:
+/***/ 109:
 /***/ function(module, exports) {
 
-	module.exports = [
-		{"v":110000,"p":"北京"},
-		{"v":120000,"p":"天津"},
-		{"v":130000,"p":"河北省"},
-		{"v":140000,"p":"山西省"},
-		{"v":150000,"p":"内蒙古自治区"},
-		{"v":210000,"p":"辽宁省"},
-		{"v":220000,"p":"吉林省"},
-		{"v":230000,"p":"黑龙江省"},
-		{"v":310000,"p":"上海"},
-		{"v":320000,"p":"江苏省"},
-		{"v":330000,"p":"浙江省"},
-		{"v":340000,"p":"安徽省"},
-		{"v":350000,"p":"福建省"},
-		{"v":360000,"p":"江西省"},
-		{"v":370000,"p":"山东省"},
-		{"v":410000,"p":"河南省"},
-		{"v":420000,"p":"湖北省"},
-		{"v":430000,"p":"湖南省"},
-		{"v":440000,"p":"广东省"},
-		{"v":450000,"p":"广西壮族自治区"},
-		{"v":460000,"p":"海南省"},
-		{"v":500000,"p":"重庆"},
-		{"v":510000,"p":"四川省"},
-		{"v":520000,"p":"贵州省"},
-		{"v":530000,"p":"云南省"},
-		{"v":540000,"p":"西藏自治区"},
-		{"v":610000,"p":"陕西省"},
-		{"v":620000,"p":"甘肃省"},
-		{"v":630000,"p":"青海省"},
-		{"v":640000,"p":"宁夏回族自治区"},
-		{"v":650000,"p":"新疆维吾尔自治区"}
-	];
+	module.exports = [{"code": "340000", "name": "安徽省"}, {"code": "350000", "name": "福建省"}, {"code": "360000", "name": "江西省"}, {"code": "370000", "name": "山东省"}, {"code": "410000", "name": "河南省"}, {"code": "420000", "name": "湖北省"}, {"code": "430000", "name": "湖南省"}, {"code": "440000", "name": "广东省"}, {"code": "110000", "name": "北京市"}, {"code": "120000", "name": "天津市"}, {"code": "450000", "name": "广西壮族自治区"}, {"code": "460000", "name": "海南省"}, {"code": "140000", "name": "山西省"}, {"code": "500000", "name": "重庆市"}, {"code": "510000", "name": "四川省"}, {"code": "520000", "name": "贵州省"}, {"code": "530000", "name": "云南省"}, {"code": "540000", "name": "西藏自治区"}, {"code": "610000", "name": "陕西省"}, {"code": "620000", "name": "甘肃省"}, {"code": "630000", "name": "青海省"}, {"code": "640000", "name": "宁夏回族自治区"}, {"code": "650000", "name": "新疆维吾尔自治区"}, {"code": "150000", "name": "内蒙古自治区"}, {"code": "130000", "name": "河北省"}, {"code": "210000", "name": "辽宁省"}, {"code": "220000", "name": "吉林省"}, {"code": "230000", "name": "黑龙江省"}, {"code": "310000", "name": "上海市"}, {"code": "320000", "name": "江苏省"}, {"code": "330000", "name": "浙江省"}];
 
 /***/ }
 

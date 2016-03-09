@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.d83dfa4f.css" rel="stylesheet"><link href="/static/web/css/error.355935e0.css" rel="stylesheet"></head>
+<link href="/static/web/css/404.355935e0.css" rel="stylesheet"><link href="/static/web/css/vendors.23e69af9.css" rel="stylesheet"></head>
 <body>
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
@@ -36,5 +36,5 @@
 	</div>
 	<script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/error.js"></script></body>
+	<script src="/static/web/js/404.js"></script><script src="/static/web/js/vendors.js"></script></body>
 </html>
