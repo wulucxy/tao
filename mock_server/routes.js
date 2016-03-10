@@ -53,6 +53,7 @@ module.exports = {
 	'post::/v2/client/getCollegeList' : 'mock::api/collegeJSON.json',
 	'post::/v2/client/getMajor'   : 'mock::api/majorJSON.json',
 	'/v2/client/1/news': 'mock::api/news.json',
-	'post::/v2/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json'
+	'post::/v2/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
+	'post::/v2/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
 
 };

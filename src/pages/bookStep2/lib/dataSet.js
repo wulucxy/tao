@@ -2,6 +2,8 @@ var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 var provList = require("./city");
 
+var provinceId = $("[name=province]").val();
+
 var dataSet = {
 
     render : function () {
@@ -204,7 +206,57 @@ var dataSet = {
           that.updateUI();
         });
 
-        
+        $("#next").on("click",function(e){
+            e.preventDefault();
+            var btn = $(e.target);
+            if(btn.hasClass("disabled")) return;
+            btn.addClass("disabled");
+
+            that.submitForm.call(that,btn,$("#caseForm"));
+        });
+    },
+
+    submitForm : function(btn,oForm){
+        var that = this;
+
+        var c = $.map($("#tagsWrap .tagList"),function(el,idx){
+            return {
+                "name" : $(el).data("n"),
+                "code" : $(el).data("code")
+            };
+        });
+
+        console.log(c);
+
+        var _data = {
+            c : c
+        };
+
+        $.ajax({
+            url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step2",
+            type : "post",
+            contentType: "application/json",
+            data : JSON.stringify(_data),
+            success : function(res){
+                if(typeof res == "string"){
+                    var res = $.parseJSON(res);
+                }
+
+                if(!res.code){
+                    window.location = "/box/plan/book_step3";
+                    return false;
+                }else{
+                    warn(res.msg);
+                    btn.removeClass("disabled");
+                    return false;
+                }
+            },
+            error : function(err){
+                btn.removeClass("disabled");
+                warn(err || "网络错误，请稍后重试");
+            }
+        })
+
     }
 };
 

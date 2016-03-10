@@ -14,6 +14,9 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 	
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
 		<div class="container p_case_2">
 
 			<div class="content">
@@ -42,7 +45,7 @@
 				</div>
 
 				<div class="formWrap">
-					<form action="javascript:;" onsubmit="return false" autocomplete="off" id="caseForm_1" class="rel">
+					<form action="javascript:;" onsubmit="return false" autocomplete="off" id="caseForm" class="rel">
 						
 						<div class="selectContent clearfix" id="citySelectContainer">
 							<div class="column col1 fl">
