@@ -21,14 +21,31 @@ $(".toggle").on("click",function(e){
 	oRow.toggleClass("open");
 });
 
+function transformData(){
+	var _data = {
+		majorList : $.parseJSON($("[name=majorList]").text()),
+		c :  $.parseJSON($("[name=c]").text()),
+		batch : $("[name=batch]").text(),
+		courseType : $("[name=courseType]").text(),
+		score : $("[name=score]").text(),
+		place : $("[name=place]").text(),
+		province : $("[name=province]").text(),
+		userName : $("[name=userName]").text()
+	}
+
+	return _data;
+}
+
+
 function detailTrigger(){
+	var data = transformData();
 	//详情弹窗
 	$("[data-trigger]").on("click",function(e){
 	    e.preventDefault();
 	    var btn = $(e.target).closest(".trigger");
 
 	    modalBox( btn.get(0), {
-	          html:tmpl_Info(),
+	          html:tmpl_Info(data),
 	          klass : 'w540 shadow',
 	          closeByOverlay : false,
 	          startCallback : function(){
@@ -40,5 +57,6 @@ function detailTrigger(){
 	      });
 	});
 };
+
 
 detailTrigger();

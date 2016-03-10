@@ -6,14 +6,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/bookResult.92dabc35.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/bookResult.bcfaed85.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
+
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
+		<!-- 保存userName属性 -->
+		<input type="hidden" name="userName" value="${user.userName}">
+
 		<div class="container p_case_4">
 			<div class="content">
 				<h3 class="clearfix title">
@@ -34,21 +40,32 @@
 					<section class="caseSection">
 
 					<h4 class="bg bg-f1">正常方案</h4>
-					<c:forEach var="list" items="${conservative}" varStatus="loop">
+					<c:forEach var="list" items="${normal}" varStatus="loop">
 						<div class="media detailContent">
 						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
 							<span class="fl index">${loop.index+1}</span>
 							<div class="media-body">
 								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
+									<em class="badgetitle vm">${list.collegeName}</em>
+									<c:forEach var="featurelist" items="${list.feature}">
+									 <c:choose>
+									 	<c:when test="${featurelist.type == 1}">
+									   		<span class="badge green">${featurelist.name}</span>
+										</c:when>
+										<c:when test="${featurelist.type == 2}">
+									   		<span class="badge red">${featurelist.name}</span>
+										</c:when>
+									 	<c:otherwise>
+											<span class="badge">${featurelist.name}</span>
+										</c:otherwise>
+									 </c:choose>
+									</c:forEach>
 								</h4>
 								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
+		<span class="label">院校属地：</span><span class="field">${list.city}</span>
+		<span class="label">院校分类：</span><span class="field">${list.type}</span>
+		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
+		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
 									<table class="table table-bordered text-center">
@@ -58,80 +75,48 @@
 												<td>所属科类</td>
 												<td>上一年录取平均分</td>
 											</tr>
+											<c:forEach var="major" items="${list.majors}">
 											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
+												<td>${major.majorName}</td>
+												<td>${major.category.name}</td>
+												<td>${major.average}</td>
 											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>	
-
 					</c:forEach>
-						
-						
-						<div class="media detailContent">
-						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">2</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
-								</div>
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
-												<td>上一年录取平均分</td>
-											</tr>
-											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
-											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
 					</section>
 					<section class="caseSection">
 						<h4 class="bg bg-f1">冲刺方案</h4>
+						<c:forEach var="list" items="${radical}" varStatus="loop">
 						<div class="media detailContent">
 						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">1</span>
+							<span class="fl index">${loop.index+1}</span>
 							<div class="media-body">
 								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
+									<em class="badgetitle vm">${list.collegeName}</em>
+									<c:forEach var="featurelist" items="${list.feature}">
+									 <c:choose>
+									 	<c:when test="${featurelist.type == 1}">
+									   		<span class="badge green">${featurelist.name}</span>
+										</c:when>
+										<c:when test="${featurelist.type == 2}">
+									   		<span class="badge red">${featurelist.name}</span>
+										</c:when>
+									 	<c:otherwise>
+											<span class="badge">${featurelist.name}</span>
+										</c:otherwise>
+									 </c:choose>
+									</c:forEach>
 								</h4>
 								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
+		<span class="label">院校属地：</span><span class="field">${list.city}</span>
+		<span class="label">院校分类：</span><span class="field">${list.type}</span>
+		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
+		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
 									<table class="table table-bordered text-center">
@@ -141,38 +126,48 @@
 												<td>所属科类</td>
 												<td>上一年录取平均分</td>
 											</tr>
+											<c:forEach var="major" items="${list.majors}">
 											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
+												<td>${major.majorName}</td>
+												<td>${major.category.name}</td>
+												<td>${major.average}</td>
 											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
-						</div>
+						</div>	
+					</c:forEach>
 					</section>
 					<section class="caseSection">
-						<h4 class="bg bg-f1">保留方案</h4>
+						<h4 class="bg bg-f1">保守方案</h4>
+						<c:forEach var="list" items="${conservative}" varStatus="loop">
 						<div class="media detailContent">
-							<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">1</span>
+						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
+							<span class="fl index">${loop.index+1}</span>
 							<div class="media-body">
 								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
+									<em class="badgetitle vm">${list.collegeName}</em>
+									<c:forEach var="featurelist" items="${list.feature}">
+									 <c:choose>
+									 	<c:when test="${featurelist.type == 1}">
+									   		<span class="badge green">${featurelist.name}</span>
+										</c:when>
+										<c:when test="${featurelist.type == 2}">
+									   		<span class="badge red">${featurelist.name}</span>
+										</c:when>
+									 	<c:otherwise>
+											<span class="badge">${featurelist.name}</span>
+										</c:otherwise>
+									 </c:choose>
+									</c:forEach>
 								</h4>
 								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
+		<span class="label">院校属地：</span><span class="field">${list.city}</span>
+		<span class="label">院校分类：</span><span class="field">${list.type}</span>
+		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
+		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
 									<table class="table table-bordered text-center">
@@ -182,26 +177,31 @@
 												<td>所属科类</td>
 												<td>上一年录取平均分</td>
 											</tr>
+											<c:forEach var="major" items="${list.majors}">
 											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
+												<td>${major.majorName}</td>
+												<td>${major.category.name}</td>
+												<td>${major.average}</td>
 											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
-						</div>
+						</div>	
+					</c:forEach>
 					</section>
 				</div>
 
 			</div>
 		</div>
+
+		<pre name="majorList">${majorList}</pre>
+		<pre name="c">${c}</pre>
+		<pre name="courseType">${courseType}</pre>
+		<pre name="batch">${batch}</pre>
+		<pre name="score">${score}</pre>
+		<pre name="place">${place}</pre>
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>

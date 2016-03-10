@@ -8,7 +8,7 @@
     <em class="vm">高考所在地：</em></label>
   <div class="col2 selectWrap rel">
     <div class="fieldWrap lh34">
-      <span>浙江</span>
+      <span><%= province %></span>
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
     <em class="vm">姓名：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap lh34">
-      <span>姓名</span>
+      <span><%= userName %></span>
     </div>
   </div>
 </div>
@@ -30,16 +30,19 @@
     <em class="vm">高考科目：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
-      <label for="courseType_0" class="label_radio inline">
-      <em class="icon-radio"></em>
-      <input type="radio" class="input form-control" id="courseType_0" name="courseType" disabled>
-      <em class="vm">理科</em>
-      </label>
-       <label for="courseType_1"  class="label_radio inline">
-      <em class="icon-radio"></em>
-      <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>
-      <em class="vm">文科</em>
-      </label>
+      <% if (courseType == 0) { %>
+        <label for="courseType_0" class="label_radio inline">
+        <em class="icon-radio"></em>
+        <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
+        <em class="vm">理科</em>
+        </label>
+      <% }else{ %>
+         <label for="courseType_1"  class="label_radio inline">
+        <em class="icon-radio"></em>
+        <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>
+        <em class="vm">文科</em>
+        </label>
+      <% } %>
     </div>
   </div>
 </div>
@@ -50,21 +53,25 @@
     <em class="vm">报考批次：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
+    <% if (batch == 1) { %>
       <label for="batch_1" class="label_radio inline">
       <em class="icon-radio"></em>
-      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled>
+      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled checked>
       <em class="vm">第一批</em>
       </label>
+    <% }else if(batch == 2){ %>
       <label for="batch_2"  class="label_radio inline">
       <em class="icon-radio"></em>
       <input type="radio" class="input form-control" id="batch_2" name="batch" checked disabled>
       <em class="vm">第二批</em>
       </label>
+    <% }else if(batch == 3){ %>
       <label for="batch_3"  class="label_radio inline">
       <em class="icon-radio"></em>
-      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled>
+      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled checked>
       <em class="vm">第三批</em>
       </label>
+    <% } %>
     </div>
   </div>
 </div>
@@ -75,7 +82,7 @@
     <em class="vm">高考分数：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap lh34">
-      <span>姓名</span>
+      <span><%= score %></span>
     </div>
   </div>
 </div>
@@ -86,7 +93,7 @@
     <em class="vm">全省排名：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap lh34">
-      <span>500名</span>
+      <span><%= place %>名</span>
     </div>
   </div>
 </div>
@@ -97,16 +104,13 @@
     <em class="vm">专业选择：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
-      <label for="majorId_1" class="label_check inline">
+      <% for (var i = 0; i < majorList.length; i++) { %>
+      <label for="majorId_<%= majorList[i].majorId %>" class="label_check inline">
       <em class="icon-radio"></em>
-      <input type="checkbox" class="input form-control" id="majorId_1" name="majorId" disabled checked>
-      <em class="vm">工学</em>
+      <input type="checkbox" class="input form-control" id="majorId_<%= majorList[i].majorId %>" name="majorId" disabled checked>
+      <em class="vm"><%= majorList[i].majorName %></em>
       </label>
-      <label for="majorId_2"  class="label_check inline">
-      <em class="icon-radio"></em>
-      <input type="checkbox" class="input form-control" id="majorId_2" name="majorId" checked disabled>
-      <em class="vm">农学</em>
-      </label>
+      <% } %>
     </div>
   </div>
 </div>
@@ -117,21 +121,13 @@
     <em class="vm">地区选择：</em></label>
   <div class="col2 inputWrap rel">
     <div class="fieldWrap">
-      <label for="city_1" class="label_check inline">
+      <% for (var i = 0; i < c.length; i++) { %>
+      <label for="city_<%= c[i].code %>" class="label_check inline">
       <em class="icon-radio"></em>
-      <input type="checkbox" class="input form-control" id="city_1" name="city" disabled checked>
-      <em class="vm">杭州</em>
+      <input type="checkbox" class="input form-control" id="city_<%= c[i].code %>" name="city" disabled checked>
+      <em class="vm"><%= c[i].name %></em>
       </label>
-      <label for="city_2"  class="label_check inline">
-      <em class="icon-radio"></em>
-      <input type="checkbox" class="input form-control" id="city_2" name="city" checked disabled>
-      <em class="vm">上海</em>
-      </label>
-      <label for="city_3"  class="label_check inline">
-      <em class="icon-radio"></em>
-      <input type="checkbox" class="input form-control" id="city_3" name="city" disabled checked>
-      <em class="vm">北京</em>
-      </label>
+      <% } %>
     </div>
   </div>
 </div>

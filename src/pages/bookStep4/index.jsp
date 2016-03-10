@@ -72,18 +72,10 @@
 						      <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
 						      <em class="vm">理科</em>
 						      </label>
-						       <label for="courseType_1"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_1" name="courseType" disabled>
-						      <em class="vm">文科</em>
-						    </label>
+						     
 						</c:when>
 						<c:otherwise>
-							<label for="courseType_0" class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
-						      <em class="vm">理科</em>
-						      </label>
+							
 						       <label for="courseType_1"  class="label_radio inline">
 						      <em class="icon-radio"></em>
 						      <input type="radio" class="input form-control" id="courseType_1" name="courseType" disabled checked>
@@ -108,45 +100,18 @@
 						      <input type="radio" class="input form-control" id="batch_1" name="batch" checked disabled>
 						      <em class="vm">第一批</em>
 						      </label>
-						      <label for="batch_2"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_2" name="batch" disabled>
-						      <em class="vm">第二批</em>
-						      </label>
-						      <label for="batch_3"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled>
-						      <em class="vm">第三批</em>
-						      </label>
 					    </c:when>
 					    <c:when test="${batch == 2}">
-					    	 <label for="batch_1" class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled>
-						      <em class="vm">第一批</em>
-						      </label>
+					    	
 						      <label for="batch_2"  class="label_radio inline">
 						      <em class="icon-radio"></em>
 						      <input type="radio" class="input form-control" id="batch_2" name="batch" checked disabled>
 						      <em class="vm">第二批</em>
 						      </label>
-						      <label for="batch_3"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled>
-						      <em class="vm">第三批</em>
-						      </label>
+						     
 					    </c:when>
 					    <c:otherwise>
-					    	 <label for="batch_1" class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled>
-						      <em class="vm">第一批</em>
-						      </label>
-						      <label for="batch_2"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_2" name="batch" disabled>
-						      <em class="vm">第二批</em>
-						      </label>
+					    	 
 						      <label for="batch_3"  class="label_radio inline">
 						      <em class="icon-radio"></em>
 						      <input type="radio" class="input form-control" id="batch_3" name="batch"  checked disabled>
