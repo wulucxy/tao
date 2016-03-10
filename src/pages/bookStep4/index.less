@@ -1,53 +1,15 @@
-@color-blue: #61c0e2;
-@color-orange: #f4b64f;
-
-.orange{color: @color-orange;}
-.lookIcon(){
-	vertical-align: middle;display: inline-block;vertical-align: middle;
-}
-
+.formWrap .btnRow .btn{margin-right: 30px;}
 .formWrap{background-color: #fff;padding:28px;margin-bottom: 30px;}
 .bg-e8{background-color: #e8e8e8;color: #555;}
 .lh42{line-height: 42px;font-size: 16px;}
 .lh34{line-height: 34px;}
 .caseSection h4{margin-bottom: 15px;}
 
-.detailContent{
-	border-bottom: 1px solid #e2e2e2;margin-bottom: 20px;padding-bottom: 20px;position: relative;
-	.index{display: inline-block;font-size: 24px;width:44px;height: 44px;line-height:44px;text-align: center;color:#fff;background-color: #e2e2e2;margin-right: 15px;}
-	.detail{
-		 font-size: 14px;color: #555;line-height: 1.5;
-		.field{display: inline-block;margin-right: 20px;color:@color-orange;}
-		.field:last-child{margin-right:0;}
-	}
-	.tableWrap{margin-top: 14px;width: 500px;
-		.table{
-			margin-bottom: 0;
-			td{color: #555;}
-		}
-	}
-}
-
-.toggleIcon{
-	.lookIcon();
-	position: absolute;right:0;top:14px;
-	width:32px;height: 18px;background-position: -68px -18px;
-}
-.detailContent{
-	height: 72px;overflow: hidden;transition:height 0.4s ease;
-	&.open{
-		height: auto;
-		.toggleIcon{background-position: -68px 0;}
-	}
-}
-
 #bookForm{
 	.row{margin-bottom: 12px;}
 	.input{background-color: #fff;}
 	.control-label{color: #333;}
 }
-
-.taoModal .modalSubCnt{margin-left:20px;margin-right: 20px;}
 
 .icon() {
  	display: inline-block;vertical-align: middle;background-repeat: no-repeat;
@@ -63,6 +25,19 @@
 .icon-hat{background-position: -160px 0;}
 .icon-street{background-position: -180px 0;}
 
-.row label + .col2{margin-left: 120px;}
+.row label + .col2{margin-left: 160px;}
 
 .bookCnt .label_radio{width: 140px;}
+
+.fieldWrap{color:#8d8d8d;line-height: 34px;font-size: 16px;}
+.control-label{
+	font-size: 15px;color:#444;
+	i{margin-right:10px;}
+}
+
+.formWrap .footerCnt .btnRow{
+	margin-top: 48px;
+}
+
+.label_check{min-width: 100px;padding-left: 10px;padding-right: 10px;width: auto;}
+

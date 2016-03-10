@@ -1,0 +1,171 @@
+{
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userId" : "name",
+        "isLogin" : "1"
+    },
+    "conservative": [
+        {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        },
+        {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        }
+    ],
+    "normal": [
+      {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        },
+        {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        }
+    ],
+    "radical": [
+        {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        },
+        {
+            "collegeId":"1",
+            "collegeName":"同济大学",
+            "assessment":0,                 
+            "city":"北京",
+            "type":"综合",
+            "level":"本科",
+            "majors" : [
+                    {
+                       "majorId":"1",           
+                       "majorName":"建筑学",     
+                       "assessment":0,          
+                       "category":{"name":"工学","code":"1"},
+                       "average":"--"
+                    },
+                    {
+                        "majorId":"2",           
+                        "majorName":"风景园林",    
+                        "assessment":0,          
+                         "category":{"name":"工学","code":"1"},
+                        "average":"--" 
+                    }
+
+            ]
+        }
+    ]
+}

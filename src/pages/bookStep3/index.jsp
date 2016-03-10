@@ -58,7 +58,7 @@
 						
 						<div class="footerCnt">
 							<div class="row btnRow">
-							 	<a class="btn btn-positive btn-primary btn-form">
+							 	<a class="btn btn-positive btn-primary btn-form" href="/box/plan/book_step2">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
 			                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">

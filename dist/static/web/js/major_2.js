@@ -1,4 +1,4 @@
-webpackJsonp([19],{
+webpackJsonp([20],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
@@ -16,7 +16,7 @@ webpackJsonp([19],{
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(126);
+	var tabs = __webpack_require__(128);
 	
 	//报考专业
 	var major =  __webpack_require__(337);
@@ -34,7 +34,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 126:
+/***/ 128:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(34);

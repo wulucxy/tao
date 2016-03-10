@@ -12,6 +12,7 @@ module.exports = {
 	"/box/plan/book_step1"   : 'bookStep1.jsp',
 	"/box/plan/book_step3"   : 'bookStep3.jsp',
 	"/box/plan/book_step4"   : 'bookStep4.jsp',
+	"/box/plan/result?type=1"   : 'bookResult.jsp',
 	"/library/college"   : 'college.jsp',
 	"/library/college/1"   : 'collegeDetail.jsp',
 	'/404'   : '404.jsp',
@@ -55,5 +56,6 @@ module.exports = {
 	'/v2/client/1/news': 'mock::api/news.json',
 	'post::/v2/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
-	'post::/v2/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json'
+	'post::/v2/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json',
+	'/v2/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
 };

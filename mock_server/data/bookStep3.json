@@ -9,7 +9,7 @@
         "sex"  : "1",
         "token" : "12",
         "userId" : "123",
-        "userId" : "name",
+        "userName" : "name",
         "isLogin" : "1"
     },
     "courseType":0, 

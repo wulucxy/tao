@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		23:0
+/******/ 		24:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"404","1":"bookStep1","2":"bookStep2","3":"bookStep3","4":"bookStep4","5":"college","6":"collegeDetail","7":"evaluateStep1","8":"evaluateStep2","9":"evaluateStep3","10":"expertOrder","11":"expertOrderSuccess","12":"home","13":"info","14":"infoDetail","15":"login","16":"major","17":"majorExam1","18":"majorExam2","19":"major_2","20":"score","21":"uploader","22":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"404","1":"bookResult","2":"bookStep1","3":"bookStep2","4":"bookStep3","5":"bookStep4","6":"college","7":"collegeDetail","8":"evaluateStep1","9":"evaluateStep2","10":"evaluateStep3","11":"expertOrder","12":"expertOrderSuccess","13":"home","14":"info","15":"infoDetail","16":"login","17":"major","18":"majorExam1","19":"majorExam2","20":"major_2","21":"score","22":"uploader","23":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -19694,7 +19694,10 @@
 	module.exports = __webpack_require__.p + "static/web/img/location.png"
 
 /***/ },
-/* 101 */
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -19708,7 +19711,7 @@
 	}
 
 /***/ },
-/* 102 */
+/* 105 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

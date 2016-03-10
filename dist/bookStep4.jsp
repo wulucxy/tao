@@ -6,15 +6,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/bookStep4.92dabc35.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/bookStep4.eeab115a.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-	
-		<div class="container p_case_4">
+
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
+		<div class="container bookContainer">
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
@@ -22,178 +25,208 @@
 						<em class="underLine"></em>	
 					</span>
 					<div class="fr f16 g6">
-						<a class="setting trigger" data-trigger="info">
-							<i class="settingIcon icon-setting"></i><em class="vm">我的信息</em>
+						<a class="setting trigger" data-trigger="detail">
+							<i class="settingIcon icon-setting"></i><em class="vm">功能说明</em>
+						</a>
+						<a class="trigger" data-trigger="questions">
+							<i class="settingIcon icon-question"></i><em class="vm">常见问题</em>
 						</a>
 					</div>
 				</h3>
 
-				<div class="bg bg-e8 mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
-					
-					<section class="caseSection">
-						<h4 class="bg bg-f1">正常方案</h4>
-						<div class="media detailContent">
-						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">1</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
-								</div>
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
-												<td>上一年录取平均分</td>
-											</tr>
-											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
-											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div class="media detailContent">
-						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">2</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
-								</div>
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
-												<td>上一年录取平均分</td>
-											</tr>
-											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
-											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="caseSection">
-						<h4 class="bg bg-f1">冲刺方案</h4>
-						<div class="media detailContent">
-						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">1</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
-								</div>
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
-												<td>上一年录取平均分</td>
-											</tr>
-											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
-											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="caseSection">
-						<h4 class="bg bg-f1">保留方案</h4>
-						<div class="media detailContent">
-							<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">1</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">北京大学</em>
-									<span class="badge green">985</span>
-									<span class="badge red">211</span>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">北京</span>
-		<span class="label">院校分类：</span><span class="field">综合</span>
-		<span class="label">院校性质：</span><span class="field">公办</span>
-		<span class="label">院校层次：</span><span class="field">本科</span>
-								</div>
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
-												<td>上一年录取平均分</td>
-											</tr>
-											<tr>
-												<td>化学工程与工艺</td>
-												<td>工学</td>
-												<td>679.2</td>
-											</tr>
-											<tr>
-												<td>油气储运工程</td>
-												<td>工学</td>
-												<td>671.4</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</section>
+				 <form class="modalSubCnt" id="bookForm" onsubmit="return false;" autocomplete="off">
+
+				<div class="row clearfix">
+				  <label for="province" class="control-label column col1 fl">
+				    <i class="icon-location"></i>
+				    <em class="vm">高考所在地：</em></label>
+				  <div class="col2 selectWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${user.province.name}</span>
+				    </div>
+				  </div>
 				</div>
 
+				<div class="row clearfix">
+				  <label for="province" class="control-label column col1 fl">
+				    <i class="icon-location icon-newuser"></i>
+				    <em class="vm">姓名：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${user.userName}</span>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix">
+				  <label for="courseType" class="control-label column col1 fl">
+				    <i class="icon-location icon-book"></i>
+				    <em class="vm">高考科目：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap">
+				      <c:choose>
+					    <c:when test="${courseType == 0}">
+					   		<label for="courseType_0" class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
+						      <em class="vm">理科</em>
+						      </label>
+						       <label for="courseType_1"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="courseType_1" name="courseType" disabled>
+						      <em class="vm">文科</em>
+						    </label>
+						</c:when>
+						<c:otherwise>
+							<label for="courseType_0" class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
+						      <em class="vm">理科</em>
+						      </label>
+						       <label for="courseType_1"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="courseType_1" name="courseType" disabled checked>
+						      <em class="vm">文科</em>
+						    </label>
+						</c:otherwise>
+					   </c:choose>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix">
+				  <label for="courseType" class="control-label column col1 fl">
+				    <i class="icon-location icon-pic"></i>
+				    <em class="vm">报考批次：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap">
+				    <c:choose>
+					    <c:when test="${batch == 1}">
+					    	 <label for="batch_1" class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_1" name="batch" checked disabled>
+						      <em class="vm">第一批</em>
+						      </label>
+						      <label for="batch_2"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_2" name="batch" disabled>
+						      <em class="vm">第二批</em>
+						      </label>
+						      <label for="batch_3"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled>
+						      <em class="vm">第三批</em>
+						      </label>
+					    </c:when>
+					    <c:when test="${batch == 2}">
+					    	 <label for="batch_1" class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled>
+						      <em class="vm">第一批</em>
+						      </label>
+						      <label for="batch_2"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_2" name="batch" checked disabled>
+						      <em class="vm">第二批</em>
+						      </label>
+						      <label for="batch_3"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_3" name="batch"  disabled>
+						      <em class="vm">第三批</em>
+						      </label>
+					    </c:when>
+					    <c:otherwise>
+					    	 <label for="batch_1" class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled>
+						      <em class="vm">第一批</em>
+						      </label>
+						      <label for="batch_2"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_2" name="batch" disabled>
+						      <em class="vm">第二批</em>
+						      </label>
+						      <label for="batch_3"  class="label_radio inline">
+						      <em class="icon-radio"></em>
+						      <input type="radio" class="input form-control" id="batch_3" name="batch"  checked disabled>
+						      <em class="vm">第三批</em>
+						      </label>
+					    </c:otherwise>
+				   	</c:choose> 
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix inline">
+				  <label for="score" class="control-label column col1 fl">
+				    <i class="icon-location icon-fenshu"></i>
+				    <em class="vm">高考分数：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${socre}</span>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix inline">
+				  <label for="score" class="control-label column col1 fl">
+				    <i class="icon-location icon-rank"></i>
+				    <em class="vm">全省排名：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${place}名</span>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix">
+				  <label for="courseType" class="control-label column col1 fl">
+				    <i class="icon-location icon-hat"></i>
+				    <em class="vm">专业选择：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap">
+				     <c:forEach var="list" items="${majorList}" varStatus="loop">
+				      <label for="majorId_${list.majorId}" class="label_check inline">
+				      <em class="icon-radio"></em>
+				      <input type="checkbox" class="input form-control" id="majorId_${list.majorId}" name="majorId" disabled checked>
+				      <em class="vm">${list.majorName}</em>
+				      </label>
+				      </c:forEach>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix">
+				  <label for="courseType" class="control-label column col1 fl">
+				    <i class="icon-location icon-street"></i>
+				    <em class="vm">地区选择：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap">
+				    <c:forEach var="list" items="${c}" varStatus="loop">
+				      <label for="city_${list.code}" class="label_check inline">
+				      <em class="icon-radio"></em>
+				      <input type="checkbox" class="input form-control" id="city_${list.code}" name="city" disabled checked>
+				      <em class="vm">${list.name}</em>
+				      </label>
+				    </c:forEach>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="footerCnt">
+					<div class="row btnRow">
+					 	<a class="btn btn-positive btn-primary btn-form" href="/box/plan/book_step3">
+	                        <em class="subTxt">返回修改</em>
+	                    </a>
+	                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">
+	                        <em class="subTxt">确定</em>
+	                    </button>
+          			</div>
+				</div>	
+
+				</form>
+				</div>
 			</div>
 		</div>
 
