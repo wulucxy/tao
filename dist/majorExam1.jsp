@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.930c04bc.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>

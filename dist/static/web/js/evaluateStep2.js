@@ -1,40 +1,40 @@
-webpackJsonp([7],{
+webpackJsonp([8],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(13);
-	__webpack_require__(128);
-	var $ = window.$ || __webpack_require__(33);
+	__webpack_require__(14);
+	__webpack_require__(132);
+	var $ = window.$ || __webpack_require__(34);
 	
 	//工具类方法
-	var util = __webpack_require__(34);
+	var util = __webpack_require__(35);
 	
 	//公共方法
-	var common = __webpack_require__(35);
+	var common = __webpack_require__(36);
 	
 	/* 具体实现 */
 	
 	// 表单验证组件
-	__webpack_require__(50);
+	__webpack_require__(51);
 	
-	var extend =  __webpack_require__(38);
-	
-	//弹窗模板
-	var tmpl_detail = __webpack_require__(100);
-	var tmpl_questions = __webpack_require__(101);
+	var extend =  __webpack_require__(39);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(131);
-	var tmpl_list = __webpack_require__(132);
-	var tmpl_major = __webpack_require__(133);
-	var majors = __webpack_require__(134);
+	var tmpl_detail = __webpack_require__(101);
+	var tmpl_questions = __webpack_require__(102);
+	
+	//弹窗模板
+	var tmpl_school = __webpack_require__(135);
+	var tmpl_list = __webpack_require__(136);
+	var tmpl_major = __webpack_require__(137);
+	var majors = __webpack_require__(138);
 	
 	//分页
-	var pagination = __webpack_require__(135);
+	var pagination = __webpack_require__(139);
 	//自定义滚动
-	var scroll = __webpack_require__(104);
+	var scroll = __webpack_require__(105);
 	
 	
 	var school = {
@@ -571,16 +571,16 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 104:
+/***/ 105:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(105);
+	__webpack_require__(106);
 	
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
 	
 	//mousewheel
-	__webpack_require__(107);
+	__webpack_require__(108);
 	
 	function scroll(target,options){
 	
@@ -765,17 +765,17 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 105:
+/***/ 106:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 107:
+/***/ 108:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
+	var $ = window.$ || __webpack_require__(34);
 	
 	var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
 	    toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -981,14 +981,14 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 128:
+/***/ 132:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 131:
+/***/ 135:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1003,7 +1003,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 132:
+/***/ 136:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1033,7 +1033,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 133:
+/***/ 137:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1048,7 +1048,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 134:
+/***/ 138:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1087,11 +1087,11 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 135:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
 	
 	  function Plugin(t,o){
 			this.target=t;

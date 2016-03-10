@@ -4,20 +4,24 @@ webpackJsonp([3],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(13);
-	__webpack_require__(110);
-	var $ = window.$ || __webpack_require__(33);
+	__webpack_require__(14);
+	__webpack_require__(111);
+	var $ = window.$ || __webpack_require__(34);
 	
 	//工具类方法
-	var util = __webpack_require__(34);
+	var util = __webpack_require__(35);
 	
 	//公共方法
-	var common = __webpack_require__(35);
+	var common = __webpack_require__(36);
 	
 	//自定义功能写下面
-	var tmpl_list = __webpack_require__(113);
-	var tmpl_detail = __webpack_require__(114);
+	var tmpl_list = __webpack_require__(114);
+	var tmpl_detail = __webpack_require__(115);
 	//require("../../assets/components/validator");
+	
+	//弹窗模板
+	var tmpl_detail = __webpack_require__(101);
+	var tmpl_questions = __webpack_require__(102);
 	
 	var provinceId = $("[name=province]").val();
 	var batch = $("[name=batch]").val();
@@ -25,7 +29,26 @@ webpackJsonp([3],{
 	var majors = {
 	
 		init : function(){
+			this.detailTrigger();
 			this.requestData();
+		},
+	
+		detailTrigger : function(){
+			//详情弹窗
+			$("[data-trigger]").on("click",function(e){
+			    e.preventDefault();
+			    var btn = $(e.target).closest(".trigger");
+			    var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
+	
+			    modalBox( btn.get(0), {
+			          html:tmpl(),
+			          klass : 'w540 shadow',
+			          closeByOverlay : false,
+			          completeCallback : function(){ 
+			            
+			          }
+			      });
+			});
 		},
 	
 		requestData : function(){
@@ -195,14 +218,14 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 110:
+/***/ 111:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 113:
+/***/ 114:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -256,7 +279,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 114:
+/***/ 115:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

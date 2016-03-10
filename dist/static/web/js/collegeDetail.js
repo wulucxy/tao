@@ -1,28 +1,28 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(13);
-	__webpack_require__(119);
-	var $ = window.$ || __webpack_require__(33);
+	__webpack_require__(14);
+	__webpack_require__(123);
+	var $ = window.$ || __webpack_require__(34);
 	
 	//工具类方法
-	var util = __webpack_require__(34);
+	var util = __webpack_require__(35);
 	
 	//公共方法
-	var common = __webpack_require__(35);
+	var common = __webpack_require__(36);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(122);
+	var tabs = __webpack_require__(126);
 	
 	//百度地图
-	var baidu = __webpack_require__(123);
+	var baidu = __webpack_require__(127);
 	
 	//报考专业
-	var major =  __webpack_require__(124);
+	var major =  __webpack_require__(128);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -50,18 +50,18 @@ webpackJsonp([5],{
 
 /***/ },
 
-/***/ 119:
+/***/ 123:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 122:
+/***/ 126:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
 	 
 	function Plugin(t,o){
 			this.target=t;
@@ -129,10 +129,10 @@ webpackJsonp([5],{
 
 /***/ },
 
-/***/ 123:
+/***/ 127:
 /***/ function(module, exports, __webpack_require__) {
 
-	var extend =  __webpack_require__(38);
+	var extend =  __webpack_require__(39);
 	
 	var baidu = {
 	
@@ -165,12 +165,12 @@ webpackJsonp([5],{
 
 /***/ },
 
-/***/ 124:
+/***/ 128:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
-	var tmpl = __webpack_require__(125);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
+	var tmpl = __webpack_require__(129);
 	
 	var major = {
 		init : function(o){
@@ -270,7 +270,7 @@ webpackJsonp([5],{
 
 /***/ },
 
-/***/ 125:
+/***/ 129:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

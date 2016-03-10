@@ -80,23 +80,6 @@ var common = {
 		},function(){
 			$(this).removeClass("current");
 		});
-
-		// $(".navList>a")
-		// .on("mouseover",function(){
-		// 	 $(".navList").removeClass("current");
-		// 	 $(this).closest(".navList").addClass("current");
-
-		// 	 if($(this).parent().siblings(".navList").hasClass("open")){
-		// 	 	$(this).parent().siblings(".navList").removeClass("open");
-		// 	 	$(this).parent().siblings(".navList").find(".open").removeClass("open");
-		// 	 }
-			
-		// })
-		// .on("mouseout",function(e){
-		// 	e.stopPropagation();
-		// 	var $ele = $(this).closest(".navList");
-		// 	$ele.removeClass("current");
-		// });
 	},
 
 	//顶部导航切换

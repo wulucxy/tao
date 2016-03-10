@@ -14,13 +14,36 @@ var tmpl_list = require("./templates/majorList.ejs");
 var tmpl_detail = require("./templates/majorDetail.ejs");
 //require("../../assets/components/validator");
 
+//弹窗模板
+var tmpl_detail = require("../../assets/templates/detail.ejs");
+var tmpl_questions = require("../../assets/templates/questions.ejs");
+
 var provinceId = $("[name=province]").val();
 var batch = $("[name=batch]").val();
 
 var majors = {
 
 	init : function(){
+		this.detailTrigger();
 		this.requestData();
+	},
+
+	detailTrigger : function(){
+		//详情弹窗
+		$("[data-trigger]").on("click",function(e){
+		    e.preventDefault();
+		    var btn = $(e.target).closest(".trigger");
+		    var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
+
+		    modalBox( btn.get(0), {
+		          html:tmpl(),
+		          klass : 'w540 shadow',
+		          closeByOverlay : false,
+		          completeCallback : function(){ 
+		            
+		          }
+		      });
+		});
 	},
 
 	requestData : function(){

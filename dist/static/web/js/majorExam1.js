@@ -1,25 +1,25 @@
-webpackJsonp([16],{
+webpackJsonp([17],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(13);
-	__webpack_require__(322);
-	var $ = window.$ || __webpack_require__(33);
+	__webpack_require__(14);
+	__webpack_require__(326);
+	var $ = window.$ || __webpack_require__(34);
 	
 	//工具类方法
-	var util = __webpack_require__(34);
+	var util = __webpack_require__(35);
 	
 	//公共方法
-	var common = __webpack_require__(35);
+	var common = __webpack_require__(36);
 	
 	
 	/* 可选，视需求而定 */
-	var Cookies = __webpack_require__(95);
-	var tmpl = __webpack_require__(325);
+	var Cookies = __webpack_require__(96);
+	var tmpl = __webpack_require__(329);
 	
-	__webpack_require__(50);
+	__webpack_require__(51);
 	
 	//保存所有答案
 	var allItems = 210;
@@ -112,14 +112,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 322:
+/***/ 326:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 325:
+/***/ 329:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

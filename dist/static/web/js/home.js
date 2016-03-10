@@ -1,43 +1,43 @@
-webpackJsonp([11],{
+webpackJsonp([12],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(13);
-	__webpack_require__(301);
-	var $ = window.$ || __webpack_require__(33);
+	__webpack_require__(14);
+	__webpack_require__(305);
+	var $ = window.$ || __webpack_require__(34);
 	
 	//工具类方法
-	var util = __webpack_require__(34);
+	var util = __webpack_require__(35);
 	
 	//公共方法
-	var common = __webpack_require__(35);
+	var common = __webpack_require__(36);
 	
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(306);
+	var slider = __webpack_require__(310);
 	slider($("#bannerShow"));
 	
 	
-	var carousel = __webpack_require__(307);
+	var carousel = __webpack_require__(311);
 	
 	carousel.init();
 
 /***/ },
 
-/***/ 301:
+/***/ 305:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 306:
+/***/ 310:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
 	
 	function unslider(target,options){
 	
@@ -163,11 +163,11 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 307:
+/***/ 311:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(33);
-	var extend =  __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(34);
+	var extend =  __webpack_require__(39);
 	
 	
 	var carousel = {
