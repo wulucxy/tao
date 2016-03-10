@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.23e69af9.css" rel="stylesheet"><link href="/static/web/css/bookStep3.74cf33f3.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.930c04bc.css" rel="stylesheet"><link href="/static/web/css/bookStep3.5ab82bd4.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -16,6 +16,9 @@
 
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
+
+		<!-- 保存大类属性 -->
+		<input type="hidden" name="batch" value="${batch}">
 
 		<div class="container p_case_3">
 
@@ -58,7 +61,7 @@
 							 	<a class="btn btn-positive btn-primary btn-form">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button class="btn btn-positive btn-form" id="verifyBtn" type="submit">
+			                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">
 			                        <em class="subTxt">确定</em>
 			                    </button>
                   			</div>

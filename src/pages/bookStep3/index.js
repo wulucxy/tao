@@ -12,9 +12,10 @@ var common = require("../../assets/components/common");
 //自定义功能写下面
 var tmpl_list = require("./templates/majorList.ejs");
 var tmpl_detail = require("./templates/majorDetail.ejs");
-require("../../assets/components/validator");
+//require("../../assets/components/validator");
 
 var provinceId = $("[name=province]").val();
+var batch = $("[name=batch]").val();
 
 var majors = {
 
@@ -32,6 +33,7 @@ var majors = {
 					var res = $.parseJSON(res);
 				}
 
+				res.batch = batch;
 				that.res = res;
 
 				that.insertData(res);
@@ -56,14 +58,14 @@ var majors = {
 	bindEvt : function(){
 		var that = this;
 
-		$("#caseForm_3").validator({
-			autoDisabled : true,
-			autoValidate : true,
-			onSubmitActive : true
-		});
+		// $("#caseForm_3").validator({
+		// 	autoDisabled : true,
+		// 	autoValidate : true,
+		// 	onSubmitActive : true
+		// });
 
 		//checkbox定制
-		$('.label_radio').on("click",function(e){
+		$('.label_checkbox').on("click",function(e){
 		  e.stopPropagation();
 		  
 		  var target = $(e.target);
@@ -76,6 +78,76 @@ var majors = {
 		});
 
 		util.setupLabel();
+
+		$("#nBtn").on("click",function(e){
+			e.preventDefault();
+			var btn = $(this).closest(".btn");
+			if(btn.hasClass("disabled")) return;
+			btn.addClass('disabled');
+
+			that.submitFunc.call(that,btn);
+		});
+	},
+
+	submitFunc : function(btn){
+		var that = this;
+
+		var eleBoxs=$('input[type=checkbox][name=majorType]'),
+			boxList = [],
+	        selectAll = true;
+
+	    eleBoxs.each(function(){
+          if($(this).prop("checked")){
+            selectAll=false;
+          }
+	    });
+
+	    if(selectAll){
+	    	boxList = eleBoxs;
+	    }else{
+	    	boxList = $('input[type=checkbox][name=majorType]:checked');
+	    }
+
+	    var majorList = that.selectList(boxList);
+
+		var _data = {
+			majorList : majorList
+		};
+
+		$.ajax({
+			url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step3",
+			type : "post",
+            contentType: "application/json",
+            data : JSON.stringify(_data),
+            success : function(res){
+                if(typeof res == "string"){
+                    var res = $.parseJSON(res);
+                }
+
+                if(!res.code){
+                    window.location = "/box/plan/book_step4";
+                    return false;
+                }else{
+                    warn(res.msg);
+                    btn.removeClass("disabled");
+                    return false;
+                }
+            },
+            error : function(err){
+            	btn.removeClass("disabled");
+                warn(err || "网络错误，请稍后重试");
+            }
+		})
+	},
+
+	selectList : function(eleBoxs){
+		return $.map(eleBoxs,function(ele,idx){
+    		var icon = $(ele).siblings("[data-majorid]");
+    		return {
+    			"majorId":icon.data("majorid"),
+    			"majorName":icon.data("name")
+    		};
+    	});
 	},
 
 	subMajorModal :function(btn){

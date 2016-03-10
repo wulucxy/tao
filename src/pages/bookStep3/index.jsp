@@ -17,6 +17,9 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
+		<!-- 保存大类属性 -->
+		<input type="hidden" name="batch" value="${batch}">
+
 		<div class="container p_case_3">
 
 			<div class="content">
@@ -58,7 +61,7 @@
 							 	<a class="btn btn-positive btn-primary btn-form">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button class="btn btn-positive btn-form" id="verifyBtn" type="submit">
+			                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">
 			                        <em class="subTxt">确定</em>
 			                    </button>
                   			</div>

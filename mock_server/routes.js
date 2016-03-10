@@ -42,7 +42,7 @@ module.exports = {
 	'post::/v2/client/auth/signin' : 'mock::api/siginin.json',
 	'post::/v2/client/auth/requestCode' : 'mock::ap/profile/favor/major/addi/code.json',
 	'post::/v2/client/auth/signup' : 'mock::api/signup.json',
-	'get::/v2/client1/data/major/all'  : 'mock::api/majorList.json',
+	'get::/v2/client/1/data/major/all'  : 'mock::api/majorList.json',
 	'post::/v2/client/1/data/major' :  'mock::api/majors.json',
 	'post::/v2/client/1/news/down':  'mock::api/down.json',
 	'post::/v2/client/1/news/up':  'mock::api/up.json',
@@ -55,5 +55,5 @@ module.exports = {
 	'/v2/client/1/news': 'mock::api/news.json',
 	'post::/v2/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
-
+	'post::/v2/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json'
 };
