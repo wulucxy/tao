@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.23e69af9.css" rel="stylesheet"><link href="/static/web/css/bookStep2.3b82619d.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.23e69af9.css" rel="stylesheet"><link href="/static/web/css/bookStep2.fe841a99.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -71,10 +71,10 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-							 	<a class="btn btn-positive btn-primary btn-form">
+							 	<a class="btn btn-primary btn-form" href="/box/plan/book_step1">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
+			                    <button type="submit" class="btn btn-positive btn-form" id="next">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
                   			</div>

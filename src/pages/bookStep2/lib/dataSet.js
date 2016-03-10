@@ -99,14 +99,14 @@ var dataSet = {
                 }
                 
                 if(!that.cityDataCache[val]){
-                    that.cityDataCache[val] = res.cityList;
+                    that.cityDataCache[val] = res.c;
                 }
 
-                $.each(res.cityList,function(idx,ele){
+                $.each(res.c,function(idx,ele){
                     ele.status = 0;
                 });
 
-                that.state.cityList = res.cityList;
+                that.state.cityList = res.c;
                 that.updateUI();
 
             },
@@ -203,6 +203,8 @@ var dataSet = {
 
           that.updateUI();
         });
+
+        
     }
 };
 

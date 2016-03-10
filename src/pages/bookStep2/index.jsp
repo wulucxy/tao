@@ -71,10 +71,10 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-							 	<a class="btn btn-positive btn-primary btn-form">
+							 	<a class="btn btn-primary btn-form" href="/box/plan/book_step1">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
+			                    <button type="submit" class="btn btn-positive btn-form" id="next">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
                   			</div>
