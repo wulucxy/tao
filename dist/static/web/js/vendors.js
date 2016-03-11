@@ -19696,7 +19696,7 @@
 	var __t, __p = '', __j = Array.prototype.join;
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
-	__p += '<div class="modalCntWrap taoModal g9 modalForm myInfo">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">我的信息</span></h3>\n <form class="modalSubCnt" id="bookForm" onsubmit="return false;" autocomplete="off">\n\n<div class="row clearfix">\n  <label for="province" class="control-label column col1 fl">\n    <i class="icon-location"></i>\n    <em class="vm">高考所在地：</em></label>\n  <div class="col2 selectWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
+	__p += '<div class="modalCntWrap taoModal g9 modalForm myInfoModal">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">我的信息</span></h3>\n <form class="modalSubCnt" id="bookForm" onsubmit="return false;" autocomplete="off">\n\n<div class="row clearfix">\n  <label for="province" class="control-label column col1 fl">\n    <i class="icon-location"></i>\n    <em class="vm">高考所在地：</em></label>\n  <div class="col2 selectWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
 	((__t = ( province )) == null ? '' : __t) +
 	'</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="province" class="control-label column col1 fl">\n    <i class="icon-location icon-newuser"></i>\n    <em class="vm">姓名：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
 	((__t = ( userName )) == null ? '' : __t) +

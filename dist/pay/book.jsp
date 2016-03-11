@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.7e29370d.css" rel="stylesheet"><link href="/static/web/css/pay/book.abae95ad.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.3cc44725.css" rel="stylesheet"><link href="/static/web/css/pay/book.abae95ad.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -22,6 +22,9 @@
 
 		<!-- 保存userName属性 -->
 		<input type="hidden" name="userName" value="${user.userName}">
+
+		<!-- 保存orderId属性 -->
+		<input type="hidden" name="orderId" value="${orderId}">
 
 		<div class="container bookContainer">
 			<div class="content">
@@ -57,14 +60,14 @@
 							<div class="col2 radioWrap rel media-body">
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="alipay" checked>
 									<i class="payIcon zhifubao"></i>
 									<em>支付宝</em>
 									</label>
 								</div>
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
 									<em>支付卡</em>
 									<span class="inputWrap dib">

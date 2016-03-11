@@ -23,6 +23,9 @@
 		<!-- 保存userName属性 -->
 		<input type="hidden" name="userName" value="${user.userName}">
 
+		<!-- 保存orderId属性 -->
+		<input type="hidden" name="orderId" value="${orderId}">
+
 		<div class="container bookContainer">
 			<div class="content">
 				<h3 class="clearfix title">
@@ -57,14 +60,14 @@
 							<div class="col2 radioWrap rel media-body">
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="alipay" checked>
 									<i class="payIcon zhifubao"></i>
 									<em>支付宝</em>
 									</label>
 								</div>
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
 									<em>支付卡</em>
 									<span class="inputWrap dib">

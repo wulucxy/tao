@@ -18,6 +18,7 @@ var tmpl_Info = require("../../../assets/templates/applyInfo.ejs");
 var pay = {
 	init : function(){
 		this.detailTrigger();
+		this.subPay();
 	},
 
 	transformData : function(){

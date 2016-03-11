@@ -23,6 +23,7 @@ webpackJsonp([22],{
 	var pay = {
 		init : function(){
 			this.detailTrigger();
+			this.subPay();
 		},
 	
 		transformData : function(){

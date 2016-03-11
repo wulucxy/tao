@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.Map"%>
 <%@ page import="java.util.ArrayList"%>
@@ -40,7 +39,7 @@ img{width:80%;margin:20px;}
 </style>
 <title>职业测试</title>
 
-<link href="/static/web/css/vendors.7e29370d.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.3cc44725.css" rel="stylesheet"></head>
 	<body id="zycs">
 		<c:forEach items="${bjsbList}" var="unit" varStatus="status">
 			<c:if test="${ unit.key == 'ParaNoIndent'}">
