@@ -46,14 +46,14 @@
 				<div class="bg bg-blue mb20 lh42 tc">支&nbsp;&nbsp;付</div>
 				<div class="formWrap">
 					<div class="payContent f18">
-					<p class="txts">本次方案定制将提供给您合适你的“冲”、“平”、“保”推荐志愿院校各3个，每所院校推荐专业若干，并提供对应的历史数据。</p>
+					<p class="txts">${planDes}</p>
 					<form action="#" onsubmit="return false" autocomplete="off" id="payForm" class="g4">
 						<div class="media">
 							<span class="control-label column col1 fl">
 								支付金额:	
 							</span>
 							<div class="col2 txtWrap rel media-body">
-								<span class="blue f26">49</span>元
+								<span class="blue f26">${price}</span>元
 							</div>
 						</div>
 						<div class="media">

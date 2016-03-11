@@ -73,15 +73,26 @@ var pay = {
 		$("#verifyBtn").on("click",function(e){
 			e.preventDefault();
 			var btn = $(this);
-			if(btn.hasClass("disabled")) return;
-			btn.addClass("disabled");
+			var channel = $("[name=channel]:checked").val();
+
+			if(channel == "coupon"){
+				if($.trim($("#card").val()) == ""){
+					warn("请输入正确的支付卡号");
+					return;
+				}
+			}
+			
 			that.subPay(btn);
+			
 		});
 	},
 
 	subPay : function(btn){
 		var that = this;
-		
+
+		if(btn.hasClass("disabled")) return;
+		btn.addClass("disabled");
+
 		var _data = {
 			orderId : $("[name=orderId]").val(),
 			channel : $("[name=channel]:checked").val(),
