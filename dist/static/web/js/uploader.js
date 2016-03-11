@@ -1,22 +1,22 @@
-webpackJsonp([22],{
+webpackJsonp([24],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(341);
-	var $ = window.$ || __webpack_require__(34);
+	__webpack_require__(189);
+	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
-	var util = __webpack_require__(35);
+	var util = __webpack_require__(37);
 	
 	//公共方法
-	var common = __webpack_require__(36);
+	var common = __webpack_require__(38);
 	
 	
 	//自定义功能写下面
-	var WebUploader = __webpack_require__(343);
+	var WebUploader = __webpack_require__(191);
 	
 	
 	uploader = WebUploader.create({
@@ -44,14 +44,14 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 341:
+/***/ 189:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 343:
+/***/ 191:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! WebUploader 0.1.5 */
@@ -171,7 +171,7 @@ webpackJsonp([22],{
 	        // in another project. That other project will only
 	        // see this AMD call, not the internal modules in
 	        // the closure below.
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(34) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (makeExport), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(36) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (makeExport), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else {
 	
 	        // Browser globals case. Just assign the

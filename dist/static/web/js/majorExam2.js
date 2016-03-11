@@ -5,23 +5,23 @@ webpackJsonp([19],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(330);
-	var $ = window.$ || __webpack_require__(34);
+	__webpack_require__(174);
+	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
-	var util = __webpack_require__(35);
+	var util = __webpack_require__(37);
 	
 	//公共方法
-	var common = __webpack_require__(36);
+	var common = __webpack_require__(38);
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(332);
+	var questions = __webpack_require__(176);
 	
-	var tmpl = __webpack_require__(333);
+	var tmpl = __webpack_require__(177);
 	
-	var Cookies = __webpack_require__(96);
-	var contentSlider = __webpack_require__(334);
+	var Cookies = __webpack_require__(98);
+	var contentSlider = __webpack_require__(178);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -143,14 +143,14 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 330:
+/***/ 174:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 332:
+/***/ 176:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2680,7 +2680,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 333:
+/***/ 177:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2732,12 +2732,12 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 334:
+/***/ 178:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(34);
-	var extend =  __webpack_require__(39);
-	var browser = __webpack_require__(43);
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
+	var browser = __webpack_require__(45);
 	
 	
 	function contentSlider(target,options){

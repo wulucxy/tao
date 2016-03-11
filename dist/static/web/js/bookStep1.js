@@ -5,22 +5,22 @@ webpackJsonp([2],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(102);
-	var $ = window.$ || __webpack_require__(34);
+	__webpack_require__(103);
+	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
-	var util = __webpack_require__(35);
+	var util = __webpack_require__(37);
 	
 	//公共方法
-	var common = __webpack_require__(36);
+	var common = __webpack_require__(38);
 	
 	/* 具体实现 */
 	// 验证组件
-	__webpack_require__(51);
+	__webpack_require__(53);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(104);
-	var tmpl_questions = __webpack_require__(105);
+	var tmpl_detail = __webpack_require__(105);
+	var tmpl_questions = __webpack_require__(106);
 	
 	//checkbox定制
 	$('.label_radio').click(function(){
@@ -104,7 +104,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 102:
+/***/ 103:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

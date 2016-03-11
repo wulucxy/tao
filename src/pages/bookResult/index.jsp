@@ -17,6 +17,9 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
+		<!-- 保存provinceName属性 -->
+		<input type="hidden" name="provinceName" value="${user.province.name}">
+
 		<!-- 保存userName属性 -->
 		<input type="hidden" name="userName" value="${user.userName}">
 

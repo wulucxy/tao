@@ -11,10 +11,6 @@ var common = require('../../assets/components/common');
 
 /* 具体实现 */
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-
 // 表单验证组件
 require('../../assets/components/validator');
 

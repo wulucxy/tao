@@ -13,7 +13,7 @@ var common = require("../../assets/components/common");
 //自定义功能写下面
 
 //弹窗模板
-var tmpl_Info = require("./templates/applyInfo.ejs");
+var tmpl_Info = require("../../assets/templates/applyInfo.ejs");
 
 $(".toggle").on("click",function(e){
 	e.preventDefault();
@@ -29,8 +29,9 @@ function transformData(){
 		courseType : $("[name=courseType]").text(),
 		score : $("[name=score]").text(),
 		place : $("[name=place]").text(),
-		province : $("[name=province]").text(),
-		userName : $("[name=userName]").text()
+		province : $("[name=province]").val(),
+		provinceName : $("[name=provinceName]").val(),
+		userName : $("[name=userName]").val()
 	}
 
 	return _data;

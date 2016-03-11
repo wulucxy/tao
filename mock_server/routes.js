@@ -30,6 +30,8 @@ module.exports = {
 	"/library/aboard_data": "abordData.jsp",
 	"/home/signin": "login.jsp",
 	"/uploader": "uploader.jsp",
+	"/pay/book": "pay/book.jsp",
+	"/pay/evaluate": "pay/evaluate.jsp",
 	//异步加载
 	'post::/v2/client/loadmore/test' : 'mock::api/test.json',
 	'post::/v2/client/loadmore/history' : 'mock::api/history.json',

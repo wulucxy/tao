@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.eefacb95.css" rel="stylesheet"><link href="/static/web/css/bookResult.bcfaed85.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.7e29370d.css" rel="stylesheet"><link href="/static/web/css/bookResult.a6a9f554.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -16,6 +16,9 @@
 
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
+
+		<!-- 保存provinceName属性 -->
+		<input type="hidden" name="provinceName" value="${user.province.name}">
 
 		<!-- 保存userName属性 -->
 		<input type="hidden" name="userName" value="${user.userName}">

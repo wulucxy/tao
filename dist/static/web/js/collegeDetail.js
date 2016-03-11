@@ -5,24 +5,24 @@ webpackJsonp([7],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(125);
-	var $ = window.$ || __webpack_require__(34);
+	__webpack_require__(126);
+	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
-	var util = __webpack_require__(35);
+	var util = __webpack_require__(37);
 	
 	//公共方法
-	var common = __webpack_require__(36);
+	var common = __webpack_require__(38);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(128);
+	var tabs = __webpack_require__(129);
 	
 	//百度地图
-	var baidu = __webpack_require__(129);
+	var baidu = __webpack_require__(130);
 	
 	//报考专业
-	var major =  __webpack_require__(130);
+	var major =  __webpack_require__(131);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -50,18 +50,18 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 125:
+/***/ 126:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 128:
+/***/ 129:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(34);
-	var extend =  __webpack_require__(39);
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
 	 
 	function Plugin(t,o){
 			this.target=t;
@@ -129,10 +129,10 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 129:
+/***/ 130:
 /***/ function(module, exports, __webpack_require__) {
 
-	var extend =  __webpack_require__(39);
+	var extend =  __webpack_require__(41);
 	
 	var baidu = {
 	
@@ -165,12 +165,12 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 130:
+/***/ 131:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(34);
-	var extend =  __webpack_require__(39);
-	var tmpl = __webpack_require__(131);
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
+	var tmpl = __webpack_require__(132);
 	
 	var major = {
 		init : function(o){
@@ -270,7 +270,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 131:
+/***/ 132:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

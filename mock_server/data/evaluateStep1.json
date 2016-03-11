@@ -9,7 +9,11 @@
         "sex"  : "1",
         "token" : "12",
         "userId" : "123",
-        "userId" : "name",
+        "userName" : "name",
         "isLogin" : "1"
-    }
+    },
+    "courseType" : 1,
+    "batch" : 3,
+    "score" : 3333,
+    "place" : 123
 }
