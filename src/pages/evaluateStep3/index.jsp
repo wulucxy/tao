@@ -15,6 +15,9 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 		
+		<!-- 保存province属性 -->
+		<input type="hidden" name="province" value="${user.province.code}">
+
 		<div class="container p_assess_1">
 
 			<div class="content">
@@ -140,45 +143,33 @@
 						</section>
 
 						<section class="p2">
+						<c:forEach var="list" items="${wishes}" varStatus="loop">
 							<div class="cInfo">
-								<div class="bg bg-f1">志愿学校1：</div>
+								<div class="bg bg-f1">志愿学校${loop.index+1}：</div>
 								<div class="collegeList">
-									<span class="n">aaa</span>
-									<span class="c">bbb</span>
-									<span class="c">ccc</span>
-									<span class="c">ddd</span>
+									<c:choose>
+								    <c:when test="${list.collegeName != null}">
+								   		<span class="n">${list.collegeName}</span>
+									</c:when>
+									<c:otherwise>
+										<span class="n">无</span>
+									</c:otherwise>
+								   </c:choose>
+									<c:forEach var="major" items="${list.majors}">
+									<span class="c">${major.majorName}</span>
+									</c:forEach>
 								</div>
-							</div>
-							<div class="cInfo">
-								<div class="bg bg-f1">志愿学校2：</div>
-								<div class="collegeList">
-									<span class="n">aaa</span>
-									<span class="c">bbb</span>
-									<span class="c">ccc</span>
-									<span class="c">ddd</span>
-								</div>
-							</div>
-
-							<div class="cInfo">
-								<div class="bg bg-f1">志愿学校3：</div>
-								<div class="collegeList">
-									<span class="n">无</span>
-								</div>
-							</div>						
-	
-
+							</div>					
+						</c:forEach>
 						</section>
 
-						
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							
 							<div class="row btnRow">
-							 	<a class="btn btn-positive btn-primary btn-form">
-			                        <em class="subTxt">返回修改</em>
+							 	<a class="btn btn-primary btn-form" href="/box/plan/evaluate_step2">返回修改
 			                    </a>
-			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
-			                        <em class="subTxt">提交</em>
+			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">提交
 			                    </button>
                   			</div>
 

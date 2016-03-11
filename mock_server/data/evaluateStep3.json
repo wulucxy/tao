@@ -15,5 +15,21 @@
 	"courseType": 1,
 	"batch" : 1,
 	"score" : 300,
-	"place" : 3000
+	"place" : 3000,
+    "wishes":[ 
+        { 
+            "college":"2001", 
+            "collegeName":"清华大学", 
+            "majors":[ 
+                {
+                    "majorId":"09871", 
+                    "majorName":"自动化" 
+                }, 
+                { 
+                    "majorId":"09871", 
+                    "majorName":"自动化" 
+                } 
+            ]
+        }
+    ] 
 }
