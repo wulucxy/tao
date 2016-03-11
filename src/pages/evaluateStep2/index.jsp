@@ -47,7 +47,10 @@
 						<div class="m-select">
 							<div class="bg bg-f1">志愿学校1</div>
 							<div class="row inline">
+							   <span class="inputWrap rel">
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="1">
+								<a href="javascript:;" class="clear">X</a>
+							   </span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="1">
 									<em class="vm">添加专业</em>
 									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
@@ -61,10 +64,13 @@
 						<div class="m-select">
 							<div class="bg bg-f1">志愿学校2</div>
 							<div class="row inline">
+							<span class="inputWrap rel">
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="2">
+								<a href="javascript:;" class="clear">X</a>
+							</span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="2">
 									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">1</em>/<em class="all">6</em>)</span>
+									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
 								</a>
 							</div>
 							<ul class="tagsWrap clearfix showTagList">
@@ -76,7 +82,10 @@
 						<div class="m-select">
 							<div class="bg bg-f1">志愿学校3</div>
 							<div class="row inline">
+							<span class="inputWrap rel">
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="3">
+								<a href="javascript:;" class="clear">X</a>
+							</span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="3">
 									<em class="vm">添加专业</em>
 									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
@@ -90,7 +99,10 @@
 						<div class="m-select">
 							<div class="bg bg-f1">志愿学校4</div>
 							<div class="row inline">
+							<span class="inputWrap rel">
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="4">
+								<a href="javascript:;" class="clear">X</a>
+							</span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="4">
 									<em class="vm">添加专业</em>
 									<span class="vm">(<em class="count">1</em>/<em class="all">6</em>)</span>
@@ -105,7 +117,10 @@
 						<div class="m-select">
 							<div class="bg bg-f1">志愿学校5</div>
 							<div class="row inline">
+							<span class="inputWrap rel">
 								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="5">
+								<a href="javascript:;" class="clear">X</a>
+							</span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="5">
 									<em class="vm">添加专业</em>
 									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
@@ -139,5 +154,9 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+		
+		<pre name="zhiyuanList">${zhiyuanList}</pre>
+		<pre name="selected">${selected}</pre>
+
 	</body>
 </html>

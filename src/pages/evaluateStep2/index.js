@@ -39,9 +39,7 @@ var school = {
       this.bindEvt();
 
       this.pager = 1;
-      this.cityDataCache = [
-        {},{},{},{},{}
-      ];
+      
       this.options = o;
 
       this.state = {
@@ -68,55 +66,8 @@ var school = {
             "list" : []
           }
         ],
-        "selected" : [
-          {
-            "type" : 1,
-            "list" : []
-          },
-          {
-            "type" : 2,
-            "list" : []
-          },
-          {
-            "type" : 3,
-            "list" : []
-          },
-          {
-            "type" : 4,
-            "list" : []
-          },
-          {
-            "type" : 5,
-            "list" : []
-          }
-        ],
-        "zhiyuanList" : [
-          {
-            "type" : 1,
-            "name" : "",
-            "code" : ""
-          },
-          {
-            "type" : 2,
-            "name" : "",
-            "code" : ""
-          },
-          {
-            "type" : 3,
-            "name" : "",
-            "code" : ""
-          },
-          {
-            "type" : 4,
-            "name" : "",
-            "code" : ""
-          },
-          {
-            "type" : 5,
-            "name" : "",
-            "code" : ""
-          }
-        ]
+        "selected" :  $.parseJSON($("[name=selected]").text()),
+        "zhiyuanList" : $.parseJSON($("[name=zhiyuanList]").text())
         
       };
 
@@ -124,21 +75,31 @@ var school = {
   },
 
   render : function(type){
-    var that = this;
+    var that = this, o = that.options;
 
+      //渲染选中的大学，并激活右侧是否可添加专业
       $.each(that.state.zhiyuanList,function(idx,item){
           if(item.code && item.name){
+            //显示选中的大学
             $("[major="+item.type+"]").val(item.name);
             $("[data-rel="+item.type+"]").removeClass("disabled");
+            $("[major="+item.type+"]").closest(".row").addClass("active");
           }else{
+            //清除选中的大学
+            $("[major="+item.type+"]").val("");
             $("[data-rel="+item.type+"]").addClass("disabled");
+            $("[major="+item.type+"]").closest(".row").removeClass("active");
           }
+
+          //增加回调方法
+          o.schoolSelectedCallback && o.schoolSelectedCallback.call(that,$("[major="+item.type+"]"));
+
       });
 
       //省列表
       if(that.state.provList.length){
           var provLis = $.map(that.state.provList,function(item){
-              return '<li data-value="'+item.code+'">'+item.name+'</li>';
+              return '<li data-code="'+item.code+'">'+item.name+'</li>';
           });
       }
 
@@ -152,9 +113,9 @@ var school = {
       if($(".city").length && that.state.cityList[that.modal.majorType-1].list){
         var cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
             if(city.status == 1){
-                return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+                return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
             }else{
-                return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["value"]+'" ><em>'+city["name"]+'</em></label></li>';
+                return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
             }
         });
 
@@ -169,9 +130,8 @@ var school = {
           $(".btn-positive").addClass("disabled");
           $('#tagsWrap').html(lis.join('')); 
       }else if($(".city").length && that.state.selected[that.modal.majorType-1].list){
-          console.log(that.modal.majorType,that.state.selected[that.modal.majorType-1].list);
           lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
-              return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+              return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
           });
           if($(".btn-positive").hasClass("disabled")){
             $(".btn-positive").removeClass("disabled"); 
@@ -184,15 +144,30 @@ var school = {
           $('#tagsWrap').html(lis.join('')); 
       }
       
-      //当前页面展示的选中专业
+      //当前页面展示的选中专业（单项）
       if(typeof type != "undefined" && that.state.selected[type].list){
         var lis = $.map(that.state.selected[type].list,function (item) {
-            return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+            return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
         });
+
         $("[major="+(type+1)+"]").closest(".m-select").find(".tagsWrap").html(lis.join(""));
         $("[major="+(type+1)+"]").closest(".m-select").find(".count").text(lis.length);
       }else{
+        //全部渲染（全页面）
+        var _lis = [];
+        $.each(that.state.selected,function(idx,item){
+          if(item.list.length){
+            _lis = $.map(item.list,function(l){
+              return '<li class="tagList" data-name="'+l.name+'" data-code="'+l.code+'"><span class="icon-close">X</span><span class="tagContent">' +l.name+ '</span></li>';
+            });
 
+            if(that.state.zhiyuanList[idx].name && that.state.zhiyuanList[idx].name){
+              $("[major="+(idx+1)+"]").closest(".m-select").find(".tagsWrap").html(_lis.join(""));
+              $("[major="+(idx+1)+"]").closest(".m-select").find(".count").text(_lis.length);
+            }
+            _lis = [];
+          }
+        });
       }
   },
 
@@ -207,7 +182,7 @@ var school = {
         $(this).addClass(o.klass);
 
         that.city.empty();
-        that.requestCityData.call(that,$(this).data("value"));
+        that.requestCityData.call(that,$(this).data("code"));
     });
 
     $(document).off().on("change","[name=city]",function(e){
@@ -217,8 +192,8 @@ var school = {
         if($ele.prop("checked")){
           var eleObj = {
               p : $(ele).attr("p"),
-              n : $(ele).attr("n"),
-              value : ele.value
+              name : $(ele).attr("n"),
+              code : ele.value
           };
 
           //保存到当前志愿list列表中
@@ -226,7 +201,7 @@ var school = {
 
           //分志愿类型处理，将当前志愿选中项列出来
           $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-              if(eleObj.value == item.value){
+              if(eleObj.code == item.code){
                   that.state.cityList[that.modal.majorType-1].list[idx].status = 1;
                    return false;
               }
@@ -234,13 +209,13 @@ var school = {
 
         }else{
           var eleObj = {
-              n : $(ele).attr("n"),
-              value : ele.value
+              name : $(ele).attr("n"),
+              code : ele.value
           };
 
           //去除选择项
           $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-              if(eleObj.value == item.value){
+              if(eleObj.code == item.code){
                   that.state.selected[that.modal.majorType-1].list.splice(idx,1);
                    return false;
               }
@@ -248,7 +223,7 @@ var school = {
 
 
           $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-              if(eleObj.value == item.value){
+              if(eleObj.code == item.code){
                   that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
                    return false;
               }
@@ -262,22 +237,22 @@ var school = {
     $(".s-major").off().on('click', '.icon-close', function (e) {
 
         var $li = $(this).closest(".tagList");
-        var val = $li.data("value"),n = $li.data("n");
+        var val = $li.data("code"),n = $li.data("name");
             
         var ele = {
-            n : n,
-            value : val
+            name : n,
+            code : val
         };
 
        $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-            if(ele.value == item.value){
+            if(ele.code == item.code){
                 that.state.selected[that.modal.majorType-1].list.splice(idx,1);
                 return false;
             }
        });
 
        $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-            if(ele.value == item.value){
+            if(ele.code == item.code){
                 that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
                  return false;
             }
@@ -302,12 +277,30 @@ var school = {
                 var res = $.parseJSON(res);
             }
             
-
+            //默认未选中
             $.each(res.c,function(idx,ele){
                 ele.status = 0;
             });
 
             that.state.cityList[that.modal.majorType-1].list = res.c;
+
+            //添加已选中的单元
+            $.each(that.state.selected,function(idx,ele){
+               //当前模块索引
+               if(that.modal.majorType-1 == idx){
+                  $.each(that.state.cityList[that.modal.majorType-1].list,function(idx2,ele2){
+                    $.each(ele.list,function(idx3,ele3){
+                      if(ele2.name == ele3.name && ele2.code == ele3.code){
+                        ele2.status = 1;
+                        return false;
+                      }
+                    });
+                    
+                  });
+               }
+            });
+
+            
             that.render();
 
         },
@@ -347,7 +340,7 @@ var school = {
     var that = this;
     btn.find(".count").text(that.state.selected[that.modal.majorType-1].list.length);
     var lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
-        return '<li class="tagList" data-n="'+item.n+'" data-value="'+item.value+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
+        return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
     });
     btn.closest(".m-select").find(".tagsWrap").empty().html(lis.join(""));
   },
@@ -359,22 +352,22 @@ var school = {
 
       e.preventDefault();
       var $li = $(this).closest(".tagList");
-      var val = $li.data("value"),n = $li.data("n");
+      var code = $li.data("code"),name = $li.data("name");
           
       var ele = {
-          n : n,
-          value : val
+          name : name,
+          code : code
       };
 
      $.each(that.state.selected[type].list,function(idx,item){
-          if(ele.value == item.value){
+          if(ele.code == item.code){
               that.state.selected[type].list.splice(idx,1);
               return false;
           }
      });
 
      $.each(that.state.cityList[type].list,function(idx,item){
-          if(ele.value == item.value){
+          if(ele.code == item.code){
               that.state.cityList[type].list[idx].status = 0;
                return false;
           }
@@ -537,12 +530,30 @@ var school = {
       });
 
     });
+
+    //清理选中的学校
+    $(".row .clear").on("click",function(e){
+      e.preventDefault();
+      var type = $(this).siblings(".input").attr("major");
+      
+      //清空选中cityList和selectedlist
+      that.state.selected[type-1].list = [];
+      that.state.cityList[type-1].list = [];
+
+      //清除zhiyuanList数据
+      that.state.zhiyuanList[type-1].name = "";
+      that.state.zhiyuanList[type-1].code = "";
+
+      that.render(type-1);
+
+    });
   }
 };
 
 school.init({
   klass : "current",
   url : "/v2/client/getMajor",
+
   startCallback : function(){
     scroll($(".prov"),{
       height : $(".selectWrap").height(),
@@ -551,12 +562,20 @@ school.init({
 
     $(".prov").find("li").eq(0).trigger("click");
   },
+
   completeCallback : function(){
     scroll($(".city"),{
       height : $(".selectWrap").height(),
       alwaysVisible : true
     });
+  },
+
+  //选中学校的回调
+  schoolSelectedCallback : function(oInput){
+    var oRow = oInput.closest(".row");
+
   }
+
 });
 
 

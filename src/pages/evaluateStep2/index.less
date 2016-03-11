@@ -26,7 +26,6 @@
 .modalBox .modalCntWrap .footerCnt{margin-top: 0;}
 
 .m-select .bg{margin-bottom: 20px;}
-.m-select .form-control{width: 248px;margin-right: 10px;}
 .tagList{position: relative;margin-bottom:30px;width:90px;line-height: 32px;background-color: #ededed;color:#333;text-align: center;margin-right:30px;border:1px solid #ccc; float: left;}
 .tagList .icon-close{position: absolute;right:-10px;top:-10px;color:#fff;text-align:center;line-height:20px;cursor: pointer;display: inline-block;width:20px;height:20px;border-radius:50%;background-color: #e71218;z-index:1;}
 .addMajor{font-size: 16px;padding-top: 4px;padding-bottom: 4px;}
@@ -66,3 +65,18 @@
 
 	.tagList{float: none;margin-bottom: 16px;background-color: #f3f3f3;}
 }
+
+.m-select{
+	.inputWrap{
+		display: inline-block;width: 248px;margin-right: 10px;
+		.clear{position: absolute;width: 20px;height: 20px;border-radius: 50%;text-align: center;line-height: 20px;background-color: #aaa;cursor: pointer;top:7px;right:13px;color: #fff;display: none;
+			&:hover{background-color: #999;}
+		}
+	}
+	.row.active .clear{
+		display: block;
+	}
+	.form-control{width: 100%;}
+}
+
+.pre{display: none;}
