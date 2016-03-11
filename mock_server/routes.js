@@ -13,6 +13,7 @@ module.exports = {
 	"/box/plan/book_step3"   : 'bookStep3.jsp',
 	"/box/plan/book_step4"   : 'bookStep4.jsp',
 	"/box/plan/result"   : 'bookResult.jsp',
+	"/box/plan/result2"   : 'evaluateResult.jsp',
 	"/library/college"   : 'college.jsp',
 	"/library/college/1"   : 'collegeDetail.jsp',
 	'/404'   : '404.jsp',
