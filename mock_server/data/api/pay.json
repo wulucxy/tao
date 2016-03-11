@@ -1,0 +1,33 @@
+  {
+    "id": "ch_KGWHKGvDCuvHHq14yTjPm1GK",
+    "object": "charge",
+    "created": 1453948896,
+    "livemode": false,
+    "paid": false,
+    "refunded": false,
+    "app": "app_SCy5qHP84mT4ivnb",
+    "channel": "alipay",
+    "orderNo": "12321321",
+    "clientIp": "127.0.0.1",
+    "amount": 100,
+    "amountSettle": 100,
+    "currency": "cny",
+    "subject": "as",
+    "body": "sad",
+    "timeExpire": 1454035296,
+    "refunds": 
+    {
+        "object": "list",
+        "url": "/v1/charges/ch_KGWHKGvDCuvHHq14yTjPm1GK/refunds",
+        "hasMore": false
+    },
+    "amountRefunded": 0,
+    "credential": 
+    {
+        "object": "credential",
+        "alipay": 
+        {
+            "orderInfo": "_input_charset=\"utf-8\"&body=\"sad\"&it_b_pay=\"2016-01-29 10:41:36\"&notify_url=\"https%3A%2F%2Fapi.pingxx.com%2Fnotify%2Fcharges%2Fch_KGWHKGvDCuvHHq14yTjPm1GK\"&out_trade_no=\"12321321\"&partner=\"2008185455401256\"&payment_type=\"1\"&seller_id=\"2008185455401256\"&service=\"mobile.securitypay.pay\"&subject=\"as\"&total_fee=\"1.00\"&sign=\"ZmZUZW5UZW5YamZIcVBhdnYxWHpEMHVE\"&sign_type=\"RSA\""
+        }
+    }
+}

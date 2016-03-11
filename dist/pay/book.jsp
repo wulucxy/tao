@@ -26,6 +26,9 @@
 		<!-- 保存orderId属性 -->
 		<input type="hidden" name="orderId" value="${orderId}">
 
+		<!-- 保存orderId属性 -->
+		<input type="hidden" name="planId" value="${planId}">
+
 		<div class="container bookContainer">
 			<div class="content">
 				<h3 class="clearfix title">

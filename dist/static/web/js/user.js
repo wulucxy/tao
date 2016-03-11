@@ -5,7 +5,7 @@ webpackJsonp([26],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(194);
+	__webpack_require__(195);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -22,16 +22,16 @@ webpackJsonp([26],{
 	
 	
 	//历史模块
-	var archive = __webpack_require__(196);
+	var archive = __webpack_require__(197);
 	
 	//历史模块
-	var history = __webpack_require__(197);
+	var history = __webpack_require__(198);
 	
 	//收藏模块
-	var collection = __webpack_require__(198);
+	var collection = __webpack_require__(199);
 	
 	//图片上传模块
-	var uploader = __webpack_require__(199);
+	var uploader = __webpack_require__(200);
 	
 	// 导航切换
 	$(".userInfoList").on("click","[data-link]",function(e){
@@ -52,12 +52,12 @@ webpackJsonp([26],{
 	$(".load-more-list").each(function(idx,ele){
 		if(idx == 0){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(201)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(202)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "historyList"
 			});
 		}else if(idx == 1){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(201)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(202)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "codes"
 			});
 		}
@@ -262,14 +262,14 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 194:
+/***/ 195:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 196:
+/***/ 197:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -307,7 +307,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 197:
+/***/ 198:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -340,7 +340,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 198:
+/***/ 199:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -362,11 +362,11 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 199:
+/***/ 200:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var extend = __webpack_require__(200);
+	var extend = __webpack_require__(201);
 	var BASE_URL = "//localhost:9999/";
 	var uploader = {
 		init : function(settings){
@@ -403,7 +403,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 200:
+/***/ 201:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -496,14 +496,14 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 201:
+/***/ 202:
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./college.ejs": 202,
-		"./history.ejs": 203,
-		"./info.ejs": 204,
-		"./test.ejs": 205
+		"./college.ejs": 203,
+		"./history.ejs": 204,
+		"./info.ejs": 205,
+		"./test.ejs": 206
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -516,12 +516,12 @@ webpackJsonp([26],{
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 201;
+	webpackContext.id = 202;
 
 
 /***/ },
 
-/***/ 202:
+/***/ 203:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -573,7 +573,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 203:
+/***/ 204:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -613,7 +613,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 204:
+/***/ 205:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -628,7 +628,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 205:
+/***/ 206:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
