@@ -67,7 +67,7 @@
 		<nav>
 		   <div class="container clearfix">
 				<ul class="clearfix navLists fl">
-					<li class="navList current"><a href="/">首页</a></li>
+					<li class="navList current no-dropdown"><a href="/">首页</a></li>
 					<li class="navList" data-toggle="dropdown">
 						<a href="javascript:;" class="trigger">工具箱</a>
 						<div class="listWrap">

@@ -1,0 +1,72 @@
+{
+    "majorMatchDesc":"专业匹配描述字段",    
+    "mtest":                
+    {
+        "mtestId":"",       
+        "createTime":1324234234,     
+        "code":"",          
+        "answer":""
+    },
+    "promoteSubjects":            
+    [
+        {
+            "subjectId":"", 
+            "subjectName":"物理"   
+        },
+        
+        {
+            "subjectId":"", 
+            "subjectName":"化学"  
+        }
+    ],
+    "scores":           
+    [
+        {
+            "exam":                     
+            {
+                "examId":1,            
+                "examName":"3月月考"     
+            },
+            "subjects":                 
+            [
+                {
+                    "subjectId":"123", 
+                    "subjectName":"语文",   
+                    "score":"150",      
+                    "place":455
+                },
+                
+                {
+                    "subjectId":"1234", 
+                    "subjectName":"数学",   
+                    "score":"150",      
+                    "place":455
+                }
+            ]
+        },
+        
+        {
+            "exam":                     
+            {
+                "examId":2,            
+                "examName":"3月月考"     
+            },
+            "subjects":                 
+            [
+                {
+                    "subjectId":"44", 
+                    "subjectName":"数学",   
+                    "score":"333",
+                    "place":455      
+                },
+                
+                {
+                    "subjectId":"", 
+                    "subjectName":"数学",   
+                    "score":"44",
+                    "place":455       
+                }
+            ]
+        }
+    ]
+}

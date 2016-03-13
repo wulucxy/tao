@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		27:0
+/******/ 		29:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"404","1":"bookResult","2":"bookStep1","3":"bookStep2","4":"bookStep3","5":"bookStep4","6":"college","7":"collegeDetail","8":"evaluateResult","9":"evaluateStep1","10":"evaluateStep2","11":"evaluateStep3","12":"expertOrder","13":"expertOrderSuccess","14":"home","15":"info","16":"infoDetail","17":"login","18":"major","19":"majorExam1","20":"majorExam2","21":"major_2","22":"pay/book","23":"pay/evaluate","24":"score","25":"uploader","26":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"404","1":"aboard","2":"aboardSuccess","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"evaluateResult","11":"evaluateStep1","12":"evaluateStep2","13":"evaluateStep3","14":"expertOrder","15":"expertOrderSuccess","16":"home","17":"info","18":"infoDetail","19":"login","20":"major","21":"majorExam1","22":"majorExam2","23":"major_2","24":"pay/book","25":"pay/evaluate","26":"score","27":"uploader","28":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -19688,7 +19688,12 @@
 /***/ },
 /* 100 */,
 /* 101 */,
-/* 102 */
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -19745,9 +19750,11 @@
 	}
 
 /***/ },
-/* 103 */,
-/* 104 */,
-/* 105 */
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -19761,7 +19768,7 @@
 	}
 
 /***/ },
-/* 106 */
+/* 113 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

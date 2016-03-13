@@ -1,0 +1,22 @@
+<% for (var i = 0; i < scores.length; i++) { %>
+	<% for (var k = 0; k < scores[i].subjects.length; k++) { %>
+<tr examid="<%= scores[i].exam.examId %>">
+	<% if(k == 0 ) { %>
+	<th rowspan="<%= scores[i].subjects.length %>" >
+		<div class="control">
+		<p><%= scores[i].exam.examName %></p>
+		<a href="javascript:;" class="btn btn-primary toggleTxt" txtStatus="0" rel="<%= scores[i].exam.examId %>" >
+			<em class="editTxt">编辑</em>
+			<em class="saveTxt">保存</em>
+		</a>
+		</div>
+	</th>
+	<% } %>
+	<td editable examid="<%= scores[i].exam.examId %>" select subjectid="<%= scores[i].subjects[k].subjectId %>" >
+		<%= scores[i].subjects[k].subjectName %>
+	</td>
+	<td editable examid="<%= scores[i].exam.examId %>" pattern="^[0-9]{1,3}$" ><%= scores[i].subjects[k].score %></td>
+	<td editable examid="<%= scores[i].exam.examId %>" pattern="^[0-9]{1,8}$" ><%= scores[i].subjects[k].place %></td>
+</tr>
+	<% } %>
+<% } %>

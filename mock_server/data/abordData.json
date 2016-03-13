@@ -1,0 +1,19 @@
+{
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1"
+    },
+    "courseType" : 1,
+    "batch" : 3,
+    "score" : 3333,
+    "place" : 123
+}

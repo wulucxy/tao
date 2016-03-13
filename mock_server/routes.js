@@ -23,6 +23,7 @@ module.exports = {
 	"/library/major2"   : 'major_2.jsp',
 	"/box/score_management": "score.jsp",
 	"/box/plan/aboard": "aboard.jsp",
+	"/box/plan/aboard_success": "aboardSuccess.jsp",
 	"/box/expert_order" :"expertOrder.jsp",
 	"/box/expert_order_success" : "expertOrderSuccess.jsp",
 	"/box/college_faq" :"collegeFaq.jsp",
@@ -61,5 +62,10 @@ module.exports = {
 	'post::/v2/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
 	'post::/v2/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json',
 	'/v2/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
-	'post::/v2/client/1/pay' : 'mock::api/pay.json'
+	'post::/v2/client/1/pay' : 'mock::api/pay.json',
+	'/v2/client/1/profile/score/detail' : 'mock::api/scoreDetail.json',
+	'post::/v2/client/1/profile/score/edit': 'mock::api/scoreEdit.json',
+	'post::/v2/client/getStateUrl' : "mock::api/state.json",
+	'post::/v2/client/1/tzy/plan/abroad/create': "mock::api/abroad.json"
+
 };

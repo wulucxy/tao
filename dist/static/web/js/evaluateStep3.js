@@ -1,11 +1,11 @@
-webpackJsonp([11],{
+webpackJsonp([13],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(144);
+	__webpack_require__(151);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -23,8 +23,8 @@ webpackJsonp([11],{
 	var modalBox = __webpack_require__(40);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(105);
-	var tmpl_questions = __webpack_require__(106);
+	var tmpl_detail = __webpack_require__(112);
+	var tmpl_questions = __webpack_require__(113);
 	
 	
 	
@@ -56,7 +56,7 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 144:
+/***/ 151:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

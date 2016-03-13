@@ -14,7 +14,52 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 	
-		test page!
+	<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
+	
+	<div class="container scoreContainer">
+		<div class="content">	
+			<h3 class="clearfix title">
+				<span class="fl s-title">
+					成绩管理
+					<em class="underLine"></em>	
+				</span>
+			</h3>
+			
+			<div class="formWrap">
+				
+				<div id="charts">123</div>
+				
+				<div class="recommend f15 tc">
+					
+				</div>
+				
+				<div class="tableWrap">
+					<table class="table table-bordered text-center" id="scoreTable">
+						<thead>
+							<tr>
+								<th class="top" colspan=4>我的成绩单</th>
+							</tr>
+							<tr>
+								<th>考试时间</th>
+								<th>科目</th>
+								<th>成绩</th>
+								<th>年级排名</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							
+						</tbody>
+
+					</table>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>

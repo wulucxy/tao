@@ -1,0 +1,75 @@
+.beautify-select {
+	position: relative;font-size: 14px;
+	&.disabled {opacity: 0.5;filter:~"alpha(opacity:50)";}
+}
+
+.beautify-select .trigger {
+    border-radius: 4px;
+    cursor: pointer;
+    width:100%;
+    padding: 6px 24px 6px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    transition: all 240ms ease-out;
+    zoom:1}
+
+.beautify-select .trigger.error {
+    border-color: #ec5524
+}
+
+.beautify-select .trigger.disabled{
+	color: #ccc;
+	&:hover{color: #ccc;background-color: #fff;cursor: default;}
+}
+
+.beautify-select .options {
+	display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    opacity: 0;
+    filter: ~"alpha(opacity:0)";
+    z-index: 50;
+    overflow: auto;
+    max-height: 0;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-top: 1px solid #e7e7e7;
+    width: 100%;
+    transition: max-height .3s ease-out,opacity .3s ease-out,top .3s ease-out,visibility .3s ease-out
+}
+
+.beautify-select .options.open {
+    top: 40px;
+    opacity: 1;
+    filter: ~"alpha(opacity:100)";
+    max-height: 150px;
+    _height: 150px
+}
+
+.beautify-select .options.overflowing {
+    top: auto;
+    bottom: 30px;
+    transition: opacity .3s ease-out,bottom .3s ease-out
+}
+
+.beautify-select .options.overflowing.open {
+    top: auto;
+    bottom: 50px;
+    transition: opacity .3s ease-out,bottom .3s ease-out
+}
+
+.beautify-select .options li {
+    padding: 5px 9pt;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 150ms ease-out
+}
+
+.beautify-select .options li.hover {
+    color: #999
+}
