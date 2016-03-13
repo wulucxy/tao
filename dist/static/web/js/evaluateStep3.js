@@ -23,8 +23,8 @@ webpackJsonp([17],{
 	var modalBox = __webpack_require__(40);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(112);
-	var tmpl_questions = __webpack_require__(113);
+	var tmpl_detail = __webpack_require__(110);
+	var tmpl_questions = __webpack_require__(111);
 	
 	
 	

@@ -83,7 +83,7 @@ webpackJsonp([24],{
 				junior : $("[name=junior]").val()
 			};
 	
-	        if(_data.bachelor == "" && _data.junior == "") return;
+	        //if(_data.bachelor == "" && _data.junior == "") return;
 	
 	        var provinceId = $("[name=province]").val();
 	

@@ -18,7 +18,7 @@ webpackJsonp([29],{
 	//自定义功能写下面
 	//
 	////弹窗模板
-	var tmpl_Info = __webpack_require__(107);
+	var tmpl_Info = __webpack_require__(105);
 	
 	var pay = {
 		init : function(){

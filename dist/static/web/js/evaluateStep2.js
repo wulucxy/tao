@@ -22,8 +22,8 @@ webpackJsonp([16],{
 	var extend =  __webpack_require__(41);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(112);
-	var tmpl_questions = __webpack_require__(113);
+	var tmpl_detail = __webpack_require__(110);
+	var tmpl_questions = __webpack_require__(111);
 	
 	//弹窗模板
 	var tmpl_school = __webpack_require__(156);
@@ -34,7 +34,7 @@ webpackJsonp([16],{
 	//分页
 	var pagination = __webpack_require__(160);
 	//自定义滚动
-	var scroll = __webpack_require__(116);
+	var scroll = __webpack_require__(114);
 	
 	
 	var school = {
@@ -590,16 +590,16 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 116:
+/***/ 114:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(117);
+	__webpack_require__(115);
 	
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
 	//mousewheel
-	__webpack_require__(119);
+	__webpack_require__(117);
 	
 	function scroll(target,options){
 	
@@ -784,14 +784,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 117:
+/***/ 115:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 119:
+/***/ 117:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

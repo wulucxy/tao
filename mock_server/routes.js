@@ -16,7 +16,7 @@ module.exports = {
 	"/box/plan/result2"   : 'evaluateResult.jsp',
 	"/library/college"   : 'college.jsp',
 	"/library/college/1"   : 'collegeDetail.jsp',
-	'/404'   : '404.jsp',
+	'/404'   : 'error.jsp',
 	'/info'   : 'info.jsp',
 	'/infoDetail'   : 'infoDetail.jsp',
 	"/library/major"   : 'major.jsp',

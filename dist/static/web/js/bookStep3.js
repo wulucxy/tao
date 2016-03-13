@@ -1,11 +1,11 @@
-webpackJsonp([6],{
+webpackJsonp([5],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(122);
+	__webpack_require__(120);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -15,13 +15,13 @@ webpackJsonp([6],{
 	var common = __webpack_require__(38);
 	
 	//自定义功能写下面
-	var tmpl_list = __webpack_require__(125);
-	var tmpl_detail = __webpack_require__(126);
+	var tmpl_list = __webpack_require__(123);
+	var tmpl_detail = __webpack_require__(124);
 	//require("../../assets/components/validator");
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(112);
-	var tmpl_questions = __webpack_require__(113);
+	var tmpl_detail = __webpack_require__(110);
+	var tmpl_questions = __webpack_require__(111);
 	
 	var provinceId = $("[name=province]").val();
 	var batch = $("[name=batch]").val();
@@ -218,14 +218,14 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 122:
+/***/ 120:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 125:
+/***/ 123:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -279,7 +279,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 126:
+/***/ 124:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
