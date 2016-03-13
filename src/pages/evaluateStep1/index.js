@@ -63,7 +63,7 @@ function subFunc(btn,oForm){
 
 // 表单校验
 $("#assessForm_1").validator({
-	errorParent: '.row',
+	  errorParent: '.row',
     successCallback: function(e) {
       var target = $(e.target).closest('.btn');
       //执行到下一步操作

@@ -234,7 +234,7 @@
 
 						</div>
 					</div>
-					<div class="col2 col2 fr">
+					<div class="col2 fr">
 						<div class="directs">
 							<ul>
 								<c:forEach var="list" items="${adList}">

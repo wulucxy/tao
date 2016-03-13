@@ -1,11 +1,11 @@
-webpackJsonp([27],{
+webpackJsonp([31],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(331);
+	__webpack_require__(341);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,7 +16,7 @@ webpackJsonp([27],{
 	
 	
 	//自定义功能写下面
-	var WebUploader = __webpack_require__(333);
+	var WebUploader = __webpack_require__(343);
 	
 	
 	uploader = WebUploader.create({
@@ -44,14 +44,14 @@ webpackJsonp([27],{
 
 /***/ },
 
-/***/ 331:
+/***/ 341:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 333:
+/***/ 343:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! WebUploader 0.1.5 */

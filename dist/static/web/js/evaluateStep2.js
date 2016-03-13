@@ -1,11 +1,11 @@
-webpackJsonp([12],{
+webpackJsonp([16],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(144);
+	__webpack_require__(154);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -26,13 +26,13 @@ webpackJsonp([12],{
 	var tmpl_questions = __webpack_require__(113);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(146);
-	var tmpl_list = __webpack_require__(147);
-	var tmpl_major = __webpack_require__(148);
-	var majors = __webpack_require__(149);
+	var tmpl_school = __webpack_require__(156);
+	var tmpl_list = __webpack_require__(157);
+	var tmpl_major = __webpack_require__(158);
+	var majors = __webpack_require__(159);
 	
 	//分页
-	var pagination = __webpack_require__(150);
+	var pagination = __webpack_require__(160);
 	//自定义滚动
 	var scroll = __webpack_require__(116);
 	
@@ -1000,14 +1000,14 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 144:
+/***/ 154:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 146:
+/***/ 156:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1022,7 +1022,7 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 147:
+/***/ 157:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1052,7 +1052,7 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 148:
+/***/ 158:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1067,7 +1067,7 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 149:
+/***/ 159:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1106,7 +1106,7 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 150:
+/***/ 160:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
