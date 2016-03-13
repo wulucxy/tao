@@ -13,21 +13,12 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-		
-		<!-- 保存province属性 -->
-		<input type="hidden" name="province" value="${user.province.code}">
-
-		<!-- 保存collegeName属性 -->
-		<input type="hidden" name="collegeName" value="${collegeName}">
-
-		<!-- 保存collegeName属性 -->
-		<input type="hidden" name="scheduleId" value="${scheduleId}">
-
+	
 		<div class="container faqWrapper db">
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高校问答
+						历史问答
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -35,55 +26,54 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<div class="content">
-							<ul class="qschoolList">
-								<li class="q-school">
-									<h3 class="blue">
-										浙江大学
-										<a href="javascript:;" class="btn btn-primary fr" id="applyQ">?&nbsp;提问</a>
-									</h3>
-									<div class="s-faq">
-										<div class="q media">
-											<span class="fl blue">问：</span>
-											<div class="media-body">
-												<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-												<div class="badges">
-													<span class="badge">浙江考生</span><span class="badge">2015</span>
-												</div>
-											</div>
-										</div>
-										<div class="a media">
-											<span class="fl orange">答：</span>
-											<div class="media-body">
-												软件工程
-											</div>
-										</div>
-									</div>
+						<div class="s-search">
+							<div class="input-group rel clearfix">
+					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+					          <span class="input-group-btn">
+					            <button class="btn btn-default btn-search" type="button">
+					            	<i class="iconList icon-search"></i>
+					            </button>
+					          </span>
+					        </div>
+				        </div>
 
-									<div class="s-faq">
-										<div class="q media">
-											<span class="fl blue">问：</span>
-											<div class="media-body">
-												<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-												<div class="badges">
-													<span class="badge">浙江考生</span><span class="badge">2015</span>
-												</div>
-											</div>
-										</div>
-										<div class="a media">
-											<span class="fl orange">答：</span>
-											<div class="media-body">
-												软件工程
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-							
-							<!-- 加载更多模块 -->
-							<%@ include file = "/partials/_loadMore.jsp" %>
-
+						<section class="faqList history">
+							<div class="list-group">
+						  <a href="javascript:;" class="list-group-item clearfix">
+						    <div class="fl">
+						    	<p class="collegeName">浙江大学</p>
+						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+						    </div>
+						    <i class="fr taoIcon icon-right"></i>
+						  </a>
+						 <a href="javascript:;" class="list-group-item clearfix">
+						   <div class="fl">
+						    	<p class="collegeName">浙江大学</p>
+						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+						    </div>
+						    <i class="fr taoIcon icon-right"></i>
+						  </a>
+						  <a href="javascript:;" class="list-group-item clearfix">
+						   <div class="fl">
+						    	<p class="collegeName">浙江大学</p>
+						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+						    </div>
+						    <i class="fr taoIcon icon-right"></i>
+						  </a>
+						  <a href="javascript:;" class="list-group-item clearfix">
+						   <div class="fl">
+						    	<p class="collegeName">浙江大学</p>
+						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+						    </div>
+						    <i class="fr taoIcon icon-right"></i>
+						  </a>
 						</div>
+						
+						<!-- 加载更多模块 -->
+						<%@ include file = "/partials/_loadMore.jsp" %>
+
+						</section>
+
 					</div>
 					<div class="col2 fr">
 						<div class="directs">

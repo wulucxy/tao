@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.8fa0f5ba.css" rel="stylesheet"><link href="/static/web/css/major.a2b0dca2.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.a4349030.css" rel="stylesheet"><link href="/static/web/css/major.19266710.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -83,7 +83,7 @@
 								</span>
 							</div>
 
-							<div class="row expand-mode">
+							<div class="row expand-mode last">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>
@@ -95,7 +95,7 @@
 									</a>
 								</div>
 								
-								<div class="body media last">
+								<div class="body media">
 									<a class="fl item" href="javascript:;" data-action="add" data-value="junior:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">

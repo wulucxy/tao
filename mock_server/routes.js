@@ -29,6 +29,7 @@ module.exports = {
 	"/box/college_faq" :"collegeFaq.jsp",
 	"/box/college_faq_detail" :"collegeFaqDetail.jsp",
 	"/box/college_faq_success" :"collegeFaqSuccess.jsp",
+	"/box/college_faq_history" :"collegeFaqHistory.jsp",
 	"/library/subject" : "subject.jsp",
 	"/library/score_line": "scoreLine.jsp",
 	"/library/aboard_data": "abordData.jsp",
@@ -69,6 +70,7 @@ module.exports = {
 	'post::/v2/client/1/profile/score/edit': 'mock::api/scoreEdit.json',
 	'post::/v2/client/getStateUrl' : "mock::api/state.json",
 	'post::/v2/client/1/tzy/plan/abroad/create': "mock::api/abroad.json",
-	'post::/v2/client/1/tzy/qa/1/ask' : "mock::api/ask.json"
+	'post::/v2/client/1/tzy/qa/1/ask' : "mock::api/ask.json",
+	'/v2/client/1/tzy/qa/1' : "mock::api/qaList.json"
 
 };

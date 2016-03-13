@@ -1,0 +1,22 @@
+<% if (questions.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>
+<% for (var i = 0; i < questions.length; i++) { %>
+<li class="s-faq">
+	<div class="q media">
+		<span class="fl blue">问：</span>
+		<div class="media-body">
+			<p><%= questions[i].q %></p>
+			<div class="badges">
+				<span class="badge"><%= questions[i].province %>考生</span><span class="badge"><%= questions[i].year %></span>
+			</div>
+		</div>
+	</div>
+	<div class="a media">
+		<span class="fl orange">答：</span>
+		<div class="media-body">
+			<%= questions[i].a %>
+		</div>
+	</div>
+</li>
+<% }} %>

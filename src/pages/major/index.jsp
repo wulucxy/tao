@@ -83,7 +83,7 @@
 								</span>
 							</div>
 
-							<div class="row expand-mode">
+							<div class="row expand-mode last">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>
@@ -95,7 +95,7 @@
 									</a>
 								</div>
 								
-								<div class="body media last">
+								<div class="body media">
 									<a class="fl item" href="javascript:;" data-action="add" data-value="junior:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">

@@ -12,6 +12,7 @@ var common = require("../../assets/components/common");
 
 //自定义功能写下面
 var tmpl_q = require("./templates/apply.ejs");
+var tmpl_list = require("./templates/list.ejs");
 
 // 验证组件
 require("../../assets/components/validator");
@@ -24,6 +25,7 @@ var scheduleId =  $("[name=scheduleId]").val();
 var faq = {
 
 	init : function(){
+		this.pager = 1;
 		this.bindEvt();
 	},
 
@@ -35,6 +37,66 @@ var faq = {
 			that.showQModal(btn);
 		});	
 
+		$(".btn-loading").on("click",function(e){
+    		e.preventDefault();
+    		var btn = $(this).closest(".btn");
+    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+    		btn.addClass("disabled loading");
+    		that.requestList(btn);
+    	});
+
+    	$(".btn-loading").trigger("click");
+
+	},
+
+	requestList : function(btn){
+		var that = this;
+
+		var parm = [];
+		parm.push("page="+that.pager);
+		parm.push("scheduleId="+scheduleId);
+
+		$.ajax({
+			url : "/v2/client/"+provinceId+"/tzy/qa/"+scheduleId+"?"+parm.join("&"),
+			type : "get",
+			success : function(res){
+				if(typeof res == "string"){
+					var res = $.parseJSON(res);
+				}
+				$(".qaListWrap").removeClass("preloading");
+                
+				that.loadList(res,that.pager);
+			},
+			error : function(err){
+				warn(err.msg || "网络请求出错")
+				$(".qaListWrap").removeClass("preloading");
+			}
+		});
+	},
+
+	loadList : function(data,pager){
+		var that = this,o = that.options;
+		var _html = tmpl_list(data);
+
+		if(pager == 1){
+			$(".qaList").empty().html(_html);
+		}else{
+			$(".qaList").append(_html);
+		}
+
+		//如果是点击加载更多，页码++，否则重置为1
+        that.pager++;
+
+		$(".btn-loading").removeClass("loading disabled");
+
+		//最后一页
+		if(pager > data.count){
+			$(".btn-loading").addClass("loading-all");
+		};
+
+		if($(".qaList .no_transList").length){
+			$(".btn-loading").addClass("loading-all");
+		}
 	},
 
 	showQModal: function(btn){

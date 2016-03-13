@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.8fa0f5ba.css" rel="stylesheet"><link href="/static/web/css/collegeFaqDetail.80bb4592.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.a4349030.css" rel="stylesheet"><link href="/static/web/css/collegeFaqDetail.b474e9bd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -36,13 +36,14 @@
 					<div class="column col1 fl">
 						
 						<div class="content">
-							<ul class="qschoolList">
-								<li class="q-school">
-									<h3 class="blue">
-										浙江大学
-										<a href="javascript:;" class="btn btn-primary fr" id="applyQ">?&nbsp;提问</a>
-									</h3>
-									<div class="s-faq">
+							<div class="qschoolList">
+								<h3 class="blue">
+									浙江大学
+									<a href="javascript:;" class="btn btn-primary fr" id="applyQ">?&nbsp;提问</a>
+								</h3>
+								<div class="preloading qaListWrap">
+									<ul class="contentWrap qaList">
+									<li class="s-faq">
 										<div class="q media">
 											<span class="fl blue">问：</span>
 											<div class="media-body">
@@ -58,9 +59,9 @@
 												软件工程
 											</div>
 										</div>
-									</div>
+									</li>
 
-									<div class="s-faq">
+									<li class="s-faq">
 										<div class="q media">
 											<span class="fl blue">问：</span>
 											<div class="media-body">
@@ -76,9 +77,10 @@
 												软件工程
 											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
+									</li>
+									</ul>
+								</div>
+							</div>
 							
 							<!-- 加载更多模块 -->
 							<%@ include file = "/partials/_loadMore.jsp" %>
