@@ -60,7 +60,7 @@ var book = {
 		var that = this;
 		$.ajax({
 			url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step4",
-			type : "get",
+			type : "post",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
