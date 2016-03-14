@@ -90,8 +90,8 @@ webpackJsonp([7],{
 						var res = $.parseJSON(res);
 					}
 	
-					 if(!res.code){
-	                    window.location = "/pay";
+					 if(!res.code && res.planId){
+	                    window.location = "/pay/wishes?planId="+res.planId;
 	                    return false;
 	                }else{
 	                    warn(res.msg);
