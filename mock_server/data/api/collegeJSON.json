@@ -1,36 +1,31 @@
 {
-	"count" : 10,
-	"page"  : 1,
-	"colleges" : [
-		{
-			"name" : "北京大学","code" : 1
-		},
-		{
-			"name" : "上海大学","code" : 2
-		},
-		{
-			"name" : "浙江大学","code" : 3
-		},
-		{
-			"name" : "杭州大学","code" : 4
-		},
-		{
-			"name" : "闲林大学","code" : 5
-		},
-		{
-			"name" : "西西大学","code" : 6
-		},
-		{
-			"name" : "木木大学","code" : 7
-		},
-		{
-			"name" : "丢丢大学","code" : 8
-		},
-		{
-			"name" : "夜夜大学","code" : 9
-		},
-		{
-			"name" : "日日大学","code" : 0
-		}
-	]
+    "count":10,  
+    "total":120, 
+    "page":0,     
+    "colleges":
+    [
+        {
+            "collegeId":"1",         
+            "collegeName":"浙江大学",      
+            "city":3,               
+            "level":1,              
+            "majorCount":54,        
+            "feature":              
+            [
+                1,2,3,4
+            ]
+        },
+        
+        {
+            "collegeId":"1",
+            "collegeName":"浙江大学",
+            "city":3,
+            "level":1,
+            "majorCount":54,        
+            "feature":
+            [
+                1,2,3,4
+            ]
+        }
+    ]
 }

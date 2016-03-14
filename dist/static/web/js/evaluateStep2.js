@@ -1040,11 +1040,11 @@ webpackJsonp([17],{
 	__p += '\n	';
 	 for (var i = 0; i < colleges.length; i++) { ;
 	__p += '\n	 	<li class="schoolList" code="' +
-	((__t = ( colleges[i].code )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeId )) == null ? '' : __t) +
 	'" name="' +
-	((__t = ( colleges[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
 	'"><em class="icon-check"></em><em class="vm">' +
-	((__t = ( colleges[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
 	'</em></li>\n ';
 	 }} ;
 	
