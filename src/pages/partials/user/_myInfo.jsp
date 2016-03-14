@@ -15,7 +15,7 @@
 					<em class="vm">头像：</em></label>
 				<div class="col2 avatarWrap rel">
 					<div class="avatar thumbnail rel" id="picker">
-						<img src="http://placehold.it/80x80" class="responsive">
+						<img src="${user.userAvatar}" class="responsive">
 						<div class="info">编辑头像</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 					<em class="vm">姓名：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
+						<input type="text" class="input form-control" id="name" name="name" value="${user.userName}" required readonly>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -72,10 +72,16 @@
 					<em class="vm">性别：</em></label>
 				<div class="col2 selectWrap rel">
 					<div class="fieldWrap">
-						<select class="form-control" name="sex">
-							  <option value="1">男</option>
-							  <option value="2">女</option>
-							</select>
+						<select class="form-control" name="sex" readonly>
+						<c:choose>
+						    <c:when test="${user.sex == 1}">
+						   		<option value="1" selected>男</option>
+							</c:when>
+							<c:otherwise>
+								<option value="2" selected>女</option>
+							</c:otherwise>
+						</c:choose>
+						</select>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -90,7 +96,7 @@
 					<em class="vm">高中：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="highSchool" name="highSchool" required placeholder="请输入高中名称">
+						<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -105,9 +111,8 @@
 				<div class="col2 selectWrap rel">
 					<div class="fieldWrap">
 						<select class="form-control" name="highYear">
-							  <option value="2012">2012</option>
-							  <option value="2011">2011</option>
-							</select>
+							<option value="${user.highYear}" selected>${user.highYear}</option>
+						</select>
 					</div>
 				</div>
 				<div class="errInfo">

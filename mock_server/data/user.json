@@ -9,8 +9,10 @@
         "sex"  : "1",
         "token" : "12",
         "userId" : "123",
-        "userId" : "name",
-        "isLogin" : "1"
+        "userName" : "name",
+        "isLogin" : "1",
+        "highSchool" : " aaa",
+        "highYear" : 2012
     },
 	"colleges":[
     ]

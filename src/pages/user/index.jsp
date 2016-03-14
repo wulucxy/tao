@@ -33,9 +33,9 @@
 							<div class="m-sideNav">
 								<div class="avatarWrap tc">
 									<span class="imgWrap">
-										<img src="http://placehold.it/148x148" class="responsive" alt="个人头像">
+										<img src="${user.userAvatar}" class="responsive" alt="个人头像">
 									</span>
-									<p class="elipsis g3 mt10 f16">张珊李四</p>
+									<p class="elipsis g3 mt10 f16">${user.userName}</p>
 								</div>
 								<ul class="userInfoList">
 									<li class="current"><a href="javascript:;" data-link="myInfo">我的资料</a></li>
