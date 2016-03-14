@@ -10,23 +10,28 @@
 
 
 <style type="text/css">
-*{padding:0;margin:0;font-family:Microsoft YaHei}
-body,html{width:100%;height:100%;background-color:#f7f7f7;}
-.content{width:90%;margin:auto;background-color:#fff;padding:0 0 20px 0;border-bottom:1px solid #dddddd;}
+
+
 .table{width:90%;margin:auto;border-collapse:collapse;}
 .table td,.table th{padding:10px 0 10px 0;color:#333333;font-size:16px;}
 .table .t_head{text-align:center;border:1px solid #4dbfdf;}
 .table .t_row{text-align:center;border-right:10px solid #4dbfdf;padding-right:5px;}
+.testResult{
+	padding-top:32px;
+	background-color:#fff;
+}
 
-p{margin-left:20px;margin-right:40px;font-size:2em;}
-.ParaNoIndent{font-size:2em;}
+.testResult .content{padding:0 32px 32px;margin-bottom: 32px;border-bottom:1px solid #dddddd;}
+
+p{margin-left:20px;margin-right:40px;font-size:1em;}
+.ParaNoIndent{font-size:1em;}
 /*ParaIndentBold*/
-.ParaIndentBold{font-size:2em;font-family: "Microsoft YaHei!";font-weight:bold;}
+.ParaIndentBold{font-size:1em;font-family: "Microsoft YaHei!";font-weight:bold;}
 /*ParaIndentBold*/
-.ParaIndentBold{font-size:2em;font-family: "Microsoft YaHei!";}
+.ParaIndentBold{font-size:1em;font-family: "Microsoft YaHei!";}
 /*ParaCenter*/
 .ParaCenter{
-		font-size:2em;
+		font-size:1em;
 		font-weight:bold;
 		margin:10px;
 		margin-left:20px;
@@ -35,12 +40,13 @@ p{margin-left:20px;margin-right:40px;font-size:2em;}
 		font-family: "Microsoft YaHei!";
 	}
 	
-img{width:80%;margin:20px;}
+.ParaCenter img{width:80%;margin:20px;}
 </style>
 <title>职业测试</title>
 
-</head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"></head>
 	<body id="zycs">
+	<div class="content">
 		<c:forEach items="${bjsbList}" var="unit" varStatus="status">
 			<c:if test="${ unit.key == 'ParaNoIndent'}">
 				<p class="ParaNoIndent">${unit.content}</p>
@@ -82,7 +88,7 @@ img{width:80%;margin:20px;}
 				</table>
 			</c:if>
 		</c:forEach>
-	
+	</div>
 	<script>
 	var ua = navigator.userAgent.toLowerCase();	
 	if (/iphone|ipad|ipod/.test(ua)) {
