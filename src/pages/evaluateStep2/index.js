@@ -85,11 +85,16 @@ var school = {
           if(item.code && item.name){
             //显示选中的大学
             $("[major="+item.type+"]").val(item.name);
+            //选中大学的id
+            $("[major="+item.type+"]").attr("code",item.code);
             $("[data-rel="+item.type+"]").removeClass("disabled");
             $("[major="+item.type+"]").closest(".row").addClass("active");
           }else{
             //清除选中的大学
             $("[major="+item.type+"]").val("");
+            //清除code
+            $("[major="+item.type+"]").attr("code","");
+
             $("[data-rel="+item.type+"]").addClass("disabled");
             $("[major="+item.type+"]").closest(".row").removeClass("active");
           }
@@ -185,6 +190,7 @@ var school = {
         $(this).addClass(o.klass);
 
         that.city.empty();
+        //城市id
         that.requestCityData.call(that,$(this).data("code"));
     });
 
@@ -270,8 +276,10 @@ var school = {
   requestCityData : function(val){
     var that = this,o = that.options;
 
+    var collegeId = that.modal.majorType;
+
     $.ajax({
-        url : o.url,
+        url : "/v2/client/"+provinceId+"/data/college/"+collegeId+"/majors",
         type : "post",
         contentType: "application/json",
         data : JSON.stringify({majorId:val}),
@@ -555,8 +563,6 @@ var school = {
 
 school.init({
   klass : "current",
-  url : "/v2/client/getMajor",
-
   startCallback : function(){
     scroll($(".prov"),{
       height : $(".selectWrap").height(),
