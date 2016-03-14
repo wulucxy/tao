@@ -1,0 +1,16 @@
+@color-blue: #61c0e2;
+
+.s-Content{padding:12px 14px;
+	.btn-search{background-color: #1d718f;border:none;padding-left:10px;padding-right: 10px;}
+	.inputWrap{margin-right: 41px;
+		.form-control{border-radius: 0;}
+	}
+	.schoolLists{margin-top: 8px;}
+	.schoolList{
+		line-height: 30px;position: relative;font-size: 14px;padding-left:10px;color: #444;transition:background-color 0.4s,color 0.4s;cursor: pointer;
+		.icon-check{visibility: hidden;margin-right: 4px;vertical-align: middle;}
+		&.active,&:hover{color: #fff;background-color: @color-blue;}
+		&.active .icon-check,&:hover .icon-check{visibility: visible;}
+	}
+	.no_transList{color: #333;margin-top: 20px;}
+}

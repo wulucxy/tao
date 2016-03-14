@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.03c7fbd8.css" rel="stylesheet"><link href="/static/web/css/scoreLine.d0344144.css" rel="stylesheet"></head>
+</head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -31,12 +31,12 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
-						<form action="#" onsubmit="return false" autocomplete="off" id="aboardForm" class="rel">
+						<form action="#" onsubmit="return false" autocomplete="off" id="scorelineForm" class="rel">
 						
 
 						<div class="row clearfix">
 							<label for="courseType" class="control-label column col1 fl">
-								<i class="icon-location icon-book"></i>
+								<i class="scoreIcon icon-book"></i>
 								<em class="vm">高考科目：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">  
@@ -58,7 +58,7 @@
 
 						<div class="row clearfix">
 							<label for="courseType" class="control-label column col1 fl">
-								<i class="icon-location icon-list"></i>
+								<i class="scoreIcon icon-list"></i>
 								<em class="vm">报考批次：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
@@ -85,17 +85,58 @@
 							<div class="errInfo"></div>
 						</div>
 						
-						
 						<div class="row clearfix inline">
 							<label for="primary" class="control-label column col1 fl">
-								<i class="icon-location icon-fenshu"></i>
-								<em class="vm">专业关键词：</em></label>
+								<i class="scoreIcon icon-school"></i>
+								<em class="vm">主选学校：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-								<input type="text" class="input form-control dib c-8" id="primary" name="primary" placeholder="请输入关键词" > &nbsp;（选填）
+								<input type="text" class="input form-control dib addSchool" id="primary" name="primary" placeholder="请输入主选学校">
 								</span>
+								<input type="hidden" name="primaryCode" class="hiddenCode">
+								
+								<input type="text" class="subCode hidden" name="primarySub" required>
+
 							</div>
 							<div class="errInfo">
+								<span class="p-error"></span>
+								<span class="p-error-empty">主选学校不能为空</span>
+							</div>
+						</div>
+
+						<div class="row clearfix inline">
+							<label for="second" class="control-label column col1 fl">
+								<i class="scoreIcon icon-school"></i>
+								<em class="vm">对比学校1：</em></label>
+							<div class="col2 inputWrap rel">
+								<span class="fieldWrap">
+								<input type="text" class="input form-control dib addSchool" id="primary" name="second" placeholder="请输入对比学校1" >
+								</span>
+								<input type="hidden" name="secondCode" class="hiddenCode">
+								
+								<input type="checkbox" class="hidden subCode" name="contrast" required>
+
+							</div>
+							<div class="errInfo">
+								<span class="p-error">请选择不同的学校进行对比</span>
+								<span class="p-error-empty">请选择一所学校进行对比</span>
+							</div>
+						</div>
+
+						<div class="row clearfix inline">
+							<label for="third" class="control-label column col1 fl">
+								<i class="scoreIcon icon-school"></i>
+								<em class="vm">对比学校2：</em></label>
+							<div class="col2 inputWrap rel">
+								<span class="fieldWrap">
+								<input type="text" class="input form-control dib addSchool" id="third" name="third" placeholder="请输入对比学校2" >
+								</span>
+								<input type="hidden" name="thirdCode" class="hiddenCode">
+
+								<input type="checkbox" class="hidden subCode" name="contrast" required>
+							</div>
+							<div class="errInfo">
+								
 							</div>
 						</div>
 
@@ -107,26 +148,24 @@
 			                        <em class="subTxt">下一步</em>
 			                    </button>
                   			</div>
-
 						</div>
-
 					</form>
-					
-					</div>
-					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-								<c:forEach var="list" items="${adList}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+				</div>
+
+				<div class="col2 col2 fr">
+					<div class="directs">
+						<ul>
+							<c:forEach var="list" items="${adList}">
+							<li><a href="${list.href}" target="_blank">
+								<img src="${list.imgUrl}" >
+							</a></li>
+							</c:forEach>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>

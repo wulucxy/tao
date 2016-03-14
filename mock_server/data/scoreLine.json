@@ -11,5 +11,11 @@
         "userId" : "123",
         "userName" : "name",
         "isLogin" : "1"
-    }
+    },
+    "adList" : [
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        }
+    ]
 }

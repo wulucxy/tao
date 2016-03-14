@@ -2,10 +2,31 @@
 @color-orange: #f4b64f;
 
 .orange{color: @color-orange;}
-
+.scoreIcon(){vertical-align: middle;display: inline-block;}
 
 .dbWrapper{margin-top: 12px;}
-.db .col1{width:590px;}
-.db .col2{width:300px;}
+.db .formWrap > .col1{width:590px;}
+.db .formWrap > .col2{width:300px;}
 
-.formWrap{background-color: #fff;padding:28px 24px 36px;margin-bottom: 30px;}
+.formWrap{background-color: #fff;padding:28px 32px 36px;margin-bottom: 30px;}
+
+.scoreIcon{
+	.scoreIcon();width:18px;height: 18px;background-image:url(./img/scoreLine.png);background-position: 0 0;
+}
+.icon-book{background-position: 0 0;}
+.icon-list{background-position: -18px 0;}
+.icon-school{background-position: -36px 0;}
+
+.row label + .col2{margin-left: 100px;width: 374px;}
+.formWrap .footerCnt{
+	border-top:none;
+	.btnRow{text-align: left;margin-left: 100px;}
+}
+
+.hidden{display: none !important;}
+.error .input {border-color: #ccc;}
+.errorIpt .input {border-color: #ec5524;}
+.errInfo{padding-left: 100px;}
+
+.error .p-error {display: none;}
+.errorIpt.unvalid .p-error {display: inline-block;}
