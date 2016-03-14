@@ -26,6 +26,9 @@ var tmpl_list = require("./templates/schoolList.ejs");
 var tmpl_major = require("./templates/major.ejs");
 var majors = require("./lib/majors");
 
+//provinceId
+var provinceId = $("[name=province]").val();
+
 //分页
 var pagination = require("../../assets/components/pagination");
 //自定义滚动
@@ -384,10 +387,10 @@ var school = {
   requestData : function(pager){
     var that = this;
     $.ajax({
-      url : "/v2/client/getCollegeList",
+      url : "/v2/client/"+provinceId+"/data/college/search",
       type : "post",
       contentType: "application/json",
-      data : JSON.stringify({page:pager,"wd":$.trim($("#wd").val())}),
+      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
       success : function(res){
         if(typeof res == "string"){
           var res = $.parseJSON(res);

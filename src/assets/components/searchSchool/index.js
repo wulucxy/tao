@@ -71,7 +71,7 @@ var searchSchool = {
 	      url : "/v2/client/getCollegeList",
 	      type : "post",
 	      contentType: "application/json",
-	      data : JSON.stringify({page:pager,"wd":$.trim($("#wd").val())}),
+	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
 	      success : function(res){
 	        if(typeof res == "string"){
 	          var res = $.parseJSON(res);

@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		35:0
+/******/ 		36:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardSuccess","2":"abordData","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"error","15":"evaluateResult","16":"evaluateStep1","17":"evaluateStep2","18":"evaluateStep3","19":"expertOrder","20":"expertOrderSuccess","21":"home","22":"info","23":"infoDetail","24":"login","25":"major","26":"majorExam1","27":"majorExam2","28":"major_2","29":"pay/book","30":"pay/evaluate","31":"score","32":"scoreLine","33":"uploader","34":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardSuccess","2":"abordData","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"error","15":"evaluateResult","16":"evaluateStep1","17":"evaluateStep2","18":"evaluateStep3","19":"expertOrder","20":"expertOrderSuccess","21":"home","22":"info","23":"infoDetail","24":"login","25":"major","26":"majorExam1","27":"majorExam2","28":"major_2","29":"pay/book","30":"pay/evaluate","31":"score","32":"scoreLine","33":"subject","34":"uploader","35":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

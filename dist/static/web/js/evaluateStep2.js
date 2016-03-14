@@ -31,6 +31,9 @@ webpackJsonp([17],{
 	var tmpl_major = __webpack_require__(162);
 	var majors = __webpack_require__(163);
 	
+	//provinceId
+	var provinceId = $("[name=province]").val();
+	
 	//分页
 	var pagination = __webpack_require__(164);
 	//自定义滚动
@@ -389,10 +392,10 @@ webpackJsonp([17],{
 	  requestData : function(pager){
 	    var that = this;
 	    $.ajax({
-	      url : "/v2/client/getCollegeList",
+	      url : "/v2/client/"+provinceId+"/data/college/search",
 	      type : "post",
 	      contentType: "application/json",
-	      data : JSON.stringify({page:pager,"wd":$.trim($("#wd").val())}),
+	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
 	      success : function(res){
 	        if(typeof res == "string"){
 	          var res = $.parseJSON(res);
