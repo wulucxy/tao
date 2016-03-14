@@ -88,7 +88,7 @@
 								<li class="ddlist"><a href="/library/major">专业数据库</a></li>
 								<li class="ddlist"><a href="/library/subject">科目数据库</a></li>
 								<li class="ddlist"><a href="/library/score_line">分数线数据库</a></li>
-								<li class="ddlist"><a href="#">海外院校库</a></li>
+								<li class="ddlist"><a href="/library/aboard_data">海外院校库</a></li>
 							</ul>
 						</div>
 					</li>

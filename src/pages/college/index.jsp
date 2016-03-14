@@ -66,18 +66,9 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="city:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="city:1">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:2">上海</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:3">广州</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:4">深圳</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:5">杭州</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:6">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:7">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:8">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:9">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:10">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:11">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:12">北京</a>
+										<c:forEach var="list" items="${c}">
+										<a href="javascript:;" class="item" data-action="add" data-value="city:${list.code}">${list.name}</a>
+										</c:forEach>
 										</div>
 									</div>
 								</div>
@@ -102,18 +93,9 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="collegeType:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">综合类</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:1">理工类</a>
+										<c:forEach var="list" items="${type}">
+										<a href="javascript:;" class="item" data-action="add" data-value="collegeType:${list.code}">${list.name}</a>
+										</c:forEach>
 										</div>
 									</div>
 								</div>
@@ -127,9 +109,9 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="ownerType:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="ownerType:0">公办</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="ownerType:1">民办</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="ownerType:2">中外合资</a>
+										<c:forEach var="list" items="${ownerType}">
+										<a href="javascript:;" class="item" data-action="add" data-value="ownerType:${list.code}">${list.name}</a>
+										</c:forEach>
 										</div>
 									</div>
 								</div>
@@ -143,8 +125,9 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="level:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="level:1">本科</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="level:2">专科</a>
+										<c:forEach var="list" items="${level}">
+										<a href="javascript:;" class="item" data-action="add" data-value="level:${list.code}">${list.name}</a>
+										</c:forEach>
 										</div>
 									</div>
 								</div>
@@ -158,11 +141,9 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="feature:0">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="feature:1">985</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="feature:2">211</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="feature:3">研究生院</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="feature:3">卓越计划</a>
-
+										<c:forEach var="list" items="${feature}">
+										<a href="javascript:;" class="item" data-action="add" data-value="feature:${list.code}">${list.name}</a>
+										</c:forEach>
 										</div>
 									</div>
 								</div>
@@ -175,7 +156,7 @@
 
 						<div class="schoolListWrap">
 							<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">
-								<li class="clearfix">
+								<!-- <li class="clearfix">
 									<div class="fl">
 									<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
 									<div class="detail">
@@ -232,7 +213,7 @@
 										<a href="#" class="btn btn-primary btn-mid">查看详情</a>
 									</div>
 									
-								</li>
+								</li> -->
 							</ul>
 							
 							<!-- 加载更多模块 -->
