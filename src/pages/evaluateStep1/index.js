@@ -33,7 +33,7 @@ function subFunc(btn,oForm){
   var _data = {
     courseType : $("[name=courseType]").val(),
     batch : $("[name=batch]").val(),
-    socre : $("[name=socre]").val(),
+    score : $("[name=score]").val(),
     place : $("[name=place]").val(),
   };
   $.ajax({

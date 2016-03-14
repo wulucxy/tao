@@ -38,7 +38,7 @@ webpackJsonp([4],{
 	  var _data = {
 	    courseType : $("[name=courseType]").val(),
 	    batch : $("[name=batch]").val(),
-	    socre : $("[name=score]").val(),
+	    score : $("[name=score]").val(),
 	    place : $("[name=place]").val()
 	  };
 	  $.ajax({

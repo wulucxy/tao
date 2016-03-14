@@ -145,8 +145,8 @@
 				    <em class="vm">高考分数：</em></label>
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap lh34">
-				      <span>${socre}</span>
-				      <input type="hidden" name="score" value="${socre}">
+				      <span>${score}</span>
+				      <input type="hidden" name="score" value="${score}">
 				    </div>
 				  </div>
 				</div>
