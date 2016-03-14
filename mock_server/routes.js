@@ -64,7 +64,7 @@ module.exports = {
 	'post::/v2/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
 	'post::/v2/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json',
-	'/v2/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
+	'post::/v2/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
 	'post::/v2/client/1/pay' : 'mock::api/pay.json',
 	'/v2/client/1/profile/score/detail' : 'mock::api/scoreDetail.json',
 	'post::/v2/client/1/profile/score/edit': 'mock::api/scoreEdit.json',

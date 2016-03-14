@@ -58,9 +58,23 @@ var book = {
 
 	submitFunc : function(btn){
 		var that = this;
+
+		var _data = {
+			province : $("[name=province]").val(),
+			mobile : $("[name=mobile]").val(),
+			courseType : $("[name=courseType]:checked").val(),
+			batch : $("[name=batch]:checked").val(),
+			score : $("[name=score]").val(),
+			place : $("[name=place]").val(),
+			cities : $("[name=city]:checked").val(),
+			majors : $("[name=majorId]:checked").val()
+		};
+
 		$.ajax({
 			url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step4",
 			type : "post",
+			contentType: "application/json",
+    		data : JSON.stringify(_data),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);

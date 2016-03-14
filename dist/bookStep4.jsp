@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.03c7fbd8.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -16,6 +16,9 @@
 
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
+
+		<!-- 保存mobile属性 -->
+		<input type="hidden" name="mobile" value="${user.mobile}">
 
 		<div class="container bookContainer">
 			<div class="content">
@@ -46,6 +49,8 @@
 
 				<div class="formWrap">
 				 <form class="modalSubCnt" id="bookForm" onsubmit="return false;" autocomplete="off">
+				
+				 <input type="hidden" name="mobile" value="${mobile}">
 
 				<div class="row clearfix">
 				  <label for="province" class="control-label column col1 fl">
@@ -54,6 +59,7 @@
 				  <div class="col2 selectWrap rel">
 				    <div class="fieldWrap lh34">
 				      <span>${user.province.name}</span>
+				      <input type="hidden" name="province" value="${user.province.code}">
 				    </div>
 				  </div>
 				</div>
@@ -79,7 +85,7 @@
 					    <c:when test="${courseType == 0}">
 					   		<label for="courseType_0" class="label_radio inline">
 						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
+						      <input type="radio" class="input form-control" id="courseType_0" value="0" name="courseType" checked disabled>
 						      <em class="vm">理科</em>
 						      </label>
 						     
@@ -88,7 +94,7 @@
 							
 						       <label for="courseType_1"  class="label_radio inline">
 						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_1" name="courseType" disabled checked>
+						      <input type="radio" class="input form-control" id="courseType_1" value="1" name="courseType" disabled checked>
 						      <em class="vm">文科</em>
 						    </label>
 						</c:otherwise>
@@ -107,7 +113,7 @@
 					    <c:when test="${batch == 1}">
 					    	 <label for="batch_1" class="label_radio inline">
 						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_1" name="batch" checked disabled>
+						      <input type="radio" class="input form-control" id="batch_1" name="batch" value="1" checked disabled>
 						      <em class="vm">第一批</em>
 						      </label>
 					    </c:when>
@@ -115,7 +121,7 @@
 					    	
 						      <label for="batch_2"  class="label_radio inline">
 						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_2" name="batch" checked disabled>
+						      <input type="radio" class="input form-control" id="batch_2" name="batch" value="2" checked disabled>
 						      <em class="vm">第二批</em>
 						      </label>
 						     
@@ -124,7 +130,7 @@
 					    	 
 						      <label for="batch_3"  class="label_radio inline">
 						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_3" name="batch"  checked disabled>
+						      <input type="radio" class="input form-control" id="batch_3" name="batch" value="3" checked disabled>
 						      <em class="vm">第三批</em>
 						      </label>
 					    </c:otherwise>
@@ -140,6 +146,7 @@
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap lh34">
 				      <span>${socre}</span>
+				      <input type="hidden" name="score" value="${socre}">
 				    </div>
 				  </div>
 				</div>
@@ -151,6 +158,7 @@
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap lh34">
 				      <span>${place}名</span>
+				      <input type="hidden" name="place" value="${place}">
 				    </div>
 				  </div>
 				</div>
@@ -164,7 +172,7 @@
 				     <c:forEach var="list" items="${majorList}" varStatus="loop">
 				      <label for="majorId_${list.majorId}" class="label_check inline">
 				      <em class="icon-radio"></em>
-				      <input type="checkbox" class="input form-control" id="majorId_${list.majorId}" name="majorId" disabled checked>
+				      <input type="checkbox" class="input form-control" id="majorId_${list.majorId}" name="majorId" value="${list.majorId}" disabled checked>
 				      <em class="vm">${list.majorName}</em>
 				      </label>
 				      </c:forEach>
@@ -181,7 +189,7 @@
 				    <c:forEach var="list" items="${c}" varStatus="loop">
 				      <label for="city_${list.code}" class="label_check inline">
 				      <em class="icon-radio"></em>
-				      <input type="checkbox" class="input form-control" id="city_${list.code}" name="city" disabled checked>
+				      <input type="checkbox" class="input form-control" id="city_${list.code}" name="city" value="${list.code}" disabled checked>
 				      <em class="vm">${list.name}</em>
 				      </label>
 				    </c:forEach>
