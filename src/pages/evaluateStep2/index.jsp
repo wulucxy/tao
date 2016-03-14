@@ -108,7 +108,7 @@
 							</span>
 								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="4">
 									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">1</em>/<em class="all">6</em>)</span>
+									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
 								</a>
 							</div>
 							<ul class="tagsWrap clearfix showTagList">
@@ -137,6 +137,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
+								<a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
+			                        <em class="subTxt">上一步</em>
+			                    </a>
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
