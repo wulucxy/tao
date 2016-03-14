@@ -1034,17 +1034,17 @@ webpackJsonp([17],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	__p += ' ';
-	 if (list.length == 0) { ;
+	 if (colleges.length == 0) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
 	 }else{ ;
 	__p += '\n	';
-	 for (var i = 0; i < list.length; i++) { ;
+	 for (var i = 0; i < colleges.length; i++) { ;
 	__p += '\n	 	<li class="schoolList" code="' +
-	((__t = ( list[i].code )) == null ? '' : __t) +
+	((__t = ( colleges[i].code )) == null ? '' : __t) +
 	'" name="' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].name )) == null ? '' : __t) +
 	'"><em class="icon-check"></em><em class="vm">' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].name )) == null ? '' : __t) +
 	'</em></li>\n ';
 	 }} ;
 	

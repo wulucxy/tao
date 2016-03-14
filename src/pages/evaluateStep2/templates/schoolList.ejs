@@ -1,6 +1,6 @@
- <% if (list.length == 0) { %>
+ <% if (colleges.length == 0) { %>
 	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>
 <% }else{ %>
-	<% for (var i = 0; i < list.length; i++) { %>
-	 	<li class="schoolList" code="<%= list[i].code %>" name="<%= list[i].name %>"><em class="icon-check"></em><em class="vm"><%= list[i].name %></em></li>
+	<% for (var i = 0; i < colleges.length; i++) { %>
+	 	<li class="schoolList" code="<%= colleges[i].code %>" name="<%= colleges[i].name %>"><em class="icon-check"></em><em class="vm"><%= colleges[i].name %></em></li>
  <% }} %>
