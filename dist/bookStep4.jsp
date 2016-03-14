@@ -172,7 +172,7 @@
 				     <c:forEach var="list" items="${majorList}" varStatus="loop">
 				      <label for="majorId_${list.majorId}" class="label_check inline">
 				      <em class="icon-radio"></em>
-				      <input type="checkbox" class="input form-control" id="majorId_${list.majorId}" name="majorId" value="${list.majorId}" disabled checked>
+				      <input type="checkbox" class="input form-control" id="majorId_${list.majorId}" majorname="${list.majorName}" name="majorId" value="${list.majorId}" disabled checked>
 				      <em class="vm">${list.majorName}</em>
 				      </label>
 				      </c:forEach>
@@ -189,7 +189,7 @@
 				    <c:forEach var="list" items="${c}" varStatus="loop">
 				      <label for="city_${list.code}" class="label_check inline">
 				      <em class="icon-radio"></em>
-				      <input type="checkbox" class="input form-control" id="city_${list.code}" name="city" value="${list.code}" disabled checked>
+				      <input type="checkbox" class="input form-control" id="city_${list.code}" cityname="${list.name}" name="city" value="${list.code}" disabled checked>
 				      <em class="vm">${list.name}</em>
 				      </label>
 				    </c:forEach>

@@ -71,9 +71,14 @@ webpackJsonp([7],{
 				batch : $("[name=batch]:checked").val(),
 				score : $("[name=score]").val(),
 				place : $("[name=place]").val(),
-				cities : $("[name=city]:checked").val(),
-				majors : $("[name=majorId]:checked").val()
+				c : $("[name=city]:checked").map(function(idx,ele){
+					return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
+				}),
+				majorList : $("[name=majorId]:checked").map(function(idx,ele){
+					return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
+				})
 			};
+	
 	
 			$.ajax({
 				url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step4",
