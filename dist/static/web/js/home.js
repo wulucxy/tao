@@ -1,11 +1,11 @@
-webpackJsonp([20],{
+webpackJsonp([21],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(168);
+	__webpack_require__(172);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,24 +16,24 @@ webpackJsonp([20],{
 	
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(173);
+	var slider = __webpack_require__(177);
 	slider($("#bannerShow"));
 	
 	
-	var carousel = __webpack_require__(174);
+	var carousel = __webpack_require__(178);
 	
 	carousel.init();
 
 /***/ },
 
-/***/ 168:
+/***/ 172:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 173:
+/***/ 177:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -163,7 +163,7 @@ webpackJsonp([20],{
 
 /***/ },
 
-/***/ 174:
+/***/ 178:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

@@ -1,0 +1,30 @@
+<% if (data.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+<% for (var i = 0; i < data.length; i++) { %>
+<li class="clearfix rel detailContent">
+	<div class="fl">
+	<h4 class="name"><em class="vm"><%= data[i].school_name %></em>&nbsp;<em class="vm"><%= data[i].school_name_en %></em>
+	</h4>
+	<div class="detail row">
+		<span class="label">所在地区：</span><span class="field"><%= data[i].country %>&nbsp;<%= data[i].city %></span>
+		<span class="label">成立年份：</span><span class="field"><%= data[i].build_year %></span>
+		<span class="label">院校性质：</span><span class="field"><%= data[i].school_type %></span>
+	</div>
+	<div class="detail row">
+		<span class="label">在该国排名：</span><span class="field">NO.<%= data[i].traffic_rank %></span>
+	</div>
+	<div class="detail row">
+		<span class="label">著名校友：</span><span class="field">NO.<%= data[i].fame_alumnus %></span>
+	</div>
+	<div class="detail row media">
+		<span class="label fl">地理环境优势：</span>
+		<div className="media-body">
+		<p class="orange"><%= data[i].geog_superiority %></p>
+		</div>
+	</div>
+	</div>
+	
+	<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
+</li>
+<% }} %>

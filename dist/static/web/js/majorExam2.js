@@ -1,11 +1,11 @@
-webpackJsonp([26],{
+webpackJsonp([27],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(192);
+	__webpack_require__(196);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,12 +16,12 @@ webpackJsonp([26],{
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(194);
+	var questions = __webpack_require__(198);
 	
-	var tmpl = __webpack_require__(195);
+	var tmpl = __webpack_require__(199);
 	
 	var Cookies = __webpack_require__(98);
-	var contentSlider = __webpack_require__(196);
+	var contentSlider = __webpack_require__(200);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -143,14 +143,14 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 192:
+/***/ 196:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 194:
+/***/ 198:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2680,7 +2680,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 195:
+/***/ 199:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2732,7 +2732,7 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 196:
+/***/ 200:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

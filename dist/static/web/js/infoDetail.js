@@ -1,11 +1,11 @@
-webpackJsonp([22],{
+webpackJsonp([23],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(179);
+	__webpack_require__(183);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,7 +16,7 @@ webpackJsonp([22],{
 	
 	
 	//自定义功能写下面
-	__webpack_require__(181);
+	__webpack_require__(185);
 	var province = $("[name=province]").val();
 	var newsId = $("[name=newsId]").val();
 	
@@ -70,14 +70,14 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 179:
+/***/ 183:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 181:
+/***/ 185:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

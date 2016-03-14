@@ -1,11 +1,11 @@
-webpackJsonp([16],{
+webpackJsonp([17],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(154);
+	__webpack_require__(158);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -22,19 +22,19 @@ webpackJsonp([16],{
 	var extend =  __webpack_require__(41);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(110);
-	var tmpl_questions = __webpack_require__(111);
+	var tmpl_detail = __webpack_require__(114);
+	var tmpl_questions = __webpack_require__(115);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(156);
-	var tmpl_list = __webpack_require__(157);
-	var tmpl_major = __webpack_require__(158);
-	var majors = __webpack_require__(159);
+	var tmpl_school = __webpack_require__(160);
+	var tmpl_list = __webpack_require__(161);
+	var tmpl_major = __webpack_require__(162);
+	var majors = __webpack_require__(163);
 	
 	//分页
-	var pagination = __webpack_require__(160);
+	var pagination = __webpack_require__(164);
 	//自定义滚动
-	var scroll = __webpack_require__(114);
+	var scroll = __webpack_require__(118);
 	
 	
 	var school = {
@@ -590,16 +590,16 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 114:
+/***/ 118:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(115);
+	__webpack_require__(119);
 	
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
 	//mousewheel
-	__webpack_require__(117);
+	__webpack_require__(121);
 	
 	function scroll(target,options){
 	
@@ -784,14 +784,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 115:
+/***/ 119:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 117:
+/***/ 121:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1000,14 +1000,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 154:
+/***/ 158:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 156:
+/***/ 160:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1022,7 +1022,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 157:
+/***/ 161:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1052,7 +1052,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 158:
+/***/ 162:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1067,7 +1067,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 159:
+/***/ 163:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1106,7 +1106,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 160:
+/***/ 164:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

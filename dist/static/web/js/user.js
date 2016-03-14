@@ -1,11 +1,11 @@
-webpackJsonp([32],{
+webpackJsonp([33],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(344);
+	__webpack_require__(348);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,22 +16,22 @@ webpackJsonp([32],{
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(134);
+	var tabs = __webpack_require__(138);
 	//加载更多模块
-	var loadMore = __webpack_require__(177);
+	var loadMore = __webpack_require__(181);
 	
 	
 	//历史模块
-	var archive = __webpack_require__(346);
+	var archive = __webpack_require__(350);
 	
 	//历史模块
-	var history = __webpack_require__(347);
+	var history = __webpack_require__(351);
 	
 	//收藏模块
-	var collection = __webpack_require__(348);
+	var collection = __webpack_require__(352);
 	
 	//图片上传模块
-	var uploader = __webpack_require__(349);
+	var uploader = __webpack_require__(353);
 	
 	// 导航切换
 	$(".userInfoList").on("click","[data-link]",function(e){
@@ -52,12 +52,12 @@ webpackJsonp([32],{
 	$(".load-more-list").each(function(idx,ele){
 		if(idx == 0){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(351)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(355)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "historyList"
 			});
 		}else if(idx == 1){
 			loadMore($(ele),{
-				tmpl : __webpack_require__(351)("./"+$(ele).data("tmpl")+".ejs"),
+				tmpl : __webpack_require__(355)("./"+$(ele).data("tmpl")+".ejs"),
 				listAttr : "codes"
 			});
 		}
@@ -87,7 +87,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 134:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -159,7 +159,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 177:
+/***/ 181:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -262,14 +262,14 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 344:
+/***/ 348:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 346:
+/***/ 350:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -307,7 +307,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 347:
+/***/ 351:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -340,11 +340,11 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 348:
+/***/ 352:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var tabs = __webpack_require__(134);
+	var tabs = __webpack_require__(138);
 	
 	var collection = {
 		init : function(){
@@ -362,11 +362,11 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 349:
+/***/ 353:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var extend = __webpack_require__(350);
+	var extend = __webpack_require__(354);
 	var BASE_URL = "//localhost:9999/";
 	var uploader = {
 		init : function(settings){
@@ -403,7 +403,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 350:
+/***/ 354:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -496,14 +496,14 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 351:
+/***/ 355:
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./college.ejs": 352,
-		"./history.ejs": 353,
-		"./info.ejs": 354,
-		"./test.ejs": 355
+		"./college.ejs": 356,
+		"./history.ejs": 357,
+		"./info.ejs": 358,
+		"./test.ejs": 359
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -516,12 +516,12 @@ webpackJsonp([32],{
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 351;
+	webpackContext.id = 355;
 
 
 /***/ },
 
-/***/ 352:
+/***/ 356:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -573,7 +573,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 353:
+/***/ 357:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -613,7 +613,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 354:
+/***/ 358:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -628,7 +628,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 355:
+/***/ 359:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

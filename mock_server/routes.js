@@ -71,6 +71,6 @@ module.exports = {
 	'post::/v2/client/getStateUrl' : "mock::api/state.json",
 	'post::/v2/client/1/tzy/plan/abroad/create': "mock::api/abroad.json",
 	'post::/v2/client/1/tzy/qa/1/ask' : "mock::api/ask.json",
-	'/v2/client/1/tzy/qa/1' : "mock::api/qaList.json"
-
+	'/v2/client/1/tzy/qa/1' : "mock::api/qaList.json",
+	'post::/v2/client/1/pay/plan/assessment':"mock::api/abordDataList.json"
 };

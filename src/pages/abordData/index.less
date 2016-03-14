@@ -1,0 +1,39 @@
+@color-blue: #61c0e2;
+@color-orange: #f4b64f;
+
+.orange{color: @color-orange;}
+
+
+.dbWrapper{margin-top: 12px;}
+.db .col1{width:590px;}
+.db .col2{width:300px;}
+
+.formWrap{background-color: #fff;padding:28px 24px 36px;margin-bottom: 30px;}
+
+.m-nav{
+	.btn-default > em{display: inline-block;margin-right: 3px;}
+}
+
+.schoolList li{padding:20px 0;border-bottom:1px solid #e2e2e2;margin-bottom: 10px;}
+.schoolList .detail{
+	font-size: 14px;color: #555;line-height: 1.5;
+	.field{display: inline-block;margin-right: 40px;color:@color-orange;}
+	.field:last-child{margin-right:0;}
+}
+.schoolList .btn{margin-top: 6px;}
+.schoolListWrap{border-top:1px solid #e2e2e2;margin-top: 24px;}
+
+.schoolList{
+	h4{font-weight: normal;color: #666;margin-bottom: 18px;}
+	.row{margin-bottom: 12px;}
+
+	.detailContent{
+		height: 48px;overflow: hidden;transition:height 0.4s ease;box-sizing: content-box;
+		&.open{
+			height: auto;
+			.toggleIcon{background-position: -68px 0;}
+		}
+	}
+}
+
+.toggleIcon{top:38px;}

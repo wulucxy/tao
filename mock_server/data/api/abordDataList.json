@@ -1,0 +1,35 @@
+{
+    "code":0,     
+    "msg":"",     
+    "data":
+    [
+        {
+            "school_name":"东进大学",    
+            "school_name_en":"The University of Tokyo",    
+            "homepage":"12323",          
+            "country":"1231232323",           
+            "build_year":"12323",        
+            "states_en":"12323",         
+            "city":"12323",              
+            "traffic_rank":"12323",      
+            "school_type":"12323",       
+            "fame_alumnus":"12323",      
+            "geog_superiority":"12323",  
+            "employment_to":"12323"      
+        },
+        {
+            "school_name":"",    
+            "school_name_en":"",    
+            "homepage":"",          
+            "country":"",           
+            "build_year":"",        
+            "states_en":"",         
+            "city":"",              
+            "traffic_rank":"",      
+            "school_type":"",       
+            "fame_alumnus":"",      
+            "geog_superiority":"",  
+            "employment_to":""      
+        }
+    ]
+}
