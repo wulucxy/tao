@@ -82,9 +82,9 @@ webpackJsonp([31],[
 					});
 	
 					//渲染图表
-					charts.init(document.getElementById("charts"),{
-						data : that.state
-					});
+					// charts.init(document.getElementById("charts"),{
+					// 	data : that.state
+					// });
 					
 	            },
 	            error : function(err){
