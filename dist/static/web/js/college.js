@@ -91,7 +91,7 @@ webpackJsonp([8],{
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
-				feature : $("[name=feature]").val()
+				feature : [Number($("[name=feature]").val())]
 			};
 	
 			var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
