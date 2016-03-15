@@ -4,53 +4,6 @@
     "page":1,                        
     "majors":
     [
-        {
-            "majorId":"1",                  
-            "majorName":"机械设计",                
-            "threshold":734,                
-            "eductionalSystme":4,          
-            "recruitCount":7,              
-            "subjects":                     
-            [
-                {
-                    "subjectId":"",         
-                    "subjectName":"战三"        
-                },
-                {
-                    "subjectId":"",         
-                    "subjectName":"李艾"        
-                }
-            ],
-            "tags":                         
-            [
-                "tag",
-                "tag",
-                "tag"
-            ]
-        },
-        {
-            "majorId":"2",
-            "majorName":"机械设计2",
-            "threshold":734,
-            "eductionalSystme":4,
-            "recruitCount":7,
-            "subjects":                     
-            [
-                {
-                    "subjectId":"",         
-                    "subjectName":"物理"        
-                },
-                {
-                    "subjectId":"",         
-                    "subjectName":"数学"        
-                }
-            ],
-            "tags":
-            [
-                "tag",
-                "tag",
-                "tag"
-            ]
-        }
+       
     ]
 }

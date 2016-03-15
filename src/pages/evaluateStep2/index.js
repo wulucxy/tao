@@ -146,13 +146,19 @@ var school = {
 
       //城市列表
       if($(".city").length && that.state.cityList[that.modal.majorType-1].list){
-        var cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
-            if(city.status == 1){
-                return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
-            }else{
-                return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
-            }
-        });
+          
+        var cityLis;
+        if(that.state.cityList[that.modal.majorType-1].list.length == 0){
+          cityLis = '<li>暂无该专业数据</li>';
+        }else{
+          cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
+              if(city.status == 1){
+                  return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
+              }else{
+                  return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
+              }
+          });
+        }
 
         $(".city").html(cityLis);
         that.options.completeCallback && that.options.completeCallback.call(that);
@@ -321,6 +327,11 @@ var school = {
                 var res = $.parseJSON(res);
             }
             
+            if(!res.majors.length){
+               that.state.cityList[that.modal.majorType-1].list = [];
+                that.render();
+               return;
+            }
             //默认未选中
             $.each(res.majors,function(idx,ele){
                 ele.status = 0;
