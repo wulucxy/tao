@@ -34,6 +34,33 @@ var pagination = require("../../assets/components/pagination");
 //自定义滚动
 var scroll = require("../../assets/components/scroll");
 
+//兼容every实现
+if (typeof Array.prototype.every != "function") {
+  Array.prototype.every = function (fn, context) {
+    var passed = true;
+    if (typeof fn === "function") {
+       for (var k = 0, length = this.length; k < length; k++) {
+          if (passed === false) break;
+          passed = !!fn.call(context, this[k], k, this);
+      }
+    }
+    return passed;
+  };
+}
+
+//兼容some实现
+if (typeof Array.prototype.some != "function") {
+  Array.prototype.some = function (fn, context) {
+  var passed = false;
+  if (typeof fn === "function") {
+      for (var k = 0, length = this.length; k < length; k++) {
+      if (passed === true) break;
+      passed = !!fn.call(context, this[k], k, this);
+    }
+    }
+  return passed;
+  };
+}
 
 var school = {
 
@@ -568,9 +595,77 @@ var school = {
       that.state.zhiyuanList[type-1].name = "";
       that.state.zhiyuanList[type-1].code = "";
 
+      console.log(that.state.selected);
+
       that.render(type-1);
 
     });
+
+    //异步提交结果
+    $("#verifyBtn").on("click",function(e){
+      e.preventDefault();
+
+    //只要有一个选中即ok
+    var zhiyuanStatus = that.state.zhiyuanList.some(function(ele,idx){
+       return !!(ele.name && ele.code);
+    });
+
+    //有专业选中
+    var selectedStatus = that.state.selected.some(function(ele,idx){
+      var type = ele.type;
+       return (ele.list.length > 0 && $("[major="+type+"]").length);
+    });
+
+
+    if(!zhiyuanStatus){
+      warn("至少选中一个志愿院校");
+      return false;
+    }else if(!selectedStatus){
+      warn("至少选中一个志愿院校对应的专业");
+      return false;
+    }
+
+    //组装数据
+    var wishList = [];
+    $.each(that.state.zhiyuanList,function(idx,ele){
+       var wish = {};
+       if(ele.name && ele.code && that.state.selected[idx].list.length){
+          wish.college = ele.code;
+          wish.collegeName = ele.name;
+          wish.type = ele.type;
+          $.each(that.state.selected[idx].list,function(listIndex,list){
+            list.majorId = list.code;
+            list.majorName = list.name;
+          });
+          wish.majors = that.state.selected[idx].list;
+       }
+
+       wishList.push(wish);
+    });
+
+    $.ajax({
+      url : "/v2/client/"+provinceId+"/tzy/plan/assessment/step2",
+      type : "post",
+      contentType: "application/json",
+      data : JSON.stringify({wishes : wishList}),
+      success : function(res){
+          if(typeof res =="string"){
+              var res = $.parseJSON(res);
+          }
+
+          if(!res.code){
+              window.location = "/box/plan/evaluate_step3";
+              return false;
+          }else{
+              warn(res.msg);
+              return false;
+          }
+      },
+      error : function(err){
+          warn(err || "网络错误，请稍后重试");
+      }
+    });
+  });
   }
 };
 

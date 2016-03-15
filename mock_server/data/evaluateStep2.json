@@ -34,33 +34,25 @@
           {
             "type" : 2,
             "list" : [
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234}
+               
             ]
           },
           {
             "type" : 3,
             "list" : [
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234}
+                
             ]
           },
           {
             "type" : 4,
             "list" : [
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234}
+              
             ]
           },
           {
             "type" : 5,
             "list" : [
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234},
-                {"name" : "法学","code" : 2234}
+                
             ]
           }
         ]
