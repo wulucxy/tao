@@ -26,6 +26,8 @@ var tmpl_questions = require("../../assets/templates/questions.ejs");
 //切换顶部nav高亮
 common.switchNav(1);
 
+var provinceId = $("[name=province]").val();
+
 //checkbox定制
 $('.label_radio').click(function(){
   util.setupLabel();
@@ -47,3 +49,49 @@ $("[data-trigger]").on("click",function(e){
           }
       });
 });
+
+$("#verifyBtn").on("click",function(e){
+  e.preventDefault();
+  var btn = $(e.target);
+  if(btn.hasClass("disabled")) return;
+  btn.addClass("disabled");
+
+  var _data = {
+    mobile : $("[name=mobile]").val(),
+    province : $("[name=province]").val(),
+    courseType : $("[name=courseType]").val(),
+    score : $("[name=score]").val(),
+    place : $("[name=place]").val(),
+    wishes : $.parseJSON($("[name=wishes]").text())
+  };
+
+  $.ajax({
+    url : "/v2/client/"+provinceId +"/tzy/plan/assessment/create",
+    type : "post",
+    contentType: "application/json",
+    data : JSON.stringify(_data),
+    success : function(res){
+      if(typeof res == "string"){
+        var res = $.parseJSON(res);
+      }
+
+      if(!res.code && res.planId){
+          window.location = "/pay/assessment?planId="+res.planId;
+          return false;
+      }else{
+          warn(res.msg);
+          btn.removeClass("disabled");
+          return false;
+      }
+    },
+      error : function(err){
+        btn.removeClass("disabled");
+          warn(err || "网络错误，请稍后重试");
+      }
+  });
+
+
+});
+
+
+

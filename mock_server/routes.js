@@ -35,8 +35,8 @@ module.exports = {
 	"/library/aboard_data": "abordData.jsp",
 	"/home/signin": "login.jsp",
 	"/uploader": "uploader.jsp",
-	"/pay/book": "pay/book.jsp",
-	"/pay/evaluate": "pay/evaluate.jsp",
+	"/pay/wishes": "pay/book.jsp",
+	"/pay/assessment": "pay/assessment.jsp",
 	//异步加载
 	'post::/v2/client/loadmore/test' : 'mock::api/test.json',
 	'post::/v2/client/loadmore/history' : 'mock::api/history.json',
@@ -73,5 +73,6 @@ module.exports = {
 	'post::/v2/client/1/tzy/qa/1/ask' : "mock::api/ask.json",
 	'/v2/client/1/tzy/qa/1' : "mock::api/qaList.json",
 	'post::/v2/client/1/pay/plan/assessment':"mock::api/abordDataList.json",
-	'post::/v2/client/1/tzy/plan/assessment/step2':"mock::api/assessStep2.json"
+	'post::/v2/client/1/tzy/plan/assessment/step2':"mock::api/assessStep2.json",
+	'post::/v2/client/1/tzy/plan/assessment/create':"mock::api/assessStep3.json"
 };

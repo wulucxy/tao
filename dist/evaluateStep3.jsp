@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.ba1d0dae.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.7bc2dd21.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -18,7 +18,19 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
-		<div class="container p_assess_1">
+		<!-- 保存mobile属性 -->
+		<input type="hidden" name="mobile" value="${user.mobile}">
+
+		<!-- 保存courseType属性 -->
+		<input type="hidden" name="courseType" value="${courseType}">
+		
+		<!-- 保存score属性 -->
+		<input type="hidden" name="score" value="${score}">
+
+		<!-- 保存place属性 -->
+		<input type="hidden" name="place" value="${place}">
+	
+		<div class="container p_assess_3">
 
 			<div class="content">
 				<h3 class="clearfix title">
@@ -188,5 +200,8 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+	
+	<pre name="wishes">${wishes}</pre>
+
 	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/evaluateStep3.js"></script></body>
 </html>
