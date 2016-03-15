@@ -136,7 +136,7 @@
 								</span>
 							</div>
 
-							<div class="row last">
+							<div class="row">
 								<div class="body media">
 									<a class="fl item" href="javascript:;" data-action="add" data-value="feature:0">不限</a>
 									<div class="media-body">
@@ -149,6 +149,66 @@
 								</div>
 								<span class="head g9">
 									院校特色：
+								</span>
+							</div>
+
+							<div class="row expand-mode">
+								<div class="foot">
+									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
+										<em class="vm">收起</em>
+										<span class="taoIcon btn-arrow-up vm"></span>
+									</a>
+									<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">
+										<em class="vm">更多</em>
+										<span class="taoIcon btn-arrow-down vm"></span>
+									</a>
+								</div>
+								
+								<div class="body media">
+									<a class="fl item" href="javascript:;" data-action="add" data-value="bachelor:">不限</a>
+									<div class="media-body">
+										<div class="itemLists">
+
+										<c:forEach var="list" items="${Undergraduate}">
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:${list.code}">${list.name}</a>
+										</c:forEach>
+
+										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:0">不选本科</a>
+										</div>
+									</div>
+								</div>
+								<span class="head g9">
+									本科类别：
+								</span>
+							</div>
+
+							<div class="row expand-mode last">
+								<div class="foot">
+									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
+										<em class="vm">收起</em>
+										<span class="taoIcon btn-arrow-up vm"></span>
+									</a>
+									<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">
+										<em class="vm">更多</em>
+										<span class="taoIcon btn-arrow-down vm"></span>
+									</a>
+								</div>
+								
+								<div class="body media">
+									<a class="fl item" href="javascript:;" data-action="add" data-value="junior:">不限</a>
+									<div class="media-body">
+										<div class="itemLists">
+										
+										<c:forEach var="list" items="${speciality}">
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:${list.code}">${list.name}</a>
+										</c:forEach>
+										
+										<a href="javascript:;" class="item" data-action="add" data-value="junior:0">不选专科</a>
+										</div>
+									</div>
+								</div>
+								<span class="head g9">
+									专科类别：
 								</span>
 							</div>
 

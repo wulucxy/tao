@@ -5,7 +5,7 @@
     "majors":
     [
         {
-            "majorId":"",                  
+            "majorId":"1",                  
             "majorName":"机械设计",                
             "threshold":734,                
             "eductionalSystme":4,          
@@ -29,8 +29,8 @@
             ]
         },
         {
-            "majorId":"",
-            "majorName":"机械设计",
+            "majorId":"2",
+            "majorName":"机械设计2",
             "threshold":734,
             "eductionalSystme":4,
             "recruitCount":7,

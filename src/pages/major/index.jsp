@@ -47,7 +47,7 @@
 								</span>
 							</div>
 							
-							<div class="row first expand-mode">
+							<div class="row expand-mode">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>

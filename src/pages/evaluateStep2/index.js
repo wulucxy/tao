@@ -293,11 +293,13 @@ var school = {
             }
             
             //默认未选中
-            $.each(res.c,function(idx,ele){
+            $.each(res.majors,function(idx,ele){
                 ele.status = 0;
+                ele.code = ele.majorId;
+                ele.name = ele.majorName;
             });
 
-            that.state.cityList[that.modal.majorType-1].list = res.c;
+            that.state.cityList[that.modal.majorType-1].list = res.majors;
 
             //添加已选中的单元
             $.each(that.state.selected,function(idx,ele){
