@@ -14,6 +14,7 @@ var common = require("../../assets/components/common");
 var tmpl = require("./templates/apply.ejs");
 require("../../assets/components/validator");
 
+var provinceId = $("[name=province]").val();
 
 var book = {
 
@@ -34,7 +35,7 @@ var book = {
 					util.setupLabel();
 
 					$.ajax({
-		        		url : "/system/city",
+		        		url : "/"+provinceId+"/system/city",
 		        		type : "get",
 		        		contentType: "application/json",
 		        		success : function(res){
