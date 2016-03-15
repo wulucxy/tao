@@ -1080,37 +1080,13 @@ webpackJsonp([17],{
 /***/ function(module, exports) {
 
 	module.exports = [
-		{"code":110000,"name":"北京"},
-		{"code":120000,"name":"天津"},
-		{"code":130000,"name":"河北省"},
-		{"code":140000,"name":"山西省"},
-		{"code":150000,"name":"内蒙古自治区"},
-		{"code":210000,"name":"辽宁省"},
-		{"code":220000,"name":"吉林省"},
-		{"code":230000,"name":"黑龙江省"},
-		{"code":310000,"name":"上海"},
-		{"code":320000,"name":"江苏省"},
-		{"code":330000,"name":"浙江省"},
-		{"code":340000,"name":"安徽省"},
-		{"code":350000,"name":"福建省"},
-		{"code":360000,"name":"江西省"},
-		{"code":370000,"name":"山东省"},
-		{"code":410000,"name":"河南省"},
-		{"code":420000,"name":"湖北省"},
-		{"code":430000,"name":"湖南省"},
-		{"code":440000,"name":"广东省"},
-		{"code":450000,"name":"广西壮族自治区"},
-		{"code":460000,"name":"海南省"},
-		{"code":500000,"name":"重庆"},
-		{"code":510000,"name":"四川省"},
-		{"code":520000,"name":"贵州省"},
-		{"code":530000,"name":"云南省"},
-		{"code":540000,"name":"西藏自治区"},
-		{"code":610000,"name":"陕西省"},
-		{"code":620000,"name":"甘肃省"},
-		{"code":630000,"name":"青海省"},
-		{"code":640000,"name":"宁夏回族自治区"},
-		{"code":650000,"name":"新疆维吾尔自治区"}
+		{"level": "1", "code": 3, "name": "哲学"},
+		{"level": "1", "code": 4, "name": "经济学"}, 
+		{"level": "1", "code": 5, "name": "法学"}, 
+		{"level": "1", "code": 6, "name": "教育学"}, 
+		{"level": "1", "code": 7, "name": "文学"}, {"level": "1", "code": 8, "name": "历史学"}, {"level": "1", "code": 9, "name": "理学"}, {"level": "1", "code": 10, "name": "工学"}, {"level": "1", "code": 11, "name": "农学"}, {"level": "1", "code": 12, "name": "医学"}, {"level": "1", "code": 13, "name": "管理学"}, {"level": "2", "code": 14, "name": "农林牧渔"}, {"level": "2", "code": 15, "name": "交通运输"}, {"level": "2", "code": 16, "name": "生化与药品"}, {"level": "2", "code": 17, "name": "能源开发与测绘"}, {"level": "2", "code": 18, "name": "材料与能源"}, {"level": "2", "code": 19, "name": "土建"}, {"level": "2", "code": 20, "name": "水利"}, {"level": "2", "code": 21, "name": "制造"}, {"level": "2", "code": 22, "name": "电子信息"}, {"level": "2", "code": 23, "name": "环保、气象与安全"}, {"level": "2", "code": 24, "name": "轻纺食品"}, {"level": "2", "code": 25, "name": "财经"}, {"level": "2", "code": 26, "name": "医药卫生"}, {"level": "2", "code": 27, "name": "旅游"}, {"level": "2", "code": 28, "name": "公共事业"}, {"level": "2", "code": 29, "name": "文化教育"}, {"level": "2", "code": 30, "name": "艺术设计传媒"}, {"level": "2", "code": 31, "name": "公安"}, 
+		{"level": "2", "code": 32, "name": "法律"}
+	
 	];
 
 /***/ },
