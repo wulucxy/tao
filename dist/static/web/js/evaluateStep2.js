@@ -633,29 +633,28 @@ webpackJsonp([17],{
 	    }
 	
 	    //组装数据
-	    // var wishList = [];
-	    // $.each(that.state.zhiyuanList,function(idx,ele){
-	    //    var wish = {};
-	    //    if(ele.name && ele.code && that.state.selected[idx].list.length){
-	    //       wish.college = ele.code;
-	    //       wish.collegeName = ele.name;
-	    //       wish.type = ele.type;
-	    //       $.each(that.state.selected[idx].list,function(listIndex,list){
-	    //         list.majorId = list.code;
-	    //         list.majorName = list.name;
-	    //       });
-	    //       wish.majors = that.state.selected[idx].list;
-	    //    }
+	    var wishList = [];
+	    $.each(that.state.zhiyuanList,function(idx,ele){
+	       var wish = {};
+	       if(ele.name && ele.code && that.state.selected[idx].list.length){
+	          wish.college = ele.code;
+	          wish.collegeName = ele.name;
+	          wish.type = ele.type;
+	          $.each(that.state.selected[idx].list,function(listIndex,list){
+	            list.majorId = list.code;
+	            list.majorName = list.name;
+	          });
+	          wish.majors = that.state.selected[idx].list;
+	       }
 	
-	    //    wishList.push(wish);
-	    // });
+	       wishList.push(wish);
+	    });
 	
 	    $.ajax({
 	      url : "/v2/client/"+provinceId+"/tzy/plan/assessment/step2",
 	      type : "post",
 	      contentType: "application/json",
-	      //data : JSON.stringify({wishes : wishList}),
-	      data : JSON.stringify({zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
+	      data : JSON.stringify({wishes : wishList,zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
 	      success : function(res){
 	          if(typeof res =="string"){
 	              var res = $.parseJSON(res);
