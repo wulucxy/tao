@@ -40,7 +40,7 @@ webpackJsonp([19],{
 						util.setupLabel();
 	
 						$.ajax({
-			        		url : "/"+provinceId+"/system/city",
+			        		url : "/system/city?provinceId="+provinceId,
 			        		type : "get",
 			        		contentType: "application/json",
 			        		success : function(res){
