@@ -18,6 +18,9 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
+		<!-- 文理科 -->
+		<input type="hidden" name="courseType" value="${courseType}">
+
 		<div class="container p_assess">
 
 			<div class="content">

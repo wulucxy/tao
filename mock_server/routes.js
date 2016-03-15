@@ -44,6 +44,7 @@ module.exports = {
 	'post::/system/city' : 'mock::api/city.json',
 	'post::/v2/client/1/data/college' : 'mock::api/college.json',
 	'post::/v2/client/1/data/college/3322/majors' : 'mock::api/major.json',
+	'/v2/client/1/data/major/1/category/3' : 'mock::api/major.json',
 	'post::/v2/client/1/profile/favor/college/add' : 'mock::api/addFav.json',
 	'post::/v2/client/1/profile/favor/major/add' : 'mock::api/addFav.json',
 	'post::/v2/client/1/profile/favor/delete' : 'mock::api/delFav.json',

@@ -314,11 +314,13 @@ webpackJsonp([17],{
 	    //学校code
 	    var collegeId = schoolInput.attr("code");
 	
+	    var courseType = $("[name=courseType]").val();
+	    var parm = [];
+	    parm.push("courseType="+courseType);
+	
 	    $.ajax({
-	        url : "/v2/client/"+provinceId+"/data/college/"+collegeId+"/majors",
-	        type : "post",
-	        contentType: "application/json",
-	        data : JSON.stringify({majorId:val}),
+	        url : "/v2/client/"+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join(""),
+	        type : "get",
 	        success : function(res){
 	            if(typeof res =="string"){
 	                var res = $.parseJSON(res);
