@@ -327,19 +327,19 @@ var school = {
                 var res = $.parseJSON(res);
             }
             
-            if(!res.majors.length){
+            if(!res.length){
                that.state.cityList[that.modal.majorType-1].list = [];
                 that.render();
                return;
             }
             //默认未选中
-            $.each(res.majors,function(idx,ele){
+            $.each(res,function(idx,ele){
                 ele.status = 0;
                 ele.code = ele.majorId;
                 ele.name = ele.majorName;
             });
 
-            that.state.cityList[that.modal.majorType-1].list = res.majors;
+            that.state.cityList[that.modal.majorType-1].list = res;
 
             //添加已选中的单元
             $.each(that.state.selected,function(idx,ele){
