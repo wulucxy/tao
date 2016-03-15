@@ -105,7 +105,7 @@ var pay = {
 			contentType: "application/json",
         	data : JSON.stringify(_data),
         	success : function(charge){
-        		if(_data.channel == "alipay"){
+        		if(/alipay/.test(_data.channel)){
         			that.requestAlipay(btn,charge);
         		}else{
         			that.requestCoupon(btn,charge);

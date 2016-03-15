@@ -63,7 +63,7 @@
 							<div class="col2 radioWrap rel media-body">
 								<div class="row">
 									<label>
-									<input type="radio" name="channel" value="alipay" checked>
+									<input type="radio" name="channel" value="alipay_pc_direct" checked>
 									<i class="payIcon zhifubao"></i>
 									<em>支付宝</em>
 									</label>
