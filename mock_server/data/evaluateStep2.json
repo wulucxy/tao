@@ -17,10 +17,10 @@
 
     "zhiyuanList" : [
       {"code":"3322","name":"浙江大学","type":1},
-      {"code":"","name":"","type":1},
-      {"code":"","name":"","type":1},
-      {"code":"","name":"","type":1},
-      {"code":"","name":"","type":1}
+      {"code":"","name":"","type":2},
+      {"code":"","name":"","type":3},
+      {"code":"","name":"","type":4},
+      {"code":"","name":"","type":5}
     ],
     "selected" : [
           {

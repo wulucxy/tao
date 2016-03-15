@@ -281,7 +281,11 @@ webpackJsonp([17],{
 	  requestCityData : function(val){
 	    var that = this,o = that.options;
 	
-	    var collegeId = that.modal.majorType;
+	    //对应的院校对象
+	    var rel = that.addMajorTrigger.data("rel");
+	    var schoolInput = $("[major="+rel+"]");
+	    //学校code
+	    var collegeId = schoolInput.attr("code");
 	
 	    $.ajax({
 	        url : "/v2/client/"+provinceId+"/data/college/"+collegeId+"/majors",
@@ -486,6 +490,9 @@ webpackJsonp([17],{
 	          that.modal = modal;
 	          that.modal.ref = this;
 	
+	          //增加trigger
+	          that.addSchoolTrigger = oInput;
+	
 	          modal.majorType = oInput.attr("major");
 	          that.requestData(that.pager);
 	          
@@ -524,6 +531,10 @@ webpackJsonp([17],{
 	        closeByOverlay : false,
 	        startCallback : function(modal){
 	          that.modal = modal;
+	          
+	          //增加trigger
+	          that.addMajorTrigger = btn;
+	
 	          modal.majorType = btn.data("rel");
 	
 	          that.render();
