@@ -20,7 +20,7 @@ webpackJsonp([20],{
 		init : function(){
 			var that = this;
 			util.count($(".count"),3,function(){
-				window.location = "/book";
+				window.location = "/expertOrder";
 			});
 		}
 	

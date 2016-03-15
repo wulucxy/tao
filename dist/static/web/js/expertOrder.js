@@ -50,7 +50,7 @@ webpackJsonp([19],{
 	
 			        			var optionList = [];
 	
-			        			$.each(res,function(idx,ele){
+			        			$.each(res.c,function(idx,ele){
 			        				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
 			        			});
 	
