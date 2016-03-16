@@ -1,0 +1,24 @@
+{
+    "favorites":
+    [
+        {
+            "favorId":"",
+            "favorTime":1462324234,
+            "major":
+            {
+                "majorId":"1",           
+                "majorName":""         
+            }
+        },
+        
+        {
+            "favorId":"",
+            "favorTime":1462324234,
+            "major":
+            {
+                "majorId":"1",           
+                "majorName":""         
+            }
+        }
+    ]
+}

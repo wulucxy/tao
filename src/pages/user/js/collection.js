@@ -1,6 +1,11 @@
 var $ = window.$ || require("jquery");
 var tabs = require("../../../assets/components/tabs");
 
+//本地数据库
+var localData = require("../../../assets/components/localData");
+
+var tmpl_college = require("../templates/favCollege.ejs");
+
 var provinceId = $("[name=province]").val();
 
 var collection = {
@@ -17,8 +22,8 @@ var collection = {
 	bindEvt : function(){
 		var that = this;
 		this.requestCollege();
-		this.requestMajor();
-		this.requestInfo();
+		// this.requestMajor();
+		// this.requestInfo();
 	},
 
 	requestCollege : function(){
@@ -36,49 +41,54 @@ var collection = {
                 	
                 	var ele = el.college;
                 	//保存name和code
-                	ele.college.code = ele.college.collegeId; 
-                	ele.college.name = ele.college.collegeName; 
+                	ele.code = ele.collegeId; 
+                	ele.name = ele.collegeName; 
 
                 	//获取city名称
-                    ele.college.city = {
+                    ele.city = {
                         code : ele.city,
                         name : localData.getCityName(ele.city)
                     };
 
                     //获取getCollegeTypeName(院校属性)
-                    ele.college.collegeType = {
+                    ele.collegeType = {
                         code : ele.collegeType,
                         name : localData.getCollegeTypeName(ele.collegeType)
                     };
 
                     //获取getCollegeTypeName(院校性质)
-                    ele.college.ownerType = {
+                    ele.ownerType = {
                         code : ele.ownerType,
                         name : localData.getOwnerTypeName(ele.ownerType)
                     };
 
                     //获取getLevelName(院校层次)
-                    ele.college.level = {
+                    ele.level = {
                         code : ele.level,
                         name : localData.getLevelName(ele.level)
                     };
 
                     //获取featrueList
-                    ele.college.feature = $.map(ele.feature,function(el,index){
+                    ele.feature = $.map(ele.feature,function(el,index){
                         return {
                             type : el,
                             name : localData.getFeatureName(el)
                         };
                     });
-                });
+                }); 
 
-                
+                console.log(res.favorites);
 
-                //that.insertData.call(that,res);
+                that.insertCollege.call(that,res);
 			}
 		});
+	},
 
-	}
+    insertCollege : function(data){
+        var that = this;
+        var _html = tmpl_college(data);
+       $(".schoolList").append(_html);
+    }
 
 
 };

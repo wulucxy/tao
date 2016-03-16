@@ -74,5 +74,7 @@ module.exports = {
 	'/v2/client/1/tzy/qa/1' : "mock::api/qaList.json",
 	'post::/v2/client/1/pay/plan/assessment':"mock::api/abordDataList.json",
 	'post::/v2/client/1/tzy/plan/assessment/step2':"mock::api/assessStep2.json",
-	'post::/v2/client/1/tzy/plan/assessment/create':"mock::api/assessStep3.json"
+	'post::/v2/client/1/tzy/plan/assessment/create':"mock::api/assessStep3.json",
+	'/v2/client/1/profile/favor/college' : "mock::api/favCollege.json",
+	'/v2/client/1/profile/favor/major' : "mock::api/favMajor.json"
 };
