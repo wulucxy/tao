@@ -65,14 +65,18 @@ $("#verifyBtn").on("click",function(e){
     wishes : $.parseJSON($("[name=wishes]").text())
   };
 
-  console.log(_data.wishes);
   $.each(_data.wishes,function(idx,ele){
-      var majorList = $.map(ele.majors,function(n,l){
-        return n.majorId;
-      });
+      var majorList = [];
 
-      console.log(majorList);
-      ele.majors = majorList;
+      if(ele.majors){
+        $.each(ele.majors,function(l,n){
+          if(n.majorId){
+             majorList.push(n.majorId);
+          }
+        });
+
+        ele.majors = majorList;
+      }
   });
 
   $.ajax({
@@ -98,10 +102,7 @@ $("#verifyBtn").on("click",function(e){
         btn.removeClass("disabled");
           warn(err.msg || "网络错误，请稍后重试");
       }
-
   });
-
-
 });
 
 

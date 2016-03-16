@@ -17,19 +17,6 @@
 	"score" : 300,
 	"place" : 3000,
     "wishes":[ 
-        { 
-            "college":"2001", 
-            "collegeName":"清华大学", 
-            "majors":[ 
-                {
-                    "majorId":"09871", 
-                    "majorName":"自动化" 
-                }, 
-                { 
-                    "majorId":"09871", 
-                    "majorName":"自动化" 
-                } 
-            ]
-        }
+        {"college":"1785","collegeName":"西北工业大学","majors":[{"code":"071251","majorId":"071251","majorName":"材料物理","name":"材料物理"}],"type":1},{},{},{},{}
     ] 
 }
