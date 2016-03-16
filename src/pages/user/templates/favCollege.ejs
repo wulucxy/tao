@@ -1,0 +1,29 @@
+<% if (favorites.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+<% for (var i = 0; i < colleges.length; i++) { %>
+<li class="clearfix">
+	<div class="fl">
+	<h4 class="name badgeRow"><em class="badgetitle vm"><%= colleges[i].collegeName %></em>
+		<% for (var j = 0; j < colleges[i].feature.length; j++) { %>
+			<% if(colleges[i].feature[j].type == 1) { %>
+				<span class="badge green"><%= colleges[i].feature[j].name %></span>
+			<% }else if(colleges[i].feature[j].type == 2){ %>
+				<span class="badge red"><%= colleges[i].feature[j].name %></span>
+			<% }else{ %>
+				<span class="badge"><%= colleges[i].feature[j].name %></span>
+			<% } %>
+		<% } %>
+	</h4>
+	<div class="detail">
+		<span class="label">院校属地：</span><span class="field"><%= colleges[i].city.name %></span>
+		<span class="label">院校分类：</span><span class="field"><%= colleges[i].collegeType.name %></span>
+		<span class="label">院校性质：</span><span class="field"><%= colleges[i].ownerType.name %></span>
+		<span class="label">院校层次：</span><span class="field"><%= colleges[i].level.name %></span>
+	</div>
+	</div>
+	<div class="fr">
+		<a href="#" class="btn btn-primary btn-mid">查看详情</a>
+	</div>
+</li>
+<% }} %>

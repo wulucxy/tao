@@ -1,41 +1,53 @@
 {
-	"historyList" : [
-        {
-            "type" : 1,
-            "caseName" : "高考方案定制", 
-            "order" : "45464141341",
-            "createTime" : "2015-12-12",
-            "score" : "600",
-            "place" : 1234,
-            "detailUrl" : "//www.baidu.com"
-        },
-        {
-            "type" : 2,
-            "caseName" : "高考志愿定制", 
-            "order" : "45464141341",
-            "createTime" : "2015-12-12",
-            "score" : "600",
-            "place" : 1234,
-            "detailUrl" : "//www.baidu.com"
-        },
-        {
-            "type" : 3,
-            "caseName" : "专业选择测试", 
-            "order" : "45464141341",
-            "createTime" : "2015-12-12",
-            "score" : "600",
-            "place" : 1234,
-            "detailUrl" : "//www.baidu.com"
-        },
-        {
-            "type" : 3,
-            "caseName" : "专业选择测试", 
-            "order" : "45464141341",
-            "createTime" : "2015-12-12",
-            "score" : "600",
-            "place" : 1234,
-            "detailUrl" : "//www.baidu.com"
+	"wishes" : [
+         {
+            "planId":"123",                    
+            "createTime":555573232323,       
+            "score":621,                    
+            "place":1733,                   
+            "payed":true,                 
+            "orderId":"",       
+            "planDes":"",      
+            "price":49,         
+            "priceDes":"",     
+            "payments":         
+            [
+                0,1,2,3
+            ]
         }
     ],
-	"count" : 1
+     "assessment":   
+    [
+        {
+            "planId":"",                    
+            "createTime":1473232323,       
+            "score":621,                    
+            "place":1733,                   
+            "payed":true,                    
+            "orderId":"",       
+            "planDes":"",        
+            "price":49,                 
+            "priceDes":"",             
+            "payments":                 
+            [
+                0,1,2,3
+            ]
+        },
+        
+        {
+            "planId":"",                    
+            "createTime":1473232323,       
+            "score":621,                    
+            "place":1733,                   
+            "payed":false,                    
+            "orderId":"",       
+            "planDes":"",        
+            "price":49,                 
+            "priceDes":"",             
+            "payments":                 
+            [
+                0,1,2,3
+            ]
+        }
+    ]
 }

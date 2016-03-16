@@ -3,13 +3,13 @@
 <% }else{ %>	
 <% for (var i = 0; i < codes.length; i++) { %>
 <li class="clearfix">
-	<div class="well clearfix" type="1">
+	<div class="well clearfix">
 	<div class="media fl">
 		<p><em class="label">授权码：</em><em className="field"><%= codes[i].code %></em></p>
-		<p><em class="label">生成日期：</em><em className="field"><%= codes[i].date %></em></p>
+		<p><em class="label">生成日期：</em><em className="field"><%= codes[i].createTime %></em></p>
 	</div>
 	<div class="detailInfo fr">
-		<div class="row btnRow"><a href="#" class="btn btn-primary btn-medium" targe="_blank">查看</a></div>
+		<div class="row btnRow"><a href="/box/plan/major_exam3?mtestId=<%= codes[i].mtestId %>" target="_blank" class="btn btn-primary btn-medium" targe="_blank">查看</a></div>
 	</div>
 </div>
 </li>

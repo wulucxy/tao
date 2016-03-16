@@ -68,7 +68,7 @@
 
 								<!--  历史方案 -->
 								<jsp:include page = "/partials/user/_history.jsp">
-									<jsp:param name="loadMoreUrl" value="/v2/client/${user.province.code}/tzy/mtest/all" />
+									<jsp:param name="loadMoreUrl" value="/v2/client/${user.province.code}/profile/plan/list" />
 									<jsp:param name="loadMoreTmpl" value="history" />
 								</jsp:include>
 

@@ -3,6 +3,8 @@ require('../../assets/less/common.less');
 require('./index.less');
 var $ = window.$ || require("jquery");
 
+console.log($);
+
 //工具类方法
 var util = require("../../assets/components/util");
 
@@ -25,8 +27,14 @@ var history = require("./js/history");
 //收藏模块
 var collection = require("./js/collection");
 
+//历史测试模块
+var test = require("./js/test");
+
 //图片上传模块
-var uploader = require("./js/uploader");
+//var uploader = require("./js/uploader");
+
+//provinceId
+var provinceId = $("[name=province]").val();
 
 // 导航切换
 $(".userInfoList").on("click","[data-link]",function(e){
@@ -44,33 +52,46 @@ $(".userInfoList").on("click","[data-link]",function(e){
 
 
 //加载更多
-$(".load-more-list").each(function(idx,ele){
-	if(idx == 0){
-		loadMore($(ele),{
-			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-			listAttr : "historyList"
-		});
-	}else if(idx == 1){
-		loadMore($(ele),{
-			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-			listAttr : "codes"
-		});
-	}
-});
+// $(".load-more-list").each(function(idx,ele){
+// 	if(idx == 0){
+// 		loadMore($(ele),{
+// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
+// 			listAttr : "historyList",
+// 			type : "get"
+// 		});
+// 	}else if(idx == 1){
+// 		loadMore($(ele),{
+// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
+// 			listAttr : "codes"
+// 		});
+// 	}
+// });
 
 //我的资料
 archive.init();
 
-//历史模块调用
-history.init();
+//历史方案模块调用
+history.init({
+	url : "/v2/client/"+provinceId +"/profile/plan/list",
+	type : "get",
+	listAttr : "wishes",
+	ele : "#historyWrapper"
+});
+
+//历史测试模块调用
+test.init({
+	url : "/v2/client/"+provinceId +"/tzy/mtest/all",
+	type : "get",
+	ele : "#testWrapper"
+});
 
 //收藏模块调用
 collection.init();
 
 //图片上传
-uploader.init({
-	ele : $("#picker")
-});
+// uploader.init({
+// 	ele : $("#picker")
+// });
 
 
 

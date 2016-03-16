@@ -10495,6 +10495,7 @@
 
 	var $ = window.$ || __webpack_require__(36);
 	
+	
 	var util = {
 		// 1.格式化相关
 		leadingZero : function(num){
@@ -10508,12 +10509,28 @@
 	    //格式化时间
 	    formatTime : function(data,format){
 	        var that = this;
-	        return new Date(Date.parse(data.replace(/-/g,  "/"))).format(format);
+	        return that.formatDate(new Date(Date.parse(data.replace(/-/g,  "/"))),format);
 	    },
 	
 	    //字符串转时间
 	    str2Date : function(s){
 	        return new Date(Date.parse(s.replace(/-/g,  "/")));  
+	    },
+	
+	    //接收时间戳转时间
+	    buildDate : function(time,format){
+	      var that = this,date = new Date(time),data;
+	
+	      Y = date.getFullYear() + '-';
+	      M = (date.getMonth()) + '-';
+	      D = date.getDate() + ' ';
+	      h = date.getHours() + ':';
+	      m = date.getMinutes() + ':';
+	      s = date.getSeconds(); 
+	
+	      data = (Y+M+D+h+m+s);
+	
+	      return that.formatTime(data,format);
 	    },
 	
 	    // 格式化银行卡

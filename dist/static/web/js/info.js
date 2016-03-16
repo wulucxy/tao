@@ -158,7 +158,7 @@ webpackJsonp([22],{
 			var that = this,o = that.options,$this = that.target;
 			$.ajax({
 				url : o.url || $this.data("url"),
-				type : "post",
+				type : o.type,
 				contentType: "application/json",
 				data : JSON.stringify({page : that.pager}),
 				success : function(res){
@@ -209,7 +209,8 @@ webpackJsonp([22],{
 	 		pager : 1,
 			button : ".btn-loading",
 			callback : null,
-			listAttr : ""
+			listAttr : "",
+			type : "post"
 		},o);
 	
 		return $(target).each(function(index) {

@@ -1,9 +1,14 @@
-{
-	"codes" : [{
-		"code" : "1234",
-		"date" : "2015-12-12"
-	},
-	{	"code" : "1234",
-		"date" : "2015-12-12"
-	}]
-}
+[
+	{
+        "mtestId":"",       
+        "createTime":555573232323,     
+        "code":"",          
+        "answer":""         
+    },
+    {
+        "mtestId":"",       
+        "createTime":555573232323,     
+        "code":"",          
+        "answer":""         
+    }
+]

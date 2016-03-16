@@ -24,11 +24,8 @@
 		 </div>
 	</div>
 
-	<div class="wellWrapper load-more-list" id="historyWrapper" data-url="${param.loadMoreUrl}" data-tmpl="${param.loadMoreTmpl}">
+	<div class="wellWrapper load-more-list" id="historyWrapper">
 	</div>
 	
-	<!-- 加载更多模块 -->
-	<%@ include file = "/partials/_loadMore.jsp" %>
-
 </div>
 </section>

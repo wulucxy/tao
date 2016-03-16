@@ -3,14 +3,11 @@
 
 <section class="contentInner test">
 	<div class="topWell">
-		<em class="square vm"></em><span class="vm">历史方案</span>
+		<em class="square vm"></em><span class="vm">历史测试</span>
 	</div>
 	<div class="content">
-		<div class="wellWrapper load-more-list" id="testWrapper" data-url="${param.loadMoreUrl}" data-tmpl="${param.loadMoreTmpl}">
+		<div class="wellWrapper load-more-list" id="testWrapper">
 		</div>
-
-		<!-- 加载更多模块 -->
-		<%@ include file = "/partials/_loadMore.jsp" %>
 	
 	</div>
 </section>

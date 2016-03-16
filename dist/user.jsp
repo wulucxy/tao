@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/user.b4b7d1f8.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/user.46a7b317.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -68,7 +68,7 @@
 
 								<!--  历史方案 -->
 								<jsp:include page = "/partials/user/_history.jsp">
-									<jsp:param name="loadMoreUrl" value="/v2/client/${user.province.code}/tzy/mtest/all" />
+									<jsp:param name="loadMoreUrl" value="/v2/client/${user.province.code}/profile/plan/list" />
 									<jsp:param name="loadMoreTmpl" value="history" />
 								</jsp:include>
 

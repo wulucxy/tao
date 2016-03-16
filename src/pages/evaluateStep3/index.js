@@ -65,6 +65,16 @@ $("#verifyBtn").on("click",function(e){
     wishes : $.parseJSON($("[name=wishes]").text())
   };
 
+  console.log(_data.wishes);
+  $.each(_data.wishes,function(idx,ele){
+      var majorList = $.map(ele.majors,function(n,l){
+        return n.majorId;
+      });
+
+      console.log(majorList);
+      ele.majors = majorList;
+  });
+
   $.ajax({
     url : "/v2/client/"+provinceId +"/tzy/plan/assessment/create",
     type : "post",
@@ -86,8 +96,9 @@ $("#verifyBtn").on("click",function(e){
     },
       error : function(err){
         btn.removeClass("disabled");
-          warn(err || "网络错误，请稍后重试");
+          warn(err.msg || "网络错误，请稍后重试");
       }
+
   });
 
 

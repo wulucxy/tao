@@ -1,7 +1,7 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 
-var tmpl = require("../templates/history.ejs");
+var tmpl = require("../templates/test.ejs");
 
 //公共方法
 var util = require("../../../assets/components/util");
@@ -18,43 +18,13 @@ module.exports = {
     	},o);
 
     	this.target = $(o.ele);
-
-    	//this.btn = $(".btn-loading");
+    	
 		this.bindEvt();
-		//$(".btn-loading").trigger("click");
 	},
 
 	bindEvt : function(){
 		var that = this;
-		//select切换
-		$("#caseType").on("change",function(){
-			var val = $(this).val();
-				
-			//$(".btnLoadingWrap").toggle(!Number(val));
-
-			$("#historyWrapper .well").each(function(idx,ele){
-				var type = $(ele).attr("type");
-				var item = $(ele);
-
-				if(val == 0){
-					var match = true;
-				}else{
-					var match = (val.indexOf(type) >= 0);
-				}
-
-				return item.toggle(match);
-			});
-		});
-
 		that.fetch.call(that);
-
-		// that.btn.off().on("click",function(e){
-  //   		e.preventDefault();
-  //   		var btn = $(this).closest(".btn");
-  //   		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-  //   		btn.addClass("disabled loading");
-  //   		that.fetch.call(that);
-  //   	});
 	},
 
 	fetch : function(){
@@ -71,9 +41,12 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
-                $.each(res.wishes,function(idx,ele){
+                $.each(res,function(idx,ele){
+                	console.log(ele.createTime);
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
                 });
+
+                res = {codes : res};
 
                 that.insertData.call(that,res);
 			}
@@ -94,14 +67,5 @@ module.exports = {
 		}else{
 			$this.append(_html);
 		}
-
-		// that.pager++;
-
-		// //最后一页
-		// if(that.pager > res.count){
-		// 	that.btn.addClass("loading-all");
-		// };
-
-		//that.btn.removeClass("loading disabled");
 	}
 };
