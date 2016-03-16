@@ -38,7 +38,7 @@ module.exports = {
 	"/pay/wishes": "pay/book.jsp",
 	"/pay/assessment": "pay/assessment.jsp",
 	//异步加载
-	'post::/v2/client/loadmore/test' : 'mock::api/test.json',
+	'post::/v2/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'post::/v2/client/loadmore/history' : 'mock::api/history.json',
 	'post::/v2/client/loadmore/question' : 'mock::api/question.json',
 	'post::/system/city' : 'mock::api/city.json',

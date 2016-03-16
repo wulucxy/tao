@@ -2,6 +2,8 @@ var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 var tmpl = require("../templates/school.ejs");
 
+var localData = require("../../../assets/components/localData");
+
 var dataSet = { 
 	render : function(){
 		var that = this;
@@ -49,7 +51,7 @@ var dataSet = {
 		var that = this,o = that.options;
 
 		var _data = {
-			city : $("[name=city]").val(),
+			city : [$("[name=city]").val()],
 			collegeType : $("[name=collegeType]").val(),
 			ownerType : $("[name=ownerType]").val(),
 			level : $("[name=level]").val(),
@@ -70,6 +72,45 @@ var dataSet = {
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
+
+                //客户端修改数据
+                $.each(res.colleges,function(idx,ele){
+                    //增加code,name
+                    ele.code = ele.collegeId;
+                    ele.name = ele.collegeName;
+
+                    //获取city名称
+                    ele.city = {
+                        code : ele.city,
+                        name : localData.getCityName(ele.city)
+                    };
+
+                    //获取getCollegeTypeName(院校属性)
+                    ele.collegeType = {
+                        code : ele.collegeType,
+                        name : localData.getCollegeTypeName(ele.collegeType)
+                    };
+
+                    //获取getCollegeTypeName(院校性质)
+                    ele.ownerType = {
+                        code : ele.ownerType,
+                        name : localData.getOwnerTypeName(ele.ownerType)
+                    };
+
+                    //获取getLevelName(院校层次)
+                    ele.level = {
+                        code : ele.level,
+                        name : localData.getLevelName(ele.level)
+                    };
+
+                    //获取featrueList
+                    ele.feature = $.map(ele.feature,function(el,index){
+                        return {
+                            type : el,
+                            name : localData.getFeatureName(el)
+                        };
+                    });
+                });
 
                 //如果是点击加载更多，页码++，否则重置为1
                 if(btn){
