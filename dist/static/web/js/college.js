@@ -87,8 +87,10 @@ webpackJsonp([8],{
 	
 		requestData : function(btn){
 			var that = this,o = that.options;
+	        var provinceId = $("[name=province]").val();
 	
 			var _data = {
+	            province:provinceId,
 				city : [$("[name=city]").val()],
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
@@ -99,8 +101,7 @@ webpackJsonp([8],{
 			var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
 			_data.page = that.pageObject[_key];
 	
-	        var provinceId = $("[name=province]").val();
-	
+	        
 			$.ajax({
 				url : "/v2/client/"+provinceId + "/data/college",
 				type : "post",

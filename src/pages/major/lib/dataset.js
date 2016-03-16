@@ -41,8 +41,8 @@ var dataSet = {
 		var that = this,o = that.options;
 
 		var _data = {
-			bachelor : $("[name=bachelor]").val(),
-			junior : $("[name=junior]").val()
+			Undergraduate : $("[name=bachelor]").val(),
+			speciality : $("[name=junior]").val()
 		};
 
         //if(_data.bachelor == "" && _data.junior == "") return;

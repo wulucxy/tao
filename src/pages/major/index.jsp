@@ -111,32 +111,6 @@
 
 						<div class="majorListWrap">
 							<ul class="majorList">
-								<li>
-									<div class="bg bg-f1">
-										哲学：4个
-									</div>
-									<div class="majorBtnRow">
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-									</div>
-								</li>
-
-								<li>
-									<div class="bg bg-f1">
-										哲学：4个
-									</div>
-									<div class="majorBtnRow">
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-										<a href="#" target="_blank" class="btn btn-primary">哲学</a>
-									</div>
-								</li>
-
 							</ul>
 						</div>
 
