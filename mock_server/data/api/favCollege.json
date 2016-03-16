@@ -7,7 +7,7 @@
             "college":
             {
                 "collegeId":"1",         
-                "collegeName":"",      
+                "collegeName":"123",      
                 "city":330900,               
                 "level":1,              
                 "feature":      
@@ -23,7 +23,7 @@
             "college":
             {
                 "collegeId":"1",         
-                "collegeName":"",      
+                "collegeName":"234",      
                 "city":330900,               
                 "level":1,              
                 "feature":      

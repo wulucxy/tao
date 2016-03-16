@@ -42,7 +42,7 @@
 					
 					<section class="caseSection">
 
-					<c:forEach var="list" items="${recommendList}" varStatus="loop">
+					<c:forEach var="list" items="${wishes}" varStatus="loop">
 						<div class="media detailContent">
 						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
 							<span class="fl index">${loop.index+1}</span>
@@ -80,7 +80,7 @@
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
-												<td>${major.category.name}</td>
+												<td>${major.fCategory}</td>
 												<td>${major.average}</td>
 											</tr>
 											</c:forEach>
@@ -97,8 +97,7 @@
 			</div>
 		</div>
 
-		<pre name="majorList">${majorList}</pre>
-		<pre name="c">${c}</pre>
+		
 		<pre name="courseType">${courseType}</pre>
 		<pre name="batch">${batch}</pre>
 		<pre name="score">${score}</pre>

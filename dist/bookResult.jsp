@@ -81,7 +81,7 @@
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
-												<td>${major.category.name}</td>
+												<td>${major.fCategory}</td>
 												<td>${major.average}</td>
 											</tr>
 											</c:forEach>
@@ -132,7 +132,7 @@
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
-												<td>${major.category.name}</td>
+												<td>${major.fCategory}</td>
 												<td>${major.average}</td>
 											</tr>
 											</c:forEach>
@@ -183,7 +183,7 @@
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
-												<td>${major.category.name}</td>
+												<td>${major.fCategory}</td>
 												<td>${major.average}</td>
 											</tr>
 											</c:forEach>

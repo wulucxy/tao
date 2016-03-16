@@ -1,0 +1,12 @@
+<% if (favorites.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+
+<li>
+	<div class="btnsRow">
+		<% for (var i = 0; i < favorites.length; i++) { %>
+		<span class="btn btn-primary"><%= favorites[i].major.majorName %></span>
+		<% } %>
+	</div>
+</li>
+<% } %>

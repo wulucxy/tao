@@ -22,43 +22,6 @@
 				<div class="schoolListWrap">
 					<ul class="schoolList">
 						
-						<c:choose>
-						<c:when test="${colleges == null}">
-					   		<li class="no_transList"><i class="noListIcon"></i><em class="vm g9">暂无记录</em></li>
-						</c:when>
-						<c:otherwise>
-						<c:forEach var="list" items="${colleges}">
-						   <li class="clearfix">
-								<div class="fl">
-								<h4 class="name badgeRow"><em class="badgetitle vm">${list.collegeName}</em>
-									<c:forEach var="feature" items="${list.feature}">
-									<c:choose>
-										<c:when test="${feature.type == 1}">
-											<span class="badge green">${feature.name}</span>
-										</c:when>
-										<c:when test="${feature.type == 2}">
-											<span class="badge red">${feature.name}</span>
-										</c:when>
-										<c:otherwise>
-											<span class="badge">${feature.name}</span>
-										</c:otherwise>
-									</c:choose>
-									</c:forEach>
-								</h4>
-								<div class="detail">
-									<span class="label">院校属地：</span><span class="field">${list.city.name}</span>
-									<span class="label">院校分类：</span><span class="field">${list.collegeType.name}</span>
-									<span class="label">院校性质：</span><span class="field">${list.ownerType.name}</span>
-									<span class="label">院校层次：</span><span class="field">${list.level.name}</span>
-								</div>
-								</div>
-								<div class="fr">
-									<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-								</div>
-							</li>
-						</c:forEach>
-						</c:otherwise>
-						</c:choose>
 					</ul>
 					
 				</div>
