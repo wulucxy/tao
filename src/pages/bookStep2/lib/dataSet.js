@@ -208,7 +208,7 @@ var dataSet = {
 
         $("#next").on("click",function(e){
             e.preventDefault();
-            var btn = $(e.target);
+            var btn = $(e.target).closest(".btn");
             if(btn.hasClass("disabled")) return;
             btn.addClass("disabled");
 
@@ -225,8 +225,6 @@ var dataSet = {
                 "code" : $(el).data("code")
             };
         });
-
-        console.log(c);
 
         var _data = {
             c : c

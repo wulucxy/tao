@@ -37,7 +37,7 @@
 					</div>
 				</h3>
 
-				<div class="bg bg-e8 mb20 lh42 tc">结&nbsp;&nbsp;果</div>
+				<div class="bg bg-blue mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
 					
 					<section class="caseSection">

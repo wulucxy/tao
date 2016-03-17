@@ -19738,7 +19738,9 @@
 	((__t = ( score )) == null ? '' : __t) +
 	'</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix inline">\n  <label for="score" class="control-label column col1 fl">\n    <i class="icon-location icon-rank"></i>\n    <em class="vm">全省排名：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
 	((__t = ( place )) == null ? '' : __t) +
-	'名</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
+	'名</span>\n    </div>\n  </div>\n</div>\n\n';
+	 if(majorList.length) { ;
+	__p += '\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 for (var i = 0; i < majorList.length; i++) { ;
 	__p += '\n      <label for="majorId_' +
 	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
@@ -19748,7 +19750,11 @@
 	((__t = ( majorList[i].majorName )) == null ? '' : __t) +
 	'</em>\n      </label>\n      ';
 	 } ;
-	__p += '\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
+	__p += '\n    </div>\n  </div>\n</div>\n';
+	 } ;
+	__p += '\n\n';
+	 if(c.length) { ;
+	__p += '\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 for (var i = 0; i < c.length; i++) { ;
 	__p += '\n      <label for="city_' +
 	((__t = ( c[i].code )) == null ? '' : __t) +
@@ -19758,7 +19764,9 @@
 	((__t = ( c[i].name )) == null ? '' : __t) +
 	'</em>\n      </label>\n      ';
 	 } ;
-	__p += '\n    </div>\n  </div>\n</div>\n\n</form>\n</div>';
+	__p += '\n    </div>\n  </div>\n</div>\n';
+	 } ;
+	__p += '\n\n</form>\n</div>';
 	
 	}
 	return __p

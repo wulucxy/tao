@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/score.4df001c3.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/score.a4085b22.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -28,7 +28,7 @@
 			
 			<div class="formWrap">
 				
-				<div id="charts">123</div>
+				<div id="charts"></div>
 				
 				<div class="recommend f15 tc">
 					

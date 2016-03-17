@@ -61,8 +61,7 @@
 							 	<a class="btn btn-positive btn-primary btn-form" href="/box/plan/book_step2">
 			                        <em class="subTxt">上一步</em>
 			                    </a>
-			                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">
-			                        <em class="subTxt">确定</em>
+			                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">下一步
 			                    </button>
                   			</div>
 

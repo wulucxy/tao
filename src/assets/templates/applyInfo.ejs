@@ -98,6 +98,7 @@
   </div>
 </div>
 
+<% if(majorList.length) { %>
 <div class="row clearfix">
   <label for="courseType" class="control-label column col1 fl">
     <i class="icon-location icon-hat"></i>
@@ -114,7 +115,9 @@
     </div>
   </div>
 </div>
+<% } %>
 
+<% if(c.length) { %>
 <div class="row clearfix">
   <label for="courseType" class="control-label column col1 fl">
     <i class="icon-location icon-street"></i>
@@ -131,6 +134,7 @@
     </div>
   </div>
 </div>
+<% } %>
 
 </form>
 </div>

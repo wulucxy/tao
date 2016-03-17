@@ -203,7 +203,7 @@
 	                        <em class="subTxt">返回修改</em>
 	                    </a>
 	                    <button class="btn btn-positive btn-form" id="nBtn" type="submit">
-	                        <em class="subTxt">确定</em>
+	                        <em class="subTxt">提交</em>
 	                    </button>
           			</div>
 				</div>	

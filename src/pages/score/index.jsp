@@ -28,7 +28,7 @@
 			
 			<div class="formWrap">
 				
-				<div id="charts">123</div>
+				<div id="charts"></div>
 				
 				<div class="recommend f15 tc">
 					
