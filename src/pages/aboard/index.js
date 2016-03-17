@@ -124,7 +124,7 @@ var aboard = {
 
             },
             error : function(err){
-                console.log($.parseJSON(err.responseTxt).msg);
+                console.log($.parseJSON(err.responseText).msg);
             }
 		});
 	},
@@ -184,7 +184,7 @@ var aboard = {
 		      }
 		    },
 		    error : function(res){
-		       common.showError($('.errTxt'),$.parseJSON(err.responseTxt).msg || "网络错误,请稍后重试");
+		       common.showError($('.errTxt'),$.parseJSON(err.responseText).msg || "网络错误,请稍后重试");
 		    }
 		})
 	}

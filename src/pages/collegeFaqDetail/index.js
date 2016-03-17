@@ -68,7 +68,7 @@ var faq = {
 				that.loadList(res,that.pager);
 			},
 			error : function(err){
-				warn($.parseJSON(err.responseTxt).msg || "网络请求出错")
+				warn($.parseJSON(err.responseText).msg || "网络请求出错")
 				$(".qaListWrap").removeClass("preloading");
 			}
 		});
@@ -164,7 +164,7 @@ var faq = {
 		      }
 		    },
 		    error : function(err){
-		       common.showError($('.errTxt'),$.parseJSON(err.responseTxt).msg || "网络错误,请稍后重试");
+		       common.showError($('.errTxt'),$.parseJSON(err.responseText).msg || "网络错误,请稍后重试");
 		    }
 		});
 	}

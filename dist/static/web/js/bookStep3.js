@@ -68,7 +68,7 @@ webpackJsonp([6],{
 	
 				},
 				error : function(err){
-					warn($.parseJSON(err.responseTxt).msg);
+					warn($.parseJSON(err.responseText).msg);
 					return;
 				}
 			});
@@ -166,7 +166,7 @@ webpackJsonp([6],{
 	            },
 	            error : function(err){
 	            	btn.removeClass("disabled");
-	                warn($.parseJSON(err.responseTxt).msg || "网络错误，请稍后重试");;
+	                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
 	            }
 			})
 		},

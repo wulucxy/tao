@@ -89,7 +89,7 @@ webpackJsonp([31],[
 	            },
 	            error : function(err){
 	            	btn.removeClass("disabled");
-	                warn($.parseJSON(err.responseTxt).msg || "网络错误，请稍后重试");
+	                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 	            }
 			});
 	

@@ -367,7 +367,8 @@ webpackJsonp([17],{
 	
 	        },
 	        error : function(err){
-	            console.log($.parseJSON(err.responseTxt));
+	            console.log(err);
+	            console.log($.parseJSON(err.responseText));
 	        }
 	    });
 	  },
@@ -628,6 +629,12 @@ webpackJsonp([17],{
 	       return !!(ele.name && ele.code);
 	    });
 	
+	    //只要有大学选中那么也必须选择专业
+	    var zhiyuanMajorStatus = that.state.zhiyuanList.some(function(ele,idx){
+	      var idx = ele.type - 1;
+	      return !!(ele.name && ele.code && that.state.selected[idx].list.length);
+	    });
+	
 	    //有专业选中
 	    var selectedStatus = that.state.selected.some(function(ele,idx){
 	      var type = ele.type;
@@ -636,10 +643,13 @@ webpackJsonp([17],{
 	
 	
 	    if(!zhiyuanStatus){
-	      warn("至少选中一个志愿院校");
+	      warn("请至少选择一所志愿院校");
+	      return false;
+	    }else if(zhiyuanMajorStatus){
+	      warn("请确保每所学校至少选择一个专业");
 	      return false;
 	    }else if(!selectedStatus){
-	      warn("至少选中一个志愿院校对应的专业");
+	      warn("请至少选择一个志愿院校对应的专业");
 	      return false;
 	    }
 	
@@ -680,7 +690,7 @@ webpackJsonp([17],{
 	          }
 	      },
 	      error : function(err){
-	          warn($.parseJSON(err.responseTxt).msg || "网络错误，请稍后重试");;
+	          warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
 	      }
 	    });
 	  });
