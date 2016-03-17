@@ -3,42 +3,23 @@
 <% }else{ %>
 <% for (var i = 0; i < questions.length; i++) { %>
 <li class="q-school">
-			<h3 class="blue"><%= questions[i].college.collegeName %></h3>
-			<div class="s-faq">
-				<div class="q media">
-					<span class="fl blue">问：</span>
-					<div class="media-body">
-						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-						<div class="badges">
-							<span class="badge">浙江考生</span><span class="badge">2015</span>
-						</div>
-					</div>
-				</div>
-				<div class="a media">
-					<span class="fl orange">答：</span>
-					<div class="media-body">
-						软件工程
+		<h3 class="blue"><%= questions[i].college.collegeName %></h3>
+		<div class="s-faq">
+			<div class="q media">
+				<span class="fl blue">问：</span>
+				<div class="media-body">
+					<p><%= questions[i].q %></p>
+					<div class="badges">
+						<span class="badge"><%= questions[i].province %>考生</span><span class="badge"><%= questions[i].year %></span>
 					</div>
 				</div>
 			</div>
-
-			<div class="s-faq">
-				<div class="q media">
-					<span class="fl blue">问：</span>
-					<div class="media-body">
-						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-						<div class="badges">
-							<span class="badge">浙江考生</span><span class="badge">2015</span>
-						</div>
-					</div>
-				</div>
-				<div class="a media">
-					<span class="fl orange">答：</span>
-					<div class="media-body">
-						软件工程
-					</div>
+			<div class="a media">
+				<span class="fl orange">答：</span>
+				<div class="media-body">
+					<%= questions[i].a %>
 				</div>
 			</div>
-
-		</li>
+		</div>
+</li>
 <% }} %>

@@ -3,8 +3,6 @@ require('../../assets/less/common.less');
 require('./index.less');
 var $ = window.$ || require("jquery");
 
-console.log($);
-
 //工具类方法
 var util = require("../../assets/components/util");
 
@@ -79,7 +77,7 @@ collection.init();
 qa.init({
 	url : "/v2/client/"+provinceId +"/profile/qa",
 	type : "get",
-	ele : "#historyWrapper"
+	ele : "#qschoolList"
 });
 
 //图片上传

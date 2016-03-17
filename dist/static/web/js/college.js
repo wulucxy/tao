@@ -1989,7 +1989,6 @@ webpackJsonp([8],{
 		getFeatureName : function(code){
 			var that = this;
 			var name;
-			console.log(code);
 			$.each(that.feature,function(idx,ele){
 				if(ele.code == code){
 					name = ele.name;

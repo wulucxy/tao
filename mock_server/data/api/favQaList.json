@@ -1,0 +1,24 @@
+[
+    {
+        "time":14324324,
+        "questionId":"问答id",
+        "q":"问题",
+        "a":"答案",
+        "college":
+        {
+            "collegeId":"1",             
+            "collegeName":"清华大学"    
+        }
+    },
+    {
+        "time":14324324,
+        "questionId":"问答id",
+        "q":"问题",
+        "a":"答案",
+        "college":
+        {
+            "collegeId":"1",             
+            "collegeName":"清华大学"   
+        }
+    }
+]

@@ -7,7 +7,7 @@
 </div>
 <div class="content">
 	
-	<ul class="qschoolList">
+	<ul class="qschoolList" id="qschoolList">
 		<li class="q-school">
 			
 			<h3 class="blue">浙江大学</h3>

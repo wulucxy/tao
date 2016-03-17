@@ -23,11 +23,17 @@
 		<!-- 保存userName属性 -->
 		<input type="hidden" name="userName" value="${user.userName}">
 
+		<!-- 保存orderId属性 -->
+		<input type="hidden" name="orderId" value="${orderId}">
+
+		<!-- 保存orderId属性 -->
+		<input type="hidden" name="planId" value="${planId}">
+
 		<div class="container bookContainer">
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高考方案定制
+						高考志愿评估
 						<em class="underLine"></em>	
 					</span>
 					<div class="fr f16 g6">
@@ -40,14 +46,14 @@
 				<div class="bg bg-blue mb20 lh42 tc">支&nbsp;&nbsp;付</div>
 				<div class="formWrap">
 					<div class="payContent f18">
-					<p class="txts">本次方案定制将提供给您合适你的“冲”、“平”、“保”推荐志愿院校各3个，每所院校推荐专业若干，并提供对应的历史数据。</p>
+					<p class="txts">${planDes}</p>
 					<form action="#" onsubmit="return false" autocomplete="off" id="payForm" class="g4">
 						<div class="media">
 							<span class="control-label column col1 fl">
 								支付金额:	
 							</span>
 							<div class="col2 txtWrap rel media-body">
-								<span class="blue f26">49</span>元
+								<span class="blue f26">${price}</span>元
 							</div>
 						</div>
 						<div class="media">
@@ -57,14 +63,14 @@
 							<div class="col2 radioWrap rel media-body">
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="alipay_pc_direct" checked>
 									<i class="payIcon zhifubao"></i>
 									<em>支付宝</em>
 									</label>
 								</div>
 								<div class="row">
 									<label>
-									<input type="radio" name="zhifubao" value="1">
+									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
 									<em>支付卡</em>
 									<span class="inputWrap dib">

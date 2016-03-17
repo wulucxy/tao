@@ -8,8 +8,6 @@ webpackJsonp([35],{
 	__webpack_require__(367);
 	var $ = window.$ || __webpack_require__(36);
 	
-	console.log($);
-	
 	//工具类方法
 	var util = __webpack_require__(37);
 	
@@ -84,7 +82,7 @@ webpackJsonp([35],{
 	qa.init({
 		url : "/v2/client/"+provinceId +"/profile/qa",
 		type : "get",
-		ele : "#historyWrapper"
+		ele : "#qschoolList"
 	});
 	
 	//图片上传
@@ -1767,7 +1765,6 @@ webpackJsonp([35],{
 		getFeatureName : function(code){
 			var that = this;
 			var name;
-			console.log(code);
 			$.each(that.feature,function(idx,ele){
 				if(ele.code == code){
 					name = ele.name;
@@ -2664,9 +2661,17 @@ webpackJsonp([35],{
 	 }else{ ;
 	__p += '\n';
 	 for (var i = 0; i < questions.length; i++) { ;
-	__p += '\n<li class="q-school">\n			<h3 class="blue">' +
+	__p += '\n<li class="q-school">\n		<h3 class="blue">' +
 	((__t = ( questions[i].college.collegeName )) == null ? '' : __t) +
-	'</h3>\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n		</li>\n';
+	'</h3>\n		<div class="s-faq">\n			<div class="q media">\n				<span class="fl blue">问：</span>\n				<div class="media-body">\n					<p>' +
+	((__t = ( questions[i].q )) == null ? '' : __t) +
+	'</p>\n					<div class="badges">\n						<span class="badge">' +
+	((__t = ( questions[i].province )) == null ? '' : __t) +
+	'考生</span><span class="badge">' +
+	((__t = ( questions[i].year )) == null ? '' : __t) +
+	'</span>\n					</div>\n				</div>\n			</div>\n			<div class="a media">\n				<span class="fl orange">答：</span>\n				<div class="media-body">\n					' +
+	((__t = ( questions[i].a )) == null ? '' : __t) +
+	'\n				</div>\n			</div>\n		</div>\n</li>\n';
 	 }} ;
 	
 	
