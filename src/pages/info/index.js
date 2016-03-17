@@ -49,8 +49,9 @@ var info = {
 
 				that.loadList(res,that.pager);
 			},
-			error : function(){
-				$(".infoListWrap").removeClass("preloading");
+			error : function(err){
+				//$(".infoListWrap").removeClass("preloading");
+				warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 			}
 		});
 	},

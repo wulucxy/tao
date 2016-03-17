@@ -5,7 +5,7 @@ webpackJsonp([32],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(353);
+	__webpack_require__(354);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -14,7 +14,7 @@ webpackJsonp([32],{
 	//公共方法
 	var common = __webpack_require__(38);
 	
-	var searchSchool = __webpack_require__(356);
+	var searchSchool = __webpack_require__(357);
 	
 	__webpack_require__(53);
 	
@@ -303,23 +303,23 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 353:
+/***/ 354:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 356:
+/***/ 357:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	__webpack_require__(357);
+	__webpack_require__(358);
 	//自定义功能写下面
-	var tmpl_school = __webpack_require__(359);
-	var tmpl_list = __webpack_require__(360);
+	var tmpl_school = __webpack_require__(360);
+	var tmpl_list = __webpack_require__(361);
 	
 	//分页
 	var pagination = __webpack_require__(172);
@@ -444,14 +444,14 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 357:
+/***/ 358:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 359:
+/***/ 360:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -466,7 +466,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 360:
+/***/ 361:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

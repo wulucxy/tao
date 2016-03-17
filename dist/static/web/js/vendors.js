@@ -18970,7 +18970,7 @@
 	             }
 	            },
 	            error : function(err){
-	            	warn(JSON.stringify(err) || "短信发送失败，请稍后重试");
+	            	warn($.parseJSON(err.responseText).msg || "短信发送失败，请稍后重试");
 	            }
 	        });
 		}

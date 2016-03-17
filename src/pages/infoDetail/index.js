@@ -39,7 +39,7 @@ function updown(btn,type){
 		warn(warnTxt);
 		return;
 	}
-	btn.addClass("active");
+	
 	var _url = (type == 1 ? "/news/up" : "/news/down");
 
 	$.ajax({
@@ -52,6 +52,8 @@ function updown(btn,type){
 				var res = $.parseJSON(res);
 			};
 
+			btn.addClass("active");
+
 			if(type == 1){
 				$("#upCount").text(Number($("#upCount").text())+1);
 			}else if(type==2){
@@ -59,6 +61,9 @@ function updown(btn,type){
 			}
 
 			btn.attr("btn-type",1);
+		},
+		error : function(err){
+			warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 		}
 	});
 }

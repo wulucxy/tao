@@ -5,7 +5,7 @@ webpackJsonp([29],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(213);
+	__webpack_require__(214);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -21,7 +21,7 @@ webpackJsonp([29],{
 	var tmpl_Info = __webpack_require__(105);
 	
 	//ping++
-	var ping = __webpack_require__(215);
+	var ping = __webpack_require__(216);
 	
 	var provinceId = $("[name=province]").val();
 	var planId = $("[name=planId]").val();
@@ -35,8 +35,8 @@ webpackJsonp([29],{
 		transformData : function(){
 			var that = this;
 			var _data = {
-				// majorList : $.parseJSON($("[name=majorList]").text()),
-				// c :  $.parseJSON($("[name=c]").text()),
+				majorList : [],
+				c :  [],
 				batch : $("[name=batch]").text(),
 				courseType : $("[name=courseType]").text(),
 				score : $("[name=score]").text(),
@@ -144,14 +144,14 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 213:
+/***/ 214:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 215:
+/***/ 216:
 /***/ function(module, exports) {
 
 	var

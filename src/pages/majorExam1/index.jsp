@@ -40,7 +40,7 @@
 					<div class="footerCnt">
 						<div class="row btnRow">
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
-		                        <em class="subTxt">开始测试</em>
+		                        <em class="subTxt">填写授权码，并开始测试</em>
 		                    </a>
 		      			</div>
 					</div>

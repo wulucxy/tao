@@ -472,6 +472,23 @@ var school = {
       that.state.selected[that.modal.majorType-1].list = [];
       that.state.cityList[that.modal.majorType-1].list = [];
 
+      //不能同时选择同一所学校判断
+      var repeat = false;
+      $.each(that.state.zhiyuanList,function(idx,ele){
+        var code = $this.attr("code");
+        var name = $this.attr("name");
+
+        if(ele.code == code && ele.name == name){
+          warn("请勿重复选择该学校");
+          repeat = true;
+          return false;
+        }else{
+          repeat = false;
+        }
+      });
+
+      if(repeat) return;
+
       $.each(that.state.zhiyuanList,function(idx,ele){
         if(that.modal.majorType == ele.type){
           //保存志愿信息
@@ -609,8 +626,6 @@ var school = {
       that.state.zhiyuanList[type-1].name = "";
       that.state.zhiyuanList[type-1].code = "";
 
-      console.log(that.state.selected);
-
       that.render(type-1);
 
     });
@@ -627,7 +642,12 @@ var school = {
     //只要有大学选中那么也必须选择专业
     var zhiyuanMajorStatus = that.state.zhiyuanList.some(function(ele,idx){
       var idx = ele.type - 1;
-      return !!(ele.name && ele.code && that.state.selected[idx].list.length);
+      if(ele.name && ele.code){
+        return !!(that.state.selected[idx].list.length);
+      }else{
+        return true;
+      }
+      
     });
 
     //有专业选中
@@ -637,10 +657,12 @@ var school = {
     });
 
 
+
+
     if(!zhiyuanStatus){
       warn("请至少选择一所志愿院校");
       return false;
-    }else if(zhiyuanMajorStatus){
+    }else if(!zhiyuanMajorStatus){
       warn("请确保每所学校至少选择一个专业");
       return false;
     }else if(!selectedStatus){

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
+</head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -40,7 +40,7 @@
 					<div class="footerCnt">
 						<div class="row btnRow">
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
-		                        <em class="subTxt">开始测试</em>
+		                        <em class="subTxt">填写授权码，并开始测试</em>
 		                    </a>
 		      			</div>
 					</div>

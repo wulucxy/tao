@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
+</head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -145,7 +145,7 @@
 				    <em class="vm">高考分数：</em></label>
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap lh34">
-				      <span>${score}</span>
+				      <span>${score}分</span>
 				      <input type="hidden" name="score" value="${score}">
 				    </div>
 				  </div>

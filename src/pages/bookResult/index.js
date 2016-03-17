@@ -23,8 +23,8 @@ $(".toggle").on("click",function(e){
 
 function transformData(){
 	var _data = {
-		// majorList : $.parseJSON($("[name=majorList]").text()),
-		// c :  $.parseJSON($("[name=c]").text()),
+		majorList : [],
+		c :  [],
 		batch : $("[name=batch]").text(),
 		courseType : $("[name=courseType]").text(),
 		score : $("[name=score]").text(),

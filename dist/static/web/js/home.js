@@ -16,11 +16,11 @@ webpackJsonp([21],{
 	
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(185);
+	var slider = __webpack_require__(186);
 	slider($("#bannerShow"));
 	
 	
-	var carousel = __webpack_require__(186);
+	var carousel = __webpack_require__(187);
 	
 	carousel.init();
 
@@ -33,7 +33,7 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 185:
+/***/ 186:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -163,7 +163,7 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 186:
+/***/ 187:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

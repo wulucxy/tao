@@ -37,7 +37,7 @@ if(answer.length == allItems){
 }
 
 function resetTest(){
-	$("#goProTest").text("开始测试");
+	$("#goProTest").text("填写授权码，并开始测试");
 	$("#goProTest").on("click",function(e){
 		e.preventDefault();
 		var btn = $(e.target);

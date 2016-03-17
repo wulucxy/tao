@@ -32,7 +32,18 @@
 				   </li>
 				</c:forEach>
 			 </ul>
-		</div>	
+		</div>
+
+		<div class="enterWrap abs">
+			<a href="/box/plan/book_step1" class="enterLinks book" target="_blank">高考志愿定制</a>
+			<a href="/box/score_management" class="enterLinks score" target="_blank">成绩管理</a>
+			<a href="/box/plan/evaluate_step1" class="enterLinks evaluate" target="_blank">高考志愿评估</a>
+			<a href="/box/plan/aboard" class="enterLinks aboard" target="_blank">留学方案定制</a>
+			<a href="/box/plan/major_exam1" class="enterLinks test" target="_blank">专业选择测试</a>
+			<a href="/box/college_faq" class="enterLinks qa" target="_blank">高校问答</a>
+			<a href="/expertOrder" class="enterLinks expert" target="_blank">志愿填报专家预约</a>
+		</div>
+
 	</section>
 	
 	<section class="s-slogan">
@@ -77,9 +88,20 @@
 		<div class="collegeWrap container ovh">
 		<ul class="collegeList clearfix">
 			<c:forEach var="list" items="${collegeList}">
-				<li class="college"><a href="${list.href}" target="_blank">
-					<img src="${list.imgUrl}" class="responsive">
-				</a></li>
+				<li class="college">
+					<c:choose>
+				    <c:when test="${list.href != null}">
+				   		<a href="${list.href}" target="_blank">
+							<img src="${list.imgUrl}" class="responsive">
+						</a>
+					</c:when>
+					<c:otherwise>
+						<a href="javascript:;">
+							<img src="${list.imgUrl}" class="responsive">
+						</a>
+					</c:otherwise>
+				   </c:choose>
+				</li>
 			</c:forEach>
 		</ul>
 		</div>
@@ -348,7 +370,7 @@
 						</h3>
 						
 						<div class="coopLists">
-							<a class="imgWrap coop tc" target="_blank" href="//www.strong-study.com/">
+							<a class="imgWrap coop tc" target="_blank" href="javascript:;">
 								<img src="./img/nee.png" class="responsive">
 							</a>
 

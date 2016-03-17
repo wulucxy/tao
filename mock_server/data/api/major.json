@@ -1,3 +1,10 @@
 [
-    
+     {
+        "majorId":"1",  
+        "majorName":"专业1"
+    },
+    {
+        "majorId":"2", 
+        "majorName":"专业2"
+    }
 ]

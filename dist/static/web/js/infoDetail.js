@@ -5,7 +5,7 @@ webpackJsonp([23],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(191);
+	__webpack_require__(192);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,7 +16,7 @@ webpackJsonp([23],{
 	
 	
 	//自定义功能写下面
-	__webpack_require__(193);
+	__webpack_require__(194);
 	var province = $("[name=province]").val();
 	var newsId = $("[name=newsId]").val();
 	
@@ -44,7 +44,7 @@ webpackJsonp([23],{
 			warn(warnTxt);
 			return;
 		}
-		btn.addClass("active");
+		
 		var _url = (type == 1 ? "/news/up" : "/news/down");
 	
 		$.ajax({
@@ -57,6 +57,8 @@ webpackJsonp([23],{
 					var res = $.parseJSON(res);
 				};
 	
+				btn.addClass("active");
+	
 				if(type == 1){
 					$("#upCount").text(Number($("#upCount").text())+1);
 				}else if(type==2){
@@ -64,20 +66,23 @@ webpackJsonp([23],{
 				}
 	
 				btn.attr("btn-type",1);
+			},
+			error : function(err){
+				warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 			}
 		});
 	}
 
 /***/ },
 
-/***/ 191:
+/***/ 192:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 193:
+/***/ 194:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
