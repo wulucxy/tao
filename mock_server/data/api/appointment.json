@@ -1,0 +1,44 @@
+{
+    "appointments":
+    [
+        {
+            "appointmentId":"",                    
+            "appointmentType":0,                    
+            "createTime":147234234234,             
+            "orderId":"",                           
+            "price":168000,                         
+            "scheduleTime":147234234,             
+            "status":0,         
+            "statusDesc":"",      
+            "content":"",        
+            "param":            
+            {
+                "name":"王xx",
+                "mobile":"133333333",
+                "city":331009,
+                "courseType":0,
+                "score":1
+            }
+        },
+        
+        {
+            "appointmentId":"",                    
+            "appointmentType":0,                    
+            "createTime":147234234234,             
+            "orderId":"",                           
+            "price":168000,                         
+            "scheduleTime":147234234,             
+            "status":0,         
+            "statusDesc":"",      
+            "content":"",        
+            "param":            
+            {
+                "name":"王xx",
+                "mobile":"1333333333",
+                "city":331009,
+                "courseType":0,
+                "score":1
+            }
+        }
+    ]
+}

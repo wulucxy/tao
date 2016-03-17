@@ -31,6 +31,9 @@ var test = require("./js/test");
 //qa模块
 var qa = require("./js/qa");
 
+//qa模块
+var appointment = require("./js/appointment");
+
 //图片上传模块
 //var uploader = require("./js/uploader");
 
@@ -84,6 +87,12 @@ qa.init({
 // uploader.init({
 // 	ele : $("#picker")
 // });
+
+appointment.init({
+	url : "/v2/client/"+provinceId +"/tzy/appointment/all",
+	type : "get",
+	ele : "#bookWrapper"
+})
 
 
 

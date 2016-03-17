@@ -335,7 +335,8 @@ webpackJsonp([8],{
 		__webpack_require__(138),
 		__webpack_require__(139),
 		__webpack_require__(140),
-		__webpack_require__(141)
+		__webpack_require__(141),
+		__webpack_require__(142)
 	);
 
 /***/ },
@@ -1981,6 +1982,38 @@ webpackJsonp([8],{
 /***/ },
 
 /***/ 141:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
+	
+	module.exports =  {
+		getCourseTypeName : function(code){
+			var that = this;
+			var name;
+			$.each(that.courseType,function(idx,ele){
+				if(ele.code == code){
+					name = ele.name;
+					return false;
+				}
+			});
+	
+			return name;
+		},
+		"courseType": [
+	        {
+	            "code": 0,
+	            "name": "理科"
+	        },
+	        {
+	            "code": 1,
+	            "name": "文科"
+	        }
+	    ]
+	};
+
+/***/ },
+
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

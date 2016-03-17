@@ -5,7 +5,7 @@ webpackJsonp([35],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(367);
+	__webpack_require__(368);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,25 +16,28 @@ webpackJsonp([35],{
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(145);
+	var tabs = __webpack_require__(146);
 	//加载更多模块
-	var loadMore = __webpack_require__(188);
+	var loadMore = __webpack_require__(189);
 	
 	
 	//历史模块
-	var archive = __webpack_require__(369);
+	var archive = __webpack_require__(370);
 	
 	//历史模块
-	var history = __webpack_require__(370);
+	var history = __webpack_require__(371);
 	
 	//收藏模块
-	var collection = __webpack_require__(372);
+	var collection = __webpack_require__(373);
 	
 	//历史测试模块
-	var test = __webpack_require__(376);
+	var test = __webpack_require__(377);
 	
 	//qa模块
-	var qa = __webpack_require__(378);
+	var qa = __webpack_require__(379);
+	
+	//qa模块
+	var appointment = __webpack_require__(381);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -90,6 +93,12 @@ webpackJsonp([35],{
 	// 	ele : $("#picker")
 	// });
 	
+	appointment.init({
+		url : "/v2/client/"+provinceId +"/tzy/appointment/all",
+		type : "get",
+		ele : "#bookWrapper"
+	})
+	
 	
 	
 	
@@ -111,7 +120,8 @@ webpackJsonp([35],{
 		__webpack_require__(138),
 		__webpack_require__(139),
 		__webpack_require__(140),
-		__webpack_require__(141)
+		__webpack_require__(141),
+		__webpack_require__(142)
 	);
 
 /***/ },
@@ -1762,6 +1772,38 @@ webpackJsonp([35],{
 	var $ = window.$ || __webpack_require__(36);
 	
 	module.exports =  {
+		getCourseTypeName : function(code){
+			var that = this;
+			var name;
+			$.each(that.courseType,function(idx,ele){
+				if(ele.code == code){
+					name = ele.name;
+					return false;
+				}
+			});
+	
+			return name;
+		},
+		"courseType": [
+	        {
+	            "code": 0,
+	            "name": "理科"
+	        },
+	        {
+	            "code": 1,
+	            "name": "文科"
+	        }
+	    ]
+	};
+
+/***/ },
+
+/***/ 142:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
+	
+	module.exports =  {
 		getFeatureName : function(code){
 			var that = this;
 			var name;
@@ -1792,7 +1834,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 145:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1864,7 +1906,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 188:
+/***/ 189:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1968,14 +2010,14 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 367:
+/***/ 368:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 369:
+/***/ 370:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -2013,13 +2055,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 370:
+/***/ 371:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(371);
+	var tmpl = __webpack_require__(372);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -2126,7 +2168,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 371:
+/***/ 372:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2192,18 +2234,18 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 372:
+/***/ 373:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var tabs = __webpack_require__(145);
+	var tabs = __webpack_require__(146);
 	
 	//本地数据库
 	var localData = __webpack_require__(135);
 	
-	var tmpl_college = __webpack_require__(373);
-	var tmpl_major = __webpack_require__(374);
-	var tmpl_info = __webpack_require__(375);
+	var tmpl_college = __webpack_require__(374);
+	var tmpl_major = __webpack_require__(375);
+	var tmpl_info = __webpack_require__(376);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -2337,7 +2379,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 373:
+/***/ 374:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2391,7 +2433,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 374:
+/***/ 375:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2421,7 +2463,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 375:
+/***/ 376:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2463,13 +2505,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 376:
+/***/ 377:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(377);
+	var tmpl = __webpack_require__(378);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -2541,7 +2583,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 377:
+/***/ 378:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2571,13 +2613,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 378:
+/***/ 379:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(379);
+	var tmpl = __webpack_require__(380);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -2647,7 +2689,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 379:
+/***/ 380:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2672,6 +2714,161 @@ webpackJsonp([35],{
 	'</span>\n					</div>\n				</div>\n			</div>\n			<div class="a media">\n				<span class="fl orange">答：</span>\n				<div class="media-body">\n					' +
 	((__t = ( questions[i].a )) == null ? '' : __t) +
 	'\n				</div>\n			</div>\n		</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 381:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
+	
+	var tmpl = __webpack_require__(382);
+	
+	//公共方法
+	var util = __webpack_require__(37);
+	
+	//本地数据库
+	var localData = __webpack_require__(135);
+	
+	module.exports = {
+		init : function(o){
+			// 分页默认从第1页开始
+	    	this.pager = 1;
+	    	this.tmpl = tmpl;
+	
+	
+	    	this.options = extend({
+	
+	    	},o);
+	
+	    	this.target = $(o.ele);
+	
+			this.bindEvt();
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			
+	
+			that.fetch.call(that);
+		},
+	
+		fetch : function(){
+			var that = this,o = that.options,$this = that.target;
+	
+			var parm = [];
+	
+			$.ajax({
+				url : o.url,
+				type : o.type,
+				contentType: "application/json",
+				success : function(res){
+					if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	                
+	                if(!res.appointments.length) return;
+	
+	                 $.each(res.appointments,function(idx,ele){
+	                	//获取city名称
+	                    ele.param = extend(ele.param,{
+	                    	cityName : localData.getCityName(ele.param.city),
+	                    	courseTypeName : localData.getCourseTypeName(ele.param.courseType)
+	                    });
+	
+	                    ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd hh:mm:ss");
+	
+	                });
+	
+	                that.insertData.call(that,res);
+				}
+			});
+		},
+	
+		renderData : function(res){
+			var that = this;
+			console.log(res);
+			return that.tmpl(res);
+		},
+	
+		insertData : function(res){
+			var that = this,$this = that.target,o = that.options;
+	
+			var _html = that.renderData(res);
+			if(that.pager == 1){
+				$this.empty().append(_html);
+			}else{
+				$this.append(_html);
+			}
+		}
+	};
+
+/***/ },
+
+/***/ 382:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (appointments.length == 0) { ;
+	__p += '\n	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < appointments.length; i++) { ;
+	__p += '\n<div class="well clearfix" >\n	<div class="media fl">\n		<div class="span fl">\n			';
+	 if(appointments[i].status == 0) { ;
+	__p += '\n				<span class="btn btn-primary">待审核</span>\n			';
+	 }else if(appointments[i].status == 1) { ;
+	__p += '\n				<span class="btn btn-green">待受理</span>\n			';
+	 }else if(appointments[i].status == 2) { ;
+	__p += '\n				<span class="btn btn-red">已受理</span>\n			';
+	 }else if(appointments[i].status == 3) { ;
+	__p += '\n				';
+	 if(appointments[i].statusDesc) { ;
+	__p += '\n				span class="btn btn-gray btn-lines">已关闭\n					<span class="f12 db">(' +
+	((__t = ( appointments[i].statusDesc )) == null ? '' : __t) +
+	')</span>\n				</span>\n				';
+	 }else{ ;
+	__p += '\n					<span class="btn btn-tray">已关闭</span>\n				';
+	 } ;
+	__p += '\n			';
+	 }else if(appointments[i].status == 4) { ;
+	__p += '\n				<span class="btn btn-green">代付款</span>\n			';
+	 }else if(appointments[i].status == 5) { ;
+	__p += '\n				<span class="btn btn-gray">已取消</span>\n			';
+	 } ;
+	__p += '\n		</div>\n		<div class="media-body g3 well_body">\n			<p>\n				<span>' +
+	((__t = ( appointments[i].param.name )) == null ? '' : __t) +
+	'</span>\n				<span>' +
+	((__t = ( appointments[i].param.cityName )) == null ? '' : __t) +
+	'</span><span>' +
+	((__t = ( appointments[i].param.mobile )) == null ? '' : __t) +
+	'</span>\n				<span>' +
+	((__t = ( appointments[i].param.courseTypeName )) == null ? '' : __t) +
+	'</span><span>' +
+	((__t = ( appointments[i].param.score )) == null ? '' : __t) +
+	'</span>\n				';
+	 if(appointments[i].appointmentType == 0) { ;
+	__p += '\n					<span>专家面对面服务</span>\n				';
+	 }else if(appointments[i].appointmentType == 1) { ;
+	__p += '\n					<span>专家在线服务</span>\n				';
+	 } ;
+	__p += '\n			</p>\n			<p>\n				' +
+	((__t = ( appointments[i].scheduleTime )) == null ? '' : __t) +
+	'\n			</p>\n		</div>\n	</div>\n	<div class="detailInfo fr">\n		<span class="moment">' +
+	((__t = ( appointments[i].createTime )) == null ? '' : __t) +
+	'</span>\n	</div>\n</div>\n';
 	 }} ;
 	
 	

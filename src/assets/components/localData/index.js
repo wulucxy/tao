@@ -6,5 +6,6 @@ module.exports = extend(
 	require('./lib/collegeType'),
 	require('./lib/level'),
 	require('./lib/ownerType'),
+	require('./lib/courseType'),
 	require('./lib/feature')
 );

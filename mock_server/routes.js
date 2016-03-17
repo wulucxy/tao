@@ -78,5 +78,6 @@ module.exports = {
 	'/v2/client/1/profile/favor/college' : "mock::api/favCollege.json",
 	'/v2/client/1/profile/favor/major' : "mock::api/favMajor.json",
 	'/v2/client/1/profile/favor/news' : "mock::api/favNews.json",
-	'/v2/client/1/profile/qa': "mock::api/favQaList.json"
+	'/v2/client/1/profile/qa': "mock::api/favQaList.json",
+	'/v2/client/1/tzy/appointment/all': "mock::api/appointment.json"
 };
