@@ -11,7 +11,7 @@ var common = require("../../assets/components/common");
 
 //自定义功能写下面
 var tmpl_list = require("./templates/majorList.ejs");
-var tmpl_detail = require("./templates/majorDetail.ejs");
+var tmpl_subMajor = require("./templates/majorDetail.ejs");
 //require("../../assets/components/validator");
 
 //弹窗模板
@@ -63,7 +63,7 @@ var majors = {
 
 			},
 			error : function(err){
-				console.log(err);
+				warn($.parseJSON(err.responseTxt).msg);
 				return;
 			}
 		});
@@ -88,10 +88,13 @@ var majors = {
 		// });
 
 		//checkbox定制
-		$('.label_checkbox').on("click",function(e){
+		$('.label_check').on("click",function(e){
 		  e.stopPropagation();
 		  
 		  var target = $(e.target);
+
+		  console.log(target);
+
 		  if(target.is(".icon-eye")){
 		  	e.preventDefault();
 		  	that.subMajorModal(target);
@@ -197,7 +200,7 @@ var majors = {
 		};
 
 		modalBox( btn, {
-		        html:tmpl_detail(detailData),
+		        html:tmpl_subMajor(detailData),
 		        klass : 'w540 shadow',
 		        closeByOverlay : true,
 		        completeCallback : function(){}

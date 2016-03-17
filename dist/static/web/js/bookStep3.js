@@ -16,7 +16,7 @@ webpackJsonp([6],{
 	
 	//自定义功能写下面
 	var tmpl_list = __webpack_require__(127);
-	var tmpl_detail = __webpack_require__(128);
+	var tmpl_subMajor = __webpack_require__(128);
 	//require("../../assets/components/validator");
 	
 	//弹窗模板
@@ -68,7 +68,7 @@ webpackJsonp([6],{
 	
 				},
 				error : function(err){
-					console.log(err);
+					warn($.parseJSON(err.responseTxt).msg);
 					return;
 				}
 			});
@@ -93,10 +93,13 @@ webpackJsonp([6],{
 			// });
 	
 			//checkbox定制
-			$('.label_checkbox').on("click",function(e){
+			$('.label_check').on("click",function(e){
 			  e.stopPropagation();
 			  
 			  var target = $(e.target);
+	
+			  console.log(target);
+	
 			  if(target.is(".icon-eye")){
 			  	e.preventDefault();
 			  	that.subMajorModal(target);
@@ -202,7 +205,7 @@ webpackJsonp([6],{
 			};
 	
 			modalBox( btn, {
-			        html:tmpl_detail(detailData),
+			        html:tmpl_subMajor(detailData),
 			        klass : 'w540 shadow',
 			        closeByOverlay : true,
 			        completeCallback : function(){}
