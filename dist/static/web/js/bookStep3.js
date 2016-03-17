@@ -163,7 +163,7 @@ webpackJsonp([6],{
 	            },
 	            error : function(err){
 	            	btn.removeClass("disabled");
-	                warn(err || "网络错误，请稍后重试");
+	                warn(err.msg || "网络错误，请稍后重试");;
 	            }
 			})
 		},

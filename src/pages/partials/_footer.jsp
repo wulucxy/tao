@@ -13,7 +13,7 @@
 				<a href="/box/plan/major_exam1" class="links" target="_blank">专业选择测试</a>
 				<a href="/box/plan/evaluate_step1" class="links" target="_blank">高考志愿评估</a>
 				<a href="/box/plan/aboard" class="links" target="_blank">留学方案定制</a>
-				<a href="/box/expert_order" class="links" target="_blank">志愿填报服务预约</a>
+				<a href="/expertOrder" class="links" target="_blank">志愿填报服务预约</a>
 			</div>
 
 		</div>
