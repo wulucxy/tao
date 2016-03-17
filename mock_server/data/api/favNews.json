@@ -1,0 +1,41 @@
+{
+    "favorites":
+    [
+        {
+            "favorId":"",
+            "favorTime":1462324234,
+            "news":
+            {
+                "newsId":"1",               
+                "newsName":"2",             
+                "newsDate":1472342424,     
+                "newsUrl":"4",              
+                "newsIconUrl":"3",         
+                "newsTags":
+                [
+                    "报考指导",
+                    "2017新高考",
+                    "tag n"
+                ]
+            }
+        },
+        {
+            "favorId":"",
+            "favorTime":1462324234,
+            "news":
+            {
+                "newsId":"1",               
+                "newsName":"2",             
+                "newsDate":1472342424,     
+                "newsUrl":"4",              
+                "newsIconUrl":"3",         
+                "newsTags":
+                [
+                    "报考指导",
+                    "2017新高考",
+                    "tag n"
+                ]
+            }
+        }
+    ]
+}

@@ -33,7 +33,10 @@ webpackJsonp([35],{
 	var collection = __webpack_require__(372);
 	
 	//历史测试模块
-	var test = __webpack_require__(374);
+	var test = __webpack_require__(376);
+	
+	//qa模块
+	var qa = __webpack_require__(378);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -56,22 +59,6 @@ webpackJsonp([35],{
 	});
 	
 	
-	//加载更多
-	// $(".load-more-list").each(function(idx,ele){
-	// 	if(idx == 0){
-	// 		loadMore($(ele),{
-	// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-	// 			listAttr : "historyList",
-	// 			type : "get"
-	// 		});
-	// 	}else if(idx == 1){
-	// 		loadMore($(ele),{
-	// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-	// 			listAttr : "codes"
-	// 		});
-	// 	}
-	// });
-	
 	//我的资料
 	archive.init();
 	
@@ -92,6 +79,13 @@ webpackJsonp([35],{
 	
 	//收藏模块调用
 	collection.init();
+	
+	//提问列表
+	qa.init({
+		url : "/v2/client/"+provinceId +"/profile/qa",
+		type : "get",
+		ele : "#historyWrapper"
+	});
 	
 	//图片上传
 	// uploader.init({
@@ -2211,6 +2205,8 @@ webpackJsonp([35],{
 	var localData = __webpack_require__(135);
 	
 	var tmpl_college = __webpack_require__(373);
+	var tmpl_major = __webpack_require__(374);
+	var tmpl_info = __webpack_require__(375);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -2228,8 +2224,8 @@ webpackJsonp([35],{
 		bindEvt : function(){
 			var that = this;
 			this.requestCollege();
-			// this.requestMajor();
-			// this.requestInfo();
+			this.requestMajor();
+			this.requestInfo();
 		},
 	
 		requestCollege : function(){
@@ -2283,8 +2279,6 @@ webpackJsonp([35],{
 	                    });
 	                }); 
 	
-	                console.log(res.favorites);
-	
 	                that.insertCollege.call(that,res);
 				}
 			});
@@ -2294,6 +2288,49 @@ webpackJsonp([35],{
 	        var that = this;
 	        var _html = tmpl_college(data);
 	       $(".schoolList").append(_html);
+	    },
+	    requestMajor : function(){
+	        var that = this;
+	        $.ajax({
+	            url : "/v2/client/"+provinceId+"/profile/favor/major",
+	            type : "get",
+	            contentType: "application/json",
+	            success : function(res){
+	                if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                that.insertMajor.call(that,res);
+	            }
+	        });
+	    },
+	
+	    insertMajor : function(data){
+	        var that = this;
+	        var _html = tmpl_major(data);
+	       $(".majorList").empty().append(_html);
+	    },
+	
+	     requestInfo : function(){
+	        var that = this;
+	        $.ajax({
+	            url : "/v2/client/"+provinceId+"/profile/favor/news",
+	            type : "get",
+	            contentType: "application/json",
+	            success : function(res){
+	                if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                that.insertInfo.call(that,res);
+	            }
+	        });
+	    },
+	
+	    insertInfo : function(data){
+	        var that = this;
+	        var _html = tmpl_info(data);
+	       $(".infoList").empty().append(_html);
 	    }
 	
 	
@@ -2345,7 +2382,9 @@ webpackJsonp([35],{
 	((__t = ( favorites[i].college.ownerType.name )) == null ? '' : __t) +
 	'</span>\n		<span class="label">院校层次：</span><span class="field">' +
 	((__t = ( favorites[i].college.level.name )) == null ? '' : __t) +
-	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="#" class="btn btn-primary btn-mid">查看详情</a>\n	</div>\n</li>\n';
+	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="/library/college/' +
+	((__t = ( favorites[i].college.collegeId )) == null ? '' : __t) +
+	'" class="btn btn-primary btn-mid" target="_blank">查看详情</a>\n	</div>\n</li>\n';
 	 }} ;
 	
 	
@@ -2356,12 +2395,84 @@ webpackJsonp([35],{
 /***/ },
 
 /***/ 374:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (favorites.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '	\n\n<li>\n	<div class="btnsRow">\n		';
+	 for (var i = 0; i < favorites.length; i++) { ;
+	__p += '\n		<a href="/library/major/' +
+	((__t = ( favorites[i].major.majorId )) == null ? '' : __t) +
+	'" class="btn btn-primary" target="_blank">' +
+	((__t = ( favorites[i].major.majorName )) == null ? '' : __t) +
+	'</a>\n		';
+	 } ;
+	__p += '\n	</div>\n</li>\n';
+	 } ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 375:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (favorites.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < favorites.length; i++) { ;
+	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
+	((__t = ( favorites[i].news.newsIconUrl )) == null ? '' : __t) +
+	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
+	((__t = ( favorites[i].news.newsUrl )) == null ? '' : __t) +
+	'" target="_blank">\n					' +
+	((__t = ( favorites[i].news.newsName )) == null ? '' : __t) +
+	'\n				</a>\n				<div class="clearfix detailSub g6">\n					';
+	 for (var k = 0; k < favorites[i].news.newsTags.length; k++) { ;
+	__p += '\n					<span class="fl article-tag mr10">' +
+	((__t = ( favorites[i].news.newsTags[k] )) == null ? '' : __t) +
+	'</span>\n					';
+	 } ;
+	__p += '\n				<span class="fr moment">' +
+	((__t = ( favorites[i].news.newsDate )) == null ? '' : __t) +
+	'</span>\n				</div>\n				<a class="db detailCnt" href="' +
+	((__t = ( favorites[i].news.newsUrl )) == null ? '' : __t) +
+	'" target="_blank">\n					' +
+	((__t = ( favorites[i].news.discription )) == null ? '' : __t) +
+	'\n				</a>\n		</div>\n	</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 376:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(375);
+	var tmpl = __webpack_require__(377);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -2433,7 +2544,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 375:
+/***/ 377:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2454,6 +2565,106 @@ webpackJsonp([35],{
 	'</em></p>\n	</div>\n	<div class="detailInfo fr">\n		<div class="row btnRow"><a href="/box/plan/major_exam3?mtestId=' +
 	((__t = ( codes[i].mtestId )) == null ? '' : __t) +
 	'" target="_blank" class="btn btn-primary btn-medium" targe="_blank">查看</a></div>\n	</div>\n</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 378:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
+	
+	var tmpl = __webpack_require__(379);
+	
+	//公共方法
+	var util = __webpack_require__(37);
+	
+	module.exports = {
+		init : function(o){
+			// 分页默认从第1页开始
+	    	this.pager = 1;
+	    	this.tmpl = tmpl;
+	
+	
+	    	this.options = extend({
+	
+	    	},o);
+	
+	    	this.target = $(o.ele);
+	
+			this.bindEvt();
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			
+	
+			that.fetch.call(that);
+		},
+	
+		fetch : function(){
+			var that = this,o = that.options,$this = that.target;
+	
+			var parm = [];
+	
+			$.ajax({
+				url : o.url,
+				type : o.type,
+				contentType: "application/json",
+				success : function(res){
+					if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                $.each(res.wishes,function(idx,ele){
+	                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
+	                });
+	
+	                that.insertData.call(that,res);
+				}
+			});
+		},
+	
+		renderData : function(res){
+			var that = this;
+			return that.tmpl(res);
+		},
+	
+		insertData : function(res){
+			var that = this,$this = that.target,o = that.options;
+	
+			var _html = that.renderData(res);
+			if(that.pager == 1){
+				$this.empty().append(_html);
+			}else{
+				$this.append(_html);
+			}
+		}
+	};
+
+/***/ },
+
+/***/ 379:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (questions.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < questions.length; i++) { ;
+	__p += '\n<li class="q-school">\n			<h3 class="blue">浙江大学</h3>\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n		</li>\n';
 	 }} ;
 	
 	

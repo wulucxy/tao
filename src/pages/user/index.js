@@ -30,6 +30,9 @@ var collection = require("./js/collection");
 //历史测试模块
 var test = require("./js/test");
 
+//qa模块
+var qa = require("./js/qa");
+
 //图片上传模块
 //var uploader = require("./js/uploader");
 
@@ -51,22 +54,6 @@ $(".userInfoList").on("click","[data-link]",function(e){
 });
 
 
-//加载更多
-// $(".load-more-list").each(function(idx,ele){
-// 	if(idx == 0){
-// 		loadMore($(ele),{
-// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-// 			listAttr : "historyList",
-// 			type : "get"
-// 		});
-// 	}else if(idx == 1){
-// 		loadMore($(ele),{
-// 			tmpl : require("./templates/"+$(ele).data("tmpl")+".ejs"),
-// 			listAttr : "codes"
-// 		});
-// 	}
-// });
-
 //我的资料
 archive.init();
 
@@ -87,6 +74,13 @@ test.init({
 
 //收藏模块调用
 collection.init();
+
+//提问列表
+qa.init({
+	url : "/v2/client/"+provinceId +"/profile/qa",
+	type : "get",
+	ele : "#historyWrapper"
+});
 
 //图片上传
 // uploader.init({

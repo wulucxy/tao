@@ -20,7 +20,7 @@ module.exports = {
 	'/info'   : 'info.jsp',
 	'/infoDetail'   : 'infoDetail.jsp',
 	"/library/major"   : 'major.jsp',
-	"/library/major2"   : 'major_2.jsp',
+	"/library/major/1"   : 'major_2.jsp',
 	"/box/score_management": "score.jsp",
 	"/box/plan/aboard": "aboard.jsp",
 	"/box/plan/aboard_success": "aboardSuccess.jsp",
@@ -76,5 +76,6 @@ module.exports = {
 	'post::/v2/client/1/tzy/plan/assessment/step2':"mock::api/assessStep2.json",
 	'post::/v2/client/1/tzy/plan/assessment/create':"mock::api/assessStep3.json",
 	'/v2/client/1/profile/favor/college' : "mock::api/favCollege.json",
-	'/v2/client/1/profile/favor/major' : "mock::api/favMajor.json"
+	'/v2/client/1/profile/favor/major' : "mock::api/favMajor.json",
+	'/v2/client/1/profile/favor/news' : "mock::api/favNews.json"
 };

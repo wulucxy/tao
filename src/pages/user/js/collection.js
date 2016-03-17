@@ -5,6 +5,8 @@ var tabs = require("../../../assets/components/tabs");
 var localData = require("../../../assets/components/localData");
 
 var tmpl_college = require("../templates/favCollege.ejs");
+var tmpl_major = require("../templates/favMajor.ejs");
+var tmpl_info = require("../templates/favNews.ejs");
 
 var provinceId = $("[name=province]").val();
 
@@ -22,8 +24,8 @@ var collection = {
 	bindEvt : function(){
 		var that = this;
 		this.requestCollege();
-		// this.requestMajor();
-		// this.requestInfo();
+		this.requestMajor();
+		this.requestInfo();
 	},
 
 	requestCollege : function(){
@@ -77,8 +79,6 @@ var collection = {
                     });
                 }); 
 
-                console.log(res.favorites);
-
                 that.insertCollege.call(that,res);
 			}
 		});
@@ -88,6 +88,49 @@ var collection = {
         var that = this;
         var _html = tmpl_college(data);
        $(".schoolList").append(_html);
+    },
+    requestMajor : function(){
+        var that = this;
+        $.ajax({
+            url : "/v2/client/"+provinceId+"/profile/favor/major",
+            type : "get",
+            contentType: "application/json",
+            success : function(res){
+                if(typeof(res) == 'string'){
+                   var res = $.parseJSON(res);
+                }
+
+                that.insertMajor.call(that,res);
+            }
+        });
+    },
+
+    insertMajor : function(data){
+        var that = this;
+        var _html = tmpl_major(data);
+       $(".majorList").empty().append(_html);
+    },
+
+     requestInfo : function(){
+        var that = this;
+        $.ajax({
+            url : "/v2/client/"+provinceId+"/profile/favor/news",
+            type : "get",
+            contentType: "application/json",
+            success : function(res){
+                if(typeof(res) == 'string'){
+                   var res = $.parseJSON(res);
+                }
+
+                that.insertInfo.call(that,res);
+            }
+        });
+    },
+
+    insertInfo : function(data){
+        var that = this;
+        var _html = tmpl_info(data);
+       $(".infoList").empty().append(_html);
     }
 
 

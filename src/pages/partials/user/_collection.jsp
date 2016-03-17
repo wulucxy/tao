@@ -32,16 +32,6 @@
 				<div class="majorListWrap">
 					<ul class="majorList">
 						
-						<li>
-							<div class="bs bg-gf">哲学：4个</div>
-							<div class="btnsRow">
-								<span class="btn btn-primary">哲学</span>
-								<span class="btn btn-primary">逻辑学</span>
-								<span class="btn btn-primary">宗教</span>
-								<span class="btn btn-primary">xxx</span>
-							</div>
-						</li>
-
 					</ul>
 
 				</div>
@@ -49,7 +39,7 @@
 			</section>
 			<section class="tab-box infoWrap">
 				<div class="infoListWrap">
-					<ul class="infoList load-more-list">
+					<ul class="infoList">
 						
 						<li>
 							<div class="media">
@@ -92,8 +82,6 @@
 						</li>
 					</ul>
 					
-					
-
 				</div>
 			</section>
 		</div>

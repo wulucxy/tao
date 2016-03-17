@@ -5,7 +5,7 @@
 <li>
 	<div class="btnsRow">
 		<% for (var i = 0; i < favorites.length; i++) { %>
-		<span class="btn btn-primary"><%= favorites[i].major.majorName %></span>
+		<a href="/library/major/<%= favorites[i].major.majorId %>" class="btn btn-primary" target="_blank"><%= favorites[i].major.majorName %></a>
 		<% } %>
 	</div>
 </li>

@@ -1,0 +1,26 @@
+<% if (favorites.length == 0) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>
+<% for (var i = 0; i < favorites.length; i++) { %>
+<li>
+   	 <div class="media">
+		<span class="fl imgWrap">
+			<img src="<%= favorites[i].news.newsIconUrl %>">
+		</span>
+		<div class="media-body">
+				<a class="detailTitle ellipsis" href="<%= favorites[i].news.newsUrl %>" target="_blank">
+					<%= favorites[i].news.newsName %>
+				</a>
+				<div class="clearfix detailSub g6">
+					<% for (var k = 0; k < favorites[i].news.newsTags.length; k++) { %>
+					<span class="fl article-tag mr10"><%= favorites[i].news.newsTags[k] %></span>
+					<% } %>
+				<span class="fr moment"><%= favorites[i].news.newsDate %></span>
+				</div>
+				<a class="db detailCnt" href="<%= favorites[i].news.newsUrl %>" target="_blank">
+					<%= favorites[i].news.discription %>
+				</a>
+		</div>
+	</div>
+</li>
+<% }} %>
