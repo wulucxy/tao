@@ -36,8 +36,8 @@ webpackJsonp([16],{
 	
 	function subFunc(btn,oForm){
 	  var _data = {
-	    courseType : $("[name=courseType]").val(),
-	    batch : $("[name=batch]").val(),
+	    courseType : $("[name=courseType]:checked").val(),
+	    batch : $("[name=batch]:checked").val(),
 	    score : $("[name=score]").val(),
 	    place : $("[name=place]").val()
 	  };
