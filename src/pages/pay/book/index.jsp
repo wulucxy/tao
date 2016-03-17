@@ -94,7 +94,7 @@
 					</form>
 
 					<div class="demoImg imgWrap">
-						<img src="./img/demo.png" class="responsive">
+						<img src="./img/demo2.png" class="responsive">
 					</div>
 					</div>
 				</div>

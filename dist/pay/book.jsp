@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/pay/book.abae95ad.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -94,7 +94,7 @@
 					</form>
 
 					<div class="demoImg imgWrap">
-						<img src="/static/web/img/demo.png" class="responsive">
+						<img src="/static/web/img/demo2.png" class="responsive">
 					</div>
 					</div>
 				</div>

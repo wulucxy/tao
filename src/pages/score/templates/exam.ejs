@@ -16,7 +16,7 @@
 		<%= scores[i].subjects[k].subjectName %>
 	</td>
 	<td editable examid="<%= scores[i].exam.examId %>" pattern="^[0-9]{1,3}$" ><%= scores[i].subjects[k].score %></td>
-	<td editable examid="<%= scores[i].exam.examId %>" pattern="^[0-9]{1,8}$" ><%= scores[i].subjects[k].place %></td>
+	<td examid="<%= scores[i].exam.examId %>" pattern="^[0-9]{1,8}$" ><%= scores[i].subjects[k].place %></td>
 </tr>
 	<% } %>
 <% } %>

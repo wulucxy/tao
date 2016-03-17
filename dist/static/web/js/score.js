@@ -631,7 +631,7 @@ webpackJsonp([31],[
 	((__t = ( scores[i].exam.examId )) == null ? '' : __t) +
 	'" pattern="^[0-9]{1,3}$" >' +
 	((__t = ( scores[i].subjects[k].score )) == null ? '' : __t) +
-	'</td>\n	<td editable examid="' +
+	'</td>\n	<td examid="' +
 	((__t = ( scores[i].exam.examId )) == null ? '' : __t) +
 	'" pattern="^[0-9]{1,8}$" >' +
 	((__t = ( scores[i].subjects[k].place )) == null ? '' : __t) +
