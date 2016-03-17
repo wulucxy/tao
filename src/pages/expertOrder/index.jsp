@@ -28,9 +28,9 @@
 					</h3>
 					<div class="formWrap clearfix">
 						<div class="column col1 fl">
-							<div class="bg bg-f1">
-								<div class="p10">
-									志愿填报服务预约志愿填报服务预约志愿填报服务预约志愿填报服务预约志愿填报服务预约
+							<div class="bg">
+								<div class="p10 imgWrap">
+									<img src="./img/image.png" alt="" class="responsive">
 								</div>
 							</div>
 

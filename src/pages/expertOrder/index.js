@@ -56,6 +56,8 @@ var book = {
 		        			warn("网络请求失败，请稍后重试");
 		        		}
 		        	});
+
+		        	that.requestAppoint();
 		        },
 		        completeCallback : function(){
  					that.formAction(btn);
@@ -63,6 +65,29 @@ var book = {
 			});
 
 		});
+	},
+
+	requestAppoint : function(){
+		var that = this;
+		$.ajax({
+    		url : "/v2/client/"+provinceId+"/tzy/appointment/types",
+    		type : "get",
+    		contentType: "application/json",
+    		success : function(res){
+    			if(typeof res == "string"){
+    				var res = $.parseJSON(res);
+    			}
+
+    			if(res[0].appointmentDesc){
+    				$(".appointmentDesc").eq(0).text(res[0].appointmentDesc);
+    				$(".appointmentDesc").eq(1).text(res[1].appointmentDesc);
+    			}
+    			
+    		},
+    		error : function(res){
+    			warn(res.msg || "网络请求失败，请稍后重试");
+    		}
+    	});
 	},
 
 	formAction : function(){
@@ -84,11 +109,11 @@ var book = {
 		var data = {
 			name : $("[name=name]").val(),
 			mobile : $("[name=mobile]").val(),
-			province : $("[name=province]").val(),
+			city : $("[name=city]").val(),
 			courseType : $("[name=courseType]:checked").val(),
 			score : $("[name=score]").val(),
-			bookType : $("[name=bookType]:checked").val(),
-			booktime : $("[name=booktime]").val()
+			appointmentType : $("[name=bookType]:checked").val(),
+			content : $("[name=booktime]").val()
 		};
 
 		$.ajax({

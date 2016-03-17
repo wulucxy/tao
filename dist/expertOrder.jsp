@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/expertOrder.efa70565.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/expertOrder.59433577.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -28,9 +28,9 @@
 					</h3>
 					<div class="formWrap clearfix">
 						<div class="column col1 fl">
-							<div class="bg bg-f1">
-								<div class="p10">
-									志愿填报服务预约志愿填报服务预约志愿填报服务预约志愿填报服务预约志愿填报服务预约
+							<div class="bg">
+								<div class="p10 imgWrap">
+									<img src="/static/web/img/image.png" alt="" class="responsive">
 								</div>
 							</div>
 
