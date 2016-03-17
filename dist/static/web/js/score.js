@@ -623,7 +623,7 @@ webpackJsonp([31],[
 	((__t = ( scores[i].exam.examId )) == null ? '' : __t) +
 	'" >\n			<em class="editTxt">编辑</em>\n			<em class="saveTxt">保存</em>\n		</a>\n		</div>\n	</th>\n	';
 	 } ;
-	__p += '\n	<td editable examid="' +
+	__p += '\n	<td examid="' +
 	((__t = ( scores[i].exam.examId )) == null ? '' : __t) +
 	'" select subjectid="' +
 	((__t = ( scores[i].subjects[k].subjectId )) == null ? '' : __t) +

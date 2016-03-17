@@ -31,7 +31,7 @@ if(answer.length == allItems){
 
 
 }else if(answer.length){
-	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/pro2"});
+	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/box/plan/major_exam2"});
 }else{
 	resetTest();
 }

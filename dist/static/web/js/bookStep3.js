@@ -98,8 +98,6 @@ webpackJsonp([6],{
 			  
 			  var target = $(e.target);
 	
-			  console.log(target);
-	
 			  if(target.is(".icon-eye")){
 			  	e.preventDefault();
 			  	that.subMajorModal(target);
@@ -193,7 +191,9 @@ webpackJsonp([6],{
 				}
 			});
 	
-			var subList = $.grep(subList1[0].subs,function(e,i){
+			var idx = (batch==3) ? 1 : 0;
+	
+			var subList = $.grep(subList1[idx].subs,function(e,i){
 				if(e.id == majorId){
 					return true;
 				}
