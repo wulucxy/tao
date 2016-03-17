@@ -60,7 +60,7 @@
 								</div>
 								
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="bachelor:">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="bachelor:0">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 
