@@ -136,6 +136,9 @@ webpackJsonp([19],{
 						return;
 					}
 	
+					window.location = "/expertOrderSuccess";
+					return false;
+	
 				},
 				error : function(){
 					warn("网络错误，请稍后再试");
