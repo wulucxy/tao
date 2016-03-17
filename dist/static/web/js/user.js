@@ -2182,7 +2182,7 @@ webpackJsonp([35],{
 	 }else{ ;
 	__p += '\n';
 	 for (var i = 0; i < wishes.length; i++) { ;
-	__p += '\n	<div class="well clearfix" type ="1">\n		<div class="media fl">\n			<div class="span fl">\n				<span class="btn btn-primary">高考方案定制</span>\n			</div>\n			<div class="media-body g3 well_body">\n				<p>\n				<span class="label">订单号：</span><span class="field">' +
+	__p += '\n	<div class="well clearfix" type ="1">\n		<div class="media fl">\n			<div class="span fl">\n				<span class="btn btn-primary">高考志愿定制</span>\n			</div>\n			<div class="media-body g3 well_body">\n				<p>\n				<span class="label">订单号：</span><span class="field">' +
 	((__t = ( wishes[i].orderId )) == null ? '' : __t) +
 	'</span>\n				<span class="label">生成日期：</span><span class="field">' +
 	((__t = ( wishes[i].createTime )) == null ? '' : __t) +

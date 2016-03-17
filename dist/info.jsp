@@ -68,7 +68,7 @@
 						<div class="colPad">
 							<div class="content">
 								<h3 class="clearfix title">
-									<span class="fl s-title">
+									<span class="fl s-title" id="toggleTitle">
 										全部资讯
 										<em class="underLine"></em>	
 									</span>

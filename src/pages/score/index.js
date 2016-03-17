@@ -120,9 +120,11 @@ var score = {
 		var cloneProperties = ['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right',
 					  'text-align', 'font', 'font-size', 'font-family', 'font-weight'];
 
+		$("td[editable]").removeClass("onEditor");
+
 		if(btn.hasClass("needEditing")){
 			var examid = btn.attr("rel");
-			var tdList = $("td[examid="+examid+"]");
+			var tdList = $("td[examid="+examid+"][editable]");
 
 			tdList.each(function(idx,td){
 				var $td = $(td);
@@ -135,7 +137,7 @@ var score = {
 					_type = 1;
 				}
 
-				$td.append(inputType);
+				$td.append(inputType).addClass("onEditor");
 
 				//如果是select
 				if(_type == 2){
@@ -197,7 +199,7 @@ var score = {
 	renderSaveRes : function(btn){
 		var that = this;
 		var examid = btn.attr("rel");
-		var tdList = $("td[examid="+examid+"]"),
+		var tdList = $("td[examid="+examid+"][editable]"),
 			trList = $("tr[examid="+examid+"]");
 
 		//专业列表

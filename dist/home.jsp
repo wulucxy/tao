@@ -50,7 +50,7 @@
 		<ul class="clearfix container">
 			<li class="sloganList">
 			 <div class="pad">
-					<p class="tc"><i class="sloganTag slogan_1"></i></p>
+					<p class="tc"><a href="jvascript:;" class="sloganTag slogan_1" id="caseBox"></a></p>
 					<h4>超好用&nbsp;个性化</h4>
 					<ul>
 						<li class="subSloganList">权威引进国家教育部考试中心</li>
@@ -61,7 +61,7 @@
 			</li>
 			<li class="sloganList">
 				<div class="pad">
-					<p class="tc"><i class="sloganTag slogan_2"></i></p>
+					<p class="tc"><a href="jvascript:;" class="sloganTag slogan_2" id="library"></a></p>
 					<h4>超方便&nbsp;最好用</h4>
 					<ul>
 						<li class="subSloganList">选考科目、专业设置、录取分数线、高校排名、专业排名……</li>
@@ -72,7 +72,7 @@
 			</li>
 			<li class="sloganList">
 				<div class="pad">
-					<p class="tc"><i class="sloganTag slogan_3"></i></p>
+					<p class="tc"><a href="jvascript:;" class="sloganTag slogan_3" id="recommend"></a></p>
 					<h4>“三端一体”高考志愿综合服务</h4>
 					<ul>
 						<li class="subSloganList">网站、APP和微信公众号“三端一体”</li>
@@ -114,7 +114,7 @@
 				<div class="colPad">
 
 					<div class="content recommend">
-						<h3 class="clearfix title">
+						<h3 class="clearfix title" rel="recommend">
 							<span class="fl s-title">
 								推荐阅读
 								<em class="underLine"></em>	
@@ -179,7 +179,7 @@
 			<div class="column">
 				<div class="colPad">
 					<div class="content">
-						<h3 class="clearfix title">
+						<h3 class="clearfix title" rel="library">
 							<span class="fl s-title">
 								资料库
 								<em class="underLine"></em>	
@@ -286,7 +286,7 @@
 				<div class="colPad">
 
 					<div class="content">
-						<h3 class="clearfix title">
+						<h3 class="clearfix title" rel="caseBox">
 							<span class="fl s-title">
 								工具箱
 								<em class="underLine"></em>	
@@ -299,7 +299,7 @@
 									<i class="icon-tools"></i>
 								</span>
 								<div class="media-body">
-									<h5 class="">高考方案定制</h5>
+									<h5 class="">高考志愿定制</h5>
 									<div class="txt">通过考生输入的信息和报考意向，按照专家团队根据志愿填报规则设计的公式，科学运用大数据，进行运算、匹配，提供完整的志愿填报个性化参考方案。</div>
 									
 									<div class="detail clearfix">

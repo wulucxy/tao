@@ -18,3 +18,26 @@ slider($("#bannerShow"));
 var carousel = require("./lib/carousel");
 
 carousel.init();
+
+$(".sloganTag").on("click",function(e){
+	e.preventDefault();
+	var rel = $(this).attr("id");
+	var target = $("[rel="+rel+"]");
+
+	var offset = target.offset().top;
+
+	console.log(offset);
+
+	$("html,body").animate({
+		"scrollTop" : offset
+	},600);
+
+
+
+	// $("html,body").stop(false, true).animate({
+ //        scrollTop: 0
+ //    }, 400, function() {
+ //        iBtn = false;
+ //    });
+
+});

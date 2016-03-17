@@ -10,7 +10,7 @@
 	<div class="wellWrapper" id="couponWrapper">
 		<div class="well clearfix" >
 			<div class="media fl">
-				<span class="btn btn-primary btn-mid">高考方案定制</span>
+				<span class="btn btn-primary btn-mid">高考志愿定制</span>
 				<span class="coupon-type orange">8折</span>
 			</div>
 			<div class="detailInfo">
@@ -23,7 +23,7 @@
 
 		<div class="well clearfix" >
 			<div class="media fl">
-				<span class="btn btn-primary btn-mid">高考方案定制</span>
+				<span class="btn btn-primary btn-mid">高考志愿定制</span>
 				<span class="coupon-type blue">免费试用一次</span>
 			</div>
 			<div class="detailInfo">

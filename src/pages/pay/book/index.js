@@ -36,7 +36,7 @@ var pay = {
 			courseType : $("[name=courseType]").text(),
 			score : $("[name=score]").text(),
 			place : $("[name=place]").text(),
-			province : $("[name=province]").val(),
+			province : $("[name=provinceName]").val(),
 			userName : $("[name=userName]").val()
 		};
 
@@ -46,8 +46,6 @@ var pay = {
 	detailTrigger : function(){
 		var that = this;
 		var data = that.transformData();
-
-		console.log(data);
 
 		//详情弹窗
 		$("[data-trigger]").on("click",function(e){

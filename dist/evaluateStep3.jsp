@@ -137,7 +137,7 @@
 									<em class="vm">高考分数：</em></label>
 								<div class="col2 inputWrap rel">
 									<span class="fieldWrap">
-										<span class="onlyTxt">${score}&nbsp;分</span>
+										<span class="onlyTxt">${score}分</span>
 									</span>
 								</div>
 							</div>
@@ -148,7 +148,7 @@
 									<em class="vm">高考排名：</em></label>
 								<div class="col2 inputWrap rel">
 									<span class="fieldWrap">
-										<span class="onlyTxt">${place}&nbsp;名</span>
+										<span class="onlyTxt">${place}名</span>
 									</span>
 								</div>
 							</div>

@@ -15,7 +15,7 @@
 			<div class="fieldWrap">
 				<select class="form-control" name="caseType" id="caseType">
 					  <option value="0">不限</option>
-					  <option value="1">高考方案定制</option>
+					  <option value="1">高考志愿定制</option>
 					  <option value="2">高考志愿评估</option>
 				</select>
 			</div>

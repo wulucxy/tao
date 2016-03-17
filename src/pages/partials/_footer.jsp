@@ -9,7 +9,7 @@
 			<div class="tagLists f-lh">
 				<a href="/box/score_management" class="links" target="_blank">成绩管理</a>
 				<a href="/box/college_faq" class="links" target="_blank">高校问答</a>
-				<a href="/box/plan/book_step1" class="links" target="_blank">高考方案定制</a>
+				<a href="/box/plan/book_step1" class="links" target="_blank">高考志愿定制</a>
 				<a href="/box/plan/major_exam1" class="links" target="_blank">专业选择测试</a>
 				<a href="/box/plan/evaluate_step1" class="links" target="_blank">高考志愿评估</a>
 				<a href="/box/plan/aboard" class="links" target="_blank">留学方案定制</a>

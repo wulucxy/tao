@@ -61,7 +61,7 @@ var info = {
 
 		if(pager == 1){
 			$(".infoList").empty().html(_html);
-			$(".s-title").text($(".infoTag.active").text());
+			$("#toggleTitle").text($(".infoTag.active").text());
 		}else{
 			$(".infoList").append(_html);
 		}

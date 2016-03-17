@@ -66,7 +66,7 @@ webpackJsonp([22],{
 	
 			if(pager == 1){
 				$(".infoList").empty().html(_html);
-				$(".s-title").text($(".infoTag.active").text());
+				$("#toggleTitle").text($(".infoTag.active").text());
 			}else{
 				$(".infoList").append(_html);
 			}
@@ -240,7 +240,7 @@ webpackJsonp([22],{
 	 for (var i = 0; i < news.length; i++) { ;
 	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
 	((__t = ( news[i].newsIconUrl )) == null ? '' : __t) +
-	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
+	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle" href="' +
 	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n					' +
 	((__t = ( news[i].newsName )) == null ? '' : __t) +
