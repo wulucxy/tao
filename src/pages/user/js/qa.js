@@ -43,9 +43,9 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
-                $.each(res.wishes,function(idx,ele){
-                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
-                });
+                res = {
+                	questions : res
+                };
 
                 that.insertData.call(that,res);
 			}

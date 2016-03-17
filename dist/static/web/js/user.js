@@ -2622,9 +2622,9 @@ webpackJsonp([35],{
 	                   var res = $.parseJSON(res);
 	                }
 	
-	                $.each(res.wishes,function(idx,ele){
-	                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
-	                });
+	                res = {
+	                	questions : res
+	                };
 	
 	                that.insertData.call(that,res);
 				}
@@ -2664,7 +2664,9 @@ webpackJsonp([35],{
 	 }else{ ;
 	__p += '\n';
 	 for (var i = 0; i < questions.length; i++) { ;
-	__p += '\n<li class="q-school">\n			<h3 class="blue">浙江大学</h3>\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n		</li>\n';
+	__p += '\n<li class="q-school">\n			<h3 class="blue">' +
+	((__t = ( questions[i].college.collegeName )) == null ? '' : __t) +
+	'</h3>\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n			<div class="s-faq">\n				<div class="q media">\n					<span class="fl blue">问：</span>\n					<div class="media-body">\n						<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>\n						<div class="badges">\n							<span class="badge">浙江考生</span><span class="badge">2015</span>\n						</div>\n					</div>\n				</div>\n				<div class="a media">\n					<span class="fl orange">答：</span>\n					<div class="media-body">\n						软件工程\n					</div>\n				</div>\n			</div>\n\n		</li>\n';
 	 }} ;
 	
 	

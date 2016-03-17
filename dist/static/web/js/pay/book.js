@@ -35,8 +35,8 @@ webpackJsonp([30],{
 		transformData : function(){
 			var that = this;
 			var _data = {
-				majorList : $.parseJSON($("[name=majorList]").text()),
-				c :  $.parseJSON($("[name=c]").text()),
+				// majorList : $.parseJSON($("[name=majorList]").text()),
+				// c :  $.parseJSON($("[name=c]").text()),
 				batch : $("[name=batch]").text(),
 				courseType : $("[name=courseType]").text(),
 				score : $("[name=score]").text(),
