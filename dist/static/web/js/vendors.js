@@ -19736,7 +19736,7 @@
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix inline">\n  <label for="score" class="control-label column col1 fl">\n    <i class="icon-location icon-fenshu"></i>\n    <em class="vm">高考分数：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
 	((__t = ( score )) == null ? '' : __t) +
-	'</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix inline">\n  <label for="score" class="control-label column col1 fl">\n    <i class="icon-location icon-rank"></i>\n    <em class="vm">全省排名：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
+	'分</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix inline">\n  <label for="score" class="control-label column col1 fl">\n    <i class="icon-location icon-rank"></i>\n    <em class="vm">全省排名：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap lh34">\n      <span>' +
 	((__t = ( place )) == null ? '' : __t) +
 	'名</span>\n    </div>\n  </div>\n</div>\n\n\n';
 	 if(majorList && majorList.length) { ;
