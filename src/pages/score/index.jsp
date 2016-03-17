@@ -28,7 +28,9 @@
 			
 			<div class="formWrap">
 				
-				<div id="charts"></div>
+				<div id="charts">
+					<iframe src="/v2/mobile/${province}/profile/score/graph?userId=${user.userId}" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
+				</div>
 				
 				<div class="recommend f15 tc">
 					
