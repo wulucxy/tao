@@ -76,12 +76,29 @@
 												<td>专业名称</td>
 												<td>所属科类</td>
 												<td>上一年录取平均分</td>
+												<td>填报建议</td>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
 												<td>${major.average}</td>
+												<td>
+									<c:choose>
+									 	<c:when test="${major.assessment == '-2'}">
+									   		<span class="red">不建议填报</span>
+										</c:when>
+										<c:when test="${major.assessment == '-1'}">
+									   		<span class="green">建议志愿保底</span>
+										</c:when>
+										<c:when test="${major.assessment == '0'}">
+									   		<span class="green">建议志愿平稳</span>
+										</c:when>
+									 	<c:otherwise>
+											<span class="green">建议志愿冲刺</span>
+										</c:otherwise>
+									 </c:choose>
+												</td>
 											</tr>
 											</c:forEach>
 										</tbody>
