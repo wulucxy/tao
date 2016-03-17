@@ -85,7 +85,7 @@ var score = {
             },
             error : function(err){
             	btn.removeClass("disabled");
-                warn(err || "网络错误，请稍后重试");
+                warn(err.msg || "网络错误，请稍后重试");
             }
 		});
 
@@ -137,11 +137,17 @@ var score = {
 
 				$td.append(inputType);
 
+				//如果是select
 				if(_type == 2){
 					var optionList = [];
 
+					//td内容
+					var subjectid = $td.attr("subjectid");
+
 	    			$.each(that.subjectList,function(idx,ele){
-	    				optionList.push('<option value='+ele.subjectId+'>'+ele.subjectName+'</option>');
+	    				var selected = (ele.subjectId == subjectid ? "selected" : "");
+
+	    				optionList.push('<option value='+ele.subjectId+" "+selected+' >'+ele.subjectName+'</option>');
 	    			});
 
 	    			optionList = optionList.join("");
@@ -210,6 +216,7 @@ var score = {
 
 			//移除input
 			oItem.remove();
+
 			//td赋值
 			$ele.html(_val);
 		});

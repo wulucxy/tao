@@ -15,7 +15,7 @@
 					<% for (var k = 0; k < news[i].newsTags.length; k++) { %>
 					<span class="fl article-tag mr10"><%= news[i].newsTags[k] %></span>
 					<% } %>
-				<span class="fr moment"><%= news[i].newsDate %></span>
+				<span class="fr moment"><%= news[i].time %></span>
 				</div>
 				<a class="db detailCnt" href="<%= news[i].newsUrl %>" target="_blank">
 					<%= news[i].discription %>

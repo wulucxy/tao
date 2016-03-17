@@ -1,72 +1,804 @@
 {
-    "majorMatchDesc":"专业匹配描述字段",    
-    "mtest":                
-    {
-        "mtestId":"",       
-        "createTime":1324234234,     
-        "code":"",          
-        "answer":""
+    "scores": [{
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 99.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 11.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 88.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 110.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 88.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 99.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 1,
+            "examName": "(1)高一第一学期期中考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 90.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 87.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 123.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 125.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 2,
+            "examName": "(2)高一第一学期期末考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 100.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 110.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 98.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 100.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 3,
+            "examName": "(3)高一第二学期期中考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 67.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 68.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 77.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 87.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 4,
+            "examName": "(4)高一第二学期期末考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 77.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 87.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 77.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 79.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 5,
+            "examName": "(5)高二第一学期期中考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 6,
+            "examName": "(6)高二第一学期期末考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 7,
+            "examName": "(7)高二第二学期期中考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 8,
+            "examName": "(8)高二第二学期期末考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 9,
+            "examName": "(9)高二会考"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 10,
+            "examName": "(10)高三第一学期期中考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 11,
+            "examName": "(11)高三第一学期期末考试"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 12,
+            "examName": "(12)高三第一次月考"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 13,
+            "examName": "(13)高三第二次月考"
+        }
+    }, {
+        "subjects": [{
+            "subjectName": "物理",
+            "subjectId": 1,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "化学",
+            "subjectId": 2,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "生物",
+            "subjectId": 3,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "技术",
+            "subjectId": 4,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "政治",
+            "subjectId": 5,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "地理",
+            "subjectId": 6,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "历史",
+            "subjectId": 7,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "语文",
+            "subjectId": 8,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "数学",
+            "subjectId": 9,
+            "score": 0.0,
+            "place": 0
+        }, {
+            "subjectName": "外语",
+            "subjectId": 10,
+            "score": 0.0,
+            "place": 0
+        }],
+        "exam": {
+            "examId": 14,
+            "examName": "(14)高三第三次月考"
+        }
+    }],
+    "mtest": {
+        "createTime": 1457963313000,
+        "mtestId": "160747851265967393",
+        "answer": "123545632564263542654265436524562456345624523654265423654236523642354236542365254236542365423654236542354253245632525632542342354326542342365423651452365425632542563252563254256325425632542563254365542365256325",
+        "code": ""
     },
-    "promoteSubjects":            
-    [
-        {
-            "subjectId":"", 
-            "subjectName":"物理"   
-        },
-        
-        {
-            "subjectId":"", 
-            "subjectName":"化学"  
-        }
-    ],
-    "scores":           
-    [
-        {
-            "exam":                     
-            {
-                "examId":1,            
-                "examName":"3月月考"     
-            },
-            "subjects":                 
-            [
-                {
-                    "subjectId":"123", 
-                    "subjectName":"语文",   
-                    "score":"150",      
-                    "place":455
-                },
-                
-                {
-                    "subjectId":"1234", 
-                    "subjectName":"数学",   
-                    "score":"150",      
-                    "place":455
-                }
-            ]
-        },
-        
-        {
-            "exam":                     
-            {
-                "examId":2,            
-                "examName":"3月月考"     
-            },
-            "subjects":                 
-            [
-                {
-                    "subjectId":"44", 
-                    "subjectName":"数学",   
-                    "score":"333",
-                    "place":455      
-                },
-                
-                {
-                    "subjectId":"", 
-                    "subjectName":"数学",   
-                    "score":"44",
-                    "place":455       
-                }
-            ]
-        }
-    ]
+    "promoteSubjects": [{
+        "subjectName": "物理",
+        "subjectId": 1
+    }, {
+        "subjectName": "生物",
+        "subjectId": 3
+    }, {
+        "subjectName": "历史",
+        "subjectId": 7
+    }],
+    "majorMatchDesc": "哲学,教育学,文学,理学,工学,农学,医学,艺术学"
 }

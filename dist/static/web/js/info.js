@@ -250,7 +250,7 @@ webpackJsonp([22],{
 	'</span>\n					';
 	 } ;
 	__p += '\n				<span class="fr moment">' +
-	((__t = ( news[i].newsDate )) == null ? '' : __t) +
+	((__t = ( news[i].time )) == null ? '' : __t) +
 	'</span>\n				</div>\n				<a class="db detailCnt" href="' +
 	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n					' +
