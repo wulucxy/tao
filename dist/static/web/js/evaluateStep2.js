@@ -367,7 +367,7 @@ webpackJsonp([17],{
 	
 	        },
 	        error : function(err){
-	            console.log(err);
+	            console.log($.parseJSON(err.responseTxt));
 	        }
 	    });
 	  },
@@ -680,7 +680,7 @@ webpackJsonp([17],{
 	          }
 	      },
 	      error : function(err){
-	          warn(err.msg || "网络错误，请稍后重试");;
+	          warn($.parseJSON(err.responseTxt).msg || "网络错误，请稍后重试");;
 	      }
 	    });
 	  });

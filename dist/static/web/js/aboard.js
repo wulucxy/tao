@@ -129,7 +129,7 @@ webpackJsonp([0],{
 	
 	            },
 	            error : function(err){
-	                console.log(err.msg);
+	                console.log($.parseJSON(err.responseTxt).msg);
 	            }
 			});
 		},
@@ -189,7 +189,7 @@ webpackJsonp([0],{
 			      }
 			    },
 			    error : function(res){
-			       common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+			       common.showError($('.errTxt'),$.parseJSON(err.responseTxt).msg || "网络错误,请稍后重试");
 			    }
 			})
 		}
