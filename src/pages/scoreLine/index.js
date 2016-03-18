@@ -30,6 +30,7 @@ var score = {
 	init : function(){
 		searchSchool.init({
 			el : ".addSchool",
+			provinceId : provinceId,
 			selectListCallback : function(li){
 				var self = this;
 				self.trigger.val(li.attr("name"));
@@ -42,6 +43,8 @@ var score = {
 					subCode.val(li.attr("code"));
 					subCode.prop("checked",true);
 				}
+
+				//需要增加不能同时选择同所学校的判断
 			}
 		});
 

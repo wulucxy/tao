@@ -14,7 +14,8 @@ var searchSchool = {
 	init : function(options){
 		this.pager = 1;
 		this.options = extend({
-			el : ".addSchool" 
+			el : ".addSchool",
+			provinceId : 330000
 		},options);
 
 		this.bindEvt();
@@ -67,9 +68,10 @@ var searchSchool = {
 	},
 	requestData : function(pager){
 	    var that = this;
+	    var o = that.options;
 	    $.ajax({
-	      url : "/v2/client/getCollegeList",
-	      type : "post",
+	      url : "/v2/client/"+o.provinceId+"/data/college/search",
+      	  type : "post",
 	      contentType: "application/json",
 	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
 	      success : function(res){

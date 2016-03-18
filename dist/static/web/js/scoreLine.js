@@ -35,6 +35,7 @@ webpackJsonp([32],{
 		init : function(){
 			searchSchool.init({
 				el : ".addSchool",
+				provinceId : provinceId,
 				selectListCallback : function(li){
 					var self = this;
 					self.trigger.val(li.attr("name"));
@@ -47,6 +48,8 @@ webpackJsonp([32],{
 						subCode.val(li.attr("code"));
 						subCode.prop("checked",true);
 					}
+	
+					//需要增加不能同时选择同所学校的判断
 				}
 			});
 	
@@ -329,7 +332,8 @@ webpackJsonp([32],{
 		init : function(options){
 			this.pager = 1;
 			this.options = extend({
-				el : ".addSchool" 
+				el : ".addSchool",
+				provinceId : 330000
 			},options);
 	
 			this.bindEvt();
@@ -382,9 +386,10 @@ webpackJsonp([32],{
 		},
 		requestData : function(pager){
 		    var that = this;
+		    var o = that.options;
 		    $.ajax({
-		      url : "/v2/client/getCollegeList",
-		      type : "post",
+		      url : "/v2/client/"+o.provinceId+"/data/college/search",
+	      	  type : "post",
 		      contentType: "application/json",
 		      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
 		      success : function(res){
@@ -475,17 +480,17 @@ webpackJsonp([32],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	__p += ' ';
-	 if (list.length == 0) { ;
+	 if (colleges.length == 0) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
 	 }else{ ;
 	__p += '\n	';
-	 for (var i = 0; i < list.length; i++) { ;
+	 for (var i = 0; i < colleges.length; i++) { ;
 	__p += '\n	 	<li class="schoolList" code="' +
-	((__t = ( list[i].code )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeId )) == null ? '' : __t) +
 	'" name="' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
 	'"><em class="icon-check"></em><em class="vm">' +
-	((__t = ( list[i].name )) == null ? '' : __t) +
+	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
 	'</em></li>\n ';
 	 }} ;
 	
