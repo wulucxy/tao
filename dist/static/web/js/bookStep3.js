@@ -164,7 +164,7 @@ webpackJsonp([6],{
 	            },
 	            error : function(err){
 	            	btn.removeClass("disabled");
-	                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
+	                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 	            }
 			})
 		},
@@ -191,9 +191,10 @@ webpackJsonp([6],{
 				}
 			});
 	
+	
 			var idx = (batch==3) ? 1 : 0;
 	
-			var subList = $.grep(subList1[idx].subs,function(e,i){
+			var subList = $.grep(subList1[0].subs,function(e,i){
 				if(e.id == majorId){
 					return true;
 				}
@@ -240,6 +241,13 @@ webpackJsonp([6],{
 	 if (batch == 1 || batch == 2 ) { ;
 	__p += '\n<div class="row">\n	<p class="g6 mb12">本科大类：</p>\n\n	';
 	 for (var i = 0; i < subs[0].subs.length; i++) { ;
+	__p += '\n		';
+	 var checkedStatus;
+			 if(subs[0].subs[i].status == 1) {
+				checkedStatus = "checked";
+			 }else{
+				checkedStatus = "";
+			 } ;
 	__p += '\n	<label class="label_check">\n		<em class="icon-eye" data-supType=' +
 	((__t = ( subs[0].id )) == null ? '' : __t) +
 	' data-majorId=' +
@@ -250,14 +258,23 @@ webpackJsonp([6],{
 	((__t = ( subs[0].id )) == null ? '' : __t) +
 	'_' +
 	((__t = ( subs[0].subs[i].id )) == null ? '' : __t) +
-	'" name="majorType" required>\n		<em class="vm">' +
+	'" name="majorType" ' +
+	((__t = ( checkedStatus )) == null ? '' : __t) +
+	' required>\n		<em class="vm">' +
 	((__t = ( subs[0].subs[i].name )) == null ? '' : __t) +
 	'</em>\n		<em class="icon-yes">\n			<i></i>\n		</em>\n	</label>\n	';
 	 } ;
 	__p += '\n</div>\n';
 	 }else if(batch == 3){ ;
-	__p += '\n\n<div class="row">\n	<p class="g6 mb12">专科大类：</p>\n\n	';
+	__p += '\n<div class="row">\n	<p class="g6 mb12">专科大类：</p>\n\n	';
 	 for (var m = 0; m < subs[1].subs.length; m++) { ;
+	__p += '\n		';
+	 var checkedStatus; 
+			 if(subs[1].subs[m].status == 1) { 
+				checkedStatus = "checked"; 
+			 }else{ 
+				checkedStatus = ""; 
+			 } ;
 	__p += '\n	<label class="label_check">\n		<em class="icon-eye" data-supType=' +
 	((__t = ( subs[1].id )) == null ? '' : __t) +
 	' data-majorId=' +
@@ -268,7 +285,9 @@ webpackJsonp([6],{
 	((__t = ( subs[1].id )) == null ? '' : __t) +
 	'_' +
 	((__t = ( subs[1].subs[m].id )) == null ? '' : __t) +
-	'" name="majorType" required>\n		<em class="vm">' +
+	'" name="majorType" ' +
+	((__t = ( checkedStatus )) == null ? '' : __t) +
+	' required>\n		<em class="vm">' +
 	((__t = ( subs[1].subs[m].name )) == null ? '' : __t) +
 	'</em>\n		<em class="icon-yes">\n			<i></i>\n		</em>\n	</label>\n	';
 	 } ;

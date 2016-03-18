@@ -22,14 +22,8 @@ var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 
 
 if(answer.length == allItems){
-	// _alert("你已经完成全部问题");
-	// setTimeout(function(){
-	// 	window.location = "/box/plan/major_exam3";
-	// },3000);
 	Cookies.remove('answer');
 	resetTest();
-
-
 }else if(answer.length){
 	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/box/plan/major_exam2"});
 }else{
@@ -37,6 +31,7 @@ if(answer.length == allItems){
 }
 
 function resetTest(){
+	answer = [];
 	$("#goProTest").text("填写授权码，并开始测试");
 	$("#goProTest").on("click",function(e){
 		e.preventDefault();
@@ -47,6 +42,7 @@ function resetTest(){
 }
 
 function subCodeAction(btn,oForm){
+	answer = [];
 	var provinceId = $("[name=province]").val();
 	$.ajax({
 		url : "/v2/client/"+provinceId + "/tzy/mtest/code",
@@ -58,15 +54,20 @@ function subCodeAction(btn,oForm){
 				var res = $.parseJSON(res);
 			}
 
+			//点击确定要记录用户信息，方便下次进来不需要再次录入验证码
 			if(!res.code){
+				//保存cookie,0是特殊的
+				answer.push("0");
+				Cookies.set("answer",answer.join(""),{expire : 356});
+
 				window.location.href = "/box/plan/major_exam2";
 			}else{
 				common.showError($("#errTxt"),res.msg);
 				return;
 			}
 		},
-		error : function(){
-			warn("网络错误，请稍后重试");
+		error : function(err){
+			warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
 		}
 	})
 

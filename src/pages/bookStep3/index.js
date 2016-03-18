@@ -159,7 +159,7 @@ var majors = {
             },
             error : function(err){
             	btn.removeClass("disabled");
-                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
+                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
             }
 		})
 	},
@@ -186,9 +186,10 @@ var majors = {
 			}
 		});
 
+
 		var idx = (batch==3) ? 1 : 0;
 
-		var subList = $.grep(subList1[idx].subs,function(e,i){
+		var subList = $.grep(subList1[0].subs,function(e,i){
 			if(e.id == majorId){
 				return true;
 			}

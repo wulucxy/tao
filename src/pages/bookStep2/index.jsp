@@ -63,7 +63,7 @@
 								</div>
 							</div>
 							<div class="column col3 fl">
-								<h4>已选</h4>
+								<h4>已选(可多选，不选则默认全部地区)</h4>
 								<ul class="tagsWrap clearfix" id="tagsWrap">
 									
 								</ul>

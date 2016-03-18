@@ -640,12 +640,15 @@ var school = {
     });
 
     //只要有大学选中那么也必须选择专业
-    var zhiyuanMajorStatus = that.state.zhiyuanList.some(function(ele,idx){
+    var zhiyuanMajorStatus = true;
+    $.each(that.state.zhiyuanList,function(idx,ele){
       var idx = ele.type - 1;
+
       if(ele.name && ele.code){
-        return !!(that.state.selected[idx].list.length);
-      }else{
-        return true;
+       if(!(that.state.selected[idx].list.length)){
+        zhiyuanMajorStatus = false;
+        return false;
+       }
       }
       
     });
@@ -655,8 +658,6 @@ var school = {
       var type = ele.type;
        return (ele.list.length > 0 && $("[major="+type+"]").length);
     });
-
-
 
 
     if(!zhiyuanStatus){

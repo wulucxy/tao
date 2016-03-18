@@ -106,6 +106,7 @@ var reg = {
 	postRegInfo : function(btn,oForm){
 		var that = this;
 	    btn.addClass('disabled');
+	    var oError = $('.errTxt');
 	    $.ajax({
 	        url: "/v2/client/auth/signup",
 	        type: "post",
@@ -126,15 +127,15 @@ var reg = {
 	          		window.location = "/";
 	          	},400);
 	          }else{
-	          	var oError = $('.errTxt');
+	          	
 	          	btn.removeClass('disabled');
 	          	userUtil.showError(oError, res.msg);
 	          	return;
 	          }
 
 	        },
-	        error : function(){
-	        	_alert("网络错误，请稍后再试");
+	        error : function(err){
+	        	userUtil.showError(oError, $.parseJSON(err.responseText).msg);
 	        	btn.removeClass('disabled');
 	        	return;
 	        }

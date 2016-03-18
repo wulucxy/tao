@@ -39,7 +39,7 @@ var dataSet = {
         var lis = [];
         if(!that.state.selected.length){
             lis.push('<li class="noList">动动手指，在左边选择求学地区吧！</li>');
-            $(".btn-positive").addClass("disabled");
+            //$(".btn-positive").addClass("disabled");
         }else{
             lis = $.map(that.state.selected,function (item) {
                 return '<li class="tagList" data-n="'+item.n+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.n+ '</span></li>';
