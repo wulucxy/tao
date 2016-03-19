@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/scoreLine.630e29f9.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ac3ceda6.css" rel="stylesheet"><link href="/static/web/css/scoreLine.630e29f9.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -110,7 +110,7 @@
 								<em class="vm">对比学校1：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-								<input type="text" class="input form-control dib addSchool" id="primary" name="second" placeholder="请输入对比学校1" >
+								<input type="text" class="input form-control dib addSchool sub" id="second" name="second" placeholder="请输入对比学校1">
 								</span>
 								<input type="hidden" name="secondCode" class="hiddenCode">
 								
@@ -129,7 +129,7 @@
 								<em class="vm">对比学校2：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-								<input type="text" class="input form-control dib addSchool" id="third" name="third" placeholder="请输入对比学校2" >
+								<input type="text" class="input form-control dib addSchool sub" id="third" name="third" placeholder="请输入对比学校2" >
 								</span>
 								<input type="hidden" name="thirdCode" class="hiddenCode">
 

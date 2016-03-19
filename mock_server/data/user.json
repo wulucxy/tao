@@ -6,13 +6,13 @@
         },
         "mobile" : "1385809394",
         "userAvatar" : "/",
-        "sex"  : "1",
+        "sex"  : "",
         "token" : "12",
         "userId" : "123",
-        "userName" : "name",
+        "userName" : "",
         "isLogin" : "1",
-        "highSchool" : " aaa",
-        "highYear" : 2012
+        "highSchool" : "",
+        "highYear" : ""
     },
 	"colleges":[
     ]

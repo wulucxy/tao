@@ -29,7 +29,14 @@
 					<em class="vm">姓名：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="name" name="name" value="${user.userName}" required readonly>
+						<c:choose>
+						    <c:when test="${user.userName != ''}">
+						   	<input type="text" class="input form-control" id="name" name="name" value="${user.userName}" required readonly>
+							</c:when>
+							<c:otherwise>
+							<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -43,7 +50,7 @@
 					<em class="vm">手机号：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="mobile" name="mobile" required value="${user.mobile}" readonly>
+						<input type="text" class="input form-control" id="mobile" name="mobile" required value="${user.mobile}" readonly >
 					</div>
 				</div>
 				<div class="errInfo">
@@ -58,7 +65,7 @@
 					<em class="vm">生源地：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="area" name="area" required value="${user.province.name}" readonly>
+						<input type="text" class="input form-control" id="area" name="area" required value="${user.province.name}" readonly required>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -72,13 +79,18 @@
 					<em class="vm">性别：</em></label>
 				<div class="col2 selectWrap rel">
 					<div class="fieldWrap">
-						<select class="form-control" name="sex" readonly>
+						<select class="form-control" name="sex" readonly required>
 						<c:choose>
 						    <c:when test="${user.sex == 1}">
 						   		<option value="1" selected>男</option>
 							</c:when>
+							<c:when test="${user.sex == 2}">
+						   		<option value="2" selected>女</option>
+							</c:when>
 							<c:otherwise>
-								<option value="2" selected>女</option>
+								<option value="">请选择</option>
+								<option value="1">男</option>
+								<option value="2">女</option>
 							</c:otherwise>
 						</c:choose>
 						</select>
@@ -96,7 +108,15 @@
 					<em class="vm">高中：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
+
+						<c:choose>
+						    <c:when test="${user.highSchool != ''}">
+						   		<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
+							</c:when>
+							<c:otherwise>
+								<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" placeholder="请选择高中" required>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 				<div class="errInfo">
@@ -110,13 +130,24 @@
 					<em class="vm">入学年份：</em></label>
 				<div class="col2 selectWrap rel">
 					<div class="fieldWrap">
-						<select class="form-control" name="highYear">
-							<option value="${user.highYear}" selected>${user.highYear}</option>
-						</select>
+						
+						<c:choose>
+						    <c:when test="${user.highYear != ''}">
+						   		<input type="text" class="input form-control" id="highYear" name="highYear" required value=${user.highYear}>
+							</c:when>
+							<c:otherwise>
+								<select class="form-control" name="highYear" required>
+									<option value="">请选择</option>
+									<option value="2015">2015</option>
+									<option value="2015">2014</option>
+									<option value="2015">2013</option>
+								</select>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 				<div class="errInfo">
-					
+					<span class="p-error-empty">入学年份必选</span>
 				 </div>
 			</div>
 			

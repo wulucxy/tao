@@ -33,6 +33,32 @@ var score = {
 			provinceId : provinceId,
 			selectListCallback : function(li){
 				var self = this;
+
+				//如果选择的是对比类型
+				if(self.trigger.hasClass("sub")){
+					if(li.attr("code") == $("[name=primaryCode]").val()){
+						warn("请选择不同的学校进行对比");
+						return;
+					}else if(li.attr("name") == $(".sub").not(self.trigger).val()){
+						warn("请选择不同的学校进行对比");
+						return;
+					}
+				}else{	//如果选择的是主类型
+					var pName = li.attr("name"),
+						pSame;
+					$.each($(".sub"),function(idx,ele){
+						if(pName == ele.value){
+							warn("请选择不同的学校进行对比");
+							pSame = true;
+							return false;
+						}
+					});
+
+					if(!!pSame) return false;
+				}
+
+				$(".btn-close").trigger("click");
+
 				self.trigger.val(li.attr("name"));
 				self.trigger.closest(".row").find(".hiddenCode").val(li.attr("code"));
 
@@ -45,6 +71,7 @@ var score = {
 				}
 
 				//需要增加不能同时选择同所学校的判断
+				
 			}
 		});
 

@@ -120,8 +120,6 @@ var searchSchool = {
 	      $this.addClass("active");
 
 	  	  o.selectListCallback && o.selectListCallback.call(that,$this);
-
-	      $(".btn-close").trigger("click");
 	    });
 	}
 
