@@ -1,4 +1,6 @@
 {
+    "code" : 1,
+    "result" : {
     "appointments":
     [
         {
@@ -41,4 +43,5 @@
             }
         }
     ]
+    }
 }

@@ -76,7 +76,7 @@ var book = {
 
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step4",
+			url : preServer+provinceId+"/tzy/plan/wishes/step4",
 			type : "post",
 			contentType: "application/json",
     		data : JSON.stringify(_data),
@@ -85,7 +85,7 @@ var book = {
 					var res = $.parseJSON(res);
 				}
 
-				 if(!res.code && res.planId){
+				 if(res.code==1 && res.planId){
                     window.location = "/pay/wishes?planId="+res.planId;
                     return false;
                 }else{
@@ -96,7 +96,7 @@ var book = {
             },
             error : function(err){
             	btn.removeClass("disabled");
-                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
+            	console.log(err);
             }
 		});
 	}

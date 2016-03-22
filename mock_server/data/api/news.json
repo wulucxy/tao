@@ -1,4 +1,6 @@
 {
+    "code" : 1,
+    "result":{
 	"news" : [
 		{
 			"newsUrl":"url",
@@ -28,4 +30,5 @@
 			"newsTags":["标签1","标签2"]
 		}
 	]
+}
 }

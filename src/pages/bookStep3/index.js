@@ -18,8 +18,12 @@ var tmpl_subMajor = require("./templates/majorDetail.ejs");
 var tmpl_detail = require("../../assets/templates/detail.ejs");
 var tmpl_questions = require("../../assets/templates/questions.ejs");
 
+var browser = require("../../assets/components/browser");
+
 var provinceId = $("[name=province]").val();
 var batch = $("[name=batch]").val();
+
+var isModernBrower = browser.isModernBrower;
 
 var majors = {
 
@@ -49,7 +53,7 @@ var majors = {
 	requestData : function(){
 		var that = this;
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/data/major/all",
+			url : preServer+provinceId + "/data/major/all",
 			type : "get",
 			success : function(res){
 				if(typeof rs == "string"){
@@ -59,11 +63,16 @@ var majors = {
 				res.batch = batch;
 				that.res = res;
 
+				if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
 				that.insertData(res);
 
 			},
 			error : function(err){
-				warn($.parseJSON(err.responseText).msg);
+				console.log(err);
 				return;
 			}
 		});
@@ -92,16 +101,21 @@ var majors = {
 		  e.stopPropagation();
 		  
 		  var target = $(e.target);
-
+		  var label = $(this).closest("label");
 		  if(target.is(".icon-eye")){
 		  	e.preventDefault();
 		  	that.subMajorModal(target);
 		  }else{
-		  	util.setupLabel();
+		  	if(!isModernBrower){
+		  		if (label.attr("for") != ""){
+			        $("#" + label.attr("for")).click();
+			        util.setupLabel();
+		  		}
+		  	}
 		  }
 		});
 
-		util.setupLabel();
+		util.setupLabel();		
 
 		$("#nBtn").on("click",function(e){
 			e.preventDefault();
@@ -139,7 +153,7 @@ var majors = {
 		};
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step3",
+			url : preServer+provinceId+"/tzy/plan/wishes/step3",
 			type : "post",
             contentType: "application/json",
             data : JSON.stringify(_data),
@@ -148,7 +162,7 @@ var majors = {
                     var res = $.parseJSON(res);
                 }
 
-                if(!res.code){
+                if(res.code!=1){
                     window.location = "/box/plan/book_step4";
                     return false;
                 }else{

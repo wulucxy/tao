@@ -141,15 +141,15 @@ var score = {
 
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/data/college/threshold/compare?"+parm.join(""),
+			url : preServer+provinceId+"/data/college/threshold/compare?"+parm.join(""),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
 
-				if(res.code){
-					 common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+				if(res.code!=1){
+					 console.log(res);
 					 return;
 				}	
 
@@ -158,7 +158,7 @@ var score = {
 				return false;
 			},
 			error : function(err){
-				common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+				console.log(err);
 			}
 		});
 	}	

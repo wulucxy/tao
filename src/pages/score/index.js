@@ -49,14 +49,14 @@ var score = {
 	getScore : function(){
 		var that = this;
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/profile/score/detail",
+			url : preServer+provinceId+"/profile/score/detail",
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
 
-				if(res.code){
+				if(res.code!=1){
 					warn(res.msg || "网络错误，请稍后重试");
 					return;
 				}
@@ -85,7 +85,6 @@ var score = {
             },
             error : function(err){
             	btn.removeClass("disabled");
-                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
             }
 		});
 
@@ -268,7 +267,7 @@ var score = {
 		};
 
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/profile/score/edit",
+			url : preServer+provinceId + "/profile/score/edit",
 			type : "post",
 			contentType: "application/json",
 			data : JSON.stringify(_data),

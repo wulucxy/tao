@@ -43,6 +43,11 @@ var book = {
 		        				var res = $.parseJSON(res);
 		        			}
 
+		        			if(res.code!=1){
+								warn(res.msg);
+								return;
+							}
+
 		        			var optionList = [];
 
 		        			$.each(res.c,function(idx,ele){
@@ -70,13 +75,18 @@ var book = {
 	requestAppoint : function(){
 		var that = this;
 		$.ajax({
-    		url : "/v2/client/"+provinceId+"/tzy/appointment/types",
+    		url : preServer+provinceId+"/tzy/appointment/types",
     		type : "get",
     		contentType: "application/json",
     		success : function(res){
     			if(typeof res == "string"){
     				var res = $.parseJSON(res);
     			}
+
+    			if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
 
     			if(res[0].appointmentDesc){
     				$(".appointmentDesc").eq(0).text(res[0].appointmentDesc);
@@ -85,7 +95,7 @@ var book = {
     			
     		},
     		error : function(res){
-    			warn(res.msg || "网络请求失败，请稍后重试");
+    			console.log(res);
     		}
     	});
 	},
@@ -117,7 +127,7 @@ var book = {
 		};
 
 		$.ajax({
-			url : "/v2/client/"+province+"/tzy/appointment/create",
+			url : preServer+province+"/tzy/appointment/create",
 			type : "post",
 			contentType: "application/json",
 			data : JSON.stringify(data),

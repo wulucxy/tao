@@ -43,6 +43,11 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
+                if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
                 res = {
                 	questions : res
                 };

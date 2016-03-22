@@ -70,7 +70,7 @@ var searchSchool = {
 	    var that = this;
 	    var o = that.options;
 	    $.ajax({
-	      url : "/v2/client/"+o.provinceId+"/data/college/search",
+	      url : preServer+o.provinceId+"/data/college/search",
       	  type : "post",
 	      contentType: "application/json",
 	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
@@ -78,6 +78,11 @@ var searchSchool = {
 	        if(typeof res == "string"){
 	          var res = $.parseJSON(res);
 	        }
+
+	        if(res.code!=1){
+				warn(res.msg);
+				return;
+			}
 
 	        that.renderList(res);
 	        that.detailpagination(res);

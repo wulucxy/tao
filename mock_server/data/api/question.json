@@ -1,4 +1,6 @@
 {
+    "code" : 1,
+    "result":{
 	"questionObj" : "浙江大学",
 	"questionList" : [
 		{
@@ -13,4 +15,5 @@
 		},
 	],
 	"count" : 5
+}
 }

@@ -47,7 +47,7 @@ var fav = {
     addFavMajor : function(btn,type){
         var that = this;
         $.ajax({
-                url : "/v2/client/"+that.province+"/profile/favor/major/add",
+                url : preServer+that.province+"/profile/favor/major/add",
                 type : "post",
                 contentType: "application/json",
                 data : JSON.stringify({collegeId : $("[name=majorId]").val(),favorType : type}),
@@ -56,7 +56,7 @@ var fav = {
                         var res = $.parseJSON(res);
                     }
 
-                    if(!res.code){
+                    if(res.code==1){
                         btn.addClass("faved");
                         $("[name=favorId]").val(res.favorId);
                     }
@@ -67,7 +67,7 @@ var fav = {
     addFavInfo : function(btn,type){
         var that = this;
         $.ajax({
-                url : "/v2/client/"+that.province+"/profile/favor/news/add",
+                url : preServer+that.province+"/profile/favor/news/add",
                 type : "post",
                 contentType: "application/json",
                 data : JSON.stringify({newsId : $("[name=newsId]").val(),favorType : type}),
@@ -76,7 +76,7 @@ var fav = {
                         var res = $.parseJSON(res);
                     }
 
-                    if(!res.code){
+                    if(res.code==1){
                         btn.addClass("faved");
                         $("[name=favorId]").val(res.favorId);
 
@@ -94,7 +94,7 @@ var fav = {
     addFavCollege : function(btn,type){
     	var that = this;
     	$.ajax({
-    			url : "/v2/client/"+that.province+"/profile/favor/college/add",
+    			url : preServer+that.province+"/profile/favor/college/add",
     			type : "post",
                 contentType: "application/json",
     			data : JSON.stringIfy({collegeId : $("[name=college]").val(),favorType : type}),
@@ -103,7 +103,7 @@ var fav = {
     					var res = $.parseJSON(res);
     				}
 
-    				if(!res.code){
+    				if(res.code==1){
     					btn.addClass("faved");
     					$("[name=favorId]").val(res.favorId);
     				}
@@ -114,7 +114,7 @@ var fav = {
     removeFav : function(btn,type){
     	var that = this;
     	$.ajax({
-    			url : "/v2/client/"+that.province+"/profile/favor/delete",
+    			url : preServer+that.province+"/profile/favor/delete",
     			type : "post",
                 contentType: "application/json",
     			data : JSON.stringify({favorId : $("[name=favorId]").val()}),
@@ -123,7 +123,7 @@ var fav = {
     					var res = $.parseJSON(res);
     				}
 
-    				if(!res.code){
+    				if(res.code==1){
     					btn.removeClass("faved");
     					$("[name=favorId]").val("");
 

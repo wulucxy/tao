@@ -1,7 +1,10 @@
-[
+{
+"code":1,
+"result":[
 	{"name":"北京","code":"1"},
 	{"name":"上海","code":"2"},
 	{"name":"杭州","code":"3"},
 	{"name":"深圳","code":"4"},
 	{"name":"武汉","code":"5"}
 ]
+}

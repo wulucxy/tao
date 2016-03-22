@@ -122,12 +122,17 @@ var util = {
 	// 2.dom操作
 	setupLabel : function(){
 		var that = this;
+   
       if($('.label_check input').length) {
           $('.label_check').each(function(){
               $(this).removeClass('c_on');
           });
 
-          $('.label_check input:checked').each(function(){
+          $('.label_check input').map(function(idx,ele){
+              if($(ele).is(":checked")){
+                return ele;
+              }
+          }).each(function(){
               $(this).parent('label').addClass('c_on');
           });
       };
@@ -140,7 +145,7 @@ var util = {
           });
       };
 
-      $(".label_radio,.label_check").on("change",that.setupLabel);
+      $(".label_radio input,.label_check input").on("change",that.setupLabel);
   },
 
   debounce : function (func, threshold, execAsap) {

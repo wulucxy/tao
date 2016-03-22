@@ -32,12 +32,4 @@ $(".sloganTag").on("click",function(e){
 		"scrollTop" : offset
 	},600);
 
-
-
-	// $("html,body").stop(false, true).animate({
- //        scrollTop: 0
- //    }, 400, function() {
- //        iBtn = false;
- //    });
-
 });

@@ -16,8 +16,8 @@ Dropdown.prototype = {
 			that.trigger = $this;
 			$this.addClass("trigger");
 		}
-		that.listWrapper = $this.find("ul");
-      	that.lists = that.listWrapper.find("li");
+		that.listWrapper = $this.find(o.listWrapper);
+      	that.lists = that.listWrapper.find(o.li);
 
       	$this.addClass("fancy-select");
       	if(o.selectMode){
@@ -65,12 +65,12 @@ Dropdown.prototype = {
     }
     
 
-	    that.listWrapper.on('mouseenter', 'li', function(e) {
+	    that.listWrapper.on('mouseenter', o.li, function(e) {
           clearTimeout($this.timer);
 	        $(this).addClass('current');
 	    });
 
-	    that.listWrapper.on('mouseleave', 'li', function(e) {
+	    that.listWrapper.on('mouseleave', o.li, function(e) {
 	        $(this).removeClass('current');
           $this.timer = setTimeout(function(){
             that.close();
@@ -78,7 +78,7 @@ Dropdown.prototype = {
 	    });
 
 	    //点击子列表结果
-	    that.listWrapper.on('click','li',function(e){
+	    that.listWrapper.on('click',o.li,function(e){
           if(o.selectMode){
           	e.preventDefault();
           	var $list = $(this);
@@ -101,7 +101,7 @@ Dropdown.prototype = {
 	    });
 
 	    if(o.selectMode){
-	    	that.selectSublist(that.listWrapper.find("li").eq(0));
+	    	that.selectSublist(that.listWrapper.find(o.li).eq(0));
 		}
 
 	},
@@ -148,7 +148,9 @@ var dropdown = function (target,settings) {
         clickHandle : null,
         event : "click",
         selectMode : false,
-        onSelectCallback : null
+        onSelectCallback : null,
+        listWrapper : ".options",
+        li : ".ddlist"
     };
     settings = extend(defaultSettings, settings);
     return $(target).each(function () {

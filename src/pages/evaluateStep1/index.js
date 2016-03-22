@@ -37,7 +37,7 @@ function subFunc(btn,oForm){
     place : $("[name=place]").val(),
   };
   $.ajax({
-    url : "/v2/client/"+provinceId+"/tzy/plan/assessment/step1",
+    url : preServer+provinceId+"/tzy/plan/assessment/step1",
     type : "post",
     contentType: "application/json",
     data : JSON.stringify(_data),
@@ -46,16 +46,16 @@ function subFunc(btn,oForm){
         var res = $.parseJSON(res);
       }
 
-      if(!res.code){
+      if(res.code!=1){
         window.location = "/box/plan/evaluate_step2";
         return false;
       }else{
-        common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+        warn(res.msg);
         return;
       }
     },
     error : function(res){
-       common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+       console.log(res);
     }
   });
 

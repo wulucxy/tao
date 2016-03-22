@@ -33,12 +33,18 @@ var info = {
 		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
 		$.ajax({
-			url : "/v2/client/"+province+"/news?"+parm.join("&"),
+			url : preServer+province+"/news?"+parm.join("&"),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
 				$(".infoListWrap").removeClass("preloading");
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
@@ -50,8 +56,7 @@ var info = {
 				that.loadList(res,that.pager);
 			},
 			error : function(err){
-				//$(".infoListWrap").removeClass("preloading");
-				warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+				console.log(err);
 			}
 		});
 	},

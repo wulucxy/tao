@@ -31,12 +31,17 @@ var collection = {
 	requestCollege : function(){
 		var that = this;
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/profile/favor/college",
+			url : preServer+provinceId+"/profile/favor/college",
 			type : "get",
 			contentType: "application/json",
 			success : function(res){
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
+                }
+
+                if(res.code!=1){
+                    warn(res.msg);
+                    return;
                 }
 
                 $.each(res.favorites,function(idx,el){
@@ -92,7 +97,7 @@ var collection = {
     requestMajor : function(){
         var that = this;
         $.ajax({
-            url : "/v2/client/"+provinceId+"/profile/favor/major",
+            url : preServer+provinceId+"/profile/favor/major",
             type : "get",
             contentType: "application/json",
             success : function(res){
@@ -114,7 +119,7 @@ var collection = {
      requestInfo : function(){
         var that = this;
         $.ajax({
-            url : "/v2/client/"+provinceId+"/profile/favor/news",
+            url : preServer+provinceId+"/profile/favor/news",
             type : "get",
             contentType: "application/json",
             success : function(res){

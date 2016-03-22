@@ -98,7 +98,7 @@ var pay = {
 		};
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/pay",
+			url : preServer+provinceId+"/pay",
 			type : "post",
 			contentType: "application/json",
         	data : JSON.stringify(_data),

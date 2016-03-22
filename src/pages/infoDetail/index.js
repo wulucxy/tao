@@ -43,7 +43,7 @@ function updown(btn,type){
 	var _url = (type == 1 ? "/news/up" : "/news/down");
 
 	$.ajax({
-		url : "/v2/client/" + province + _url,
+		url : preServer + province + _url,
 		type : "post",
 		contentType: "application/json",
 		data : JSON.stringify({newsId : newsId}),
@@ -51,6 +51,11 @@ function updown(btn,type){
 			if(typeof res == "string"){
 				var res = $.parseJSON(res);
 			};
+
+			if(res.code!=1){
+				warn(res.msg);
+				return;
+			}
 
 			btn.addClass("active");
 
@@ -63,7 +68,7 @@ function updown(btn,type){
 			btn.attr("btn-type",1);
 		},
 		error : function(err){
-			warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+			console.log(err);
 		}
 	});
 }

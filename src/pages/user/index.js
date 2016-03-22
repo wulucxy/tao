@@ -62,7 +62,7 @@ archive.init({
 
 //历史方案模块调用
 history.init({
-	url : "/v2/client/"+provinceId +"/profile/plan/list",
+	url : preServer+provinceId +"/profile/plan/list",
 	type : "get",
 	listAttr : "wishes",
 	ele : "#historyWrapper"
@@ -70,7 +70,7 @@ history.init({
 
 //历史测试模块调用
 test.init({
-	url : "/v2/client/"+provinceId +"/tzy/mtest/all",
+	url : preServer+provinceId +"/tzy/mtest/all",
 	type : "get",
 	ele : "#testWrapper"
 });
@@ -80,7 +80,7 @@ collection.init();
 
 //提问列表
 qa.init({
-	url : "/v2/client/"+provinceId +"/profile/qa",
+	url : preServer+provinceId +"/profile/qa",
 	type : "get",
 	ele : "#qschoolList"
 });
@@ -91,7 +91,7 @@ qa.init({
 // });
 
 appointment.init({
-	url : "/v2/client/"+provinceId +"/tzy/appointment/all",
+	url : preServer+provinceId +"/tzy/appointment/all",
 	type : "get",
 	ele : "#bookWrapper"
 })

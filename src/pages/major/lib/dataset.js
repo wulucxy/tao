@@ -50,7 +50,7 @@ var dataSet = {
         var provinceId = $("[name=province]").val();
 
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/data/major",
+			url : preServer+provinceId + "/data/major",
 			type : "post",
             contentType: "application/json",
 			data : JSON.stringify(_data),
@@ -59,6 +59,10 @@ var dataSet = {
 					var res = $.parseJSON(res);
 				}
 
+                if(res.code!=1){
+                    warn(res.msg);
+                    return;
+                }
                
 				that.loadList(res);
 			}

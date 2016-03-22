@@ -80,7 +80,7 @@ $("#verifyBtn").on("click",function(e){
   });
 
   $.ajax({
-    url : "/v2/client/"+provinceId +"/tzy/plan/assessment/create",
+    url : preServer+provinceId +"/tzy/plan/assessment/create",
     type : "post",
     contentType: "application/json",
     data : JSON.stringify(_data),
@@ -89,7 +89,7 @@ $("#verifyBtn").on("click",function(e){
         var res = $.parseJSON(res);
       }
 
-      if(!res.code && res.planId){
+      if(res.code==1 && res.planId){
           window.location = "/pay/assessment?planId="+res.planId;
           return false;
       }else{
@@ -100,7 +100,7 @@ $("#verifyBtn").on("click",function(e){
     },
       error : function(err){
         btn.removeClass("disabled");
-          warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+        console.log(err);
       }
   });
 });

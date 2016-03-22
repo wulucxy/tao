@@ -5,7 +5,7 @@ webpackJsonp([21],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(180);
+	__webpack_require__(181);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,11 +16,11 @@ webpackJsonp([21],{
 	
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(186);
+	var slider = __webpack_require__(187);
 	slider($("#bannerShow"));
 	
 	
-	var carousel = __webpack_require__(187);
+	var carousel = __webpack_require__(188);
 	
 	carousel.init();
 	
@@ -49,14 +49,77 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 180:
-/***/ function(module, exports) {
+/***/ 181:
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(182);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(33)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 182:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".bannerShow {\n  position: relative;\n  overflow: hidden;\n}\n.bannerShow ul {\n  height: 100%;\n  position: relative;\n}\n.bannerShow ul li {\n  float: left;\n}\n.picSlide a {\n  background-position: center center;\n  background-repeat: no-repeat;\n  display: block;\n  height: 360px;\n}\n.picSlide a > img {\n  width: 100%;\n  height: auto;\n}\n.bannerShow .dots {\n  position: absolute;\n  bottom: 20px;\n  z-index: 99;\n}\n.bannerShow .dots a {\n  display: block;\n  float: left;\n  width: 24px;\n  font: 0/0 a;\n  height: 24px;\n  margin: 0 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  background-color: #cfcfcf;\n  -webkit-transition: all 0.4s ease;\n          transition: all 0.4s ease;\n}\n.bannerShow .dots a.active {\n  background: #61c0e2;\n}\n.sloganTag {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 9;\n  background-image: url(" + __webpack_require__(183) + ");\n  width: 104px;\n  height: 103px;\n}\n.slogan_1 {\n  background-position: 0 0;\n}\n.slogan_2 {\n  background-position: -104px 0;\n}\n.slogan_3 {\n  background-position: -208px 0;\n}\n.s-slogan {\n  padding: 30px 0;\n  border-bottom: 1px solid #dcdbdb;\n  border-top: 1px solid #dcdbdb;\n}\n.s-slogan .container {\n  position: relative;\n}\n.s-slogan .container:before {\n  content: \"\";\n  position: absolute;\n  height: 0;\n  border-top: 1px solid #dcdbdb;\n  top: 52px;\n  left: 130px;\n  width: 700px;\n}\n.sloganList {\n  width: 33.25%;\n  float: left;\n  font-size: 15px;\n  line-height: 2;\n}\n.sloganList:nth-child(1) .pad {\n  padding-right: 88px;\n  padding-left: 10px;\n}\n.sloganList:nth-child(2) .pad {\n  padding-right: 58px;\n  padding-left: 10px;\n}\n.sloganList:nth-child(3) .pad {\n  padding-left: 30px;\n}\n.sloganList h4 {\n  text-align: center;\n  font-size: 20px;\n  color: #333;\n  margin: 20px 0 12px;\n}\n.subSloganList {\n  position: relative;\n  padding-left: 16px;\n}\n.subSloganList:before {\n  content: \"\";\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  background-color: #dbdbdb;\n  top: 8px;\n  border-radius: 50%;\n  left: 0;\n}\n.s-recommend {\n  padding: 32px 0;\n  border-top: 1px solid #e2e2e2;\n}\n.recommendList {\n  margin-left: -25px;\n  margin-right: -25px;\n}\n.recommendList li {\n  width: 50%;\n  float: left;\n  margin-bottom: 16px;\n}\n.recommendList .media {\n  padding: 0 25px;\n}\n.recommendList .media .link {\n  color: #333;\n}\n.recommendList .media .link:hover {\n  color: #666;\n}\n.recommendList .media > .fl {\n  margin-right: 8px;\n  display: inline-block;\n  width: 74px;\n  height: 74px;\n}\n.recommendList .media .media-body {\n  line-height: 24px;\n}\n.recommendList .media .media-body .txt {\n  height: 48px;\n}\n.recommendList .media .media-body a:hover .txt {\n  color: #666;\n}\n.recommendList .media .detail {\n  margin-top: 4px;\n}\n.countdown {\n  padding: 8px 16px;\n  background-color: #fff;\n  box-shadow: 1px 2px 1px #ccc;\n  margin-bottom: 10px;\n}\n.countdown .imgWrap {\n  margin-right: 4px;\n}\n.cd-day {\n  font-size: 24px;\n  color: #fcca00;\n  margin: 0 6px;\n}\n.icon-archive {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(184) + ");\n  width: 60px;\n  height: 60px;\n}\n.archiveList li:nth-child(1) .icon-archive {\n  background-position: 0 0;\n}\n.archiveList li:nth-child(2) .icon-archive {\n  background-position: -60px 0;\n}\n.archiveList li:nth-child(3) .icon-archive {\n  background-position: -120px 0;\n}\n.archiveList li:nth-child(4) .icon-archive {\n  background-position: -180px 0;\n}\n.archiveList li:nth-child(5) .icon-archive {\n  background-position: -240px 0;\n}\n.archiveList {\n  margin: 0 -6px 16px;\n  padding-left: 2px;\n  padding-right: 2px;\n}\n.archiveList li {\n  float: left;\n  width: 20%;\n}\n.archiveList .pad {\n  padding: 0 6px;\n}\n.archiveList .grid {\n  height: 240px;\n  position: relative;\n  border: 1px solid #eaeaea;\n  box-shadow: 0 1px 1px #ccc;\n  background-color: #f7f6f6;\n  -webkit-transition: 0.4s box-shadow ease;\n          transition: 0.4s box-shadow ease;\n}\n.archiveList .grid .top {\n  position: relative;\n  background-color: #fff;\n  line-height: 96px;\n  height: 96px;\n  text-align: center;\n}\n.archiveList .grid .top .mc {\n  border-top-color: #f3f3f3;\n  left: 50%;\n  margin-left: -8px;\n  margin-top: -1px;\n}\n.archiveList .grid .bot h4 {\n  color: #333;\n  font-size: 18px;\n  text-align: center;\n  margin: 12px 0;\n}\n.archiveList .grid .bot .db-content {\n  font-size: 13px;\n  line-height: 2;\n  color: #666;\n  padding: 0 6px;\n}\n.archiveList .grid:hover {\n  box-shadow: 0 0 8px 2px #ccc;\n}\n.red {\n  color: #e93c59;\n}\n.s-tool {\n  margin: 18px 0;\n}\n.icon-tools {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(185) + ");\n  width: 84px;\n  height: 78px;\n}\n.toolLists .imgWrap {\n  display: inline-block;\n  width: 128px;\n  height: 128px;\n  box-shadow: 1px 2px 2px #d0cfd0;\n  text-align: center;\n  line-height: 108px;\n  background-color: #fff;\n  margin-right: 14px;\n}\n.toolLists li:nth-child(1) .icon-tools {\n  background-position: 0 0;\n}\n.toolLists li:nth-child(2) .icon-tools {\n  background-position: -84px 0;\n}\n.toolLists li:nth-child(3) .icon-tools {\n  background-position: -168px 0;\n}\n.toolLists li:nth-child(4) .icon-tools {\n  background-position: -252px 0;\n}\n.toolLists li {\n  margin-bottom: 20px;\n  padding-bottom: 4px;\n}\n.toolLists h5 {\n  font-size: 18px;\n  color: #333;\n  margin-bottom: 4px;\n  line-height: 24px;\n}\n.toolLists .media-body {\n  color: #999;\n  font-size: 14px;\n}\n.toolLists .media-body .txt {\n  line-height: 24px;\n  height: 60px;\n}\n.toolLists .media-body .detail > .fl {\n  color: #333;\n  font-size: 16px;\n  margin-top: 14px;\n}\n.coopLists {\n  margin-right: 6px;\n}\n.coop {\n  box-shadow: 1px 2px 1px #eaeaea;\n  display: block;\n  text-align: center;\n  background-color: #fff;\n  margin-bottom: 20px;\n  line-height: 140px;\n}\n.s-carousel {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.collegeWrap {\n  position: relative;\n  height: 78px;\n}\n.collegeList {\n  margin-left: 0;\n}\n.collegeList li {\n  float: left;\n  margin-right: 12px;\n  width: 155px;\n  background-color: #fff;\n  border: 1px solid #e2e2e2;\n  text-align: center;\n}\n.collegeList li a {\n  display: block;\n  width: 140px;\n  height: 60px;\n  text-align: center;\n}\n.collegeList li img {\n  max-width: 100%;\n  max-height: 100%;\n}\n.enterWrap {\n  width: 323px;\n  height: 302px;\n  background: url(" + __webpack_require__(186) + ") no-repeat;\n  left: 50%;\n  margin-left: 177px;\n  top: 29px;\n  z-index: 9;\n}\n.enterWrap .enterLinks {\n  font: 0/0 a;\n  overflow: hidden;\n  position: absolute;\n  background-color: transparent;\n}\n.enterWrap .book {\n  width: 156px;\n  height: 96px;\n  left: 5px;\n  top: 5px;\n}\n.enterWrap .score {\n  width: 156px;\n  height: 96px;\n  right: 5px;\n  top: 5px;\n}\n.enterWrap .evaluate {\n  width: 156px;\n  height: 96px;\n  left: 5px;\n  top: 103px;\n}\n.enterWrap .aboard {\n  width: 156px;\n  height: 98px;\n  right: 5px;\n  top: 103px;\n}\n.enterWrap .test {\n  width: 102px;\n  height: 96px;\n  left: 5px;\n  top: 200px;\n}\n.enterWrap .qa {\n  width: 102px;\n  height: 96px;\n  left: 109px;\n  top: 200px;\n}\n.enterWrap .expert {\n  width: 102px;\n  height: 96px;\n  right: 5px;\n  top: 200px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+
+/***/ 183:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/tool.png"
+
+/***/ },
+
+/***/ 184:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/archive.png"
+
+/***/ },
+
+/***/ 185:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/case.png"
 
 /***/ },
 
 /***/ 186:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/enter.png"
+
+/***/ },
+
+/***/ 187:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -186,7 +249,7 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 187:
+/***/ 188:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

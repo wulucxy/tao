@@ -28,7 +28,7 @@ common.switchNav(1);
 
 var provinceId = $("[name=province]").val();
 
-var getStateUrl = "/v2/client/getStateUrl";
+var getStateUrl = preServer+"getStateUrl";
 
 
 var aboard = {
@@ -166,7 +166,7 @@ var aboard = {
 
 	
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/tzy/plan/abroad/create",
+			url : preServer+provinceId+"/tzy/plan/abroad/create",
 			contentType: "application/json",
 			type : "post",
 		    data : JSON.stringify(_data),
@@ -175,16 +175,16 @@ var aboard = {
 		        var res = $.parseJSON(res);
 		      }
 
-		      if(!res.code){
+		      if(res.code!=1){
 		        window.location = "/box/plan/aboard_success";
 		        return false;
 		      }else{
-		        common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+		        console.log(res);
 		        return;
 		      }
 		    },
 		    error : function(res){
-		       common.showError($('.errTxt'),$.parseJSON(err.responseText).msg || "网络错误,请稍后重试");
+		       console.log(res);
 		    }
 		})
 	}

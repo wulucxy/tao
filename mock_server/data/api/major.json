@@ -1,4 +1,6 @@
-[
+{
+    "code" : 1,
+    "result":[
      {
         "majorId":"1",  
         "majorName":"专业1"
@@ -8,3 +10,4 @@
         "majorName":"专业2"
     }
 ]
+}

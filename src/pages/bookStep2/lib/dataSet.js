@@ -99,6 +99,11 @@ var dataSet = {
                 if(typeof res =="string"){
                     var res = $.parseJSON(res);
                 }
+
+                if(res.code!=1){
+                    warn(res.msg);
+                    return;
+                }
                 
                 if(!that.cityDataCache[val]){
                     that.cityDataCache[val] = res.c;
@@ -231,7 +236,7 @@ var dataSet = {
         };
 
         $.ajax({
-            url : "/v2/client/"+provinceId+"/tzy/plan/wishes/step2",
+            url : preServer+provinceId+"/tzy/plan/wishes/step2",
             type : "post",
             contentType: "application/json",
             data : JSON.stringify(_data),
@@ -240,7 +245,7 @@ var dataSet = {
                     var res = $.parseJSON(res);
                 }
 
-                if(!res.code){
+                if(res.code!=1){
                     window.location = "/box/plan/book_step3";
                     return false;
                 }else{
@@ -251,7 +256,7 @@ var dataSet = {
             },
             error : function(err){
                 btn.removeClass("disabled");
-                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
+                console.log(err);
             }
         })
 

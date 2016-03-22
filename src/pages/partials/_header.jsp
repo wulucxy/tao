@@ -71,25 +71,25 @@
 					<li class="navList" data-toggle="dropdown">
 						<a href="javascript:;" class="trigger">工具箱</a>
 						<div class="listWrap">
-							<ul class="options">
-								<li class="ddlist"><a href="/box/plan/book_step1">高考志愿定制</a></li>
-								<li class="ddlist"><a href="/box/plan/evaluate_step1">高考志愿评估</a></li>
-								<li class="ddlist"><a href="/box/score_management">成绩管理</a></li>
-								<li class="ddlist"><a href="/box/plan/major_exam1">专业选择测试</a></li>
-								<li class="ddlist"><a href="/box/plan/aboard">留学方案定制</a></li>
-							</ul>
+							<div class="options">
+								<a class="ddlist" href="/box/plan/book_step1">高考志愿定制</a>
+								<a class="ddlist" href="/box/plan/evaluate_step1">高考志愿评估</a>
+								<a class="ddlist" href="/box/score_management">成绩管理</a>
+								<a class="ddlist" href="/box/plan/major_exam1">专业选择测试</a>
+								<a class="ddlist" href="/box/plan/aboard">留学方案定制</a>
+							</div>
 						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
 						<a href="javascript:;" class="trigger">资料库</a>
 						<div class="listWrap">
-							<ul class="options">
-								<li class="ddlist"><a href="/library/college">院校数据库</a></li>
-								<li class="ddlist"><a href="/library/major">专业数据库</a></li>
-								<li class="ddlist"><a href="/library/subject">科目数据库</a></li>
-								<li class="ddlist"><a href="/library/score_line">分数线数据库</a></li>
-								<li class="ddlist"><a href="/library/aboard_data">海外院校库</a></li>
-							</ul>
+							<div class="options">
+								<a class="ddlist" href="/library/college">院校数据库</a>
+								<a class="ddlist" href="/library/major">专业数据库</a>
+								<a class="ddlist" href="/library/subject">科目数据库</a>
+								<a class="ddlist" href="/library/score_line">分数线数据库</a>
+								<a class="ddlist" href="/library/aboard_data">海外院校库</a>
+							</div>
 						</div>
 					</li>
 					<li class="navList no-dropdown">

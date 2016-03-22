@@ -1,17 +1,20 @@
 {
-    "code" : 200,
-    "favorId":"123",              
-    "favorType":1,             
-    "favorTime":1473424242,    
-    "college":
-    {
-        "collegeId":"1",         
-        "collegeName":"",      
-        "city":3,               
-        "level":1,              
-        "feature":              
-        [
-            1,2,3,4
-        ]
+    "code" : 1,
+    "result" : {
+        "favorId":"123",              
+        "favorType":1,             
+        "favorTime":1473424242,    
+        "college":
+        {
+            "collegeId":"1",         
+            "collegeName":"",      
+            "city":3,               
+            "level":1,              
+            "feature":              
+            [
+                1,2,3,4
+            ]
+        }
     }
+   
 }

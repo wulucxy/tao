@@ -1,4 +1,7 @@
 {
+    "code" : 1,
+    "result":
+{
   "total": 147,
   "colleges": [{
     "collegeId": "3108",
@@ -183,4 +186,5 @@
   }],
   "count": 20,
   "page": 1
+}
 }

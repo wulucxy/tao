@@ -45,7 +45,7 @@ function subCodeAction(btn,oForm){
 	answer = [];
 	var provinceId = $("[name=province]").val();
 	$.ajax({
-		url : "/v2/client/"+provinceId + "/tzy/mtest/code",
+		url : preServer+provinceId + "/tzy/mtest/code",
 		type  : "post",
 		contentType: "application/json",
 		data : JSON.stringify({code : $("#code").val()}),
@@ -55,7 +55,7 @@ function subCodeAction(btn,oForm){
 			}
 
 			//点击确定要记录用户信息，方便下次进来不需要再次录入验证码
-			if(!res.code){
+			if(res.code==1){
 				//保存cookie,0是特殊的
 				answer.push("0");
 				Cookies.set("answer",answer.join(""),{expire : 356});

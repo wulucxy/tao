@@ -58,7 +58,7 @@ var dataSet = {
         var provinceId = $("[name=province]").val();
 
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/pay/plan/assessment",
+			url : preServer+provinceId + "/pay/plan/assessment",
 			type : "post",
             contentType: "application/json",
 			data : JSON.stringify(_data),

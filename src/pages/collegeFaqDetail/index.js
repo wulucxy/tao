@@ -57,18 +57,24 @@ var faq = {
 		parm.push("scheduleId="+scheduleId);
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/tzy/qa/"+scheduleId+"?"+parm.join("&"),
+			url : preServer+provinceId+"/tzy/qa/"+scheduleId+"?"+parm.join("&"),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
 				$(".qaListWrap").removeClass("preloading");
                 
 				that.loadList(res,that.pager);
 			},
 			error : function(err){
-				warn($.parseJSON(err.responseText).msg || "网络请求出错")
+				console.log(err)
 				$(".qaListWrap").removeClass("preloading");
 			}
 		});
@@ -144,7 +150,7 @@ var faq = {
 		};
 
 		$.ajax({
-			url : "/v2/client/"+provinceId+"/tzy/qa/"+scheduleId+"/ask",
+			url : preServer+provinceId+"/tzy/qa/"+scheduleId+"/ask",
 			type : "post",
 			contentType: "application/json",
 		    data : JSON.stringify(_data),
@@ -153,18 +159,18 @@ var faq = {
 		        var res = $.parseJSON(res);
 		      }
 
-		      if(!res.code){
+		      if(res.code!=1){
 		        warn("提交成功",function(){
 		        	window.location = "/box/college_faq_success";
 		        	return false;
 		        });  
 		      }else{
-		        common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+		        console.log(res);
 		        return;
 		      }
 		    },
 		    error : function(err){
-		       common.showError($('.errTxt'),$.parseJSON(err.responseText).msg || "网络错误,请稍后重试");
+		       console.log(res);
 		    }
 		});
 	}

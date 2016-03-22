@@ -5,7 +5,7 @@ webpackJsonp([11],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(152);
+	__webpack_require__(153);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,11 +16,11 @@ webpackJsonp([11],{
 	
 	
 	//自定义功能写下面
-	var tmpl_q = __webpack_require__(154);
-	var tmpl_list = __webpack_require__(155);
+	var tmpl_q = __webpack_require__(155);
+	var tmpl_list = __webpack_require__(156);
 	
 	// 验证组件
-	__webpack_require__(53);
+	__webpack_require__(54);
 	
 	//高校名称
 	var collegeName = $("[name=collegeName]").val();
@@ -62,7 +62,7 @@ webpackJsonp([11],{
 			parm.push("scheduleId="+scheduleId);
 	
 			$.ajax({
-				url : "/v2/client/"+provinceId+"/tzy/qa/"+scheduleId+"?"+parm.join("&"),
+				url : preServer+provinceId+"/tzy/qa/"+scheduleId+"?"+parm.join("&"),
 				type : "get",
 				success : function(res){
 					if(typeof res == "string"){
@@ -149,7 +149,7 @@ webpackJsonp([11],{
 			};
 	
 			$.ajax({
-				url : "/v2/client/"+provinceId+"/tzy/qa/"+scheduleId+"/ask",
+				url : preServer+provinceId+"/tzy/qa/"+scheduleId+"/ask",
 				type : "post",
 				contentType: "application/json",
 			    data : JSON.stringify(_data),
@@ -181,14 +181,49 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 152:
-/***/ function(module, exports) {
+/***/ 153:
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(154);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(33)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 
 /***/ 154:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".blue {\n  color: #61c0e2;\n}\n.orange {\n  color: #f4b64f;\n}\n.faqWrapper {\n  margin-top: 12px;\n}\n.formWrap > .col1 {\n  width: 590px;\n}\n.formWrap > .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px 36px;\n  margin-bottom: 30px;\n}\n.q-school h3 {\n  font-size: 18px;\n  line-height: 34px;\n  margin-bottom: 18px;\n}\n.q-school .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #61c0e2;\n  margin-right: 10px;\n}\n.modalSubCnt .row {\n  margin-bottom: 24px;\n}\n.modalSubCnt .btnRow {\n  margin-bottom: 10px;\n}\n.modalSubCnt .row label + .col2 {\n  margin-left: 80px;\n}\n.qschoolList h3 {\n  font-size: 18px;\n  line-height: 32px;\n  font-weight: normal;\n  margin-bottom: 24px;\n}\n.qschoolList h3 .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+
+/***/ 155:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -205,7 +240,7 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 155:
+/***/ 156:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

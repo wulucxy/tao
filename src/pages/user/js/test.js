@@ -41,6 +41,11 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
+                if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
                 $.each(res,function(idx,ele){
                 	console.log(ele.createTime);
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");

@@ -113,7 +113,7 @@ function subAnswer(){
 function postAnswer(btn,answer){
 	var provinceId = $("[name=province]").val();
 	$.ajax({
-		url : "/v2/client/"+provinceId + "/tzy/mtest/submit",
+		url : preServer+provinceId + "/tzy/mtest/submit",
 		type  : "post",
 		contentType: "application/json",
 		data : JSON.stringify({code : $("[name=code]").val(),answer:answer.join("")}),
@@ -122,7 +122,7 @@ function postAnswer(btn,answer){
 				var res = $.parseJSON(res);
 			}
 
-			if(!res.code){
+			if(res.code==1){
 				window.location.href = "/box/plan/major_exam3";
 			}else{
 				common.showError($("#errTxt"),res.msg);

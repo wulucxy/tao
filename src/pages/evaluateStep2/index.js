@@ -320,11 +320,16 @@ var school = {
     parm.push("courseType="+courseType);
 
     $.ajax({
-        url : "/v2/client/"+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join(""),
+        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join(""),
         type : "get",
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);
+            }
+
+            if(res.code!=1){
+              warn(res.msg);
+              return;
             }
             
             if(!res.length){
@@ -442,13 +447,18 @@ var school = {
   requestData : function(pager){
     var that = this;
     $.ajax({
-      url : "/v2/client/"+provinceId+"/data/college/search",
+      url : preServer+provinceId+"/data/college/search",
       type : "post",
       contentType: "application/json",
       data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
       success : function(res){
         if(typeof res == "string"){
           var res = $.parseJSON(res);
+        }
+
+        if(res.code!=1){
+          warn(res.msg);
+          return;
         }
 
         that.renderList(res);
@@ -690,7 +700,7 @@ var school = {
     });
 
     $.ajax({
-      url : "/v2/client/"+provinceId+"/tzy/plan/assessment/step2",
+      url : preServer+provinceId+"/tzy/plan/assessment/step2",
       type : "post",
       contentType: "application/json",
       data : JSON.stringify({wishes : wishList,zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
@@ -699,7 +709,7 @@ var school = {
               var res = $.parseJSON(res);
           }
 
-          if(!res.code){
+          if(res.code!=1){
               window.location = "/box/plan/evaluate_step3";
               return false;
           }else{

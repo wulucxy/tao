@@ -91,13 +91,13 @@ var verify = {
              if(typeof data == "string"){
               var data = $.parseJSON(data);
              }
-             if(data.code){
+             if(data.code!=1){
               that.clearTimeCount();
               warn(data.msg);
              }
             },
             error : function(err){
-            	warn($.parseJSON(err.responseText).msg || "短信发送失败，请稍后重试");
+            	console.log(err);
             }
         });
 	}

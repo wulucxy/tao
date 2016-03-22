@@ -65,7 +65,7 @@ var dataSet = {
 
         
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/data/college",
+			url : preServer+provinceId + "/data/college",
 			type : "post",
             contentType: "application/json",
 			data : JSON.stringify(_data),
@@ -73,6 +73,11 @@ var dataSet = {
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
+
+                if(res.code !=1){
+                    warn(res.msg);
+                    return;
+                }
 
                 //客户端修改数据
                 $.each(res.colleges,function(idx,ele){

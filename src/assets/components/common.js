@@ -7,6 +7,14 @@ var sideBar  = require("./sideBar");
 var modalBox = require("./modalBox");
 window.modalBox = modalBox;
 
+//placeholder模块
+var placeholder = require("./placeholder");
+window.placeholder = placeholder;
+
+var preServer = "/v2/client/";
+window.preServer = preServer;
+
+
 //登录模块
 var mLogin = require("./login/");
 

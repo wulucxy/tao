@@ -62,7 +62,7 @@ var dataSet = {
         var provinceId = $("[name=province]").val();
 
 		$.ajax({
-			url : "/v2/client/"+provinceId + "/data/college",
+			url : preServer+provinceId + "/data/college",
 			type : "post",
             contentType: "application/json",
 			data : JSON.stringify(_data),
@@ -70,6 +70,11 @@ var dataSet = {
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
 				}
+
+                if(res.code!=1){
+                    warn(res.msg);
+                    return;
+                }
 
                 //如果是点击加载更多，页码++，否则重置为1
                 if(btn){

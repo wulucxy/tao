@@ -27,13 +27,18 @@ var major = {
 		_data.page = that.pageObject[_key];
 
 		$.ajax({
-			url : "/v2/client/"+that.province + "/data/college/"+that.collegeId+"/majors",
+			url : preServer+that.province + "/data/college/"+that.collegeId+"/majors",
 			type : "post",
 			contentType: "application/json",
 			data : JSON.stringify(_data),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
+				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
 				}
 
 				//如果是点击加载更多，页码++，否则重置为1

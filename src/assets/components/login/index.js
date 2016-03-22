@@ -36,7 +36,9 @@ var login = {
 	        closeByOverlay : false,
 	        completeCallback : function(){
 	        	var self = btn; 
-	        
+	        		
+	        	placeholder($('input[placeholder],textarea[placeholder]')); 
+
 	        	that.loginEvt();
 	        	that.forget_reg_Evt(btn);
 	        }
@@ -111,7 +113,7 @@ var login = {
 	            var res = $.parseJSON(res);
 	          }
 
-	          if(!res.code){
+	          if(res.code==1){
 	          	setTimeout(function(){
 	          		window.location = "/";
 	          	},400);

@@ -21,6 +21,7 @@ var reg = {
 	        closeByOverlay : false,
 	        completeCallback : function(){
 	        	var self = btn; 
+	        	placeholder($('input[placeholder],textarea[placeholder]')); 
 	        	//去注册
 	        	$("#m_goLogin").on("click",function(e){
 	        		e.preventDefault();
@@ -80,7 +81,7 @@ var reg = {
 	            var res = $.parseJSON(res);
 	          }
 
-	          if(!res.code){
+	          if(res.code==1){
 	          	setTimeout(function(){
 	          		window.location = "/";
 	          	},400);

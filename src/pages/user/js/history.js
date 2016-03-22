@@ -71,6 +71,11 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
+                if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
                 $.each(res.wishes,function(idx,ele){
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
                 });
