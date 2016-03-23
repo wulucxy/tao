@@ -1,6 +1,9 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 var tmpl = require("../templates/major.ejs");
+var tmpl_all= require("../templates/major_all.ejs");
+
+var provinceId = $("[name=province]").val();
 
 var dataSet = { 
 	render : function(){
@@ -34,26 +37,23 @@ var dataSet = {
     		_key += $('[name='+item.type+']').val();
     	});
     	 
-        that.requestData();
 	},
 
+    //点击各个大类触发专业选择
 	requestData : function(btn){
 		var that = this,o = that.options;
 
-		var _data = {
+        var categoryId = btn.data("value").split(":")[1];
+
+        var _data = {
 			Undergraduate : $("[name=bachelor]").val(),
 			speciality : $("[name=junior]").val()
 		};
 
-        //if(_data.bachelor == "" && _data.junior == "") return;
-
-        var provinceId = $("[name=province]").val();
-
 		$.ajax({
-			url : preServer+provinceId + "/data/major",
-			type : "post",
+			url : preServer+provinceId + "/data/major/category/"+categoryId,
+			type : "get",
             contentType: "application/json",
-			data : JSON.stringify(_data),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
@@ -63,6 +63,8 @@ var dataSet = {
                     warn(res.msg);
                     return;
                 }
+
+                res.majors = res.result;
                
 				that.loadList(res);
 			}
@@ -76,6 +78,12 @@ var dataSet = {
 		$(".majorList").empty().html(_html);
 	},
 
+    loadListAll : function(data){
+        var that = this,o = that.options;
+        var _html = tmpl_all(data);
+        $(".majorList").empty().html(_html);
+    },
+
 	updateUI : function() {
        this.render(); 
     },
@@ -87,8 +95,103 @@ var dataSet = {
 
         this.options = o;
 
+        //专业数据缓存
+        this.majorDataCache;
+
         this.bindEvt();
-        this.updateUI();
+
+        //首次进来默认加载全部数据
+        this.requestAll();
+    },
+
+    //首次加载请求全部数据
+    //本科：type：1
+    //专科  type：2
+    //默认为空，代表全部
+    requestAll : function(type){
+        var that = this;
+
+        if(typeof that.majorDataCache != "undefined" ){  //已添加缓存
+
+          console.log(that.majorDataCache);
+
+          if(typeof type != "undefined"){
+            that.majorDataCache.majors = that.majorDataCache[type];
+          }
+
+          that.loadListAll(that.majorDataCache);
+          
+          return;
+        }
+
+        $.ajax({
+            url : preServer+provinceId + "/data/major/all",
+            type : "get",
+            contentType: "application/json",
+            success : function(res){
+                if(typeof res == "string"){
+                    var res = $.parseJSON(res);
+                }
+
+                if(res.code!=1){
+                    warn(res.msg);
+                    return;
+                }
+
+                res = res.result;
+
+                //所有专业
+                var majorList = $.map(res.subs,function(ele,idx){
+                    return ele.subs;
+                });
+
+                //本科专业
+                var benMajorList = res.subs[0].subs;
+
+                //本科专业
+                var zMajorList = res.subs[1].subs;
+
+                res.majors = majorList;
+                res["1"] = benMajorList;
+                res["2"] = zMajorList;
+
+                //设置为缓存
+                that.majorDataCache = res;
+                
+                that.loadListAll(res);
+            }
+        });
+    },
+
+    searchMajorReq : function(btn){
+        var that = this;
+        var oInput = $("#majorInput");
+        $.ajax({
+            url : preServer+provinceId + "/data/major/search",
+            type : "post",
+            data : {keyword : oInput.val() },
+            contentType: "application/json",
+            success : function(res){
+                if(typeof res == "string"){
+                    var res = $.parseJSON(res);
+                }
+
+                if(res.code != 1){
+                    warn(res.msg);
+                    btn.removeClass("disabled");
+                    return;
+                }
+
+                res.majors = res.result;
+                that.loadList(res);
+
+            },
+            error : function(err){
+                console.log(err);
+                btn.removeClass("disabled");
+            }
+        });
+
     },
 
     bindEvt : function(){
@@ -100,8 +203,8 @@ var dataSet = {
     		var type = link.data("value").split(":")[0],
     			val =  link.data("value").split(":")[1];
 
-    		if(link.hasClass("current") || val == "" ) return;
-            link.siblings().removeClass("current");
+    		if(link.hasClass("current")) return;
+            $("[data-action=add]").removeClass("current");
 
             $.each(that.state.tagList,function(idx,item){
                 if(type == item.type){
@@ -111,15 +214,31 @@ var dataSet = {
             });
 
     		link.addClass("current");
-
+            that.state.tagList = [];
 			that.state.tagList.push({
 				type : type,
 				value : val,
 				text : link.text()
 			});  
 
+            //这边要区分,1：本科，2：专科
+            var majorType;
+            if(val == "" || val == "0"){
+               if(type == "undergraduate" && val == ""){
+                    majorType = 1;
+               }else if(type == "undergraduate" && val == "0"){
+                    majorType = 2;
+               }else if(type == "speciality" && val == ""){
+                    majorType = 2;
+               }else if(type == "speciality" && val == "0"){
+                    majorType = 1;
+               }
+               that.requestAll(majorType);
+            }else{
+			   that.requestData(link);
+            }
 
-			that.updateUI();  		
+            that.updateUI();  		
     	});
 
     	$(document).on("click","[data-action=clear]",function(e){
@@ -145,8 +264,23 @@ var dataSet = {
                 }
             });
 
-			that.updateUI();  		
+            that.updateUI(); 
+			that.requestAll();  		
     	});
+
+        $("#sBtn").on("click",function(e){
+            e.preventDefault();
+            var oInput = $("#majorInput"),btn = $(this).closest(".btn");
+            if($.trim(oInput.val()) == ""){
+                warn("请输入专业名称");
+                return;
+            }
+
+            if(btn.hasClass('disabled')) return;
+            btn.addClass("disabled");
+            that.searchMajorReq(btn);
+
+        })
     }
 };
 

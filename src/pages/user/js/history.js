@@ -76,6 +76,8 @@ module.exports = {
 					return;
 				}
 
+				 var res = res.result;
+
                 $.each(res.wishes,function(idx,ele){
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
                 });

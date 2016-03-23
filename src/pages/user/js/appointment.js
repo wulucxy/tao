@@ -45,6 +45,8 @@ module.exports = {
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
                 }
+
+                var res = res.result;
                 
                 if(!res.appointments.length) return;
 

@@ -104,6 +104,8 @@ var dataSet = {
                     warn(res.msg);
                     return;
                 }
+
+                 var res = res.result;
                 
                 if(!that.cityDataCache[val]){
                     that.cityDataCache[val] = res.c;
@@ -245,7 +247,7 @@ var dataSet = {
                     var res = $.parseJSON(res);
                 }
 
-                if(res.code!=1){
+                if(res.code==1){
                     window.location = "/box/plan/book_step3";
                     return false;
                 }else{

@@ -68,12 +68,18 @@ webpackJsonp([11],{
 					if(typeof res == "string"){
 						var res = $.parseJSON(res);
 					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
 					$(".qaListWrap").removeClass("preloading");
 	                
 					that.loadList(res,that.pager);
 				},
 				error : function(err){
-					warn($.parseJSON(err.responseText).msg || "网络请求出错")
+					console.log(err)
 					$(".qaListWrap").removeClass("preloading");
 				}
 			});
@@ -158,18 +164,18 @@ webpackJsonp([11],{
 			        var res = $.parseJSON(res);
 			      }
 	
-			      if(!res.code){
+			      if(res.code!=1){
 			        warn("提交成功",function(){
 			        	window.location = "/box/college_faq_success";
 			        	return false;
 			        });  
 			      }else{
-			        common.showError($('.errTxt'),res.msg || "网络错误,请稍后重试");
+			        console.log(res);
 			        return;
 			      }
 			    },
 			    error : function(err){
-			       common.showError($('.errTxt'),$.parseJSON(err.responseText).msg || "网络错误,请稍后重试");
+			       console.log(res);
 			    }
 			});
 		}
@@ -182,44 +188,9 @@ webpackJsonp([11],{
 /***/ },
 
 /***/ 153:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(154);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 154:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".blue {\n  color: #61c0e2;\n}\n.orange {\n  color: #f4b64f;\n}\n.faqWrapper {\n  margin-top: 12px;\n}\n.formWrap > .col1 {\n  width: 590px;\n}\n.formWrap > .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px 36px;\n  margin-bottom: 30px;\n}\n.q-school h3 {\n  font-size: 18px;\n  line-height: 34px;\n  margin-bottom: 18px;\n}\n.q-school .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #61c0e2;\n  margin-right: 10px;\n}\n.modalSubCnt .row {\n  margin-bottom: 24px;\n}\n.modalSubCnt .btnRow {\n  margin-bottom: 10px;\n}\n.modalSubCnt .row label + .col2 {\n  margin-left: 80px;\n}\n.qschoolList h3 {\n  font-size: 18px;\n  line-height: 32px;\n  font-weight: normal;\n  margin-bottom: 24px;\n}\n.qschoolList h3 .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 

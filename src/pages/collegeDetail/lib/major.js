@@ -41,6 +41,10 @@ var major = {
 					return;
 				}
 
+				res = {
+					majors : res.result
+				};
+
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
                     that.pageObject[_key]++;
@@ -94,11 +98,9 @@ var major = {
     		that.requestData(btn);
     	});
 
-		$(".trigger").trigger("change");
+		$(".btn-loading").trigger("click");
 
 	}
-
-
 };
 
 module.exports = major;

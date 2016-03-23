@@ -11,7 +11,7 @@ window.modalBox = modalBox;
 var placeholder = require("./placeholder");
 window.placeholder = placeholder;
 
-var preServer = "/v2/client/";
+var preServer = "/v2_1/client/";
 window.preServer = preServer;
 
 

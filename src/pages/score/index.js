@@ -61,6 +61,8 @@ var score = {
 					return;
 				}
 
+				var res = res.result;
+
 				//推荐数据
 				that.state.promoteSubjects = res.promoteSubjects;
 
@@ -77,11 +79,6 @@ var score = {
 					};
 				});
 
-				//渲染图表
-				// charts.init(document.getElementById("charts"),{
-				// 	data : that.state
-				// });
-				
             },
             error : function(err){
             	btn.removeClass("disabled");
@@ -92,10 +89,7 @@ var score = {
 
 	tableEditor : function(){
 		var that = this;
-		// tableEditor($("#scoreTable"),{
-		// 	ele : "[editable]"
-		// });
-		// 
+		
 		$("[editable]").prop('tabindex', 1);
 
 		$(".toggleTxt").on("click",function(e){
@@ -274,6 +268,11 @@ var score = {
 			success : function(res){
 				if(typeof res == "string"){
 					var res= $.parseJSON(res);
+				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
 				}
 			}
 		})

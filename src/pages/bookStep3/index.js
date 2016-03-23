@@ -60,15 +60,16 @@ var majors = {
 					var res = $.parseJSON(res);
 				}
 
-				res.batch = batch;
-				that.res = res;
-
+			
 				if(res.code!=1){
 					warn(res.msg);
 					return;
 				}
 
-				that.insertData(res);
+				res.result.batch = batch;
+				that.res = res;
+
+				that.insertData(res.result);
 
 			},
 			error : function(err){
@@ -162,7 +163,7 @@ var majors = {
                     var res = $.parseJSON(res);
                 }
 
-                if(res.code!=1){
+                if(res.code==1){
                     window.location = "/box/plan/book_step4";
                     return false;
                 }else{
@@ -173,7 +174,7 @@ var majors = {
             },
             error : function(err){
             	btn.removeClass("disabled");
-                warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+                console.log(err);
             }
 		})
 	},

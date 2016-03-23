@@ -46,7 +46,7 @@ function subFunc(btn,oForm){
         var res = $.parseJSON(res);
       }
 
-      if(res.code!=1){
+      if(res.code==1){
         window.location = "/box/plan/evaluate_step2";
         return false;
       }else{
@@ -54,8 +54,8 @@ function subFunc(btn,oForm){
         return;
       }
     },
-    error : function(res){
-       console.log(res);
+    error : function(err){
+       console.log(err);
     }
   });
 

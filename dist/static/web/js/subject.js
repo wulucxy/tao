@@ -5,7 +5,7 @@ webpackJsonp([33],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(363);
+	__webpack_require__(364);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -20,60 +20,25 @@ webpackJsonp([33],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(365);
+	var dataSet = __webpack_require__(366);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 363:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(364);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
 /***/ 364:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .s-search {\n  margin-bottom: 20px;\n}\n.formWrap .s-search > div {\n  padding-top: 0;\n}\n.formWrap .s-search .form-control {\n  width: 100%;\n  background-color: #f9f9f9;\n}\n.formWrap .s-search .input-group-btn {\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.m-nav .btn-default > em {\n  display: inline-block;\n  margin-right: 3px;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.schoolList li {\n  padding: 16px 0;\n  border-bottom: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 16px;\n  color: #f4b64f;\n}\n.schoolList .detail .field:last-child {\n  margin-right: 0;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.schoolListWrap {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 24px;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 365:
+/***/ 366:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
-	var tmpl = __webpack_require__(366);
+	var tmpl = __webpack_require__(367);
 	
 	var dataSet = { 
 		render : function(){
@@ -143,6 +108,13 @@ webpackJsonp([33],{
 					if(typeof res == "string"){
 						var res = $.parseJSON(res);
 					}
+	
+	                if(res.code!=1){
+	                    warn(res.msg);
+	                    return;
+	                }
+	
+	                res = res.result;
 	
 	                //如果是点击加载更多，页码++，否则重置为1
 	                if(btn){
@@ -263,7 +235,7 @@ webpackJsonp([33],{
 
 /***/ },
 
-/***/ 366:
+/***/ 367:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

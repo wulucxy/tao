@@ -5,7 +5,7 @@ webpackJsonp([30],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(218);
+	__webpack_require__(219);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -21,7 +21,7 @@ webpackJsonp([30],{
 	var tmpl_Info = __webpack_require__(106);
 	
 	//ping++
-	var ping = __webpack_require__(217);
+	var ping = __webpack_require__(218);
 	
 	var provinceId = $("[name=province]").val();
 	var planId = $("[name=planId]").val();
@@ -107,7 +107,8 @@ webpackJsonp([30],{
 				type : "post",
 				contentType: "application/json",
 	        	data : JSON.stringify(_data),
-	        	success : function(charge){
+	        	success : function(res){
+	        		var charge = res.result;
 	        		if(/alipay/.test(_data.channel)){
 	        			that.requestAlipay(btn,charge);
 	        		}else{
@@ -118,7 +119,7 @@ webpackJsonp([30],{
 	
 	        	},
 	        	error : function(err){
-	        		warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+	        		console.log(err);
 	        		btn.removeClass("disabled");
 	        	}
 			});
@@ -143,7 +144,7 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 217:
+/***/ 218:
 /***/ function(module, exports) {
 
 	var
@@ -323,45 +324,10 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 218:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(219);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
 /***/ 219:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "pre {\n  display: none;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 48px 60px;\n  margin-bottom: 30px;\n}\n.txts {\n  color: #333;\n  line-height: 2;\n}\n.lh42 {\n  line-height: 42px;\n}\n.g4 {\n  color: #444;\n}\n.blue {\n  color: #61c0e2;\n}\n.f26 {\n  font-size: 26px;\n}\n.formWrap .col2 {\n  line-height: 34px;\n  margin-left: 108px;\n}\n.formWrap .col2 label {\n  padding-left: 4px;\n}\n.formWrap .col2 label * {\n  vertical-align: middle;\n  display: inline-block;\n}\n.formWrap .footerCnt {\n  margin-top: 20px;\n  border-top: none;\n}\n.demoImg {\n  margin-top: 44px;\n  text-align: center;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 

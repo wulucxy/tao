@@ -45,6 +45,8 @@ var info = {
 					return;
 				}
 
+				var res = res.result;
+
 				$(".infoListWrap").removeClass("preloading");
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){

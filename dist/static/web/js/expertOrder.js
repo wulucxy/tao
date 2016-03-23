@@ -48,6 +48,13 @@ webpackJsonp([19],{
 			        				var res = $.parseJSON(res);
 			        			}
 	
+			        			if(res.code!=1){
+									warn(res.msg);
+									return;
+								}
+	
+								var res = res.result;
+	
 			        			var optionList = [];
 	
 			        			$.each(res.c,function(idx,ele){
@@ -83,14 +90,21 @@ webpackJsonp([19],{
 	    				var res = $.parseJSON(res);
 	    			}
 	
+	    			if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					var res = res.result;
+	
 	    			if(res[0].appointmentDesc){
 	    				$(".appointmentDesc").eq(0).text(res[0].appointmentDesc);
 	    				$(".appointmentDesc").eq(1).text(res[1].appointmentDesc);
 	    			}
 	    			
 	    		},
-	    		error : function(res){
-	    			warn(res.msg || "网络请求失败，请稍后重试");
+	    		error : function(err){
+	    			console.log(err);
 	    		}
 	    	});
 		},
@@ -131,7 +145,7 @@ webpackJsonp([19],{
 						var res = $.parseJSON(res);
 					}
 	
-					if(res.code){
+					if(res.code!=1){
 						warn(res.msg);
 						return;
 					}
@@ -158,44 +172,9 @@ webpackJsonp([19],{
 /***/ },
 
 /***/ 176:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(177);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 177:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.bookWrapper {\n  margin-top: 12px;\n}\n.bookWrapper .col1 {\n  width: 590px;\n}\n.bookWrapper .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow {\n  margin-top: 80px;\n}\n#bookForm .row {\n  margin-bottom: 12px;\n}\n#bookForm .input {\n  background-color: #fff;\n}\n#bookForm .control-label {\n  color: #333;\n}\n.taoModal .modalSubCnt {\n  margin-left: 20px;\n  margin-right: 20px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(31) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-newuser {\n  background-position: -100px 0;\n}\n.icon-newphone {\n  background-position: -120px 0;\n}\n.icon-txt {\n  background-position: -220px 0;\n}\n.icon-time {\n  background-position: -200px 0;\n}\n.row label + .col2 {\n  margin-left: 100px;\n}\n.bookCnt .bookRow {\n  margin-bottom: 10px;\n}\n.bookCnt .label_radio {\n  display: block;\n  margin-bottom: 12px;\n  width: auto;\n  margin-right: 0;\n  line-height: 1.5;\n  text-align: left;\n}\n.bookCnt .label_radio.last {\n  margin-bottom: 0;\n}\n.bookCnt .label_radio {\n  padding: 10px;\n}\n.bookCnt .label_radio .c1 {\n  margin-right: 6px;\n  vertical-align: middle;\n  display: inline-block;\n}\n.bookCnt .label_radio .appointmentDesc {\n  display: inline-block;\n  vertical-align: middle;\n  max-width: 90%;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.6be66a7c.css" rel="stylesheet"><link href="/static/web/css/major.d66af8fd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -30,9 +30,9 @@
 					<div class="column col1 fl">
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+					          <input type="text" class="form-control fl" placeholder="请输入专业名称" id="majorInput">
 					          <span class="input-group-btn">
-					            <button class="btn btn-default btn-search" type="button">
+					            <button class="btn btn-default btn-search" type="button" id="sBtn">
 					            	<i class="iconList icon-search"></i>
 					            </button>
 					          </span>
@@ -60,15 +60,15 @@
 								</div>
 								
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="bachelor:0">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="undergraduate:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 
 										<c:forEach var="list" items="${Undergraduate}">
-										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:${list.code}">${list.name}</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="undergraduate:${list.code}">${list.name}</a>
 										</c:forEach>
 
-										<a href="javascript:;" class="item" data-action="add" data-value="bachelor:0">不选本科</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="undergraduate:0">不选本科</a>
 										</div>
 									</div>
 								</div>
@@ -90,15 +90,15 @@
 								</div>
 								
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="junior:">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="speciality:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 										
 										<c:forEach var="list" items="${speciality}">
-										<a href="javascript:;" class="item" data-action="add" data-value="junior:${list.code}">${list.name}</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="speciality:${list.code}">${list.name}</a>
 										</c:forEach>
 										
-										<a href="javascript:;" class="item" data-action="add" data-value="junior:0">不选专科</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="speciality:0">不选专科</a>
 										</div>
 									</div>
 								</div>

@@ -5,7 +5,7 @@ webpackJsonp([26],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(203);
+	__webpack_require__(204);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -17,7 +17,7 @@ webpackJsonp([26],{
 	
 	/* 可选，视需求而定 */
 	var Cookies = __webpack_require__(99);
-	var tmpl = __webpack_require__(205);
+	var tmpl = __webpack_require__(206);
 	
 	__webpack_require__(54);
 	
@@ -60,7 +60,7 @@ webpackJsonp([26],{
 				}
 	
 				//点击确定要记录用户信息，方便下次进来不需要再次录入验证码
-				if(!res.code){
+				if(res.code==1){
 					//保存cookie,0是特殊的
 					answer.push("0");
 					Cookies.set("answer",answer.join(""),{expire : 356});
@@ -72,7 +72,7 @@ webpackJsonp([26],{
 				}
 			},
 			error : function(err){
-				warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+				console.log(err);
 			}
 		})
 	
@@ -113,49 +113,14 @@ webpackJsonp([26],{
 
 /***/ },
 
-/***/ 203:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(204);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
 /***/ 204:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".proTestWrapper {\n  margin-top: 12px;\n}\n.s-proTest .badge {\n  margin-left: 4px;\n}\n.lh2 {\n  line-height: 2;\n}\n.contentWrap {\n  background-color: #fff;\n  padding: 48px 36px;\n  margin-bottom: 40px;\n}\n.contentWrap .media > .imgWrap {\n  margin-right: 30px;\n}\n.contentWrap .media > .media-body {\n  font-size: 15px;\n}\n.footerCnt {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 40px;\n  padding-top: 48px;\n  text-align: center;\n}\n.verifyCodeModal .icon-code {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 24px;\n  background-image: url(" + __webpack_require__(20) + ");\n  background-position: -40px 0;\n}\n.verifyCodeModal.modalCntWrap .footerCnt {\n  padding-top: 0;\n  margin-top: 10px;\n}\n.verifyCodeModal .errInfo {\n  margin-left: 90px;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 205:
+/***/ 206:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

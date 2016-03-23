@@ -5,7 +5,7 @@ webpackJsonp([27],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(206);
+	__webpack_require__(207);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,12 +16,12 @@ webpackJsonp([27],{
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(208);
+	var questions = __webpack_require__(209);
 	
-	var tmpl = __webpack_require__(209);
+	var tmpl = __webpack_require__(210);
 	
 	var Cookies = __webpack_require__(99);
-	var contentSlider = __webpack_require__(210);
+	var contentSlider = __webpack_require__(211);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -127,7 +127,7 @@ webpackJsonp([27],{
 					var res = $.parseJSON(res);
 				}
 	
-				if(!res.code){
+				if(res.code==1){
 					window.location.href = "/box/plan/major_exam3";
 				}else{
 					common.showError($("#errTxt"),res.msg);
@@ -148,49 +148,14 @@ webpackJsonp([27],{
 
 /***/ },
 
-/***/ 206:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(207);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
 /***/ 207:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".proTestWrapper {\n  margin-top: 12px;\n}\n.s-proTest .badge {\n  margin-left: 4px;\n}\n.lh2 {\n  line-height: 2;\n}\n.contentWrap {\n  background-color: #fff;\n  padding: 48px 36px;\n  margin-bottom: 40px;\n}\n.qtestSliderWrap {\n  width: 510px;\n  margin: 0 auto;\n}\n.qtestSliderWrap h5 {\n  font-size: 18px;\n  text-align: center;\n  margin-bottom: 40px;\n}\n.qtestSliderWrap > ul {\n  height: 260px;\n}\n.part1 .title1 {\n  display: block;\n}\n.part1 .title2 {\n  display: none;\n}\n.part2 .title1 {\n  display: none;\n}\n.part2 .title2 {\n  display: block;\n}\n.contentSlider {\n  color: #333;\n  position: absolute;\n  top: 0;\n  left: 0%;\n  width: 100%;\n  height: 100%;\n}\n.contentSlider .label {\n  font-size: 16px;\n  margin-bottom: 32px;\n}\n.fieldsWrap {\n  overflow: hidden;\n  margin-right: -30px;\n}\n.fieldsWrap li {\n  float: left;\n  cursor: pointer;\n  box-shadow: 0 2px 0 #ccc;\n  margin: 0 30px 32px 0;\n  width: 150px;\n  border-radius: 8px;\n  border: 1px solid #d2d2d2;\n  text-align: center;\n  background-color: #fff;\n  line-height: 40px;\n  font-size: 14px;\n}\n.fieldsWrap li:hover {\n  background-color: #f1efef;\n}\n.progressWrap {\n  margin-top: 80px;\n  height: 12px;\n  border: 1px solid #666;\n  position: relative;\n}\n.progressInner {\n  position: absolute;\n  left: 0;\n  top: 0;\n  background-color: #61c0e2;\n  height: 100%;\n  width: 0;\n  display: inline-block;\n}\n.progressCount {\n  font-size: 15px;\n  color: #000;\n  margin: 10px 0 40px;\n}\n#subTestFooter {\n  display: none;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 208:
+/***/ 209:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2720,7 +2685,7 @@ webpackJsonp([27],{
 
 /***/ },
 
-/***/ 209:
+/***/ 210:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2772,7 +2737,7 @@ webpackJsonp([27],{
 
 /***/ },
 
-/***/ 210:
+/***/ 211:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);

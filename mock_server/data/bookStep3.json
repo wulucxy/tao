@@ -13,7 +13,7 @@
         "isLogin" : "1"
     },
     "courseType":0, 
-    "batch":1,
+    "batch":3,
     "socre":765,
     "place":1234,
     "c":[{"name":"杭州","code":"330100"},{"name":"北京","code":"110100"},{"name":"上海","code":"310100"}],

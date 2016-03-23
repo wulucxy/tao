@@ -149,7 +149,7 @@ var score = {
 				}
 
 				if(res.code!=1){
-					 console.log(res);
+					 warn(res.msg);
 					 return;
 				}	
 

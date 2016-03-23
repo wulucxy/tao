@@ -49,7 +49,7 @@ module.exports = {
 				}
 
                 res = {
-                	questions : res
+                	questions : res.result
                 };
 
                 that.insertData.call(that,res);

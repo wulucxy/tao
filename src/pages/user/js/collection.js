@@ -44,6 +44,8 @@ var collection = {
                     return;
                 }
 
+                res = res.result;
+
                 $.each(res.favorites,function(idx,el){
                 	
                 	var ele = el.college;
@@ -105,6 +107,8 @@ var collection = {
                    var res = $.parseJSON(res);
                 }
 
+                res = res.result;
+
                 that.insertMajor.call(that,res);
             }
         });
@@ -126,6 +130,8 @@ var collection = {
                 if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
                 }
+
+                res = res.result;
 
                 that.insertInfo.call(that,res);
             }

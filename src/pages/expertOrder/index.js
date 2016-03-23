@@ -48,6 +48,8 @@ var book = {
 								return;
 							}
 
+							var res = res.result;
+
 		        			var optionList = [];
 
 		        			$.each(res.c,function(idx,ele){
@@ -88,14 +90,16 @@ var book = {
 					return;
 				}
 
+				var res = res.result;
+
     			if(res[0].appointmentDesc){
     				$(".appointmentDesc").eq(0).text(res[0].appointmentDesc);
     				$(".appointmentDesc").eq(1).text(res[1].appointmentDesc);
     			}
     			
     		},
-    		error : function(res){
-    			console.log(res);
+    		error : function(err){
+    			console.log(err);
     		}
     	});
 	},
@@ -136,7 +140,7 @@ var book = {
 					var res = $.parseJSON(res);
 				}
 
-				if(res.code){
+				if(res.code!=1){
 					warn(res.msg);
 					return;
 				}

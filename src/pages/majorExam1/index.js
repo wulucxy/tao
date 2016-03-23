@@ -67,7 +67,7 @@ function subCodeAction(btn,oForm){
 			}
 		},
 		error : function(err){
-			warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+			console.log(err);
 		}
 	})
 

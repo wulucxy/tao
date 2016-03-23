@@ -62,21 +62,14 @@
 							
 							<div class="contentWrap">
 								<!--  我的资料 -->
-								<jsp:include page = "/partials/user/_myInfo.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_myInfo.jsp" %>
+								
 
 								<!--  历史方案 -->
-								<jsp:include page = "/partials/user/_history.jsp">
-									<jsp:param name="loadMoreUrl" value=preServer+"${user.province.code}/profile/plan/list" />
-									<jsp:param name="loadMoreTmpl" value="history" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_history.jsp" %>
 
 								<!--  历史测试 -->
-								<jsp:include page = "/partials/user/_test.jsp">
-									<jsp:param name="loadMoreUrl" value=preServer+"loadmore/test" />
-									<jsp:param name="loadMoreTmpl" value="test" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_test.jsp" %>
 
 								<!--  achivement -->
 								<!-- <jsp:include page = "/partials/user/_achivement.jsp">
@@ -87,16 +80,10 @@
 								<%@ include file = "/partials/user/_collection.jsp" %>
 
 								<!--  我的提问 -->
-								<jsp:include page = "/partials/user/_question.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore" />
-									<jsp:param name="loadMoreTmpl" value="question" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_question.jsp" %>
 
 								<!--  我的预约 -->
-								<jsp:include page = "/partials/user/_book.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore" />
-									<jsp:param name="loadMoreTmpl" value="book" />
-								</jsp:include>
+								<%@ include file = "/partials/user/_book.jsp" %>
 
 								<!--  我的优惠券 -->
 								<!-- <jsp:include page = "/partials/user/_coupon.jsp">

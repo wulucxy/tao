@@ -102,7 +102,8 @@ var pay = {
 			type : "post",
 			contentType: "application/json",
         	data : JSON.stringify(_data),
-        	success : function(charge){
+        	success : function(res){
+        		var charge = res.result;
         		if(/alipay/.test(_data.channel)){
         			that.requestAlipay(btn,charge);
         		}else{
@@ -113,7 +114,7 @@ var pay = {
 
         	},
         	error : function(err){
-        		warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");
+        		console.log(err);
         		btn.removeClass("disabled");
         	}
 		});

@@ -46,6 +46,8 @@ module.exports = {
 					return;
 				}
 
+				res = res.result;
+
                 $.each(res,function(idx,ele){
                 	console.log(ele.createTime);
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");

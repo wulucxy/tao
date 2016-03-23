@@ -31,6 +31,13 @@ var major = {
 					var res = $.parseJSON(res);
 				}
 
+				if(res.code != 1){
+					warn(res.msg);
+					return;
+				}
+
+				res = res.result;
+
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
                     that.pager++;

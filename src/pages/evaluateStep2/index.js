@@ -168,7 +168,7 @@ var school = {
       var lis = [];
       if($(".city").length && !that.state.selected[that.modal.majorType-1].list.length){
           lis.push('<li class="noList"></li>');
-          $(".btn-positive").addClass("disabled");
+          //$(".btn-positive").addClass("disabled");
           $('#tagsWrap').html(lis.join('')); 
       }else if($(".city").length && that.state.selected[that.modal.majorType-1].list){
           lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
@@ -331,6 +331,8 @@ var school = {
               warn(res.msg);
               return;
             }
+
+            var res = res.result;
             
             if(!res.length){
                that.state.cityList[that.modal.majorType-1].list = [];
@@ -368,7 +370,6 @@ var school = {
         },
         error : function(err){
             console.log(err);
-            console.log($.parseJSON(err.responseText));
         }
     });
   },
@@ -460,6 +461,8 @@ var school = {
           warn(res.msg);
           return;
         }
+
+        var res = res.result;
 
         that.renderList(res);
         that.detailpagination(res);
@@ -709,7 +712,7 @@ var school = {
               var res = $.parseJSON(res);
           }
 
-          if(res.code!=1){
+          if(res.code==1){
               window.location = "/box/plan/evaluate_step3";
               return false;
           }else{
@@ -718,7 +721,7 @@ var school = {
           }
       },
       error : function(err){
-          warn($.parseJSON(err.responseText).msg || "网络错误，请稍后重试");;
+          console.log(err);
       }
     });
   });
