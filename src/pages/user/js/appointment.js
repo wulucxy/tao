@@ -46,7 +46,7 @@ module.exports = {
                    var res = $.parseJSON(res);
                 }
 
-                var res = res.result;
+                res.appointments = res.result;
                 
                 if(!res.appointments.length) return;
 
@@ -68,7 +68,6 @@ module.exports = {
 
 	renderData : function(res){
 		var that = this;
-		console.log(res);
 		return that.tmpl(res);
 	},
 
@@ -76,6 +75,7 @@ module.exports = {
 		var that = this,$this = that.target,o = that.options;
 
 		var _html = that.renderData(res);
+
 		if(that.pager == 1){
 			$this.empty().append(_html);
 		}else{

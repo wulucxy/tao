@@ -3191,7 +3191,7 @@ webpackJsonp([35],{
 	                   var res = $.parseJSON(res);
 	                }
 	
-	                var res = res.result;
+	                res.appointments = res.result;
 	                
 	                if(!res.appointments.length) return;
 	
@@ -3213,7 +3213,6 @@ webpackJsonp([35],{
 	
 		renderData : function(res){
 			var that = this;
-			console.log(res);
 			return that.tmpl(res);
 		},
 	
@@ -3221,6 +3220,7 @@ webpackJsonp([35],{
 			var that = this,$this = that.target,o = that.options;
 	
 			var _html = that.renderData(res);
+	
 			if(that.pager == 1){
 				$this.empty().append(_html);
 			}else{

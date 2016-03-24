@@ -1,47 +1,113 @@
 {
-    "code" : 1,
-    "result" : {
-    "appointments":
-    [
-        {
-            "appointmentId":"",                    
-            "appointmentType":0,                    
-            "createTime":147234234234,             
-            "orderId":"",                           
-            "price":168000,                         
-            "scheduleTime":147234234,             
-            "status":0,         
-            "statusDesc":"",      
-            "content":"",        
-            "param":            
-            {
-                "name":"王xx",
-                "mobile":"133333333",
-                "city":331009,
-                "courseType":0,
-                "score":1
-            }
+    "code": "1",
+    "msg": "调用成功",
+    "result": [{
+        "content": "11111111",
+        "createTime": 1458198010000,
+        "price": 1680,
+        "param": {
+            "name": "111",
+            "score": 1111,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "13588888888"
         },
-        
-        {
-            "appointmentId":"",                    
-            "appointmentType":0,                    
-            "createTime":147234234234,             
-            "orderId":"",                           
-            "price":168000,                         
-            "scheduleTime":147234234,             
-            "status":0,         
-            "statusDesc":"",      
-            "content":"",        
-            "param":            
-            {
-                "name":"王xx",
-                "mobile":"1333333333",
-                "city":331009,
-                "courseType":0,
-                "score":1
-            }
-        }
-    ]
-    }
+        "status": 0,
+        "appointmentId": "160775401024119376",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458198010000
+    }, {
+        "content": "5555",
+        "createTime": 1458198348000,
+        "price": 1680,
+        "param": {
+            "name": "合区",
+            "score": 5555,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "13588888888"
+        },
+        "status": 0,
+        "appointmentId": "160775434815814108",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458198348000
+    }, {
+        "content": "777",
+        "createTime": 1458198478000,
+        "price": 1680,
+        "param": {
+            "name": "呵呵",
+            "score": 777,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "13555555555"
+        },
+        "status": 0,
+        "appointmentId": "160775447786071893",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458198478000
+    }, {
+        "content": "111",
+        "createTime": 1458213767000,
+        "price": 1680,
+        "param": {
+            "name": "111",
+            "score": 111,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "13511111111"
+        },
+        "status": 0,
+        "appointmentId": "160776976739667120",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458213767000
+    }, {
+        "content": "11111",
+        "createTime": 1458214141000,
+        "price": 1680,
+        "param": {
+            "name": "呵呵",
+            "score": 1111,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "13588888888"
+        },
+        "status": 0,
+        "appointmentId": "160777014061470024",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458214141000
+    }, {
+        "content": "1111",
+        "createTime": 1458214162000,
+        "price": 1680,
+        "param": {
+            "name": "11111",
+            "score": 1111,
+            "courseType": 1,
+            "city": 330100,
+            "mobile": "11111111111"
+        },
+        "status": 0,
+        "appointmentId": "160777016178177176",
+        "appointmentType": 1,
+        "appointmentDesc": "",
+        "statusDesc": "",
+        "orderId": "",
+        "scheduleTime": 1458214162000
+    }]
 }
