@@ -8,12 +8,10 @@
 <div class="content">
 
 	<div class="wellWrapper tabs" id="collectionWrapper">
-		<nav class="clearfix">                
-                 <ul>
-					<li class="tab-item current"><a href="javascript:;">院校</a></li>
-					<li class="tab-item"><a href="javascript:;">专业</a></li>
-					<li class="tab-item"><a href="javascript:;">资讯</a></li>
-				</ul>
+		<nav>                
+            <a class="tab-item current" href="javascript:;">院校</a>
+            <a class="tab-item" href="javascript:;">专业</a>
+            <a class="tab-item" href="javascript:;">资讯</a>
         </nav>
 		
 		<div class="content-wrap">

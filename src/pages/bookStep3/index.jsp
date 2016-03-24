@@ -2,6 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!doctype html>
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

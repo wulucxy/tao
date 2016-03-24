@@ -89,9 +89,9 @@ html,body{background-color: @color-body;}
  .fis_6{background-position: -125px 0;}
 
  .tabs > nav{border-bottom:1px solid #e2e2e2;}
- .tabs > nav li{
- 	display: inline-block;zoom:1;font-size: 15px;line-height: 34px;background-color: #ededed;border:1px solid #e2e2e2;border-bottom:none;
-	border-top-left-radius: 8px;border-top-right-radius: 8px;width: 100px;margin-right: 2px;text-align: center;
+ .tabs > nav .tab-item{
+ 	display:inline-block;zoom:1;font-size: 15px;line-height: 34px;background-color: #ededed;border:1px solid #e2e2e2;border-bottom:none;
+	border-top-left-radius: 8px;border-top-right-radius: 8px;width: 100px;margin-right: 2px;text-align: center;color: #555;
 	&.current{background-color: #fff;}
 	&.current a{border-bottom-color: #fff;}
 	a {position: relative;display: block;color: #555;border-bottom: 1px solid #e2e2e2;margin-bottom: -1px;}
@@ -216,6 +216,12 @@ html,body{background-color: @color-body;}
 .toggleIcon{
 	position: absolute;right:0;top:14px;
 	width:32px;height: 18px;background-position: -68px -18px;
+}
+
+.ie8{
+	.taoModal{
+		.inputTextWrap .form-control{line-height: 48px;}
+	}
 }
 
 

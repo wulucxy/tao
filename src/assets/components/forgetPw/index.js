@@ -93,7 +93,6 @@ var reg = {
 	          }
 	        },
 	        error : function(err){
-	        	userUtil.showError(oError, $.parseJSON(err.responseText).msg);
 	        	btn.removeClass('disabled');
 	        	return;
 	        }

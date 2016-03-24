@@ -2,11 +2,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.6be66a7c.css" rel="stylesheet"><link href="/static/web/css/subject.d8d6c43c.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.89d2599b.css" rel="stylesheet"><link href="/static/web/css/subject.d8d6c43c.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -24,7 +26,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						院校数据库
+						科目数据库
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -33,7 +35,7 @@
 					<div class="column col1 fl">
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+					          <input type="text" class="form-control fl" placeholder="请输入科目名称">
 					          <span class="input-group-btn">
 					            <button class="btn btn-default btn-search" type="button">
 					            	<i class="iconList icon-search"></i>

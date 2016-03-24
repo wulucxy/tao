@@ -49,6 +49,7 @@ var reg = {
 							return;
 						}
 
+						var res = res.result;
 	        			var optionList = [];
 
 	        			$.each(res,function(idx,ele){
@@ -141,7 +142,6 @@ var reg = {
 
 	        },
 	        error : function(err){
-	        	userUtil.showError(oError, $.parseJSON(err.responseText).msg);
 	        	btn.removeClass('disabled');
 	        	return;
 	        }

@@ -2,11 +2,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.6be66a7c.css" rel="stylesheet"><link href="/static/web/css/aboard.b1b6a259.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.89d2599b.css" rel="stylesheet"><link href="/static/web/css/aboard.b1b6a259.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>

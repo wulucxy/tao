@@ -66,6 +66,7 @@ webpackJsonp([33],{
 	        	inputList.push('<input type="hidden" name="ownerType">');
 	        	inputList.push('<input type="hidden" name="level">');
 	        	inputList.push('<input type="hidden" name="feature">');
+	            inputList.push('<input type="hidden" name="education">');
 	        	$(".crumb").append(inputList.join(""));
 	        }
 	
@@ -91,16 +92,17 @@ webpackJsonp([33],{
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
-				feature : $("[name=feature]").val()
+				feature : $("[name=feature]").val(),
+	            education : $("[name=education]").val()
 			};
 	
-			var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
+			var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature + _data.education;
 			_data.page = that.pageObject[_key];
 	
 	        var provinceId = $("[name=province]").val();
 	
 			$.ajax({
-				url : preServer+provinceId + "/data/college",
+				url : preServer+provinceId + "/data/subject",
 				type : "post",
 	            contentType: "application/json",
 				data : JSON.stringify(_data),

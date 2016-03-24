@@ -13,7 +13,7 @@ var provinceId = $("[name=province]").val();
 var collection = {
 	init : function(){
 		tabs($("#collectionWrapper"),{
-			tabsItem : "nav li",
+			tabsItem : ".tab-item",
 			items : ".content-wrap > section",
 			klass : "current"
 		});
