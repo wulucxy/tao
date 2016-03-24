@@ -2728,6 +2728,11 @@ webpackJsonp([35],{
 	                   var res = $.parseJSON(res);
 	                }
 	
+	                 if(res.code!=1){
+	                    warn(res.msg);
+	                    return;
+	                }
+	
 	                res = res.result;
 	
 	                that.insertMajor.call(that,res);
@@ -2750,6 +2755,11 @@ webpackJsonp([35],{
 	            success : function(res){
 	                if(typeof(res) == 'string'){
 	                   var res = $.parseJSON(res);
+	                }
+	
+	                 if(res.code!=1){
+	                    warn(res.msg);
+	                    return;
 	                }
 	
 	                res = res.result;
