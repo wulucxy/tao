@@ -19274,10 +19274,13 @@
 	                        var res = $.parseJSON(res);
 	                    }
 	
-	                    if(res.code==1){
-	                        btn.addClass("faved");
-	                        $("[name=favorId]").val(res.favorId);
+	                    if(res.code!=1){
+	                        warn(res.msg);
+	                        return;
 	                    }
+	
+	                    btn.addClass("faved");
+	                    $("[name=favorId]").val(res.favorId);
 	                }
 	            });
 	    },
@@ -19294,17 +19297,18 @@
 	                        var res = $.parseJSON(res);
 	                    }
 	
-	                    if(res.code==1){
-	                        btn.addClass("faved");
-	                        $("[name=favorId]").val(res.favorId);
-	
-	                        //回调
-	                        if($("#likeCount").length){
-	                            $("#likeCount").text(Number($("#likeCount").text()) + 1);
-	                        }
+	                    if(res.code!=1){
+	                        warn(res.msg);
+	                        return;
 	                    }
 	
+	                    btn.addClass("faved");
+	                    $("[name=favorId]").val(res.favorId);
 	
+	                    //回调
+	                    if($("#likeCount").length){
+	                        $("#likeCount").text(Number($("#likeCount").text()) + 1);
+	                    }
 	                }
 	            });
 	    },
@@ -19321,10 +19325,13 @@
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	    				if(res.code==1){
-	    					btn.addClass("faved");
-	    					$("[name=favorId]").val(res.favorId);
-	    				}
+	                    if(res.code!=1){
+	                        warn(res.msg);
+	                        return;
+	                    }
+	
+	    				btn.addClass("faved");
+	    				$("[name=favorId]").val(res.favorId);
 	    			}
 	    		});
 	    },
@@ -19341,15 +19348,19 @@
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	    				if(res.code==1){
-	    					btn.removeClass("faved");
-	    					$("[name=favorId]").val("");
+	                    if(res.code!=1){
+	                        warn(res.msg);
+	                        return;
+	                    }
 	
-	                        //回调
-	                        if($("#likeCount").length){
-	                            $("#likeCount").text(Number($("#likeCount").text()) - 1);
-	                        }
-	    				}
+	
+						btn.removeClass("faved");
+						$("[name=favorId]").val("");
+	
+	                    //回调
+	                    if($("#likeCount").length){
+	                        $("#likeCount").text(Number($("#likeCount").text()) - 1);
+	                    }
 	    			}
 	    		});
 	    }

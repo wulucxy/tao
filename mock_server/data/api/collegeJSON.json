@@ -1,34 +1,80 @@
 {
-"code" :1,
-"result":{
-    "count":10,  
-    "total":120, 
-    "page":0,     
-    "colleges":
-    [
-        {
-            "collegeId":"1",         
-            "collegeName":"浙江大学",      
-            "city":3,               
-            "level":1,              
-            "majorCount":54,        
-            "feature":              
-            [
-                1,2,3,4
-            ]
-        },
-        
-        {
-            "collegeId":"3",
-            "collegeName":"杭州大学",
-            "city":3,
-            "level":1,
-            "majorCount":54,        
-            "feature":
-            [
-                1,2,3,4
-            ]
-        }
-    ]
-}
+    "code": "1",
+    "msg": "调用成功",
+    "result": {
+        "total": 1781,
+        "colleges": [{
+            "collegeId": "1872",
+            "level": 1,
+            "majorCount": 44,
+            "feature": [1, 2, 3],
+            "collegeName": "北京大学",
+            "city": 110100
+        }, {
+            "collegeId": "3108",
+            "level": 1,
+            "majorCount": 11,
+            "feature": [1, 2, 3],
+            "collegeName": "浙江大学",
+            "city": 330100
+        }, {
+            "collegeId": "2884",
+            "level": 1,
+            "majorCount": 50,
+            "feature": [1, 2, 3],
+            "collegeName": "清华大学",
+            "city": 110100
+        }, {
+            "collegeId": "1827",
+            "level": 1,
+            "majorCount": 19,
+            "feature": [1, 2, 3],
+            "collegeName": "上海交通大学",
+            "city": 310100
+        }, {
+            "collegeId": "1833",
+            "level": 1,
+            "majorCount": 33,
+            "feature": [1, 2, 3],
+            "collegeName": "复旦大学",
+            "city": 310100
+        }, {
+            "collegeId": "2600",
+            "level": 1,
+            "majorCount": 99,
+            "feature": [1, 2, 3],
+            "collegeName": "南京大学",
+            "city": 320100
+        }, {
+            "collegeId": "1811",
+            "level": 1,
+            "majorCount": 185,
+            "feature": [1, 2, 3],
+            "collegeName": "武汉大学",
+            "city": 420100
+        }, {
+            "collegeId": "2482",
+            "level": 1,
+            "majorCount": 196,
+            "feature": [1, 2, 3],
+            "collegeName": "四川大学",
+            "city": 510100
+        }, {
+            "collegeId": "2485",
+            "level": 1,
+            "majorCount": 111,
+            "feature": [1, 2, 3],
+            "collegeName": "中山大学",
+            "city": 440100
+        }, {
+            "collegeId": "2981",
+            "level": 1,
+            "majorCount": 115,
+            "feature": [1, 2, 3],
+            "collegeName": "山东大学",
+            "city": 370100
+        }],
+        "count": 10,
+        "page": 1
+    }
 }
