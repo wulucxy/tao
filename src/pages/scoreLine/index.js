@@ -106,19 +106,21 @@ var score = {
 	checkStatus : function(){
 		var that = this;
 
-		if(!$("[name=contrast]").eq(0).val() && !$("[name=contrast]").eq(0).val()) return false;
+		if(!$("[name=contrast]").eq(0).val() && !$("[name=contrast]").eq(1).val()) return false;
 
 		if($("[name=contrast]").eq(0).val() == $("[name=contrast]").eq(1).val()){
 			$("[name=contrast]").eq(0).closest(".row").addClass("errorIpt unvalid");
 			return false;
 		}else{
+			var passed = true;
 			$("[name=contrast]").each(function(idx,ele){
 				if($(ele).val() == $("[name=primarySub]").val()){
 					$(ele).closest(".row").addClass("errorIpt unvalid");
+					passed = false;
 					return false;
 				}
 			});
-			return false;
+			return passed;
 		}
 		return true;
 	},
@@ -141,7 +143,7 @@ var score = {
 
 
 		$.ajax({
-			url : preServer+provinceId+"/data/college/threshold/compare?"+parm.join(""),
+			url : preServer+provinceId+"/data/college/threshold/compare?"+parm.join("&"),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
