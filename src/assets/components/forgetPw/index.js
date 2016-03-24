@@ -68,7 +68,7 @@ var reg = {
 	    var oError = $('.errTxt');
 
 	    $.ajax({
-	        url: "/v2/client/auth/resetPassword",
+	        url: preServer+"auth/resetPassword",
 	        type: "post",
 	        contentType: "application/json",
 	        data: JSON.stringify({

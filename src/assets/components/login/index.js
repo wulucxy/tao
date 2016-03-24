@@ -101,7 +101,7 @@ var login = {
 	    btn.addClass('disabled');
 	    var oError = $('.errTxt');
 	    $.ajax({
-	        url: "/v2/client/auth/signin",
+	        url: preServer+"/auth/signin",
 	        type: "post",
 	        data: JSON.stringify({
 	          mobile: $("[name=mobile]").val(),

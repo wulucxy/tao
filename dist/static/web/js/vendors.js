@@ -11586,7 +11586,7 @@
 		    btn.addClass('disabled');
 		    var oError = $('.errTxt');
 		    $.ajax({
-		        url: "/v2/client/auth/signin",
+		        url: preServer+"/auth/signin",
 		        type: "post",
 		        data: JSON.stringify({
 		          mobile: $("[name=mobile]").val(),
@@ -11629,7 +11629,7 @@
 	
 	    // 全局对象，可扩展
 	    var REG = {
-	      EMAIL : /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/,
+	      EMAIL : /^[a-zA-Z0-9._-]+@(\w)+((\.\w{2,3}){1,3})$/,  
 	      NUMBER: /^\-?(?:[1-9]\d*|0)(?:[.]\d+)?$/,
 	      TEL : /^1\d{10}$/,
 	      PASSWORD : /^[a-zA-Z0-9_]{4,20}$/
@@ -18896,7 +18896,7 @@
 		    btn.addClass('disabled');
 		    var oError = $('.errTxt');
 		    $.ajax({
-		        url: "/v2/client/auth/signup",
+		        url: preServer+"/auth/signup",
 		        type: "post",
 		        contentType: "application/json",
 		        data: JSON.stringify({
@@ -19136,7 +19136,7 @@
 		    var oError = $('.errTxt');
 	
 		    $.ajax({
-		        url: "/v2/client/auth/resetPassword",
+		        url: preServer+"auth/resetPassword",
 		        type: "post",
 		        contentType: "application/json",
 		        data: JSON.stringify({

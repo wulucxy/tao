@@ -115,7 +115,7 @@ var reg = {
 	    btn.addClass('disabled');
 	    var oError = $('.errTxt');
 	    $.ajax({
-	        url: "/v2/client/auth/signup",
+	        url: preServer+"/auth/signup",
 	        type: "post",
 	        contentType: "application/json",
 	        data: JSON.stringify({
