@@ -2257,6 +2257,8 @@ webpackJsonp([35],{
 					return;
 				}
 	
+				res = res.result;
+	
 		        that.renderList(res);
 		        that.detailpagination(res);
 		        that.Evt();

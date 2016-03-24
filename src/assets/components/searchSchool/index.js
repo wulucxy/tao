@@ -84,6 +84,8 @@ var searchSchool = {
 				return;
 			}
 
+			res = res.result;
+
 	        that.renderList(res);
 	        that.detailpagination(res);
 	        that.Evt();

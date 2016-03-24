@@ -108,7 +108,7 @@ webpackJsonp([0],{
 	                    var res = $.parseJSON(res);
 	                }
 	                
-	                if(res.code){
+	                if(res.code!=1){
 	                	warn(res.msg);
 	                	$("#statesSelect .trigger").addClass("disabled");
 	                	return;
@@ -129,7 +129,7 @@ webpackJsonp([0],{
 	
 	            },
 	            error : function(err){
-	                console.log($.parseJSON(err.responseText).msg);
+	                console.log(err);
 	            }
 			});
 		},
@@ -180,7 +180,7 @@ webpackJsonp([0],{
 			        var res = $.parseJSON(res);
 			      }
 	
-			      if(res.code!=1){
+			      if(res.code==1){
 			        window.location = "/box/plan/aboard_success";
 			        return false;
 			      }else{
@@ -188,8 +188,8 @@ webpackJsonp([0],{
 			        return;
 			      }
 			    },
-			    error : function(res){
-			       console.log(res);
+			    error : function(err){
+			       console.log(err);
 			    }
 			})
 		}
