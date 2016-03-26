@@ -101,7 +101,7 @@ var fav = {
     			url : preServer+that.province+"/profile/favor/college/add",
     			type : "post",
                 contentType: "application/json",
-    			data : JSON.stringify({collegeId : $("[name=college]").val(),favorType : type}),
+    			data : JSON.stringify({collegeId : $("[name=collegeId]").val(),favorType : type}),
     			success : function(res){
     				if(typeof res == "string"){
     					var res = $.parseJSON(res);
