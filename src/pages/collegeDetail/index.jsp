@@ -143,8 +143,8 @@
 														<em class="vm">科&emsp;目：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="courseType">
-															  <option value="1">理科</option>
-															  <option value="0">文科</option>
+															  <option value="0">理科</option>
+															  <option value="1">文科</option>
 														</select>	
 													</div>
 												</div>
@@ -152,69 +152,7 @@
 										</div>
 
 										<ul class="majorLists">
-											<li class="majorList clearfix">
-												<a class="fr taoIcon next" href="#" target="_blank"></a>
-												<div class="majorDetail">
-													<h5 class="name badgeRow">
-														<em class="badgetitle vm">机械设计制造及自动化</em>
-														<span class="badge red">国家重点</span>
-													</h5>
-													<p class="details">
-														<span>
-															<i class="icon-major icon-score"></i>
-															<em class="label">分数线：</em>
-															<em class="field orange">444</em>
-														</span>
-														<span>
-															<i class="icon-major icon-term"></i>
-															<em class="label">学制：</em>
-															<em class="field orange">4年</em>
-														</span>
-														<span>
-															<i class="icon-major icon-human"></i>
-															<em class="label">招生人数：</em>
-															<em class="field orange">56人</em>
-														</span>
-													</p>
-													<p class="foot">
-														<i class="icon-major icon-hat"></i>
-														<em class="label g6 vm">所需科目：</em>
-														<span class="btn btn-primary btn-outlined vm">物理</span>
-													</p>
-												</div>
-											</li>
-
-											<li class="majorList clearfix">
-												<a class="fr taoIcon next" href="#" target="_blank"></a>
-												<div class="majorDetail">
-													<h5 class="name badgeRow">
-														<em class="badgetitle vm">机械设计制造及自动化</em>
-														<span class="badge red">国家重点</span>
-													</h5>
-													<p class="details">
-														<span>
-															<i class="icon-major icon-score"></i>
-															<em class="label">分数线：</em>
-															<em class="field orange">444</em>
-														</span>
-														<span>
-															<i class="icon-major icon-term"></i>
-															<em class="label">学制：</em>
-															<em class="field orange">4年</em>
-														</span>
-														<span>
-															<i class="icon-major icon-human"></i>
-															<em class="label">招生人数：</em>
-															<em class="field orange">56人</em>
-														</span>
-													</p>
-													<p class="foot">
-														<i class="icon-major icon-hat"></i>
-														<em class="label g6 vm">所需科目：</em>
-														<span class="btn btn-primary btn-outlined vm">物理</span>
-													</p>
-												</div>
-											</li>
+											
 										</ul>
 										
 										<!-- 加载更多模块 -->
