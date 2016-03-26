@@ -58,6 +58,9 @@ var major = {
 	},
 
 	insertData : function(res,pager){
+
+		console.log(res);
+
 		var that = this;
 		var _html = tmpl(res);
 
