@@ -41,9 +41,6 @@ var major = {
 					return;
 				}
 
-				res = {
-					majors : res.result
-				};
 
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
@@ -52,7 +49,7 @@ var major = {
                     that.pageObject[_key] = 1;
                 }
 
-				that.insertData(res,that.pageObject[_key]);
+				that.insertData(res.result,that.pageObject[_key]);
 			}
 		});
 	},

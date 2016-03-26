@@ -190,7 +190,7 @@ webpackJsonp([9],{
 		renderMap : function(){
 			var that = this,o = that.options;
 			var map = new BMap.Map(this.wrapper);          // 创建地图实例  
-			var point = new BMap.Point(o.location.lng, o.location.lat);  // 创建点坐标 
+			var point = new BMap.Point(o.location.lat,o.location.lng);  // 创建点坐标 
 			map.centerAndZoom(point, 15); 
 			var marker = new BMap.Marker(point);        // 创建标注    
 			map.addOverlay(marker);                     // 将标注添加到地图中
@@ -248,9 +248,6 @@ webpackJsonp([9],{
 						return;
 					}
 	
-					res = {
-						majors : res.result
-					};
 	
 					//如果是点击加载更多，页码++，否则重置为1
 	                if(btn){
@@ -259,7 +256,7 @@ webpackJsonp([9],{
 	                    that.pageObject[_key] = 1;
 	                }
 	
-					that.insertData(res,that.pageObject[_key]);
+					that.insertData(res.result,that.pageObject[_key]);
 				}
 			});
 		},
