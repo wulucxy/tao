@@ -232,6 +232,8 @@ webpackJsonp([9],{
 	
 			var _key = _data.province + _data.courseType + _data.year;
 	
+			that.pageObject[_key] = that.pageObject[_key] || 1;
+	
 			_data.page = that.pageObject[_key];
 	
 			$.ajax({
@@ -249,7 +251,7 @@ webpackJsonp([9],{
 						return;
 					}
 	
-					console.log(that.pageObject[_key]);
+					
 					//如果是点击加载更多，页码++，否则重置为1
 	                if(btn){
 	                    that.pageObject[_key]++;
@@ -310,7 +312,7 @@ webpackJsonp([9],{
 	    		that.requestData(btn);
 	    	});
 	
-			$("[name=province]").trigger("change");
+			$(".btn-loading").trigger("click");
 	
 		}
 	};
