@@ -230,7 +230,8 @@ webpackJsonp([9],{
 				collegeId : that.collegeId
 			};
 	
-			var _key = _data.province + _data.collegeType + _data.year;
+			var _key = _data.province + _data.courseType + _data.year;
+	
 			_data.page = that.pageObject[_key];
 	
 			$.ajax({
@@ -248,13 +249,15 @@ webpackJsonp([9],{
 						return;
 					}
 	
-	
+					console.log(that.pageObject[_key]);
 					//如果是点击加载更多，页码++，否则重置为1
 	                if(btn){
 	                    that.pageObject[_key]++;
 	                }else{
 	                    that.pageObject[_key] = 1;
 	                }
+	
+	                console.log(that.pageObject[_key]);
 	
 					that.insertData(res.result,that.pageObject[_key]);
 				}
@@ -292,8 +295,10 @@ webpackJsonp([9],{
 					courseType : $("[name=courseType]").val()
 				};
 	
-				var _key = _data.province + _data.collegeType + _data.year;
+				var _key = _data.province + _data.courseType + _data.year;
 				that.pageObject[_key] = 1;
+	
+			
 				that.requestData();
 			});
 	
@@ -305,7 +310,7 @@ webpackJsonp([9],{
 	    		that.requestData(btn);
 	    	});
 	
-			$(".btn-loading").trigger("click");
+			$("[name=province]").trigger("change");
 	
 		}
 	};
@@ -328,7 +333,9 @@ webpackJsonp([9],{
 	 }else{ ;
 	__p += '	\n';
 	 for (var i = 0; i < majors.length; i++) { ;
-	__p += '\n<li class="majorList clearfix">\n	<a class="fr taoIcon next" href="#" target="_blank"></a>\n	<div class="majorDetail">\n		<h5 class="name badgeRow">\n			<em class="badgetitle vm">' +
+	__p += '\n<li class="majorList clearfix">\n	<a class="fr taoIcon next" href="/library/major/' +
+	((__t = ( majors[i].majorId )) == null ? '' : __t) +
+	'" target="_blank"></a>\n	<div class="majorDetail">\n		<h5 class="name badgeRow">\n			<em class="badgetitle vm">' +
 	((__t = ( majors[i].majorName )) == null ? '' : __t) +
 	'</em>\n			';
 	 for (var j = 0; j < majors[i].tags.length; j++) { ;

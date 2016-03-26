@@ -23,7 +23,8 @@ var major = {
 			collegeId : that.collegeId
 		};
 
-		var _key = _data.province + _data.collegeType + _data.year;
+		var _key = _data.province + _data.courseType + _data.year;
+
 		_data.page = that.pageObject[_key];
 
 		$.ajax({
@@ -41,13 +42,15 @@ var major = {
 					return;
 				}
 
-
+				console.log(that.pageObject[_key]);
 				//如果是点击加载更多，页码++，否则重置为1
                 if(btn){
                     that.pageObject[_key]++;
                 }else{
                     that.pageObject[_key] = 1;
                 }
+
+                console.log(that.pageObject[_key]);
 
 				that.insertData(res.result,that.pageObject[_key]);
 			}
@@ -85,8 +88,10 @@ var major = {
 				courseType : $("[name=courseType]").val()
 			};
 
-			var _key = _data.province + _data.collegeType + _data.year;
+			var _key = _data.province + _data.courseType + _data.year;
 			that.pageObject[_key] = 1;
+
+		
 			that.requestData();
 		});
 
@@ -98,7 +103,7 @@ var major = {
     		that.requestData(btn);
     	});
 
-		$(".btn-loading").trigger("click");
+		$("[name=province]").trigger("change");
 
 	}
 };
