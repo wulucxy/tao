@@ -74,72 +74,7 @@
 									<section class="tab-box majorWrap">
 										<div class="schoolListWrap">
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
-												<li class="clearfix">
-													<div class="fl">
-													<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em>
-														
-															
-																<span class="badge green">985</span>
-															
-														
-															
-																<span class="badge red">211</span>
-															
-														
-															
-																<span class="badge">研究生院</span>
-															
-														
-															
-																<span class="badge">卓越计划</span>
-															
-														
-													</h4>
-													<div class="detail">
-														<span class="label">院校属地：</span><span class="field">北京</span>
-														<span class="label">院校分类：</span><span class="field">综合</span>
-														<span class="label">院校性质：</span><span class="field">公办</span>
-														<span class="label">院校层次：</span><span class="field">本科</span>
-													</div>
-													</div>
-													<div class="fr">
-														<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-													</div>
-												</li>
-
-												<li class="clearfix">
-													<div class="fl">
-													<h4 class="name badgeRow"><em class="badgetitle vm"></em>
-														
-															
-																<span class="badge green">985</span>
-															
-														
-															
-																<span class="badge red">211</span>
-															
-														
-															
-																<span class="badge">研究生院</span>
-															
-														
-															
-																<span class="badge">卓越计划</span>
-															
-														
-													</h4>
-													<div class="detail">
-														<span class="label">院校属地：</span><span class="field">北京</span>
-														<span class="label">院校分类：</span><span class="field">综合</span>
-														<span class="label">院校性质：</span><span class="field">公办</span>
-														<span class="label">院校层次：</span><span class="field">本科</span>
-													</div>
-													</div>
-													<div class="fr">
-														<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-													</div>
-												</li>
-												</ul>
+											</ul>
 											<!-- 加载更多模块 -->
 											<%@ include file = "/partials/_loadMore.jsp" %>
 										</div>

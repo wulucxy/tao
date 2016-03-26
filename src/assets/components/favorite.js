@@ -10,6 +10,11 @@ var fav = {
 
 	toggle : function(){
 		var that = this;
+
+        if($("[name=favorId]").val()){
+          $(".btn-fav").addClass("faved");   
+        }
+
     	$(".btn-fav").on("click",function(e){
     		e.preventDefault();
     		var btn = $(this).closest(".btn");
