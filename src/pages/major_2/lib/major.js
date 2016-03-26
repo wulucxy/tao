@@ -16,17 +16,21 @@ var major = {
 
 	requestData : function(btn){
 		var that = this;
-		var _data = {
-			province : that.province,
-			majorId : that.majorId,
-			page : that.pager
-		};
+		// var _data = {
+		// 	province : that.province,
+		// 	majorId : that.majorId,
+		// 	page : that.pager
+		// };
+
+		var parm = [];
+		parm.push("province="+that.province);
+		parm.push("majorId="+that.majorId);
+		parm.push("page="+that.pager);
 
 		$.ajax({
-			url : preServer+that.province + "/data/major/college",
-			type : "post",
+			url : preServer+that.province + "/data/major/college?"+parm.join("&"),
+			type : "get",
 			contentType: "application/json",
-			data : JSON.stringify(_data),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);

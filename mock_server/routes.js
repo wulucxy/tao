@@ -85,5 +85,5 @@ module.exports = {
 	'/v2_1/client/1/data/major/category/3': "mock::api/major.json",
 	'post::/v2_1/client/1/data/major/search':"mock::api/major.json",
 	'/v2_1/client/1/data/college/threshold/compare':"mock::api/compare.json",
-	'post::/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json"
+	'/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json"
 };
