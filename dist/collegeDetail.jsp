@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.89d2599b.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.1f29acb2.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -19,7 +19,7 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 		<!-- 学校id -->
-		<input type="hidden" name="collegeId" value="${collegeId}">
+		<input type="hidden" name="collegeId" value="${college.collegeId}">
 
 		<!-- favorId,如果有的话 -->
 		<input type="hidden" name="favorId" value="${favorId}">
@@ -55,26 +55,26 @@
 										<div class="detailContent">
 											<div class="detailInfos clearfix">
 												<div class="col">
-													<span class="label">所在地区：</span><span class="field orange">${city.name}</span>
+													<span class="label">所在地区：</span><span class="field orange">${college.city}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校性质：</span><span class="field orange">${ownerType.name}</span>
+													<span class="label">院校性质：</span><span class="field orange">${college.ownerType}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校分类：</span><span class="field orange">${collegeType.name}</span>
+													<span class="label">院校分类：</span><span class="field orange">${college.type}</span>
 												</div>
 												
 												<div class="col">
-													<span class="label">院校层次：</span><span class="field orange">${level.name}</span>
+													<span class="label">院校层次：</span><span class="field orange">${college.level}</span>
 												</div>
 												<div class="col badgeRow">
 													<span class="label">院校特色：</span><span class="field">
-														<c:forEach var="featurelist" items="${feature}">
+														<c:forEach var="featurelist" items="${college.feature}">
 															 <c:choose>
-															 	<c:when test="${featurelist.type == 1}">
+															 	<c:when test="${featurelist.code == 1}">
 															   		<span class="badge green">${featurelist.name}</span>
 																</c:when>
-																<c:when test="${featurelist.type == 2}">
+																<c:when test="${featurelist.code == 2}">
 															   		<span class="badge red">${featurelist.name}</span>
 																</c:when>
 															 	<c:otherwise>
@@ -86,36 +86,29 @@
 												</div>
 												<div class="col">
 													<span class="label">院校排名：</span><span class="field place">
-														<em>排名</em><em class="orange"></em>
+														<em class="orange">NO.${college.place}</em>
 													</span>
-													<input type="hidden" name="place" value="${place}">
+													<input type="hidden" name="place" value="${college.place}">
 												</div>
 												<div class="col">
-													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
+													<span class="label">联系方式：</span><span class="field orange">${college.phone}</span>
 												</div>
 												<div class="col c-6">
-													<span class="label">院校网址：</span><a class="field orange" href="${site}" target="_blank">${site}</a>
+													<span class="label">院校网址：</span><a class="field orange" href="${college.site}" target="_blank">${college.site}</a>
 												</div>
 												<div class="col c-6">
-													<span class="label">通讯地址：</span><span class="field orange">${location.address}</span>
+													<span class="label">通讯地址：</span><span class="field orange">${college.location.address}</span>
 												</div>
 											</div>	
 											
-											<input type="hidden" name="location" value="${location.lat}:${location.lng}">
+											<input type="hidden" name="location" value="${college.location.lat}:${college.location.lng}">
 											<div id="baiduMap" class="baiduWrapper">
 												
 											</div>
 											<div class="detailTxt media">
 												<span class="fl">院校简介：</span>
 												<div class="media-body orange">
-													清华大学是中国著名的高等学府，坐落于北京西北部风景秀丽的清华园。 “自强不息、厚德载物”的校训，“行胜于言”的校风，“严谨、勤奋、求实、创新”的学风，以“爱国奉献、追求卓越”为核心的清华精神，以及“中西融会、古今贯通、
-		文理渗透”的办学特色，对学校的发展产生了深远的影响。 清华大学积极开展多渠
-		道、高层次、实质性的海外合作交流，与一批世界知名大学和机构建立了战略伙伴
-		关系，在涉及全球性重大问题的科学研究、技术发展和决策咨询等方面发挥了越来
-		越重要的作用；通过联合培养、交换生、国际会议等多种形式，不断拓展面向世界
-		的人才培养和高水平的学术交流；积极参与大学国际组织和联盟，促进双边及多边
-		合作；精心策划和推进重大海外文化和学术交流活动，全力提升学校的国际影响力
-		和知名度。
+													${college.description}
 												</div>
 											</div>
 

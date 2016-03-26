@@ -37,7 +37,45 @@ baidu.init(document.getElementById("baiduMap"),{
 
 major.init();
 
-// 排名文案处理
-var place = $("[name=place]").val().split("-");
-$(".place em").eq(0).text(place[0]+"排名");
-$(".place em").eq(1).text("No."+place[1]);
+var college = {
+	init : function(){
+		this.renderArea();
+	},
+	renderArea : function(){
+		var that = this;
+		$.ajax({
+    		url : "/system/area",
+    		type : "get",
+    		contentType: "application/json",
+    		success : function(res){
+    			if(typeof res == "string"){
+    				var res = $.parseJSON(res);
+    			}
+
+    			if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
+				var res = res.result;
+    			var optionList = [];
+
+    			$.each(res,function(idx,ele){
+    				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
+    			});
+
+    			$("[name=province]").empty();
+    			$("[name=province]").append(optionList.join(""));
+    		},
+    		error : function(){
+    			warn("网络请求失败，请稍后重试");
+    		}
+    	});
+	}
+};
+
+college.init();
+
+
+
+
