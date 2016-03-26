@@ -16,6 +16,7 @@
     "category":"专业大类",
     "mainCourse":"主要课程",
     "target":"培养目标",
+    "majorName":"经济学",
     "adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",

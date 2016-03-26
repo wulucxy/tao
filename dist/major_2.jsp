@@ -37,7 +37,7 @@
 					<div class="column col1 fl">
 						<div class="contentWrap db-major">
 							<h4 class="clearfix">
-								<em class="vm">哲学</em>
+								<em class="vm">${majorName}</em>
 								<a href="javascript:;" class="btn btn-primary btn-mid fr btn-fav" data-favtype="2"><i class="taoIcon favIcon"></i><em class="vm unfavedTxt">收藏</em><em class="vm favedTxt">已收藏</em></a>
 							</h4>
 
