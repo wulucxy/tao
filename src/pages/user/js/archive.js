@@ -5,6 +5,8 @@ require("../../../assets/components/validator");
 var common = require("../../../assets/components/common");
 
 var searchSchool = require("../../../assets/components/searchSchool");
+//provinceId
+var provinceId = $("[name=province]").val();
 
 var archive = {
 	init : function(options){
@@ -42,11 +44,13 @@ var archive = {
 		searchSchool.init({
 			el : ".addSchool",
 			provinceId : o.provinceId,
+			url : "/v2_1/client/"+provinceId+"/highSchool/search",
 			selectListCallback : function(li){
 				var self = this;
-
-				
-				
+				$(".btn-close").trigger("click");
+				$(".addSchool").val(li.attr("name"));
+				$(".addSchool").attr("code",li.attr("code"));
+				$(".addSchool").closest(".row").removeClass("error empty")
 			}
 		});
 

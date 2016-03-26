@@ -2242,8 +2242,11 @@ webpackJsonp([35],{
 		requestData : function(pager){
 		    var that = this;
 		    var o = that.options;
+	
+		    var url = o.url || preServer+o.provinceId+"/data/college/search";
+	
 		    $.ajax({
-		      url : preServer+o.provinceId+"/data/college/search",
+		      url : url,
 	      	  type : "post",
 		      contentType: "application/json",
 		      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
@@ -2378,6 +2381,8 @@ webpackJsonp([35],{
 	var common = __webpack_require__(38);
 	
 	var searchSchool = __webpack_require__(359);
+	//provinceId
+	var provinceId = $("[name=province]").val();
 	
 	var archive = {
 		init : function(options){
@@ -2415,11 +2420,13 @@ webpackJsonp([35],{
 			searchSchool.init({
 				el : ".addSchool",
 				provinceId : o.provinceId,
+				url : "/v2_1/client/"+provinceId+"/highSchool/search",
 				selectListCallback : function(li){
 					var self = this;
-	
-					
-					
+					$(".btn-close").trigger("click");
+					$(".addSchool").val(li.attr("name"));
+					$(".addSchool").attr("code",li.attr("code"));
+					$(".addSchool").closest(".row").removeClass("error empty")
 				}
 			});
 	

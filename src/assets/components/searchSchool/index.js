@@ -69,8 +69,11 @@ var searchSchool = {
 	requestData : function(pager){
 	    var that = this;
 	    var o = that.options;
+
+	    var url = o.url || preServer+o.provinceId+"/data/college/search";
+
 	    $.ajax({
-	      url : preServer+o.provinceId+"/data/college/search",
+	      url : url,
       	  type : "post",
 	      contentType: "application/json",
 	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
