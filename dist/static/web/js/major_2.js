@@ -2014,7 +2014,9 @@ webpackJsonp([28],{
 	((__t = ( colleges[i].ownerType.name )) == null ? '' : __t) +
 	'</span>\n		<span class="label">院校层次：</span><span class="field">' +
 	((__t = ( colleges[i].level.name )) == null ? '' : __t) +
-	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="#" class="btn btn-primary btn-mid">查看详情</a>\n	</div>\n</li>\n';
+	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="/library/college/' +
+	((__t = ( colleges[i].collegeId )) == null ? '' : __t) +
+	'" target="_blank" class="btn btn-primary btn-mid">查看详情</a>\n	</div>\n</li>\n';
 	 }} ;
 	
 	
