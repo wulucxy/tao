@@ -1,0 +1,62 @@
+{
+    "code" : 1,
+    "result":{
+    "count":10,                     
+    "total":120,                    
+    "page":0,                        
+    "majors":
+    [
+        {
+            "majorId":"",                  
+            "majorName":"",                
+            "threshold":734,                
+            "eductionalSystme":4,          
+            "recruitCount":7,              
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":""        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":""        
+                }
+            ],
+            "tags":                         
+            [
+                "tag",
+                "tag",
+                "tag"
+            ]
+        },
+        
+        {
+            "majorId":"",
+            "majorName":"",
+            "threshold":734,
+            "eductionalSystme":4,
+            "recruitCount":7,
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":""        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":""        
+                }
+            ],
+            "tags":
+            [
+                "tag",
+                "tag",
+                "tag"
+            ]
+        }
+    ]
+    }
+}

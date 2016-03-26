@@ -19,7 +19,7 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 		<!-- 学校id -->
-		<input type="hidden" name="collegeId" value="${college.collegeId}">
+		<input type="hidden" name="collegeId" value="${collegeId}">
 
 		<!-- favorId,如果有的话 -->
 		<input type="hidden" name="favorId" value="${favorId}">

@@ -43,7 +43,7 @@ module.exports = {
 	'post::/v2_1/client/loadmore/question' : 'mock::api/question.json',
 	'get::/system/city' : 'mock::api/city.json',
 	'post::/v2_1/client/1/data/college' : 'mock::api/college.json',
-	'post::/v2_1/client/1/data/college/1/majors' : 'mock::api/major.json',
+	'post::/v2_1/client/1/data/college/1/majors' : 'mock::api/majorDetailList.json',
 	'/v2_1/client/1/data/major/1/category/3' : 'mock::api/major.json',
 	'post::/v2_1/client/1/profile/favor/college/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/major/add' : 'mock::api/addFav.json',

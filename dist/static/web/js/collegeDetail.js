@@ -177,8 +177,8 @@ webpackJsonp([9],{
 		init : function(wrapper,options){
 			var options = extend({
 				location : {
-					lat : "116.404",
-					lng : "39.915"
+					lat : "39.915",
+					lng : "116.404"
 				}
 			},options);
 	
@@ -190,8 +190,7 @@ webpackJsonp([9],{
 		renderMap : function(){
 			var that = this,o = that.options;
 			var map = new BMap.Map(this.wrapper);          // 创建地图实例  
-			console.log(o.location.lat, o.location.lng);
-			var point = new BMap.Point(o.location.lat, o.location.lng);  // 创建点坐标 
+			var point = new BMap.Point(o.location.lng, o.location.lat);  // 创建点坐标 
 			map.centerAndZoom(point, 15); 
 			var marker = new BMap.Marker(point);        // 创建标注    
 			map.addOverlay(marker);                     // 将标注添加到地图中
