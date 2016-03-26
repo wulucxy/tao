@@ -19279,6 +19279,8 @@
 	                        return;
 	                    }
 	
+	                     res = res.result;
+	
 	                    btn.addClass("faved");
 	                    $("[name=favorId]").val(res.favorId);
 	                }
@@ -19301,6 +19303,8 @@
 	                        warn(res.msg);
 	                        return;
 	                    }
+	
+	                     res = res.result;
 	
 	                    btn.addClass("faved");
 	                    $("[name=favorId]").val(res.favorId);
@@ -19330,6 +19334,8 @@
 	                        return;
 	                    }
 	
+	                    res = res.result;
+	
 	    				btn.addClass("faved");
 	    				$("[name=favorId]").val(res.favorId);
 	    			}
@@ -19353,6 +19359,7 @@
 	                        return;
 	                    }
 	
+	                     res = res.result;
 	
 						btn.removeClass("faved");
 						$("[name=favorId]").val("");
