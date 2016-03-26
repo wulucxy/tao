@@ -12,7 +12,6 @@
         "userId" : "name",
         "isLogin" : "1"
     },
-     "college": {
         "location": {
             "address": "杭州西湖区求是路",
             "lat": "120.093059",
@@ -41,8 +40,7 @@
         "city":  "杭州",
         "description": "",
         "phone": "15558054432",
-        "site": "http: //www.baidu.com"
-    },
+        "site": "http: //www.baidu.com",
     "majorCount":54,       
     "adList" : [
         {

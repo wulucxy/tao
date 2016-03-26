@@ -55,21 +55,21 @@
 										<div class="detailContent">
 											<div class="detailInfos clearfix">
 												<div class="col">
-													<span class="label">所在地区：</span><span class="field orange">${college.city}</span>
+													<span class="label">所在地区：</span><span class="field orange">${city}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校性质：</span><span class="field orange">${college.ownerType}</span>
+													<span class="label">院校性质：</span><span class="field orange">${ownerType}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校分类：</span><span class="field orange">${college.type}</span>
+													<span class="label">院校分类：</span><span class="field orange">${type}</span>
 												</div>
 												
 												<div class="col">
-													<span class="label">院校层次：</span><span class="field orange">${college.level}</span>
+													<span class="label">院校层次：</span><span class="field orange">${level}</span>
 												</div>
 												<div class="col badgeRow">
 													<span class="label">院校特色：</span><span class="field">
-														<c:forEach var="featurelist" items="${college.feature}">
+														<c:forEach var="featurelist" items="${feature}">
 															 <c:choose>
 															 	<c:when test="${featurelist.code == 1}">
 															   		<span class="badge green">${featurelist.name}</span>
@@ -86,29 +86,29 @@
 												</div>
 												<div class="col">
 													<span class="label">院校排名：</span><span class="field place">
-														<em class="orange">NO.${college.place}</em>
+														<em class="orange">NO.${place}</em>
 													</span>
-													<input type="hidden" name="place" value="${college.place}">
+													<input type="hidden" name="place" value="${place}">
 												</div>
 												<div class="col">
-													<span class="label">联系方式：</span><span class="field orange">${college.phone}</span>
+													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
 												</div>
 												<div class="col c-6">
-													<span class="label">院校网址：</span><a class="field orange" href="${college.site}" target="_blank">${college.site}</a>
+													<span class="label">院校网址：</span><a class="field orange" href="${site}" target="_blank">${site}</a>
 												</div>
 												<div class="col c-6">
-													<span class="label">通讯地址：</span><span class="field orange">${college.location.address}</span>
+													<span class="label">通讯地址：</span><span class="field orange">${location.address}</span>
 												</div>
 											</div>	
 											
-											<input type="hidden" name="location" value="${college.location.lat}:${college.location.lng}">
+											<input type="hidden" name="location" value="${location.lat}:${location.lng}">
 											<div id="baiduMap" class="baiduWrapper">
 												
 											</div>
 											<div class="detailTxt media">
 												<span class="fl">院校简介：</span>
 												<div class="media-body orange">
-													${college.description}
+													${description}
 												</div>
 											</div>
 
