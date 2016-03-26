@@ -53,22 +53,19 @@
 									<section class="tab-box detailWrap current">
 										<div class="detailTxt">
 											<div class="inline row">
-												<span class="label">所属门类：</span><span class="field orange">哲学</span>
-												<span class="label">专业代码：</span><span class="field orange">11111</span>
+												<span class="label">所属门类：</span><span class="field orange">${category}</span>
+												<span class="label">专业代码：</span><span class="field orange">${majorId}</span>
 											</div>
 											<div class="media row">
-												<span class="fl label">所属门类：</span>
+												<span class="fl label">主要课程：</span>
 												<div class="media-body orange">
-													哲学概论、马克思主义哲学原理、中国哲学史、西方哲学史、科学技术哲学、伦理
-		学、宗教学、美学、逻辑学、心理学、中外哲学原著导读等。
+													${mainCourse}
 												</div>
 											</div>
 											<div class="media row">
 												<span class="fl label">培养目标：</span>
 												<div class="media-body orange">
-													本专业培养具有一定马克思主义哲学理论素养和系统的专业基础知识，有进一步培
-		养潜质的哲学专门人才，以及能在国家机关、文教事业、新闻出版、企业等部门从
-		事实际工作的应用型、复合型高级专门人才。
+													${target}
 												</div>
 											</div>
 										</div>

@@ -1,0 +1,32 @@
+{
+    "code" : 1,
+    "result" :{
+        "count":10,                     
+        "total":120,                    
+        "page":0,                        
+        "colleges":
+        [
+            {
+                "collegeId":"1",         
+                "collegeName":"",      
+                "city":3,               
+                "level":1,              
+                "feature":              
+                [
+                    1,2,3,4
+                ]
+            },
+            
+            {
+                "collegeId":"1",
+                "collegeName":"",
+                "city":3,
+                "level":1,
+                "feature":
+                [
+                    1,2,3,4
+                ]
+            }
+        ]
+    }
+}
