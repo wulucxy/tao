@@ -67,7 +67,7 @@ var majors = {
 				}
 
 				res.result.batch = batch;
-				that.res = res;
+				that.res = res.result;
 
 				that.insertData(res.result);
 
@@ -202,7 +202,7 @@ var majors = {
 		});
 
 
-		var idx = (batch==3) ? 1 : 0;
+		//var idx = (batch==3) ? 1 : 0;
 
 		var subList = $.grep(subList1[0].subs,function(e,i){
 			if(e.id == majorId){
