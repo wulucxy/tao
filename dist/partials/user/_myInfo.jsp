@@ -110,7 +110,7 @@
 					<div class="fieldWrap">
 
 						<c:choose>
-						    <c:when test="${user.highSchool != ''}">
+						    <c:when test="${user.highSchool != null}">
 						   		<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
 							</c:when>
 							<c:otherwise>

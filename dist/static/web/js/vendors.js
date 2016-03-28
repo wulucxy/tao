@@ -19273,7 +19273,7 @@
 	                url : preServer+that.province+"/profile/favor/major/add",
 	                type : "post",
 	                contentType: "application/json",
-	                data : JSON.stringify({collegeId : $("[name=majorId]").val(),favorType : type}),
+	                data : JSON.stringify({majorId : $("[name=majorId]").val(),favorType : type}),
 	                success : function(res){
 	                    if(typeof res == "string"){
 	                        var res = $.parseJSON(res);
