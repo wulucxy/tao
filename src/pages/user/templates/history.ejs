@@ -21,7 +21,7 @@
 		<div class="detailInfo fr">
 			<div class="row btnRow">
 			<% if (wishes[i].payed) { %>
-			<a href="/box/plan/result?planId=<%= wishes[i].planId %>" class="btn btn-positive btn-medium">查看</a>
+			<a href="/box/plan/result?planId=<%= wishes[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
 			<% }else{ %>
 			<a href="/pay/wishes?planId=<%= wishes[i].planId %>" class="btn btn-primary btn-medium">付款</a>
 			<% } %>
@@ -51,7 +51,7 @@
 			<div class="row btnRow">
 
 			<% if (assessment[i].payed) { %>
-			<a href="/box/plan/result?planId=<%= assessment[i].planId %>" class="btn btn-positive btn-medium">查看</a>
+			<a href="/box/plan/result?planId=<%= assessment[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
 			<% }else{ %>
 			<a href="/pay/assessment?planId=<%= assessment[i].planId %>" class="btn btn-primary btn-medium">付款</a>
 			<% } %>

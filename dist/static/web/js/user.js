@@ -2585,7 +2585,7 @@ webpackJsonp([35],{
 	 if (wishes[i].payed) { ;
 	__p += '\n			<a href="/box/plan/result?planId=' +
 	((__t = ( wishes[i].planId )) == null ? '' : __t) +
-	'" class="btn btn-positive btn-medium">查看</a>\n			';
+	'" class="btn btn-positive btn-medium bd">查看</a>\n			';
 	 }else{ ;
 	__p += '\n			<a href="/pay/wishes?planId=' +
 	((__t = ( wishes[i].planId )) == null ? '' : __t) +
@@ -2607,7 +2607,7 @@ webpackJsonp([35],{
 	 if (assessment[i].payed) { ;
 	__p += '\n			<a href="/box/plan/result?planId=' +
 	((__t = ( assessment[i].planId )) == null ? '' : __t) +
-	'" class="btn btn-positive btn-medium">查看</a>\n			';
+	'" class="btn btn-positive btn-medium bd">查看</a>\n			';
 	 }else{ ;
 	__p += '\n			<a href="/pay/assessment?planId=' +
 	((__t = ( assessment[i].planId )) == null ? '' : __t) +
