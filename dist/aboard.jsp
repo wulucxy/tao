@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.89d2599b.css" rel="stylesheet"><link href="/static/web/css/aboard.b1b6a259.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.89d2599b.css" rel="stylesheet"><link href="/static/web/css/aboard.af6f62b5.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -45,7 +45,7 @@
 									 <div class="trigger usn" data-toggle>
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
-									 <ul class="options">
+									 <ul class="options" id="countryList">
 									 	<c:forEach var="list" items="${countryList}">
 				  							<li code="${list.code}" name="${list.name}">${list.name}</li>
 										</c:forEach>
@@ -71,8 +71,7 @@
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
 									 <ul class="options">
-									 	<li code="1" name="德州">德州</li>
-									 	<li code="1" name="杭州">杭州</li>
+									 	
 									 </ul>
 									</div>
 									<input type="hidden" name="states_cn" noPtnCheck=true  required>
@@ -138,7 +137,7 @@
 									 <div class="trigger usn" data-toggle>
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
-									 <ul class="options">
+									 <ul class="options" id="examList">
 									 	<li code="1" name="托福">托福</li>
 									 	<li code="1" name="雅思">雅思</li>
 									 </ul>

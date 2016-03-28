@@ -33,7 +33,7 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
-						<div class="s-search">
+						<!-- <div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入科目名称">
 					          <span class="input-group-btn">
@@ -42,9 +42,48 @@
 					            </button>
 					          </span>
 					        </div>
-				        </div>
+				        </div> -->
 						
 						<div class="m-nav clearfix college">
+							<div class="crumb clearfix">
+								<a href="javascript:;" class="fr btn btn-default" data-action="clearAll">清空所有</a>
+								<span class="cat-text fl">已选择：</span>
+								<span class="tagsWrap">
+								</span>
+							</div>
+							
+							<div class="row last">
+								<!-- <div class="foot">
+									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
+										<em class="vm">收起</em>
+										<span class="taoIcon btn-arrow-up vm"></span>
+									</a>
+									<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">
+										<em class="vm">更多</em>
+										<span class="taoIcon btn-arrow-down vm"></span>
+									</a>
+								</div> -->
+								
+								<div class="body media">
+									
+									<div class="media-body">
+										<div class="itemLists">	
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:1">物理</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:2">化学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:3">生物</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:4">技术</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:5">政治</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:6">地理</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:7">历史</a>
+										</div>
+									</div>
+								</div>
+								<span class="head g9">
+									科目：
+								</span>
+							</div>
+
+						<!-- <div class="m-nav clearfix college">
 							<div class="crumb clearfix">
 								<a href="javascript:;" class="fr btn btn-default" data-action="clearAll">清空所有</a>
 								<span class="cat-text fl">已选择：</span>
@@ -77,9 +116,9 @@
 								<span class="head g9">
 									院校属地：
 								</span>
-							</div>
+							</div> -->
 
-							<div class="row expand-mode">
+							<!-- <div class="row expand-mode">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>
@@ -212,7 +251,7 @@
 								<span class="head g9">
 									专科类别：
 								</span>
-							</div>
+							</div> -->
 
 						</div>
 

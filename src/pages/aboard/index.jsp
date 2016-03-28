@@ -45,7 +45,7 @@
 									 <div class="trigger usn" data-toggle>
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
-									 <ul class="options">
+									 <ul class="options" id="countryList">
 									 	<c:forEach var="list" items="${countryList}">
 				  							<li code="${list.code}" name="${list.name}">${list.name}</li>
 										</c:forEach>
@@ -71,8 +71,7 @@
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
 									 <ul class="options">
-									 	<li code="1" name="德州">德州</li>
-									 	<li code="1" name="杭州">杭州</li>
+									 	
 									 </ul>
 									</div>
 									<input type="hidden" name="states_cn" noPtnCheck=true  required>
@@ -138,7 +137,7 @@
 									 <div class="trigger usn" data-toggle>
 									 	<span class="triggerTxt">请选择</span>
 									 </div>
-									 <ul class="options">
+									 <ul class="options" id="examList">
 									 	<li code="1" name="托福">托福</li>
 									 	<li code="1" name="雅思">雅思</li>
 									 </ul>

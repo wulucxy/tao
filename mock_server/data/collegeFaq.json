@@ -12,6 +12,66 @@
         "userName" : "name",
         "isLogin" : "1"
     },
+     "today": [
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "清华大学"
+            }
+        },
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "北京大学"
+            }
+        }
+    ],
+    "forecast": [
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "清华大学"
+            }
+        },
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "北京大学"
+            }
+        }
+    ],
+    "history": [
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "清华大学"
+            }
+        },
+        {
+            "startTime": 1472324244,
+            "endTime": 14723424324,
+            "count": 0,
+            "college": {
+                "collegeId": "1",
+                "collegeName": "北京大学"
+            }
+        }
+    ],
     "adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",

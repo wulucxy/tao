@@ -19279,7 +19279,10 @@
 	                        var res = $.parseJSON(res);
 	                    }
 	
-	                    if(res.code!=1){
+	                    if(res.code == "1011"){
+	                        window.location = "/home/signin";
+	                        return false;
+	                    }else if(res.code!=1){
 	                        warn(res.msg);
 	                        return;
 	                    }
@@ -19304,7 +19307,10 @@
 	                        var res = $.parseJSON(res);
 	                    }
 	
-	                    if(res.code!=1){
+	                    if(res.code == "1011"){
+	                        window.location = "/home/signin";
+	                        return false;
+	                    }else if(res.code!=1){
 	                        warn(res.msg);
 	                        return;
 	                    }
@@ -19334,7 +19340,10 @@
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	                    if(res.code!=1){
+	                     if(res.code == "1011"){
+	                        window.location = "/home/signin";
+	                        return false;
+	                    }else if(res.code!=1){
 	                        warn(res.msg);
 	                        return;
 	                    }
@@ -19359,7 +19368,10 @@
 	    					var res = $.parseJSON(res);
 	    				}
 	
-	                    if(res.code!=1){
+	                     if(res.code == "1011"){
+	                        window.location = "/home/signin";
+	                        return false;
+	                    }else if(res.code!=1){
 	                        warn(res.msg);
 	                        return;
 	                    }
@@ -19816,7 +19828,11 @@
 /* 103 */,
 /* 104 */,
 /* 105 */,
-/* 106 */
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -19881,15 +19897,15 @@
 	}
 
 /***/ },
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
 /* 111 */,
 /* 112 */,
 /* 113 */,
 /* 114 */,
-/* 115 */
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -19903,7 +19919,7 @@
 	}
 
 /***/ },
-/* 116 */
+/* 120 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

@@ -5,7 +5,7 @@ webpackJsonp([35],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(371);
+	__webpack_require__(375);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,28 +16,28 @@ webpackJsonp([35],{
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(147);
+	var tabs = __webpack_require__(151);
 	//加载更多模块
-	var loadMore = __webpack_require__(191);
+	var loadMore = __webpack_require__(195);
 	
 	
 	//历史模块
-	var archive = __webpack_require__(373);
+	var archive = __webpack_require__(377);
 	
 	//历史模块
-	var history = __webpack_require__(374);
+	var history = __webpack_require__(378);
 	
 	//收藏模块
-	var collection = __webpack_require__(376);
+	var collection = __webpack_require__(380);
 	
 	//历史测试模块
-	var test = __webpack_require__(380);
+	var test = __webpack_require__(384);
 	
 	//qa模块
-	var qa = __webpack_require__(382);
+	var qa = __webpack_require__(386);
 	
 	//qa模块
-	var appointment = __webpack_require__(384);
+	var appointment = __webpack_require__(388);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -111,24 +111,24 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 136:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend =  __webpack_require__(41);
 	
 	module.exports = extend(
-		__webpack_require__(137),
-		__webpack_require__(138),
-		__webpack_require__(139),
-		__webpack_require__(140),
 		__webpack_require__(141),
 		__webpack_require__(142),
-		__webpack_require__(143)
+		__webpack_require__(143),
+		__webpack_require__(144),
+		__webpack_require__(145),
+		__webpack_require__(146),
+		__webpack_require__(147)
 	);
 
 /***/ },
 
-/***/ 137:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -168,7 +168,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 138:
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1636,7 +1636,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 139:
+/***/ 143:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1700,7 +1700,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 140:
+/***/ 144:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1732,7 +1732,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 141:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1768,7 +1768,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 142:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1800,7 +1800,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 143:
+/***/ 147:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1836,7 +1836,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 147:
+/***/ 151:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1908,7 +1908,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 173:
+/***/ 177:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -2064,7 +2064,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 191:
+/***/ 195:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -2168,19 +2168,19 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 359:
+/***/ 363:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	__webpack_require__(360);
+	__webpack_require__(364);
 	//自定义功能写下面
-	var tmpl_school = __webpack_require__(362);
-	var tmpl_list = __webpack_require__(363);
+	var tmpl_school = __webpack_require__(366);
+	var tmpl_list = __webpack_require__(367);
 	
 	//分页
-	var pagination = __webpack_require__(173);
+	var pagination = __webpack_require__(177);
 	
 	var searchSchool = {
 	
@@ -2312,14 +2312,14 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 360:
+/***/ 364:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 362:
+/***/ 366:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2334,7 +2334,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 363:
+/***/ 367:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2364,14 +2364,14 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 371:
+/***/ 375:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 373:
+/***/ 377:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -2380,7 +2380,7 @@ webpackJsonp([35],{
 	//公共方法
 	var common = __webpack_require__(38);
 	
-	var searchSchool = __webpack_require__(359);
+	var searchSchool = __webpack_require__(363);
 	//provinceId
 	var provinceId = $("[name=province]").val();
 	
@@ -2439,13 +2439,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 374:
+/***/ 378:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(375);
+	var tmpl = __webpack_require__(379);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -2559,7 +2559,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 375:
+/***/ 379:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2625,18 +2625,18 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 376:
+/***/ 380:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var tabs = __webpack_require__(147);
+	var tabs = __webpack_require__(151);
 	
 	//本地数据库
-	var localData = __webpack_require__(136);
+	var localData = __webpack_require__(140);
 	
-	var tmpl_college = __webpack_require__(377);
-	var tmpl_major = __webpack_require__(378);
-	var tmpl_info = __webpack_require__(379);
+	var tmpl_college = __webpack_require__(381);
+	var tmpl_major = __webpack_require__(382);
+	var tmpl_info = __webpack_require__(383);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -2791,7 +2791,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 377:
+/***/ 381:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2845,7 +2845,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 378:
+/***/ 382:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2875,7 +2875,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 379:
+/***/ 383:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2917,13 +2917,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 380:
+/***/ 384:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(381);
+	var tmpl = __webpack_require__(385);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -3002,7 +3002,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 381:
+/***/ 385:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -3032,13 +3032,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 382:
+/***/ 386:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(383);
+	var tmpl = __webpack_require__(387);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -3113,7 +3113,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 383:
+/***/ 387:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -3147,19 +3147,19 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 384:
+/***/ 388:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(385);
+	var tmpl = __webpack_require__(389);
 	
 	//公共方法
 	var util = __webpack_require__(37);
 	
 	//本地数据库
-	var localData = __webpack_require__(136);
+	var localData = __webpack_require__(140);
 	
 	module.exports = {
 		init : function(o){
@@ -3238,7 +3238,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 385:
+/***/ 389:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

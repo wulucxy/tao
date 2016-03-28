@@ -16,6 +16,14 @@ require("../../assets/components/validator");
 //selct组件
 var beautifySelect = require("../../assets/components/beautifySelect");
 
+// 城市
+var countryJSON =  require("../../assets/components/country");
+var tmpl_country = require("./templates/country.ejs");
+
+//考试
+var examJSON =  require("../../assets/components/exam");
+var tmpl_exam = require("./templates/exam.ejs");
+
 //checkbox定制
 $('.label_radio').click(function(){
   util.setupLabel();
@@ -29,7 +37,6 @@ common.switchNav(1);
 var provinceId = $("[name=province]").val();
 
 var getStateUrl = preServer+"getStateUrl";
-
 
 var aboard = {
 
@@ -57,9 +64,48 @@ var aboard = {
 	init : function(){
 
 		this.state = {};
+
+		//组装本地数据
+		this.getLocalData();
+		//本地渲染城市列表
+		this.renderHTML();
+
 		this.bindEvt();
 
 		this.formAction();
+	},
+
+	getLocalData : function(){
+		var that = this;
+		var countryList = $.map(countryJSON,function(ele){
+			return {
+				"code": ele.code,
+        		"name": ele.name
+			};
+		});
+
+		that.coutryRes = {
+			countries : countryList
+		};
+
+		var examList = $.map(examJSON,function(ele){
+			return {
+				"code": ele.id,
+        		"name": ele.name
+			};
+		});
+
+		that.examRes = {
+			exam : examList
+		};
+
+		console.log(that.coutryRes);
+	},
+
+	renderHTML : function(){
+		var that = this;
+		$("#countryList").empty().html(tmpl_country(that.coutryRes));
+		$("#examList").empty().html(tmpl_exam(that.examRes));
 	},
 
 	bindEvt : function(){

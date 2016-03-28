@@ -5,7 +5,7 @@ webpackJsonp([6],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(125);
+	__webpack_require__(129);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -15,13 +15,13 @@ webpackJsonp([6],{
 	var common = __webpack_require__(38);
 	
 	//自定义功能写下面
-	var tmpl_list = __webpack_require__(128);
-	var tmpl_subMajor = __webpack_require__(129);
+	var tmpl_list = __webpack_require__(132);
+	var tmpl_subMajor = __webpack_require__(133);
 	//require("../../assets/components/validator");
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(115);
-	var tmpl_questions = __webpack_require__(116);
+	var tmpl_detail = __webpack_require__(119);
+	var tmpl_questions = __webpack_require__(120);
 	
 	var browser = __webpack_require__(45);
 	
@@ -237,14 +237,14 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 125:
+/***/ 129:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 128:
+/***/ 132:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -320,7 +320,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 129:
+/***/ 133:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

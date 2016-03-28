@@ -31,48 +31,25 @@
 						<section class="faqList now">
 						<h4 class="blue">今日问答</h4>
 							<div class="list-group">
-						  <a href="#" class="list-group-item active">
-						  	<i class="fr taoIcon icon-right"></i>
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="body orange">正在进行</span>
-						  </a>
-						 <a href="#" class="list-group-item">
-						  	<i class="fr taoIcon icon-right"></i>
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="body orange">13:00-17:00</span>
-						  </a>
-						  <a href="#" class="list-group-item">
-						  	<i class="fr taoIcon icon-right"></i>
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="body orange">13:00-17:00</span>
-						  </a>
-						  <a href="#" class="list-group-item">
-						  	<i class="fr taoIcon icon-right"></i>
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="body orange">13:00-17:00</span>
-						  </a>
+							<c:forEach var="list" items="${today}">
+							<a href="#" class="list-group-item">
+								<i class="fr taoIcon icon-right"></i>
+						    	<span class="fl collegeName">${list.college.collegeName}</span>
+						    	<span class="body orange">正在进行</span>
+							</a>
+							</c:forEach>
 						</div>
 						</section>
 
 						<section class="faqList pre">
 						<h4 class="blue">问答预告</h4>
 							<div class="list-group">
-						  <a href="javascript:;" class="list-group-item clearfix">
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
-						  </a>
-						 <a href="javascript:;" class="list-group-item clearfix">
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						    <span class="fl collegeName">浙江大学</span>
-						    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
-						  </a>
+							<c:forEach var="list" items="${forecast}">
+							<a href="javascript:;" class="list-group-item clearfix">
+							    <span class="fl collegeName">${list.college.collegeName}</span>
+							    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
+						  	</a>
+							</c:forEach>
 						</div>
 						</section>
 
@@ -81,34 +58,15 @@
 							<a href="#" class="fr" target="_blank">更多>></a>
 						</h4>
 							<div class="list-group">
-						  <a href="javascript:;" class="list-group-item clearfix">
+							<c:forEach var="list" items="${history}">
+							<a href="javascript:;" class="list-group-item clearfix">
 						    <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+						    	<p class="collegeName">${list.college.collegeName}</p>
+						    	<p class="f13">总共&nbsp;${list.count}&nbsp;条回答</p>
 						    </div>
 						    <i class="fr taoIcon icon-right"></i>
 						  </a>
-						 <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
+							</c:forEach>
 						</div>
 						</section>
 
