@@ -73,7 +73,6 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/plan/abroad/create': "mock::api/abroad.json",
 	'post::/v2_1/client/1/tzy/qa/1/ask' : "mock::api/ask.json",
 	'/v2_1/client/1/tzy/qa/1' : "mock::api/qaList.json",
-	'post::/v2_1/client/1/pay/plan/assessment':"mock::api/abordDataList.json",
 	'post::/v2_1/client/1/tzy/plan/assessment/step1':"mock::api/assessStep1.json",
 	'post::/v2_1/client/1/tzy/plan/assessment/step2':"mock::api/assessStep2.json",
 	'post::/v2_1/client/1/tzy/plan/assessment/create':"mock::api/assessStep3.json",
@@ -86,5 +85,6 @@ module.exports = {
 	'/v2_1/client/1/data/major/category/3': "mock::api/major.json",
 	'post::/v2_1/client/1/data/major/search':"mock::api/major.json",
 	'/v2_1/client/1/data/college/threshold/compare':"mock::api/compare.json",
-	'/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json"
+	'/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json",
+	'post::/v2_1/client/1/plan/abroad/assessment':"mock::api/abordDataList.json"
 };

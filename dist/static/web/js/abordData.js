@@ -71,26 +71,30 @@ webpackJsonp([2],{
 	        	var inputList = [];
 	        	inputList.push('<input type="hidden" name="country">');
 	        	inputList.push('<input type="hidden" name="states_cn">');
-	        	inputList.push('<input type="hidden" name="school_name_key">');
-	        	$(".crumb").append(inputList.join(""));
+	        	$(".m-nav").append(inputList.join(""));
 	        }
 	
-	        var _key ="";
-	    	$.each(that.state.tagList,function(idx,item){
-	    		$('[name='+item.type+']').val(item.value || "");
-	    		_key += $('[name='+item.type+']').val();
-	    	});
+	     //    var _key ="";
+	    	// $.each(that.state.tagList,function(idx,item){
+	    	// 	$('[name='+item.type+']').val(item.value || "");
+	    	// 	_key += $('[name='+item.type+']').val();
+	    	// });
 	
-	    	//分页
-	    	if(!that.pageObject[_key]){
-	    		that.pageObject[_key] = 1;
-	    	}
-	    	 
-	        that.requestData();
+	     //    console.log(_key);
+	
+	    	// //分页
+	    	// if(!that.pageObject[_key]){
+	    	// 	that.pageObject[_key] = 1;
+	    	// }
 		},
 	
 		requestData : function(btn){
 			var that = this,o = that.options;
+	
+	        //默认首次加载US的数据
+	        if(typeof btn == "undefined"){
+	            $("[name=country]").val("US");
+	        };
 	
 			var _data = {
 				country : $("[name=country]").val(),
@@ -99,12 +103,20 @@ webpackJsonp([2],{
 			};
 	
 			var _key = _data.country + _data.school_name_key + _data.states_cn;
-			_data.page = that.pageObject[_key];
+	
+	        //如果是点击加载更多，页码++，否则重置为1
+	        if(btn && $(btn).hasClass("btn-loading")){
+	            that.pager++;
+	        }else{
+	            that.pager = 1;
+	        }
+	
+			_data.page = that.pager;
 	
 	        var provinceId = $("[name=province]").val();
 	
 			$.ajax({
-				url : preServer+provinceId + "/pay/plan/assessment",
+				url : preServer+provinceId + "/plan/abroad/assessment",
 				type : "post",
 	            contentType: "application/json",
 				data : JSON.stringify(_data),
@@ -113,14 +125,7 @@ webpackJsonp([2],{
 						var res = $.parseJSON(res);
 					}
 	
-	                //如果是点击加载更多，页码++，否则重置为1
-	                if(btn){
-	                    that.pageObject[_key]++;
-	                }else{
-	                    that.pageObject[_key] = 1;
-	                }
-					
-					that.loadList(res,that.pageObject[_key]);
+					that.loadList(res,that.pager);
 				}
 			});
 		},
@@ -158,10 +163,10 @@ webpackJsonp([2],{
 	        this.options = o;
 	
 	        //保存分页对象
-	        this.pageObject = {};
+	        this.pager = 1;
 	
-	        this.bindEvt();
 	        this.updateUI();
+	        this.bindEvt();
 	    },
 	
 	    bindEvt : function(){
@@ -169,7 +174,10 @@ webpackJsonp([2],{
 	    	$(document).on("click","[data-action=add]",function(e){
 	    		e.preventDefault();
 	    		var link = $(e.target);
-	    		
+	    		  
+	            //reset
+	            that.pager = 1;
+	
 	    		var type = link.data("value").split(":")[0],
 	    			val =  link.data("value").split(":")[1];
 	
@@ -191,8 +199,10 @@ webpackJsonp([2],{
 					text : link.text()
 				});  
 	
+	            $("[name=country]").val(val);
 	
-				that.updateUI();  		
+				that.updateUI();
+	            that.requestData(link);  		
 	    	});
 	
 	    	$(document).on("click","[data-action=clear]",function(e){
@@ -228,6 +238,24 @@ webpackJsonp([2],{
 	    		btn.addClass("disabled loading");
 	    		that.requestData(btn);
 	    	});
+	
+	        //点击搜索
+	        $(".btn-search").on("click",function(e){
+	            e.preventDefault();
+	            var oInput = $("[name=school_name_key]");
+	            if($.trim(oInput.val()) == ""){
+	                warn("请输入院校名称");
+	                return false;
+	            }
+	
+	            var btn = $(e.target).closest(".btn");
+	
+	            that.requestData(btn);
+	
+	        });
+	
+	        this.requestData();
+	
 	    }
 	};
 	

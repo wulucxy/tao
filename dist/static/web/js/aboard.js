@@ -56,8 +56,12 @@ webpackJsonp([0],{
 				});
 	
 				optionList = optionList.join("");
+				$("#statesSelect .trigger").removeClass("disabled");
 				$("#statesSelect .options").empty().append(optionList);
-			};
+			}else{
+				$("#statesSelect .options").empty();
+				$("#statesSelect .trigger").addClass("disabled");
+			}
 	
 			//渲染选中城市信息
 			if(that.state.selectedState && that.state.selectedState.name){
@@ -104,11 +108,13 @@ webpackJsonp([0],{
 				exam : examList
 			};
 	
-			console.log(that.coutryRes);
 		},
 	
 		renderHTML : function(){
 			var that = this;
+	
+			console.log(that.coutryRes);
+	
 			$("#countryList").empty().html(tmpl_country(that.coutryRes));
 			$("#examList").empty().html(tmpl_exam(that.examRes));
 		},
@@ -131,6 +137,14 @@ webpackJsonp([0],{
 				selectCallback : function(li,index){
 					$(li).closest(".row").removeClass("error empty");
 					$("[name=states_cn]").val($(li).attr("code"));
+	
+					that.state.selectedState = {
+	                	code : $(li).attr("code"),
+	                	name : $(li).attr("name")
+	                };
+	
+	                that.render();
+	
 				}
 			});
 	
@@ -144,27 +158,36 @@ webpackJsonp([0],{
 	
 		getStateInfo : function(code){
 			var that = this;
-			$.ajax({
-				url : getStateUrl,
-	            type : "post",
-	            contentType: "application/json",
-	            data : JSON.stringify({country:code}),
-	            success : function(res){
-	                if(typeof res =="string"){
-	                    var res = $.parseJSON(res);
-	                }
+			// $.ajax({
+			// 	url : getStateUrl,
+	  //           type : "post",
+	  //           contentType: "application/json",
+	  //           data : JSON.stringify({country:code}),
+	  //           success : function(res){
+	  //               if(typeof res =="string"){
+	  //                   var res = $.parseJSON(res);
+	  //               }
 	                
-	                if(res.code!=1){
-	                	warn(res.msg);
-	                	$("#statesSelect .trigger").addClass("disabled");
-	                	return;
-	                }
+	  //               if(res.code!=1){
+	  //               	warn(res.msg);
+	  //               	$("#statesSelect .trigger").addClass("disabled");
+	  //               	return;
+	  //               }
+	  				
+	  				var stateList;
+	
+	  				$.each(countryJSON,function(idx,ele){
+	  					if(ele.code == code){
+	  						stateList = ele.states;
+	  						return false;
+	  					}
+	  				});
 	
 	                $("#statesSelect .trigger").removeClass("disabled");
 	                
 	                //选中城市列表
-	                that.state.stateList = res.stateList;
-	                //选中的城市
+	                that.state.stateList = stateList;
+	                //选中的城市清空
 	                that.state.selectedState = {
 	                	code : "",
 	                	name : ""
@@ -173,11 +196,11 @@ webpackJsonp([0],{
 	                that.render();
 	
 	
-	            },
-	            error : function(err){
-	                console.log(err);
-	            }
-			});
+	            // },
+	            // error : function(err){
+	            //     console.log(err);
+	            // }
+			//});
 		},
 	
 		formAction : function(){
@@ -2298,7 +2321,7 @@ webpackJsonp([0],{
 	
 	 for (var i = 0; i < exam.length; i++) { ;
 	__p += '\n<li code="' +
-	((__t = ( exam[i].id )) == null ? '' : __t) +
+	((__t = ( exam[i].code )) == null ? '' : __t) +
 	'" name="' +
 	((__t = ( exam[i].name )) == null ? '' : __t) +
 	'" >' +

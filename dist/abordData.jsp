@@ -35,7 +35,8 @@
 					<div class="column col1 fl">
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+
+					          <input type="text" class="form-control fl" placeholder="请输入院校名称" name="school_name_key">
 					          <span class="input-group-btn">
 					            <button class="btn btn-default btn-search" type="button">
 					            	<i class="iconList icon-search"></i>
@@ -65,21 +66,37 @@
 								</div>
 								
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="city:">不限</a>
+									<!-- <a class="fl item" href="javascript:;" data-action="add" data-value="city:">不限</a> -->
 									<div class="media-body">
 										<div class="itemLists">
-										<a href="javascript:;" class="item" data-action="add" data-value="city:1">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:2">上海</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:3">广州</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:4">深圳</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:5">杭州</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:6">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:7">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:8">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:9">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:10">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:11">北京</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="city:12">北京</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:US">美国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:AT">奥地利</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:AU">澳大利亚</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:CA">加拿大</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:CH">瑞士</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:DE">德国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:ES">西班牙</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:FR">法国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:GB">英国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:GR">希腊</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:HG">港英</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:HK">香港</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:IE">爱尔兰</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:IN">印度</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:IT">意大利</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:JP">日本</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:KR">韩国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:MY">马来西亚</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:NL">荷兰</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:NZ">新西兰</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:PL">波兰</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:RU">俄罗斯</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:SE">瑞典</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:SG">新加坡</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:TH">泰国</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:UA">乌克兰</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="country:UG">乌干达</a>
+										
 										</div>
 									</div>
 								</div>
@@ -91,64 +108,7 @@
 
 						<div class="schoolListWrap preloading">
 							<ul class="schoolList contentWrap">
-								<li class="clearfix">
-									<div class="fl">
-									<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
-									<div class="detail">
-										<span class="label">院校属地：</span><span class="field">北京</span>
-										<span class="label">院校分类：</span><span class="field">综合</span>
-										<span class="label">院校性质：</span><span class="field">公办</span>
-										<span class="label">院校层次：</span><span class="field">本科</span>
-									</div>
-									</div>
-									<div class="fr">
-										<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="fl">
-									<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
-									<div class="detail">
-										<span class="label">院校属地：</span><span class="field">北京</span>
-										<span class="label">院校分类：</span><span class="field">综合</span>
-										<span class="label">院校性质：</span><span class="field">公办</span>
-										<span class="label">院校层次：</span><span class="field">本科</span>
-									</div>
-									</div>
-									<div class="fr">
-										<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-									</div>
-									
-								</li>
-								<li class="clearfix">
-									<div class="fl">
-									<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
-									<div class="detail">
-										<span class="label">院校属地：</span><span class="field">北京</span>
-										<span class="label">院校分类：</span><span class="field">综合</span>
-										<span class="label">院校性质：</span><span class="field">公办</span>
-										<span class="label">院校层次：</span><span class="field">本科</span>
-									</div>
-									</div>
-									<div class="fr">
-										<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="fl">
-									<h4 class="name badgeRow"><em class="badgetitle vm">北京大学</em><span class="badge green">985</span><span class="badge red">211</span></h4>
-									<div class="detail">
-										<span class="label">院校属地：</span><span class="field">北京</span>
-										<span class="label">院校分类：</span><span class="field">综合</span>
-										<span class="label">院校性质：</span><span class="field">公办</span>
-										<span class="label">院校层次：</span><span class="field">本科</span>
-									</div>
-									</div>
-									<div class="fr">
-										<a href="#" class="btn btn-primary btn-mid">查看详情</a>
-									</div>
-									
-								</li>
+								
 							</ul>
 							
 							<!-- 加载更多模块 -->
