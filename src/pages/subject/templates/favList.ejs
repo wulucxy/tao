@@ -1,0 +1,14 @@
+<% for (var i = 0; i < subMajors.length; i++) { %>
+  <div class="row clearfix"> 
+  	<span class="col1 fl">
+	  	<a target="_blank" href="/library/major/<%= subMajors[i].majorId %>" >
+	  		<%= subMajors[i].majorName %>:
+	  	</a>
+  	</span>
+  	<div class="col2 fl">
+  		<% for (var k = 0; k < subMajors[i].subjects.length; k++) { %>
+  		<span class="btn btn-default"><%= subMajors[i].subjects[k].subjectName %></span>
+  		<% } %>
+  	</div>
+  </div>
+<% } %>

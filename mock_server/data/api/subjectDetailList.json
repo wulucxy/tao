@@ -1,0 +1,246 @@
+{
+    "code" : 1,
+    "result" : {
+    "collegeId":"1",         
+    "collegeName":"清华大学",      
+    "city":3,               
+    "majorCount":54,       
+    "feature":              
+    [
+        1,2,3,4
+    ],
+    "majors":
+    [
+        {
+            "majorId":"",                  
+            "majorName":"经济学1",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学2",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },
+        {
+            "majorId":"",                  
+            "majorName":"经济学3",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学4",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },{
+            "majorId":"",                  
+            "majorName":"经济学5",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学6",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },
+        {
+            "majorId":"",                  
+            "majorName":"经济学7",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学8",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },
+        {
+            "majorId":"",                  
+            "majorName":"经济学9",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学10",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },
+        {
+            "majorId":"",                  
+            "majorName":"经济学11",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学12",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        },
+        {
+            "majorId":"",                  
+            "majorName":"经济学13",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"生物"        
+                }
+            ]
+        },
+        
+        {
+            "majorId":"",                  
+            "majorName":"经济学14",                
+            "subjects":                     
+            [
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                }
+            ]
+        }
+    ]
+    }
+}

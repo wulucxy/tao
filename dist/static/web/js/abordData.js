@@ -74,18 +74,6 @@ webpackJsonp([2],{
 	        	$(".m-nav").append(inputList.join(""));
 	        }
 	
-	     //    var _key ="";
-	    	// $.each(that.state.tagList,function(idx,item){
-	    	// 	$('[name='+item.type+']').val(item.value || "");
-	    	// 	_key += $('[name='+item.type+']').val();
-	    	// });
-	
-	     //    console.log(_key);
-	
-	    	// //分页
-	    	// if(!that.pageObject[_key]){
-	    	// 	that.pageObject[_key] = 1;
-	    	// }
 		},
 	
 		requestData : function(btn){

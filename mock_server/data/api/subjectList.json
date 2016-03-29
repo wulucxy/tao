@@ -1,0 +1,130 @@
+{
+ "code": "1",
+  "msg": "调用成功",
+  "result": {
+    "total": 36,
+    "colleges": [
+      {
+        "collegeId": "1872",
+        "level": 1,
+        "majorCount": 6,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "北京大学",
+        "city": 110100
+      },
+      {
+        "collegeId": "1827",
+        "level": 1,
+        "majorCount": 6,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "上海交通大学",
+        "city": 310100
+      },
+      {
+        "collegeId": "2600",
+        "level": 1,
+        "majorCount": 9,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "南京大学",
+        "city": 320100
+      },
+      {
+        "collegeId": "1811",
+        "level": 1,
+        "majorCount": 19,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "武汉大学",
+        "city": 420100
+      },
+      {
+        "collegeId": "2482",
+        "level": 1,
+        "majorCount": 21,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "四川大学",
+        "city": 510100
+      },
+      {
+        "collegeId": "2485",
+        "level": 1,
+        "majorCount": 9,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "中山大学",
+        "city": 440100
+      },
+      {
+        "collegeId": "2981",
+        "level": 1,
+        "majorCount": 6,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "山东大学",
+        "city": 370100
+      },
+      {
+        "collegeId": "2532",
+        "level": 1,
+        "majorCount": 14,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "华中科技大学",
+        "city": 420100
+      },
+      {
+        "collegeId": "1838",
+        "level": 1,
+        "majorCount": 3,
+        "feature": [
+          1,
+          2
+        ],
+        "collegeName": "哈尔滨工业大学",
+        "city": 230100
+      },
+      {
+        "collegeId": "1842",
+        "level": 1,
+        "majorCount": 21,
+        "feature": [
+          1,
+          2,
+          3
+        ],
+        "collegeName": "吉林大学",
+        "city": 220100
+      }
+    ],
+    "count": 10,
+    "page": 0
+  }
+}
