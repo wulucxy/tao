@@ -32,6 +32,7 @@ module.exports = {
 	"/box/college_faq/history" :"collegeFaqHistory.jsp",
 	"/library/subject" : "subject.jsp",
 	"/library/score_line": "scoreLine.jsp",
+	"/library/score_line/result": "scoreLineResult.jsp",
 	"/library/aboard_data": "abordData.jsp",
 	"/home/signin": "login.jsp",
 	"/uploader": "uploader.jsp",
