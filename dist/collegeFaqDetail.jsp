@@ -23,7 +23,7 @@
 		<input type="hidden" name="collegeName" value="${collegeName}">
 
 		<!-- 保存collegeName属性 -->
-		<input type="hidden" name="scheduleId" value="${scheduleId}">
+		<input type="hidden" name="scheduleId" value="${collegeId}">
 
 		<div class="container faqWrapper db">
 			<div class="content">
@@ -40,46 +40,12 @@
 						<div class="content">
 							<div class="qschoolList">
 								<h3 class="blue">
-									浙江大学
+									${collegeName}
 									<a href="javascript:;" class="btn btn-primary fr" id="applyQ">?&nbsp;提问</a>
 								</h3>
 								<div class="preloading qaListWrap">
 									<ul class="contentWrap qaList">
-									<li class="s-faq">
-										<div class="q media">
-											<span class="fl blue">问：</span>
-											<div class="media-body">
-												<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-												<div class="badges">
-													<span class="badge">浙江考生</span><span class="badge">2015</span>
-												</div>
-											</div>
-										</div>
-										<div class="a media">
-											<span class="fl orange">答：</span>
-											<div class="media-body">
-												软件工程
-											</div>
-										</div>
-									</li>
-
-									<li class="s-faq">
-										<div class="q media">
-											<span class="fl blue">问：</span>
-											<div class="media-body">
-												<p>老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？老师好，我是浙江考生，成绩600，想问下填什么专业好？</p>
-												<div class="badges">
-													<span class="badge">浙江考生</span><span class="badge">2015</span>
-												</div>
-											</div>
-										</div>
-										<div class="a media">
-											<span class="fl orange">答：</span>
-											<div class="media-body">
-												软件工程
-											</div>
-										</div>
-									</li>
+									
 									</ul>
 								</div>
 							</div>

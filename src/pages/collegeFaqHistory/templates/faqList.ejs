@@ -1,0 +1,12 @@
+ <% if (data.length == 0) { %>
+	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>
+<% }else{ %>	
+<% for (var i = 0; i < data.length; i++) { %>
+ <a href="javascript:;" class="list-group-item clearfix">
+    <div class="fl">
+    	<p class="collegeName">浙江大学</p>
+    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+    </div>
+    <i class="fr taoIcon icon-right"></i>
+  </a>
+<% }} %>

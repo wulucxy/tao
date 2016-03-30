@@ -14,14 +14,41 @@ webpackJsonp([12],{
 	//公共方法
 	var common = __webpack_require__(38);
 	
+	var provinceId = $("[name=province]").val();
+	
+	var tmpl_list = __webpack_require__(163);
 	
 	//自定义功能写下面
 	var history = {
 		init : function(){
 			//默认分页开始
 			this.pager = 1;
+			this.initList();
 			this.bindEvt();
 		},
+	
+		initList : function(){
+			var that = this;
+			$.ajax({
+				url : preServer+provinceId+"/tzy/qa/history",
+				type : "get",
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					this.rendList();
+					
+				}
+			})
+	
+		},
+	
 		requestList : function(btn){
 			var that = this;
 	
@@ -30,7 +57,7 @@ webpackJsonp([12],{
 			parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
 			$.ajax({
-				url : preServer+province+"/news?"+parm.join("&"),
+				url : preServer+provinceId+"/news?"+parm.join("&"),
 				type : "get",
 				success : function(res){
 					if(typeof res == "string"){
@@ -95,7 +122,7 @@ webpackJsonp([12],{
 		}
 	};
 	
-	//history.init();
+	history.init();
 	
 	
 
@@ -106,6 +133,30 @@ webpackJsonp([12],{
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 163:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (data.length == 0) { ;
+	__p += '\n	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>\n';
+	 }else{ ;
+	__p += '	\n';
+	 for (var i = 0; i < data.length; i++) { ;
+	__p += '\n <a href="javascript:;" class="list-group-item clearfix">\n    <div class="fl">\n    	<p class="collegeName">浙江大学</p>\n    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>\n    </div>\n    <i class="fr taoIcon icon-right"></i>\n  </a>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
 
 /***/ }
 

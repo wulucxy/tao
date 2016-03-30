@@ -1,5 +1,5 @@
-{
-	"user":{
+ {
+    "user":{
         "province" : {
             "name" : "浙江",
             "code" : "1"
@@ -9,77 +9,72 @@
         "sex"  : "1",
         "token" : "12",
         "userId" : "123",
-        "userName" : "name",
+        "userId" : "name",
         "isLogin" : "1"
     },
-     "today": [
+    "today": [
         {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+            "status": 3,
+             "count":10,
+            "describtion": "已经结束",
             "college": {
                 "collegeId": "1",
                 "collegeName": "清华大学"
             }
         },
         {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+             "status": 2,
+            "describtion": "2016-04-11 09:00:00--12:00:00",
             "college": {
                 "collegeId": "1",
-                "collegeName": "北京大学"
+                "collegeName": "清华大学"
+            }
+        },
+         {
+             "status": 1,
+            "describtion": "正在进行中",
+            "college": {
+                "collegeId": "1",
+                "collegeName": "清华大学"
             }
         }
     ],
     "forecast": [
-        {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+         {
+             "status": 2,
+            "describtion": "2016-04-11 09:00:00--12:00:00",
             "college": {
                 "collegeId": "1",
                 "collegeName": "清华大学"
             }
         },
-        {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+         {
+             "status": 2,
+            "describtion": "2016-04-11 09:00:00--12:00:00",
             "college": {
                 "collegeId": "1",
-                "collegeName": "北京大学"
+                "collegeName": "清华大学"
             }
         }
     ],
     "history": [
         {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+            "status": 3,
+             "count":10,
+            "describtion": "已经结束",
             "college": {
                 "collegeId": "1",
                 "collegeName": "清华大学"
             }
         },
         {
-            "startTime": 1472324244,
-            "endTime": 14723424324,
-            "count": 0,
+            "status": 3,
+             "count":10,
+            "describtion": "已经结束",
             "college": {
                 "collegeId": "1",
-                "collegeName": "北京大学"
+                "collegeName": "清华大学"
             }
-        }
-    ],
-    "adList" : [
-        {
-            "imgUrl" : "http://placehold.it/300x260",
-            "href" : "#5"
-        },
-        {
-            "imgUrl" : "http://placehold.it/300x260",
-            "href" : "#5"
         }
     ]
 }

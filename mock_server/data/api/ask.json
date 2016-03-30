@@ -1,3 +1,28 @@
 {
-	
+    "code" : 1,
+    "result" : {
+        "page":1,
+        "count":10,
+        "total":123,
+        "questions":
+        [
+            {
+                "time":14324324,
+                "questionId":"问答id",
+                "q":"问题",
+                "a":"答案",
+                "province":"",
+                "year":""
+            },
+            //...
+            {
+                "time":14324324,
+                "questionId":"问答id",
+                "q":"问题",
+                "a":"答案",
+                "province":"",
+                "year":""
+            },
+        ]
+    }
 }

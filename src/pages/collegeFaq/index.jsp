@@ -32,11 +32,29 @@
 						<h4 class="blue">今日问答</h4>
 							<div class="list-group">
 							<c:forEach var="list" items="${today}">
-							<a href="#" class="list-group-item">
-								<i class="fr taoIcon icon-right"></i>
+							<c:choose>
+							    <c:when test="${list.status == 1}">
+							   	<a href="box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item active cp" >
+							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
-						    	<span class="body orange">正在进行</span>
-							</a>
+						    	<span class="body orange">${list.describtion}</span>
+							   	</a>
+								</c:when>
+								<c:when test="${list.status == 3}">
+							   	<a href="box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item cp" >
+							   	<i class="fr taoIcon icon-right"></i>
+						    	<span class="fl collegeName">${list.college.collegeName}</span>
+						    	<span class="body orange">${list.describtion}</span>
+							   	</a>
+								</c:when>
+								<c:otherwise>
+								<a href="javascript:;" class="list-group-item" >
+							   	<i class="fr taoIcon icon-right"></i>
+						    	<span class="fl collegeName">${list.college.collegeName}</span>
+						    	<span class="body orange">${list.describtion}</span>
+							   	</a>
+								</c:otherwise>
+						   </c:choose>
 							</c:forEach>
 						</div>
 						</section>
@@ -47,7 +65,7 @@
 							<c:forEach var="list" items="${forecast}">
 							<a href="javascript:;" class="list-group-item clearfix">
 							    <span class="fl collegeName">${list.college.collegeName}</span>
-							    <span class="fr orange">12月20日&nbsp;13:00-17:00</span>
+							    <span class="fr orange">${list.describtion}</span>
 						  	</a>
 							</c:forEach>
 						</div>
@@ -55,11 +73,11 @@
 
 						<section class="faqList history">
 						<h4 class="blue more">历史问答
-							<a href="#" class="fr" target="_blank">更多>></a>
+							<a href="/box/college_faq/history" class="fr" target="_blank">更多>></a>
 						</h4>
 							<div class="list-group">
 							<c:forEach var="list" items="${history}">
-							<a href="javascript:;" class="list-group-item clearfix">
+							<a href="javascript:;" class="list-group-item clearfix cp">
 						    <div class="fl">
 						    	<p class="collegeName">${list.college.collegeName}</p>
 						    	<p class="f13">总共&nbsp;${list.count}&nbsp;条回答</p>

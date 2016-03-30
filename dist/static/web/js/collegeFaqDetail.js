@@ -76,7 +76,7 @@ webpackJsonp([11],{
 	
 					$(".qaListWrap").removeClass("preloading");
 	                
-					that.loadList(res,that.pager);
+					that.loadList(res.result,that.pager);
 				},
 				error : function(err){
 					console.log(err)
@@ -166,16 +166,16 @@ webpackJsonp([11],{
 	
 			      if(res.code!=1){
 			        warn("提交成功",function(){
-			        	window.location = "/box/college_faq_success";
+			        	window.location = "/box/college_faq/success";
 			        	return false;
 			        });  
 			      }else{
-			        console.log(res);
+			        warn(res.msg);
 			        return;
 			      }
 			    },
 			    error : function(err){
-			       console.log(res);
+			       console.log(err);
 			    }
 			});
 		}

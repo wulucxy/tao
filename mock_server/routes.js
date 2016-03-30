@@ -27,9 +27,9 @@ module.exports = {
 	"/expertOrder" :"expertOrder.jsp",
 	"/expertOrderSuccess" : "expertOrderSuccess.jsp",
 	"/box/college_faq" :"collegeFaq.jsp",
-	"/box/college_faq_detail" :"collegeFaqDetail.jsp",
-	"/box/college_faq_success" :"collegeFaqSuccess.jsp",
-	"/box/college_faq_history" :"collegeFaqHistory.jsp",
+	"/box/college_faq/1" :"collegeFaqDetail.jsp",
+	"/box/college_faq/success" :"collegeFaqSuccess.jsp",
+	"/box/college_faq/history" :"collegeFaqHistory.jsp",
 	"/library/subject" : "subject.jsp",
 	"/library/score_line": "scoreLine.jsp",
 	"/library/aboard_data": "abordData.jsp",
@@ -88,5 +88,10 @@ module.exports = {
 	'/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json",
 	'post::/v2_1/client/1/plan/abroad/assessment':"mock::api/abordDataList.json",
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
-	'post::/v2_1/client/1/data/subject':"mock::api/subjectDetailList.json"
+	'post::/v2_1/client/1/data/subject':"mock::api/subjectDetailList.json",
+	'/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json"
+
+
+
+
 };

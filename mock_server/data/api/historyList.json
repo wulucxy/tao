@@ -1,0 +1,28 @@
+{
+	"code" : 1,
+	"result":[
+	    {
+	        "scheduleId":"",               
+	        "startTime":1472324244,         
+	        "endTime":14723424324,          
+	        "count":0,                    
+	        "college":
+	        {
+	            "collegeId":"1",             
+	            "collegeName":"清华大学",      
+	        }
+	    },
+	    
+	    {
+	        "scheduleId":"",               
+	        "startTime":1472324244,         
+	        "endTime":14723424324,          
+	        "count":0,                    
+	        "college":
+	        {
+	            "collegeId":"1",             
+	            "collegeName":"清华大学",      
+	        }
+	    }
+	]
+}

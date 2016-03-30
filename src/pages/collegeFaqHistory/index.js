@@ -9,14 +9,41 @@ var util = require("../../assets/components/util");
 //公共方法
 var common = require("../../assets/components/common");
 
+var provinceId = $("[name=province]").val();
+
+var tmpl_list = require("./templates/faqList.ejs");
 
 //自定义功能写下面
 var history = {
 	init : function(){
 		//默认分页开始
 		this.pager = 1;
+		this.initList();
 		this.bindEvt();
 	},
+
+	initList : function(){
+		var that = this;
+		$.ajax({
+			url : preServer+provinceId+"/tzy/qa/history",
+			type : "get",
+			success : function(res){
+				if(typeof res == "string"){
+					var res = $.parseJSON(res);
+				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+
+				this.rendList();
+				
+			},
+		})
+
+	},
+
 	requestList : function(btn){
 		var that = this;
 
@@ -25,7 +52,7 @@ var history = {
 		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
 		$.ajax({
-			url : preServer+province+"/news?"+parm.join("&"),
+			url : preServer+provinceId+"/news?"+parm.join("&"),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
@@ -90,6 +117,6 @@ var history = {
 	}
 };
 
-//history.init();
+history.init();
 
 

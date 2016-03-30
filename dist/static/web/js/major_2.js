@@ -5,7 +5,7 @@ webpackJsonp([28],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(216);
+	__webpack_require__(217);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -19,7 +19,7 @@ webpackJsonp([28],{
 	var tabs = __webpack_require__(151);
 	
 	//报考专业
-	var major =  __webpack_require__(218);
+	var major =  __webpack_require__(219);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -106,19 +106,19 @@ webpackJsonp([28],{
 
 /***/ },
 
-/***/ 216:
+/***/ 217:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 218:
+/***/ 219:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
-	var tmpl = __webpack_require__(219);
+	var tmpl = __webpack_require__(220);
 	var localData = __webpack_require__(140);
 	
 	var major = {
@@ -251,7 +251,7 @@ webpackJsonp([28],{
 
 /***/ },
 
-/***/ 219:
+/***/ 220:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

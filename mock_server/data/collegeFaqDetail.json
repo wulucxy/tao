@@ -12,8 +12,8 @@
         "userName" : "name",
         "isLogin" : "1"
     },
-    "scheduleId" : 1,
-    "collegeName" : "浙江大学",
+    "collegeId" : 1,
+    "collegeName" : "浙江大学222",
     "adList" : [
         {
             "imgUrl" : "http://placehold.it/300x260",
