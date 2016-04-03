@@ -172,7 +172,7 @@
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap">
 					<c:choose>
-				     <c:when test="${majorList == []}">
+				     <c:when test="${empty majorList}">
 				     	<label for="majorId_" class="label_check inline">
 					      <em class="icon-radio"></em>
 					      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" value="" disabled checked>
@@ -202,7 +202,7 @@
 				    <div class="fieldWrap">
 					
 					<c:choose>
-				    <c:when test="${c == []}">
+				    <c:when test="${empty c}">
 				   		<label for="city_" class="label_check inline">
 				      <em class="icon-radio"></em>
 				      <input type="checkbox" class="input form-control" id="city_" name="city" value="" disabled checked>
