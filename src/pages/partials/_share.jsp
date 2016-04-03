@@ -16,9 +16,15 @@
 
 
 <script type="text/javascript" charset="utf-8">
+
+var title = "aaaaa";
+var summary = "bbbbb";
+
+console.log(title);
+
 var jiathis_config = {
-    url:"http://www.jiathis.com",
-    title:"自定义TITLE #微博话题#",
-    summary:"分享的文本摘要"
+    url:"http://www.tzhiyuan.com",
+    title:title,
+    summary:summary
 }
 </script>
