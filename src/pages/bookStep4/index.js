@@ -85,8 +85,8 @@ var book = {
 					var res = $.parseJSON(res);
 				}
 
-				 if(res.code==1 && res.planId){
-                    window.location = "/pay/wishes?planId="+res.planId;
+				 if(res.code==1 && res.result.planId){
+                    window.location = "/pay/wishes?planId="+res.result.planId;
                     return false;
                 }else{
                     warn(res.msg);

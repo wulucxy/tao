@@ -89,8 +89,8 @@ $("#verifyBtn").on("click",function(e){
         var res = $.parseJSON(res);
       }
 
-      if(res.code==1 && res.planId){
-          window.location = "/pay/assessment?planId="+res.planId;
+      if(res.code==1 && res.result.planId){
+          window.location = "/pay/assessment?planId="+res.result.planId;
           return false;
       }else{
           warn(res.msg);
