@@ -67,7 +67,7 @@ webpackJsonp([18],{
 	    courseType : $("[name=courseType]").val(),
 	    score : $("[name=score]").val(),
 	    place : $("[name=place]").val(),
-	    wishes : $.parseJSON($("[name=wishes]").text())
+	    wishes : $.parseJSON($("[name=wishesString]").text())
 	  };
 	
 	  $.each(_data.wishes,function(idx,ele){

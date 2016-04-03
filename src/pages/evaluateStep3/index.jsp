@@ -205,5 +205,7 @@
 	
 	<pre name="wishes">${wishes}</pre>
 
+	<pre name="wishesString">${wishesString}</pre>
+
 	</body>
 </html>
