@@ -169,7 +169,7 @@ var dataSet = {
         $.ajax({
             url : preServer+provinceId + "/data/major/search",
             type : "post",
-            data : {keyword : oInput.val() },
+            data : JSON.stringify({keyword : oInput.val() }),
             contentType: "application/json",
             success : function(res){
                 if(typeof res == "string"){
