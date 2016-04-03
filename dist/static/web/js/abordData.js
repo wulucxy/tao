@@ -104,7 +104,7 @@ webpackJsonp([2],{
 	        var provinceId = $("[name=province]").val();
 	
 			$.ajax({
-				url : preServer+provinceId + "/plan/abroad/assessment",
+				url : preServer+provinceId + "/tzy/plan/abroad/assessment",
 				type : "post",
 	            contentType: "application/json",
 				data : JSON.stringify(_data),
