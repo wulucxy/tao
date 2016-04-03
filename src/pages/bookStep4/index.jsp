@@ -171,6 +171,15 @@
 				    <em class="vm">专业选择：</em></label>
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap">
+					<c:choose>
+				     <c:when test="${majorList == []}">
+				     	<label for="majorId_" class="label_check inline">
+					      <em class="icon-radio"></em>
+					      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" value="" disabled checked>
+					      <em class="vm">全部</em>
+					    </label>
+					 </c:when>
+					<c:otherwise>
 				     <c:forEach var="list" items="${majorList}" varStatus="loop">
 				      <label for="majorId_${list.majorId}" class="label_check inline">
 				      <em class="icon-radio"></em>
@@ -178,6 +187,9 @@
 				      <em class="vm">${list.majorName}</em>
 				      </label>
 				      </c:forEach>
+
+				    </c:otherwise>
+				   </c:choose>
 				    </div>
 				  </div>
 				</div>
@@ -188,6 +200,16 @@
 				    <em class="vm">地区选择：</em></label>
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap">
+					
+					<c:choose>
+				    <c:when test="${c == []}">
+				   		<label for="city_" class="label_check inline">
+				      <em class="icon-radio"></em>
+				      <input type="checkbox" class="input form-control" id="city_" name="city" value="" disabled checked>
+				      <em class="vm">全部</em>
+				      </label>
+					</c:when>
+					<c:otherwise>
 				    <c:forEach var="list" items="${c}" varStatus="loop">
 				      <label for="city_${list.code}" class="label_check inline">
 				      <em class="icon-radio"></em>
@@ -195,6 +217,8 @@
 				      <em class="vm">${list.name}</em>
 				      </label>
 				    </c:forEach>
+				    </c:otherwise>
+				   </c:choose>
 				    </div>
 				  </div>
 				</div>
