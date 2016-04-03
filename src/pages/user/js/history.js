@@ -19,9 +19,7 @@ module.exports = {
 
     	this.target = $(o.ele);
 
-    	//this.btn = $(".btn-loading");
 		this.bindEvt();
-		//$(".btn-loading").trigger("click");
 	},
 
 	bindEvt : function(){
@@ -30,8 +28,6 @@ module.exports = {
 		$("#caseType").on("change",function(){
 			var val = $(this).val();
 				
-			//$(".btnLoadingWrap").toggle(!Number(val));
-
 			$("#historyWrapper .well").each(function(idx,ele){
 				var type = $(ele).attr("type");
 				var item = $(ele);
@@ -48,13 +44,6 @@ module.exports = {
 
 		that.fetch.call(that);
 
-		// that.btn.off().on("click",function(e){
-  //   		e.preventDefault();
-  //   		var btn = $(this).closest(".btn");
-  //   		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-  //   		btn.addClass("disabled loading");
-  //   		that.fetch.call(that);
-  //   	});
 	},
 
 	fetch : function(){
@@ -78,13 +67,32 @@ module.exports = {
 
 				 var res = res.result;
 
+				//时间优化,区分wishes和assessment
                 $.each(res.wishes,function(idx,ele){
+                	ele.type = 1;
+                });
+
+                $.each(res.assessment,function(idx,ele){
+                	ele.type = 2;
+                });
+
+
+                //组装新的list
+                var newList = res.wishes.concat(res.assessment).sort(that.sortNumber);
+
+                $.each(newList,function(idx,ele){
                 	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
                 });
+
+                res.caseList = newList;
 
                 that.insertData.call(that,res);
 			}
 		});
+	},
+
+	sortNumber : function(arr1,arr2){
+		return (arr2.createTime  - arr1.createTime);
 	},
 
 	renderData : function(res){
@@ -102,13 +110,5 @@ module.exports = {
 			$this.append(_html);
 		}
 
-		// that.pager++;
-
-		// //最后一页
-		// if(that.pager > res.count){
-		// 	that.btn.addClass("loading-all");
-		// };
-
-		//that.btn.removeClass("loading disabled");
 	}
 };

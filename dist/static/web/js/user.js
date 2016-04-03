@@ -582,9 +582,7 @@ webpackJsonp([36],{
 	
 	    	this.target = $(o.ele);
 	
-	    	//this.btn = $(".btn-loading");
 			this.bindEvt();
-			//$(".btn-loading").trigger("click");
 		},
 	
 		bindEvt : function(){
@@ -593,8 +591,6 @@ webpackJsonp([36],{
 			$("#caseType").on("change",function(){
 				var val = $(this).val();
 					
-				//$(".btnLoadingWrap").toggle(!Number(val));
-	
 				$("#historyWrapper .well").each(function(idx,ele){
 					var type = $(ele).attr("type");
 					var item = $(ele);
@@ -611,13 +607,6 @@ webpackJsonp([36],{
 	
 			that.fetch.call(that);
 	
-			// that.btn.off().on("click",function(e){
-	  //   		e.preventDefault();
-	  //   		var btn = $(this).closest(".btn");
-	  //   		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-	  //   		btn.addClass("disabled loading");
-	  //   		that.fetch.call(that);
-	  //   	});
 		},
 	
 		fetch : function(){
@@ -641,13 +630,32 @@ webpackJsonp([36],{
 	
 					 var res = res.result;
 	
+					//时间优化,区分wishes和assessment
 	                $.each(res.wishes,function(idx,ele){
+	                	ele.type = 1;
+	                });
+	
+	                $.each(res.assessment,function(idx,ele){
+	                	ele.type = 2;
+	                });
+	
+	
+	                //组装新的list
+	                var newList = res.wishes.concat(res.assessment).sort(that.sortNumber);
+	
+	                $.each(newList,function(idx,ele){
 	                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
 	                });
+	
+	                res.caseList = newList;
 	
 	                that.insertData.call(that,res);
 				}
 			});
+		},
+	
+		sortNumber : function(arr1,arr2){
+			return (arr2.createTime  - arr1.createTime);
 		},
 	
 		renderData : function(res){
@@ -665,14 +673,6 @@ webpackJsonp([36],{
 				$this.append(_html);
 			}
 	
-			// that.pager++;
-	
-			// //最后一页
-			// if(that.pager > res.count){
-			// 	that.btn.addClass("loading-all");
-			// };
-	
-			//that.btn.removeClass("loading disabled");
 		}
 	};
 
@@ -687,56 +687,58 @@ webpackJsonp([36],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	
-	 if (wishes.length == 0 && assessment.length == 0) { ;
+	 if (caseList.length == 0 ) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
 	 }else{ ;
 	__p += '\n';
-	 for (var i = 0; i < wishes.length; i++) { ;
-	__p += '\n	<div class="well clearfix" type ="1">\n		<div class="media fl">\n			<div class="span fl">\n				<span class="btn btn-primary">高考志愿定制</span>\n			</div>\n			<div class="media-body g3 well_body">\n				<p>\n				<span class="label">订单号：</span><span class="field">' +
-	((__t = ( wishes[i].orderId )) == null ? '' : __t) +
+	 for (var i = 0; i < caseList.length; i++) { ;
+	__p += '\n	';
+	 if (caseList[i].type == 1) { ;
+	__p += '\n	<div class="well clearfix" type ="' +
+	((__t = ( caseList[i].type )) == null ? '' : __t) +
+	'">\n		<div class="media fl">\n			<div class="span fl">\n				<span class="btn btn-primary">高考志愿定制</span>\n			</div>\n			<div class="media-body g3 well_body">\n				<p>\n				<span class="label">订单号：</span><span class="field">' +
+	((__t = ( caseList[i].orderId )) == null ? '' : __t) +
 	'</span>\n				<span class="label">生成日期：</span><span class="field">' +
-	((__t = ( wishes[i].createTime )) == null ? '' : __t) +
+	((__t = ( caseList[i].createTime )) == null ? '' : __t) +
 	'</span>\n				</p>\n				<p>\n				<span class="label">高考分数：</span><span class="field">' +
-	((__t = ( wishes[i].score )) == null ? '' : __t) +
+	((__t = ( caseList[i].score )) == null ? '' : __t) +
 	'</span>\n				<span class="label">全省排名：</span><span class="field">' +
-	((__t = ( wishes[i].place )) == null ? '' : __t) +
+	((__t = ( caseList[i].place )) == null ? '' : __t) +
 	'</span>\n				</p>\n			</div>\n		</div>\n		<div class="detailInfo fr">\n			<div class="row btnRow">\n			';
-	 if (wishes[i].payed) { ;
+	 if (caseList[i].payed) { ;
 	__p += '\n			<a href="/box/plan/result?planId=' +
-	((__t = ( wishes[i].planId )) == null ? '' : __t) +
+	((__t = ( caseList[i].planId )) == null ? '' : __t) +
 	'" class="btn btn-positive btn-medium bd">查看</a>\n			';
 	 }else{ ;
 	__p += '\n			<a href="/pay/wishes?planId=' +
-	((__t = ( wishes[i].planId )) == null ? '' : __t) +
+	((__t = ( caseList[i].planId )) == null ? '' : __t) +
 	'" class="btn btn-primary btn-medium">付款</a>\n			';
 	 } ;
-	__p += '\n			</div>\n		</div>\n	</div>\n';
-	 } ;
-	__p += '\n\n';
-	 for (var i = 0; i < assessment.length; i++) { ;
+	__p += '\n			</div>\n		</div>\n	</div>\n	';
+	 }else if(caseList[i].type == 2){ ;
 	__p += '\n	<div class="well clearfix" type ="2">\n		<div class="media fl">\n			<div class="span fl">\n				<span class="btn btn-primary">高考志愿评估</span>\n			</div>\n			<div class="media-body g3 well_body">\n				<p>\n				<span class="label">订单号：</span><span class="field">' +
-	((__t = ( assessment[i].orderId )) == null ? '' : __t) +
+	((__t = ( caseList[i].orderId )) == null ? '' : __t) +
 	'</span>\n				<span class="label">生成日期：</span><span class="field">' +
-	((__t = ( assessment[i].createTime )) == null ? '' : __t) +
+	((__t = ( caseList[i].createTime )) == null ? '' : __t) +
 	'</span>\n				</p>\n				<p>\n				<span class="label">高考分数：</span><span class="field">' +
-	((__t = ( assessment[i].score )) == null ? '' : __t) +
+	((__t = ( caseList[i].score )) == null ? '' : __t) +
 	'</span>\n				<span class="label">全省排名：</span><span class="field">' +
-	((__t = ( assessment[i].place )) == null ? '' : __t) +
+	((__t = ( caseList[i].place )) == null ? '' : __t) +
 	'</span>\n				</p>\n			</div>\n		</div>\n		<div class="detailInfo fr">\n			<div class="row btnRow">\n\n			';
-	 if (assessment[i].payed) { ;
+	 if (caseList[i].payed) { ;
 	__p += '\n			<a href="/box/plan/result?planId=' +
-	((__t = ( assessment[i].planId )) == null ? '' : __t) +
+	((__t = ( caseList[i].planId )) == null ? '' : __t) +
 	'" class="btn btn-positive btn-medium bd">查看</a>\n			';
 	 }else{ ;
 	__p += '\n			<a href="/pay/assessment?planId=' +
-	((__t = ( assessment[i].planId )) == null ? '' : __t) +
+	((__t = ( caseList[i].planId )) == null ? '' : __t) +
 	'" class="btn btn-primary btn-medium">付款</a>\n			';
 	 } ;
-	__p += '\n			</div>\n		</div>\n	</div>\n';
+	__p += '\n			</div>\n		</div>\n	</div>\n	';
 	 } ;
-	__p += '\n\n';
-	 } ;
-	
+	__p += '\n';
+	 }} ;
+	__p += '\n\n\n';
 	
 	}
 	return __p
@@ -1090,7 +1092,6 @@ webpackJsonp([36],{
 					res = res.result;
 	
 	                $.each(res,function(idx,ele){
-	                	console.log(ele.createTime);
 	                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
 	                });
 	

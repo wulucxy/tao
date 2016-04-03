@@ -1,36 +1,35 @@
-<% if (wishes.length == 0 && assessment.length == 0) { %>
+<% if (caseList.length == 0 ) { %>
 	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
 <% }else{ %>
-<% for (var i = 0; i < wishes.length; i++) { %>
-	<div class="well clearfix" type ="1">
+<% for (var i = 0; i < caseList.length; i++) { %>
+	<% if (caseList[i].type == 1) { %>
+	<div class="well clearfix" type ="<%= caseList[i].type %>">
 		<div class="media fl">
 			<div class="span fl">
 				<span class="btn btn-primary">高考志愿定制</span>
 			</div>
 			<div class="media-body g3 well_body">
 				<p>
-				<span class="label">订单号：</span><span class="field"><%= wishes[i].orderId %></span>
-				<span class="label">生成日期：</span><span class="field"><%= wishes[i].createTime %></span>
+				<span class="label">订单号：</span><span class="field"><%= caseList[i].orderId %></span>
+				<span class="label">生成日期：</span><span class="field"><%= caseList[i].createTime %></span>
 				</p>
 				<p>
-				<span class="label">高考分数：</span><span class="field"><%= wishes[i].score %></span>
-				<span class="label">全省排名：</span><span class="field"><%= wishes[i].place %></span>
+				<span class="label">高考分数：</span><span class="field"><%= caseList[i].score %></span>
+				<span class="label">全省排名：</span><span class="field"><%= caseList[i].place %></span>
 				</p>
 			</div>
 		</div>
 		<div class="detailInfo fr">
 			<div class="row btnRow">
-			<% if (wishes[i].payed) { %>
-			<a href="/box/plan/result?planId=<%= wishes[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
+			<% if (caseList[i].payed) { %>
+			<a href="/box/plan/result?planId=<%= caseList[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
 			<% }else{ %>
-			<a href="/pay/wishes?planId=<%= wishes[i].planId %>" class="btn btn-primary btn-medium">付款</a>
+			<a href="/pay/wishes?planId=<%= caseList[i].planId %>" class="btn btn-primary btn-medium">付款</a>
 			<% } %>
 			</div>
 		</div>
 	</div>
-<% } %>
-
-<% for (var i = 0; i < assessment.length; i++) { %>
+	<% }else if(caseList[i].type == 2){ %>
 	<div class="well clearfix" type ="2">
 		<div class="media fl">
 			<div class="span fl">
@@ -38,26 +37,27 @@
 			</div>
 			<div class="media-body g3 well_body">
 				<p>
-				<span class="label">订单号：</span><span class="field"><%= assessment[i].orderId %></span>
-				<span class="label">生成日期：</span><span class="field"><%= assessment[i].createTime %></span>
+				<span class="label">订单号：</span><span class="field"><%= caseList[i].orderId %></span>
+				<span class="label">生成日期：</span><span class="field"><%= caseList[i].createTime %></span>
 				</p>
 				<p>
-				<span class="label">高考分数：</span><span class="field"><%= assessment[i].score %></span>
-				<span class="label">全省排名：</span><span class="field"><%= assessment[i].place %></span>
+				<span class="label">高考分数：</span><span class="field"><%= caseList[i].score %></span>
+				<span class="label">全省排名：</span><span class="field"><%= caseList[i].place %></span>
 				</p>
 			</div>
 		</div>
 		<div class="detailInfo fr">
 			<div class="row btnRow">
 
-			<% if (assessment[i].payed) { %>
-			<a href="/box/plan/result?planId=<%= assessment[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
+			<% if (caseList[i].payed) { %>
+			<a href="/box/plan/result?planId=<%= caseList[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
 			<% }else{ %>
-			<a href="/pay/assessment?planId=<%= assessment[i].planId %>" class="btn btn-primary btn-medium">付款</a>
+			<a href="/pay/assessment?planId=<%= caseList[i].planId %>" class="btn btn-primary btn-medium">付款</a>
 			<% } %>
 			</div>
 		</div>
 	</div>
-<% } %>
+	<% } %>
+<% }} %>
 
-<% } %>
+
