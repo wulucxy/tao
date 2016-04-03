@@ -37,7 +37,9 @@
 							<iframe src="/v2/mobile/${user.province.code}/data/college/threshold/compare?batch=${batch}&primary=${primary}&second=${second}&third=${third}&courseType=${courseType}" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
 						</div>
 
-						
+						<div class="scoreLineTxt">
+							${description}
+						</div>
 
 					</div>
 

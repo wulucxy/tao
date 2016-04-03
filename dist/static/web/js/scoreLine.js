@@ -161,7 +161,7 @@ webpackJsonp([33],{
 					}	
 	
 					//分数线对比结果页
-					window.location = "/";
+					window.location = "/library/score_line_result?"+parm.join("&");
 					return false;
 				},
 				error : function(err){
