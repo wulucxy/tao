@@ -10839,6 +10839,9 @@
 				clickHandle : function(nav){
 					$(".navList").removeClass("current");
 					nav.addClass("current");
+				},
+				leaveHandle : function(nav){
+					nav.removeClass("current");
 				}
 			});
 	
@@ -11535,13 +11538,17 @@
 			//去注册
 	    	$("#m_goReg").on("click",function(e){
 	    		e.preventDefault();
+	
 	    		var btn = $(this);
+	    		if(btn.hasClass("disabled")) return;
+	    		btn.addClass("disabled");
 	    		if($(self).data("modalBox")){
 	    			$(self).data("modalBox")._close(true);
 	    		}
 	    		
 	    		setTimeout(function(){
 	    			mReg.Box(btn);
+	    			btn.removeClass("disabled");
 	    		},400);
 	
 	    	});
@@ -11550,11 +11557,14 @@
 	    	$("#m_goForgetPw").on("click",function(e){
 	    		e.preventDefault();
 	    		var btn = $(this);
+	    		if(btn.hasClass("disabled")) return;
+	    		btn.addClass("disabled");
 	    		if($(self).data("modalBox")){
 	    			$(self).data("modalBox")._close(true);
 	    		}
 	    		setTimeout(function(){
 	    			mForget.Box(btn);
+	    			btn.removeClass("disabled");
 	    		},400);
 	
 	    	});
@@ -18852,10 +18862,15 @@
 		        	$("#m_goLogin").on("click",function(e){
 		        		e.preventDefault();
 		        		var btn = $(this);
+	
+		        		if(btn.hasClass("disabled")) return;
+	    				btn.addClass("disabled");
+	
 		        		$(self).data("modalBox")._close(true);
 	
 		        		setTimeout(function(){
 		        			login.Box(btn);
+		        			btn.removeClass("disabled");
 		        		},400);
 	
 		        	});
@@ -19094,10 +19109,13 @@
 		        	$("#m_goLogin").on("click",function(e){
 		        		e.preventDefault();
 		        		var btn = $(this);
+		        		if(btn.hasClass("disabled")) return;
+	    				btn.addClass("disabled");
 		        		$(self).data("modalBox")._close(true);
 	
 		        		setTimeout(function(){
 		        			login.Box(btn);
+		        			btn.removeClass("disabled");
 		        		},400);
 	
 		        	});
@@ -19719,6 +19737,8 @@
 	      that.trigger.on("mouseleave",function(){
 	        $this.timer = setTimeout(function(){
 	          that.close();
+	           //回调
+	          o.leaveHandle && o.leaveHandle.call(that,$this)
 	        },100);
 	      })
 	    }

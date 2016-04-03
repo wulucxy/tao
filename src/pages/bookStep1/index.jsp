@@ -41,7 +41,7 @@
 				<div class="breadcrumb">
 					<ul class="clearfix">
 						<li class="current"><a href="javascript:;"><em>输入基本信息</em></a></li>
-						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
+						<li><a href="javascript:;"><em>选择求学地区</em></a></li>
 						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>

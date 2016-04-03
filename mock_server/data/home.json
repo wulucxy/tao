@@ -69,8 +69,7 @@
     "number4" : "1234",
     "adList" : [
         {
-            "imgUrl" : "http://placehold.it/300x260",
-            "href" : "#5"
+            "imgUrl" : "http://placehold.it/300x260"
         }
     ],
     "adList2" : [
@@ -125,7 +124,7 @@
             "imgUrl": "http://placehold.it/140x60"
         },
         {
-            "href": "#2",
+            "href": "",
             "imgUrl": "http://placehold.it/140x60"
         },
         {

@@ -60,6 +60,8 @@ Dropdown.prototype = {
       that.trigger.on("mouseleave",function(){
         $this.timer = setTimeout(function(){
           that.close();
+           //回调
+          o.leaveHandle && o.leaveHandle.call(that,$this)
         },100);
       })
     }

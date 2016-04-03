@@ -28,6 +28,13 @@ var info = {
 	requestList : function(btn){
 		var that = this;
 
+		//如果是点击加载更多，页码++，否则重置为1
+        if(btn && $(btn).hasClass("btn-loading")){
+            that.pager++;
+        }else{
+            that.pager = 1;
+        }
+
 		var parm = [];
 		parm.push("page="+that.pager);
 		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
@@ -48,12 +55,7 @@ var info = {
 				var res = res.result;
 
 				$(".infoListWrap").removeClass("preloading");
-				//如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pager++;
-                }else{
-                    that.pager = 1;
-                }
+				
 
 				that.loadList(res,that.pager);
 			},

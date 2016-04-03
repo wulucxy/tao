@@ -259,16 +259,12 @@ webpackJsonp([9],{
 	                    that.pageObject[_key] = 1;
 	                }
 	
-	                console.log(that.pageObject[_key]);
-	
 					that.insertData(res.result,that.pageObject[_key]);
 				}
 			});
 		},
 	
 		insertData : function(res,pager){
-	
-			console.log(res);
 	
 			var that = this;
 			var _html = tmpl(res);

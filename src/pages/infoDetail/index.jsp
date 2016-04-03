@@ -90,12 +90,23 @@
 						<section class="directs mt20 mb20">
 							<div class="">
 								<ul>
-									<c:forEach var="list" items="${adList}">
-									<li class="mb10"><a href="${list.href}" target="_blank">
+							<c:forEach var="list" items="${adList}">
+							<li>
+							<c:choose>
+							    <c:when test="${list.href != null}">
+							   		<a href="${list.href}" target="_blank" >
+							   			<img src="${list.imgUrl}" >
+							   		</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:;" >
 										<img src="${list.imgUrl}" >
-									</a></li>
-									</c:forEach>
-								</ul>
+									</a>
+								</c:otherwise>
+							</c:choose>
+							</li>
+							</c:forEach>
+						</ul>
 							</div>
 						</section>
 

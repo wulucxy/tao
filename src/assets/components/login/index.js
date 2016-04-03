@@ -50,13 +50,17 @@ var login = {
 		//去注册
     	$("#m_goReg").on("click",function(e){
     		e.preventDefault();
+
     		var btn = $(this);
+    		if(btn.hasClass("disabled")) return;
+    		btn.addClass("disabled");
     		if($(self).data("modalBox")){
     			$(self).data("modalBox")._close(true);
     		}
     		
     		setTimeout(function(){
     			mReg.Box(btn);
+    			btn.removeClass("disabled");
     		},400);
 
     	});
@@ -65,11 +69,14 @@ var login = {
     	$("#m_goForgetPw").on("click",function(e){
     		e.preventDefault();
     		var btn = $(this);
+    		if(btn.hasClass("disabled")) return;
+    		btn.addClass("disabled");
     		if($(self).data("modalBox")){
     			$(self).data("modalBox")._close(true);
     		}
     		setTimeout(function(){
     			mForget.Box(btn);
+    			btn.removeClass("disabled");
     		},400);
 
     	});

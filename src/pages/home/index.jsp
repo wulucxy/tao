@@ -134,7 +134,7 @@
 										<div class="media-body">
 										  	<a href="${list.href}" class="db" target="_blank">
 												<div class="g3 txt">
-													${list.content}
+													${list.title}
 												</div>
 												<div class="clearfix detail">
 													<span class="fl source g9">${list.source}</span>
@@ -161,9 +161,20 @@
 					<div class="directs">
 						<ul>
 							<c:forEach var="list" items="${adList}">
-							<li><a href="${list.href}" target="_blank">
-								<img src="${list.imgUrl}" >
-							</a></li>
+							<li>
+							<c:choose>
+							    <c:when test="${list.href != null}">
+							   		<a href="${list.href}" target="_blank" >
+							   			<img src="${list.imgUrl}" >
+							   		</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:;" >
+										<img src="${list.imgUrl}" >
+									</a>
+								</c:otherwise>
+							</c:choose>
+							</li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -384,12 +395,23 @@
 
 						<div class="directs">
 							<ul>
-								<c:forEach var="list" items="${adList2}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
+							<c:forEach var="list" items="${adList2}">
+							<li>
+							<c:choose>
+							    <c:when test="${list.href != null}">
+							   		<a href="${list.href}" target="_blank" >
+							   			<img src="${list.imgUrl}" >
+							   		</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:;" >
+										<img src="${list.imgUrl}" >
+									</a>
+								</c:otherwise>
+							</c:choose>
+							</li>
+							</c:forEach>
+						</ul>
 						</div>
 				  </div>
 				</div>

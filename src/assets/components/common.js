@@ -74,6 +74,9 @@ var common = {
 			clickHandle : function(nav){
 				$(".navList").removeClass("current");
 				nav.addClass("current");
+			},
+			leaveHandle : function(nav){
+				nav.removeClass("current");
 			}
 		});
 

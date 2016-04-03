@@ -26,10 +26,13 @@ var reg = {
 	        	$("#m_goLogin").on("click",function(e){
 	        		e.preventDefault();
 	        		var btn = $(this);
+	        		if(btn.hasClass("disabled")) return;
+    				btn.addClass("disabled");
 	        		$(self).data("modalBox")._close(true);
 
 	        		setTimeout(function(){
 	        			login.Box(btn);
+	        			btn.removeClass("disabled");
 	        		},400);
 
 	        	});

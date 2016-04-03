@@ -41,10 +41,12 @@ var dataSet = {
 	requestData : function(btn){
 		var that = this,o = that.options;
 
-        console.log(that.state.tagList);
+        var subjectList = $.map(that.state.tagList,function(ele){
+            return ele.value
+        });
 
 		var _data = {
-            subjectList : $("[name=subjectList]").val()
+            subjectList : subjectList
 		};
 
         //如果是点击加载更多，页码++，否则重置为1

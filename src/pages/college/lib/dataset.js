@@ -33,7 +33,7 @@ var dataSet = {
         	$(".crumb").append(inputList.join(""));
         }
 
-        var _key ="";
+        var _key = "0";
     	$.each(that.state.tagList,function(idx,item){
     		$('[name='+item.type+']').val(item.value || "");
     		_key += $('[name='+item.type+']').val();
@@ -43,8 +43,6 @@ var dataSet = {
     	if(!that.pageObject[_key]){
     		that.pageObject[_key] = 1;
     	}
-    	 
-        that.requestData();
 	},
 
 	requestData : function(btn){
@@ -61,9 +59,17 @@ var dataSet = {
 		};
 
 		var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
-		_data.page = that.pageObject[_key];
+		
+        //如果是点击加载更多，页码++，否则重置为1
+        if(btn && $(btn).hasClass("btn-loading")){
+            that.pageObject[_key]++;
+        }else{
+            that.pageObject[_key] = 1;
+        }
 
-        
+        _data.page = that.pageObject[_key];
+
+      
 		$.ajax({
 			url : preServer+provinceId + "/data/college",
 			type : "post",
@@ -119,13 +125,6 @@ var dataSet = {
                         };
                     });
                 });
-
-                //如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pageObject[_key]++;
-                }else{
-                    that.pageObject[_key] = 1;
-                }
 				
 				that.loadList(res,that.pageObject[_key]);
 			}
@@ -164,8 +163,9 @@ var dataSet = {
         //保存分页对象
         this.pageObject = {};
 
+        this.render();
         this.bindEvt();
-        this.updateUI();
+        
     },
 
     bindEvt : function(){
@@ -196,14 +196,14 @@ var dataSet = {
 			});  
 
 
-			that.updateUI();  		
+			that.render(link);  		
     	});
 
     	$(document).on("click","[data-action=clear]",function(e){
     		e.preventDefault();
     		$("[data-action=add]").removeClass("current");
 			that.state.tagList = [];
-			that.updateUI();  		
+			that.render();  		
     	});
 
     	$(document).on("click","[data-action=remove]",function(e){
@@ -222,7 +222,7 @@ var dataSet = {
                 }
             });
 
-			that.updateUI();  		
+			that.render(link);  		
     	});
 
     	$(".btn-loading").on("click",function(e){
@@ -232,6 +232,8 @@ var dataSet = {
     		btn.addClass("disabled loading");
     		that.requestData(btn);
     	});
+
+        that.requestData();
     }
 };
 

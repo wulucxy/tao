@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.9fccfc8c.css" rel="stylesheet"><link href="/static/web/css/collegeFaqHistory.d0c34ce7.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f281d9d8.css" rel="stylesheet"><link href="/static/web/css/collegeFaqHistory.d0c34ce7.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -83,12 +83,23 @@
 					<div class="col2 fr">
 						<div class="directs">
 							<ul>
-								<c:forEach var="list" items="${adList}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
+							<c:forEach var="list" items="${adList}">
+							<li>
+							<c:choose>
+							    <c:when test="${list.href != null}">
+							   		<a href="${list.href}" target="_blank" >
+							   			<img src="${list.imgUrl}" >
+							   		</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:;" >
+										<img src="${list.imgUrl}" >
+									</a>
+								</c:otherwise>
+							</c:choose>
+							</li>
+							</c:forEach>
+						</ul>
 						</div>
 					</div>
 				</div>

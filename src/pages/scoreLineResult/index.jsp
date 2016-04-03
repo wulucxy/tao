@@ -34,7 +34,7 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						<div id="charts">
-							<iframe src="/v2/mobile/${province}/profile/score/graph?userId=${user.userId}" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
+							<iframe src="/v2/mobile/${user.province.code}/data/college/threshold/compare?batch=${batch}&primary=${primary}&second=${second}&third=${third}&courseType=${courseType}" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
 						</div>
 
 						
@@ -45,9 +45,20 @@
 					<div class="directs">
 						<ul>
 							<c:forEach var="list" items="${adList}">
-							<li><a href="${list.href}" target="_blank">
-								<img src="${list.imgUrl}" >
-							</a></li>
+							<li>
+							<c:choose>
+							    <c:when test="${list.href != null}">
+							   		<a href="${list.href}" target="_blank" >
+							   			<img src="${list.imgUrl}" >
+							   		</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:;" >
+										<img src="${list.imgUrl}" >
+									</a>
+								</c:otherwise>
+							</c:choose>
+							</li>
 							</c:forEach>
 						</ul>
 					</div>

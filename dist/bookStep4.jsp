@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.9fccfc8c.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f281d9d8.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -42,7 +42,7 @@
 				<div class="breadcrumb">
 					<ul class="clearfix">
 						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
-						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
+						<li><a href="javascript:;"><em>选择求学地区</em></a></li>
 						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li class="current"><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
