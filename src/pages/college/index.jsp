@@ -37,7 +37,7 @@
 					<div class="column col1 fl">
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+					          <input type="text" class="form-control fl" placeholder="请输入院校名称" id="collegeInput">
 					          <span class="input-group-btn">
 					            <button class="btn btn-default btn-search" type="button">
 					            	<i class="iconList icon-search"></i>

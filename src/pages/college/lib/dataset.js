@@ -173,6 +173,8 @@ var dataSet = {
     	$(document).on("click","[data-action=add]",function(e){
     		e.preventDefault();
     		var link = $(e.target);
+
+            $("#collegeInput").val("");
     		
     		var type = link.data("value").split(":")[0],
     			val =  link.data("value").split(":")[1];
@@ -201,6 +203,7 @@ var dataSet = {
 
     	$(document).on("click","[data-action=clear]",function(e){
     		e.preventDefault();
+            $("#collegeInput").val("");
     		$("[data-action=add]").removeClass("current");
 			that.state.tagList = [];
 			that.render();  		
@@ -208,6 +211,8 @@ var dataSet = {
 
     	$(document).on("click","[data-action=remove]",function(e){
     		e.preventDefault();
+
+            $("#collegeInput").val("");
 
     		var link = $(e.target).closest(".tags");
     		var type = link.data("value").split(":")[0],

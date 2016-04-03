@@ -1320,7 +1320,7 @@ webpackJsonp([37],{
 	
 	                res.appointments = res.result;
 	                
-	                if(!res.appointments.length) return;
+	                //if(!res.appointments.length) return;
 	
 	                 $.each(res.appointments,function(idx,ele){
 	                	//获取city名称

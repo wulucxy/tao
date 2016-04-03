@@ -198,6 +198,7 @@ var dataSet = {
     	var that = this;
     	$(document).on("click","[data-action=add]",function(e){
     		e.preventDefault();
+            $("#majorInput").val("");
     		var link = $(e.target);
     		
     		var type = link.data("value").split(":")[0],
@@ -243,6 +244,7 @@ var dataSet = {
 
     	$(document).on("click","[data-action=clear]",function(e){
     		e.preventDefault();
+            $("#majorInput").val("");
     		$("[data-action=add]").removeClass("current");
 			that.state.tagList = [];
 			that.updateUI();  		
@@ -250,6 +252,7 @@ var dataSet = {
 
     	$(document).on("click","[data-action=remove]",function(e){
     		e.preventDefault();
+            $("#majorInput").val("");
 
     		var link = $(e.target).closest(".tags");
     		var type = link.data("value").split(":")[0],
