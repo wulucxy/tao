@@ -10847,7 +10847,8 @@
 	
 			dropdown($("#selectSwitch"),{
 				event : "hover",
-				selectMode : true
+				selectMode : true,
+				li : "li"
 			});
 	
 			$(".no-dropdown").hover(function(){
@@ -19810,6 +19811,9 @@
 	
 	    close : function(){
 	      var that = this,$this = this.target;
+	
+	      console.log("trigger close");
+	
 	      that.trigger.removeClass('open');
 	      that.listWrapper.removeClass('open');
 	      that.listWrapper.css({"display": "none"});

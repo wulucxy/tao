@@ -82,7 +82,8 @@ var common = {
 
 		dropdown($("#selectSwitch"),{
 			event : "hover",
-			selectMode : true
+			selectMode : true,
+			li : "li"
 		});
 
 		$(".no-dropdown").hover(function(){
