@@ -141,11 +141,11 @@ var majors = {
           }
 	    });
 
-	    if(selectAll){
-	    	boxList = eleBoxs;
-	    }else{
-	    	boxList = $('input[type=checkbox][name=majorType]:checked');
-	    }
+	    // if(selectAll){
+	    // 	boxList = eleBoxs;
+	    // }else{
+	     	boxList = $('input[type=checkbox][name=majorType]:checked');
+	    // }
 
 	    var majorList = that.selectList(boxList);
 
