@@ -902,7 +902,7 @@ webpackJsonp([37],{
 	    insertInfo : function(data){
 	        var that = this;
 	        var _html = tmpl_info(data);
-	       $(".infoList").empty().append(_html);
+	       $(".favorInfoList").empty().append(_html);
 	    }
 	
 	
@@ -1390,7 +1390,7 @@ webpackJsonp([37],{
 	 } ;
 	__p += '\n			';
 	 }else if(appointments[i].status == 4) { ;
-	__p += '\n				<span class="btn btn-green">代付款</span>\n			';
+	__p += '\n				<span class="btn btn-green">待付款</span>\n			';
 	 }else if(appointments[i].status == 5) { ;
 	__p += '\n				<span class="btn btn-gray">已取消</span>\n			';
 	 } ;

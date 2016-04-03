@@ -4,37 +4,7 @@
 {
     "favorites":
     [
-        {   
-            "favorId":"",
-            "favorTime":1462324234,
-            "college":
-            {
-                "collegeId":"1",         
-                "collegeName":"123",      
-                "city":330900,               
-                "level":1,              
-                "feature":      
-                [
-                    1,2,3,4
-                ]
-            }
-        },
-        
-        {   
-            "favorId":"",
-            "favorTime":1462324234,
-            "college":
-            {
-                "collegeId":"1",         
-                "collegeName":"234",      
-                "city":330900,               
-                "level":1,              
-                "feature":      
-                [
-                    1,2,3,4
-                ]
-            }
-        }
+       
     ]
 }
 }

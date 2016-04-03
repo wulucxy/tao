@@ -151,7 +151,7 @@ var collection = {
     insertInfo : function(data){
         var that = this;
         var _html = tmpl_info(data);
-       $(".infoList").empty().append(_html);
+       $(".favorInfoList").empty().append(_html);
     }
 
 
