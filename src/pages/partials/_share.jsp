@@ -17,14 +17,11 @@
 
 <script type="text/javascript" charset="utf-8">
 
-var title = "aaaaa";
-var summary = "bbbbb";
-
-console.log(title);
+var title = $(".articleWrap h4").text();
 
 var jiathis_config = {
-    url:"http://www.tzhiyuan.com",
+    url:"http://www.tzhiyuan.net",
     title:title,
-    summary:summary
+    summary:""
 }
 </script>
