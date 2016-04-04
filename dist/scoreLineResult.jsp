@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/scoreLineResult.ad4d7067.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/scoreLineResult.8b8f24ba.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -33,10 +33,12 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
+						<h4 class="chartTitle">投档线</h4>
 						<div id="charts">
 							<iframe src="/v2/mobile/${user.province.code}/data/college/threshold/compare?batch=${batch}&primary=${primary}&second=${second}&third=${third}&courseType=${courseType}" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
 						</div>
-
+						
+						<h4 class="chartTitle">趋势简报</h4>
 						<div class="scoreLineTxt">
 							${description}
 						</div>
