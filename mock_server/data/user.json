@@ -12,7 +12,7 @@
         "userName" : "",
         "isLogin" : "1",
         "highSchool" : "",
-        "highYear" : ""
+        "highYear" : "0"
     },
 	"colleges":[
     ]
