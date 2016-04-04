@@ -45,6 +45,9 @@ var archive = {
 			el : ".addSchool",
 			provinceId : o.provinceId,
 			url : "/v2_1/client/"+provinceId+"/highSchool/search",
+			startCallback  : function(modal){
+				modal.find("h3 span").text("选择高中");	
+			},
 			selectListCallback : function(li){
 				var self = this;
 				$(".btn-close").trigger("click");

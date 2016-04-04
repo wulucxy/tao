@@ -516,6 +516,7 @@ webpackJsonp([37],{
 		          modal.majorType = oInput.attr("major");
 		          that.requestData(that.pager);
 		          
+		          o.startCallback && o.startCallback.call(that,modal);
 		        },
 		        completeCallback : function(){
 		          var self = oInput; 
@@ -720,6 +721,9 @@ webpackJsonp([37],{
 				el : ".addSchool",
 				provinceId : o.provinceId,
 				url : "/v2_1/client/"+provinceId+"/highSchool/search",
+				startCallback  : function(modal){
+					modal.find("h3 span").text("选择高中");	
+				},
 				selectListCallback : function(li){
 					var self = this;
 					$(".btn-close").trigger("click");

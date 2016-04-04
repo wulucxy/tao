@@ -9,7 +9,7 @@
 <div class="content">
 	<div class="formWrap">
 		<form action="#" onsubmit="return false" autocomplete="off" id="myInfoForm" class="rel">
-			<div class="row clearfix">
+			<!-- <div class="row clearfix">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
 					<em class="vm">头像：</em></label>
@@ -20,9 +20,9 @@
 					</div>
 				</div>
 				<div class="errInfo">
-					<span class="p-error-empty">姓名不能为空</span>
+					<span class="p-error-empty">头像不能为空</span>
 				 </div>
-			</div>
+			</div> -->
 			<div class="row clearfix">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
@@ -110,7 +110,7 @@
 					<div class="fieldWrap">
 
 						<c:choose>
-						    <c:when test="${user.highSchool != null}">
+						    <c:when test="${user.highSchool != ''}">
 						   		<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
 							</c:when>
 							<c:otherwise>
@@ -139,8 +139,10 @@
 								<select class="form-control" name="highYear" required>
 									<option value="">请选择</option>
 									<option value="2015">2015</option>
-									<option value="2015">2014</option>
-									<option value="2015">2013</option>
+									<option value="2014">2014</option>
+									<option value="2013">2013</option>
+									<option value="2012">2012</option>
+									<option value="2011">2011</option>
 								</select>
 							</c:otherwise>
 						</c:choose>
