@@ -11,7 +11,7 @@
         "userId" : "123",
         "userName" : "",
         "isLogin" : "1",
-        "highSchool" : "",
+        "highSchool" : "0",
         "highYear" : "0"
     },
 	"colleges":[

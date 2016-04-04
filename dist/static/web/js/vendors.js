@@ -21648,11 +21648,11 @@
 		"courseType": [
 	        {
 	            "code": 0,
-	            "name": "理科"
+	            "name": "文科"
 	        },
 	        {
 	            "code": 1,
-	            "name": "文科"
+	            "name": "理科"
 	        }
 	    ]
 	};
