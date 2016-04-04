@@ -1,0 +1,25 @@
+<div class="modalCntWrap payModal g9">
+ <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">支付</span></h3>
+ <form class="modalSubCnt tc" id="payForm" onsubmit="return false;">
+
+ <div class="row">
+   <em class="vm f14">支付金额：</em><span class="vm orange f18"><%= price %>元</span>
+ </div>
+ <div class="row">
+    <label>
+    <input type="radio" name="channel" value="alipay_pc_direct" checked>
+    <i class="payIcon zhifubao"></i>
+    <em>支付宝 支付</em>
+    </label>
+  </div>
+
+ <div class="footerCnt">
+     <p id="errTxt" class="errTxt"></p>
+     <div class="row btnRow">
+       <button type="submit" class="btn btn-positive btn-form" id="payBtn">
+       		<em class="subTxt">支付</em></button>
+     </div>
+ </div>
+
+</form>
+</div>

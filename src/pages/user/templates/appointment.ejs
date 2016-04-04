@@ -20,7 +20,7 @@
 					<span class="btn btn-tray">已关闭</span>
 				<% } %>
 			<% }else if(appointments[i].status == 4) { %>
-				<span class="btn btn-green">待付款</span>
+				<span class="btn btn-orange">待付款</span>
 			<% }else if(appointments[i].status == 5) { %>
 				<span class="btn btn-gray">已取消</span>
 			<% } %>
@@ -41,7 +41,12 @@
 			</p>
 		</div>
 	</div>
+	<% if(appointments[i].status == 4) { %>
+	<div class="detailInfo fr payRow">
+		<a href="javascript:;" class="btn btn-orange btn-pay db" orderid=<%= appointments[i].orderId %>>支付<%= appointments[i].price %>元</a>
+	<% }else{ %>
 	<div class="detailInfo fr">
+	<% } %>
 		<span class="moment"><%= appointments[i].createTime %></span>
 	</div>
 </div>

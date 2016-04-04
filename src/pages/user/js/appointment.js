@@ -9,6 +9,13 @@ var util = require("../../../assets/components/util");
 //本地数据库
 var localData = require("../../../assets/components/localData");
 
+var tmpl_pay = require("../templates/pay.ejs");
+
+//ping++
+var ping = require("../../../assets/components/ping");
+
+var provinceId = $("[name=province]").val();
+
 module.exports = {
 	init : function(o){
 		// 分页默认从第1页开始
@@ -81,5 +88,83 @@ module.exports = {
 		}else{
 			$this.append(_html);
 		}
+
+		that.appointEvt(res);
+	},
+
+	appointEvt : function(res){
+		var that = this;
+
+
+		$('.btn-pay').on("click",function(e){
+			e.preventDefault();
+			var btn = $(e.target);
+
+			var orderId = btn.attr("orderid");
+			that.orderId = orderId;
+
+			var payList = $.map(res.result,function(ele){
+				if(ele.orderId == orderId){
+					return ele;
+				}
+			});
+
+			modalBox(btn,{
+				html:tmpl_pay(payList[0]),
+				klass : 'w540 shadow',
+		        closeByOverlay : false,
+		        completeCallback : function(){
+		        	$("#payBtn").on("click",function(e){
+						e.preventDefault();
+						var btn = $(this);
+						var channel = $("[name=channel]:checked").val();
+						
+						that.subPay(btn);
+						
+					});
+		        }
+			});
+		});
+
+	},
+	subPay : function(btn){
+		var that = this;
+
+		if(btn.hasClass("disabled")) return;
+		btn.addClass("disabled");
+
+		var _data = {
+			orderId : that.orderId,
+			channel : $("[name=channel]:checked").val()
+		};
+
+		$.ajax({
+			url : preServer+provinceId+"/pay",
+			type : "post",
+			contentType: "application/json",
+        	data : JSON.stringify(_data),
+        	success : function(res){
+        		var charge = res.result;
+        		if(/alipay/.test(_data.channel)){
+        			that.requestAlipay(btn,charge);
+        		}
+
+        		btn.removeClass("disabled");
+
+        	},
+        	error : function(err){
+        		console.log(err);
+        		btn.removeClass("disabled");
+        	}
+		});
+	},
+
+	requestAlipay : function(btn,charge){
+		var that = this;
+		ping.createPayment(charge, function(result, err){
+			if(err){
+				warn(err.msg);
+			}
+		});
 	}
 };

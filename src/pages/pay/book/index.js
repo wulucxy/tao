@@ -123,7 +123,9 @@ var pay = {
 	requestAlipay : function(btn,charge){
 		var that = this;
 		ping.createPayment(charge, function(result, err){
-			console.log(result,err);
+			if(err){
+				warn(err.msg);
+			}
 		});
 	},
 

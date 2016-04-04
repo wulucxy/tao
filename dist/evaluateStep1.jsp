@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>高考志愿</title>
-	</head>
+	<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.72bb1571.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>

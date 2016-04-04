@@ -287,6 +287,186 @@ webpackJsonp([37],{
 
 /***/ },
 
+/***/ 225:
+/***/ function(module, exports) {
+
+	var
+	  version = "2.0.8",
+	  hasOwn = {}.hasOwnProperty,
+	  PingppSDK = function(){},
+	  cfg = {
+	    PINGPP_NOTIFY_URL: 'https://api.pingxx.com/notify/charges/',
+	    PINGPP_MOCK_URL: 'http://sissi.pingxx.com/mock.php',
+	    ALIPAY_PC_DIRECT_URL: 'https://mapi.alipay.com/gateway.do',
+	    UPACP_PC_URL: 'https://gateway.95516.com/gateway/api/frontTransReq.do',
+	    CP_B2B_URL: 'https://payment.chinapay.com/CTITS/service/rest/page/nref/000000000017/0/0/0/0/0'
+	  },
+	  channels = {
+	    alipay_pc_direct: 'alipay_pc_direct',
+	    upacp_pc: 'upacp_pc',
+	    cp_b2b: 'cp_b2b'
+	  };
+	
+	PingppSDK.prototype = {
+	
+	  version: version,
+	
+	  _resultCallback: undefined,
+	
+	  _debug: false,
+	
+	  createPayment: function(charge_json, callback, debug) {
+	    if (typeof callback == "function") {
+	      this._resultCallback = callback;
+	    }
+	    if (typeof debug == "boolean") {
+	      this._debug = debug;
+	    }
+	    var charge;
+	    if(typeof charge_json == "string"){
+	      try{
+	        charge = JSON.parse(charge_json);
+	      }catch(err){
+	        this._innerCallback("fail", this._error("json_decode_fail"));
+	        return;
+	      }
+	    }else{
+	      charge = charge_json;
+	    }
+	    if(typeof charge == "undefined"){
+	      this._innerCallback("fail", this._error("json_decode_fail"));
+	      return;
+	    }
+	    if(!hasOwn.call(charge, 'id')){
+	      this._innerCallback("fail", this._error("invalid_charge", "no_charge_id"));
+	      return;
+	    }
+	    if(!hasOwn.call(charge, 'channel')){
+	      this._innerCallback("fail", this._error("invalid_charge", "no_channel"));
+	      return;
+	    }
+	    var channel = charge['channel'];
+	    if(!hasOwn.call(charge, 'credential')){
+	      this._innerCallback("fail", this._error("invalid_charge", "no_credential"));
+	      return;
+	    }
+	    if (!charge['credential']) {
+	      this._innerCallback("fail", this._error("invalid_credential", "credential_is_undefined"));
+	      return;
+	    }
+	    if (!hasOwn.call(channels, channel)) {
+	      this._innerCallback("fail", this._error("invalid_charge", "no_such_channel:" + channel));
+	      return;
+	    }
+	    if (!hasOwn.call(charge['credential'], channel)) {
+	      this._innerCallback("fail", this._error("invalid_credential", "no_valid_channel_credential"));
+	      return;
+	    }
+	    if(!hasOwn.call(charge, 'livemode')){
+	      this._innerCallback("fail", this._error("invalid_charge", "no_livemode"));
+	      return;
+	    }
+	    if (charge['livemode'] == false) {
+	      this._testModeNotify(charge);
+	      return;
+	    }
+	    var credential = charge['credential'][channel];
+	    if (channel == channels.upacp_pc) {
+	      form_submit(cfg.UPACP_PC_URL, 'post', credential);
+	    } else if (channel == channels.alipay_pc_direct) {
+	      if (!hasOwn.call(credential, "_input_charset")) {
+	        credential["_input_charset"] = 'utf-8';
+	      }
+	      var query = stringify_data(credential, channel, true);
+	      window.location.href = cfg.ALIPAY_PC_DIRECT_URL + "?" + query;
+	    } else if (channel == channels.cp_b2b) {
+	      form_submit(cfg.CP_B2B_URL, 'post', credential);
+	    }
+	  },
+	
+	  _error: function(msg, extra) {
+	    msg = (typeof msg == "undefined") ? "" : msg;
+	    extra = (typeof extra == "undefined") ? "" : extra;
+	    return {
+	      msg:msg,
+	      extra:extra
+	    };
+	  },
+	
+	  _innerCallback: function(result, err) {
+	    if (typeof this._resultCallback == "function") {
+	      if (typeof err == "undefined") {
+	        err = this._error();
+	      }
+	      this._resultCallback(result, err);
+	    }
+	  },
+	
+	  _testModeNotify: function(charge) {
+	    var params = {
+	      'ch_id': charge['id'],
+	      'scheme': 'http',
+	      'channel': charge['channel']
+	    };
+	    if (hasOwn.call(charge, 'order_no')) {
+	      params['order_no'] = charge['order_no'];
+	    } else if (hasOwn.call(charge, 'orderNo')) {
+	      params['order_no'] = charge['orderNo'];
+	    }
+	    if (hasOwn.call(charge, 'time_expire')) {
+	      params['time_expire'] = charge['time_expire'];
+	    } else if (hasOwn.call(charge, 'timeExpire')) {
+	      params['time_expire'] = charge['timeExpire'];
+	    }
+	    if (hasOwn.call(charge, 'extra')) {
+	      params['extra'] = encodeURIComponent(JSON.stringify(charge['extra']));
+	    }
+	    location.href = cfg.PINGPP_MOCK_URL+'?'+stringify_data(params);
+	  }
+	};
+	
+	function form_submit(url, method, params) {
+	  var form = document.createElement("form");
+	  form.setAttribute("method", method);
+	  form.setAttribute("action", url);
+	
+	  for (var key in params) {
+	    if (hasOwn.call(params, key)) {
+	      var hiddenField = document.createElement("input");
+	      hiddenField.setAttribute("type", "hidden");
+	      hiddenField.setAttribute("name", key);
+	      hiddenField.setAttribute("value", params[key]);
+	      form.appendChild(hiddenField);
+	    }
+	  }
+	
+	  document.body.appendChild(form);
+	  form.submit();
+	}
+	
+	function stringify_data(data, channel, urlencode) {
+	  if (typeof urlencode == "undefined") {
+	    urlencode = false;
+	  }
+	  var output = [];
+	  for (var i in data) {
+	    if (channel == "bfb_wap" && i == "url") {
+	      continue;
+	    }
+	    if (channel == "yeepay_wap" && i == "mode") {
+	      continue;
+	    }
+	    output.push(i + '=' + (urlencode ? encodeURIComponent(data[i]) : data[i]));
+	  }
+	  return output.join('&');
+	}
+	
+	PingppSDK.prototype.payment = PingppSDK.prototype.createPayment;
+	
+	module.exports = new PingppSDK();
+
+/***/ },
+
 /***/ 366:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -432,44 +612,9 @@ webpackJsonp([37],{
 /***/ },
 
 /***/ 367:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(368);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 368:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
@@ -519,44 +664,9 @@ webpackJsonp([37],{
 /***/ },
 
 /***/ 383:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(384);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 384:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\nul li {\n  list-style-type: none;\n}\n.mainContainer {\n  margin-bottom: 36px;\n}\n.m-sideNav {\n  background-color: #ddd;\n  padding-top: 20px;\n}\n.avatarWrap .imgWrap {\n  display: inline-block;\n  border: 1px solid #b7b7b7;\n}\n.userInfoList {\n  margin-top: 20px;\n  font-size: 16px;\n  overflow: hidden;\n}\n.userInfoList a {\n  color: #fff;\n  display: block;\n}\n.blue {\n  color: #61c0e2;\n}\n.userInfoList li {\n  text-align: center;\n  line-height: 40px;\n  border-bottom: 1px solid #fff;\n  background-color: #606060;\n}\n.userInfoList li:hover,\n.userInfoList li.current {\n  background-color: #61c0e2;\n}\n.userInfoList li.last {\n  border-bottom: none;\n}\n.kefu {\n  margin-top: 180px;\n  font-size: 14px;\n  color: #333;\n  line-height: 2;\n  padding: 0 0 16px 16px;\n}\n.contentWrap .topWell {\n  color: #61c0e2;\n  font-size: 15px;\n  background-color: #fff;\n  padding-left: 16px;\n  line-height: 36px;\n  margin-bottom: 10px;\n}\n.contentWrap .topWell .square {\n  width: 10px;\n  height: 10px;\n  display: inline-block;\n  background-color: #61c0e2;\n  margin-right: 8px;\n}\n.contentInner .content {\n  background-color: #fff;\n  border: 1px solid #e5e5e5;\n  padding: 30px 24px;\n}\n.row label + .col2 {\n  width: 374px;\n}\n.contentInner {\n  display: none;\n}\n.myInfo {\n  display: block;\n}\n.wellWrapper .well {\n  background-color: #f9f9f9;\n  border: 1px solid #dadada;\n  padding: 15px;\n  font-size: 14px;\n  color: #333;\n  line-height: 20px;\n  margin-bottom: 30px;\n}\n#historyWrapper .well .media {\n  margin-top: 8px;\n}\n.well .media .fl {\n  margin-right: 16px;\n}\n.well .media .fl .btn {\n  width: 108px;\n  padding: 9px 0;\n}\n.well .media-body .field {\n  display: inline-block;\n  margin-right: 30px;\n}\n.detailInfo .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n  margin-top: 7px;\n}\n.detailInfo .detailTxt {\n  color: #61c0e2;\n  margin-top: 4px;\n  display: block;\n  text-align: center;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badge {\n  font-size: 12px;\n  line-height: 18px;\n  border-radius: 10px;\n  text-align: center;\n  width: 36px;\n  color: #fff;\n  margin-left: 5px;\n}\n.badge.red {\n  background-color: #eb0748;\n}\n.badge.green {\n  background-color: #5aa403;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.myInfo .errInfo {\n  padding-left: 90px;\n}\n.schoolList li {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 20px;\n  color: #f4b64f;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.majorList li {\n  margin-bottom: 20px;\n}\n.majorList .bs {\n  font-size: 16px;\n  color: #333;\n  line-height: 36px;\n  padding-left: 10px;\n}\n.bg-gf {\n  background-color: #f1f1f1;\n}\n.majorList .btnsRow {\n  margin-top: 20px;\n}\n.majorList .btnsRow .btn {\n  width: 110px;\n  font-size: 14px;\n  border-radius: 0;\n  margin-right: 20px;\n}\n.infoList li {\n  margin-bottom: 20px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.detailCnt:hover {\n  color: #666;\n}\n.infoList .media > .fl {\n  margin-right: 14px;\n}\n.infoList .detailTitle {\n  font-size: 18px;\n  color: #333;\n  margin-bottom: 12px;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 24px;\n}\n.q-school {\n  margin-bottom: 24px;\n}\n.q-school h3 {\n  font-size: 16px;\n  margin-bottom: 16px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #61c0e2;\n  margin-right: 10px;\n}\n.book .media .btn {\n  border-radius: 3px;\n  color: #fff;\n  border: none;\n}\n.btn-green {\n  background-color: #5aa403;\n}\n.btn-gray {\n  background-color: #939393;\n}\n.btn-red {\n  background-color: #eb0748;\n}\n.book .media > .fl .btn-lines {\n  line-height: 1;\n  padding-top: 7px;\n  padding-bottom: 7px;\n  color: #fff;\n}\n.book .media-body span {\n  display: inline-block;\n  margin-right: 20px;\n}\n.book .detailInfo {\n  margin-top: 12px;\n  color: #999;\n}\n.btn-mid {\n  vertical-align: middle;\n  width: 108px;\n  padding-top: 9px;\n  padding-bottom: 9px;\n}\n.coupon .btn {\n  border-radius: 0;\n  margin-right: 16px;\n}\n.coupon .detailInfo {\n  color: #999;\n  font-size: 14px;\n  float: right;\n  text-align: right;\n  vertical-align: middle;\n  height: 40px;\n}\n.coupon .well .media {\n  margin-top: 0;\n}\n.coupon .well.disabled {\n  color: #999;\n}\n.coupon-type {\n  font-size: 20px;\n}\n.vm-wrapper {\n  width: 99%;\n  vertical-align: middle;\n}\n.avatarWrap .thumbnail {\n  width: 84px;\n  height: 84px;\n  border: 1px solid #dadada;\n  cursor: pointer;\n}\n.avatarWrap .thumbnail .info {\n  position: absolute;\n  font-size: 12px;\n  line-height: 24px;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  color: #fff;\n  text-align: center;\n  background: #999;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.avatarWrap .thumbnail:hover .info {\n  opacity: 0.7;\n}\n.avatarWrap .thumbnail img.responsive {\n  width: 100%;\n}\n.contentInner .no_transList {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.favorInfoList li {\n  border-bottom: 1px solid #e6e4e4;\n  padding-bottom: 14px;\n  padding-top: 14px;\n}\n.favorInfoList .detailTitle {\n  color: #333;\n  margin-bottom: 8px;\n  font-size: 18px;\n  display: inline-block;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
@@ -1351,6 +1461,13 @@ webpackJsonp([37],{
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
+	var tmpl_pay = __webpack_require__(398);
+	
+	//ping++
+	var ping = __webpack_require__(225);
+	
+	var provinceId = $("[name=province]").val();
+	
 	module.exports = {
 		init : function(o){
 			// 分页默认从第1页开始
@@ -1423,6 +1540,84 @@ webpackJsonp([37],{
 			}else{
 				$this.append(_html);
 			}
+	
+			that.appointEvt(res);
+		},
+	
+		appointEvt : function(res){
+			var that = this;
+	
+	
+			$('.btn-pay').on("click",function(e){
+				e.preventDefault();
+				var btn = $(e.target);
+	
+				var orderId = btn.attr("orderid");
+				that.orderId = orderId;
+	
+				var payList = $.map(res.result,function(ele){
+					if(ele.orderId == orderId){
+						return ele;
+					}
+				});
+	
+				modalBox(btn,{
+					html:tmpl_pay(payList[0]),
+					klass : 'w540 shadow',
+			        closeByOverlay : false,
+			        completeCallback : function(){
+			        	$("#payBtn").on("click",function(e){
+							e.preventDefault();
+							var btn = $(this);
+							var channel = $("[name=channel]:checked").val();
+							
+							that.subPay(btn);
+							
+						});
+			        }
+				});
+			});
+	
+		},
+		subPay : function(btn){
+			var that = this;
+	
+			if(btn.hasClass("disabled")) return;
+			btn.addClass("disabled");
+	
+			var _data = {
+				orderId : that.orderId,
+				channel : $("[name=channel]:checked").val()
+			};
+	
+			$.ajax({
+				url : preServer+provinceId+"/pay",
+				type : "post",
+				contentType: "application/json",
+	        	data : JSON.stringify(_data),
+	        	success : function(res){
+	        		var charge = res.result;
+	        		if(/alipay/.test(_data.channel)){
+	        			that.requestAlipay(btn,charge);
+	        		}
+	
+	        		btn.removeClass("disabled");
+	
+	        	},
+	        	error : function(err){
+	        		console.log(err);
+	        		btn.removeClass("disabled");
+	        	}
+			});
+		},
+	
+		requestAlipay : function(btn,charge){
+			var that = this;
+			ping.createPayment(charge, function(result, err){
+				if(err){
+					warn(err.msg);
+				}
+			});
 		}
 	};
 
@@ -1460,7 +1655,7 @@ webpackJsonp([37],{
 	 } ;
 	__p += '\n			';
 	 }else if(appointments[i].status == 4) { ;
-	__p += '\n				<span class="btn btn-green">待付款</span>\n			';
+	__p += '\n				<span class="btn btn-orange">待付款</span>\n			';
 	 }else if(appointments[i].status == 5) { ;
 	__p += '\n				<span class="btn btn-gray">已取消</span>\n			';
 	 } ;
@@ -1482,11 +1677,38 @@ webpackJsonp([37],{
 	 } ;
 	__p += '\n			</p>\n			<p>\n				' +
 	((__t = ( appointments[i].scheduleTime )) == null ? '' : __t) +
-	'\n			</p>\n		</div>\n	</div>\n	<div class="detailInfo fr">\n		<span class="moment">' +
+	'\n			</p>\n		</div>\n	</div>\n	';
+	 if(appointments[i].status == 4) { ;
+	__p += '\n	<div class="detailInfo fr payRow">\n		<a href="javascript:;" class="btn btn-orange btn-pay db" orderid=' +
+	((__t = ( appointments[i].orderId )) == null ? '' : __t) +
+	'>支付' +
+	((__t = ( appointments[i].price )) == null ? '' : __t) +
+	'元</a>\n	';
+	 }else{ ;
+	__p += '\n	<div class="detailInfo fr">\n	';
+	 } ;
+	__p += '\n		<span class="moment">' +
 	((__t = ( appointments[i].createTime )) == null ? '' : __t) +
 	'</span>\n	</div>\n</div>\n';
 	 }} ;
 	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 398:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '';
+	with (obj) {
+	__p += '<div class="modalCntWrap payModal g9">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">支付</span></h3>\n <form class="modalSubCnt tc" id="payForm" onsubmit="return false;">\n\n <div class="row">\n   <em class="vm f14">支付金额：</em><span class="vm orange f18">' +
+	((__t = ( price )) == null ? '' : __t) +
+	'元</span>\n </div>\n <div class="row">\n    <label>\n    <input type="radio" name="channel" value="alipay_pc_direct" checked>\n    <i class="payIcon zhifubao"></i>\n    <em>支付宝 支付</em>\n    </label>\n  </div>\n\n <div class="footerCnt">\n     <p id="errTxt" class="errTxt"></p>\n     <div class="row btnRow">\n       <button type="submit" class="btn btn-positive btn-form" id="payBtn">\n       		<em class="subTxt">支付</em></button>\n     </div>\n </div>\n\n</form>\n</div>';
 	
 	}
 	return __p
