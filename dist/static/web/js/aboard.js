@@ -238,6 +238,15 @@ webpackJsonp([0],{
 				gpa_score : $("[name=gpa_score]").val()
 			};
 	
+			var parm = [];
+			parm.push("user_mobile="+_data.user_mobile);
+			parm.push("country="+_data.country);
+			parm.push("states_cn="+_data.states_cn);
+			parm.push("degree="+_data.degree);
+			parm.push("major_key="+_data.major_key);
+			parm.push("exam_type="+_data.exam_type);
+			parm.push("exam_score="+_data.exam_score);
+			parm.push("gpa_score="+_data.gpa_score);
 		
 			$.ajax({
 				url : preServer+provinceId+"/tzy/plan/abroad/create",
@@ -249,8 +258,10 @@ webpackJsonp([0],{
 			        var res = $.parseJSON(res);
 			      }
 	
+			      console.log(JSON.stringify(_data));
+	
 			      if(res.code==0){
-			        window.location = "/box/plan/aboardSuccess";
+			        window.location = "/box/plan/aboardSuccess?"+parm.join("&");
 			        return false;
 			      }else{
 			        console.log(res);
