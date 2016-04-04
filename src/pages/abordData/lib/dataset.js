@@ -73,7 +73,7 @@ var dataSet = {
                     return false;
                 }
 
-                res = res.result;
+                //res = res.result;
 
 				that.loadList(res,that.pager);
 			}
