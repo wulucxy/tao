@@ -42,7 +42,7 @@
 					
 					<section class="caseSection">
 
-					<c:forEach var="list" items="${recommendList}" varStatus="loop">
+					<c:forEach var="list" items="${collegeList}" varStatus="loop">
 						<div class="media detailContent">
 						
 							<span class="fl index">${loop.index+1}</span>
@@ -51,9 +51,9 @@
 									<em class="badgetitle vm">${list.collegeName}</em>
 								</h4>
 								<div class="detail">
-									<c:forEach var="major" items="${list.majors}">
+									<c:forEach var="major" items="${list.majorList}">
 									<span class="btn btn-default field">
-										${major.majorName}
+										${major}
 									</span>
 									</c:forEach>
 								</div>

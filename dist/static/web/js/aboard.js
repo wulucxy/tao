@@ -238,10 +238,14 @@ webpackJsonp([0],{
 				gpa_score : $("[name=gpa_score]").val()
 			};
 	
+			console.log($("[name=states_cn]").val());
+	
 			var parm = [];
 			parm.push("user_mobile="+_data.user_mobile);
 			parm.push("country="+_data.country);
-			parm.push("states_cn="+_data.states_cn);
+			if(_data.states_cn){
+				parm.push("states_cn="+_data.states_cn);
+			}
 			parm.push("degree="+_data.degree);
 			parm.push("major_key="+_data.major_key);
 			parm.push("exam_type="+_data.exam_type);
