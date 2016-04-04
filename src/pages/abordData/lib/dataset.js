@@ -68,7 +68,7 @@ var dataSet = {
                 if(res.code == "1011"){
                     window.location = "/home/signin";
                     return false;
-                }else if(res.code != "1"){
+                }else if(res.code != "0"){
                     warn(res.msg);
                     return false;
                 }
