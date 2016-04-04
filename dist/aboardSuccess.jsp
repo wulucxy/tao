@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/aboardSuccess.0e8d4fb2.css" rel="stylesheet"></head>
+</head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -66,13 +66,6 @@
 
 			</div>
 		</div>
-
-		<pre name="majorList">${majorList}</pre>
-		<pre name="c">${c}</pre>
-		<pre name="courseType">${courseType}</pre>
-		<pre name="batch">${batch}</pre>
-		<pre name="score">${score}</pre>
-		<pre name="place">${place}</pre>
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>

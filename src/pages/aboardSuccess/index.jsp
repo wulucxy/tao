@@ -67,13 +67,6 @@
 			</div>
 		</div>
 
-		<pre name="majorList">${majorList}</pre>
-		<pre name="c">${c}</pre>
-		<pre name="courseType">${courseType}</pre>
-		<pre name="batch">${batch}</pre>
-		<pre name="score">${score}</pre>
-		<pre name="place">${place}</pre>
-
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>
 

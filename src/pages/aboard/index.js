@@ -244,7 +244,7 @@ var aboard = {
 		        var res = $.parseJSON(res);
 		      }
 
-		      if(res.code==1){
+		      if(res.code==0){
 		        window.location = "/box/plan/aboard_success";
 		        return false;
 		      }else{
