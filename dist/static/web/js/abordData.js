@@ -70,7 +70,6 @@ webpackJsonp([2],{
 	        if(!$("input[name=country]").length){
 	        	var inputList = [];
 	        	inputList.push('<input type="hidden" name="country">');
-	        	inputList.push('<input type="hidden" name="states_cn">');
 	        	$(".m-nav").append(inputList.join(""));
 	        }
 	
@@ -86,11 +85,10 @@ webpackJsonp([2],{
 	
 			var _data = {
 				country : $("[name=country]").val(),
-				school_name_key : $("[name=school_name_key]").val(),
-	            states_cn :  $("[name=states_cn]").val()
+				school_name_key : $("[name=school_name_key]").val()
 			};
 	
-			var _key = _data.country + _data.school_name_key + _data.states_cn;
+			var _key = _data.country + _data.school_name_key;
 	
 	        //如果是点击加载更多，页码++，否则重置为1
 	        if(btn && $(btn).hasClass("btn-loading")){
