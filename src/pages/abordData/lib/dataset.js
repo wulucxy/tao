@@ -51,7 +51,7 @@ var dataSet = {
             that.pager = 1;
         }
 
-		_data.page = that.pager;
+		//_data.page = that.pager;
 
         var provinceId = $("[name=province]").val();
 

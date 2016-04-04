@@ -233,8 +233,6 @@ var aboard = {
 			gpa_score : $("[name=gpa_score]").val()
 		};
 
-		console.log($("[name=states_cn]").val());
-
 		var parm = [];
 		parm.push("user_mobile="+_data.user_mobile);
 		parm.push("country="+_data.country);
@@ -256,8 +254,6 @@ var aboard = {
 		      if(typeof res == "string"){
 		        var res = $.parseJSON(res);
 		      }
-
-		      console.log(JSON.stringify(_data));
 
 		      if(res.code==0){
 		        window.location = "/box/plan/aboardSuccess?"+parm.join("&");
