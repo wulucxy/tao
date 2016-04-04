@@ -339,10 +339,12 @@ webpackJsonp([35],{
 	            return ele.value
 	        });
 	
+	        console.log(subjectList);
+	
 	        $.ajax({
 	            url : preServer+provinceId + "/data/subject/"+btn.attr("collegeid"),
 	            type : "post",
-	            data : {subjectList : subjectList},
+	            data : JSON.stringify({subjectList : subjectList,"aa":"aa"}),
 	            success : function(res){
 	                if(typeof res == "string"){
 	                    var res = $.parseJSON(res);
