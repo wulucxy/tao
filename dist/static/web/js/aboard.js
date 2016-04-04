@@ -250,7 +250,7 @@ webpackJsonp([0],{
 			      }
 	
 			      if(res.code==0){
-			        window.location = "/box/plan/aboard_success";
+			        window.location = "/box/plan/aboardSuccess";
 			        return false;
 			      }else{
 			        console.log(res);

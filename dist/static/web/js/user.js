@@ -1596,6 +1596,13 @@ webpackJsonp([37],{
 				contentType: "application/json",
 	        	data : JSON.stringify(_data),
 	        	success : function(res){
+	
+	        		if(res.code != 1){
+	        			warn(res.msg);
+	        			btn.removeClass("disabled");
+	        			return;
+	        		}
+	
 	        		var charge = res.result;
 	        		if(/alipay/.test(_data.channel)){
 	        			that.requestAlipay(btn,charge);
