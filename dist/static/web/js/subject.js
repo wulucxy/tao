@@ -340,7 +340,7 @@ webpackJsonp([35],{
 	        });
 	
 	        $.ajax({
-	            url : preServer+provinceId + "/data/subject",
+	            url : preServer+provinceId + "/data/subject/"+btn.attr("collegeid"),
 	            type : "post",
 	            data : {subjectList : subjectList},
 	            success : function(res){
@@ -410,7 +410,9 @@ webpackJsonp([35],{
 	((__t = ( colleges[i].ownerType.name )) == null ? '' : __t) +
 	'</span>\n		<span class="label">院校层次：</span><span class="field">' +
 	((__t = ( colleges[i].level.name )) == null ? '' : __t) +
-	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="javascript:;" class="btn btn-primary btn-mid favMajorBtn">' +
+	'</span>\n	</div>\n	</div>\n	<div class="fr">\n		<a href="javascript:;" class="btn btn-primary btn-mid favMajorBtn" collegeid=' +
+	((__t = ( colleges[i].collegeId )) == null ? '' : __t) +
+	' >' +
 	((__t = ( colleges[i].majorCount )) == null ? '' : __t) +
 	'个专业</a>\n	</div>\n</li>\n';
 	 }} ;

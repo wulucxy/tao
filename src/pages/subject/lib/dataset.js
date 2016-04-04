@@ -302,7 +302,7 @@ var dataSet = {
         });
 
         $.ajax({
-            url : preServer+provinceId + "/data/subject",
+            url : preServer+provinceId + "/data/subject/"+btn.attr("collegeid"),
             type : "post",
             data : {subjectList : subjectList},
             success : function(res){
