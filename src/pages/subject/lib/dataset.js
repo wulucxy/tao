@@ -272,7 +272,7 @@ var dataSet = {
         closeByOverlay : false,
         startCallback : function(){
 
-            //
+            that.pager = 1;
             that.requestItemList(that.pager);
 
             if(!$('.majorListWrap').find('.pagination').length){
