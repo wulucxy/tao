@@ -65,7 +65,9 @@ module.exports = {
                     });
 
                     ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd hh:mm:ss");
-
+                    if(ele.price){
+                    	ele.price = Math.floor(ele.price*100)/10000;
+                    }
                 });
 
                 that.insertData.call(that,res);

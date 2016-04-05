@@ -41,6 +41,9 @@ webpackJsonp([25],{
 	var tmpl = __webpack_require__(207);
 	var tmpl_all= __webpack_require__(208);
 	
+	//工具类方法
+	var util = __webpack_require__(37);
+	
 	var provinceId = $("[name=province]").val();
 	
 	var dataSet = { 
@@ -138,8 +141,14 @@ webpackJsonp([25],{
 	
 	        this.bindEvt();
 	
-	        //首次进来默认加载全部数据
-	        this.requestAll();
+	        //需要区分是通过导航搜索进来还是直接进来
+	        if(!!util.getQuery("keyword")){
+	            this.searchMajorReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+	        }else{
+	            //首次进来默认加载全部数据
+	            this.requestAll();
+	        }
+	        
 	    },
 	
 	    //首次加载请求全部数据
@@ -199,13 +208,13 @@ webpackJsonp([25],{
 	        });
 	    },
 	
-	    searchMajorReq : function(btn){
+	    searchMajorReq : function(btn,keyword){
 	        var that = this;
 	        var oInput = $("#majorInput");
 	        $.ajax({
 	            url : preServer+provinceId + "/data/major/search",
 	            type : "post",
-	            data : JSON.stringify({keyword : oInput.val() }),
+	            data : JSON.stringify({keyword : keyword || oInput.val() }),
 	            contentType: "application/json",
 	            success : function(res){
 	                if(typeof res == "string"){

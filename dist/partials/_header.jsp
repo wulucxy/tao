@@ -127,25 +127,27 @@
 
 				<div class="s-search fr">
 					<div class="clearfix">
+						<form action="/search" target="_blank" id="searchForm">
 						<div class="btn-group fl" id="selectSwitch">
 						    <a class="btn btn-default btn-select trigger" href="javascript:;">
 						    	<em class="selectField"></em> 
 						      	<span class="caret"></span>
 					      	</a>
-					      	<input type="hidden" name="searchField">
+					      	<input type="hidden" name="type">
 						    <ul class="options">
 						        <li data-field="1">院校</li>
 						        <li data-field="2">专业</li>
 						    </ul>
 					    </div>
 						<div class="input-group fl clearfix">
-				          <input type="text" class="form-control fl" placeholder="请输入关键字搜索">
+				          <input type="text" class="form-control fl" placeholder="请输入关键字搜索" id="searchField" name="keyword">
 				          <span class="input-group-btn">
-				            <button class="btn btn-default btn-search" type="button">
+				            <button class="btn btn-default btn-search" type="submit" id="searchBtn">
 				            	<i class="iconList icon-search"></i>
 				            </button>
 				          </span>
 				        </div>
+				    </form>
 				    </div>
 				</div>
 

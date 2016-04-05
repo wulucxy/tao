@@ -95,7 +95,7 @@ Dropdown.prototype = {
 
           	that.selectSublist.call(that,$list);
 
-          	o.onSelectCallback && o.onSelectCallback.call(that)
+          	o.onSelectCallback && o.onSelectCallback.call(that,$list)
           	that.close();
 
           }
@@ -133,8 +133,6 @@ Dropdown.prototype = {
 
     close : function(){
       var that = this,$this = this.target;
-
-      console.log("trigger close");
 
       that.trigger.removeClass('open');
       that.listWrapper.removeClass('open');

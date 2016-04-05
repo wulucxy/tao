@@ -10814,6 +10814,30 @@
 			fav.init();
 	
 			this.bindEvt();
+	
+			//搜索
+			this.searchForm();
+		},
+	
+		searchForm : function(){
+			var that = this;
+			var oInput = $("#searchField");
+			$("#searchForm").on("click","[type=submit]",function(e){
+				e.preventDefault();
+				var btn = $(e.target).closest(".btn");
+				if($.trim(oInput.val())==""){
+					warn("请输入搜索条件");
+					return false;
+				}
+	
+				that.goSearch(btn,$("#searchForm"));
+	
+			})
+		},
+	
+		goSearch : function(btn,oForm){
+			var that = this;
+			oForm.submit();
 		},
 	
 		bindEvt : function(){
@@ -10848,7 +10872,10 @@
 			dropdown($("#selectSwitch"),{
 				event : "hover",
 				selectMode : true,
-				li : "li"
+				li : "li",
+				onSelectCallback : function(list){
+					$("[name=type]").val(list.data("field"));
+				}
 			});
 	
 			$(".no-dropdown").hover(function(){
@@ -19773,7 +19800,7 @@
 	
 	          	that.selectSublist.call(that,$list);
 	
-	          	o.onSelectCallback && o.onSelectCallback.call(that)
+	          	o.onSelectCallback && o.onSelectCallback.call(that,$list)
 	          	that.close();
 	
 	          }
@@ -19811,8 +19838,6 @@
 	
 	    close : function(){
 	      var that = this,$this = this.target;
-	
-	      console.log("trigger close");
 	
 	      that.trigger.removeClass('open');
 	      that.listWrapper.removeClass('open');

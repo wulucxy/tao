@@ -3,6 +3,9 @@ var extend =  require('object-assign');
 var tmpl = require("../templates/major.ejs");
 var tmpl_all= require("../templates/major_all.ejs");
 
+//工具类方法
+var util = require("../../../assets/components/util");
+
 var provinceId = $("[name=province]").val();
 
 var dataSet = { 
@@ -100,8 +103,14 @@ var dataSet = {
 
         this.bindEvt();
 
-        //首次进来默认加载全部数据
-        this.requestAll();
+        //需要区分是通过导航搜索进来还是直接进来
+        if(!!util.getQuery("keyword")){
+            this.searchMajorReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+        }else{
+            //首次进来默认加载全部数据
+            this.requestAll();
+        }
+        
     },
 
     //首次加载请求全部数据
@@ -161,13 +170,13 @@ var dataSet = {
         });
     },
 
-    searchMajorReq : function(btn){
+    searchMajorReq : function(btn,keyword){
         var that = this;
         var oInput = $("#majorInput");
         $.ajax({
             url : preServer+provinceId + "/data/major/search",
             type : "post",
-            data : JSON.stringify({keyword : oInput.val() }),
+            data : JSON.stringify({keyword : keyword || oInput.val() }),
             contentType: "application/json",
             success : function(res){
                 if(typeof res == "string"){

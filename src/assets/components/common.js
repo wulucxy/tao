@@ -49,6 +49,30 @@ var common = {
 		fav.init();
 
 		this.bindEvt();
+
+		//搜索
+		this.searchForm();
+	},
+
+	searchForm : function(){
+		var that = this;
+		var oInput = $("#searchField");
+		$("#searchForm").on("click","[type=submit]",function(e){
+			e.preventDefault();
+			var btn = $(e.target).closest(".btn");
+			if($.trim(oInput.val())==""){
+				warn("请输入搜索条件");
+				return false;
+			}
+
+			that.goSearch(btn,$("#searchForm"));
+
+		})
+	},
+
+	goSearch : function(btn,oForm){
+		var that = this;
+		oForm.submit();
 	},
 
 	bindEvt : function(){
@@ -83,7 +107,10 @@ var common = {
 		dropdown($("#selectSwitch"),{
 			event : "hover",
 			selectMode : true,
-			li : "li"
+			li : "li",
+			onSelectCallback : function(list){
+				$("[name=type]").val(list.data("field"));
+			}
 		});
 
 		$(".no-dropdown").hover(function(){

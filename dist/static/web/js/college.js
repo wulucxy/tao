@@ -42,6 +42,9 @@ webpackJsonp([8],{
 	
 	var localData = __webpack_require__(140);
 	
+	//工具类方法
+	var util = __webpack_require__(37);
+	
 	var provinceId = $("[name=province]").val();
 	
 	var dataSet = { 
@@ -207,13 +210,13 @@ webpackJsonp([8],{
 	        
 	    },
 	
-	    searchCollegeReq : function(btn){
+	    searchCollegeReq : function(btn,keyword){
 	        var that = this;
 	        var oInput = $("#collegeInput");
 	        $.ajax({
 	            url : preServer+provinceId + "/data/college/search",
 	            type : "post",
-	            data : JSON.stringify({keyword : oInput.val() }),
+	            data : JSON.stringify({keyword : keyword || oInput.val() }),
 	            contentType: "application/json",
 	            success : function(res){
 	                if(typeof res == "string"){
@@ -371,7 +374,13 @@ webpackJsonp([8],{
 	
 	        })
 	
-	        that.requestData();
+	        //需要区分是通过导航搜索进来还是直接进来
+	        if(!!util.getQuery("keyword")){
+	            that.searchCollegeReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+	        }else{
+	            that.requestData();
+	        }
+	        
 	    }
 	};
 	

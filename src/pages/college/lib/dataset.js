@@ -4,6 +4,9 @@ var tmpl = require("../templates/school.ejs");
 
 var localData = require("../../../assets/components/localData");
 
+//工具类方法
+var util = require("../../../assets/components/util");
+
 var provinceId = $("[name=province]").val();
 
 var dataSet = { 
@@ -169,13 +172,13 @@ var dataSet = {
         
     },
 
-    searchCollegeReq : function(btn){
+    searchCollegeReq : function(btn,keyword){
         var that = this;
         var oInput = $("#collegeInput");
         $.ajax({
             url : preServer+provinceId + "/data/college/search",
             type : "post",
-            data : JSON.stringify({keyword : oInput.val() }),
+            data : JSON.stringify({keyword : keyword || oInput.val() }),
             contentType: "application/json",
             success : function(res){
                 if(typeof res == "string"){
@@ -333,7 +336,13 @@ var dataSet = {
 
         })
 
-        that.requestData();
+        //需要区分是通过导航搜索进来还是直接进来
+        if(!!util.getQuery("keyword")){
+            that.searchCollegeReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+        }else{
+            that.requestData();
+        }
+        
     }
 };
 
