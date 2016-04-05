@@ -113,8 +113,6 @@ var dataSet = {
 
         if(typeof that.majorDataCache != "undefined" ){  //已添加缓存
 
-          console.log(that.majorDataCache);
-
           if(typeof type != "undefined"){
             that.majorDataCache.majors = that.majorDataCache[type];
           }
@@ -248,7 +246,8 @@ var dataSet = {
             $("#majorInput").val("");
     		$("[data-action=add]").removeClass("current");
 			that.state.tagList = [];
-			that.updateUI();  		
+			that.updateUI();  	
+            that.requestAll();	
     	});
 
     	$(document).on("click","[data-action=remove]",function(e){

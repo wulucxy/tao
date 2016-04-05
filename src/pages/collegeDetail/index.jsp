@@ -161,6 +161,10 @@
 									</section>
 									<section class="tab-box infoWrap">
 										
+										<div class="threholdTableWrap">
+											<iframe src="/v2_1/mobile/${user.province.code}/data/college/${collegeId}/thresholds" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
+										</div>
+
 									</section>
 								</div>
 							</div>

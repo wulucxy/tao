@@ -242,7 +242,7 @@ var aboard = {
 		if(_data.states_cn){
 			parm.push("states_cn="+_data.states_cn);
 		}
-		parm.push("degree="+_data.degree);
+		//parm.push("degree="+_data.degree);
 		parm.push("major_key=");
 		parm.push("exam_type="+_data.exam_type);
 		parm.push("exam_score="+_data.exam_score);

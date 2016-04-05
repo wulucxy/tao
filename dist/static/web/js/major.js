@@ -151,8 +151,6 @@ webpackJsonp([25],{
 	
 	        if(typeof that.majorDataCache != "undefined" ){  //已添加缓存
 	
-	          console.log(that.majorDataCache);
-	
 	          if(typeof type != "undefined"){
 	            that.majorDataCache.majors = that.majorDataCache[type];
 	          }
@@ -286,7 +284,8 @@ webpackJsonp([25],{
 	            $("#majorInput").val("");
 	    		$("[data-action=add]").removeClass("current");
 				that.state.tagList = [];
-				that.updateUI();  		
+				that.updateUI();  	
+	            that.requestAll();	
 	    	});
 	
 	    	$(document).on("click","[data-action=remove]",function(e){
