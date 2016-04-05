@@ -110,10 +110,7 @@
 							<ul class="schoolList contentWrap">
 								
 							</ul>
-							
-							<!-- 加载更多模块 -->
-							<%@ include file = "/partials/_loadMore.jsp" %>
-
+					
 						</div>
 
 					</div>

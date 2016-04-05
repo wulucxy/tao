@@ -20,7 +20,7 @@
 var title = $(".articleWrap h4").text();
 
 var jiathis_config = {
-    url:"http://www.tzhiyuan.net",
+    url:location.href,
     title:title,
     summary:""
 }
