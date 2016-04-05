@@ -201,6 +201,7 @@ webpackJsonp([17],{
 	      }else{
 	        //全部渲染（全页面）
 	        var _lis = [];
+	
 	        $.each(that.state.selected,function(idx,item){
 	          if(item.list.length){
 	            _lis = $.map(item.list,function(l){
@@ -214,6 +215,13 @@ webpackJsonp([17],{
 	            _lis = [];
 	          }
 	        });
+	
+	          //tag点击效果
+	          $.each($(".m-select"),function(idx,ele){
+	            var btn = $(ele).find(".addMajor");
+	            that.updateTags(btn);
+	          });
+	    
 	      }
 	  },
 	
@@ -630,6 +638,7 @@ webpackJsonp([17],{
 	      });
 	
 	    });
+	
 	
 	    //清理选中的学校
 	    $(".row .clear").on("click",function(e){

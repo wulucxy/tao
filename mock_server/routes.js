@@ -46,7 +46,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/college' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/search' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/1/majors' : 'mock::api/majorDetailList.json',
-	'/v2_1/client/1/data/major/1/category/3' : 'mock::api/major.json',
+	'/v2_1/client/1/data/major/3322/category/4' : 'mock::api/major.json',
 	'post::/v2_1/client/1/profile/favor/college/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/major/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/delete' : 'mock::api/delFav.json',
