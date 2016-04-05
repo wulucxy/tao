@@ -936,6 +936,9 @@ webpackJsonp([37],{
 	var $ = window.$ || __webpack_require__(36);
 	var tabs = __webpack_require__(151);
 	
+	//公共方法
+	var util = __webpack_require__(37);
+	
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
@@ -1076,7 +1079,15 @@ webpackJsonp([37],{
 	                    return;
 	                }
 	
+	
+	
 	                res = res.result;
+	
+	                 $.each(res.favorites,function(idx,ele){
+	                    if(ele.news.newsDate){
+	                        ele.news.newsDate = util.buildDate(ele.news.newsDate,"yyyy-MM-dd hh:mm:ss");
+	                    }
+	                })
 	
 	                that.insertInfo.call(that,res);
 	            }

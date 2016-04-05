@@ -1,6 +1,9 @@
 var $ = window.$ || require("jquery");
 var tabs = require("../../../assets/components/tabs");
 
+//公共方法
+var util = require("../../../assets/components/util");
+
 //本地数据库
 var localData = require("../../../assets/components/localData");
 
@@ -141,7 +144,15 @@ var collection = {
                     return;
                 }
 
+
+
                 res = res.result;
+
+                 $.each(res.favorites,function(idx,ele){
+                    if(ele.news.newsDate){
+                        ele.news.newsDate = util.buildDate(ele.news.newsDate,"yyyy-MM-dd hh:mm:ss");
+                    }
+                })
 
                 that.insertInfo.call(that,res);
             }

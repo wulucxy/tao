@@ -1,44 +1,40 @@
 {
-    "code" : 1,
-    "result":{
-    "favorites":
-    [
-        {
-            "favorId":"",
-            "favorTime":1462324234,
-            "news":
-            {
-                "newsId":"1",               
-                "newsName":"2222222",             
-                "newsDate":1472342424,     
-                "newsUrl":"4",              
-                "newsIconUrl":"3",         
-                "newsTags":
-                [
-                    "报考指导",
-                    "2017新高考",
-                    "tag n"
-                ]
-            }
-        },
-        {
-            "favorId":"",
-            "favorTime":1462324234,
-            "news":
-            {
-                "newsId":"1",               
-                "newsName":"2",             
-                "newsDate":1472342424,     
-                "newsUrl":"4",              
-                "newsIconUrl":"3",         
-                "newsTags":
-                [
-                    "报考指导",
-                    "2017新高考",
-                    "tag n"
-                ]
-            }
-        }
-    ]
-}
+    "code": "1",
+    "msg": "调用成功",
+    "result": {
+        "favorites": [{
+            "news": {
+                "newsTags": [],
+                "newsUrl": "",
+                "newsId": "160660506167375004",
+                "newsIconUrl": "/data/upload/2016-03-12/268826473.jpg",
+                "newsDate": 1459837762000,
+                "newsName": "福建高三省质检分数分析"
+            },
+            "favorTime": 1459837754000,
+            "favorId": "f0f49b69-cd03-441a-94b8-89e9cf274720"
+        }, {
+            "news": {
+                "newsTags": [],
+                "newsUrl": "upload/newsvideo/2079888091_1451956713743.jpg",
+                "newsId": "295",
+                "newsIconUrl": "/data/upload/2016-03-12/1288549994.jpg",
+                "newsDate": 1459787394000,
+                "newsName": "【绝对权威】政治学科经济图表题怎么解答，特级教师为你支招"
+            },
+            "favorTime": 1459360060000,
+            "favorId": "fc7e57c8-0c39-4d8c-bf3a-684ff0a71c4c"
+        }, {
+            "news": {
+                "newsTags": [],
+                "newsUrl": "upload/newsvideo/2079888091_1453340215562.jpg",
+                "newsId": "306",
+                "newsIconUrl": "http://www.tzhiyuan.net/static/upload/1303117225.jpg",
+                "newsDate": 1459782773000,
+                "newsName": "紧急通知！暴雪寒潮来袭，省教育考试院对学考选考、职业技能理论考试报名现场确认时间做出调整"
+            },
+            "favorTime": 1459305021000,
+            "favorId": "f5d739cb-b487-4f79-abc2-3335d5894d56"
+        }]
+    }
 }
