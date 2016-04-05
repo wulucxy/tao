@@ -222,6 +222,9 @@ var aboard = {
 	subFunc : function(btn,oForm){
 		var that = this;
 
+		if(btn.hasClass("disabled")) return;
+		btn.addClass("disabled");
+
 		var _data = {
 			user_mobile	: $("[name=mobile]").val(),
 			country	: $("[name=country]").val(),
@@ -259,12 +262,14 @@ var aboard = {
 		        window.location = "/box/plan/aboardSuccess?"+parm.join("&");
 		        return false;
 		      }else{
-		        console.log(res);
+		        warn(res.msg);
+		        btn.removeClass("disabled");
 		        return;
 		      }
 		    },
 		    error : function(err){
 		       console.log(err);
+		       btn.removeClass("disabled");
 		    }
 		})
 	}

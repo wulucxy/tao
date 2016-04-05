@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/abordData.98f43a2b.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.bd6b93e6.css" rel="stylesheet"><link href="/static/web/css/aboardData.98f43a2b.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -152,5 +152,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/abordData.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/aboardData.js"></script></body>
 </html>
