@@ -30,9 +30,7 @@ webpackJsonp([27],{
 	//保存所有答案
 	var answer = Cookies.get("answer") ? Cookies.get("answer").split("") : [];
 	
-	console.log(answer);
-	
-	if(answer.length == allItems){
+	if(answer.length > allItems){
 		_alert("你已经完成全部问题");
 		setTimeout(function(){
 			window.location = "/box/plan/major_exam3";
@@ -41,11 +39,16 @@ webpackJsonp([27],{
 		answer = [];
 		renderSlider(0);
 	}else if(answer.length){
-		_confirm("上次已经做到第"+(answer.length+1)+"题，是否继续",{
+		var len = Math.min((answer.length+1),210);
+		_confirm("上次已经做到第"+len+"题，是否继续",{
 			cancel_txt : "重新开始",
 			btn_txt : "继续上次",
 			callback : function(){
-				renderSlider(answer.length);
+				renderSlider(len-1);
+				if(len >= allItems){
+					$("#subTestFooter").fadeIn(100);
+					subAnswer();
+				}
 			},
 			cancelcallback : function(){
 				answer = [];
@@ -74,7 +77,6 @@ webpackJsonp([27],{
 				};
 			},
 			callback : function(pageIndex,$oldItem,$newItem){
-				console.log(pageIndex);
 				if((pageIndex+1) >= allItems){
 					$("#subTestFooter").fadeIn(100);
 					//subAnswer();
