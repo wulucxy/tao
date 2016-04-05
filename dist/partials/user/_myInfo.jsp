@@ -110,7 +110,7 @@
 					<div class="fieldWrap">
 
 						<c:choose>
-						    <c:when test="${user.highSchool != '0'}">
+						    <c:when test="${user.highSchool != ''}">
 						   		<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
 							</c:when>
 							<c:otherwise>
@@ -132,7 +132,7 @@
 					<div class="fieldWrap">
 						
 						<c:choose>
-						    <c:when test="${user.highYear != '0'}">
+						    <c:when test="${user.highYear != 0}">
 						   		<input type="text" class="input form-control" id="highYear" name="highYear" required value=${user.highYear}>
 							</c:when>
 							<c:otherwise>
@@ -165,6 +165,9 @@
 			</div>
 
 		</form>
+
+		highYear:${user.highYear}
+		highSchool : ${user.highSchool}
 	</div>													
 </div>
 </section>
