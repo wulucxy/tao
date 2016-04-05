@@ -29,14 +29,7 @@
 					<em class="vm">姓名：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<c:choose>
-						    <c:when test="${user.userName != ''}">
-						   	<input type="text" class="input form-control" id="name" name="name" value="${user.userName}" required readonly>
-							</c:when>
-							<c:otherwise>
-							<input type="text" class="input form-control" id="name" name="name" required placeholder="请输入姓名">
-							</c:otherwise>
-						</c:choose>
+						<input type="text" class="input form-control" id="name" name="name" value="${user.userName}" required placeholder="请输入姓名">
 					</div>
 				</div>
 				<div class="errInfo">
@@ -83,8 +76,10 @@
 						<c:choose>
 						    <c:when test="${user.sex == 1}">
 						   		<option value="1" selected>男</option>
+						   		<option value="2">女</option>
 							</c:when>
 							<c:when test="${user.sex == 2}">
+								<option value="1">男</option>
 						   		<option value="2" selected>女</option>
 							</c:when>
 							<c:otherwise>
@@ -108,15 +103,7 @@
 					<em class="vm">高中：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-
-						<c:choose>
-						    <c:when test="${user.highSchool != ''}">
-						   		<input type="text" class="input form-control" id="highSchool" name="highSchool" required readonly value=${user.highSchool}>
-							</c:when>
-							<c:otherwise>
-								<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" placeholder="请选择高中" required>
-							</c:otherwise>
-						</c:choose>
+						<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" required value="${user.highSchool}" placeholder="请选择高中" >
 					</div>
 				</div>
 				<div class="errInfo">
