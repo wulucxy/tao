@@ -183,6 +183,7 @@ var dataSet = {
                 }
 
                 res.majors = res.result;
+                btn.removeClass("disabled");
                 that.loadList(res);
 
             },

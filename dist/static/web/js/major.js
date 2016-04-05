@@ -221,6 +221,7 @@ webpackJsonp([25],{
 	                }
 	
 	                res.majors = res.result;
+	                btn.removeClass("disabled");
 	                that.loadList(res);
 	
 	            },

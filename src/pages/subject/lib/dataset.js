@@ -42,7 +42,7 @@ var dataSet = {
 		var that = this,o = that.options;
 
         var subjectList = $.map(that.state.tagList,function(ele){
-            return ele.value
+            return Number(ele.value);
         });
 
 		var _data = {

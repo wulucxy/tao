@@ -42,6 +42,8 @@ webpackJsonp([8],{
 	
 	var localData = __webpack_require__(140);
 	
+	var provinceId = $("[name=province]").val();
+	
 	var dataSet = { 
 		render : function(){
 			var that = this;
@@ -85,7 +87,6 @@ webpackJsonp([8],{
 	
 		requestData : function(btn){
 			var that = this,o = that.options;
-	        var provinceId = $("[name=province]").val();
 	
 			var _data = {
 	            province:0,
@@ -206,6 +207,78 @@ webpackJsonp([8],{
 	        
 	    },
 	
+	    searchCollegeReq : function(btn){
+	        var that = this;
+	        var oInput = $("#collegeInput");
+	        $.ajax({
+	            url : preServer+provinceId + "/data/college/search",
+	            type : "post",
+	            data : JSON.stringify({keyword : oInput.val() }),
+	            contentType: "application/json",
+	            success : function(res){
+	                if(typeof res == "string"){
+	                    var res = $.parseJSON(res);
+	                }
+	
+	                if(res.code != 1){
+	                    warn(res.msg);
+	                    btn.removeClass("disabled");
+	                    return;
+	                }
+	
+	                res = res.result;
+	
+	                //客户端修改数据
+	                $.each(res.colleges,function(idx,ele){
+	                    //增加code,name
+	                    ele.code = ele.collegeId;
+	                    ele.name = ele.collegeName;
+	
+	                    //获取city名称
+	                    ele.city = {
+	                        code : ele.city,
+	                        name : localData.getCityName(ele.city)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校属性)
+	                    ele.collegeType = {
+	                        code : ele.collegeType,
+	                        name : localData.getCollegeTypeName(ele.collegeType)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校性质)
+	                    ele.ownerType = {
+	                        code : ele.ownerType,
+	                        name : localData.getOwnerTypeName(ele.ownerType)
+	                    };
+	
+	                    //获取getLevelName(院校层次)
+	                    ele.level = {
+	                        code : ele.level,
+	                        name : localData.getLevelName(ele.level)
+	                    };
+	
+	                    //获取featrueList
+	                    ele.feature = $.map(ele.feature,function(el,index){
+	                        return {
+	                            type : el,
+	                            name : localData.getFeatureName(el)
+	                        };
+	                    });
+	                });
+	
+	                btn.removeClass("disabled");
+	                that.loadList(res,1);
+	
+	            },
+	            error : function(err){
+	                console.log(err);
+	                btn.removeClass("disabled");
+	            }
+	        });
+	
+	    },
+	
 	    bindEvt : function(){
 	    	var that = this;
 	    	$(document).on("click","[data-action=add]",function(e){
@@ -218,7 +291,7 @@ webpackJsonp([8],{
 	    			val =  link.data("value").split(":")[1];
 	
 	    		if(link.hasClass("current") || val == "" ) return;
-	            link.siblings().removeClass("current");
+	            link.closest(".row").find(".item").removeClass("current");
 	
 	            $.each(that.state.tagList,function(idx,item){
 	                if(type == item.type){
@@ -235,8 +308,8 @@ webpackJsonp([8],{
 					text : link.text()
 				});  
 	
-	
-				that.render(link);  		
+	             that.render();
+				that.requestData(link);  		
 	    	});
 	
 	    	$(document).on("click","[data-action=clear]",function(e){
@@ -244,7 +317,9 @@ webpackJsonp([8],{
 	            $("#collegeInput").val("");
 	    		$("[data-action=add]").removeClass("current");
 				that.state.tagList = [];
-				that.render();  		
+	
+	            that.render();
+				that.requestData();  		
 	    	});
 	
 	    	$(document).on("click","[data-action=remove]",function(e){
@@ -265,7 +340,8 @@ webpackJsonp([8],{
 	                }
 	            });
 	
-				that.render(link);  		
+	            that.render();
+				that.requestData(link);  		
 	    	});
 	
 	    	$(".btn-loading").on("click",function(e){
@@ -275,6 +351,25 @@ webpackJsonp([8],{
 	    		btn.addClass("disabled loading");
 	    		that.requestData(btn);
 	    	});
+	
+	        $("#sBtn").on("click",function(e){
+	            e.preventDefault();
+	            var oInput = $("#collegeInput"),btn = $(this).closest(".btn");
+	            if($.trim(oInput.val()) == ""){
+	                warn("请输入院校名称");
+	                return;
+	            }
+	
+	            if(btn.hasClass('disabled')) return;
+	            btn.addClass("disabled");
+	
+	            that.state.tagList = [];
+	            $(".itemLists .item").removeClass("current");
+	            that.render();
+	
+	            that.searchCollegeReq(btn);
+	
+	        })
 	
 	        that.requestData();
 	    }
