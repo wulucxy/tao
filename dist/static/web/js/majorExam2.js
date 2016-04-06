@@ -2833,6 +2833,8 @@ webpackJsonp([27],{
 	          $oldItem.off( that.transEndEventName ).hide();
 	          that.isAnimating = false;
 	
+	          
+	
 	          //当前页面索引++
 	          that.pageIndex++;
 	
@@ -2870,8 +2872,9 @@ webpackJsonp([27],{
 	              $newItem.css( 'opacity', '1' );
 	            }, 25 );
 	        }else{
-	            $oldItem.animate({'opacity':'0'},that.options.speed);
-	            $newItem.animate({'opacity':'1'},that.options.speed,that.transitionEnd.call(that,$oldItem,$newItem));
+	            $oldItem.css({'opacity':'0'});
+	            $newItem.css({'opacity':'1'});
+	            that.transitionEnd.call(that,$oldItem,$newItem)
 	        }
 	      },
 	
@@ -2905,15 +2908,15 @@ webpackJsonp([27],{
 	          //已经是最后一个了，直接返回
 	          if((that.pageIndex+1) >= o.allItems) return;
 	
-	          //动画
-	          that.switchItem($oldItem,$newItem);
-	
 	          //当点击到当前最后一个列表时，需要往后再插入新的列表数据
 	          if(!$newItem.length){
 	            that.startPoint++;
 	            that.endPoint = that.startPoint+1;
 	            that.insertHTML(that.startPoint,that.endPoint);
 	          }
+	
+	          //动画
+	          that.switchItem($oldItem,$newItem);
 	            
 	        });
 	      }
