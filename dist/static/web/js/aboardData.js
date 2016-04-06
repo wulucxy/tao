@@ -205,7 +205,8 @@ webpackJsonp([1],{
 	    		e.preventDefault();
 	    		$("[data-action=add]").removeClass("current");
 				that.state.tagList = [];
-				that.updateUI();  		
+				that.updateUI(); 
+	            that.requestData(); 		
 	    	});
 	
 	    	$(document).on("click","[data-action=remove]",function(e){
