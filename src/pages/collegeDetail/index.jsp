@@ -101,7 +101,7 @@
 												</div>
 											</div>	
 											
-											<input type="hidden" name="location" value="${location.lat}:${location.lng}">
+											<input type="hidden" name="location" value="${location.lng}:${location.lat}">
 											<div id="baiduMap" class="baiduWrapper">
 												
 											</div>

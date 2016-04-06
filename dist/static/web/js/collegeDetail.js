@@ -190,7 +190,7 @@ webpackJsonp([9],{
 		renderMap : function(){
 			var that = this,o = that.options;
 			var map = new BMap.Map(this.wrapper);          // 创建地图实例  
-			var point = new BMap.Point(o.location.lat,o.location.lng);  // 创建点坐标 
+			var point = new BMap.Point(o.location.lng,o.location.lat);  // 创建点坐标 
 			map.centerAndZoom(point, 15); 
 			var marker = new BMap.Marker(point);        // 创建标注    
 			map.addOverlay(marker);                     // 将标注添加到地图中

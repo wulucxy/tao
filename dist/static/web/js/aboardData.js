@@ -288,7 +288,7 @@ webpackJsonp([1],{
 	((__t = ( data[i].school_type )) == null ? '' : __t) +
 	'</span>\n	</div>\n	<div class="detail row">\n		<span class="label">在该国排名：</span><span class="field">NO.' +
 	((__t = ( data[i].traffic_rank )) == null ? '' : __t) +
-	'</span>\n	</div>\n	<div class="detail row">\n		<span class="label">著名校友：</span><span class="field">NO.' +
+	'</span>\n	</div>\n	<div class="detail row">\n		<span class="label">著名校友：</span><span class="field">' +
 	((__t = ( data[i].fame_alumnus )) == null ? '' : __t) +
 	'</span>\n	</div>\n	<div class="detail row media">\n		<span class="label fl">地理环境优势：</span>\n		<div className="media-body">\n		<p class="orange">' +
 	((__t = ( data[i].geog_superiority )) == null ? '' : __t) +

@@ -22,7 +22,7 @@
             "href" : "#5"
         }
     ],
-    "c": [
+    "provinceList": [
         {
             "code": "1000",
             "name": "中国"

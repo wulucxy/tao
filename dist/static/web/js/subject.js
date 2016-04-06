@@ -337,10 +337,8 @@ webpackJsonp([35],{
 	        var that = this;
 	
 	        var subjectList = $.map(that.state.tagList,function(ele){
-	            return ele.value
+	            return Number(ele.value);
 	        });
-	
-	        console.log(subjectList);
 	
 	        $.ajax({
 	            url : preServer+provinceId + "/data/subject/"+btn.attr("collegeid"),

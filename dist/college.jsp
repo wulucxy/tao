@@ -70,7 +70,7 @@
 									<a class="fl item" href="javascript:;" data-action="add" data-value="city:0">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
-										<c:forEach var="list" items="${c}">
+										<c:forEach var="list" items="${provinceList}">
 										<a href="javascript:;" class="item" data-action="add" data-value="city:${list.code}">${list.name}</a>
 										</c:forEach>
 										</div>
