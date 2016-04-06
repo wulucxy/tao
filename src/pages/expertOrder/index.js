@@ -67,6 +67,7 @@ var book = {
 		        	that.requestAppoint();
 		        },
 		        completeCallback : function(){
+		        	placeholder($('input[placeholder],textarea[placeholder]')); 
  					that.formAction(btn);
 		        }
 			});

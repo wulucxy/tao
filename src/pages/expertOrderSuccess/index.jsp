@@ -41,7 +41,7 @@
 							</div>
 
 							<div class="tc btnRow">
-								<a href="javascript:history.back()" class="btn btn-positive btn-form" id="applyBtn">返&nbsp;回（<em class="count"></em>）</a>
+								<a href="javascript:history.back()" class="btn btn-positive btn-form" id="applyBtn">返&nbsp;回（<em class="count">3</em>）</a>
 
 							</div>
 

@@ -38,6 +38,7 @@ module.exports = {
 	"/uploader": "uploader.jsp",
 	"/pay/wishes": "pay/book.jsp",
 	"/pay/assessment": "pay/assessment.jsp",
+	"/charts" : "echarts.jsp",
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',

@@ -599,7 +599,7 @@ webpackJsonp([32],[
 	with (obj) {
 	__p += '<p>\n	<span class="blue">推荐选考：</span>\n	<span class="list">\n		<em class="recommendList">' +
 	((__t = ( recommend )) == null ? '' : __t) +
-	'</em>\n	</span>\n</p>\n<div class="btnRow">\n	<a href="/library/major" class="btn btn-primary" target="_blank">查查看，能选什么专业</a>\n</div>';
+	'</em>\n	</span>\n</p>\n<div class="btnRow">\n	<a href="/library/subject" class="btn btn-primary" target="_blank">查查看，能选什么专业</a>\n</div>';
 	
 	}
 	return __p

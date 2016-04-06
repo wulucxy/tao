@@ -72,6 +72,7 @@ webpackJsonp([19],{
 			        	that.requestAppoint();
 			        },
 			        completeCallback : function(){
+			        	placeholder($('input[placeholder],textarea[placeholder]')); 
 	 					that.formAction(btn);
 			        }
 				});
