@@ -1248,7 +1248,7 @@ webpackJsonp([37],{
 	 for (var i = 0; i < favorites.length; i++) { ;
 	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
 	((__t = ( favorites[i].news.newsIconUrl )) == null ? '' : __t) +
-	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
+	'" class="responsive">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle ellipsis" href="' +
 	((__t = ( favorites[i].news.newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n					' +
 	((__t = ( favorites[i].news.newsName )) == null ? '' : __t) +

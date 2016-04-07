@@ -214,7 +214,11 @@ var school = {
           //tag点击效果
           $.each($(".m-select"),function(idx,ele){
             var btn = $(ele).find(".addMajor");
-            that.updateTags(btn);
+
+            (function (btn) {       
+              that.updateTags(btn); 
+            })(btn);     
+
           });
     
       }
@@ -424,6 +428,9 @@ var school = {
 
       e.preventDefault();
       var $li = $(this).closest(".tagList");
+
+      var type = $li.closest(".m-select").find(".addMajor").data("rel") - 1;
+
       var code = $li.data("code"),name = $li.data("name");
           
       var ele = {

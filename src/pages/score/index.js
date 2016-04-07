@@ -274,6 +274,7 @@ var score = {
 					warn(res.msg);
 					return;
 				}
+				window.location.reload();
 			}
 		})
 	},

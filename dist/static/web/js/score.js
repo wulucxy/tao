@@ -278,6 +278,7 @@ webpackJsonp([32],[
 						warn(res.msg);
 						return;
 					}
+					window.location.reload();
 				}
 			})
 		},
