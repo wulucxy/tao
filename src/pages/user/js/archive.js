@@ -44,6 +44,7 @@ var archive = {
 		searchSchool.init({
 			el : ".addSchool",
 			provinceId : o.provinceId,
+			type : "highSchool",
 			url : "/v2_1/client/"+provinceId+"/highSchool/search",
 			startCallback  : function(modal){
 				modal.find("h3 span").text("选择高中");	

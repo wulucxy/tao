@@ -5,7 +5,7 @@ webpackJsonp([37],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(383);
+	__webpack_require__(384);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -22,22 +22,22 @@ webpackJsonp([37],{
 	
 	
 	//历史模块
-	var archive = __webpack_require__(385);
+	var archive = __webpack_require__(386);
 	
 	//历史模块
-	var history = __webpack_require__(386);
+	var history = __webpack_require__(387);
 	
 	//收藏模块
-	var collection = __webpack_require__(388);
+	var collection = __webpack_require__(389);
 	
 	//历史测试模块
-	var test = __webpack_require__(392);
+	var test = __webpack_require__(393);
 	
 	//qa模块
-	var qa = __webpack_require__(394);
+	var qa = __webpack_require__(395);
 	
 	//qa模块
-	var appointment = __webpack_require__(396);
+	var appointment = __webpack_require__(397);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -477,7 +477,7 @@ webpackJsonp([37],{
 	//自定义功能写下面
 	var tmpl_school = __webpack_require__(369);
 	var tmpl_list = __webpack_require__(370);
-	
+	var tmpl_highschool = __webpack_require__(371);
 	//分页
 	var pagination = __webpack_require__(178);
 	
@@ -487,7 +487,8 @@ webpackJsonp([37],{
 			this.pager = 1;
 			this.options = extend({
 				el : ".addSchool",
-				provinceId : 330000
+				provinceId : 330000,
+				type  : "college"
 			},options);
 	
 			this.bindEvt();
@@ -571,9 +572,17 @@ webpackJsonp([37],{
 	
 	    renderList : function(res){
 	      var that = this;
+	      var o = that.options;
 	      var modal = that.modal;
 	
-	      $('.schoolLists').empty().append(tmpl_list(res)).hide().fadeIn();
+	      	var _tmpl;
+	        if(o.type=="highschool"){
+		       _tmpl = tmpl_list(res)
+		    }else{
+		    	_tmpl = tmpl_highschool(res)
+		    }
+	
+	      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
 	    },
 	
 	   detailpagination : function(res){
@@ -664,14 +673,44 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 383:
+/***/ 371:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (schools.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
+	 }else{ ;
+	__p += '\n	';
+	 for (var i = 0; i < schools.length; i++) { ;
+	__p += '\n	 	<li class="schoolList" code="' +
+	((__t = ( schools[i].code )) == null ? '' : __t) +
+	'" name="' +
+	((__t = ( schools[i].name )) == null ? '' : __t) +
+	'"><em class="icon-check"></em><em class="vm">' +
+	((__t = ( schools[i].name )) == null ? '' : __t) +
+	'</em></li>\n ';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 384:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 385:
+/***/ 386:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -720,6 +759,7 @@ webpackJsonp([37],{
 			searchSchool.init({
 				el : ".addSchool",
 				provinceId : o.provinceId,
+				type : "highSchool",
 				url : "/v2_1/client/"+provinceId+"/highSchool/search",
 				startCallback  : function(modal){
 					modal.find("h3 span").text("选择高中");	
@@ -742,13 +782,13 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 386:
+/***/ 387:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(387);
+	var tmpl = __webpack_require__(388);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -862,7 +902,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 387:
+/***/ 388:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -930,7 +970,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 388:
+/***/ 389:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -942,9 +982,9 @@ webpackJsonp([37],{
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
-	var tmpl_college = __webpack_require__(389);
-	var tmpl_major = __webpack_require__(390);
-	var tmpl_info = __webpack_require__(391);
+	var tmpl_college = __webpack_require__(390);
+	var tmpl_major = __webpack_require__(391);
+	var tmpl_info = __webpack_require__(392);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1107,7 +1147,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 389:
+/***/ 390:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1161,7 +1201,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 390:
+/***/ 391:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1191,7 +1231,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 391:
+/***/ 392:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1233,13 +1273,13 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 392:
+/***/ 393:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(393);
+	var tmpl = __webpack_require__(394);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1317,7 +1357,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 393:
+/***/ 394:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1347,13 +1387,13 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 394:
+/***/ 395:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(395);
+	var tmpl = __webpack_require__(396);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1428,7 +1468,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 395:
+/***/ 396:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1462,13 +1502,13 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 396:
+/***/ 397:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(397);
+	var tmpl = __webpack_require__(398);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1476,7 +1516,7 @@ webpackJsonp([37],{
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
-	var tmpl_pay = __webpack_require__(398);
+	var tmpl_pay = __webpack_require__(399);
 	
 	//ping++
 	var ping = __webpack_require__(225);
@@ -1647,7 +1687,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 397:
+/***/ 398:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1723,7 +1763,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 398:
+/***/ 399:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

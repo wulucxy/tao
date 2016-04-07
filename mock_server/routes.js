@@ -63,7 +63,7 @@ module.exports = {
 	'/system/area' : 'mock::api/cityList.json',
 	'/system/city' : 'mock::api/cityList2.json',
 	'post::/v2_1/client/1/data/college/search' : 'mock::api/collegeJSON.json',
-	'post::/v2_1/client/1/highSchool/search' : 'mock::api/collegeJSON.json',
+	'post::/v2_1/client/1/highSchool/search' : 'mock::api/highschoolJSON.json',
 	'/v2_1/client/1/news': 'mock::api/news.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',

@@ -5,7 +5,7 @@ require("./index.less");
 //自定义功能写下面
 var tmpl_school = require("./templates/searchSchool.ejs");
 var tmpl_list = require("./templates/schoolList.ejs");
-
+var tmpl_highschool = require("./templates/highschool.ejs");
 //分页
 var pagination = require("../pagination");
 
@@ -15,7 +15,8 @@ var searchSchool = {
 		this.pager = 1;
 		this.options = extend({
 			el : ".addSchool",
-			provinceId : 330000
+			provinceId : 330000,
+			type  : "college"
 		},options);
 
 		this.bindEvt();
@@ -99,9 +100,17 @@ var searchSchool = {
 
     renderList : function(res){
       var that = this;
+      var o = that.options;
       var modal = that.modal;
 
-      $('.schoolLists').empty().append(tmpl_list(res)).hide().fadeIn();
+      	var _tmpl;
+        if(o.type=="highschool"){
+	       _tmpl = tmpl_list(res)
+	    }else{
+	    	_tmpl = tmpl_highschool(res)
+	    }
+
+      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
     },
 
    detailpagination : function(res){

@@ -196,7 +196,7 @@ webpackJsonp([33],{
 	//自定义功能写下面
 	var tmpl_school = __webpack_require__(369);
 	var tmpl_list = __webpack_require__(370);
-	
+	var tmpl_highschool = __webpack_require__(371);
 	//分页
 	var pagination = __webpack_require__(178);
 	
@@ -206,7 +206,8 @@ webpackJsonp([33],{
 			this.pager = 1;
 			this.options = extend({
 				el : ".addSchool",
-				provinceId : 330000
+				provinceId : 330000,
+				type  : "college"
 			},options);
 	
 			this.bindEvt();
@@ -290,9 +291,17 @@ webpackJsonp([33],{
 	
 	    renderList : function(res){
 	      var that = this;
+	      var o = that.options;
 	      var modal = that.modal;
 	
-	      $('.schoolLists').empty().append(tmpl_list(res)).hide().fadeIn();
+	      	var _tmpl;
+	        if(o.type=="highschool"){
+		       _tmpl = tmpl_list(res)
+		    }else{
+		    	_tmpl = tmpl_highschool(res)
+		    }
+	
+	      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
 	    },
 	
 	   detailpagination : function(res){
@@ -373,6 +382,36 @@ webpackJsonp([33],{
 	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
 	'"><em class="icon-check"></em><em class="vm">' +
 	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
+	'</em></li>\n ';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 371:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (schools.length == 0) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
+	 }else{ ;
+	__p += '\n	';
+	 for (var i = 0; i < schools.length; i++) { ;
+	__p += '\n	 	<li class="schoolList" code="' +
+	((__t = ( schools[i].code )) == null ? '' : __t) +
+	'" name="' +
+	((__t = ( schools[i].name )) == null ? '' : __t) +
+	'"><em class="icon-check"></em><em class="vm">' +
+	((__t = ( schools[i].name )) == null ? '' : __t) +
 	'</em></li>\n ';
 	 }} ;
 	

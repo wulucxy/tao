@@ -67,7 +67,17 @@
 												<div class="col">
 													<span class="label">院校层次：</span><span class="field orange">${level}</span>
 												</div>
-												<div class="col badgeRow">
+												
+												<div class="col">
+													<span class="label">院校排名：</span><span class="field place">
+														<em class="orange">NO.${place}</em>
+													</span>
+													<input type="hidden" name="place" value="${place}">
+												</div>
+												<div class="col">
+													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
+												</div>
+												<div class="col badgeRow c-8">
 													<span class="label">院校特色：</span><span class="field">
 														<c:forEach var="featurelist" items="${feature}">
 															 <c:choose>
@@ -83,15 +93,6 @@
 															 </c:choose>
 														</c:forEach>
 													</span>
-												</div>
-												<div class="col">
-													<span class="label">院校排名：</span><span class="field place">
-														<em class="orange">NO.${place}</em>
-													</span>
-													<input type="hidden" name="place" value="${place}">
-												</div>
-												<div class="col">
-													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
 												</div>
 												<div class="col c-6">
 													<span class="label">院校网址：</span><a class="field orange" href="${site}" target="_blank">${site}</a>
