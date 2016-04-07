@@ -16,15 +16,7 @@
             "majorName":"经济学1",                
             "subjects":                     
             [
-                {
-                    "subjectId":"",         
-                    "subjectName":"化学"        
-                },
-                
-                {
-                    "subjectId":"",         
-                    "subjectName":"生物"        
-                }
+               
             ]
         },
         

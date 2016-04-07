@@ -16,7 +16,8 @@ var searchSchool = {
 		this.options = extend({
 			el : ".addSchool",
 			provinceId : 330000,
-			type  : "college"
+			type  : "college",
+			capacity : 10
 		},options);
 
 		this.bindEvt();
@@ -78,7 +79,7 @@ var searchSchool = {
 	      url : url,
       	  type : "post",
 	      contentType: "application/json",
-	      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
+	      data : JSON.stringify({page:pager,capacity:o.capacity,"keyword":$.trim($("#wd").val())}),
 	      success : function(res){
 	        if(typeof res == "string"){
 	          var res = $.parseJSON(res);
@@ -105,9 +106,9 @@ var searchSchool = {
 
       	var _tmpl;
         if(o.type=="highschool"){
-	       _tmpl = tmpl_list(res)
+	       _tmpl = tmpl_highschool(res)
 	    }else{
-	    	_tmpl = tmpl_highschool(res)
+	    	_tmpl = tmpl_list(res)
 	    }
 
       $('.schoolLists').empty().append(_tmpl).hide().fadeIn();

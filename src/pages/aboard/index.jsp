@@ -83,7 +83,7 @@
 							</div>
 						</div>
 						
-						<div class="row clearfix">
+						<!-- <div class="row clearfix">
 							<label for="degree" class="control-label column col1 fl">
 								<i class="icon-location icon-book"></i>
 								<em class="vm">阶段（学历）：</em></label>
@@ -112,7 +112,7 @@
 								<span class="p-error"></span>
 								<span class="p-error-empty">阶段学历不能为空</span>
 							</div>
-						</div>
+						</div> -->
 						
 						<div class="row clearfix inline">
 							<label for="major_key" class="control-label column col1 fl">

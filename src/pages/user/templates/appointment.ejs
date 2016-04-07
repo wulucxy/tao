@@ -13,11 +13,11 @@
 				<span class="btn btn-red">已受理</span>
 			<% }else if(appointments[i].status == 3) { %>
 				<% if(appointments[i].statusDesc) { %>
-				span class="btn btn-gray btn-lines">已关闭
+				<span class="btn btn-gray btn-lines">已关闭
 					<span class="f12 db">(<%= appointments[i].statusDesc %>)</span>
 				</span>
 				<% }else{ %>
-					<span class="btn btn-tray">已关闭</span>
+					<span class="btn btn-gray">已关闭</span>
 				<% } %>
 			<% }else if(appointments[i].status == 4) { %>
 				<span class="btn btn-orange">待付款</span>

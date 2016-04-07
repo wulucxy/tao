@@ -229,7 +229,6 @@ var aboard = {
 			user_mobile	: $("[name=mobile]").val(),
 			country	: $("[name=country]").val(),
 			states_cn : $("[name=states_cn]").val(),	
-			degree	: $("[name=degree]").val(),
 			major_key : $("[name=major_key]").val(),
 			exam_type : $("[name=exam_type]").val(),
 			exam_score : $("[name=exam_score]").val(),

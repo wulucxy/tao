@@ -22,7 +22,7 @@ module.exports = {
 	"/library/major"   : 'major.jsp',
 	"/library/major/1"   : 'major_2.jsp',
 	"/box/score_management": "score.jsp",
-	"/box/plan/aboard_data": "aboard.jsp",
+	"/box/plan/aboard": "aboard.jsp",
 	"/box/plan/aboardSuccess": "aboardSuccess.jsp",
 	"/expertOrder" :"expertOrder.jsp",
 	"/expertOrderSuccess" : "expertOrderSuccess.jsp",

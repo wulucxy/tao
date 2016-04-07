@@ -33,9 +33,10 @@ var dataSet = {
 		var that = this,o = that.options;
 
         //默认首次加载US的数据
-        if(typeof btn == "undefined"){
-            $("[name=country]").val("US");
-        };
+        // if(typeof btn == "undefined"){
+        //     $("[name=country]").val("US");
+            
+        // };
 
 		var _data = {
 			country : $("[name=country]").val(),
@@ -205,7 +206,8 @@ var dataSet = {
 
         });
 
-        this.requestData();
+        //默认选中第一个
+        $(".itemLists .item").eq(0).trigger("click");
 
     }
 };

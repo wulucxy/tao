@@ -456,12 +456,16 @@ webpackJsonp([35],{
 	((__t = ( subMajors[i].majorId )) == null ? '' : __t) +
 	'" >\n	  		' +
 	((__t = ( subMajors[i].majorName )) == null ? '' : __t) +
-	':\n	  	</a>\n  	</span>\n  	<div class="col2 fl">\n  		';
+	':\n	  	</a>\n  	</span>\n  	<div class="col2 fl">\n      ';
+	 if (subMajors[i].subjects.length == 0) { ;
+	__p += '\n        <span class="btn btn-default">不限</span>\n      ';
+	 }else{ ;
+	__p += '\n  		';
 	 for (var k = 0; k < subMajors[i].subjects.length; k++) { ;
 	__p += '\n  		<span class="btn btn-default">' +
 	((__t = ( subMajors[i].subjects[k].subjectName )) == null ? '' : __t) +
 	'</span>\n  		';
-	 } ;
+	 }} ;
 	__p += '\n  	</div>\n  </div>\n';
 	 } ;
 	

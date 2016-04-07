@@ -488,7 +488,8 @@ webpackJsonp([37],{
 			this.options = extend({
 				el : ".addSchool",
 				provinceId : 330000,
-				type  : "college"
+				type  : "college",
+				capacity : 10
 			},options);
 	
 			this.bindEvt();
@@ -550,7 +551,7 @@ webpackJsonp([37],{
 		      url : url,
 	      	  type : "post",
 		      contentType: "application/json",
-		      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
+		      data : JSON.stringify({page:pager,capacity:o.capacity,"keyword":$.trim($("#wd").val())}),
 		      success : function(res){
 		        if(typeof res == "string"){
 		          var res = $.parseJSON(res);
@@ -577,9 +578,9 @@ webpackJsonp([37],{
 	
 	      	var _tmpl;
 	        if(o.type=="highschool"){
-		       _tmpl = tmpl_list(res)
+		       _tmpl = tmpl_highschool(res)
 		    }else{
-		    	_tmpl = tmpl_highschool(res)
+		    	_tmpl = tmpl_list(res)
 		    }
 	
 	      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
@@ -1711,11 +1712,11 @@ webpackJsonp([37],{
 	 }else if(appointments[i].status == 3) { ;
 	__p += '\n				';
 	 if(appointments[i].statusDesc) { ;
-	__p += '\n				span class="btn btn-gray btn-lines">已关闭\n					<span class="f12 db">(' +
+	__p += '\n				<span class="btn btn-gray btn-lines">已关闭\n					<span class="f12 db">(' +
 	((__t = ( appointments[i].statusDesc )) == null ? '' : __t) +
 	')</span>\n				</span>\n				';
 	 }else{ ;
-	__p += '\n					<span class="btn btn-tray">已关闭</span>\n				';
+	__p += '\n					<span class="btn btn-gray">已关闭</span>\n				';
 	 } ;
 	__p += '\n			';
 	 }else if(appointments[i].status == 4) { ;

@@ -55,7 +55,7 @@ var dataSet = {
 
 		var _data = {
             province:0,
-			city : [$("[name=city]").val()],
+			city : [Number($("[name=city]").val())],
 			collegeType : $("[name=collegeType]").val(),
 			ownerType : $("[name=ownerType]").val(),
 			level : $("[name=level]").val(),

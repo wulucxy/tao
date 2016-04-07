@@ -30,8 +30,8 @@ tabs($("#collegeWrapper"),{
 
 baidu.init(document.getElementById("baiduMap"),{
 	location : {
-		lat : $("[name=location]").val().split(":")[0],
-		lng : $("[name=location]").val().split(":")[1]
+		lat : $("[name=location]").val().split(":")[1],
+		lng : $("[name=location]").val().split(":")[0]
 	} 
 });
 

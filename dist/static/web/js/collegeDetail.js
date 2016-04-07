@@ -35,8 +35,8 @@ webpackJsonp([9],{
 	
 	baidu.init(document.getElementById("baiduMap"),{
 		location : {
-			lat : $("[name=location]").val().split(":")[0],
-			lng : $("[name=location]").val().split(":")[1]
+			lat : $("[name=location]").val().split(":")[1],
+			lng : $("[name=location]").val().split(":")[0]
 		} 
 	});
 	
@@ -342,7 +342,7 @@ webpackJsonp([9],{
 	'</span>\n			';
 	 } ;
 	__p += '\n		</h5>\n		<p class="details">\n			<span>\n				<i class="icon-major icon-score"></i>\n				<em class="label">分数线：</em>\n				<em class="field orange">' +
-	((__t = ( majors[i].majorName )) == null ? '' : __t) +
+	((__t = ( majors[i].threshold )) == null ? '' : __t) +
 	'</em>\n			</span>\n			<span>\n				<i class="icon-major icon-term"></i>\n				<em class="label">学制：</em>\n				<em class="field orange">' +
 	((__t = ( majors[i].eductionalSystme )) == null ? '' : __t) +
 	'年</em>\n			</span>\n			<span>\n				<i class="icon-major icon-human"></i>\n				<em class="label">招生人数：</em>\n				<em class="field orange">' +
