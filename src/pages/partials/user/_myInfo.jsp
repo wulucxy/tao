@@ -152,9 +152,6 @@
 			</div>
 
 		</form>
-
-		highYear:${user.highYear}
-		highSchool : ${user.highSchool}
 	</div>													
 </div>
 </section>
