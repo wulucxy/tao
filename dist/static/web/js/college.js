@@ -93,7 +93,7 @@ webpackJsonp([8],{
 	
 			var _data = {
 	            province:0,
-				city : [Number($("[name=city]").val())],
+				city : $("[name=city]").val(),
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
