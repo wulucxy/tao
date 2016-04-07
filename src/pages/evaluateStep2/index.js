@@ -69,6 +69,7 @@ var school = {
       this.bindEvt();
 
       this.pager = 1;
+      this.capacity = 10;
       
       this.options = o;
 
@@ -401,7 +402,7 @@ var school = {
        modal.find('.s-Content').append('<div class="pagination"></div>');
           var $page = modal.find(".pagination");
           pagination($page,{
-            pages: res.count,
+            pages:  Math.ceil(res.total / that.capacity),
             displayedPages: 3,
             currentPage : 1,
             edges: 1,
@@ -466,7 +467,7 @@ var school = {
       url : preServer+provinceId+"/data/college/search",
       type : "post",
       contentType: "application/json",
-      data : JSON.stringify({page:pager,"keyword":$.trim($("#wd").val())}),
+      data : JSON.stringify({capacity:that.capacity,page:pager,"keyword":$.trim($("#wd").val())}),
       success : function(res){
         if(typeof res == "string"){
           var res = $.parseJSON(res);

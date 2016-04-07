@@ -40,6 +40,7 @@ var dataSet = {
 
 		var _data = {
 			country : $("[name=country]").val(),
+            capacity : that.capacity,
 			school_name_key : $("[name=school_name_key]").val()
 		};
 
@@ -94,8 +95,9 @@ var dataSet = {
 
 		$(".btn-loading").removeClass("loading disabled");
 
+        var pageCount = Math.ceil(data.total / that.capacity);
 		//最后一页
-		if(pager > data.count){
+		if(pager > pageCount){
 			$(".btn-loading").addClass("loading-all");
 		};
 
@@ -115,6 +117,7 @@ var dataSet = {
 
         //保存分页对象
         this.pager = 1;
+        this.capacity  = 10;
 
         this.updateUI();
         this.bindEvt();

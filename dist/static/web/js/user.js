@@ -200,6 +200,7 @@ webpackJsonp([37],{
 	    	var that = this,$this = that.target;
 	    	// 分页默认从第1页开始
 	    	that.pager = o.pager;
+	    	that.capacity = 10;
 	
 	    	//模板地址
 	    	that.tmpl = o.tmpl;
@@ -224,7 +225,7 @@ webpackJsonp([37],{
 				url : o.url || $this.data("url"),
 				type : o.type,
 				contentType: "application/json",
-				data : JSON.stringify({page : that.pager}),
+				data : JSON.stringify({page : that.pager,capacity : 10}),
 				success : function(res){
 					if(typeof(res) == 'string'){
 	                   var res = $.parseJSON(res);
@@ -252,8 +253,9 @@ webpackJsonp([37],{
 	
 				that.pager++;
 	
+				var pageCount = Math.ceil(res.total / that.capacity);
 				//最后一页
-				if(that.pager > res.count){
+				if(that.pager > pageCount){
 					that.btn.addClass("loading-all");
 				};
 	
@@ -588,12 +590,13 @@ webpackJsonp([37],{
 	
 	   detailpagination : function(res){
 	     var that = this;
+	     var o = that.options;
 	     var modal = that.modal;
 	     if(!modal.find('.pagination').length){
 	       modal.find('.s-Content').append('<div class="pagination"></div>');
 	          var $page = modal.find(".pagination");
 	          pagination($page,{
-	            pages: res.count,
+	            pages: Math.ceil(res.total / o.capacity),
 	            displayedPages: 3,
 	            currentPage : 1,
 	            edges: 1,

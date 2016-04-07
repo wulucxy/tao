@@ -23,6 +23,7 @@ webpackJsonp([12],{
 		init : function(){
 			//默认分页开始
 			this.pager = 1;
+			this.capacity = 10;
 			this.initList();
 			this.bindEvt();
 		},
@@ -53,6 +54,7 @@ webpackJsonp([12],{
 			var that = this;
 	
 			var parm = [];
+			parm.push("capacity="+that.capacity);
 			parm.push("page="+that.pager);
 			parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
@@ -86,7 +88,7 @@ webpackJsonp([12],{
 		},
 		loadList : function(data,pager){
 			var that = this,o = that.options;
-			var _html = tmpl(data);
+			var _html = tmpl_list(data);
 	
 			if(pager == 1){
 				$(".infoList").empty().html(_html);
@@ -98,8 +100,9 @@ webpackJsonp([12],{
 	
 			$(".btn-loading").removeClass("loading disabled");
 	
+			var pageCount = Math.ceil(data.total / that.capacity);
 			//最后一页
-			if(pager > data.count){
+			if(pager > pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
 	

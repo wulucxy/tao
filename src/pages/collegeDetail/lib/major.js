@@ -10,6 +10,7 @@ var major = {
         this.collegeId = $("[name=collegeId]").val();
         this.province = $("[name=province]").val();
 
+        this.capacity = 10;
 		//this.requestData();
 		this.bindEvt();
 	},
@@ -17,6 +18,7 @@ var major = {
 	requestData : function(btn){
 		var that = this;
 		var _data = {
+			capacity : that.capacity,
 			province : $("[name=province]").val(),
 			year : $("[name=year]").val(),
 			courseType : $("[name=courseType]").val(),
@@ -70,8 +72,9 @@ var major = {
 
 		$(".btn-loading").removeClass("loading disabled");
 
+		var pageCount = Math.ceil(res.total / that.capacity);
 		//最后一页
-		if(pager > res.count){
+		if(pager > pageCount){
 			$(".btn-loading").addClass("loading-all");
 		};
 	},

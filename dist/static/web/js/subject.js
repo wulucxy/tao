@@ -84,6 +84,7 @@ webpackJsonp([35],{
 	        });
 	
 			var _data = {
+	            capacity : that.capacity,
 	            subjectList : subjectList
 			};
 	
@@ -169,8 +170,9 @@ webpackJsonp([35],{
 	
 			$(".btn-loading").removeClass("loading disabled");
 	
+	        var pageCount = Math.ceil(data.total / that.capacity);
 			//最后一页
-			if(pager > data.count){
+			if(pager > pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
 		},
@@ -186,6 +188,7 @@ webpackJsonp([35],{
 	
 	        this.options = o;
 	
+	        this.capacity = 10;
 	        //弹窗假分页对象
 	        this.pager = 1;
 	        this.len = 6;

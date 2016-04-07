@@ -12,6 +12,7 @@ Plugin.prototype = {
     	var that = this,$this = that.target;
     	// 分页默认从第1页开始
     	that.pager = o.pager;
+    	that.capacity = 10;
 
     	//模板地址
     	that.tmpl = o.tmpl;
@@ -36,7 +37,7 @@ Plugin.prototype = {
 			url : o.url || $this.data("url"),
 			type : o.type,
 			contentType: "application/json",
-			data : JSON.stringify({page : that.pager}),
+			data : JSON.stringify({page : that.pager,capacity : 10}),
 			success : function(res){
 				if(typeof(res) == 'string'){
                    var res = $.parseJSON(res);
@@ -64,8 +65,9 @@ Plugin.prototype = {
 
 			that.pager++;
 
+			var pageCount = Math.ceil(res.total / that.capacity);
 			//最后一页
-			if(that.pager > res.count){
+			if(that.pager > pageCount){
 				that.btn.addClass("loading-all");
 			};
 

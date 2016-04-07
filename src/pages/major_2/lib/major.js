@@ -9,7 +9,7 @@ var major = {
         this.majorId = $("[name=majorId]").val();
         this.province = $("[name=province]").val();
         this.pager = 1;
-
+        this.capacity = 10;
 		//this.requestData();
 		this.bindEvt();
 	},
@@ -23,6 +23,7 @@ var major = {
 		// };
 
 		var parm = [];
+		parm.push("capacity="+that.capacity);
 		parm.push("province="+that.province);
 		parm.push("majorId="+that.majorId);
 		parm.push("page="+that.pager);
@@ -107,8 +108,9 @@ var major = {
 
 		$(".btn-loading").removeClass("loading disabled");
 
+		var pageCount = Math.ceil(res.total / that.capacity);
 		//最后一页
-		if(pager > res.count){
+		if(pager > pageCount){
 			$(".btn-loading").addClass("loading-all");
 		};
 	},

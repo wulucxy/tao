@@ -46,6 +46,7 @@ var dataSet = {
         });
 
 		var _data = {
+            capacity : that.capacity,
             subjectList : subjectList
 		};
 
@@ -131,8 +132,9 @@ var dataSet = {
 
 		$(".btn-loading").removeClass("loading disabled");
 
+        var pageCount = Math.ceil(data.total / that.capacity);
 		//最后一页
-		if(pager > data.count){
+		if(pager > pageCount){
 			$(".btn-loading").addClass("loading-all");
 		};
 	},
@@ -148,6 +150,7 @@ var dataSet = {
 
         this.options = o;
 
+        this.capacity = 10;
         //弹窗假分页对象
         this.pager = 1;
         this.len = 6;

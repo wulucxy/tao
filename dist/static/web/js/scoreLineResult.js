@@ -300,12 +300,13 @@ webpackJsonp([34],{
 	
 	   detailpagination : function(res){
 	     var that = this;
+	     var o = that.options;
 	     var modal = that.modal;
 	     if(!modal.find('.pagination').length){
 	       modal.find('.s-Content').append('<div class="pagination"></div>');
 	          var $page = modal.find(".pagination");
 	          pagination($page,{
-	            pages: res.count,
+	            pages: Math.ceil(res.total / o.capacity),
 	            displayedPages: 3,
 	            currentPage : 1,
 	            edges: 1,

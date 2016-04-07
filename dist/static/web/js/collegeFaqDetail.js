@@ -31,6 +31,7 @@ webpackJsonp([11],{
 	
 		init : function(){
 			this.pager = 1;
+			this.capacity = 10;
 			this.bindEvt();
 		},
 	
@@ -58,6 +59,7 @@ webpackJsonp([11],{
 			var that = this;
 	
 			var parm = [];
+			parm.push("capacity="+that.capacity);
 			parm.push("page="+that.pager);
 			parm.push("scheduleId="+scheduleId);
 	
@@ -100,8 +102,9 @@ webpackJsonp([11],{
 	
 			$(".btn-loading").removeClass("loading disabled");
 	
+			var pageCount = Math.ceil(data.total / that.capacity);
 			//最后一页
-			if(pager > data.count){
+			if(pager > pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
 	

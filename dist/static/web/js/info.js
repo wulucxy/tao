@@ -27,6 +27,7 @@ webpackJsonp([22],{
 		init : function(){
 			//默认分页开始
 			this.pager = 1;
+			this.capacity = 10;
 			this.tagIndex = 0;
 			this.bindEvt();
 		},
@@ -41,6 +42,7 @@ webpackJsonp([22],{
 	        }
 	
 			var parm = [];
+			parm.push("capacity="+10);
 			parm.push("page="+that.pager);
 			parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
@@ -83,8 +85,9 @@ webpackJsonp([22],{
 	
 			$(".btn-loading").removeClass("loading disabled");
 	
+			var pageCount = Math.ceil(data.total / that.capacity);
 			//最后一页
-			if(pager > data.count){
+			if(pager > pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
 	
@@ -146,6 +149,7 @@ webpackJsonp([22],{
 	    	var that = this,$this = that.target;
 	    	// 分页默认从第1页开始
 	    	that.pager = o.pager;
+	    	that.capacity = 10;
 	
 	    	//模板地址
 	    	that.tmpl = o.tmpl;
@@ -170,7 +174,7 @@ webpackJsonp([22],{
 				url : o.url || $this.data("url"),
 				type : o.type,
 				contentType: "application/json",
-				data : JSON.stringify({page : that.pager}),
+				data : JSON.stringify({page : that.pager,capacity : 10}),
 				success : function(res){
 					if(typeof(res) == 'string'){
 	                   var res = $.parseJSON(res);
@@ -198,8 +202,9 @@ webpackJsonp([22],{
 	
 				that.pager++;
 	
+				var pageCount = Math.ceil(res.total / that.capacity);
 				//最后一页
-				if(that.pager > res.count){
+				if(that.pager > pageCount){
 					that.btn.addClass("loading-all");
 				};
 	

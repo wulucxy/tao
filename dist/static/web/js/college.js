@@ -93,6 +93,7 @@ webpackJsonp([8],{
 	
 			var _data = {
 	            province:0,
+	            capacity : that.capacity,
 				city : $("[name=city]").val(),
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
@@ -185,8 +186,10 @@ webpackJsonp([8],{
 	
 			$(".btn-loading").removeClass("loading disabled");
 	
+	        var pageCount = Math.ceil(data.total / that.capacity);
+	
 			//最后一页
-			if(pager > data.count){
+			if(pager > pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
 		},
@@ -201,6 +204,8 @@ webpackJsonp([8],{
 	        };
 	
 	        this.options = o;
+	
+	        this.capacity = 10;
 	
 	        //保存分页对象
 	        this.pageObject = {};
