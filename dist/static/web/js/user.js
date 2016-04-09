@@ -774,7 +774,7 @@ webpackJsonp([37],{
 				}
 	
 				$.ajax({
-					url : ele.url,
+					url : preServer+provinceId+ele.url,
 					data : _data,
 					type : "post",
 					success : function(res){

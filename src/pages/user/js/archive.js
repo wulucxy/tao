@@ -54,7 +54,7 @@ var archive = {
 			}
 
 			$.ajax({
-				url : ele.url,
+				url : preServer+provinceId+ele.url,
 				data : _data,
 				type : "post",
 				success : function(res){

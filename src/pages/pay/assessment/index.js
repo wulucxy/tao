@@ -106,6 +106,16 @@ var pay = {
 			contentType: "application/json",
         	data : JSON.stringify(_data),
         	success : function(res){
+
+        		if(typeof res == "string"){
+        			var res = $.parseJSON(res);
+        		}
+
+        		if(res.code !=1){
+        			warn(res.msg);
+        			return;
+        		}
+
         		var charge = res.result;
         		if(/alipay/.test(_data.channel)){
         			that.requestAlipay(btn,charge);
