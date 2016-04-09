@@ -98,9 +98,12 @@ webpackJsonp([30],{
 	
 			var _data = {
 				orderId : $("[name=orderId]").val(),
-				channel : $("[name=channel]:checked").val(),
-				couponCode : $("#card").val()
+				channel : $("[name=channel]:checked").val()
 			};
+	
+			if(!/alipay/.test(_data.channel) && $("#card").val() != $("#card").attr("placeholder") ){
+				_data.couponCode = $("#card").val();
+			}
 	
 			$.ajax({
 				url : preServer+provinceId+"/pay",
@@ -187,6 +190,7 @@ webpackJsonp([30],{
 	    if (typeof debug == "boolean") {
 	      this._debug = debug;
 	    }
+	
 	    var charge;
 	    if(typeof charge_json == "string"){
 	      try{

@@ -1,0 +1,34 @@
+{
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1"
+    },
+    "courseType":0,
+    "batch":1,
+    "score":765,
+    "place":1234,
+    "c":[
+        {"name":"杭州","code":"330100"},
+        {"name":"北京","code":"110100"},
+        {"name":"上海","code":"310100"}
+    ],
+    "majorList":[
+        {"majorId":"081251","majorName":"自动化"},
+        {"majorId":"100401","majorName":"口腔医学"},
+        {"majorId":"070401","majorName":"生物科学"}
+    ],
+    "planId":"", 
+    "orderId":"",
+    "planDes":"",
+    "price":49,
+    "priceDes":"dsfadfa"
+}

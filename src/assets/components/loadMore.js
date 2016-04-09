@@ -67,7 +67,7 @@ Plugin.prototype = {
 
 			var pageCount = Math.ceil(res.total / that.capacity);
 			//最后一页
-			if(that.pager > pageCount){
+			if(that.pager >= pageCount){
 				that.btn.addClass("loading-all");
 			};
 

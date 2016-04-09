@@ -93,9 +93,12 @@ var pay = {
 
 		var _data = {
 			orderId : $("[name=orderId]").val(),
-			channel : $("[name=channel]:checked").val(),
-			couponCode : $("#card").val()
+			channel : $("[name=channel]:checked").val()
 		};
+
+		if(!/alipay/.test(_data.channel) && $("#card").val() != $("#card").attr("placeholder") ){
+			_data.couponCode = $("#card").val();
+		}
 
 		$.ajax({
 			url : preServer+provinceId+"/pay",

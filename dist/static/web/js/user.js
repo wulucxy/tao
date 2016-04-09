@@ -255,7 +255,7 @@ webpackJsonp([37],{
 	
 				var pageCount = Math.ceil(res.total / that.capacity);
 				//最后一页
-				if(that.pager > pageCount){
+				if(that.pager >= pageCount){
 					that.btn.addClass("loading-all");
 				};
 	
@@ -324,6 +324,7 @@ webpackJsonp([37],{
 	    if (typeof debug == "boolean") {
 	      this._debug = debug;
 	    }
+	
 	    var charge;
 	    if(typeof charge_json == "string"){
 	      try{

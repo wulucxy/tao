@@ -30,6 +30,7 @@ PingppSDK.prototype = {
     if (typeof debug == "boolean") {
       this._debug = debug;
     }
+
     var charge;
     if(typeof charge_json == "string"){
       try{
