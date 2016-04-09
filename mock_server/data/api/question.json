@@ -1,5 +1,6 @@
 {
     "code" : 1,
+    "total": 5,
     "result":{
 	"questionObj" : "浙江大学",
 	"questionList" : [
