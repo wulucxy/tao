@@ -41,7 +41,7 @@ webpackJsonp([30],{
 				courseType : $("[name=courseType]").text(),
 				score : $("[name=score]").text(),
 				place : $("[name=place]").text(),
-				province : $("[name=provinceName]").val(),
+				provinceName : $("[name=provinceName]").val(),
 				userName : $("[name=userName]").val()
 			};
 	

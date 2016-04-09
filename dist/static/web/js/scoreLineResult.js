@@ -366,7 +366,7 @@ webpackJsonp([34],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	__p += ' ';
-	 if (colleges.length == 0) { ;
+	 if (colleges.length == 0 && page == 1) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
 	 }else{ ;
 	__p += '\n	';
@@ -396,7 +396,7 @@ webpackJsonp([34],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	__p += ' ';
-	 if (schools.length == 0) { ;
+	 if (schools.length == 0 && page == 1) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂时搜索不到数据</em></li>\n';
 	 }else{ ;
 	__p += '\n	';

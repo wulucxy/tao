@@ -81,6 +81,7 @@ var info = {
 		$(".btn-loading").removeClass("loading disabled");
 
 		var pageCount = Math.ceil(data.total / that.capacity);
+
 		//最后一页
 		if(pager > pageCount){
 			$(".btn-loading").addClass("loading-all");

@@ -347,7 +347,7 @@ webpackJsonp([25],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	
-	 if (majors.length == 0) { ;
+	 if (majors.length == 0 && page == 1) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
 	 }else{ ;
 	__p += '	\n';
@@ -377,7 +377,7 @@ webpackJsonp([25],{
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
 	
-	 if (majors.length == 0) { ;
+	 if (majors.length == 0 && page == 1) { ;
 	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
 	 }else{ ;
 	__p += '	\n';

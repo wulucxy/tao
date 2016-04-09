@@ -34,14 +34,14 @@
 							<c:forEach var="list" items="${today}">
 							<c:choose>
 							    <c:when test="${list.status == 1}">
-							   	<a href="box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item active cp" >
+							   	<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item active cp" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
 						    	<span class="body orange">${list.describtion}</span>
 							   	</a>
 								</c:when>
 								<c:when test="${list.status == 3}">
-							   	<a href="box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item cp" >
+							   	<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item cp" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
 						    	<span class="body orange">${list.describtion}</span>
@@ -77,7 +77,7 @@
 						</h4>
 							<div class="list-group">
 							<c:forEach var="list" items="${history}">
-							<a href="javascript:;" class="list-group-item clearfix cp">
+							<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item clearfix cp">
 						    <div class="fl">
 						    	<p class="collegeName">${list.college.collegeName}</p>
 						    	<p class="f13">总共&nbsp;${list.count}&nbsp;条回答</p>
