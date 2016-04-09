@@ -105,7 +105,7 @@ var searchSchool = {
       var modal = that.modal;
 
       	var _tmpl;
-        if(o.type=="highschool"){
+        if(o.type=="highSchool"){
 	       _tmpl = tmpl_highschool(res)
 	    }else{
 	    	_tmpl = tmpl_list(res)

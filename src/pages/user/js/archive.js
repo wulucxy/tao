@@ -12,13 +12,14 @@ var archive = {
 	init : function(options){
 		//保存参数
 		this.options = options;
+		var that = this;
 
 		$("#myInfoForm").validator({
 			errorParent: '.row',
 		    successCallback: function(e) {
 		      var target = $(e.target).closest('.btn');
 		      //执行到下一步操作
-		      //
+		      that.subFunc(target,$("#myInfoForm"));
 
 		    },
 		    focusinCallback: function() {
@@ -33,6 +34,42 @@ var archive = {
 		});
 
 		this.bindEvt();
+	},
+
+	subFunc :  function(btn,oForm){
+		var that = this;
+		var fields = [
+			{"type":"name",url : "/profile/name",field : "userName"},
+			{"type":"sex",url : "/profile/sex",field : "sex"},
+			{"type":"highSchool",url : "/profile/school",field : "schoolId"},
+			{"type":"highYear",url : "/profile/school/year",field : "year"},
+		];
+
+		$.each(fields,function(idx,ele){
+			var _data = {};
+			_data[ele.field] = $("[name="+ele["type"]+"]").val();
+
+			if(ele.type == "highSchool"){
+				_data[ele.field] = $("[name="+ele["type"]+"]").attr("code");
+			}
+
+			$.ajax({
+				url : ele.url,
+				data : _data,
+				type : "post",
+				success : function(res){
+					if(typeof res == "string"){
+						var res= $.parseJSON(res);
+					}
+
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+				}
+			})
+
+		});
 	},
 
 	bindEvt : function(){
