@@ -1777,9 +1777,9 @@ webpackJsonp([37],{
 	((__t = ( appointments[i].param.score )) == null ? '' : __t) +
 	'</span>\n				';
 	 if(appointments[i].appointmentType == 0) { ;
-	__p += '\n					<span>专家面对面服务</span>\n				';
+	__p += '\n					<span>线上服务</span>\n				';
 	 }else if(appointments[i].appointmentType == 1) { ;
-	__p += '\n					<span>专家在线服务</span>\n				';
+	__p += '\n					<span>面对面服务</span>\n				';
 	 } ;
 	__p += '\n			</p>\n			<p>\n				' +
 	((__t = ( appointments[i].scheduleTime )) == null ? '' : __t) +
