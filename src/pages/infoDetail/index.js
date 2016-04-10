@@ -28,7 +28,7 @@ $(document).on("click",'.down',function(e){
 });
 
 function updown(btn,type){
-	if(btn.hasClass("active") ||  $("[btn-type=1]").length){
+	if(btn.hasClass("btn-primary") ||  $("[btn-type=1]").length){
 		if($("[btn-type=1]").hasClass("up")){
 			var warnTxt = "您已经点过支持了";
 		}else if($("[btn-type=1]").hasClass("down")){
@@ -57,7 +57,7 @@ function updown(btn,type){
 				return;
 			}
 
-			btn.addClass("active");
+			btn.removeClass("btn-negative").addClass("btn-primary");
 
 			if(type == 1){
 				$("#upCount").text(Number($("#upCount").text())+1);

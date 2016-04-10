@@ -33,19 +33,38 @@
 							<%@ include file = "/partials/_article.jsp" %>
 							<div class="thirdParts">
 								<div class="procons tc">
-									<a href="javascript:;" class="btn btn-primary up" btn-type="${up}">
-										<i class="taoIcon icon-pro"></i>
-										<em class="vm">支持(<span id="upCount">${upCount}</span>)</em>
-									</a>
-									<a href="javascript:;" class="btn btn-negative down" btn-type="${down}">
-										<i class="taoIcon icon-con"></i>
-										<em class="vm">反对(<span id="downCount">${downCount}</span>)</em>
-									</a>
-									<!-- <a href="javascript:;" class="btn btn-negative last" data-favtype="1">
-										<i class="taoIcon icon-fav"></i>
-										<em class="vm">收藏(<span id="likeCount">${likeCount}</span>)</em>
-									</a> -->
 
+									<c:choose>
+									    <c:when test="${up == 1}">
+									   	<a href="javascript:;" class="btn btn-primary up" btn-type="${up}">
+											<i class="taoIcon icon-pro"></i>
+											<em class="vm">支持(<span id="upCount">${upCount}</span>)</em>
+										</a>
+										</c:when>
+										<c:otherwise>
+										<a href="javascript:;" class="btn btn-negative up" btn-type="${up}">
+											<i class="taoIcon icon-pro"></i>
+											<em class="vm">支持(<span id="upCount">${upCount}</span>)</em>
+										</a>
+										</c:otherwise>
+									</c:choose>
+									
+									<c:choose>
+									    <c:when test="${down == 1}">
+									   	<a href="javascript:;" class="btn btn-primary down" btn-type="${down}">
+											<i class="taoIcon icon-con"></i>
+											<em class="vm">反对(<span id="downCount">${downCount}</span>)</em>
+										</a>
+										</c:when>
+										<c:otherwise>
+										<a href="javascript:;" class="btn btn-negative down" btn-type="${down}">
+											<i class="taoIcon icon-con"></i>
+											<em class="vm">反对(<span id="downCount">${downCount}</span>)</em>
+										</a>
+										</c:otherwise>
+									</c:choose>
+									
+									
 									<a href="javascript:;" class="btn btn-negative btn-fav last" data-favtype="3">
 										<i class="taoIcon favIcon"></i>
 										<em class="vm unfavedTxt">收藏(<span id="likeCount">${likeCount}</span>)</em>
