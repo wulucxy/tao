@@ -113,8 +113,6 @@ webpackJsonp([0],{
 		renderHTML : function(){
 			var that = this;
 	
-			console.log(that.coutryRes);
-	
 			$("#countryList").empty().html(tmpl_country(that.coutryRes));
 			$("#examList").empty().html(tmpl_exam(that.examRes));
 		},

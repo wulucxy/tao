@@ -5,7 +5,7 @@ var tmpl = require("../templates/major.ejs");
 var major = {
 	init : function(o){
 		 //保存分页对象
-        this.pageObject = {};
+        this.pager = 1;
 
         this.collegeId = $("[name=collegeId]").val();
         this.province = $("[name=province]").val();
@@ -27,9 +27,9 @@ var major = {
 
 		var _key = _data.province + _data.courseType + _data.year;
 
-		that.pageObject[_key] = that.pageObject[_key] || 1;
+		that.pager = that.pager || 1;
 
-		_data.page = that.pageObject[_key];
+		_data.page = that.pager;
 
 		$.ajax({
 			url : preServer+that.province + "/data/college/"+that.collegeId+"/majors",
@@ -47,19 +47,12 @@ var major = {
 				}
 
 				
-				//如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pageObject[_key]++;
-                }else{
-                    that.pageObject[_key] = 1;
-                }
-
-				that.insertData(res.result,that.pageObject[_key]);
+				that.insertData(btn,res.result,that.pager);
 			}
 		});
 	},
 
-	insertData : function(res,pager){
+	insertData : function(btn,res,pager){
 
 		var that = this;
 		var _html = tmpl(res);
@@ -77,6 +70,9 @@ var major = {
 		if(pager >= pageCount){
 			$(".btn-loading").addClass("loading-all");
 		};
+
+		//如果是点击加载更多，页码++
+        that.pager++;
 	},
 
 	bindEvt : function(){
@@ -90,7 +86,7 @@ var major = {
 			};
 
 			var _key = _data.province + _data.courseType + _data.year;
-			that.pageObject[_key] = 1;
+			that.pager = 1;
 
 		
 			that.requestData();

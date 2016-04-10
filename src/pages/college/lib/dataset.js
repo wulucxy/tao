@@ -140,6 +140,8 @@ var dataSet = {
 		var that = this,o = that.options;
 		var _html = tmpl(data);
 
+        console.log(pager);
+
 		if(pager == 1){
 			$(".schoolList").empty().html(_html);
 		}else{

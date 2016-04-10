@@ -31,8 +31,6 @@ webpackJsonp([21],{
 	
 		var offset = target.offset().top;
 	
-		console.log(offset);
-	
 		$("html,body").animate({
 			"scrollTop" : offset
 		},600);

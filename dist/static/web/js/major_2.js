@@ -201,14 +201,6 @@ webpackJsonp([29],{
 	
 	                res = res.result;
 	
-	
-					//如果是点击加载更多，页码++，否则重置为1
-	                if(btn){
-	                    that.pager++;
-	                }else{
-	                    that.pager = 1;
-	                }
-	
 					that.insertData(res,that.pager);
 				}
 			});
@@ -224,13 +216,19 @@ webpackJsonp([29],{
 				$(".schoolList").append(_html);
 			}
 	
-			$(".btn-loading").removeClass("loading disabled");
+			if(pager == 1 && res.total == 0){
+				$(".btn-loading").hide();
+			}else{
+				$(".btn-loading").removeClass("loading disabled");
+			}
 	
 			var pageCount = Math.ceil(res.total / that.capacity);
 			//最后一页
 			if(pager >= pageCount){
 				$(".btn-loading").addClass("loading-all");
 			};
+	
+			that.pager++;
 		},
 	
 		bindEvt : function(){

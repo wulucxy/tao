@@ -162,6 +162,7 @@ webpackJsonp([35],{
 			var that = this,o = that.options;
 			var _html = tmpl(data);
 	
+	
 			if(pager == 1){
 				$(".schoolList").empty().html(_html);
 			}else{
