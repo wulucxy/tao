@@ -278,7 +278,11 @@ webpackJsonp([1],{
 	 }else{ ;
 	__p += '	\n';
 	 for (var i = 0; i < data.length; i++) { ;
-	__p += '\n<li class="clearfix rel detailContent">\n	<div class="fl">\n	<h4 class="name"><em class="vm">' +
+	__p += '\n<li class="clearfix rel detailContent">\n	<div class="fl">\n	<h4 class="name ellipsis" title="' +
+	((__t = ( data[i].school_name )) == null ? '' : __t) +
+	'&nbsp;&nbsp;' +
+	((__t = ( data[i].school_name_en )) == null ? '' : __t) +
+	' "><em class="vm">' +
 	((__t = ( data[i].school_name )) == null ? '' : __t) +
 	'</em>&nbsp;<em class="vm">' +
 	((__t = ( data[i].school_name_en )) == null ? '' : __t) +

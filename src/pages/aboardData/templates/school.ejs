@@ -4,7 +4,7 @@
 <% for (var i = 0; i < data.length; i++) { %>
 <li class="clearfix rel detailContent">
 	<div class="fl">
-	<h4 class="name"><em class="vm"><%= data[i].school_name %></em>&nbsp;<em class="vm"><%= data[i].school_name_en %></em>
+	<h4 class="name ellipsis" title="<%= data[i].school_name %>&nbsp;&nbsp;<%= data[i].school_name_en %> "><em class="vm"><%= data[i].school_name %></em>&nbsp;<em class="vm"><%= data[i].school_name_en %></em>
 	</h4>
 	<div class="detail row">
 		<span class="label">所在地区：</span><span class="field"><%= data[i].country %>&nbsp;<%= data[i].city %></span>

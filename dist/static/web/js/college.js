@@ -94,7 +94,7 @@ webpackJsonp([8],{
 			var _data = {
 	            province:0,
 	            capacity : that.capacity,
-				city : $("[name=city]").val(),
+				city : Number($("[name=city]").val()),
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
@@ -177,8 +177,6 @@ webpackJsonp([8],{
 		loadList : function(data,pager){
 			var that = this,o = that.options;
 			var _html = tmpl(data);
-	
-	        console.log(pager);
 	
 			if(pager == 1){
 				$(".schoolList").empty().html(_html);
