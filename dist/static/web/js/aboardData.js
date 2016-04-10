@@ -86,7 +86,6 @@ webpackJsonp([1],{
 	
 			var _data = {
 				country : $("[name=country]").val(),
-	            capacity : that.capacity,
 				school_name_key : $("[name=school_name_key]").val()
 			};
 	
