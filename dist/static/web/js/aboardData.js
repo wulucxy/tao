@@ -287,7 +287,7 @@ webpackJsonp([1],{
 	'&nbsp;' +
 	((__t = ( data[i].city )) == null ? '' : __t) +
 	'</span>\n		<span class="label">成立年份：</span><span class="field">' +
-	((__t = ( data[i].build_year )) == null ? '' : __t) +
+	((__t = ( data[i].builder_year )) == null ? '' : __t) +
 	'</span>\n		<span class="label">院校性质：</span><span class="field">' +
 	((__t = ( data[i].school_type )) == null ? '' : __t) +
 	'</span>\n	</div>\n	<div class="detail row">\n		<span class="label">在该国排名：</span><span class="field">NO.' +

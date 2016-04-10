@@ -97,10 +97,13 @@ webpackJsonp([11],{
 				$(".qaList").append(_html);
 			}
 	
-			//如果是点击加载更多，页码++，否则重置为1
-	        that.pager++;
-	
-			$(".btn-loading").removeClass("loading disabled");
+			
+	        if(pager == 1 && data.total == 0){
+				$(".btn-loading").hide();
+			}else{
+				$(".btn-loading").removeClass("loading disabled");
+			}
+			
 	
 			var pageCount = Math.ceil(data.total / that.capacity);
 			//最后一页
@@ -108,9 +111,9 @@ webpackJsonp([11],{
 				$(".btn-loading").addClass("loading-all");
 			};
 	
-			if($(".qaList .no_transList").length){
-				$(".btn-loading").addClass("loading-all");
-			}
+			
+			//如果是点击加载更多，页码++，否则重置为1
+	        that.pager++;
 		},
 	
 		showQModal: function(btn){
