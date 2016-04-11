@@ -38,7 +38,12 @@ webpackJsonp([32],[
 					return list.subjectName;
 				}).join("、");
 	
+				var keys = $.map(that.state.promoteSubjects,function(list){
+					return list.subjectId;
+				}).join("");
+	
 				that.state.recommend = list;
+				that.state.keys = keys;
 	
 				$(".recommend").empty().html(tmpl_recommend(that.state)).fadeIn();
 			}
@@ -600,7 +605,9 @@ webpackJsonp([32],[
 	with (obj) {
 	__p += '<p>\n	<span class="blue">推荐选考：</span>\n	<span class="list">\n		<em class="recommendList">' +
 	((__t = ( recommend )) == null ? '' : __t) +
-	'</em>\n	</span>\n</p>\n<div class="btnRow">\n	<a href="/library/subject" class="btn btn-primary" target="_blank">查查看，能选什么专业</a>\n</div>';
+	'</em>\n	</span>\n</p>\n<div class="btnRow">\n	<a href="/library/subject?keys=' +
+	((__t = ( keys )) == null ? '' : __t) +
+	'" class="btn btn-primary" target="_blank">查查看，能选什么专业</a>\n</div>';
 	
 	}
 	return __p

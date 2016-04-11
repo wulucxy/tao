@@ -110,8 +110,9 @@ Dropdown.prototype = {
 
 	selectSublist : function(list){
 		var that = this,$this = that.target;
+
 		that.selectField.text(list.text());
-        $this.find("input[type=hidden]").val(that.selectField.data("field"));
+        $this.find("input[type=hidden]").val(list.data("field"));
 	},
 
 	toggle : function(){

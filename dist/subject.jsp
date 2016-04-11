@@ -58,13 +58,13 @@
 									
 									<div class="media-body">
 										<div class="itemLists">	
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:1">物理</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:2">化学</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:3">生物</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:4">技术</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:5">政治</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:6">地理</a>
-										<a href="javascript:;" class="item" data-action="add" data-value="subjects:7">历史</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:1" subject="1">物理</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:2" subject="2">化学</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:3" subject="3">生物</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:4" subject="4">技术</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:5" subject="5">政治</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:6" subject="6">地理</a>
+										<a href="javascript:;" class="item" data-action="add" data-value="subjects:7" subject="7">历史</a>
 										</div>
 									</div>
 								</div>

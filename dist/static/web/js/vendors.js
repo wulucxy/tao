@@ -10779,6 +10779,8 @@
 	var preServer = "/v2_1/client/";
 	window.preServer = preServer;
 	
+	//工具类方法
+	var util = __webpack_require__(37);
 	
 	//登录模块
 	var mLogin = __webpack_require__(53);
@@ -10837,7 +10839,16 @@
 	
 		goSearch : function(btn,oForm){
 			var that = this;
-			oForm.submit();
+	
+			console.log({
+				keyword : encodeURI($('[name=keyword]').val()),
+				type : $('[name=type]').val()
+			});
+	
+			util.post(oForm.attr("action"),{
+				keyword : encodeURI($('[name=keyword]').val()),
+				type : Number($('[name=type]').val())
+			},true);
 		},
 	
 		bindEvt : function(){
@@ -19815,8 +19826,9 @@
 	
 		selectSublist : function(list){
 			var that = this,$this = that.target;
+	
 			that.selectField.text(list.text());
-	        $this.find("input[type=hidden]").val(that.selectField.data("field"));
+	        $this.find("input[type=hidden]").val(list.data("field"));
 		},
 	
 		toggle : function(){

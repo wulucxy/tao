@@ -46,6 +46,9 @@ webpackJsonp([35],{
 	
 	var pagination = __webpack_require__(178);
 	
+	//工具类方法
+	var util = __webpack_require__(37);
+	
 	var provinceId = $("[name=province]").val();
 	
 	var dataSet = { 
@@ -55,6 +58,9 @@ webpackJsonp([35],{
 	        if(this.state.tagList.length){
 	            var tagLis = $.map(that.state.tagList,function(item){
 	            	var _val = item.type+":"+item.value;
+	
+	                 $('[subject='+item.value+']').addClass("current");
+	
 	                return '<a class="tags" data-action="remove" href="javascript:;" data-value="'+_val+'">'+item.text+'<span class="taoIcon btn-x"></span></a>';
 	            });
 	
@@ -73,7 +79,6 @@ webpackJsonp([35],{
 	        	$(".m-nav").append(inputList.join(""));
 	        }
 		 
-	        that.requestData();
 		},
 	
 		requestData : function(btn){
@@ -85,7 +90,7 @@ webpackJsonp([35],{
 	
 			var _data = {
 	            capacity : that.capacity,
-	            subjectList : subjectList
+	            subjects : subjectList
 			};
 	
 	        //如果是点击加载更多，页码++，否则重置为1
@@ -183,6 +188,7 @@ webpackJsonp([35],{
 	    },
 	
 	    init : function(o){
+	        var that = this;
 	    	this.state = {
 	            tagList:  []
 	        };
@@ -195,7 +201,45 @@ webpackJsonp([35],{
 	        this.len = 6;
 	
 	        this.bindEvt();
-	        this.updateUI();
+	        
+	
+	        //需要区分是通过导航搜索进来还是直接进来
+	        if(!!util.getQuery("keys")){
+	
+	            var subjectItems = $(".itemLists .item").map(function(idx,ele){
+	                console.log(ele);
+	                return {
+	                   type : $(ele).data("value").split(":")[0],
+	                   value : $(ele).data("value").split(":")[1],
+	                   text : $(ele).text()
+	                }
+	            });
+	
+	            var keys = util.getQuery("keys").split("");
+	
+	            $.each(keys,function(idx,ele){
+	                $.each(subjectItems,function(d,e){
+	                    if(ele == e.value){
+	                        that.state.tagList.push({
+	                            type : e.type,
+	                            value : e.value,
+	                            text : e.text
+	                        });
+	
+	                        return false;
+	                    }
+	                });
+	            });
+	
+	            this.updateUI();
+	            this.requestData();
+	            
+	        }else{
+	            this.updateUI();
+	            //首次进来默认加载全部数据
+	            this.requestData();
+	        }
+	
 	    },
 	
 	    bindEvt : function(){
@@ -223,12 +267,13 @@ webpackJsonp([35],{
 	                    value : val,
 	                    text : link.text()
 	                });  
-	                link.addClass("current");
+	                
 	            //}
 				
 	
 	
-				that.updateUI();  		
+				that.updateUI();  
+	            that.requestData();		
 	    	});
 	
 	    	$(document).on("click","[data-action=clear]",function(e){
@@ -255,7 +300,8 @@ webpackJsonp([35],{
 	                }
 	            });
 	
-				that.updateUI();  		
+				that.updateUI();
+	            that.requestData();   		
 	    	});
 	
 	    	$(".btn-loading").on("click",function(e){

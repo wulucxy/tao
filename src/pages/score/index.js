@@ -34,7 +34,12 @@ var score = {
 				return list.subjectName;
 			}).join("、");
 
+			var keys = $.map(that.state.promoteSubjects,function(list){
+				return list.subjectId;
+			}).join("");
+
 			that.state.recommend = list;
+			that.state.keys = keys;
 
 			$(".recommend").empty().html(tmpl_recommend(that.state)).fadeIn();
 		}

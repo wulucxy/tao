@@ -74,6 +74,28 @@ var archive = {
 
 	bindEvt : function(){
 		this.addSchool();
+
+		this.addYear();
+	},
+
+	addYear : function(){
+		var that = this;
+
+		var nowYear = new Date().getFullYear();
+		var yearArr = [];
+
+		for(var i=0;i<5;i++){
+			yearArr.push(nowYear--);
+		}
+
+		var optionList = [];
+
+		$.each(yearArr,function(idx,ele){
+			optionList.push('<option value='+ele+'>'+ele+'</option>');
+		});
+
+		$("[name=highYear]").empty().append('<option value="">请选择</option>');
+		$("[name=highYear]").append(optionList.join(""));
 	},
 
 	addSchool : function(){

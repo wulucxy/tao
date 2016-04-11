@@ -14,6 +14,8 @@ window.placeholder = placeholder;
 var preServer = "/v2_1/client/";
 window.preServer = preServer;
 
+//工具类方法
+var util = require("./util");
 
 //登录模块
 var mLogin = require("./login/");
@@ -72,7 +74,16 @@ var common = {
 
 	goSearch : function(btn,oForm){
 		var that = this;
-		oForm.submit();
+
+		console.log({
+			keyword : encodeURI($('[name=keyword]').val()),
+			type : $('[name=type]').val()
+		});
+
+		util.post(oForm.attr("action"),{
+			keyword : encodeURI($('[name=keyword]').val()),
+			type : Number($('[name=type]').val())
+		},true);
 	},
 
 	bindEvt : function(){
