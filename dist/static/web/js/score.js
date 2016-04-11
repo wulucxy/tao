@@ -585,45 +585,12 @@ webpackJsonp([32],[
 /* 226 */,
 /* 227 */,
 /* 228 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(229);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".blue {\n  color: #61c0e2;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 28px;\n  margin-bottom: 30px;\n}\n.recommend {\n  min-height: 74px;\n  margin-top: 32px;\n}\n.recommend .btnRow {\n  margin-top: 20px;\n}\n.tableWrap {\n  margin-top: 36px;\n  color: #555;\n}\n.tableWrap th {\n  font-weight: normal;\n}\n.tableWrap th.top {\n  font-size: 16px;\n  background-color: #f1f1f1;\n  text-align: left;\n}\n.tableWrap .control .btn {\n  margin-top: 18px;\n  width: 108px;\n  line-height: 28px;\n  padding-top: 0;\n  padding-bottom: 0;\n  font-size: 16px;\n}\n[editable] {\n  cursor: pointer;\n}\n.editTxt {\n  display: inline-block;\n}\n.saveTxt {\n  display: none;\n}\n.needEditing .editTxt {\n  display: none;\n}\n.needEditing .saveTxt {\n  display: inline-block;\n}\nselect.editor {\n  position: absolute;\n  background-color: #fff;\n  cursor: pointer;\n}\n.editor {\n  border: 1px solid #61c0e2;\n}\n.editor.error {\n  border-color: #ec5524;\n}\n.table.text-center th {\n  vertical-align: middle;\n}\n#charts {\n  width: 900px;\n  height: 450px;\n  border: 1px solid #e2e2e2;\n  padding: 32px;\n  margin: 0 auto;\n}\n* {\n  box-sizing: content-box;\n}\n.header *,\n.footer *,\n.m-aside *,\n.tableWrap * {\n  box-sizing: border-box;\n}\n[tabindex] {\n  outline: none !important;\n}\n.table-bordered tbody tr td.onEditor {\n  border-top: none;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
+/* 229 */,
 /* 230 */
 /***/ function(module, exports) {
 

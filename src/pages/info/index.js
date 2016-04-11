@@ -39,7 +39,7 @@ var info = {
 		var parm = [];
 		parm.push("capacity="+10);
 		parm.push("page="+that.pager);
-		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
+		parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
 		$.ajax({
 			url : preServer+province+"/news?"+parm.join("&"),
