@@ -92,9 +92,8 @@ webpackJsonp([8],{
 			var that = this,o = that.options;
 	
 			var _data = {
-	            province:0,
+	            province: Number($("[name=city]").val()),
 	            capacity : that.capacity,
-				city : Number($("[name=city]").val()),
 				collegeType : $("[name=collegeType]").val(),
 				ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
