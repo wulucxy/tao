@@ -22,6 +22,9 @@
 		<!-- 保存大类属性 -->
 		<input type="hidden" name="batch" value="${batch}">
 
+		<!-- userId，用来记录用户选择 -->
+		<input type="hidden" name="userId" value="${user.userId}">
+
 		<div class="container p_case_3">
 
 			<div class="content">

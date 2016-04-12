@@ -43,7 +43,7 @@ module.exports = {
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',
 	'post::/v2_1/client/loadmore/question' : 'mock::api/question.json',
-	'get::/system/city' : 'mock::api/city.json',
+	'post::/system/city' : 'mock::api/city.json',
 	'post::/v2_1/client/1/data/college' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/search' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/1/majors' : 'mock::api/majorDetailList.json',
@@ -92,8 +92,8 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/plan/abroad/assessment':"mock::api/abordDataList.json",
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/2482':"mock::api/subjectDetailList.json",
-	'/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json"
-
+	'/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
+	'/v2_1/client/1/data/college/3322/category':"mock::api/collegeMajorList.json"
 
 
 

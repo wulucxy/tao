@@ -20,8 +20,12 @@ var tmpl_questions = require("../../assets/templates/questions.ejs");
 
 var browser = require("../../assets/components/browser");
 
+var Cookie = require("js-cookie");
+
 var provinceId = $("[name=province]").val();
 var batch = $("[name=batch]").val();
+
+var userId =  $("[name=userId]").val();
 
 var isModernBrower = browser.isModernBrower;
 
@@ -69,6 +73,21 @@ var majors = {
 				res.result.batch = batch;
 				that.res = res.result;
 
+				//读取选择项
+				var selectList = [];
+				if(!!Cookie.get(userId)){
+					selectList = Cookie.get(userId).split("&");
+				}
+
+				//遍历结果列表
+				$.each(that.res.subs,function(m,l){
+					$.each(l.subs,function(n,k){
+						if(selectList.indexOf(k.id) != "-1"){
+							k.status = 1;
+						}
+					})
+				})
+
 				that.insertData(res.result);
 
 			},
@@ -96,7 +115,7 @@ var majors = {
 		// 	autoValidate : true,
 		// 	onSubmitActive : true
 		// });
-
+		
 		//checkbox定制
 		$('.label_check').on("click",function(e){
 		  e.stopPropagation();
@@ -148,6 +167,15 @@ var majors = {
 	    // }
 
 	    var majorList = that.selectList(boxList);
+
+	    //保存到cookie里面
+	    var cookieList = $.map(majorList,function(c){
+	    	return c.majorId;
+	    })
+
+	    //保存选择
+	    var majorSelectList = (cookieList.length > 0) ? cookieList.join("&") : 0;
+	    Cookie.set(userId,majorSelectList);
 
 		var _data = {
 			majorList : majorList

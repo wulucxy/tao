@@ -25,8 +25,12 @@ webpackJsonp([6],{
 	
 	var browser = __webpack_require__(45);
 	
+	var Cookie = __webpack_require__(99);
+	
 	var provinceId = $("[name=province]").val();
 	var batch = $("[name=batch]").val();
+	
+	var userId =  $("[name=userId]").val();
 	
 	var isModernBrower = browser.isModernBrower;
 	
@@ -74,6 +78,21 @@ webpackJsonp([6],{
 					res.result.batch = batch;
 					that.res = res.result;
 	
+					//读取选择项
+					var selectList = [];
+					if(!!Cookie.get(userId)){
+						selectList = Cookie.get(userId).split("&");
+					}
+	
+					//遍历结果列表
+					$.each(that.res.subs,function(m,l){
+						$.each(l.subs,function(n,k){
+							if(selectList.indexOf(k.id) != "-1"){
+								k.status = 1;
+							}
+						})
+					})
+	
 					that.insertData(res.result);
 	
 				},
@@ -101,7 +120,7 @@ webpackJsonp([6],{
 			// 	autoValidate : true,
 			// 	onSubmitActive : true
 			// });
-	
+			
 			//checkbox定制
 			$('.label_check').on("click",function(e){
 			  e.stopPropagation();
@@ -153,6 +172,15 @@ webpackJsonp([6],{
 		    // }
 	
 		    var majorList = that.selectList(boxList);
+	
+		    //保存到cookie里面
+		    var cookieList = $.map(majorList,function(c){
+		    	return c.majorId;
+		    })
+	
+		    //保存选择
+		    var majorSelectList = (cookieList.length > 0) ? cookieList.join("&") : 0;
+		    Cookie.set(userId,majorSelectList);
 	
 			var _data = {
 				majorList : majorList
@@ -261,7 +289,7 @@ webpackJsonp([6],{
 			 if(subs[0].subs[i].status == 1) {
 				checkedStatus = "checked";
 			 }else{
-				checkedStatus = "123";
+				checkedStatus = "";
 			 } ;
 	__p += '\n	<label class="label_check" for="majorType' +
 	((__t = ( subs[0].id )) == null ? '' : __t) +

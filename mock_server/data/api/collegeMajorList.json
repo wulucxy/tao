@@ -1,0 +1,44 @@
+{
+  "code": "1",
+  "msg": "调用成功",
+  "result": [
+    {
+      "id": "28",
+      "name": "公共事业",
+      "majorList": [
+        {
+          "majorName": "护理",
+          "majorId": "630201"
+        },
+        {
+          "majorName": "助产",
+          "majorId": "630202"
+        },
+        {
+          "majorName": "医学影像技术",
+          "majorId": "630403"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "name": "旅游",
+      "majorList": [
+        {
+          "majorName": "会计",
+          "majorId": "620203"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "交通运输",
+      "majorList": [
+        {
+          "majorName": "工程造价",
+          "majorId": "110105"
+        }
+      ]
+    }
+  ]
+}

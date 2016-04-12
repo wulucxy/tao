@@ -64,6 +64,39 @@ if (typeof Array.prototype.some != "function") {
 
 var school = {
 
+  requestMajors : function(options){
+    var that = this;
+     $.ajax({
+        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
+        type : "get",
+        success : function(res){
+            if(typeof res =="string"){
+                var res = $.parseJSON(res);
+            }
+
+            if(res.code!=1){
+              warn(res.msg);
+              return;
+            }
+
+           that.majors = $.map(res.result,function(ele){
+              return {
+                name : ele.name,
+                code : ele.id
+              }
+           });
+
+           that.state.provList = that.majors;
+
+           options.callback && options.callback.call(that);
+
+        },
+        error : function(err){
+          console.log(err);
+        }
+    })
+  },
+
   init : function(o){
 
       this.bindEvt();
@@ -74,7 +107,7 @@ var school = {
       this.options = o;
 
       this.state = {
-        "provList" : majors,
+        "provList" : [],
         "cityList" : [
           {
             "type" : 1,
@@ -609,36 +642,46 @@ var school = {
       var btn = $(e.target).closest(".btn");
       if(btn.hasClass("disabled")) return;
 
-      modalBox(btn,{
-        html : tmpl_major(),
-        klass : 'w540 shadow',
-        closeByOverlay : false,
-        startCallback : function(modal){
-          that.modal = modal;
-          
-          //增加trigger
-          that.addMajorTrigger = btn;
+      var collegeId = $('[major='+btn.data("rel")+']').attr("code");
 
-          modal.majorType = btn.data("rel");
-
-          that.render();
-        },
-
-        completeCallback : function(){
-          $("#majorBtn").on("click",function(e){
-            e.preventDefault();
-
-            if(that.state.selected.length > 6){
-              warn("请重新选择选项");
-              return;
-            }
-
-            $(".btn-close").trigger("click");
-            that.updateRes(btn);
-            that.updateTags(btn);
-          });
-        }
+      //动态获取院校下的大专业列表
+      that.requestMajors({
+        collegeId : collegeId,
+        callback : majorBox
       });
+
+      function majorBox(){
+          modalBox(btn,{
+          html : tmpl_major(),
+          klass : 'w540 shadow',
+          closeByOverlay : false,
+          startCallback : function(modal){
+            that.modal = modal;
+            
+            //增加trigger
+            that.addMajorTrigger = btn;
+
+            modal.majorType = btn.data("rel");
+
+            that.render();
+          },
+
+          completeCallback : function(){
+            $("#majorBtn").on("click",function(e){
+              e.preventDefault();
+
+              if(that.state.selected.length > 6){
+                warn("请重新选择选项");
+                return;
+              }
+
+              $(".btn-close").trigger("click");
+              that.updateRes(btn);
+              that.updateTags(btn);
+            });
+          }
+        });
+      }
 
     });
 

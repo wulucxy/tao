@@ -103,7 +103,7 @@
 					<em class="vm">高中：</em></label>
 				<div class="col2 inputWrap rel">
 					<div class="fieldWrap">
-						<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" required value="${user.highSchool}" placeholder="请选择高中" >
+						<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" required value="${user.highSchool.name}" placeholder="请选择高中" code="${user.highSchool.code}" >
 					</div>
 				</div>
 				<div class="errInfo">

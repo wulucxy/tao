@@ -1,18 +1,16 @@
 {
 	"user":{
-        "province" : {
-            "name" : "浙江",
-            "code" : "1"
-        },
-        "mobile" : "1385809394",
-        "userAvatar" : "/",
-        "sex"  : "",
-        "token" : "12",
-        "userId" : "123",
-        "userName" : "",
-        "isLogin" : "1",
-        "highSchool" : "",
-        "highYear" : 0
+        "userName":"江波",
+        "userAvatar":"http://www.baidu.com", 
+        "mobile":"15558052233",  
+        "province":
+                     {
+                        "code":330000,
+                        "name":"浙江"
+                     },
+        "sex":0,
+        "highSchool":{"name":"诸暨中学","code":111},
+        "highYear":2012 
     },
 	"colleges":[
     ]
