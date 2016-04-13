@@ -93,7 +93,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/2482':"mock::api/subjectDetailList.json",
 	'/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
-	'/v2_1/client/1/data/college/3322/category':"mock::api/collegeMajorList.json"
+	'post::/v2_1/client/1/data/college/3322/category':"mock::api/collegeMajorList.json"
 
 
 

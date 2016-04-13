@@ -68,7 +68,7 @@ var school = {
     var that = this;
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
-        type : "get",
+        type : "post",
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);
