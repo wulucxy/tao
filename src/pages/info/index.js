@@ -90,11 +90,13 @@ var info = {
 		//最后一页
 		if(pager >= pageCount){
 			$(".btn-loading").addClass("loading-all");
-		};
+		}else{
+            $(".btn-loading").removeClass("loading-all");
+        }
 
-		if($(".infoList .no_transList").length){
-			$(".btn-loading").addClass("loading-all");
-		}
+		// if($(".infoList .no_transList").length){
+		// 	$(".btn-loading").addClass("loading-all");
+		// }
 	},
 
 	bindEvt : function(){

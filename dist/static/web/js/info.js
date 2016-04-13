@@ -95,11 +95,13 @@ webpackJsonp([22],{
 			//最后一页
 			if(pager >= pageCount){
 				$(".btn-loading").addClass("loading-all");
-			};
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
 	
-			if($(".infoList .no_transList").length){
-				$(".btn-loading").addClass("loading-all");
-			}
+			// if($(".infoList .no_transList").length){
+			// 	$(".btn-loading").addClass("loading-all");
+			// }
 		},
 	
 		bindEvt : function(){
@@ -212,7 +214,9 @@ webpackJsonp([22],{
 				//最后一页
 				if(that.pager >= pageCount){
 					that.btn.addClass("loading-all");
-				};
+				}else{
+		            $(".btn-loading").removeClass("loading-all");
+		        }
 	
 			}else{
 				that.target.html('<div class="no_transList"><p class="tc mb10"><i class="noListIcon"></i></p><em class="g9">暂无数据</em></div>');

@@ -120,7 +120,9 @@ webpackJsonp([11],{
 			//最后一页
 			if(pager >= pageCount){
 				$(".btn-loading").addClass("loading-all");
-			};
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
 	
 			
 			//如果是点击加载更多，页码++，否则重置为1

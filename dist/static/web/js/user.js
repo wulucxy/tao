@@ -257,7 +257,9 @@ webpackJsonp([38],{
 				//最后一页
 				if(that.pager >= pageCount){
 					that.btn.addClass("loading-all");
-				};
+				}else{
+		            $(".btn-loading").removeClass("loading-all");
+		        }
 	
 			}else{
 				that.target.html('<div class="no_transList"><p class="tc mb10"><i class="noListIcon"></i></p><em class="g9">暂无数据</em></div>');
@@ -815,10 +817,16 @@ webpackJsonp([38],{
 				yearArr.push(nowYear--);
 			}
 	
+			var highYear = $("[name=highYear]").length ? $("[name=highYear]").val() : "";
 			var optionList = [];
 	
 			$.each(yearArr,function(idx,ele){
+				if(ele == highYear){
+				optionList.push('<option selected value='+ele+'>'+ele+'</option>');
+				}else{
 				optionList.push('<option value='+ele+'>'+ele+'</option>');
+				}
+				
 			});
 	
 			$("[name=highYear]").empty().append('<option value="">请选择</option>');
@@ -1966,7 +1974,7 @@ webpackJsonp([38],{
 	__p += '\n					<span>面对面服务</span>\n				';
 	 } ;
 	__p += '\n			</p>\n			<p>\n				' +
-	((__t = ( appointments[i].scheduleTime )) == null ? '' : __t) +
+	((__t = ( appointments[i].content )) == null ? '' : __t) +
 	'\n			</p>\n		</div>\n	</div>\n	';
 	 if(appointments[i].status == 4) { ;
 	__p += '\n	<div class="detailInfo fr payRow">\n		<a href="javascript:;" class="btn btn-orange btn-pay db" orderid=' +

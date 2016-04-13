@@ -109,7 +109,9 @@ var major = {
 		//最后一页
 		if(pager >= pageCount){
 			$(".btn-loading").addClass("loading-all");
-		};
+		}else{
+            $(".btn-loading").removeClass("loading-all");
+        }
 
 		that.pager++;
 	},

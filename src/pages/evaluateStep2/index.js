@@ -29,6 +29,8 @@ var majors = require("./lib/majors");
 //provinceId
 var provinceId = $("[name=province]").val();
 
+var courseType = $("[name=courseType]").val();
+
 //分页
 var pagination = require("../../assets/components/pagination");
 //自定义滚动
@@ -69,6 +71,7 @@ var school = {
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
         type : "post",
+        data : JSON.stringify({courseType : courseType}),
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);
@@ -361,7 +364,6 @@ var school = {
     //学校code
     var collegeId = schoolInput.attr("code");
 
-    var courseType = $("[name=courseType]").val();
     var parm = [];
     parm.push("courseType="+courseType);
 

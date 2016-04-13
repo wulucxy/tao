@@ -180,7 +180,9 @@ webpackJsonp([36],{
 			//最后一页
 			if(pager >= pageCount){
 				$(".btn-loading").addClass("loading-all");
-			};
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
 		},
 	
 		updateUI : function() {
@@ -504,7 +506,9 @@ webpackJsonp([36],{
 	 for (var i = 0; i < subMajors.length; i++) { ;
 	__p += '\n  <div class="row clearfix"> \n  	<span class="col1 fl">\n	  	<a target="_blank" href="/library/major/' +
 	((__t = ( subMajors[i].majorId )) == null ? '' : __t) +
-	'" >\n	  		' +
+	'" title="' +
+	((__t = ( subMajors[i].majorName )) == null ? '' : __t) +
+	'">\n	  		' +
 	((__t = ( subMajors[i].majorName )) == null ? '' : __t) +
 	':\n	  	</a>\n  	</span>\n  	<div class="col2 fl">\n      ';
 	 if (subMajors[i].subjects.length == 0) { ;

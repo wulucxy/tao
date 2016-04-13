@@ -22,6 +22,9 @@
 		<!-- 保存userId属性 -->
 		<input type="hidden" name="userId" value="${user.userId}">
 
+		<!-- 保存courseType属性 -->
+		<input type="hidden" name="userId" value="${user.userId}">
+
 		<div class="container dbWrapper db">
 			<div class="content">
 				<h3 class="clearfix title">

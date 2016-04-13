@@ -69,8 +69,8 @@ webpackJsonp([8],{
 	        if(!$("input[name=city]").length){
 	        	var inputList = [];
 	        	inputList.push('<input type="hidden" name="city">');
-	        	inputList.push('<input type="hidden" name="collegeType">');
-	        	inputList.push('<input type="hidden" name="ownerType">');
+	        	// inputList.push('<input type="hidden" name="collegeType">');
+	        	// inputList.push('<input type="hidden" name="ownerType">');
 	        	inputList.push('<input type="hidden" name="level">');
 	        	inputList.push('<input type="hidden" name="feature">');
 	        	$(".crumb").append(inputList.join(""));
@@ -94,13 +94,13 @@ webpackJsonp([8],{
 			var _data = {
 	            province: Number($("[name=city]").val()),
 	            capacity : that.capacity,
-				collegeType : $("[name=collegeType]").val(),
-				ownerType : $("[name=ownerType]").val(),
+				// collegeType : $("[name=collegeType]").val(),
+				// ownerType : $("[name=ownerType]").val(),
 				level : $("[name=level]").val(),
 				feature : [Number($("[name=feature]").val())]
 			};
 	
-			var _key = _data.city + _data.collegeType + _data.ownerType + _data.level + _data.feature;
+			var _key = _data.city + _data.level + _data.feature;
 			
 	        //如果是点击加载更多，页码++，否则重置为1
 	        if(btn && $(btn).hasClass("btn-loading")){
@@ -190,7 +190,9 @@ webpackJsonp([8],{
 			//最后一页
 			if(pager >= pageCount){
 				$(".btn-loading").addClass("loading-all");
-			};
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
 		},
 	
 		updateUI : function() {

@@ -98,7 +98,9 @@ var dataSet = {
 		//最后一页
 		if(pager >= pageCount){
 			$(".btn-loading").addClass("loading-all");
-		};
+		}else{
+            $(".btn-loading").removeClass("loading-all");
+        };
 
         o.completeCallback && o.completeCallback.call(that);
 	},

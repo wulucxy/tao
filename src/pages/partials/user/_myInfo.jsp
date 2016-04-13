@@ -124,7 +124,9 @@
 						
 						<c:choose>
 						    <c:when test="${user.highYear != 0}">
-						   		<input type="text" class="input form-control" id="highYear" name="highYear" required value=${user.highYear}>
+						   		<input type="hidden" name="highYear" value=${user.highYear}>
+						   		<select class="form-control" name="highYear" required>
+								</select>
 							</c:when>
 							<c:otherwise>
 								<select class="form-control" name="highYear" required>

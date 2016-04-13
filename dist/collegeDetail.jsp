@@ -134,6 +134,7 @@
 														<em class="vm">年&emsp;份：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="year">
+															  <option value="2015">2015</option>
 															  <option value="2014">2014</option>
 															  <option value="2013">2013</option>
 														</select>	

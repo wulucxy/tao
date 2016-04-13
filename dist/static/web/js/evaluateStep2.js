@@ -34,6 +34,8 @@ webpackJsonp([17],{
 	//provinceId
 	var provinceId = $("[name=province]").val();
 	
+	var courseType = $("[name=courseType]").val();
+	
 	//分页
 	var pagination = __webpack_require__(178);
 	//自定义滚动
@@ -74,6 +76,7 @@ webpackJsonp([17],{
 	     $.ajax({
 	        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
 	        type : "post",
+	        data : JSON.stringify({courseType : courseType}),
 	        success : function(res){
 	            if(typeof res =="string"){
 	                var res = $.parseJSON(res);
@@ -366,7 +369,6 @@ webpackJsonp([17],{
 	    //学校code
 	    var collegeId = schoolInput.attr("code");
 	
-	    var courseType = $("[name=courseType]").val();
 	    var parm = [];
 	    parm.push("courseType="+courseType);
 	

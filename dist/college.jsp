@@ -81,7 +81,7 @@
 								</span>
 							</div>
 
-							<div class="row expand-mode">
+							<!-- <div class="row expand-mode">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>
@@ -106,9 +106,9 @@
 								<span class="head g9">
 									院校分类：
 								</span>
-							</div>
+							</div> -->
 
-							<div class="row">
+							<!-- <div class="row">
 								<div class="body media">
 									<a class="fl item" href="javascript:;" data-action="add" data-value="ownerType:0">不限</a>
 									<div class="media-body">
@@ -122,7 +122,7 @@
 								<span class="head g9">
 									院校性质：
 								</span>
-							</div>
+							</div> -->
 
 							<div class="row">
 								<div class="body media">

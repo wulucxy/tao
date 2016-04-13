@@ -93,10 +93,16 @@ var archive = {
 			yearArr.push(nowYear--);
 		}
 
+		var highYear = $("[name=highYear]").length ? $("[name=highYear]").val() : "";
 		var optionList = [];
 
 		$.each(yearArr,function(idx,ele){
+			if(ele == highYear){
+			optionList.push('<option selected value='+ele+'>'+ele+'</option>');
+			}else{
 			optionList.push('<option value='+ele+'>'+ele+'</option>');
+			}
+			
 		});
 
 		$("[name=highYear]").empty().append('<option value="">请选择</option>');

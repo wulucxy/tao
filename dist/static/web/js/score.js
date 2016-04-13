@@ -313,6 +313,9 @@ webpackJsonp([33],[
 	      isEmpty : function(ele){
 	        var empty=0;
 	        var n=$(ele).val();
+	
+	        console.log(n);
+	
 	        if($.trim(n) == ""){
 	          empty++;
 	        }
@@ -349,11 +352,15 @@ webpackJsonp([33],[
 	          }else if (that.isEmpty(ele)) {
 	              that.allPass=false;
 	              $(ele).addClass("error");
+	               warn("请录入分数");
 	          }else if(!that.isRegex(ele)){ 
 	              that.allPass=false;
 	              $(ele).addClass("error");
-	          }else {
-	            
+	               warn("请录入正确的分数");
+	          }else if(Number(ele.value) > 200){
+	              $(ele).addClass("error");
+	              that.allPass=false;
+	              warn("录入分数不能超过200分");
 	          }
 	      }
 	
