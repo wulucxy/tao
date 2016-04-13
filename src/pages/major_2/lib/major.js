@@ -101,6 +101,7 @@ var major = {
 		if(pager == 1 && res.total == 0){
 			$(".btn-loading").hide();
 		}else{
+			$(".btn-loading").show();
 			$(".btn-loading").removeClass("loading disabled");
 		}
 

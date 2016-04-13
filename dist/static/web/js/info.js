@@ -83,7 +83,12 @@ webpackJsonp([22],{
 			}
 	
 	
-			$(".btn-loading").removeClass("loading disabled");
+			if(pager == 1 && res.total == 0){
+				$(".btn-loading").hide();
+			}else{
+				$(".btn-loading").show();
+				$(".btn-loading").removeClass("loading disabled");
+			}
 	
 			var pageCount = Math.ceil(data.total / that.capacity);
 	

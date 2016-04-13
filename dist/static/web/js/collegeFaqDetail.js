@@ -111,6 +111,7 @@ webpackJsonp([11],{
 	        if(pager == 1 && data.total == 0){
 				$(".btn-loading").hide();
 			}else{
+				$(".btn-loading").show();
 				$(".btn-loading").removeClass("loading disabled");
 			}
 			
