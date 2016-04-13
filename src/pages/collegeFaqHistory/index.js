@@ -28,7 +28,7 @@ var history = {
 		$.ajax({
 			url : preServer+provinceId+"/tzy/qa/history",
 			type : "post",
-			data : JSON.stringify({"keyword":$("[name=keyword]").val()}),
+			data : JSON.stringify({"keyword":$("[name=keyword2]").val()}),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);

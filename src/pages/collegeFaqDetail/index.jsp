@@ -41,7 +41,7 @@
 							<div class="qschoolList">
 								<h3 class="blue">
 									${collegeName}
-									<a href="javascript:;" class="btn btn-primary fr" id="applyQ">?&nbsp;提问</a>
+									<a href="javascript:;" class="btn btn-primary fr applyQ" id="applyQ">?&nbsp;提问</a>
 								</h3>
 								<div class="preloading qaListWrap">
 									<ul class="contentWrap qaList">

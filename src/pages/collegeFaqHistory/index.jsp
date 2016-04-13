@@ -33,7 +33,7 @@
 						
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称" name="keyword" id="qInput">
+					          <input type="text" class="form-control fl" placeholder="请输入院校名称" name="keyword2" id="qInput">
 					          <span class="input-group-btn">
 					            <button class="btn btn-default btn-search" type="button" id="sBtn">
 					            	<i class="iconList icon-search"></i>

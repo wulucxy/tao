@@ -27,7 +27,17 @@ var faq = {
 	init : function(){
 		this.pager = 1;
 		this.capacity = 10;
+
+		this.initStatus();
+
 		this.bindEvt();
+	},
+
+	initStatus : function(){
+		var that = this;
+		 if(util.getQuery("on") == 1){
+		 	$("#applyQ").show();
+		 }
 	},
 
 	bindEvt : function(){

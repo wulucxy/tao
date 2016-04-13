@@ -1,4 +1,5 @@
 <%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -31,10 +32,18 @@
 						<section class="faqList now">
 						<h4 class="blue">今日问答</h4>
 							<div class="list-group">
+						
+					<c:choose>	
+						<c:when test="${fn:length(today) == 0 }">
+							<a href="javascript:;" class="list-group-item" >
+					    	暂无数据
+						   	</a>
+						</c:when>
+						<c:otherwise>
 							<c:forEach var="list" items="${today}">
 							<c:choose>
 							    <c:when test="${list.status == 1}">
-							   	<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item active cp" >
+							   	<a href="/box/college_faq/${list.college.collegeId}?on=1" target="_blank" class="list-group-item active cp" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
 						    	<span class="body orange">${list.describtion}</span>
@@ -56,18 +65,29 @@
 								</c:otherwise>
 						   </c:choose>
 							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 						</div>
 						</section>
 
 						<section class="faqList pre">
 						<h4 class="blue">问答预告</h4>
 							<div class="list-group">
+							<c:choose>	
+						<c:when test="${fn:length(forecast) == 0 }">
+							<a href="javascript:;" class="list-group-item" >
+					    	暂无数据
+						   	</a>
+						</c:when>
+						<c:otherwise>
 							<c:forEach var="list" items="${forecast}">
 							<a href="javascript:;" class="list-group-item clearfix">
 							    <span class="fl collegeName">${list.college.collegeName}</span>
 							    <span class="fr orange">${list.describtion}</span>
 						  	</a>
 							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 						</div>
 						</section>
 
@@ -76,6 +96,13 @@
 							<a href="/box/college_faq/history" class="fr" target="_blank">更多>></a>
 						</h4>
 							<div class="list-group">
+							<c:choose>	
+						<c:when test="${fn:length(history) == 0 }">
+							<a href="javascript:;" class="list-group-item" >
+					    	暂无数据
+						   	</a>
+						</c:when>
+						<c:otherwise>
 							<c:forEach var="list" items="${history}">
 							<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item clearfix cp">
 						    <div class="fl">
@@ -85,6 +112,8 @@
 						    <i class="fr taoIcon icon-right"></i>
 						  </a>
 							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 						</div>
 						</section>
 
