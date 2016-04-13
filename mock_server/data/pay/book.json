@@ -16,12 +16,12 @@
     "batch":1,
     "score":765,
     "place":1234,
-    "c":[
+    "cJson":[
         {"name":"杭州","code":"330100"},
         {"name":"北京","code":"110100"},
         {"name":"上海","code":"310100"}
     ],
-    "majorList":[
+    "majorListJson":[
         {"majorId":"081251","majorName":"自动化"},
         {"majorId":"100401","majorName":"口腔医学"},
         {"majorId":"070401","majorName":"生物科学"}
