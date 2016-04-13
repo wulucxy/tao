@@ -5,6 +5,9 @@ require("../../../assets/components/validator");
 var common = require("../../../assets/components/common");
 
 var searchSchool = require("../../../assets/components/searchSchool");
+
+var uploader = require("./uploader.js");
+
 //provinceId
 var provinceId = $("[name=province]").val();
 
@@ -34,6 +37,8 @@ var archive = {
 		});
 
 		this.bindEvt();
+
+		uploader.init();
 	},
 
 	subFunc :  function(btn,oForm){

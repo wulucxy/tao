@@ -9,20 +9,24 @@
 <div class="content">
 	<div class="formWrap">
 		<form action="#" onsubmit="return false" autocomplete="off" id="myInfoForm" class="rel">
-			<!-- <div class="row clearfix">
+			<div class="row clearfix">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
 					<em class="vm">头像：</em></label>
 				<div class="col2 avatarWrap rel">
 					<div class="avatar thumbnail rel" id="picker">
 						<img src="${user.userAvatar}" class="responsive">
-						<div class="info">编辑头像</div>
+						<div class="info">
+							<span id="spanButtonPlaceHolder"></span>
+						</div>
 					</div>
 				</div>
+				<img id="loading" class="fl dn" src="../img/loadingImg.gif" >
+				<input id="btnCancel" type="hidden"/>
+
 				<div class="errInfo">
-					<span class="p-error-empty">头像不能为空</span>
 				 </div>
-			</div> -->
+			</div>
 			<div class="row clearfix">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>

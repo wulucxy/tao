@@ -1,6 +1,8 @@
 var $ = window.$ || require("jquery");
 var extend = require("extend");
-var BASE_URL = "//localhost:9999/";
+
+var provinceId = $("[name=province]").val();
+
 var uploader = {
 	init : function(settings){
 		this.settings = settings;
@@ -10,22 +12,41 @@ var uploader = {
 	bindEvt : function(){
 		var that = this,o = that.settings;
 
-		that.uploader = WebUploader.create({
-		    // swf文件路径
-		    swf: BASE_URL + 'js/Uploader.swf',
+		 var settings = {
+            flash_url : "http://i.jd.com/commons/swfupload.swf",
+            upload_url: preServer+provinceId+"/profile/avatar",
+            post_params: {"flashuploadimg":""},
+            file_post_name : "file",
+            file_size_limit : "4 MB",
+            file_types : "*.jpg;*.gif;*.png;*.jpeg;*.bmp",
+            file_types_description : "img",
+            custom_settings : {
+                cancelButtonId : "btnCancel"
+            },
+            debug: false,
+            // Button settings
+            button_image_url: "http://i.jd.com/images/perfect_bg.jpg",
+            button_width: "82",
+            button_height: "34",
+            button_placeholder_id: "spanButtonPlaceHolder",
+            button_action:SWFUpload.BUTTON_ACTION.SELECT_FILE,
 
-		    // 文件接收服务端。
-		    server: 'http://webuploader.duapp.com/server/fileupload.php',
+            file_queued_handler : fileQueued,
+            file_queue_error_handler : fileQueueError,
+            file_dialog_complete_handler : fileDialogComplete,
+            upload_error_handler : uploadError,
+            upload_success_handler : uploadSuccess
 
-		    // 选择文件的按钮。可选。
-		    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-		    pick: o.el,
+        };
+        swfu = new SWFUpload(settings);
 
-		    // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
-		    resize: false
-		});
+        function froward(){
+		   warn("头像上传成功");
+	       window.location.href='/user';
+	    }
 
-		console.log(that.uploader);
+	    window.froward = froward;
+
 
 	}
 

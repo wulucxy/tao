@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.65394861.css" rel="stylesheet"><link href="/static/web/css/user.7c555fef.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.65394861.css" rel="stylesheet"><link href="/static/web/css/user.ef904169.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -105,6 +105,8 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="//cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js"></script>
+	<script type="text/javascript" src="//i.jd.com/js/swfupload.js"></script>
+	<script type="text/javascript" src="//i.jd.com/js/handlers.js"></script>
+
 	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/user.js"></script></body>
 </html>

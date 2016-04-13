@@ -25,19 +25,19 @@ webpackJsonp([38],{
 	var archive = __webpack_require__(388);
 	
 	//历史模块
-	var history = __webpack_require__(389);
+	var history = __webpack_require__(391);
 	
 	//收藏模块
-	var collection = __webpack_require__(391);
+	var collection = __webpack_require__(393);
 	
 	//历史测试模块
-	var test = __webpack_require__(395);
+	var test = __webpack_require__(397);
 	
 	//qa模块
-	var qa = __webpack_require__(397);
+	var qa = __webpack_require__(399);
 	
 	//qa模块
-	var appointment = __webpack_require__(399);
+	var appointment = __webpack_require__(401);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -727,6 +727,9 @@ webpackJsonp([38],{
 	var common = __webpack_require__(38);
 	
 	var searchSchool = __webpack_require__(368);
+	
+	var uploader = __webpack_require__(389);
+	
 	//provinceId
 	var provinceId = $("[name=province]").val();
 	
@@ -756,6 +759,8 @@ webpackJsonp([38],{
 			});
 	
 			this.bindEvt();
+	
+			uploader.init();
 		},
 	
 		subFunc :  function(btn,oForm){
@@ -852,9 +857,164 @@ webpackJsonp([38],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
+	var extend = __webpack_require__(390);
+	
+	var provinceId = $("[name=province]").val();
+	
+	var uploader = {
+		init : function(settings){
+			this.settings = settings;
+			this.bindEvt();
+		},
+	
+		bindEvt : function(){
+			var that = this,o = that.settings;
+	
+			 var settings = {
+	            flash_url : "http://i.jd.com/commons/swfupload.swf",
+	            upload_url: preServer+provinceId+"/profile/avatar",
+	            post_params: {"flashuploadimg":""},
+	            file_post_name : "file",
+	            file_size_limit : "4 MB",
+	            file_types : "*.jpg;*.gif;*.png;*.jpeg;*.bmp",
+	            file_types_description : "img",
+	            custom_settings : {
+	                cancelButtonId : "btnCancel"
+	            },
+	            debug: false,
+	            // Button settings
+	            button_image_url: "http://i.jd.com/images/perfect_bg.jpg",
+	            button_width: "82",
+	            button_height: "34",
+	            button_placeholder_id: "spanButtonPlaceHolder",
+	            button_action:SWFUpload.BUTTON_ACTION.SELECT_FILE,
+	
+	            file_queued_handler : fileQueued,
+	            file_queue_error_handler : fileQueueError,
+	            file_dialog_complete_handler : fileDialogComplete,
+	            upload_error_handler : uploadError,
+	            upload_success_handler : uploadSuccess
+	
+	        };
+	        swfu = new SWFUpload(settings);
+	
+	        function froward(){
+			   warn("头像上传成功");
+		       window.location.href='/user';
+		    }
+	
+		    window.froward = froward;
+	
+	
+		}
+	
+	
+	};
+	
+	module.exports = uploader;
+
+/***/ },
+
+/***/ 390:
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var hasOwn = Object.prototype.hasOwnProperty;
+	var toStr = Object.prototype.toString;
+	
+	var isArray = function isArray(arr) {
+		if (typeof Array.isArray === 'function') {
+			return Array.isArray(arr);
+		}
+	
+		return toStr.call(arr) === '[object Array]';
+	};
+	
+	var isPlainObject = function isPlainObject(obj) {
+		if (!obj || toStr.call(obj) !== '[object Object]') {
+			return false;
+		}
+	
+		var hasOwnConstructor = hasOwn.call(obj, 'constructor');
+		var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+		// Not own constructor property must be Object
+		if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+			return false;
+		}
+	
+		// Own properties are enumerated firstly, so to speed up,
+		// if last one is own, then all properties are own.
+		var key;
+		for (key in obj) {/**/}
+	
+		return typeof key === 'undefined' || hasOwn.call(obj, key);
+	};
+	
+	module.exports = function extend() {
+		var options, name, src, copy, copyIsArray, clone,
+			target = arguments[0],
+			i = 1,
+			length = arguments.length,
+			deep = false;
+	
+		// Handle a deep copy situation
+		if (typeof target === 'boolean') {
+			deep = target;
+			target = arguments[1] || {};
+			// skip the boolean and the target
+			i = 2;
+		} else if ((typeof target !== 'object' && typeof target !== 'function') || target == null) {
+			target = {};
+		}
+	
+		for (; i < length; ++i) {
+			options = arguments[i];
+			// Only deal with non-null/undefined values
+			if (options != null) {
+				// Extend the base object
+				for (name in options) {
+					src = target[name];
+					copy = options[name];
+	
+					// Prevent never-ending loop
+					if (target !== copy) {
+						// Recurse if we're merging plain objects or arrays
+						if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+							if (copyIsArray) {
+								copyIsArray = false;
+								clone = src && isArray(src) ? src : [];
+							} else {
+								clone = src && isPlainObject(src) ? src : {};
+							}
+	
+							// Never move original objects, clone them
+							target[name] = extend(deep, clone, copy);
+	
+						// Don't bring in undefined values
+						} else if (typeof copy !== 'undefined') {
+							target[name] = copy;
+						}
+					}
+				}
+			}
+		}
+	
+		// Return the modified object
+		return target;
+	};
+	
+
+
+/***/ },
+
+/***/ 391:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(390);
+	var tmpl = __webpack_require__(392);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -968,7 +1128,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 390:
+/***/ 392:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1036,7 +1196,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 391:
+/***/ 393:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1048,9 +1208,9 @@ webpackJsonp([38],{
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
-	var tmpl_college = __webpack_require__(392);
-	var tmpl_major = __webpack_require__(393);
-	var tmpl_info = __webpack_require__(394);
+	var tmpl_college = __webpack_require__(394);
+	var tmpl_major = __webpack_require__(395);
+	var tmpl_info = __webpack_require__(396);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1213,7 +1373,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 392:
+/***/ 394:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1267,7 +1427,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 393:
+/***/ 395:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1297,7 +1457,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 394:
+/***/ 396:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1339,13 +1499,13 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 395:
+/***/ 397:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(396);
+	var tmpl = __webpack_require__(398);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1423,7 +1583,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 396:
+/***/ 398:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1453,13 +1613,13 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 397:
+/***/ 399:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(398);
+	var tmpl = __webpack_require__(400);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1534,7 +1694,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 398:
+/***/ 400:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1568,13 +1728,13 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 399:
+/***/ 401:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(400);
+	var tmpl = __webpack_require__(402);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1582,7 +1742,7 @@ webpackJsonp([38],{
 	//本地数据库
 	var localData = __webpack_require__(140);
 	
-	var tmpl_pay = __webpack_require__(401);
+	var tmpl_pay = __webpack_require__(403);
 	
 	//ping++
 	var ping = __webpack_require__(225);
@@ -1753,7 +1913,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 400:
+/***/ 402:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1829,7 +1989,7 @@ webpackJsonp([38],{
 
 /***/ },
 
-/***/ 401:
+/***/ 403:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
