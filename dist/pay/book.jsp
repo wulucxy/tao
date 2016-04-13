@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.65394861.css" rel="stylesheet"><link href="/static/web/css/pay/book.abae95ad.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.65394861.css" rel="stylesheet"><link href="/static/web/css/pay/book.719892b2.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -95,9 +95,10 @@
 
 					</form>
 
-					<div class="demoImg imgWrap">
+					<a class="demoImg imgWrap rel dib" href="/sample" target="_blank">
 						<img src="/static/web/img/demo2.png" class="responsive">
-					</div>
+						<span class="btn btn-sample abs">样本预览</span>
+					</a>
 					</div>
 				</div>
 			</div>

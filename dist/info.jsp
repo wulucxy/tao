@@ -20,7 +20,7 @@
 
 		<div class="jimu container clearfix">
 			<div class="column fl col1">
-				<a target="_blank"class="infoLink big" href="${bannerList.big.url}">
+				<a target="_blank"class="infoLink big" href="${bannerList.big.href}">
 					<span class="imgWrap">
 					<img src="${bannerList.big.imgUrl}" class="responsive">
 					</span>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="column fr col2">
 				<div class="top">
-					<a target="_blank" class="infoLink mid" href="${bannerList.middle.url}">
+					<a target="_blank" class="infoLink mid" href="${bannerList.middle.href}">
 						<span class="imgWrap">
 							<img src="${bannerList.middle.imgUrl}" class="responsive">
 						</span>
@@ -42,7 +42,7 @@
 				<div class="bot clearfix mt10">
 					<c:forEach var="list" items="${bannerList.smallList}">
 					<div class="column fl col">
-						<a target="_blank" class="infoLink sml" href="${list.url}">
+						<a target="_blank" class="infoLink sml" href="${list.href}">
 							<span class="imgWrap">
 								<img src="${list.imgUrl}" class="responsive">
 							</span>
@@ -120,7 +120,7 @@
 									   <span class="label fl">
 											${list.time}
 										</span>
-										<div class="media-body"><a href="${list.url}" target="_blank">
+										<div class="media-body"><a href="${list.href}" target="_blank">
 											${list.title}
 										</a></div>
 									   </li>

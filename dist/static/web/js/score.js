@@ -1,10 +1,10 @@
-webpackJsonp([32],[
+webpackJsonp([33],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(228);
+	__webpack_require__(230);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -14,11 +14,11 @@ webpackJsonp([32],[
 	var common = __webpack_require__(38);
 	
 	//自定义功能写下面
-	var tmpl_recommend = __webpack_require__(230);
-	var tmpl_exam = __webpack_require__(231);
+	var tmpl_recommend = __webpack_require__(232);
+	var tmpl_exam = __webpack_require__(233);
 	
 	
-	var charts = __webpack_require__(232);
+	var charts = __webpack_require__(234);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -589,14 +589,16 @@ webpackJsonp([32],[
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */
+/* 228 */,
+/* 229 */,
+/* 230 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 229 */,
-/* 230 */
+/* 231 */,
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -614,7 +616,7 @@ webpackJsonp([32],[
 	}
 
 /***/ },
-/* 231 */
+/* 233 */
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -663,18 +665,18 @@ webpackJsonp([32],[
 	}
 
 /***/ },
-/* 232 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
 	// 引入 ECharts 主模块
-	var echarts = __webpack_require__(233);
+	var echarts = __webpack_require__(235);
 	// 引入柱状图
-	__webpack_require__(323);
+	__webpack_require__(325);
 	// 引入提示框和标题组件
-	__webpack_require__(359);
+	__webpack_require__(361);
 	
 	
 	var chart = {
@@ -701,7 +703,7 @@ webpackJsonp([32],[
 	module.exports = chart;
 
 /***/ },
-/* 233 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -719,23 +721,23 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var GlobalModel = __webpack_require__(234);
-	    var ExtensionAPI = __webpack_require__(256);
-	    var CoordinateSystemManager = __webpack_require__(257);
-	    var OptionManager = __webpack_require__(258);
+	    var GlobalModel = __webpack_require__(236);
+	    var ExtensionAPI = __webpack_require__(258);
+	    var CoordinateSystemManager = __webpack_require__(259);
+	    var OptionManager = __webpack_require__(260);
 	
-	    var ComponentModel = __webpack_require__(251);
-	    var SeriesModel = __webpack_require__(259);
+	    var ComponentModel = __webpack_require__(253);
+	    var SeriesModel = __webpack_require__(261);
 	
-	    var ComponentView = __webpack_require__(260);
-	    var ChartView = __webpack_require__(273);
-	    var graphic = __webpack_require__(274);
+	    var ComponentView = __webpack_require__(262);
+	    var ChartView = __webpack_require__(275);
+	    var graphic = __webpack_require__(276);
 	
-	    var zrender = __webpack_require__(309);
-	    var zrUtil = __webpack_require__(235);
-	    var colorTool = __webpack_require__(270);
-	    var env = __webpack_require__(310);
-	    var Eventful = __webpack_require__(264);
+	    var zrender = __webpack_require__(311);
+	    var zrUtil = __webpack_require__(237);
+	    var colorTool = __webpack_require__(272);
+	    var env = __webpack_require__(312);
+	    var Eventful = __webpack_require__(266);
 	
 	    var each = zrUtil.each;
 	
@@ -1245,7 +1247,7 @@ webpackJsonp([32],[
 	        this._loadingFX && this._loadingFX.resize();
 	    };
 	
-	    var defaultLoadingEffect = __webpack_require__(319);
+	    var defaultLoadingEffect = __webpack_require__(321);
 	    /**
 	     * Show loading effect
 	     * @param  {string} [name='default']
@@ -1945,9 +1947,9 @@ webpackJsonp([32],[
 	    };
 	
 	    echarts.registerVisualCoding('echarts', zrUtil.curry(
-	        __webpack_require__(320), '', 'itemStyle'
+	        __webpack_require__(322), '', 'itemStyle'
 	    ));
-	    echarts.registerPreprocessor(__webpack_require__(321));
+	    echarts.registerPreprocessor(__webpack_require__(323));
 	
 	    // Default action
 	    echarts.registerAction({
@@ -1966,11 +1968,11 @@ webpackJsonp([32],[
 	    // Exports
 	    // --------
 	
-	    echarts.graphic = __webpack_require__(274);
-	    echarts.number = __webpack_require__(239);
-	    echarts.format = __webpack_require__(238);
-	    echarts.matrix = __webpack_require__(249);
-	    echarts.vector = __webpack_require__(248);
+	    echarts.graphic = __webpack_require__(276);
+	    echarts.number = __webpack_require__(241);
+	    echarts.format = __webpack_require__(240);
+	    echarts.matrix = __webpack_require__(251);
+	    echarts.vector = __webpack_require__(250);
 	
 	    echarts.util = {};
 	    each([
@@ -1987,7 +1989,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 234 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1999,9 +2001,9 @@ webpackJsonp([32],[
 	
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var modelUtil = __webpack_require__(237);
-	    var Model = __webpack_require__(240);
+	    var zrUtil = __webpack_require__(237);
+	    var modelUtil = __webpack_require__(239);
+	    var Model = __webpack_require__(242);
 	    var each = zrUtil.each;
 	    var filter = zrUtil.filter;
 	    var map = zrUtil.map;
@@ -2009,9 +2011,9 @@ webpackJsonp([32],[
 	    var indexOf = zrUtil.indexOf;
 	    var isObject = zrUtil.isObject;
 	
-	    var ComponentModel = __webpack_require__(251);
+	    var ComponentModel = __webpack_require__(253);
 	
-	    var globalDefault = __webpack_require__(255);
+	    var globalDefault = __webpack_require__(257);
 	
 	    var OPTION_INNER_KEY = '\0_ec_inner';
 	
@@ -2748,13 +2750,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 235 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 */
 	
-	    var Gradient = __webpack_require__(236);
+	    var Gradient = __webpack_require__(238);
 	    // 用于处理merge时无法遍历Date等对象的问题
 	    var BUILTIN_OBJECT = {
 	        '[object Function]': 1,
@@ -3236,7 +3238,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 236 */
+/* 238 */
 /***/ function(module, exports) {
 
 	
@@ -3267,16 +3269,16 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var formatUtil = __webpack_require__(238);
-	    var nubmerUtil = __webpack_require__(239);
-	    var zrUtil = __webpack_require__(235);
+	    var formatUtil = __webpack_require__(240);
+	    var nubmerUtil = __webpack_require__(241);
+	    var zrUtil = __webpack_require__(237);
 	
-	    var Model = __webpack_require__(240);
+	    var Model = __webpack_require__(242);
 	
 	    var AXIS_DIMS = ['x', 'y', 'z', 'radius', 'angle'];
 	
@@ -3673,13 +3675,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var numberUtil = __webpack_require__(239);
+	    var zrUtil = __webpack_require__(237);
+	    var numberUtil = __webpack_require__(241);
 	
 	    /**
 	     * 每三位默认加,格式化
@@ -3840,7 +3842,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 239 */
+/* 241 */
 /***/ function(module, exports) {
 
 	/**
@@ -4040,7 +4042,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 240 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -4048,8 +4050,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var clazzUtil = __webpack_require__(241);
+	    var zrUtil = __webpack_require__(237);
+	    var clazzUtil = __webpack_require__(243);
 	
 	    /**
 	     * @alias module:echarts/model/Model
@@ -4189,21 +4191,21 @@ webpackJsonp([32],[
 	    clazzUtil.enableClassExtend(Model);
 	
 	    var mixin = zrUtil.mixin;
-	    mixin(Model, __webpack_require__(242));
 	    mixin(Model, __webpack_require__(244));
-	    mixin(Model, __webpack_require__(245));
-	    mixin(Model, __webpack_require__(250));
+	    mixin(Model, __webpack_require__(246));
+	    mixin(Model, __webpack_require__(247));
+	    mixin(Model, __webpack_require__(252));
 	
 	    module.exports = Model;
 
 
 /***/ },
-/* 241 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    var clazz = {};
 	
@@ -4406,11 +4408,11 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 242 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	    var getLineStyle = __webpack_require__(243)(
+	    var getLineStyle = __webpack_require__(245)(
 	        [
 	            ['lineWidth', 'width'],
 	            ['stroke', 'color'],
@@ -4438,13 +4440,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 243 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// TODO Parse shadow style
 	// TODO Only shallow path support
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    module.exports = function (properties) {
 	        // Normalize
@@ -4471,12 +4473,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 244 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	    module.exports = {
-	        getAreaStyle: __webpack_require__(243)(
+	        getAreaStyle: __webpack_require__(245)(
 	            [
 	                ['fill', 'color'],
 	                ['shadowBlur'],
@@ -4490,12 +4492,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 245 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var textContain = __webpack_require__(246);
+	    var textContain = __webpack_require__(248);
 	
 	    function getShallow(model, path) {
 	        return model && model.getShallow(path);
@@ -4547,7 +4549,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 246 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -4556,8 +4558,8 @@ webpackJsonp([32],[
 	    var textWidthCacheCounter = 0;
 	    var TEXT_CACHE_MAX = 5000;
 	
-	    var util = __webpack_require__(235);
-	    var BoundingRect = __webpack_require__(247);
+	    var util = __webpack_require__(237);
+	    var BoundingRect = __webpack_require__(249);
 	
 	    function getTextWidth(text, textFont) {
 	        var key = text + ':' + textFont;
@@ -4810,7 +4812,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 247 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4819,8 +4821,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var vec2 = __webpack_require__(248);
-	    var matrix = __webpack_require__(249);
+	    var vec2 = __webpack_require__(250);
+	    var matrix = __webpack_require__(251);
 	
 	    var v2ApplyTransform = vec2.applyTransform;
 	    var mathMin = Math.min;
@@ -4969,7 +4971,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports) {
 
 	
@@ -5249,7 +5251,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports) {
 
 	
@@ -5413,12 +5415,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	    module.exports = {
-	        getItemStyle: __webpack_require__(243)(
+	        getItemStyle: __webpack_require__(245)(
 	            [
 	                ['fill', 'color'],
 	                ['stroke', 'borderColor'],
@@ -5434,7 +5436,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -5444,12 +5446,12 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var Model = __webpack_require__(240);
-	    var zrUtil = __webpack_require__(235);
+	    var Model = __webpack_require__(242);
+	    var zrUtil = __webpack_require__(237);
 	    var arrayPush = Array.prototype.push;
-	    var componentUtil = __webpack_require__(252);
-	    var clazzUtil = __webpack_require__(241);
-	    var layout = __webpack_require__(253);
+	    var componentUtil = __webpack_require__(254);
+	    var clazzUtil = __webpack_require__(243);
+	    var layout = __webpack_require__(255);
 	
 	    /**
 	     * @alias module:echarts/model/Component
@@ -5613,19 +5615,19 @@ webpackJsonp([32],[
 	        });
 	    }
 	
-	    zrUtil.mixin(ComponentModel, __webpack_require__(254));
+	    zrUtil.mixin(ComponentModel, __webpack_require__(256));
 	
 	    module.exports = ComponentModel;
 
 
 /***/ },
-/* 252 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var clazz = __webpack_require__(241);
+	    var zrUtil = __webpack_require__(237);
+	    var clazz = __webpack_require__(243);
 	
 	    var parseClassType = clazz.parseClassType;
 	
@@ -5800,17 +5802,17 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 253 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// Layout helpers for each component positioning
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var BoundingRect = __webpack_require__(247);
-	    var numberUtil = __webpack_require__(239);
-	    var formatUtil = __webpack_require__(238);
+	    var zrUtil = __webpack_require__(237);
+	    var BoundingRect = __webpack_require__(249);
+	    var numberUtil = __webpack_require__(241);
+	    var formatUtil = __webpack_require__(240);
 	    var parsePercent = numberUtil.parsePercent;
 	    var each = zrUtil.each;
 	
@@ -6205,7 +6207,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 254 */
+/* 256 */
 /***/ function(module, exports) {
 
 	
@@ -6225,7 +6227,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports) {
 
 	
@@ -6274,13 +6276,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    var echartsAPIList = [
 	        'getDom', 'getZr', 'getWidth', 'getHeight', 'dispatchAction',
@@ -6297,7 +6299,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6346,7 +6348,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 258 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -6357,9 +6359,9 @@ webpackJsonp([32],[
 	
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var modelUtil = __webpack_require__(237);
-	    var ComponentModel = __webpack_require__(251);
+	    var zrUtil = __webpack_require__(237);
+	    var modelUtil = __webpack_require__(239);
+	    var ComponentModel = __webpack_require__(253);
 	    var each = zrUtil.each;
 	    var clone = zrUtil.clone;
 	    var map = zrUtil.map;
@@ -6777,16 +6779,16 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var formatUtil = __webpack_require__(238);
-	    var modelUtil = __webpack_require__(237);
-	    var ComponentModel = __webpack_require__(251);
+	    var zrUtil = __webpack_require__(237);
+	    var formatUtil = __webpack_require__(240);
+	    var modelUtil = __webpack_require__(239);
+	    var ComponentModel = __webpack_require__(253);
 	
 	    var encodeHTML = formatUtil.encodeHTML;
 	    var addCommas = formatUtil.addCommas;
@@ -6985,14 +6987,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var Group = __webpack_require__(261);
-	    var componentUtil = __webpack_require__(252);
-	    var clazzUtil = __webpack_require__(241);
+	    var Group = __webpack_require__(263);
+	    var componentUtil = __webpack_require__(254);
+	    var clazzUtil = __webpack_require__(243);
 	
 	    var Component = function () {
 	        /**
@@ -7036,7 +7038,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7059,9 +7061,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Element = __webpack_require__(262);
-	    var BoundingRect = __webpack_require__(247);
+	    var zrUtil = __webpack_require__(237);
+	    var Element = __webpack_require__(264);
+	    var BoundingRect = __webpack_require__(249);
 	
 	    /**
 	     * @alias module:zrender/graphic/Group
@@ -7340,7 +7342,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7349,11 +7351,11 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var guid = __webpack_require__(263);
-	    var Eventful = __webpack_require__(264);
-	    var Transformable = __webpack_require__(265);
-	    var Animatable = __webpack_require__(266);
-	    var zrUtil = __webpack_require__(235);
+	    var guid = __webpack_require__(265);
+	    var Eventful = __webpack_require__(266);
+	    var Transformable = __webpack_require__(267);
+	    var Animatable = __webpack_require__(268);
+	    var zrUtil = __webpack_require__(237);
 	
 	    /**
 	     * @alias module:zrender/Element
@@ -7607,7 +7609,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports) {
 
 	/**
@@ -7626,7 +7628,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7638,7 +7640,7 @@ webpackJsonp([32],[
 	
 	
 	    var arrySlice = Array.prototype.slice;
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	    var indexOf = zrUtil.indexOf;
 	
 	    /**
@@ -7923,7 +7925,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7934,8 +7936,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var matrix = __webpack_require__(249);
-	    var vector = __webpack_require__(248);
+	    var matrix = __webpack_require__(251);
+	    var vector = __webpack_require__(250);
 	    var mIdentity = matrix.identity;
 	
 	    var EPSILON = 5e-5;
@@ -8150,7 +8152,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8159,12 +8161,12 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var Animator = __webpack_require__(267);
-	    var util = __webpack_require__(235);
+	    var Animator = __webpack_require__(269);
+	    var util = __webpack_require__(237);
 	    var isString = util.isString;
 	    var isFunction = util.isFunction;
 	    var isObject = util.isObject;
-	    var log = __webpack_require__(271);
+	    var log = __webpack_require__(273);
 	
 	    /**
 	     * @alias modue:zrender/mixin/Animatable
@@ -8420,7 +8422,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -8428,9 +8430,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var Clip = __webpack_require__(268);
-	    var color = __webpack_require__(270);
-	    var util = __webpack_require__(235);
+	    var Clip = __webpack_require__(270);
+	    var color = __webpack_require__(272);
+	    var util = __webpack_require__(237);
 	    var isArrayLike = util.isArrayLike;
 	
 	    var arraySlice = Array.prototype.slice;
@@ -9021,7 +9023,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 268 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -9040,7 +9042,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var easingFuncs = __webpack_require__(269);
+	    var easingFuncs = __webpack_require__(271);
 	
 	    function Clip(options) {
 	
@@ -9134,7 +9136,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 269 */
+/* 271 */
 /***/ function(module, exports) {
 
 	/**
@@ -9485,7 +9487,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 270 */
+/* 272 */
 /***/ function(module, exports) {
 
 	/**
@@ -10002,11 +10004,11 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 271 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	        var config = __webpack_require__(272);
+	        var config = __webpack_require__(274);
 	
 	        /**
 	         * @exports zrender/tool/log
@@ -10040,7 +10042,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 272 */
+/* 274 */
 /***/ function(module, exports) {
 
 	
@@ -10072,14 +10074,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 273 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var Group = __webpack_require__(261);
-	    var componentUtil = __webpack_require__(252);
-	    var clazzUtil = __webpack_require__(241);
+	    var Group = __webpack_require__(263);
+	    var componentUtil = __webpack_require__(254);
+	    var clazzUtil = __webpack_require__(243);
 	
 	    function Chart() {
 	
@@ -10211,53 +10213,53 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 274 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
-	    var pathTool = __webpack_require__(275);
+	    var pathTool = __webpack_require__(277);
 	    var round = Math.round;
-	    var Path = __webpack_require__(276);
-	    var colorTool = __webpack_require__(270);
-	    var matrix = __webpack_require__(249);
-	    var vector = __webpack_require__(248);
-	    var Gradient = __webpack_require__(236);
+	    var Path = __webpack_require__(278);
+	    var colorTool = __webpack_require__(272);
+	    var matrix = __webpack_require__(251);
+	    var vector = __webpack_require__(250);
+	    var Gradient = __webpack_require__(238);
 	
 	    var graphic = {};
 	
-	    graphic.Group = __webpack_require__(261);
+	    graphic.Group = __webpack_require__(263);
 	
-	    graphic.Image = __webpack_require__(291);
+	    graphic.Image = __webpack_require__(293);
 	
-	    graphic.Text = __webpack_require__(294);
+	    graphic.Text = __webpack_require__(296);
 	
-	    graphic.Circle = __webpack_require__(295);
+	    graphic.Circle = __webpack_require__(297);
 	
-	    graphic.Sector = __webpack_require__(296);
+	    graphic.Sector = __webpack_require__(298);
 	
-	    graphic.Ring = __webpack_require__(297);
+	    graphic.Ring = __webpack_require__(299);
 	
-	    graphic.Polygon = __webpack_require__(298);
+	    graphic.Polygon = __webpack_require__(300);
 	
-	    graphic.Polyline = __webpack_require__(302);
+	    graphic.Polyline = __webpack_require__(304);
 	
-	    graphic.Rect = __webpack_require__(303);
+	    graphic.Rect = __webpack_require__(305);
 	
-	    graphic.Line = __webpack_require__(304);
+	    graphic.Line = __webpack_require__(306);
 	
-	    graphic.BezierCurve = __webpack_require__(305);
+	    graphic.BezierCurve = __webpack_require__(307);
 	
-	    graphic.Arc = __webpack_require__(306);
+	    graphic.Arc = __webpack_require__(308);
 	
-	    graphic.LinearGradient = __webpack_require__(307);
+	    graphic.LinearGradient = __webpack_require__(309);
 	
-	    graphic.RadialGradient = __webpack_require__(308);
+	    graphic.RadialGradient = __webpack_require__(310);
 	
-	    graphic.BoundingRect = __webpack_require__(247);
+	    graphic.BoundingRect = __webpack_require__(249);
 	
 	    /**
 	     * Extend shape with parameters
@@ -10655,15 +10657,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 275 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var Path = __webpack_require__(276);
-	    var PathProxy = __webpack_require__(280);
-	    var transformPath = __webpack_require__(290);
-	    var matrix = __webpack_require__(249);
+	    var Path = __webpack_require__(278);
+	    var PathProxy = __webpack_require__(282);
+	    var transformPath = __webpack_require__(292);
+	    var matrix = __webpack_require__(251);
 	
 	    // command chars
 	    var cc = [
@@ -11064,7 +11066,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 276 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11074,12 +11076,12 @@ webpackJsonp([32],[
 	
 	
 	
-	    var Displayable = __webpack_require__(277);
-	    var zrUtil = __webpack_require__(235);
-	    var PathProxy = __webpack_require__(280);
-	    var pathContain = __webpack_require__(283);
+	    var Displayable = __webpack_require__(279);
+	    var zrUtil = __webpack_require__(237);
+	    var PathProxy = __webpack_require__(282);
+	    var pathContain = __webpack_require__(285);
 	
-	    var Gradient = __webpack_require__(236);
+	    var Gradient = __webpack_require__(238);
 	
 	    function pathHasFill(style) {
 	        var fill = style.fill;
@@ -11397,7 +11399,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 277 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11408,12 +11410,12 @@ webpackJsonp([32],[
 	
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
-	    var Style = __webpack_require__(278);
+	    var Style = __webpack_require__(280);
 	
-	    var Element = __webpack_require__(262);
-	    var RectText = __webpack_require__(279);
+	    var Element = __webpack_require__(264);
+	    var RectText = __webpack_require__(281);
 	    // var Stateful = require('./mixin/Stateful');
 	
 	    /**
@@ -11654,7 +11656,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 278 */
+/* 280 */
 /***/ function(module, exports) {
 
 	/**
@@ -11874,7 +11876,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 279 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11884,8 +11886,8 @@ webpackJsonp([32],[
 	
 	
 	
-	    var textContain = __webpack_require__(246);
-	    var BoundingRect = __webpack_require__(247);
+	    var textContain = __webpack_require__(248);
+	    var BoundingRect = __webpack_require__(249);
 	
 	    var tmpRect = new BoundingRect();
 	
@@ -12010,7 +12012,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 280 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12025,10 +12027,10 @@ webpackJsonp([32],[
 	 // TODO getTotalLength, getPointAtLength
 	
 	
-	    var curve = __webpack_require__(281);
-	    var vec2 = __webpack_require__(248);
-	    var bbox = __webpack_require__(282);
-	    var BoundingRect = __webpack_require__(247);
+	    var curve = __webpack_require__(283);
+	    var vec2 = __webpack_require__(250);
+	    var bbox = __webpack_require__(284);
+	    var BoundingRect = __webpack_require__(249);
 	
 	    var CMD = {
 	        M: 1,
@@ -12713,7 +12715,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 281 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12724,7 +12726,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var vec2 = __webpack_require__(248);
+	    var vec2 = __webpack_require__(250);
 	    var v2Create = vec2.create;
 	    var v2DistSquare = vec2.distSquare;
 	    var mathPow = Math.pow;
@@ -13258,7 +13260,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 282 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13266,8 +13268,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var vec2 = __webpack_require__(248);
-	    var curve = __webpack_require__(281);
+	    var vec2 = __webpack_require__(250);
+	    var curve = __webpack_require__(283);
 	
 	    var bbox = {};
 	    var mathMin = Math.min;
@@ -13490,21 +13492,21 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 283 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var CMD = __webpack_require__(280).CMD;
-	    var line = __webpack_require__(284);
-	    var cubic = __webpack_require__(285);
-	    var quadratic = __webpack_require__(286);
-	    var arc = __webpack_require__(287);
-	    var normalizeRadian = __webpack_require__(288).normalizeRadian;
-	    var curve = __webpack_require__(281);
+	    var CMD = __webpack_require__(282).CMD;
+	    var line = __webpack_require__(286);
+	    var cubic = __webpack_require__(287);
+	    var quadratic = __webpack_require__(288);
+	    var arc = __webpack_require__(289);
+	    var normalizeRadian = __webpack_require__(290).normalizeRadian;
+	    var curve = __webpack_require__(283);
 	
-	    var windingLine = __webpack_require__(289);
+	    var windingLine = __webpack_require__(291);
 	
 	    var containStroke = line.containStroke;
 	
@@ -13885,7 +13887,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 284 */
+/* 286 */
 /***/ function(module, exports) {
 
 	
@@ -13933,12 +13935,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 285 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var curve = __webpack_require__(281);
+	    var curve = __webpack_require__(283);
 	
 	    module.exports = {
 	        /**
@@ -13980,12 +13982,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 286 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var curve = __webpack_require__(281);
+	    var curve = __webpack_require__(283);
 	
 	    module.exports = {
 	        /**
@@ -14025,12 +14027,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 287 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var normalizeRadian = __webpack_require__(288).normalizeRadian;
+	    var normalizeRadian = __webpack_require__(290).normalizeRadian;
 	    var PI2 = Math.PI * 2;
 	
 	    module.exports = {
@@ -14091,7 +14093,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 288 */
+/* 290 */
 /***/ function(module, exports) {
 
 	
@@ -14109,7 +14111,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 289 */
+/* 291 */
 /***/ function(module, exports) {
 
 	
@@ -14129,13 +14131,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 290 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var CMD = __webpack_require__(280).CMD;
-	    var vec2 = __webpack_require__(248);
+	    var CMD = __webpack_require__(282).CMD;
+	    var vec2 = __webpack_require__(250);
 	    var v2ApplyTransform = vec2.applyTransform;
 	
 	    var points = [[], [], []];
@@ -14230,7 +14232,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 291 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14240,12 +14242,12 @@ webpackJsonp([32],[
 	
 	
 	
-	    var Displayable = __webpack_require__(277);
-	    var BoundingRect = __webpack_require__(247);
-	    var zrUtil = __webpack_require__(235);
-	    var roundRectHelper = __webpack_require__(292);
+	    var Displayable = __webpack_require__(279);
+	    var BoundingRect = __webpack_require__(249);
+	    var zrUtil = __webpack_require__(237);
+	    var roundRectHelper = __webpack_require__(294);
 	
-	    var LRU = __webpack_require__(293);
+	    var LRU = __webpack_require__(295);
 	    var globalImageCache = new LRU(50);
 	    /**
 	     * @alias zrender/graphic/Image
@@ -14399,7 +14401,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 292 */
+/* 294 */
 /***/ function(module, exports) {
 
 	
@@ -14494,7 +14496,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 293 */
+/* 295 */
 /***/ function(module, exports) {
 
 	// Simple LRU cache use doubly linked list
@@ -14669,7 +14671,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 294 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14681,9 +14683,9 @@ webpackJsonp([32],[
 	
 	
 	
-	    var Displayable = __webpack_require__(277);
-	    var zrUtil = __webpack_require__(235);
-	    var textContain = __webpack_require__(246);
+	    var Displayable = __webpack_require__(279);
+	    var zrUtil = __webpack_require__(237);
+	    var textContain = __webpack_require__(248);
 	
 	    /**
 	     * @alias zrender/graphic/Text
@@ -14777,7 +14779,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 295 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14788,7 +14790,7 @@ webpackJsonp([32],[
 	
 	
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	        
 	        type: 'circle',
 	
@@ -14809,7 +14811,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 296 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14820,7 +14822,7 @@ webpackJsonp([32],[
 	// FIXME clockwise seems wrong
 	
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'sector',
 	
@@ -14876,7 +14878,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 297 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14885,7 +14887,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'ring',
 	
@@ -14910,7 +14912,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 298 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14919,9 +14921,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var polyHelper = __webpack_require__(299);
+	    var polyHelper = __webpack_require__(301);
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	        
 	        type: 'polygon',
 	
@@ -14940,13 +14942,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 299 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var smoothSpline = __webpack_require__(300);
-	    var smoothBezier = __webpack_require__(301);
+	    var smoothSpline = __webpack_require__(302);
+	    var smoothBezier = __webpack_require__(303);
 	
 	    module.exports = {
 	        buildPath: function (ctx, shape, closePath) {
@@ -14987,7 +14989,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 300 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14998,7 +15000,7 @@ webpackJsonp([32],[
 	 *         errorrik (errorrik@gmail.com)
 	 */
 	
-	    var vec2 = __webpack_require__(248);
+	    var vec2 = __webpack_require__(250);
 	
 	    /**
 	     * @inner
@@ -15063,7 +15065,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 301 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15075,7 +15077,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var vec2 = __webpack_require__(248);
+	    var vec2 = __webpack_require__(250);
 	    var v2Min = vec2.min;
 	    var v2Max = vec2.max;
 	    var v2Scale = vec2.scale;
@@ -15170,7 +15172,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 302 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15178,9 +15180,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var polyHelper = __webpack_require__(299);
+	    var polyHelper = __webpack_require__(301);
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	        
 	        type: 'polyline',
 	
@@ -15205,7 +15207,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 303 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15214,9 +15216,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var roundRectHelper = __webpack_require__(292);
+	    var roundRectHelper = __webpack_require__(294);
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'rect',
 	
@@ -15253,7 +15255,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 304 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15261,7 +15263,7 @@ webpackJsonp([32],[
 	 * @module zrender/graphic/shape/Line
 	 */
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'line',
 	
@@ -15318,7 +15320,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 305 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15328,14 +15330,14 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var curveTool = __webpack_require__(281);
+	    var curveTool = __webpack_require__(283);
 	    var quadraticSubdivide = curveTool.quadraticSubdivide;
 	    var cubicSubdivide = curveTool.cubicSubdivide;
 	    var quadraticAt = curveTool.quadraticAt;
 	    var cubicAt = curveTool.cubicAt;
 	
 	    var out = [];
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'bezier-curve',
 	
@@ -15443,7 +15445,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 306 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15452,7 +15454,7 @@ webpackJsonp([32],[
 	 */
 	 
 	
-	    module.exports = __webpack_require__(276).extend({
+	    module.exports = __webpack_require__(278).extend({
 	
 	        type: 'arc',
 	
@@ -15497,15 +15499,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 307 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
-	    var Gradient = __webpack_require__(236);
+	    var Gradient = __webpack_require__(238);
 	
 	    /**
 	     * x, y, x2, y2 are all percent from 0 to 1
@@ -15561,15 +15563,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 308 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
-	    var Gradient = __webpack_require__(236);
+	    var Gradient = __webpack_require__(238);
 	
 	    /**
 	     * x, y, r are all percent from 0 to 1
@@ -15625,7 +15627,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 309 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -15639,17 +15641,17 @@ webpackJsonp([32],[
 	 */
 	// Global defines
 	
-	    var guid = __webpack_require__(263);
-	    var env = __webpack_require__(310);
+	    var guid = __webpack_require__(265);
+	    var env = __webpack_require__(312);
 	
-	    var Handler = __webpack_require__(311);
-	    var Storage = __webpack_require__(315);
-	    var Animation = __webpack_require__(316);
+	    var Handler = __webpack_require__(313);
+	    var Storage = __webpack_require__(317);
+	    var Animation = __webpack_require__(318);
 	
 	    var useVML = !env.canvasSupported;
 	
 	    var painterCtors = {
-	        canvas: __webpack_require__(317)
+	        canvas: __webpack_require__(319)
 	    };
 	
 	    var instances = {};    // ZRender实例map索引
@@ -15983,7 +15985,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 310 */
+/* 312 */
 /***/ function(module, exports) {
 
 	/**
@@ -16097,7 +16099,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 311 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16110,13 +16112,13 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var env = __webpack_require__(310);
-	    var eventTool = __webpack_require__(312);
-	    var util = __webpack_require__(235);
-	    var Draggable = __webpack_require__(313);
-	    var GestureMgr = __webpack_require__(314);
+	    var env = __webpack_require__(312);
+	    var eventTool = __webpack_require__(314);
+	    var util = __webpack_require__(237);
+	    var Draggable = __webpack_require__(315);
+	    var GestureMgr = __webpack_require__(316);
 	
-	    var Eventful = __webpack_require__(264);
+	    var Eventful = __webpack_require__(266);
 	
 	    var mouseHandlerNames = [
 	        'click', 'dblclick', 'mousewheel', 'mouseout'
@@ -16625,7 +16627,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 312 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16636,7 +16638,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var Eventful = __webpack_require__(264);
+	    var Eventful = __webpack_require__(266);
 	
 	    var isDomLevel2 = (typeof window !== 'undefined') && !!window.addEventListener;
 	
@@ -16727,7 +16729,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 313 */
+/* 315 */
 /***/ function(module, exports) {
 
 	// TODO Draggable for group
@@ -16815,7 +16817,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 314 */
+/* 316 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16938,7 +16940,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 315 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16951,9 +16953,9 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var util = __webpack_require__(235);
+	    var util = __webpack_require__(237);
 	
-	    var Group = __webpack_require__(261);
+	    var Group = __webpack_require__(263);
 	
 	    function shapeCompareFunc(a, b) {
 	        if (a.zlevel === b.zlevel) {
@@ -17185,7 +17187,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 316 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17200,8 +17202,8 @@ webpackJsonp([32],[
 	// https://developer.apple.com/videos/wwdc2014/#236
 	
 	
-	    var util = __webpack_require__(235);
-	    var Dispatcher = __webpack_require__(312).Dispatcher;
+	    var util = __webpack_require__(237);
+	    var Dispatcher = __webpack_require__(314).Dispatcher;
 	
 	    var requestAnimationFrame = (typeof window !== 'undefined' &&
 	                                    (window.requestAnimationFrame
@@ -17212,7 +17214,7 @@ webpackJsonp([32],[
 	                                    setTimeout(func, 16);
 	                                };
 	
-	    var Animator = __webpack_require__(267);
+	    var Animator = __webpack_require__(269);
 	    /**
 	     * @typedef {Object} IZRenderStage
 	     * @property {Function} update
@@ -17413,7 +17415,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 317 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17426,12 +17428,12 @@ webpackJsonp([32],[
 	 */
 	 
 	
-	    var config = __webpack_require__(272);
-	    var util = __webpack_require__(235);
-	    var log = __webpack_require__(271);
-	    var BoundingRect = __webpack_require__(247);
+	    var config = __webpack_require__(274);
+	    var util = __webpack_require__(237);
+	    var log = __webpack_require__(273);
+	    var BoundingRect = __webpack_require__(249);
 	
-	    var Layer = __webpack_require__(318);
+	    var Layer = __webpack_require__(320);
 	
 	    function parseInt10(val) {
 	        return parseInt(val, 10);
@@ -18110,7 +18112,7 @@ webpackJsonp([32],[
 	                path.brush(ctx);
 	            }
 	
-	            var ImageShape = __webpack_require__(291);
+	            var ImageShape = __webpack_require__(293);
 	            var imgShape = new ImageShape({
 	                id: id,
 	                style: {
@@ -18151,7 +18153,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 318 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18160,8 +18162,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var util = __webpack_require__(235);
-	    var config = __webpack_require__(272);
+	    var util = __webpack_require__(237);
+	    var config = __webpack_require__(274);
 	
 	    function returnFalse() {
 	        return false;
@@ -18371,13 +18373,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 319 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var graphic = __webpack_require__(274);
-	    var zrUtil = __webpack_require__(235);
+	    var graphic = __webpack_require__(276);
+	    var zrUtil = __webpack_require__(237);
 	    var PI = Math.PI;
 	    /**
 	     * @param {module:echarts/ExtensionAPI} api
@@ -18474,11 +18476,11 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 320 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	    var Gradient = __webpack_require__(236);
+	    var Gradient = __webpack_require__(238);
 	    module.exports = function (seriesType, styleType, ecModel) {
 	        function encodeColor(seriesModel) {
 	            var colorAccessPath = [styleType, 'normal', 'color'];
@@ -18515,14 +18517,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 321 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Compatitable with 2.0
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var compatStyle = __webpack_require__(322);
+	    var zrUtil = __webpack_require__(237);
+	    var compatStyle = __webpack_require__(324);
 	
 	    function get(opt, path) {
 	        path = path.split(',');
@@ -18625,12 +18627,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 322 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    var POSSIBLE_STYLES = [
 	        'areaStyle', 'lineStyle', 'nodeStyle', 'linkStyle',
@@ -18706,42 +18708,42 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 323 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var echarts = __webpack_require__(233);
+	    var zrUtil = __webpack_require__(237);
+	    var echarts = __webpack_require__(235);
 	
-	    __webpack_require__(324);
-	    __webpack_require__(329);
+	    __webpack_require__(326);
+	    __webpack_require__(331);
 	
 	    echarts.registerVisualCoding('chart', zrUtil.curry(
-	        __webpack_require__(335), 'line', 'circle', 'line'
+	        __webpack_require__(337), 'line', 'circle', 'line'
 	    ));
 	    echarts.registerLayout(zrUtil.curry(
-	        __webpack_require__(336), 'line'
+	        __webpack_require__(338), 'line'
 	    ));
 	
 	    // Down sample after filter
 	    echarts.registerProcessor('statistic', zrUtil.curry(
-	        __webpack_require__(337), 'line'
+	        __webpack_require__(339), 'line'
 	    ));
 	
 	    // In case developer forget to include grid component
-	    __webpack_require__(338);
+	    __webpack_require__(340);
 
 
 /***/ },
-/* 324 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var createListFromArray = __webpack_require__(325);
-	    var SeriesModel = __webpack_require__(259);
+	    var createListFromArray = __webpack_require__(327);
+	    var SeriesModel = __webpack_require__(261);
 	
 	    module.exports = SeriesModel.extend({
 	
@@ -18826,17 +18828,17 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 325 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var List = __webpack_require__(326);
-	    var completeDimensions = __webpack_require__(328);
-	    var zrUtil = __webpack_require__(235);
-	    var modelUtil = __webpack_require__(237);
-	    var CoordinateSystem = __webpack_require__(257);
+	    var List = __webpack_require__(328);
+	    var completeDimensions = __webpack_require__(330);
+	    var zrUtil = __webpack_require__(237);
+	    var modelUtil = __webpack_require__(239);
+	    var CoordinateSystem = __webpack_require__(259);
 	    var getDataItemValue = modelUtil.getDataItemValue;
 	    var converDataValue = modelUtil.converDataValue;
 	
@@ -19029,7 +19031,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 326 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -19054,11 +19056,11 @@ webpackJsonp([32],[
 	        'time': Array
 	    };
 	
-	    var Model = __webpack_require__(240);
-	    var DataDiffer = __webpack_require__(327);
+	    var Model = __webpack_require__(242);
+	    var DataDiffer = __webpack_require__(329);
 	
-	    var zrUtil = __webpack_require__(235);
-	    var modelUtil = __webpack_require__(237);
+	    var zrUtil = __webpack_require__(237);
+	    var modelUtil = __webpack_require__(239);
 	    var isObject = zrUtil.isObject;
 	
 	    var IMMUTABLE_PROPERTIES = [
@@ -20051,7 +20053,7 @@ webpackJsonp([32],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 327 */
+/* 329 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20176,7 +20178,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 328 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20184,7 +20186,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    /**
 	     * Complete the dimensions array guessed from the data structure.
@@ -20246,21 +20248,21 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 329 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var SymbolDraw = __webpack_require__(330);
-	    var Symbol = __webpack_require__(331);
-	    var lineAnimationDiff = __webpack_require__(333);
-	    var graphic = __webpack_require__(274);
+	    var zrUtil = __webpack_require__(237);
+	    var SymbolDraw = __webpack_require__(332);
+	    var Symbol = __webpack_require__(333);
+	    var lineAnimationDiff = __webpack_require__(335);
+	    var graphic = __webpack_require__(276);
 	
-	    var polyHelper = __webpack_require__(334);
+	    var polyHelper = __webpack_require__(336);
 	
-	    var ChartView = __webpack_require__(273);
+	    var ChartView = __webpack_require__(275);
 	
 	    function isPointsSame(points1, points2) {
 	        if (points1.length !== points2.length) {
@@ -20796,7 +20798,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 330 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20804,8 +20806,8 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var graphic = __webpack_require__(274);
-	    var Symbol = __webpack_require__(331);
+	    var graphic = __webpack_require__(276);
+	    var Symbol = __webpack_require__(333);
 	
 	    /**
 	     * @constructor
@@ -20912,7 +20914,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 331 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20920,10 +20922,10 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var symbolUtil = __webpack_require__(332);
-	    var graphic = __webpack_require__(274);
-	    var numberUtil = __webpack_require__(239);
+	    var zrUtil = __webpack_require__(237);
+	    var symbolUtil = __webpack_require__(334);
+	    var graphic = __webpack_require__(276);
+	    var numberUtil = __webpack_require__(241);
 	
 	    function normalizeSymbolSize(symbolSize) {
 	        if (!zrUtil.isArray(symbolSize)) {
@@ -21170,15 +21172,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 332 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// Symbol factory
 	
 	
-	    var graphic = __webpack_require__(274);
-	    var BoundingRect = __webpack_require__(247);
+	    var graphic = __webpack_require__(276);
+	    var BoundingRect = __webpack_require__(249);
 	
 	    /**
 	     * Triangle shape
@@ -21528,7 +21530,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 333 */
+/* 335 */
 /***/ function(module, exports) {
 
 	
@@ -21742,14 +21744,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 334 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Poly path support NaN point
 	
 	
-	    var Path = __webpack_require__(276);
-	    var vec2 = __webpack_require__(248);
+	    var Path = __webpack_require__(278);
+	    var vec2 = __webpack_require__(250);
 	
 	    var vec2Min = vec2.min;
 	    var vec2Max = vec2.max;
@@ -21948,7 +21950,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 335 */
+/* 337 */
 /***/ function(module, exports) {
 
 	
@@ -21997,7 +21999,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 336 */
+/* 338 */
 /***/ function(module, exports) {
 
 	
@@ -22025,7 +22027,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 337 */
+/* 339 */
 /***/ function(module, exports) {
 
 	
@@ -22103,21 +22105,21 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 338 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var graphic = __webpack_require__(274);
-	    var zrUtil = __webpack_require__(235);
+	    var graphic = __webpack_require__(276);
+	    var zrUtil = __webpack_require__(237);
 	
-	    __webpack_require__(339);
+	    __webpack_require__(341);
 	
-	    __webpack_require__(356);
+	    __webpack_require__(358);
 	
 	    // Grid view
-	    __webpack_require__(233).extendComponentView({
+	    __webpack_require__(235).extendComponentView({
 	
 	        type: 'grid',
 	
@@ -22137,7 +22139,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 339 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22147,12 +22149,12 @@ webpackJsonp([32],[
 	 */
 	var factory = exports;
 	
-	    var layout = __webpack_require__(253);
-	    var axisHelper = __webpack_require__(340);
+	    var layout = __webpack_require__(255);
+	    var axisHelper = __webpack_require__(342);
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Cartesian2D = __webpack_require__(346);
-	    var Axis2D = __webpack_require__(348);
+	    var zrUtil = __webpack_require__(237);
+	    var Cartesian2D = __webpack_require__(348);
+	    var Axis2D = __webpack_require__(350);
 	
 	    var each = zrUtil.each;
 	
@@ -22160,7 +22162,7 @@ webpackJsonp([32],[
 	    var niceScaleExtent = axisHelper.niceScaleExtent;
 	
 	    // 依赖 GridModel, AxisModel 做预处理
-	    __webpack_require__(351);
+	    __webpack_require__(353);
 	
 	    /**
 	     * Check if the axis is used in the specified grid
@@ -22555,26 +22557,26 @@ webpackJsonp([32],[
 	    // For deciding which dimensions to use when creating list data
 	    Grid.dimensions = Cartesian2D.prototype.dimensions;
 	
-	    __webpack_require__(257).register('cartesian2d', Grid);
+	    __webpack_require__(259).register('cartesian2d', Grid);
 	
 	    module.exports = Grid;
 
 
 /***/ },
-/* 340 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var OrdinalScale = __webpack_require__(341);
-	    var IntervalScale = __webpack_require__(343);
-	    __webpack_require__(344);
-	    __webpack_require__(345);
-	    var Scale = __webpack_require__(342);
+	    var OrdinalScale = __webpack_require__(343);
+	    var IntervalScale = __webpack_require__(345);
+	    __webpack_require__(346);
+	    __webpack_require__(347);
+	    var Scale = __webpack_require__(344);
 	
-	    var numberUtil = __webpack_require__(239);
-	    var zrUtil = __webpack_require__(235);
-	    var textContain = __webpack_require__(246);
+	    var numberUtil = __webpack_require__(241);
+	    var zrUtil = __webpack_require__(237);
+	    var textContain = __webpack_require__(248);
 	    var axisHelper = {};
 	
 	    /**
@@ -22768,7 +22770,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 341 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22781,8 +22783,8 @@ webpackJsonp([32],[
 	// FIXME only one data
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Scale = __webpack_require__(342);
+	    var zrUtil = __webpack_require__(237);
+	    var Scale = __webpack_require__(344);
 	
 	    var scaleProto = Scale.prototype;
 	
@@ -22868,7 +22870,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 342 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22877,7 +22879,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var clazzUtil = __webpack_require__(241);
+	    var clazzUtil = __webpack_require__(243);
 	
 	    function Scale() {
 	        /**
@@ -22996,7 +22998,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 343 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23006,9 +23008,9 @@ webpackJsonp([32],[
 	
 	
 	
-	    var numberUtil = __webpack_require__(239);
-	    var formatUtil = __webpack_require__(238);
-	    var Scale = __webpack_require__(342);
+	    var numberUtil = __webpack_require__(241);
+	    var formatUtil = __webpack_require__(240);
+	    var Scale = __webpack_require__(344);
 	
 	    var mathFloor = Math.floor;
 	    var mathCeil = Math.ceil;
@@ -23203,7 +23205,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 344 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23213,11 +23215,11 @@ webpackJsonp([32],[
 	
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var numberUtil = __webpack_require__(239);
-	    var formatUtil = __webpack_require__(238);
+	    var zrUtil = __webpack_require__(237);
+	    var numberUtil = __webpack_require__(241);
+	    var formatUtil = __webpack_require__(240);
 	
-	    var IntervalScale = __webpack_require__(343);
+	    var IntervalScale = __webpack_require__(345);
 	
 	    var intervalScaleProto = IntervalScale.prototype;
 	
@@ -23366,7 +23368,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 345 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23375,12 +23377,12 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Scale = __webpack_require__(342);
-	    var numberUtil = __webpack_require__(239);
+	    var zrUtil = __webpack_require__(237);
+	    var Scale = __webpack_require__(344);
+	    var numberUtil = __webpack_require__(241);
 	
 	    // Use some method of IntervalScale
-	    var IntervalScale = __webpack_require__(343);
+	    var IntervalScale = __webpack_require__(345);
 	
 	    var scaleProto = Scale.prototype;
 	    var intervalScaleProto = IntervalScale.prototype;
@@ -23501,14 +23503,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 346 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Cartesian = __webpack_require__(347);
+	    var zrUtil = __webpack_require__(237);
+	    var Cartesian = __webpack_require__(349);
 	
 	    function Cartesian2D(name) {
 	
@@ -23617,7 +23619,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 347 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23628,7 +23630,7 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    function dimAxisMapper(dim) {
 	        return this._axes[dim];
@@ -23735,14 +23737,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 348 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var Axis = __webpack_require__(349);
-	    var axisLabelInterval = __webpack_require__(350);
+	    var zrUtil = __webpack_require__(237);
+	    var Axis = __webpack_require__(351);
+	    var axisLabelInterval = __webpack_require__(352);
 	
 	    /**
 	     * Extend axis 2d
@@ -23857,14 +23859,14 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 349 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var numberUtil = __webpack_require__(239);
+	    var numberUtil = __webpack_require__(241);
 	    var linearMap = numberUtil.linearMap;
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    function fixExtentWithBands(extent, nTick) {
 	        var size = extent[1] - extent[0];
@@ -24092,7 +24094,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 350 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24102,8 +24104,8 @@ webpackJsonp([32],[
 	
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var axisHelper = __webpack_require__(340);
+	    var zrUtil = __webpack_require__(237);
+	    var axisHelper = __webpack_require__(342);
 	
 	    module.exports = function (axis) {
 	        var axisModel = axis.model;
@@ -24123,7 +24125,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 351 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24131,8 +24133,8 @@ webpackJsonp([32],[
 	// 所以这里也要被 Cartesian2D 依赖
 	
 	
-	    __webpack_require__(352);
-	    var ComponentModel = __webpack_require__(251);
+	    __webpack_require__(354);
+	    var ComponentModel = __webpack_require__(253);
 	
 	    module.exports = ComponentModel.extend({
 	
@@ -24167,15 +24169,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 352 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	    var ComponentModel = __webpack_require__(251);
-	    var zrUtil = __webpack_require__(235);
-	    var axisModelCreator = __webpack_require__(353);
+	    var ComponentModel = __webpack_require__(253);
+	    var zrUtil = __webpack_require__(237);
+	    var axisModelCreator = __webpack_require__(355);
 	
 	    var AxisModel = ComponentModel.extend({
 	
@@ -24263,7 +24265,7 @@ webpackJsonp([32],[
 	        return option.type || (option.data ? 'category' : 'value');
 	    }
 	
-	    zrUtil.merge(AxisModel.prototype, __webpack_require__(355));
+	    zrUtil.merge(AxisModel.prototype, __webpack_require__(357));
 	
 	    var extraOption = {
 	        gridIndex: 0
@@ -24276,15 +24278,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 353 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var axisDefault = __webpack_require__(354);
-	    var zrUtil = __webpack_require__(235);
-	    var ComponentModel = __webpack_require__(251);
-	    var layout = __webpack_require__(253);
+	    var axisDefault = __webpack_require__(356);
+	    var zrUtil = __webpack_require__(237);
+	    var ComponentModel = __webpack_require__(253);
+	    var layout = __webpack_require__(255);
 	
 	    // FIXME axisType is fixed ?
 	    var AXIS_TYPES = ['value', 'category', 'time', 'log'];
@@ -24339,12 +24341,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 354 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
+	    var zrUtil = __webpack_require__(237);
 	
 	    var defaultOption = {
 	        show: true,
@@ -24470,13 +24472,13 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 355 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var axisHelper = __webpack_require__(340);
+	    var zrUtil = __webpack_require__(237);
+	    var axisHelper = __webpack_require__(342);
 	
 	    function getName(obj) {
 	        if (zrUtil.isObject(obj) && obj.value != null) {
@@ -24514,27 +24516,27 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 356 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// TODO boundaryGap
 	
 	
-	    __webpack_require__(352);
+	    __webpack_require__(354);
 	
-	    __webpack_require__(357);
+	    __webpack_require__(359);
 
 
 /***/ },
-/* 357 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var graphic = __webpack_require__(274);
-	    var AxisBuilder = __webpack_require__(358);
+	    var zrUtil = __webpack_require__(237);
+	    var graphic = __webpack_require__(276);
+	    var AxisBuilder = __webpack_require__(360);
 	    var ifIgnoreOnTick = AxisBuilder.ifIgnoreOnTick;
 	    var getInterval = AxisBuilder.getInterval;
 	
@@ -24545,7 +24547,7 @@ webpackJsonp([32],[
 	        'splitLine', 'splitArea'
 	    ];
 	
-	    var AxisView = __webpack_require__(233).extendComponentView({
+	    var AxisView = __webpack_require__(235).extendComponentView({
 	
 	        type: 'axis',
 	
@@ -24806,15 +24808,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 358 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var graphic = __webpack_require__(274);
-	    var Model = __webpack_require__(240);
-	    var numberUtil = __webpack_require__(239);
+	    var zrUtil = __webpack_require__(237);
+	    var graphic = __webpack_require__(276);
+	    var Model = __webpack_require__(242);
+	    var numberUtil = __webpack_require__(241);
 	    var remRadian = numberUtil.remRadian;
 	    var isRadianAroundZero = numberUtil.isRadianAroundZero;
 	
@@ -25252,15 +25254,15 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 359 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// FIXME Better way to pack data in graphic element
 	
 	
-	    __webpack_require__(360);
+	    __webpack_require__(362);
 	
-	    __webpack_require__(361);
+	    __webpack_require__(363);
 	
 	    // Show tip action
 	    /**
@@ -25271,7 +25273,7 @@ webpackJsonp([32],[
 	     * @property {number} [x]
 	     * @property {number} [y]
 	     */
-	    __webpack_require__(233).registerAction(
+	    __webpack_require__(235).registerAction(
 	        {
 	            type: 'showTip',
 	            event: 'showTip',
@@ -25281,7 +25283,7 @@ webpackJsonp([32],[
 	        function () {}
 	    );
 	    // Hide tip action
-	    __webpack_require__(233).registerAction(
+	    __webpack_require__(235).registerAction(
 	        {
 	            type: 'hideTip',
 	            event: 'hideTip',
@@ -25293,12 +25295,12 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 360 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    __webpack_require__(233).extendComponentModel({
+	    __webpack_require__(235).extendComponentModel({
 	
 	        type: 'tooltip',
 	
@@ -25397,18 +25399,18 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 361 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	
-	    var TooltipContent = __webpack_require__(362);
-	    var graphic = __webpack_require__(274);
-	    var zrUtil = __webpack_require__(235);
-	    var formatUtil = __webpack_require__(238);
-	    var numberUtil = __webpack_require__(239);
+	    var TooltipContent = __webpack_require__(364);
+	    var graphic = __webpack_require__(276);
+	    var zrUtil = __webpack_require__(237);
+	    var formatUtil = __webpack_require__(240);
+	    var numberUtil = __webpack_require__(241);
 	    var parsePercent = numberUtil.parsePercent;
-	    var env = __webpack_require__(310);
+	    var env = __webpack_require__(312);
 	
 	    function dataEqual(a, b) {
 	        if (!a || !b) {
@@ -25562,7 +25564,7 @@ webpackJsonp([32],[
 	            || trigger === 'item');
 	    }
 	
-	    __webpack_require__(233).extendComponentView({
+	    __webpack_require__(235).extendComponentView({
 	
 	        type: 'tooltip',
 	
@@ -26518,7 +26520,7 @@ webpackJsonp([32],[
 
 
 /***/ },
-/* 362 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26526,10 +26528,10 @@ webpackJsonp([32],[
 	 */
 	
 	
-	    var zrUtil = __webpack_require__(235);
-	    var zrColor = __webpack_require__(270);
-	    var eventUtil = __webpack_require__(312);
-	    var formatUtil = __webpack_require__(238);
+	    var zrUtil = __webpack_require__(237);
+	    var zrColor = __webpack_require__(272);
+	    var eventUtil = __webpack_require__(314);
+	    var formatUtil = __webpack_require__(240);
 	    var each = zrUtil.each;
 	    var toCamelCase = formatUtil.toCamelCase;
 	

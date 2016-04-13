@@ -95,9 +95,10 @@
 
 					</form>
 
-					<div class="demoImg imgWrap">
+					<a class="demoImg imgWrap rel dib" href="/sample" target="_blank">
 						<img src="./img/demo2.png" class="responsive">
-					</div>
+						<span class="btn btn-sample abs">样本预览</span>
+					</a>
 					</div>
 				</div>
 			</div>
