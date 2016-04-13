@@ -13,31 +13,7 @@
         "isLogin" : "1"
     },
     "today": [
-        {
-            "status": 3,
-             "count":10,
-            "describtion": "已经结束",
-            "college": {
-                "collegeId": "1",
-                "collegeName": "清华大学"
-            }
-        },
-        {
-             "status": 2,
-            "describtion": "2016-04-11 09:00:00--12:00:00",
-            "college": {
-                "collegeId": "1",
-                "collegeName": "清华大学"
-            }
-        },
-         {
-             "status": 1,
-            "describtion": "正在进行中",
-            "college": {
-                "collegeId": "1",
-                "collegeName": "清华大学"
-            }
-        }
+       
     ],
     "forecast": [
          {
@@ -58,23 +34,6 @@
         }
     ],
     "history": [
-        {
-            "status": 3,
-             "count":10,
-            "describtion": "已经结束",
-            "college": {
-                "collegeId": "1",
-                "collegeName": "清华大学"
-            }
-        },
-        {
-            "status": 3,
-             "count":10,
-            "describtion": "已经结束",
-            "college": {
-                "collegeId": "1",
-                "collegeName": "清华大学"
-            }
-        }
+        
     ]
 }
