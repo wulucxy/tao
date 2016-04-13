@@ -14,8 +14,8 @@ var uploader = {
 
 		 var settings = {
             flash_url : "http://i.jd.com/commons/swfupload.swf",
-            upload_url: preServer+provinceId+"/profile/avatar",
-            post_params: {"flashuploadimg":""},
+            upload_url: preServer+provinceId+"/attach/uploadAttach",
+            post_params: {"avatar":""},
             file_post_name : "file",
             file_size_limit : "4 MB",
             file_types : "*.jpg;*.gif;*.png;*.jpeg;*.bmp",
