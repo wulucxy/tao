@@ -33,9 +33,9 @@
 						
 						<div class="s-search">
 							<div class="input-group rel clearfix">
-					          <input type="text" class="form-control fl" placeholder="请输入院校名称">
+					          <input type="text" class="form-control fl" placeholder="请输入院校名称" name="keyword" id="qInput">
 					          <span class="input-group-btn">
-					            <button class="btn btn-default btn-search" type="button">
+					            <button class="btn btn-default btn-search" type="button" id="sBtn">
 					            	<i class="iconList icon-search"></i>
 					            </button>
 					          </span>
@@ -44,39 +44,7 @@
 
 						<section class="faqList history">
 							<div class="list-group">
-						  <a href="javascript:;" class="list-group-item clearfix">
-						    <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						 <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						  <a href="javascript:;" class="list-group-item clearfix">
-						   <div class="fl">
-						    	<p class="collegeName">浙江大学</p>
-						    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
-						    </div>
-						    <i class="fr taoIcon icon-right"></i>
-						  </a>
-						</div>
-						
-						<!-- 加载更多模块 -->
-						<%@ include file = "/partials/_loadMore.jsp" %>
-
+							</div>
 						</section>
 
 					</div>

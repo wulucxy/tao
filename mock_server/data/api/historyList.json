@@ -5,11 +5,11 @@
 	        "scheduleId":"",               
 	        "startTime":1472324244,         
 	        "endTime":14723424324,          
-	        "count":0,                    
+	        "count":15,                    
 	        "college":
 	        {
 	            "collegeId":"1",             
-	            "collegeName":"清华大学",      
+	            "collegeName":"清华大学"   
 	        }
 	    },
 	    
@@ -17,11 +17,11 @@
 	        "scheduleId":"",               
 	        "startTime":1472324244,         
 	        "endTime":14723424324,          
-	        "count":0,                    
+	        "count":15,                    
 	        "college":
 	        {
 	            "collegeId":"1",             
-	            "collegeName":"清华大学",      
+	            "collegeName":"清华大学"   
 	        }
 	    }
 	]

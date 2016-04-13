@@ -19,15 +19,16 @@ var history = {
 		//默认分页开始
 		this.pager = 1;
 		this.capacity = 10;
-		this.initList();
+		this.reqList();
 		this.bindEvt();
 	},
 
-	initList : function(){
+	reqList : function(){
 		var that = this;
 		$.ajax({
 			url : preServer+provinceId+"/tzy/qa/history",
-			type : "get",
+			type : "post",
+			data : JSON.stringify({"keyword":$("[name=keyword]").val()}),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
@@ -38,85 +39,42 @@ var history = {
 					return;
 				}
 
-				this.rendList();
+				that.rendList(res.result);
 				
 			},
-		})
-
-	},
-
-	requestList : function(btn){
-		var that = this;
-
-		var parm = [];
-		parm.push("capacity="+that.capacity);
-		parm.push("page="+that.pager);
-		parm.push("code="+$(".infoTag").eq(that.tagIndex).attr("code"));
-
-		$.ajax({
-			url : preServer+provinceId+"/news?"+parm.join("&"),
-			type : "get",
-			success : function(res){
-				if(typeof res == "string"){
-					var res = $.parseJSON(res);
-				}
-
-				if(res.code!=1){
-					warn(res.msg);
-					return;
-				}
-
-				$(".infoListWrap").removeClass("preloading");
-				//如果是点击加载更多，页码++，否则重置为1
-                if(btn){
-                    that.pager++;
-                }else{
-                    that.pager = 1;
-                }
-
-				that.loadList(res,that.pager);
-			},
-			error : function(){
-				$(".infoListWrap").removeClass("preloading");
+			error : function(err){
+				console.log(err);
 			}
-		});
+		})
 	},
-	loadList : function(data,pager){
-		var that = this,o = that.options;
-		var _html = tmpl_list(data);
 
-		if(pager == 1){
-			$(".infoList").empty().html(_html);
-			$(".s-title").text($(".infoTag.active").text());
-		}else{
-			$(".infoList").append(_html);
-		}
-
-
-		$(".btn-loading").removeClass("loading disabled");
-
-		var pageCount = Math.ceil(data.total / that.capacity);
-		//最后一页
-		if(pager >= pageCount){
-			$(".btn-loading").addClass("loading-all");
+	rendList : function(res){
+		var that = this;
+		var resData = {
+			data : res
 		};
 
-		if($(".infoList .no_transList").length){
-			$(".btn-loading").addClass("loading-all");
-		}
+		$(".faqList .list-group").empty();
+		$(".faqList .list-group").append(tmpl_list(resData)).hide().fadeIn();
+
 	},
 
 	bindEvt : function(){
 		var that = this;
-		$(".btn-loading").on("click",function(e){
-    		e.preventDefault();
-    		var btn = $(this).closest(".btn");
-    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-    		btn.addClass("disabled loading");
-    		that.requestList(btn);
-    	});
+		$("#sBtn").on("click",function(e){
+            e.preventDefault();
+            var oInput = $("#qInput"),btn = $(this).closest(".btn");
+            if($.trim(oInput.val()) == ""){
+                warn("请输入院校关键词搜索");
+                return;
+            }
 
-    	$(".btn-loading").trigger("click");
+            if(btn.hasClass('disabled')) return;
+            btn.addClass("disabled");
+
+            that.reqList();
+
+        })
 	}
 };
 

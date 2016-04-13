@@ -2,10 +2,10 @@
 	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>
 <% }else{ %>	
 <% for (var i = 0; i < data.length; i++) { %>
- <a href="javascript:;" class="list-group-item clearfix">
+ <a href="/box/college_faq/<%= data[i].college.collegeId %>" target="_blank" class="list-group-item clearfix">
     <div class="fl">
-    	<p class="collegeName">浙江大学</p>
-    	<p class="f13">总共&nbsp;158&nbsp;条回答</p>
+    	<p class="collegeName"> <%= data[i].college.collegeName  %></p>
+    	<p class="f13">总共&nbsp;<%= data[i].count %>&nbsp;条回答</p>
     </div>
     <i class="fr taoIcon icon-right"></i>
   </a>
