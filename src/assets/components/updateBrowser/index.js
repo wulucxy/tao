@@ -14,7 +14,7 @@ var updateBrowser = {
 		if (browser.isIE () && browser.isIE () < 8) {
 		 	that.bindEvt();
 		}else{
-			that.bindEvt();
+			//that.bindEvt();
 			return false;
 		}
 	},
