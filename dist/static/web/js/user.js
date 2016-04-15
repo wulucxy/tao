@@ -919,16 +919,41 @@ webpackJsonp([38],{
 	        };
 	        swfu = new SWFUpload(settings);
 	
-	        function froward(){
+	        function froward(file,serveData){
 			   // warn("头像上传成功");
 		    //    window.location.href='/user';
-	            that.setAvatar();   
+	            that.setAvatar(file);   
 		    }
 	
 		    window.froward = froward;
 	
+		},
 	
-		}
+	    setAvatar : function(file){
+	        var that = this;
+	
+	        $.ajax({
+	            url : preServer+provinceId+'/profile/avatar',
+	            type : "post",
+	            data : JSON.stringify({avatar:file}),
+	            success : function(res){
+	                if(typeof res == "string"){
+	                    var res = $.parseJSON(res);
+	                }
+	
+	                if(res.code !=1){
+	                    warn(res.msg);
+	                    return;
+	                }
+	
+	                warn("头像上传成功",function(){
+	                    window.location.href='/user';
+	                });
+	
+	            }
+	
+	        })
+	    }
 	
 	
 	};
