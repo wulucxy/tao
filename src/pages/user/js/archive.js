@@ -50,6 +50,8 @@ var archive = {
 			{"type":"highYear",url : "/profile/school/year",field : "year"},
 		];
 
+		var uploadAll = 0;
+
 		$.each(fields,function(idx,ele){
 			var _data = {};
 			_data[ele.field] = $("[name="+ele["type"]+"]").val();
@@ -71,10 +73,21 @@ var archive = {
 						warn(res.msg);
 						return;
 					}
+
+					uploadAll++;
+
+					if(uploadAll == fields.length){
+						that.subSuccessCallback();
+					}
+
 				}
 			})
 
 		});
+	},
+
+	subSuccessCallback : function(){
+		warn("个人资料更新成功");
 	},
 
 	bindEvt : function(){

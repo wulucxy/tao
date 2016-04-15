@@ -92,7 +92,7 @@
 			<c:forEach var="list" items="${collegeList}">
 				<li class="college">
 					<c:choose>
-				    <c:when test="${list.href != ''}">
+				    <c:when test="${list.href != null}">
 				   		<a href="${list.href}" target="_blank">
 							<img src="${list.imgUrl}" class="responsive">
 						</a>

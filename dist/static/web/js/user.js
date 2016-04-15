@@ -774,6 +774,8 @@ webpackJsonp([38],{
 				{"type":"highYear",url : "/profile/school/year",field : "year"}
 			];
 	
+			var uploadAll = 0;
+	
 			$.each(fields,function(idx,ele){
 				var _data = {};
 				_data[ele.field] = $("[name="+ele["type"]+"]").val();
@@ -795,10 +797,21 @@ webpackJsonp([38],{
 							warn(res.msg);
 							return;
 						}
+	
+						uploadAll++;
+	
+						if(uploadAll == fields.length){
+							that.subSuccessCallback();
+						}
+	
 					}
 				})
 	
 			});
+		},
+	
+		subSuccessCallback : function(){
+			warn("个人资料更新成功");
 		},
 	
 		bindEvt : function(){
@@ -907,8 +920,9 @@ webpackJsonp([38],{
 	        swfu = new SWFUpload(settings);
 	
 	        function froward(){
-			   warn("头像上传成功");
-		       window.location.href='/user';
+			   // warn("头像上传成功");
+		    //    window.location.href='/user';
+	            that.setAvatar();   
 		    }
 	
 		    window.froward = froward;

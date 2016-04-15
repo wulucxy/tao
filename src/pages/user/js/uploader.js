@@ -41,8 +41,9 @@ var uploader = {
         swfu = new SWFUpload(settings);
 
         function froward(){
-		   warn("头像上传成功");
-	       window.location.href='/user';
+		   // warn("头像上传成功");
+	    //    window.location.href='/user';
+            that.setAvatar();   
 	    }
 
 	    window.froward = froward;

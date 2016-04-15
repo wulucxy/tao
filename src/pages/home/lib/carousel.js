@@ -8,7 +8,7 @@ var carousel = {
 
 		var settings=$.extend({
 			speed: 500,   
-			delay: 20000,  
+			delay: 4000,  
 			pause: true,
 			slideNum:6
 		},o);
@@ -36,15 +36,11 @@ var carousel = {
 		this.oneMarginRight = parseInt(this.li.eq(0).css('marginRight'));
 		this.rowNum = Math.round((that.cW+this.oneMarginRight) / this.oW);
 		this.ul.css({width: this.len * that.oW});  //ul列表宽度为li列表宽度的个数倍
+		this.ul.fadeIn();
 	},
 
 	toggleControl : function(){
 		var that = this, $this = that.target,o = that.options;
-
-		//item数量不够轮播
-		if(this.oW*this.li.length <= (that.cW+this.oneMarginRight)){
-			return;
-		}
 
 		if(that.iNow >= that.len - that.rowNum){   //走到最后一步
 			that.iNow = that.len - that.rowNum;
@@ -109,6 +105,11 @@ var carousel = {
 
 	to : function(index){
 		var that = this, $this = that.target,o = that.options;
+
+		//item数量不够轮播
+		if(this.oW*this.li.length <= (that.cW+this.oneMarginRight)){
+			return;
+		}
 
 		that.toggleControl();
 
