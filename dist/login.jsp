@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.65394861.css" rel="stylesheet"><link href="/static/web/css/login.bcd8f186.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.368b14c7.css" rel="stylesheet"><link href="/static/web/css/login.bcd8f186.css" rel="stylesheet"></head>
 <body>
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">

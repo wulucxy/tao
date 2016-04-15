@@ -87,7 +87,9 @@ var archive = {
 	},
 
 	subSuccessCallback : function(){
-		warn("个人资料更新成功");
+		warn("个人资料更新成功",function(){
+			window.location = "/user";
+		});
 	},
 
 	bindEvt : function(){

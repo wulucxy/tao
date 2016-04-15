@@ -382,7 +382,7 @@ webpackJsonp([21],{
 	obj || (obj = {});
 	var __t, __p = '';
 	with (obj) {
-	__p += '<div class="browser_nav" id="browser_nav">\n	<div class="browser_nav_room">\n		<span class="txt">检测到您的浏览器版本过低，建议您使用如下浏览器</span>\n		<a href="http://chrome.360.cn/"target="_blank"class="b_360 blue">360极速</a>\n		<a href="https://www.google.com/intl/zh-CN/chrome/browser/"target="_blank"class="b_chrome blue">Google Chrome</a>\n		<a href="https://www.mozilla.org/zh-CN/firefox/new/?utm_source=firefox-com&utm_medium=referral"target="_blank"class="b_firefox blue">Firefox</a>\n		达到页面最佳效果！\n		<a href="javascript:;" class="nav_close fr" id="nav_close">关闭</a>\n	</div>\n</div>';
+	__p += '<div class="browser_nav" id="browser_nav">\n	<div class="browser_nav_room rel">\n		<span class="txt">检测到您的浏览器版本过低，建议您使用如下浏览器</span>\n		<a href="https://www.google.com/intl/zh-CN/chrome/browser/"target="_blank"class="b_chrome blue">Google Chrome</a>\n		<a href="https://www.mozilla.org/zh-CN/firefox/new/?utm_source=firefox-com&utm_medium=referral"target="_blank"class="b_firefox blue">Firefox</a>\n		<a href="http://chrome.360.cn/"target="_blank"class="b_360 blue">360极速</a>\n		达到页面最佳效果！\n		<a href="javascript:;" class="nav_close" id="nav_close">关闭</a>\n	</div>\n</div>';
 	
 	}
 	return __p
