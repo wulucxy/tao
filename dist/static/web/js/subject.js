@@ -5,7 +5,7 @@ webpackJsonp([36],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(377);
+	__webpack_require__(382);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -20,29 +20,29 @@ webpackJsonp([36],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(379);
+	var dataSet = __webpack_require__(384);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 377:
+/***/ 382:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 379:
+/***/ 384:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
-	var tmpl = __webpack_require__(380);
+	var tmpl = __webpack_require__(385);
 	
 	var localData = __webpack_require__(140);
-	var tmpl_favWrap = __webpack_require__(381);
-	var tmpl_favList = __webpack_require__(382);
+	var tmpl_favWrap = __webpack_require__(386);
+	var tmpl_favList = __webpack_require__(387);
 	
 	var pagination = __webpack_require__(178);
 	
@@ -421,7 +421,7 @@ webpackJsonp([36],{
 
 /***/ },
 
-/***/ 380:
+/***/ 385:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -477,7 +477,7 @@ webpackJsonp([36],{
 
 /***/ },
 
-/***/ 381:
+/***/ 386:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -494,7 +494,7 @@ webpackJsonp([36],{
 
 /***/ },
 
-/***/ 382:
+/***/ 387:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

@@ -17,10 +17,13 @@ webpackJsonp([21],{
 	
 	/* 可选，视需求而定 */
 	var slider = __webpack_require__(192);
+	var carousel = __webpack_require__(193);
+	var updateBrowser = __webpack_require__(194);
+	
+	
 	slider($("#bannerShow"));
 	
-	
-	var carousel = __webpack_require__(193);
+	updateBrowser.init();
 	
 	carousel.init();
 	
@@ -311,6 +314,79 @@ webpackJsonp([21],{
 	};
 	
 	module.exports = carousel;
+
+/***/ },
+
+/***/ 194:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(36);
+	var extend =  __webpack_require__(41);
+	
+	__webpack_require__(195);
+	
+	var browser = __webpack_require__(45);
+	var Cookies = __webpack_require__(99);
+	
+	var tmpl = __webpack_require__(198);
+	
+	var updateBrowser = {
+		init : function(){
+			var that = this;
+			if (browser.isIE () && browser.isIE () < 8) {
+			 	that.bindEvt();
+			}else{
+				that.bindEvt();
+				return false;
+			}
+		},
+	
+		bindEvt : function(){
+			var that = this;
+	
+			if(Cookies.get('browser_nav')) return;
+	
+			var _body = $("body");
+			_body.animate({"padding-top":50},300);
+	
+			_body.append(tmpl());
+	
+			var _browser_nav = $("#browser_nav");
+			_browser_nav.slideDown(300);
+	
+			$("#nav_close").click(function(){
+				// 创建一天的cookie防止刷新继续弹出等
+				Cookies.set('browser_nav','close', { expires: 3 });
+				_browser_nav.slideUp(300);
+				_body.animate({"padding-top":0},300);
+			});
+		}
+	};
+	
+	
+	module.exports = updateBrowser;
+
+/***/ },
+
+/***/ 195:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 198:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '';
+	with (obj) {
+	__p += '<div class="browser_nav" id="browser_nav">\n	<div class="browser_nav_room">\n		<span class="txt">检测到您的浏览器版本过低，建议您使用如下浏览器</span>\n		<a href="http://chrome.360.cn/"target="_blank"class="b_360 blue">360极速</a>\n		<a href="https://www.google.com/intl/zh-CN/chrome/browser/"target="_blank"class="b_chrome blue">Google Chrome</a>\n		<a href="https://www.mozilla.org/zh-CN/firefox/new/?utm_source=firefox-com&utm_medium=referral"target="_blank"class="b_firefox blue">Firefox</a>\n		达到页面最佳效果！\n		<a href="javascript:;" class="nav_close fr" id="nav_close">关闭</a>\n	</div>\n</div>';
+	
+	}
+	return __p
+	}
 
 /***/ }
 
