@@ -893,7 +893,7 @@ webpackJsonp([38],{
 			var that = this,o = that.settings;
 	
 			 var settings = {
-	            flash_url : "http://i.jd.com/commons/swfupload.swf",
+	            flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
 	            upload_url: preServer+provinceId+"/attach/uploadAttach",
 	            post_params: {"avatar":""},
 	            file_post_name : "file",
