@@ -178,7 +178,7 @@ var faq = {
 		        var res = $.parseJSON(res);
 		      }
 
-		      if(res.code!=1){
+		      if(res.code==1){
 		        warn("提交成功",function(){
 		        	window.location = "/box/college_faq/success";
 		        	return false;

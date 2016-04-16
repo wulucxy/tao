@@ -257,6 +257,8 @@ var dataSet = {
     		var link = $(e.target);
 
             $("#collegeInput").val("");
+
+            that.state.searchType = 0;
     		
     		var type = link.data("value").split(":")[0],
     			val =  link.data("value").split(":")[1];
@@ -285,6 +287,9 @@ var dataSet = {
 
     	$(document).on("click","[data-action=clear]",function(e){
     		e.preventDefault();
+
+            that.state.searchType = 0;
+
             $("#collegeInput").val("");
     		$("[data-action=add]").removeClass("current");
 			that.state.tagList = [];
@@ -297,6 +302,9 @@ var dataSet = {
     		e.preventDefault();
 
             $("#collegeInput").val("");
+
+            //searchType控制是否为关键词搜索
+            that.state.searchType = 0;
 
     		var link = $(e.target).closest(".tags");
     		var type = link.data("value").split(":")[0],
@@ -320,7 +328,14 @@ var dataSet = {
     		var btn = $(this).closest(".btn");
     		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
     		btn.addClass("disabled loading");
-    		that.requestData(btn);
+
+            // 区分是否为关键字搜索 or 筛选
+            if(that.state.searchType == 1){
+                var _key = $("#collegeInput").val() || decodeURI(util.getQuery("keyword"));
+                that.searchCollegeReq($("#sBtn"),_key);
+            }else if(that.state.searchType == 0){
+                that.requestData(btn);
+            }
     	});
 
         $("#sBtn").on("click",function(e){
@@ -330,6 +345,8 @@ var dataSet = {
                 warn("请输入院校名称");
                 return;
             }
+
+            that.state.searchType = 1;
 
             if(btn.hasClass('disabled')) return;
             btn.addClass("disabled");
@@ -344,8 +361,11 @@ var dataSet = {
 
         //需要区分是通过导航搜索进来还是直接进来
         if(!!util.getQuery("keyword")){
+            that.state.searchType = 1;
             that.searchCollegeReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+            
         }else{
+            that.state.searchType = 0;
             that.requestData();
         }
         
