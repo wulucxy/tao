@@ -903,14 +903,14 @@ webpackJsonp([38],{
 	            flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
 	            upload_url: preServer+provinceId+"/attach/uploadAttach",
 	            post_params: {"avatar":""},
-	            file_post_name : "file",
+	            file_post_name : "avatar",
 	            file_size_limit : "4 MB",
 	            file_types : "*.jpg;*.gif;*.png;*.jpeg;*.bmp",
 	            file_types_description : "img",
 	            custom_settings : {
 	                cancelButtonId : "btnCancel"
 	            },
-	            debug: false,
+	            debug: true,
 	            // Button settings
 	            button_image_url: "http://i.jd.com/images/perfect_bg.jpg",
 	            button_width: "82",
