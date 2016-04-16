@@ -78,7 +78,7 @@ var info = {
 		}
 
 
-		if(pager == 1 && res.total == 0){
+		if(pager == 1 && data.total == 0){
 			$(".btn-loading").hide();
 		}else{
 			$(".btn-loading").show();
