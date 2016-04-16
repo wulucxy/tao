@@ -339,6 +339,19 @@ var dataSet = {
     	});
 
         $("#sBtn").on("click",function(e){
+            goSearch(e);
+        });
+
+        $("#collegeInput").on("keyup",function(e){
+            if(e.keyCode == 13){
+                goSearch(e);
+            }else{
+                return false;
+            }
+            
+        });
+
+        function goSearch(e){
             e.preventDefault();
             var oInput = $("#collegeInput"),btn = $(this).closest(".btn");
             if($.trim(oInput.val()) == ""){
@@ -356,8 +369,7 @@ var dataSet = {
             that.render();
 
             that.searchCollegeReq(btn);
-
-        })
+        };
 
         //需要区分是通过导航搜索进来还是直接进来
         if(!!util.getQuery("keyword")){
