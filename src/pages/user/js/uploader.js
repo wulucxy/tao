@@ -13,7 +13,8 @@ var uploader = {
 		var that = this,o = that.settings;
 
 		 var settings = {
-            flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
+            //flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
+            flash_url : "http://127.0.0.1:8080/static/echart/swfupload.swf",
             upload_url: preServer+provinceId+"/attach/uploadAttach",
             post_params: {"avatar":""},
             file_post_name : "avatar",
@@ -41,8 +42,6 @@ var uploader = {
         swfu = new SWFUpload(settings);
 
         function froward(file,serveData){
-		   // warn("头像上传成功");
-	    //    window.location.href='/user';
             that.setAvatar(file);   
 	    }
 
