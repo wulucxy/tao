@@ -26,8 +26,6 @@ var util = {
     buildDate : function(time,format){
       var that = this,date = new Date(time),data;
 
-
-
       Y = date.getFullYear() + '-';
       M = (date.getMonth()+1) + '-';
       D = date.getDate() + ' ';
@@ -204,7 +202,8 @@ var util = {
           }).appendTo($form);
       });
 
-      $form.submit();
+     $form.appendTo("body");
+     $form.trigger("submit");
   },
 
   //4.uri操作

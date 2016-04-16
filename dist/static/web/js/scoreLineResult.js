@@ -190,6 +190,8 @@ webpackJsonp([35],{
 	var tmpl_school = __webpack_require__(376);
 	var tmpl_list = __webpack_require__(377);
 	var tmpl_highschool = __webpack_require__(378);
+	
+	var browser = __webpack_require__(45);
 	//分页
 	var pagination = __webpack_require__(178);
 	
@@ -295,7 +297,12 @@ webpackJsonp([35],{
 		    	_tmpl = tmpl_list(res)
 		    }
 	
-	      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
+		  if(browser.isModernBrower){
+		  	$('.schoolLists').empty().append(_tmpl).hide().fadeIn();
+		  }else{
+		  	$('.schoolLists').empty().append(_tmpl).show();
+		  }
+	      
 	    },
 	
 	   detailpagination : function(res){

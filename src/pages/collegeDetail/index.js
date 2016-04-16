@@ -64,8 +64,8 @@ var college = {
     				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
     			});
 
-    			$("[name=province]").empty();
-    			$("[name=province]").append(optionList.join(""));
+    			$("[name=studentProvince]").empty();
+    			$("[name=studentProvince]").append(optionList.join(""));
     		},
     		error : function(){
     			warn("网络请求失败，请稍后重试");

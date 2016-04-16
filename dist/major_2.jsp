@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.66edf698.css" rel="stylesheet"><link href="/static/web/css/major_2.35167f38.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.06b3049e.css" rel="stylesheet"><link href="/static/web/css/major_2.41fe7393.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -71,7 +71,7 @@
 										</div>
 										
 									</section>
-									<section class="tab-box majorWrap">
+									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
 											</ul>
@@ -79,9 +79,6 @@
 											<%@ include file = "/partials/_loadMore.jsp" %>
 										</div>
 
-									</section>
-									<section class="tab-box infoWrap">
-										
 									</section>
 								</div>
 							</div>

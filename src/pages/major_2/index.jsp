@@ -71,7 +71,7 @@
 										</div>
 										
 									</section>
-									<section class="tab-box majorWrap">
+									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
 											</ul>
@@ -79,9 +79,6 @@
 											<%@ include file = "/partials/_loadMore.jsp" %>
 										</div>
 
-									</section>
-									<section class="tab-box infoWrap">
-										
 									</section>
 								</div>
 							</div>

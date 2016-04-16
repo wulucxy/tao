@@ -19,7 +19,7 @@ var major = {
 		var that = this;
 		var _data = {
 			capacity : that.capacity,
-			province : $("[name=province]").val(),
+			province : $("[name=studentProvince]").val(),
 			year : $("[name=year]").val(),
 			courseType : $("[name=courseType]").val(),
 			collegeId : that.collegeId
@@ -82,7 +82,7 @@ var major = {
 
 		$(".trigger").on("change",function(){
 			var _data = {
-				province : $("[name=province]").val(),
+				province : $("[name=studentProvince]").val(),
 				year : $("[name=year]").val(),
 				courseType : $("[name=courseType]").val()
 			};

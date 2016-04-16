@@ -6,6 +6,8 @@ require("./index.less");
 var tmpl_school = require("./templates/searchSchool.ejs");
 var tmpl_list = require("./templates/schoolList.ejs");
 var tmpl_highschool = require("./templates/highschool.ejs");
+
+var browser = require("../browser");
 //分页
 var pagination = require("../pagination");
 
@@ -111,7 +113,12 @@ var searchSchool = {
 	    	_tmpl = tmpl_list(res)
 	    }
 
-      $('.schoolLists').empty().append(_tmpl).hide().fadeIn();
+	  if(browser.isModernBrower){
+	  	$('.schoolLists').empty().append(_tmpl).hide().fadeIn();
+	  }else{
+	  	$('.schoolLists').empty().append(_tmpl).show();
+	  }
+      
     },
 
    detailpagination : function(res){

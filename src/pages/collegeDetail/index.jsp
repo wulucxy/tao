@@ -120,12 +120,11 @@
 										<div class="bg bg-f5">
 											<div class="pad clearfix">
 												<div class="row clearfix inline fl">
-													<label for="province" class="control-label">
+													<label for="studentProvince" class="control-label">
 														<em class="vm">生源地：</em></label>
 													<div class="selectWrap rel">
-														<select class="form-control trigger" name="province">
-															  <option value="1">浙江</option>
-															  <option value="2">湖北</option>
+														<select class="form-control trigger" name="studentProvince">
+															
 														</select>	
 													</div>
 												</div>

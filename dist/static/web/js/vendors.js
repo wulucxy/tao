@@ -10521,8 +10521,6 @@
 	    buildDate : function(time,format){
 	      var that = this,date = new Date(time),data;
 	
-	
-	
 	      Y = date.getFullYear() + '-';
 	      M = (date.getMonth()+1) + '-';
 	      D = date.getDate() + ' ';
@@ -10699,7 +10697,8 @@
 	          }).appendTo($form);
 	      });
 	
-	      $form.submit();
+	     $form.appendTo("body");
+	     $form.trigger("submit");
 	  },
 	
 	  //4.uri操作
@@ -10828,6 +10827,9 @@
 			var oInput = $("#searchField");
 			$("#searchForm").on("click","[type=submit]",function(e){
 				e.preventDefault();
+	
+	
+	
 				var btn = $(e.target).closest(".btn");
 				if($.trim(oInput.val())==""){
 					warn("请输入搜索条件");
@@ -10842,10 +10844,9 @@
 		goSearch : function(btn,oForm){
 			var that = this;
 	
-			console.log({
-				keyword : encodeURI($('[name=keyword]').val()),
-				type : $('[name=type]').val()
-			});
+			alert(
+				encodeURI($('[name=keyword]').val())+$('[name=type]').val()
+			);
 	
 			util.post(oForm.attr("action"),{
 				keyword : encodeURI($('[name=keyword]').val()),

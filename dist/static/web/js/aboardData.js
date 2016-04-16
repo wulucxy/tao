@@ -65,6 +65,7 @@ webpackJsonp([1],{
 	            $(".crumb").html(_htmlArr.join(""));
 	        }else{
 	        	$(".crumb").html('<span class="cat-text fl">已选择：</span>');
+	            $(".itemLists .item").removeClass("current");
 	        }
 	
 	        if(!$("input[name=country]").length){
@@ -99,6 +100,7 @@ webpackJsonp([1],{
 	        }
 	
 			//_data.page = that.pager;
+	        $(".schoolListWrap").addClass("preloading"); 
 	
 	        var provinceId = $("[name=province]").val();
 	
@@ -117,13 +119,16 @@ webpackJsonp([1],{
 	                    return false;
 	                }else if(res.code != "0"){
 	                    warn(res.msg);
+	                    $(".schoolListWrap").removeClass("preloading");
 	                    return false;
 	                }
 	
-	                //res = res.result;
-	
 					that.loadList(res,that.pager);
-				}
+				},
+	            error : function(){
+	                console.log(err);
+	                $(".schoolListWrap").removeClass("preloading");
+	            }
 			});
 		},
 	
@@ -243,6 +248,19 @@ webpackJsonp([1],{
 	
 	        //点击搜索
 	        $(".btn-search").on("click",function(e){
+	            goSearch(e);
+	        });
+	
+	        $("[name=school_name_key]").on("keyup",function(e){
+	            e.preventDefault();
+	            if(e.keyCode == 13){
+	                goSearch(e);
+	            }else{
+	                return false;
+	            }
+	        })
+	
+	        function goSearch(e){
 	            e.preventDefault();
 	            var oInput = $("[name=school_name_key]");
 	            if($.trim(oInput.val()) == ""){
@@ -252,9 +270,10 @@ webpackJsonp([1],{
 	
 	            var btn = $(e.target).closest(".btn");
 	
+	            that.state.tagList = [];
+	            that.updateUI();  
 	            that.requestData(btn);
-	
-	        });
+	        }
 	
 	        //默认选中第一个
 	        $(".itemLists .item").eq(0).trigger("click");

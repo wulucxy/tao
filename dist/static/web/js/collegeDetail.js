@@ -69,8 +69,8 @@ webpackJsonp([9],{
 	    				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
 	    			});
 	
-	    			$("[name=province]").empty();
-	    			$("[name=province]").append(optionList.join(""));
+	    			$("[name=studentProvince]").empty();
+	    			$("[name=studentProvince]").append(optionList.join(""));
 	    		},
 	    		error : function(){
 	    			warn("网络请求失败，请稍后重试");
@@ -226,7 +226,7 @@ webpackJsonp([9],{
 			var that = this;
 			var _data = {
 				capacity : that.capacity,
-				province : $("[name=province]").val(),
+				province : $("[name=studentProvince]").val(),
 				year : $("[name=year]").val(),
 				courseType : $("[name=courseType]").val(),
 				collegeId : that.collegeId
@@ -289,7 +289,7 @@ webpackJsonp([9],{
 	
 			$(".trigger").on("change",function(){
 				var _data = {
-					province : $("[name=province]").val(),
+					province : $("[name=studentProvince]").val(),
 					year : $("[name=year]").val(),
 					courseType : $("[name=courseType]").val()
 				};
