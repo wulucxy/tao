@@ -52,7 +52,7 @@ var dataSet = {
 
 		var _data = {
             capacity : that.capacity,
-            subjects : subjectList
+            subjectList : subjectList
 		};
 
         //如果是点击加载更多，页码++，否则重置为1
