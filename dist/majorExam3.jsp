@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
 <link href="/static/web/css/vendors.368b14c7.css" rel="stylesheet"><link href="/static/web/css/majorExam3.d41d8cd9.css" rel="stylesheet"></head>
 <body>

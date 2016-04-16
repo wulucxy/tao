@@ -6,7 +6,7 @@
 <!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>专业选择测试</title>
 </head>
 <body>

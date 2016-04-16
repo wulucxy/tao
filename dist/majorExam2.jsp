@@ -6,7 +6,7 @@
 <!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>专业选择测试</title>
 <link href="/static/web/css/vendors.368b14c7.css" rel="stylesheet"><link href="/static/web/css/majorExam2.f759be07.css" rel="stylesheet"></head>
 <body>
