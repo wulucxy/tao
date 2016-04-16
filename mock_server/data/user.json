@@ -1,11 +1,17 @@
 {
 	"user":{
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1",
         "userName":"江波",
         "userAvatar":"http://www.baidu.com", 
-        "mobile":"15558052233",  
         "province":
                      {
-                        "code":330000,
+                        "code":1,
                         "name":"浙江"
                      },
         "sex":0,

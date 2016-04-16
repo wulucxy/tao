@@ -26,8 +26,10 @@ var util = {
     buildDate : function(time,format){
       var that = this,date = new Date(time),data;
 
+
+
       Y = date.getFullYear() + '-';
-      M = (date.getMonth()) + '-';
+      M = (date.getMonth()+1) + '-';
       D = date.getDate() + ' ';
       h = date.getHours() + ':';
       m = date.getMinutes() + ':';
