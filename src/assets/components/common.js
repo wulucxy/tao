@@ -78,10 +78,6 @@ var common = {
 	goSearch : function(btn,oForm){
 		var that = this;
 
-		alert(
-			encodeURI($('[name=keyword]').val())+$('[name=type]').val()
-		);
-
 		util.post(oForm.attr("action"),{
 			keyword : encodeURI($('[name=keyword]').val()),
 			type : Number($('[name=type]').val())
