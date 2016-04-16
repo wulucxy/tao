@@ -128,7 +128,7 @@ var majors = {
 		  }else{
 		  	if(!isModernBrower){
 		  		if (label.attr("for") != ""){
-			        $("#" + label.attr("for")).click();
+			        $("#" + label.attr("for")).trigger("click");
 			        util.setupLabel();
 		  		}
 		  	}

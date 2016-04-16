@@ -133,7 +133,7 @@ webpackJsonp([6],{
 			  }else{
 			  	if(!isModernBrower){
 			  		if (label.attr("for") != ""){
-				        $("#" + label.attr("for")).click();
+				        $("#" + label.attr("for")).trigger("click");
 				        util.setupLabel();
 			  		}
 			  	}
@@ -322,7 +322,11 @@ webpackJsonp([6],{
 			 }else{ 
 				checkedStatus = ""; 
 			 } ;
-	__p += '\n	<label class="label_check">\n		<em class="icon-eye" data-supType=' +
+	__p += '\n	<label class="label_check" for="majorType' +
+	((__t = ( subs[1].id )) == null ? '' : __t) +
+	'_' +
+	((__t = ( subs[1].subs[m].id )) == null ? '' : __t) +
+	'">\n		<em class="icon-eye" data-supType=' +
 	((__t = ( subs[1].id )) == null ? '' : __t) +
 	' data-majorId=' +
 	((__t = ( subs[1].subs[m].id )) == null ? '' : __t) +
