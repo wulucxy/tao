@@ -9,7 +9,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/collegeFaq.34bc3415.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/collegeFaq.e0d0d325.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -43,24 +43,24 @@
 							<c:forEach var="list" items="${today}">
 							<c:choose>
 							    <c:when test="${list.status == 1}">
-							   	<a href="/box/college_faq/${list.college.collegeId}?on=1" target="_blank" class="list-group-item active cp" >
+							   	<a href="/box/college_faq/${list.college.collegeId}?on=1" target="_blank" class="list-group-item active cp clearfix" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
-						    	<span class="body orange">${list.describtion}</span>
+						    	<span class="body orange fr">${list.describtion}</span>
 							   	</a>
 								</c:when>
 								<c:when test="${list.status == 3}">
-							   	<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item cp" >
+							   	<a href="/box/college_faq/${list.college.collegeId}" target="_blank" class="list-group-item cp clearfix" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
-						    	<span class="body orange">${list.describtion}</span>
+						    	<span class="body orange fr">${list.describtion}</span>
 							   	</a>
 								</c:when>
 								<c:otherwise>
-								<a href="javascript:;" class="list-group-item" >
+								<a href="javascript:;" class="list-group-item clearfix" >
 							   	<i class="fr taoIcon icon-right"></i>
 						    	<span class="fl collegeName">${list.college.collegeName}</span>
-						    	<span class="body orange">${list.describtion}</span>
+						    	<span class="body orange fr">${list.describtion}</span>
 							   	</a>
 								</c:otherwise>
 						   </c:choose>

@@ -54,7 +54,7 @@ var score = {
 	getScore : function(){
 		var that = this;
 		$.ajax({
-			url : preServer+provinceId+"/profile/score/detail",
+			url : preServer+provinceId+"/profile/score/detail?"+Math.random(),
 			type : "get",
 			success : function(res){
 				if(typeof res == "string"){
@@ -190,7 +190,10 @@ var score = {
 			that.renderSaveRes(btn);
 
 		}else{
-			console.log("修改出错");
+			if(window.console){
+				console.log("修改出错");
+			}
+			
 		}
 	},
 
@@ -309,8 +312,6 @@ var score = {
       isEmpty : function(ele){
         var empty=0;
         var n=$(ele).val();
-
-        console.log(n);
 
         if($.trim(n) == ""){
           empty++;

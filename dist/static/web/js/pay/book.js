@@ -117,6 +117,7 @@ webpackJsonp([31],{
 	        		}
 	
 	        		if(res.code !=1){
+	        			btn.removeClass("disabled");
 	        			warn(res.msg);
 	        			return;
 	        		}
@@ -143,6 +144,7 @@ webpackJsonp([31],{
 			ping.createPayment(charge, function(result, err){
 				if(err){
 					warn(err.msg);
+					btn.removeClass("disabled");
 				}
 			});
 		},

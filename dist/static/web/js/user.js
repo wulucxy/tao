@@ -2003,6 +2003,8 @@ webpackJsonp([38],{
 	__p += '\n				<span class="btn btn-orange">待付款</span>\n			';
 	 }else if(appointments[i].status == 5) { ;
 	__p += '\n				<span class="btn btn-gray">已取消</span>\n			';
+	 }else if(appointments[i].status == 6) { ;
+	__p += '\n				<span class="btn btn-gray">已退款</span>\n			';
 	 } ;
 	__p += '\n		</div>\n		<div class="media-body g3 well_body">\n			<p>\n				<span>' +
 	((__t = ( appointments[i].param.name )) == null ? '' : __t) +

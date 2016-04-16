@@ -112,6 +112,7 @@ var pay = {
         		}
 
         		if(res.code !=1){
+        			btn.removeClass("disabled");
         			warn(res.msg);
         			return;
         		}
@@ -138,6 +139,7 @@ var pay = {
 		ping.createPayment(charge, function(result, err){
 			if(err){
 				warn(err.msg);
+				btn.removeClass("disabled");
 			}
 		});
 	},

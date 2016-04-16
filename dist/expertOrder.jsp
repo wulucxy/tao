@@ -24,7 +24,7 @@
 				<div class="content">
 					<h3 class="clearfix title">
 						<span class="fl s-title">
-							志愿填报服务预约
+							志愿填报专家预约
 							<em class="underLine"></em>	
 						</span>
 					</h3>

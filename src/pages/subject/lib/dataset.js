@@ -171,7 +171,6 @@ var dataSet = {
         if(!!util.getQuery("keys")){
 
             var subjectItems = $(".itemLists .item").map(function(idx,ele){
-                console.log(ele);
                 return {
                    type : $(ele).data("value").split(":")[0],
                    value : $(ele).data("value").split(":")[1],
