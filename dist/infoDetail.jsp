@@ -96,7 +96,7 @@
 									   <span class="label fl">
 											${list.time}
 										</span>
-										<div class="media-body"><a href="${list.url}" target="_blank">
+										<div class="media-body"><a href="${list.href}" target="_blank">
 											${list.title}
 										</a></div>
 									   </li>
