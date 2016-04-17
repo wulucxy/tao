@@ -79,7 +79,7 @@ webpackJsonp([31],{
 				var channel = $("[name=channel]:checked").val();
 	
 				if(channel == "coupon"){
-					if($.trim($("#card").val()) == ""){
+					if($.trim($("#card").val()) == "" || ($("#card").val() == $("#card").attr("placeholder"))){
 						warn("请输入正确的支付卡号");
 						return;
 					}
