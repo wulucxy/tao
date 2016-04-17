@@ -15,7 +15,7 @@ var uploader = {
 		 var settings = {
             //flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
             flash_url : "http://223.95.73.206/static/swfupload.swf",
-            upload_url: preServer+provinceId+"/attach/uploadAttach",
+            upload_url: preServer+provinceId+"/attach/uploadAttach", 
             post_params: {"avatar":""},
             file_post_name : "avatar",
             file_size_limit : "4 MB",
@@ -26,9 +26,9 @@ var uploader = {
             },
             debug: true,
             // Button settings
-            button_image_url: "http://i.jd.com/images/perfect_bg.jpg",
+            button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",
             button_width: "82",
-            button_height: "34",
+            button_height: "21",
             button_placeholder_id: "spanButtonPlaceHolder",
             button_action:SWFUpload.BUTTON_ACTION.SELECT_FILE,
 
