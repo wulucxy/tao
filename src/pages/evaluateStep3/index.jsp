@@ -31,6 +31,9 @@
 
 		<!-- 保存place属性 -->
 		<input type="hidden" name="place" value="${place}">
+
+		<!-- 保存batch属性 -->
+		<input type="hidden" name="batch" value="${batch}">
 	
 		<div class="container p_assess_3">
 

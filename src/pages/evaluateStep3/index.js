@@ -61,6 +61,7 @@ $("#verifyBtn").on("click",function(e){
     province : $("[name=province]").val(),
     courseType : $("[name=courseType]").val(),
     score : $("[name=score]").val(),
+    batch : $("[name=batch]").val(),
     place : $("[name=place]").val(),
     wishes : $.parseJSON($("[name=wishesString]").text())
   };
