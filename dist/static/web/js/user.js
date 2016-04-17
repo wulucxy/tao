@@ -901,7 +901,7 @@ webpackJsonp([38],{
 	
 			 var settings = {
 	            //flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
-	            flash_url : "http://223.95.73.206/static/echart/swfupload.swf",
+	            flash_url : "http://223.95.73.206/static/swfupload.swf",
 	            upload_url: preServer+provinceId+"/attach/uploadAttach",
 	            post_params: {"avatar":""},
 	            file_post_name : "avatar",

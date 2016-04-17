@@ -165,8 +165,11 @@ webpackJsonp([11],{
 		        }
 			});
 		},
-		subFunc : function(){
+		subFunc : function(btn,oForm){
 			var that = this;
+	
+			if(btn.addClass("disabled")) return;
+			btn.addClass("disabled");
 	
 			var _data = {
 				scheduleId : scheduleId,
@@ -190,10 +193,12 @@ webpackJsonp([11],{
 			        });  
 			      }else{
 			        warn(res.msg);
+			        btn.removeClass("disabled");
 			        return;
 			      }
 			    },
 			    error : function(err){
+			       btn.removeClass("disabled");
 			       console.log(err);
 			    }
 			});
