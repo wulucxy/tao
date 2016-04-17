@@ -90,7 +90,7 @@ webpackJsonp([18],{
 	
 	
 	  $.ajax({
-	    url : preServer+provinceId +"/tzy/plan/assessment/create",
+	    url : preServer+provinceId +"/tzy/plan/upgradeAssessment/create",
 	    type : "post",
 	    contentType: "application/json",
 	    data : JSON.stringify(_data),
