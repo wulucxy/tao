@@ -9,7 +9,7 @@
 <div class="content">
 	<div class="formWrap">
 		<form action="#" onsubmit="return false" autocomplete="off" id="myInfoForm" class="rel">
-			<div class="row clearfix">
+			<div class="row clearfix avatarRow">
 				<label for="name" class="control-label column col1 fl">
 					<i class="icon-location"></i>
 					<em class="vm">头像：</em></label>
