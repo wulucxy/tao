@@ -77,14 +77,19 @@
 											<tr>
 												<td>专业名称</td>
 												<td>所属科类</td>
-												<td>上一年录取平均分</td>
+											<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td>${year.year}年平均分</td>
+											</c:forEach>
 												<td>填报建议</td>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
-												<td>${major.average}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
+											
 												<td>
 									<c:choose>
 									 	<c:when test="${major.assessment == '-2'}">

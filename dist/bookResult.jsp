@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/bookResult.0b57ed77.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/bookResult.7320d04a.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -78,13 +78,17 @@
 											<tr>
 												<td>专业名称</td>
 												<td>所属科类</td>
-												<td>上一年录取平均分</td>
+												<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td>${year.year}年平均分</td>
+												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
-												<td>${major.average}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
 											</tr>
 											</c:forEach>
 										</tbody>
@@ -129,13 +133,17 @@
 											<tr>
 												<td>专业名称</td>
 												<td>所属科类</td>
-												<td>上一年录取平均分</td>
+												<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td>${year.year}年平均分</td>
+												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
-												<td>${major.average}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
 											</tr>
 											</c:forEach>
 										</tbody>
@@ -180,13 +188,17 @@
 											<tr>
 												<td>专业名称</td>
 												<td>所属科类</td>
-												<td>上一年录取平均分</td>
+												<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td>${year.year}年平均分</td>
+												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
-												<td>${major.average}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
 											</tr>
 											</c:forEach>
 										</tbody>

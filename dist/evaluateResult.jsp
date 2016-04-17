@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/evaluateResult.a6a9f554.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/evaluateResult.21f099a6.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -77,14 +77,19 @@
 											<tr>
 												<td>专业名称</td>
 												<td>所属科类</td>
-												<td>上一年录取平均分</td>
+											<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td>${year.year}年平均分</td>
+											</c:forEach>
 												<td>填报建议</td>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>
 												<td>${major.majorName}</td>
 												<td>${major.fCategory}</td>
-												<td>${major.average}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
+											
 												<td>
 									<c:choose>
 									 	<c:when test="${major.assessment == '-2'}">

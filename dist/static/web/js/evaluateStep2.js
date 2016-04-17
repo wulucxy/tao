@@ -296,8 +296,9 @@ webpackJsonp([17],{
 	          that.state.selected[that.modal.majorType-1].list.push(eleObj);
 	
 	          //分志愿类型处理，将当前志愿选中项列出来
+	          //需要判断id一致，name一致（挖坑）
 	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code){
+	              if(eleObj.code == item.code && eleObj.name == item.name){
 	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 1;
 	                   return false;
 	              }
@@ -311,7 +312,7 @@ webpackJsonp([17],{
 	
 	          //去除选择项
 	          $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code){
+	              if(eleObj.code == item.code && eleObj.name == item.name ){
 	                  that.state.selected[that.modal.majorType-1].list.splice(idx,1);
 	                   return false;
 	              }
@@ -319,7 +320,7 @@ webpackJsonp([17],{
 	
 	
 	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code){
+	              if(eleObj.code == item.code && eleObj.name == item.name ){
 	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
 	                   return false;
 	              }
@@ -341,14 +342,14 @@ webpackJsonp([17],{
 	        };
 	
 	       $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-	            if(ele.code == item.code){
+	            if(ele.code == item.code && ele.name == item.name){
 	                that.state.selected[that.modal.majorType-1].list.splice(idx,1);
 	                return false;
 	            }
 	       });
 	
 	       $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	            if(ele.code == item.code){
+	            if(ele.code == item.code && ele.name == item.name){
 	                that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
 	                 return false;
 	            }

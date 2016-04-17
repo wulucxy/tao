@@ -54,14 +54,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     }
 
             ]
@@ -83,14 +109,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     }
 
             ]
@@ -114,14 +166,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     }
 
             ]
@@ -142,14 +220,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     }
 
             ]
@@ -172,14 +276,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     }
 
             ]
@@ -201,14 +331,40 @@
                        "majorName":"建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
-                       "average":"--"
+                       "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ]
                     },
                     {
                         "majorId":"2",           
                         "majorName":"风景园林",    
                         "assessment":0,          
                          "category":{"name":"工学","code":"1"},
-                        "average":"--" 
+                        "scoreList": [
+                            {
+                                "score": 674,
+                                "year": "2013"
+                            },
+                            {
+                                "score": 664,
+                                "year": "2014"
+                            },
+                            {
+                                "score": 662,
+                                "year": "2015"
+                            }
+                        ] 
                     }
 
             ]
