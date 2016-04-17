@@ -12,7 +12,7 @@
         "userName" : "name",
         "isLogin" : "1"
     },
-	"courseType":0,
+	"courseType":1,
     "batch":1,
     "socre":765,
     "place":1234,

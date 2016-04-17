@@ -103,7 +103,7 @@
 
 
 							<div class="row clearfix">
-								<label for="courseType" class="control-label column col1 fl">
+								<label for="batch" class="control-label column col1 fl">
 									<i class="icon-location icon-list"></i>
 									<em class="vm">报考批次：</em></label>
 								<div class="col2 inputWrap rel">

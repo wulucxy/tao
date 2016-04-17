@@ -19919,11 +19919,11 @@
 	((__t = ( provinceName )) == null ? '' : __t) +
 	'</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-book"></i>\n    <em class="vm">高考科目：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 if (courseType == 0) { ;
-	__p += '\n        <label for="courseType_0" class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>\n        <em class="vm">理科</em>\n        </label>\n      ';
+	__p += '\n        <label for="courseType_0" class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>\n        <em class="vm">文科</em>\n        </label>\n      ';
 	 }else{ ;
-	__p += '\n         <label for="courseType_1"  class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>\n        <em class="vm">文科</em>\n        </label>\n      ';
+	__p += '\n         <label for="courseType_1"  class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>\n        <em class="vm">理科</em>\n        </label>\n      ';
 	 } ;
-	__p += '\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-pic"></i>\n    <em class="vm">报考批次：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n    ';
+	__p += '\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="batch" class="control-label column col1 fl">\n    <i class="icon-location icon-pic"></i>\n    <em class="vm">报考批次：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n    ';
 	 if (batch == 1) { ;
 	__p += '\n      <label for="batch_1" class="label_radio inline">\n      <em class="icon-radio"></em>\n      <input type="radio" class="input form-control" id="batch_1" name="batch" disabled checked>\n      <em class="vm">第一批</em>\n      </label>\n    ';
 	 }else if(batch == 2){ ;
@@ -19937,7 +19937,7 @@
 	((__t = ( place )) == null ? '' : __t) +
 	'名</span>\n    </div>\n  </div>\n</div>\n\n\n';
 	 if(majorList && majorList.length) { ;
-	__p += '\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
+	__p += '\n<div class="row clearfix">\n  <label for="majorId" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 for (var i = 0; i < majorList.length; i++) { ;
 	__p += '\n      <label for="majorId_' +
 	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
@@ -19949,11 +19949,11 @@
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n';
 	 }else if(majorList.length == 0){ ;
-	__p += '\n  <div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="majorId_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
+	__p += '\n  <div class="row clearfix">\n  <label for="majorId" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="majorId_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
 	 } ;
 	__p += '\n\n';
 	 if(c && c.length) { ;
-	__p += '\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
+	__p += '\n<div class="row clearfix">\n  <label for="city" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 for (var i = 0; i < c.length; i++) { ;
 	__p += '\n      <label for="city_' +
 	((__t = ( c[i].code )) == null ? '' : __t) +
@@ -19965,7 +19965,7 @@
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n';
 	 }else if(c.length == 0){ ;
-	__p += '\n  <div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="city_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="city_" name="city" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
+	__p += '\n  <div class="row clearfix">\n  <label for="city" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="city_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="city_" name="city" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
 	 } ;
 	__p += '\n\n</form>\n</div>';
 	

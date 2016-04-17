@@ -23,13 +23,13 @@
         <label for="courseType_0" class="label_radio inline">
         <em class="icon-radio"></em>
         <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>
-        <em class="vm">理科</em>
+        <em class="vm">文科</em>
         </label>
       <% }else{ %>
          <label for="courseType_1"  class="label_radio inline">
         <em class="icon-radio"></em>
         <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>
-        <em class="vm">文科</em>
+        <em class="vm">理科</em>
         </label>
       <% } %>
     </div>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="row clearfix">
-  <label for="courseType" class="control-label column col1 fl">
+  <label for="batch" class="control-label column col1 fl">
     <i class="icon-location icon-pic"></i>
     <em class="vm">报考批次：</em></label>
   <div class="col2 inputWrap rel">
@@ -90,7 +90,7 @@
 
 <% if(majorList && majorList.length) { %>
 <div class="row clearfix">
-  <label for="courseType" class="control-label column col1 fl">
+  <label for="majorId" class="control-label column col1 fl">
     <i class="icon-location icon-hat"></i>
     <em class="vm">专业选择：</em></label>
   <div class="col2 inputWrap rel">
@@ -107,7 +107,7 @@
 </div>
 <% }else if(majorList.length == 0){ %>
   <div class="row clearfix">
-  <label for="courseType" class="control-label column col1 fl">
+  <label for="majorId" class="control-label column col1 fl">
     <i class="icon-location icon-hat"></i>
     <em class="vm">专业选择：</em></label>
   <div class="col2 inputWrap rel">
@@ -124,7 +124,7 @@
 
 <% if(c && c.length) { %>
 <div class="row clearfix">
-  <label for="courseType" class="control-label column col1 fl">
+  <label for="city" class="control-label column col1 fl">
     <i class="icon-location icon-street"></i>
     <em class="vm">地区选择：</em></label>
   <div class="col2 inputWrap rel">
@@ -141,7 +141,7 @@
 </div>
 <% }else if(c.length == 0){ %>
   <div class="row clearfix">
-  <label for="courseType" class="control-label column col1 fl">
+  <label for="city" class="control-label column col1 fl">
     <i class="icon-location icon-street"></i>
     <em class="vm">地区选择：</em></label>
   <div class="col2 inputWrap rel">

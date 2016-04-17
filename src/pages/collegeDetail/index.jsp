@@ -144,8 +144,8 @@
 														<em class="vm">科&emsp;目：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="courseType">
-															  <option value="0">理科</option>
-															  <option value="1">文科</option>
+															  <option value="1">理科</option>
+															  <option value="0">文科</option>
 														</select>	
 													</div>
 												</div>

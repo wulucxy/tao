@@ -12,7 +12,7 @@
         "userId" : "name",
         "isLogin" : "1"
     },
-    "courseType" : 1,
+    "courseType" : 0,
     "batch" : 3,
     "score" : 3333,
     "place" : 123
