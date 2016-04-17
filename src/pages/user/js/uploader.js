@@ -49,13 +49,18 @@ var uploader = {
 
 	},
 
-    setAvatar : function(file){
+    setAvatar : function(file,serveData){
         var that = this;
+
+        if(serveData.code != 1){
+            warn(serveData.msg);
+            return;
+        }
 
         $.ajax({
             url : preServer+provinceId+'/profile/avatar',
             type : "post",
-            data : JSON.stringify({avatar:file}),
+            data : JSON.stringify({avatar:serveData.result.avatar}),
             success : function(res){
                 if(typeof res == "string"){
                     var res = $.parseJSON(res);
