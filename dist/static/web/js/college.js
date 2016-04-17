@@ -240,8 +240,6 @@ webpackJsonp([8],{
 	                    return;
 	                }
 	
-	                 that.pager++;
-	
 	                res = res.result;
 	
 	                //客户端修改数据
@@ -284,8 +282,8 @@ webpackJsonp([8],{
 	                });
 	
 	                btn.removeClass("disabled");
-	                that.loadList(res,1);
-	
+	                that.loadList(res,that.pager);
+	                that.pager++;
 	            },
 	            error : function(err){
 	                btn.removeClass("disabled");

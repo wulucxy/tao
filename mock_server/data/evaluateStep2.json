@@ -13,6 +13,7 @@
         "isLogin" : "1"
     },
     "courseType" : 1,
+    "batch" : 3,
     "zhiyuanList" : [
       {"code":"3322","name":"浙江大学","type":1},
       {"code":"","name":"","type":2},

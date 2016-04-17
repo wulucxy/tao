@@ -31,6 +31,9 @@ var provinceId = $("[name=province]").val();
 
 var courseType = $("[name=courseType]").val();
 
+var batch = $("[name=batch]").val();
+
+
 //分页
 var pagination = require("../../assets/components/pagination");
 //自定义滚动
@@ -503,7 +506,7 @@ var school = {
       url : preServer+provinceId+"/data/college/search",
       type : "post",
       contentType: "application/json",
-      data : JSON.stringify({capacity:that.capacity,page:pager,"keyword":$.trim($("#wd").val())}),
+      data : JSON.stringify({capacity:that.capacity,batch:batch,page:pager,"keyword":$.trim($("#wd").val())}),
       success : function(res){
         if(typeof res == "string"){
           var res = $.parseJSON(res);

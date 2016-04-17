@@ -118,6 +118,7 @@ webpackJsonp([30],{
 	
 	        		if(res.code !=1){
 	        			warn(res.msg);
+	        			btn.removeClass("disabled");
 	        			return;
 	        		}
 	
@@ -128,12 +129,11 @@ webpackJsonp([30],{
 	        			that.requestCoupon(btn,charge);
 	        		}
 	
-	        		btn.removeClass("disabled");
-	
 	        	},
 	        	error : function(err){
-	        		console.log(err);
 	        		btn.removeClass("disabled");
+	        		console.log(err);
+	        		
 	        	}
 			});
 		},
@@ -143,6 +143,7 @@ webpackJsonp([30],{
 			ping.createPayment(charge, function(result, err){
 				if(err){
 					warn(err.msg);
+					btn.removeClass("disabled");
 				}
 			});
 		},
@@ -150,6 +151,7 @@ webpackJsonp([30],{
 		requestCoupon : function(btn,res){
 			warn("恭喜您已成功下单，稍后跳转结果页",function(){
 				window.location = "/box/plan/result?planId="+planId;
+				btn.removeClass("disabled");
 			});
 		}
 	};

@@ -113,6 +113,7 @@ var pay = {
 
         		if(res.code !=1){
         			warn(res.msg);
+        			btn.removeClass("disabled");
         			return;
         		}
 
@@ -123,12 +124,11 @@ var pay = {
         			that.requestCoupon(btn,charge);
         		}
 
-        		btn.removeClass("disabled");
-
         	},
         	error : function(err){
-        		console.log(err);
         		btn.removeClass("disabled");
+        		console.log(err);
+        		
         	}
 		});
 	},
@@ -138,6 +138,7 @@ var pay = {
 		ping.createPayment(charge, function(result, err){
 			if(err){
 				warn(err.msg);
+				btn.removeClass("disabled");
 			}
 		});
 	},
@@ -145,6 +146,7 @@ var pay = {
 	requestCoupon : function(btn,res){
 		warn("恭喜您已成功下单，稍后跳转结果页",function(){
 			window.location = "/box/plan/result?planId="+planId;
+			btn.removeClass("disabled");
 		});
 	}
 };

@@ -23,6 +23,9 @@
 		<!-- 文理科 -->
 		<input type="hidden" name="courseType" value="${courseType}">
 
+		<!-- 文理科 -->
+		<input type="hidden" name="batch" value="${batch}">
+
 		<div class="container p_assess">
 
 			<div class="content">
