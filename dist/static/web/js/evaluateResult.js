@@ -28,8 +28,8 @@ webpackJsonp([15],{
 	
 	function transformData(){
 		var _data = {
-			majorList :[],
-			c :  [],
+			majorList :0,
+			c :  0,
 			batch : $("[name=batch]").text(),
 			courseType : $("[name=courseType]").text(),
 			score : $("[name=score]").text(),
