@@ -24,7 +24,7 @@ var uploader = {
             custom_settings : {
                 cancelButtonId : "btnCancel"
             },
-            debug: true,
+            debug: false,
             // Button settings
             button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",
             button_width: "82",
