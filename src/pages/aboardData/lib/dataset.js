@@ -85,9 +85,12 @@ var dataSet = {
 
 		var _data = {
 			country : $("[name=country]").val(),
-			school_name_key : $("[name=school_name_key]").val(),
-            states_cn : $("[name=states_cn]").val()
+			school_name_key : $("[name=school_name_key]").val()
 		};
+
+        if($("[name=states_cn]").val()){
+            _data.states_cn  = $("[name=states_cn]").val()
+        }
 
 		//var _key = _data.country + _data.school_name_key;
 

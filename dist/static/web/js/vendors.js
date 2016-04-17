@@ -19948,6 +19948,8 @@
 	'</em>\n      </label>\n      ';
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n';
+	 }else if(majorList.length == 0){ ;
+	__p += '\n  <div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-hat"></i>\n    <em class="vm">专业选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="majorId_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
 	 } ;
 	__p += '\n\n';
 	 if(c && c.length) { ;
@@ -19962,6 +19964,8 @@
 	'</em>\n      </label>\n      ';
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n';
+	 }else if(c.length == 0){ ;
+	__p += '\n  <div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-street"></i>\n    <em class="vm">地区选择：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      <label for="city_" class="label_check inline">\n      <em class="icon-radio"></em>\n      <input type="checkbox" class="input form-control" id="city_" name="city" disabled checked>\n      <em class="vm">全部</em>\n      </label>\n    </div>\n  </div>\n</div>\n';
 	 } ;
 	__p += '\n\n</form>\n</div>';
 	

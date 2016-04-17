@@ -105,6 +105,21 @@
     </div>
   </div>
 </div>
+<% }else if(majorList.length == 0){ %>
+  <div class="row clearfix">
+  <label for="courseType" class="control-label column col1 fl">
+    <i class="icon-location icon-hat"></i>
+    <em class="vm">专业选择：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <label for="majorId_" class="label_check inline">
+      <em class="icon-radio"></em>
+      <input type="checkbox" class="input form-control" id="majorId_" name="majorId" disabled checked>
+      <em class="vm">全部</em>
+      </label>
+    </div>
+  </div>
+</div>
 <% } %>
 
 <% if(c && c.length) { %>
@@ -121,6 +136,21 @@
       <em class="vm"><%= c[i].name %></em>
       </label>
       <% } %>
+    </div>
+  </div>
+</div>
+<% }else if(c.length == 0){ %>
+  <div class="row clearfix">
+  <label for="courseType" class="control-label column col1 fl">
+    <i class="icon-location icon-street"></i>
+    <em class="vm">地区选择：</em></label>
+  <div class="col2 inputWrap rel">
+    <div class="fieldWrap">
+      <label for="city_" class="label_check inline">
+      <em class="icon-radio"></em>
+      <input type="checkbox" class="input form-control" id="city_" name="city" disabled checked>
+      <em class="vm">全部</em>
+      </label>
     </div>
   </div>
 </div>
