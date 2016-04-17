@@ -10,7 +10,12 @@
 				<div class="media-body">
 					<p><%= questions[i].q %></p>
 					<div class="badges">
-						<span class="badge"><%= questions[i].province %>考生</span><span class="badge"><%= questions[i].year %></span>
+						<% if (questions[i].province) { %>
+						<span class="badge"><%= questions[i].province %>考生</span>
+						<% } %>
+						<% if (questions[i].year) { %>
+						<span class="badge"><%= questions[i].year %></span>
+						<% } %>
 					</div>
 				</div>
 			</div>

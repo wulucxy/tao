@@ -1775,11 +1775,19 @@ webpackJsonp([38],{
 	((__t = ( questions[i].college.collegeName )) == null ? '' : __t) +
 	'</h3>\n		<div class="s-faq">\n			<div class="q media">\n				<span class="fl blue">问：</span>\n				<div class="media-body">\n					<p>' +
 	((__t = ( questions[i].q )) == null ? '' : __t) +
-	'</p>\n					<div class="badges">\n						<span class="badge">' +
+	'</p>\n					<div class="badges">\n						';
+	 if (questions[i].province) { ;
+	__p += '\n						<span class="badge">' +
 	((__t = ( questions[i].province )) == null ? '' : __t) +
-	'考生</span><span class="badge">' +
+	'考生</span>\n						';
+	 } ;
+	__p += '\n						';
+	 if (questions[i].year) { ;
+	__p += '\n						<span class="badge">' +
 	((__t = ( questions[i].year )) == null ? '' : __t) +
-	'</span>\n					</div>\n				</div>\n			</div>\n			<div class="a media">\n				<span class="fl orange">答：</span>\n				<div class="media-body">\n					' +
+	'</span>\n						';
+	 } ;
+	__p += '\n					</div>\n				</div>\n			</div>\n			<div class="a media">\n				<span class="fl orange">答：</span>\n				<div class="media-body">\n					' +
 	((__t = ( questions[i].a )) == null ? '' : __t) +
 	'\n				</div>\n			</div>\n		</div>\n</li>\n';
 	 }} ;

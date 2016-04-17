@@ -2019,7 +2019,9 @@ webpackJsonp([1],{
 	    	$(document).on("click","[data-action=add]",function(e){
 	    		e.preventDefault();
 	    		var link = $(e.target);
-	    		  
+	    		
+	             $("[name=school_name_key]").val("");
+	
 	            //reset
 	            that.pager = 1;
 	
