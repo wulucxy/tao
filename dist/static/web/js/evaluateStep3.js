@@ -5,7 +5,7 @@ webpackJsonp([18],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(179);
+	__webpack_require__(180);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -23,8 +23,8 @@ webpackJsonp([18],{
 	var modalBox = __webpack_require__(40);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(119);
-	var tmpl_questions = __webpack_require__(120);
+	var tmpl_detail = __webpack_require__(120);
+	var tmpl_questions = __webpack_require__(121);
 	
 	
 	
@@ -75,14 +75,19 @@ webpackJsonp([18],{
 	
 	      if(ele.majors){
 	        $.each(ele.majors,function(l,n){
-	          if(n.majorId){
-	             majorList.push(n.majorId);
+	          if(n.majorId && n.majorName){
+	             majorList.push({
+	              "majorId":n.majorId,
+	              "majorName":n.majorName
+	             });
 	          }
 	        });
 	
 	        ele.majors = majorList;
 	      }
 	  });
+	
+	
 	
 	  $.ajax({
 	    url : preServer+provinceId +"/tzy/plan/assessment/create",
@@ -116,7 +121,7 @@ webpackJsonp([18],{
 
 /***/ },
 
-/***/ 179:
+/***/ 180:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

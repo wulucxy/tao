@@ -9,7 +9,6 @@ var util = require("../../assets/components/util");
 //公共方法
 var common = require("../../assets/components/common");
 
-
 //自定义功能写下面
 //切换顶部nav高亮
 common.switchNav(2);

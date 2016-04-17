@@ -5,7 +5,7 @@ webpackJsonp([21],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(186);
+	__webpack_require__(187);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -16,9 +16,9 @@ webpackJsonp([21],{
 	
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(192);
-	var carousel = __webpack_require__(193);
-	var updateBrowser = __webpack_require__(194);
+	var slider = __webpack_require__(193);
+	var carousel = __webpack_require__(194);
+	var updateBrowser = __webpack_require__(195);
 	
 	
 	slider($("#bannerShow"));
@@ -43,14 +43,14 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 186:
+/***/ 187:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 192:
+/***/ 193:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -180,7 +180,7 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 193:
+/***/ 194:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -317,18 +317,18 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 194:
+/***/ 195:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	__webpack_require__(195);
+	__webpack_require__(196);
 	
 	var browser = __webpack_require__(45);
 	var Cookies = __webpack_require__(99);
 	
-	var tmpl = __webpack_require__(198);
+	var tmpl = __webpack_require__(199);
 	
 	var updateBrowser = {
 		init : function(){
@@ -368,14 +368,14 @@ webpackJsonp([21],{
 
 /***/ },
 
-/***/ 195:
+/***/ 196:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 198:
+/***/ 199:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

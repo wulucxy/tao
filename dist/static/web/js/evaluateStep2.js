@@ -5,7 +5,7 @@ webpackJsonp([17],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(172);
+	__webpack_require__(173);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -22,14 +22,14 @@ webpackJsonp([17],{
 	var extend =  __webpack_require__(41);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(119);
-	var tmpl_questions = __webpack_require__(120);
+	var tmpl_detail = __webpack_require__(120);
+	var tmpl_questions = __webpack_require__(121);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(174);
-	var tmpl_list = __webpack_require__(175);
-	var tmpl_major = __webpack_require__(176);
-	var majors = __webpack_require__(177);
+	var tmpl_school = __webpack_require__(175);
+	var tmpl_list = __webpack_require__(176);
+	var tmpl_major = __webpack_require__(177);
+	var majors = __webpack_require__(178);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -37,9 +37,9 @@ webpackJsonp([17],{
 	var courseType = $("[name=courseType]").val();
 	
 	//分页
-	var pagination = __webpack_require__(178);
+	var pagination = __webpack_require__(179);
 	//自定义滚动
-	var scroll = __webpack_require__(123);
+	var scroll = __webpack_require__(124);
 	
 	//兼容every实现
 	if (typeof Array.prototype.every != "function") {
@@ -829,16 +829,16 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 123:
+/***/ 124:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(124);
+	__webpack_require__(125);
 	
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
 	//mousewheel
-	__webpack_require__(126);
+	__webpack_require__(127);
 	
 	function scroll(target,options){
 	
@@ -1023,14 +1023,14 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 124:
+/***/ 125:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 126:
+/***/ 127:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1239,14 +1239,14 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 172:
+/***/ 173:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 174:
+/***/ 175:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1261,7 +1261,7 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 175:
+/***/ 176:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1291,7 +1291,7 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 176:
+/***/ 177:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1306,7 +1306,7 @@ webpackJsonp([17],{
 
 /***/ },
 
-/***/ 177:
+/***/ 178:
 /***/ function(module, exports) {
 
 	module.exports = [

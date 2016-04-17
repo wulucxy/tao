@@ -70,14 +70,19 @@ $("#verifyBtn").on("click",function(e){
 
       if(ele.majors){
         $.each(ele.majors,function(l,n){
-          if(n.majorId){
-             majorList.push(n.majorId);
+          if(n.majorId && n.majorName){
+             majorList.push({
+              "majorId":n.majorId,
+              "majorName":n.majorName
+             });
           }
         });
 
         ele.majors = majorList;
       }
   });
+
+
 
   $.ajax({
     url : preServer+provinceId +"/tzy/plan/assessment/create",

@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/aboardData.a39ea0ae.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/aboardData.560ea420.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -53,7 +53,7 @@
 								</span>
 							</div>
 							
-							<div class="row first last expand-mode">
+							<div class="row first expand-mode countryRow">
 								<div class="foot">
 									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
 										<em class="vm">收起</em>
@@ -101,7 +101,31 @@
 									</div>
 								</div>
 								<span class="head g9">
-									院校属地：
+									国家：
+								</span>
+							</div>
+
+							<div class="row first last expand-mode statesRow">
+								<div class="foot">
+									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
+										<em class="vm">收起</em>
+										<span class="taoIcon btn-arrow-up vm"></span>
+									</a>
+									<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">
+										<em class="vm">更多</em>
+										<span class="taoIcon btn-arrow-down vm"></span>
+									</a>
+								</div>
+								
+								<div class="body media">
+									<div class="media-body">
+										<div class="itemLists">
+										
+										</div>
+									</div>
+								</div>
+								<span class="head g9">
+									地区：
 								</span>
 							</div>
 						</div>

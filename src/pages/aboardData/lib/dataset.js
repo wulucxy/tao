@@ -2,9 +2,14 @@ var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 var tmpl = require("../templates/school.ejs");
 
+var tmpl_states = require("../templates/states.ejs");
+// 城市
+var countryJSON =  require("../../../assets/components/country");
+
 var dataSet = { 
 	render : function(){
 		var that = this;
+
 		//省列表
         if(this.state.tagList.length){
             var tagLis = $.map(that.state.tagList,function(item){
@@ -22,29 +27,69 @@ var dataSet = {
             $(".itemLists .item").removeClass("current");
         }
 
+        //选中的地区里列表
+        if(that.state.stateList && that.state.stateList.length){
+           var  _stateTmpl = tmpl_states({
+            data : that.state.stateList
+           });
+
+            $(".statesRow .itemLists").empty().html(_stateTmpl);
+            //高亮选择项
+            $.each(that.state.stateSelectedList,function(i,l){
+                $(".statesRow .itemLists .item").each(function(k,n){
+                    if(l == $(n).data("value").split(":")[1]){
+                        $(n).addClass("current");
+                    }
+                });
+            });
+
+        }else{
+             $(".statesRow .itemLists").empty();
+        }
+
+
         if(!$("input[name=country]").length){
         	var inputList = [];
         	inputList.push('<input type="hidden" name="country">');
+            inputList.push('<input type="hidden" name="states_cn">');
         	$(".m-nav").append(inputList.join(""));
         }
 
 	},
 
+    getStateInfo : function(code){
+        var that = this;
+           
+        var stateList;
+
+        $.each(countryJSON,function(idx,ele){
+            if(ele.code == code){
+                stateList = ele.states;
+                return false;
+            }
+        });
+        
+        //选中城市列表
+        that.state.stateList = stateList;
+        // //选中的城市清空
+        // that.state.selectedState = {
+        //     code : "",
+        //     name : ""
+        // };
+
+        that.render();
+    },
+
 	requestData : function(btn){
 		var that = this,o = that.options;
 
-        //默认首次加载US的数据
-        // if(typeof btn == "undefined"){
-        //     $("[name=country]").val("US");
-            
-        // };
-
 		var _data = {
 			country : $("[name=country]").val(),
-			school_name_key : $("[name=school_name_key]").val()
+			school_name_key : $("[name=school_name_key]").val(),
+            states_cn : $("[name=states_cn]").val()
 		};
 
-		var _key = _data.country + _data.school_name_key;
+		//var _key = _data.country + _data.school_name_key;
 
         //如果是点击加载更多，页码++，否则重置为1
         if(btn && $(btn).hasClass("btn-loading")){
@@ -80,8 +125,9 @@ var dataSet = {
 				that.loadList(res,that.pager);
 			},
             error : function(){
-                console.log(err);
                 $(".schoolListWrap").removeClass("preloading");
+                console.log(err);
+                
             }
 		});
 	},
@@ -116,7 +162,9 @@ var dataSet = {
 
     init : function(o){
     	this.state = {
-            tagList:  []
+            tagList:  [],
+            stateList : [],
+            stateSelectedList : []
         };
 
         this.options = o;
@@ -125,7 +173,7 @@ var dataSet = {
         this.pager = 1;
         this.capacity  = 10;
 
-        this.updateUI();
+        //this.updateUI();
         this.bindEvt();
     },
 
@@ -151,18 +199,30 @@ var dataSet = {
                 }
             });
 
-    		link.addClass("current");
-
 			that.state.tagList.push({
 				type : type,
 				value : val,
 				text : link.text()
 			});  
 
-            $("[name=country]").val(val);
+            var _selector = "[name="+type+"]";
+            $(_selector).val(val);
 
-			that.updateUI();
-            that.requestData(link);  		
+            //如果是选择国家，需要做特殊处理
+            if(type == "country"){
+                link.addClass("current");
+                that.getStateInfo(val);
+                that.requestData(link); 
+            }else{
+                that.state.stateSelectedList = [];
+
+                that.state.stateSelectedList.push(val);
+
+                that.updateUI();
+                that.requestData(link);  
+            }
+
+					
     	});
 
     	$(document).on("click","[data-action=clear]",function(e){
@@ -230,7 +290,7 @@ var dataSet = {
         }
 
         //默认选中第一个
-        $(".itemLists .item").eq(0).trigger("click");
+        $(".countryRow .itemLists .item").eq(0).trigger("click");
 
     }
 };

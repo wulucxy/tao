@@ -5,7 +5,7 @@ webpackJsonp([2],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(112);
+	__webpack_require__(113);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -22,7 +22,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 112:
+/***/ 113:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
