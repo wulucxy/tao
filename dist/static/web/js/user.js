@@ -939,6 +939,10 @@ webpackJsonp([38],{
 	    setAvatar : function(file,serveData){
 	        var that = this;
 	
+	        if(typeof serveData == "string"){
+	            var serveData = $.parseJSON(serveData);
+	        }
+	
 	        if(serveData.code != 1){
 	            warn(serveData.msg);
 	            return;

@@ -168,7 +168,7 @@ webpackJsonp([11],{
 		subFunc : function(btn,oForm){
 			var that = this;
 	
-			if(btn.addClass("disabled")) return;
+			if(btn.hasClass("disabled")) return;
 			btn.addClass("disabled");
 	
 			var _data = {
