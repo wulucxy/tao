@@ -929,7 +929,7 @@ webpackJsonp([38],{
 	        swfu = new SWFUpload(settings);
 	
 	        function froward(file,serveData){
-	            that.setAvatar(file);   
+	            that.setAvatar(file,serveData);   
 		    }
 	
 		    window.froward = froward;
