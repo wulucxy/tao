@@ -45,9 +45,9 @@ var dataSet = {
     	});
 
     	//分页
-    	if(!that.pageObject[_key]){
-    		that.pageObject[_key] = 1;
-    	}
+    	// if(!that.pager){
+    	// 	that.pager = 1;
+    	// }
 	},
 
 	requestData : function(btn){
@@ -66,12 +66,12 @@ var dataSet = {
 		
         //如果是点击加载更多，页码++，否则重置为1
         if(btn && $(btn).hasClass("btn-loading")){
-            that.pageObject[_key]++;
+            that.pager++;
         }else{
-            that.pageObject[_key] = 1;
+            that.pager = 1;
         }
 
-        _data.page = that.pageObject[_key];
+        _data.page = that.pager;
 
       
 		$.ajax({
@@ -130,7 +130,7 @@ var dataSet = {
                     });
                 });
 				
-				that.loadList(res,that.pageObject[_key]);
+				that.loadList(res,that.pager);
 			}
 		});
 	},
@@ -176,7 +176,7 @@ var dataSet = {
         this.capacity = 10;
 
         //保存分页对象
-        this.pageObject = {};
+        this.pager = 1;
 
         this.render();
         this.bindEvt();
@@ -189,7 +189,7 @@ var dataSet = {
         $.ajax({
             url : preServer+provinceId + "/data/college/search",
             type : "post",
-            data : JSON.stringify({keyword : keyword || oInput.val() }),
+            data : JSON.stringify({keyword : keyword || oInput.val(),page : that.pager }),
             contentType: "application/json",
             success : function(res){
                 if(typeof res == "string"){
@@ -201,6 +201,8 @@ var dataSet = {
                     btn.removeClass("disabled");
                     return;
                 }
+
+                 that.pager++;
 
                 res = res.result;
 
@@ -248,8 +250,8 @@ var dataSet = {
 
             },
             error : function(err){
-                console.log(err);
                 btn.removeClass("disabled");
+                console.log(err);
             }
         });
 
@@ -358,6 +360,9 @@ var dataSet = {
 
         function goSearch(e){
             e.preventDefault();
+
+            that.pager = 1;
+
             var oInput = $("#collegeInput"),btn = $(this).closest(".btn");
             if($.trim(oInput.val()) == ""){
                 warn("请输入院校名称");
