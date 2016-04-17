@@ -1,4 +1,5 @@
 <%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -41,7 +42,14 @@
 				<div class="formWrap">
 					
 					<section class="caseSection">
-
+					
+				<c:choose>	
+					<c:when test="${fn:length(collegeList) == 0 }">
+							<div class="list-group-item f18 tc" >
+					    	未获取到留学方案，请检查信息后重新提交
+						   	</div>
+					</c:when>
+					<c:otherwise>
 					<c:forEach var="list" items="${collegeList}" varStatus="loop">
 						<div class="media detailContent">
 						
@@ -60,6 +68,8 @@
 							</div>
 						</div>	
 					</c:forEach>
+					</c:otherwise>
+				</c:choose>
 					</section>
 					
 				</div>

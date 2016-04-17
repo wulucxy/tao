@@ -145,7 +145,12 @@ var dataSet = {
 			$(".schoolList").append(_html);
 		}
 
-		$(".btn-loading").removeClass("loading disabled");
+        if(pager == 1 && data.total == 0){
+            $(".btn-loading").hide();
+        }else{
+            $(".btn-loading").show();
+            $(".btn-loading").removeClass("loading disabled");
+        }
 
         var pageCount = Math.ceil(data.total / that.capacity);
 

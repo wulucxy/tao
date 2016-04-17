@@ -15,7 +15,7 @@ var book = {
 	init : function(){
 		var that = this;
 		util.count($(".count"),3,function(){
-			window.location = "/book";
+			history.back(-1);
 		});
 	}
 

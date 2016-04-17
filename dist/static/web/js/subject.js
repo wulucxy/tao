@@ -394,7 +394,7 @@ webpackJsonp([36],{
 	        $.ajax({
 	            url : preServer+provinceId + "/data/subject/"+btn.attr("collegeid"),
 	            type : "post",
-	            data : JSON.stringify({subjectList : subjectList,"aa":"aa"}),
+	            data : JSON.stringify({subjects : subjectList}),
 	            success : function(res){
 	                if(typeof res == "string"){
 	                    var res = $.parseJSON(res);

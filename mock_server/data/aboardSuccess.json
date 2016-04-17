@@ -18,12 +18,5 @@
         }
     ],
     "collegeList": [
-        {
-            "collegeName": "哈佛大学",
-            "majorList": [
-                "自动化",
-                "农业"
-            ]
-        }
     ]
 }
