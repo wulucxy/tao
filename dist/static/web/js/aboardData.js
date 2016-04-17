@@ -2038,19 +2038,25 @@ webpackJsonp([1],{
 	                }
 	            });
 	
+	            if(type == "country"){
+	                that.state.tagList = [];
+	                $("[name=states_cn]").val("");
+	            }
+	
 				that.state.tagList.push({
 					type : type,
 					value : val,
 					text : link.text()
 				});  
 	
-	            var _selector = "[name="+type+"]";
-	            $(_selector).val(val);
-	
 	            //如果是选择国家，需要做特殊处理
 	            if(type == "country"){
 	                link.addClass("current");
 	                that.getStateInfo(val);
+	
+	                var _selector = "[name="+type+"]";
+	                $(_selector).val(val);
+	
 	                that.requestData(link); 
 	            }else{
 	                that.state.stateSelectedList = [];
@@ -2058,10 +2064,13 @@ webpackJsonp([1],{
 	                that.state.stateSelectedList.push(val);
 	
 	                that.updateUI();
+	
+	                var _selector = "[name="+type+"]";
+	                $(_selector).val(val);
+	
 	                that.requestData(link);  
 	            }
-	
-						
+			
 	    	});
 	
 	    	$(document).on("click","[data-action=clear]",function(e){
