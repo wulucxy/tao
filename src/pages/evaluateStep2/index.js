@@ -439,17 +439,19 @@ var school = {
     var modal = that.modal;
     if(!modal.find('.pagination').length){
        modal.find('.s-Content').append('<div class="pagination"></div>');
-          var $page = modal.find(".pagination");
-          pagination($page,{
-            pages:  Math.ceil(res.total / that.capacity),
-            displayedPages: 3,
-            currentPage : 1,
-            edges: 1,
-            onPageClick : function(pageNo){
-              that.requestData(pageNo);
-            }
-          });
-     }    
+     }
+        
+     var $page = modal.find(".pagination");
+      pagination($page,{
+        pages:  Math.ceil(res.total / that.capacity),
+        displayedPages: 3,
+        currentPage : 1,
+        edges: 1,
+        onPageClick : function(pageNo){
+          that.requestData(pageNo);
+        }
+      });
+
   },
 
   updateRes : function(btn){

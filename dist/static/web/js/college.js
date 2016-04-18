@@ -131,6 +131,7 @@ webpackJsonp([8],{
 	
 	                //客户端修改数据
 	                $.each(res.colleges,function(idx,ele){
+	
 	                    //增加code,name
 	                    ele.code = ele.collegeId;
 	                    ele.name = ele.collegeName;

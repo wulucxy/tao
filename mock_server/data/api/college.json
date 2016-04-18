@@ -8,7 +8,7 @@
     "level": 1,
     "majorCount": 11,
     "feature": [1, 2, 3],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江大学",
     "city": 330100
@@ -17,7 +17,7 @@
     "level": 1,
     "majorCount": 133,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江工业大学",
     "city": 330100
@@ -26,7 +26,7 @@
     "level": 1,
     "majorCount": 207,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江师范大学",
     "city": 330700
@@ -35,7 +35,7 @@
     "level": 1,
     "majorCount": 109,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "宁波大学",
     "city": 330200
@@ -44,7 +44,7 @@
     "level": 1,
     "majorCount": 106,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江理工大学",
     "city": 330100
@@ -53,7 +53,7 @@
     "level": 1,
     "majorCount": 311,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江工商大学",
     "city": 330100
@@ -62,7 +62,7 @@
     "level": 1,
     "majorCount": 224,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "杭州电子科技大学",
     "city": 330100
@@ -71,7 +71,7 @@
     "level": 1,
     "majorCount": 105,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "温州医科大学",
     "city": 330300
@@ -80,7 +80,7 @@
     "level": 1,
     "majorCount": 210,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "杭州师范大学",
     "city": 330100
@@ -89,7 +89,7 @@
     "level": 1,
     "majorCount": 140,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "温州大学",
     "city": 330300
@@ -98,7 +98,7 @@
     "level": 1,
     "majorCount": 162,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江农林大学",
     "city": 330100
@@ -107,7 +107,7 @@
     "level": 1,
     "majorCount": 139,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "中国计量学院",
     "city": 330100
@@ -116,7 +116,7 @@
     "level": 1,
     "majorCount": 85,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江中医药大学",
     "city": 330100
@@ -125,7 +125,7 @@
     "level": 1,
     "majorCount": 132,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江财经大学",
     "city": 330100
@@ -134,7 +134,7 @@
     "level": 1,
     "majorCount": 160,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "湖州师范学院",
     "city": 330500
@@ -143,7 +143,7 @@
     "level": 1,
     "majorCount": 275,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "绍兴文理学院",
     "city": 330600
@@ -152,7 +152,7 @@
     "level": 1,
     "majorCount": 137,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江科技学院",
     "city": 330100
@@ -161,7 +161,7 @@
     "level": 1,
     "majorCount": 166,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "台州学院",
     "city": 331000
@@ -170,7 +170,7 @@
     "level": 1,
     "majorCount": 259,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "嘉兴学院",
     "city": 330400
@@ -179,7 +179,7 @@
     "level": 1,
     "majorCount": 147,
     "feature": [],
-    "ownertype": 1,
+    "ownerType": 1,
     "collegeType": 1,
     "collegeName": "浙江万里学院",
     "city": 330200
