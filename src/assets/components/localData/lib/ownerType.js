@@ -15,15 +15,15 @@ module.exports =  {
 	},
 	"ownerType": [
         {
-            "code": 1,
+            "code": 0,
             "name": "公办"
         },
         {
-            "code": 2,
+            "code": 1,
             "name": "民办"
         },
         {
-            "code": 3,
+            "code": 2,
             "name": "中外合资"
         }
     ]
