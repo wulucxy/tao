@@ -19919,9 +19919,9 @@
 	((__t = ( provinceName )) == null ? '' : __t) +
 	'</span>\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="courseType" class="control-label column col1 fl">\n    <i class="icon-location icon-book"></i>\n    <em class="vm">高考科目：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n      ';
 	 if (courseType == 0) { ;
-	__p += '\n        <label for="courseType_0" class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>\n        <em class="vm">文科</em>\n        </label>\n      ';
+	__p += '\n        <label for="courseType_0" class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_0" name="courseType" checked disabled>\n        <em class="vm">理科</em>\n        </label>\n      ';
 	 }else{ ;
-	__p += '\n         <label for="courseType_1"  class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>\n        <em class="vm">理科</em>\n        </label>\n      ';
+	__p += '\n         <label for="courseType_1"  class="label_radio inline">\n        <em class="icon-radio"></em>\n        <input type="radio" class="input form-control" id="courseType_1" name="courseType" checked disabled>\n        <em class="vm">文科</em>\n        </label>\n      ';
 	 } ;
 	__p += '\n    </div>\n  </div>\n</div>\n\n<div class="row clearfix">\n  <label for="batch" class="control-label column col1 fl">\n    <i class="icon-location icon-pic"></i>\n    <em class="vm">报考批次：</em></label>\n  <div class="col2 inputWrap rel">\n    <div class="fieldWrap">\n    ';
 	 if (batch == 1) { ;
@@ -21695,11 +21695,11 @@
 		"courseType": [
 	        {
 	            "code": 0,
-	            "name": "文科"
+	            "name": "理科"
 	        },
 	        {
 	            "code": 1,
-	            "name": "理科"
+	            "name": "文科"
 	        }
 	    ]
 	};

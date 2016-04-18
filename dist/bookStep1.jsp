@@ -69,41 +69,41 @@
 								<div class="fieldWrap">  
 								<c:choose>
 								   <c:when test="${courseType == 0 }">
-										<label for="courseType_1" class="label_radio inline">
+										<label for="courseType_0" class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
 										<em class="vm">理科</em>
 										</label>
 
-										<label for="courseType_0"  class="label_radio inline">
+										<label for="courseType_1"  class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1"  required>
 										<em class="vm">文科</em>
 										</label>
 									</c:when>
 									<c:when test="${courseType == 1 }">
-										<label for="courseType_1" class="label_radio inline">
+										<label for="courseType_0" class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1"  checked required>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" required>
 										<em class="vm">理科</em>
 										</label>
 
-										<label for="courseType_0"  class="label_radio inline">
+										<label for="courseType_1"  class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0"  required>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1"  checked required>
 										<em class="vm">文科</em>
 										</label>
 									</c:when>
 									<c:otherwise>
-										<label for="courseType_1" class="label_radio inline">
+										<label for="courseType_0" class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" checked required>
+										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
 										<em class="vm">理科</em>
 										</label>
 
-										<label for="courseType_0"  class="label_radio inline">
+										<label for="courseType_1"  class="label_radio inline">
 										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" required>
+										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
 										<em class="vm">文科</em>
 										</label>
 									</c:otherwise>
@@ -114,7 +114,7 @@
 						</div>
 
 						<div class="row clearfix">
-							<label for="courseType" class="control-label column col1 fl">
+							<label for="batch" class="control-label column col1 fl">
 								<i class="icon-location icon-list"></i>
 								<em class="vm">报考批次：</em></label>
 							<div class="col2 inputWrap rel">

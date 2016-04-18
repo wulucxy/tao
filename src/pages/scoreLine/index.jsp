@@ -42,15 +42,15 @@
 								<em class="vm">高考科目：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">  
-								<label for="courseType_1" class="label_radio inline">
+								<label for="courseType_0" class="label_radio inline">
 								<em class="icon-radio"></em>
-								<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" checked required>
+								<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
 								<em class="vm">理科</em>
 								</label>
 
-								<label for="courseType_0"  class="label_radio inline">
+								<label for="courseType_1"  class="label_radio inline">
 								<em class="icon-radio"></em>
-								<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" required>
+								<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
 								<em class="vm">文科</em>
 								</label>
 								</div>
