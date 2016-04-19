@@ -114,11 +114,14 @@ function subAnswer(){
 
 function postAnswer(btn,answer){
 	var provinceId = $("[name=province]").val();
+
+	var _code = util.getQuery("code");
+
 	$.ajax({
 		url : preServer+provinceId + "/tzy/mtest/submit",
 		type  : "post",
 		contentType: "application/json",
-		data : JSON.stringify({code : $("[name=code]").val(),answer:answer.join("")}),
+		data : JSON.stringify({code : _code,answer:answer.join("")}),
 		success : function(res){
 			if(typeof res == "string"){
 				var res = $.parseJSON(res);

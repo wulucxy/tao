@@ -25,7 +25,8 @@ if(answer.length == allItems){
 	Cookies.remove('answer');
 	resetTest();
 }else if(answer.length){
-	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/box/plan/major_exam2"});
+	var _code = Cookies.get('code');
+	$("#goProTest").text("上次已使用，继续测试").attr({"href" : "/box/plan/major_exam2?code="+_code});
 }else{
 	resetTest();
 }
@@ -60,7 +61,9 @@ function subCodeAction(btn,oForm){
 				answer.push("0");
 				Cookies.set("answer",answer.join(""),{expire : 356});
 
-				window.location.href = "/box/plan/major_exam2";
+				Cookies.set("code",$("#code").val());
+
+				window.location.href = "/box/plan/major_exam2?code="+$("#code").val();
 			}else{
 				common.showError($("#errTxt"),res.msg);
 				return;
