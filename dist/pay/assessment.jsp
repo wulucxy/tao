@@ -95,7 +95,7 @@
 
 					</form>
 
-					<a class="demoImg imgWrap rel dib" href="/sample" target="_blank">
+					<a class="demoImg imgWrap rel dib" href="/sampleEvaluate" target="_blank">
 						<img src="/static/web/img/demo.png" class="responsive">
 						<span class="btn btn-sample abs">样本预览</span>
 					</a>

@@ -78,7 +78,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td rowspan="1">
+										<td>
 											<div class="collegeInfo">
 												<p class="collegeName">浙江中医药大学</p>
 												<p>历史投档线：</p>
@@ -159,12 +159,124 @@
 							</table>
 						</div>
 						</div>
-
-						<div class="subSampleSection">
+<div class="subSampleSection">
 						<div class="detailContent media">
 							<span class="fl index">2</span>
 							<div class="media-body">
-								<div class="subTitle">保一保（可做C、D志愿）</div>
+								<div class="subTitle">平一平（可做C、D志愿）</div>
+							</div>
+						</div>
+
+						<div class="tableWrap">
+							<table class="table table-bordered text-center">
+								<thead>
+									<tr>
+										<th scope="col" width="20%">学校名称和历史投档线</th>
+										<th scope="col" width="20%">专业名称</th>
+										<th scope="col" width="20%">2015年专业平均分</th>
+										<th scope="col" width="20%">2014年专业平均分</th>
+										<th scope="col" width="20%">2013年专业平均分</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan="4">
+											<div class="collegeInfo">
+												<p class="collegeName">嘉兴学院</p>
+												<p>历史投档线：</p>
+												<p>2013年：528</p>
+												<p>2014年：514</p>
+												<p>2015年：523</p>
+											</div>
+										</td>
+										<td>软件工程</td>
+										<td>----</td>
+										<td>520.0<</td>
+										<td>532.0</td>
+									</tr>
+									<tr>
+										<td>服装设计与工程</td>
+										<td>532.0</td>
+										<td>519.0</td>
+										<td>544.0</td>
+									</tr>
+									<tr>
+										<td>建筑环境与能源应用工程</td>
+										<td>531.0</td>
+										<td>517.0</td>
+										<td>532.0</td>
+									</tr>
+									<tr>
+										<td>制药工程</td>
+										<td>----</td>
+										<td>----</td>
+										<td>530.0</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="collegeInfo">
+												<p class="collegeName">天津中医药大学</p>
+												<p>历史投档线：</p>
+												<p>2013年：539</p>
+												<p>2014年：531</p>
+												<p>2015年：520</p>
+											</div>
+										</td>
+										<td>制药工程</td>
+										<td>----</td>
+										<td>----</td>
+										<td>530.0</td>
+									</tr>
+									<tr>
+										<td rowspan="2">
+											<div class="collegeInfo">
+												<p class="collegeName">浙江海洋大学</p>
+												<p>历史投档线：</p>
+												<p>2013年：531</p>
+												<p>2014年：519</p>
+												<p>2015年：528</p>
+											</div>
+										</td>
+										<td>安全工程</td>
+										<td>532.0</td>
+										<td>520.0</td>
+										<td>531.0</td>
+									</tr>
+									<tr>
+										<td>海洋汽油工程</td>
+										<td>----</td>
+										<td>522.0</td>
+										<td>533.0</td>
+									</tr>
+									<tr>
+										<td rowspan="2">
+											<div class="collegeInfo">
+												<p class="collegeName">浙江大学城市学院</p>
+												<p>历史投档线：</p>
+												<p>2013年：517</p>
+												<p>2014年：502</p>
+												<p>2015年：515</p>
+											</div>
+										</td>
+										<td>软件工程</td>
+										<td>526.0</td>
+										<td>510.0<</td>
+										<td>538.0</td>
+									</tr>
+									<tr>
+										<td>道路桥梁与渡河工程</td>
+										<td>----</td>
+										<td>517.0</td>
+										<td>534.0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="subSampleSection">
+						<div class="detailContent media">
+							<span class="fl index">3</span>
+							<div class="media-body">
+								<div class="subTitle">保一保（可做D、E、F志愿）</div>
 							</div>
 						</div>
 
@@ -268,119 +380,7 @@
 							</table>
 						</div>
 
-						<div class="subSampleSection">
-						<div class="detailContent media">
-							<span class="fl index">3</span>
-							<div class="media-body">
-								<div class="subTitle">平一平（可做D、E、F志愿）</div>
-							</div>
-						</div>
-
-						<div class="tableWrap">
-							<table class="table table-bordered text-center">
-								<thead>
-									<tr>
-										<th scope="col" width="20%">学校名称和历史投档线</th>
-										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td rowspan="4">
-											<div class="collegeInfo">
-												<p class="collegeName">嘉兴学院</p>
-												<p>历史投档线：</p>
-												<p>2013年：528</p>
-												<p>2014年：514</p>
-												<p>2015年：523</p>
-											</div>
-										</td>
-										<td>软件工程</td>
-										<td>----</td>
-										<td>520.0<</td>
-										<td>532.0</td>
-									</tr>
-									<tr>
-										<td>服装设计与工程</td>
-										<td>532.0</td>
-										<td>519.0</td>
-										<td>544.0</td>
-									</tr>
-									<tr>
-										<td>建筑环境与能源应用工程</td>
-										<td>531.0</td>
-										<td>517.0</td>
-										<td>532.0</td>
-									</tr>
-									<tr>
-										<td>制药工程</td>
-										<td>----</td>
-										<td>----</td>
-										<td>530.0</td>
-									</tr>
-									<tr>
-										<td rowspan="1">
-											<div class="collegeInfo">
-												<p class="collegeName">天津中医药大学</p>
-												<p>历史投档线：</p>
-												<p>2013年：539</p>
-												<p>2014年：531</p>
-												<p>2015年：520</p>
-											</div>
-										</td>
-										<td>制药工程</td>
-										<td>----</td>
-										<td>----</td>
-										<td>530.0</td>
-									</tr>
-									<tr>
-										<td rowspan="2">
-											<div class="collegeInfo">
-												<p class="collegeName">浙江海洋大学</p>
-												<p>历史投档线：</p>
-												<p>2013年：531</p>
-												<p>2014年：519</p>
-												<p>2015年：528</p>
-											</div>
-										</td>
-										<td>安全工程</td>
-										<td>532.0</td>
-										<td>520.0<</td>
-										<td>531.0</td>
-									</tr>
-									<tr>
-										<td>海洋汽油工程</td>
-										<td>----</td>
-										<td>522.0</td>
-										<td>533.0</td>
-									</tr>
-									<tr>
-										<td rowspan="2">
-											<div class="collegeInfo">
-												<p class="collegeName">浙江大学城市学院</p>
-												<p>历史投档线：</p>
-												<p>2013年：517</p>
-												<p>2014年：502</p>
-												<p>2015年：515</p>
-											</div>
-										</td>
-										<td>软件工程</td>
-										<td>526.0</td>
-										<td>510.0<</td>
-										<td>538.0</td>
-									</tr>
-									<tr>
-										<td>道路桥梁与渡河工程</td>
-										<td>----</td>
-										<td>517.0</td>
-										<td>534.0</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+						
 						</div>
 					</section>
 
