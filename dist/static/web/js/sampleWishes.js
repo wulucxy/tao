@@ -1,11 +1,11 @@
-webpackJsonp([32],{
+webpackJsonp([33],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(234);
+	__webpack_require__(236);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -19,7 +19,7 @@ webpackJsonp([32],{
 
 /***/ },
 
-/***/ 234:
+/***/ 236:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -27,4 +27,4 @@ webpackJsonp([32],{
 /***/ }
 
 });
-//# sourceMappingURL=sample.js.map
+//# sourceMappingURL=sampleWishes.js.map
