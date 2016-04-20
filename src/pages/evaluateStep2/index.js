@@ -33,6 +33,8 @@ var courseType = $("[name=courseType]").val();
 
 var batch = $("[name=batch]").val();
 
+//是否更新志愿方案
+var  isChange = $("[name=isChange]").val();
 
 //分页
 var pagination = require("../../assets/components/pagination");
@@ -136,8 +138,8 @@ var school = {
             "list" : []
           }
         ],
-        "selected" :  $.parseJSON($("[name=selected]").text()),
-        "zhiyuanList" : $.parseJSON($("[name=zhiyuanList]").text())
+        "selected" :  isChange == 0 ? $.parseJSON($("[name=selected]").text()) :  $.parseJSON($("[name=selected_blank]").text()) ,
+        "zhiyuanList" :isChange == 0 ? $.parseJSON($("[name=zhiyuanList]").text()) : $.parseJSON($("[name=zhiyuanList_blank]").text())
         
       };
 

@@ -26,6 +26,9 @@
 		<!-- 文理科 -->
 		<input type="hidden" name="batch" value="${batch}">
 
+		<!-- 更换志愿方案 -->
+		<input type="hidden" name="isChange" value="${isChange}">
+
 		<div class="container p_assess">
 
 			<div class="content">
@@ -170,7 +173,9 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 		
 		<pre name="zhiyuanList">${zhiyuanList}</pre>
+		<pre name="zhiyuanList_blank">[{"code":"","name":"","type":1},{"code":"","name":"","type":2},{"code":"","name":"","type":3},{"code":"","name":"","type":4},{"code":"","name":"","type":5}]</pre>
 		<pre name="selected">${selected}</pre>
+	<pre name="selected_blank">[{"type" : 1,"list" : []},{ "type" : 2,"list" : []},{"type" : 3,"list" : []},{ "type" : 4,"list" : []},{"type" : 5,"list" : []}]</pre>
 
 	</body>
 </html>
