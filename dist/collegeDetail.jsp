@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.afa491ec.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.88c30619.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.b920cd5d.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.1ea7dbfe.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -77,7 +77,7 @@
 												<div class="col">
 													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
 												</div>
-												<div class="col badgeRow c-8">
+												<div class="col badgeRow c-10">
 													<span class="label">院校特色：</span><span class="field">
 														<c:forEach var="featurelist" items="${feature}">
 															 <c:choose>
@@ -94,10 +94,10 @@
 														</c:forEach>
 													</span>
 												</div>
-												<div class="col c-6">
+												<div class="col c-10">
 													<span class="label">院校网址：</span><a class="field orange" href="${site}" target="_blank">${site}</a>
 												</div>
-												<div class="col c-6">
+												<div class="col c-10">
 													<span class="label">通讯地址：</span><span class="field orange">${location.address}</span>
 												</div>
 											</div>	

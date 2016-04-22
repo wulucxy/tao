@@ -76,7 +76,7 @@ var school = {
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
         type : "post",
-        data : JSON.stringify({courseType : courseType}),
+        data : JSON.stringify({courseType : courseType,batch : batch}),
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);

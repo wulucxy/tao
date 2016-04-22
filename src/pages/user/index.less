@@ -31,7 +31,8 @@ ul li {list-style-type:none;}
 
 .wellWrapper .well{background-color: #f9f9f9;border:1px solid #dadada;padding:15px;font-size: 14px;color:#333;line-height: 20px;margin-bottom: 30px;}
 #historyWrapper .well .media {
-	margin-top: 8px;
+	margin-top: 8px;min-width: 480px;
+	.well_body{min-width:280px;}
 }
 
 .well .media{
@@ -128,7 +129,7 @@ ul li {list-style-type:none;}
 			display: inline-block;width: 130px;height: 130px;margin-right: 10px;
 		}
 	}
-	.detailTitle{color: #333;margin-bottom: 8px;font-size: 18px;display: inline-block;}
+	.detailTitle{color: #333;margin-bottom: 8px;font-size: 18px;display: inline-block;overflow: hidden;height: auto;max-height: 50px;}
 }
 
 .detailInfo.payRow{margin-top: 0;

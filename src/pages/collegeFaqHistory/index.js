@@ -19,11 +19,11 @@ var history = {
 		//默认分页开始
 		this.pager = 1;
 		this.capacity = 10;
-		this.reqList();
+		this.reqList($("#sBtn"));
 		this.bindEvt();
 	},
 
-	reqList : function(){
+	reqList : function(btn){
 		var that = this;
 		$.ajax({
 			url : preServer+provinceId+"/tzy/qa/history",
@@ -36,10 +36,11 @@ var history = {
 
 				if(res.code!=1){
 					warn(res.msg);
+					btn.removeClass("disabled");
 					return;
 				}
 
-				that.rendList(res.result);
+				that.rendList(btn,res.result);
 				
 			},
 			error : function(err){
@@ -48,7 +49,7 @@ var history = {
 		})
 	},
 
-	rendList : function(res){
+	rendList : function(btn,res){
 		var that = this;
 		var resData = {
 			data : res
@@ -56,15 +57,29 @@ var history = {
 
 		$(".faqList .list-group").empty();
 		$(".faqList .list-group").append(tmpl_list(resData)).hide().fadeIn();
+		btn.removeClass("disabled");
 
 	},
 
 	bindEvt : function(){
 		var that = this;
 		$("#sBtn").on("click",function(e){
-            e.preventDefault();
-            var oInput = $("#qInput"),btn = $(this).closest(".btn");
-            if($.trim(oInput.val()) == ""){
+			var target = $(this);
+            reqList(e);
+        })
+
+        $("[name=keyword2]").on("keyup",function(e){
+        	if(e.keyCode == 13){
+        		var target = $(this);
+            	reqList(e);
+        	}
+        })
+
+        function reqList(e){
+        	e.preventDefault();
+        	var target = $(e.target);
+            var oInput = $("#qInput"),btn = target.closest(".btn");
+            if($.trim(oInput.val()) == "" ||  oInput.val() == oInput.attr("placeholder") ){
                 warn("请输入院校关键词搜索");
                 return;
             }
@@ -72,9 +87,8 @@ var history = {
             if(btn.hasClass('disabled')) return;
             btn.addClass("disabled");
 
-            that.reqList();
-
-        })
+            that.reqList(btn);
+        }
 	}
 };
 

@@ -73,13 +73,13 @@ webpackJsonp([27],{
 	
 	
 				if((pageIndex+1) >= allItems){
-					subAnswer();
+					//subAnswer();
 				};
 			},
 			callback : function(pageIndex,$oldItem,$newItem){
 				if((pageIndex+1) >= allItems){
 					$("#subTestFooter").fadeIn(100);
-					//subAnswer();
+					subAnswer();
 				}
 	
 				//140题以后

@@ -73,10 +73,10 @@ webpackJsonp([7],{
 				place : $("[name=place]").val(),
 				c : $("[name=city]:checked").map(function(idx,ele){
 					return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
-				}),
+				}).get(),
 				majorList : $("[name=majorId]:checked").map(function(idx,ele){
 					return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
-				})
+				}).get()
 			};
 	
 	
