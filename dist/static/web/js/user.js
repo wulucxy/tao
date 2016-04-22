@@ -912,6 +912,7 @@ webpackJsonp([39],{
 	                cancelButtonId : "btnCancel"
 	            },
 	            debug: false,
+	            use_query_string : true,
 	            // Button settings
 	            button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",
 	            button_width: "82",
