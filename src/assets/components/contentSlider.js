@@ -28,7 +28,7 @@ function contentSlider(target,options){
         that.pageIndex = o.pageIndex;
 
         //取css动画结束方法浏览器兼容
-        that.transEndEventName = browser.prefixStyle("transitionend");
+        that.transEndEventName = browser.prefixStyle("transitionEnd");
 
         //初始化dom
         this.insertHTML(that.startPoint,that.endPoint);
@@ -86,11 +86,11 @@ function contentSlider(target,options){
         var that = this,o = that.options;
 
         var transitionendfn = function() {
+
           $oldItem.off( that.transEndEventName ).hide();
           that.isAnimating = false;
 
           
-
           //当前页面索引++
           that.pageIndex++;
 
@@ -138,8 +138,10 @@ function contentSlider(target,options){
         var that = this, o= that.options;
         
         $(o.trigger).on("click",function(e){
+
           e.preventDefault();
           var btn = $(this).closest(o.trigger);
+
 
           if(btn.hasClass(o.klass)) return;
           if(!!that.isAnimating) return;
