@@ -903,7 +903,7 @@ webpackJsonp([39],{
 	
 	            auto : true,
 	            // swf文件路径
-	            swf: '/data/upload/swfupload.swf',
+	            swf: 'http://www.tzhiyuan.net/data/upload/swfupload.swf',
 	
 	            // 文件接收服务端。
 	            server: preServer+provinceId+"/attach/uploadAttach",
