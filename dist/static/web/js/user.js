@@ -923,7 +923,7 @@ webpackJsonp([39],{
 	            formData: {
 	                avatar: ""
 	            },
-	            fileVar : "avatar"
+	            fileVal : "avatar"
 	        });
 	
 	        uploader.on( 'uploadProgress', function( file,percentage) {
