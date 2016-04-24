@@ -2,7 +2,6 @@ var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
 var browser = require("./browser.js");
 
-
 function contentSlider(target,options){
 
     function Plugin(t,o){
@@ -28,7 +27,7 @@ function contentSlider(target,options){
         that.pageIndex = o.pageIndex;
 
         //取css动画结束方法浏览器兼容
-        that.transEndEventName = browser.prefixStyle("transitionEnd");
+        that.transEndEventName = browser.whichTransitionEvent();
 
         //初始化dom
         this.insertHTML(that.startPoint,that.endPoint);
@@ -86,6 +85,8 @@ function contentSlider(target,options){
         var that = this,o = that.options;
 
         var transitionendfn = function() {
+
+          console.log("transitionendfn")
 
           $oldItem.off( that.transEndEventName ).hide();
           that.isAnimating = false;

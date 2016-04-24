@@ -2749,7 +2749,6 @@ webpackJsonp([27],{
 	var extend =  __webpack_require__(41);
 	var browser = __webpack_require__(45);
 	
-	
 	function contentSlider(target,options){
 	
 	    function Plugin(t,o){
@@ -2775,7 +2774,7 @@ webpackJsonp([27],{
 	        that.pageIndex = o.pageIndex;
 	
 	        //取css动画结束方法浏览器兼容
-	        that.transEndEventName = browser.prefixStyle("transitionEnd");
+	        that.transEndEventName = browser.whichTransitionEvent();
 	
 	        //初始化dom
 	        this.insertHTML(that.startPoint,that.endPoint);
@@ -2833,6 +2832,8 @@ webpackJsonp([27],{
 	        var that = this,o = that.options;
 	
 	        var transitionendfn = function() {
+	
+	          console.log("transitionendfn")
 	
 	          $oldItem.off( that.transEndEventName ).hide();
 	          that.isAnimating = false;

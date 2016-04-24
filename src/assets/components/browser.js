@@ -31,11 +31,32 @@ function isIE () {
   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 }
 
+function whichTransitionEvent(){  
+    var t;  
+
+    var el = document.createElement('fakeelement');  
+
+    var transitions = {  
+      'transition':'transitionend',  
+      'OTransition':'oTransitionEnd',  
+      'MozTransition':'transitionend',  
+      'WebkitTransition':'webkitTransitionEnd',  
+      'MsTransition':'msTransitionEnd'  
+    }  
+
+    for(t in transitions){  
+        if( el.style[t] !== undefined ){  
+            return transitions[t];  
+        }  
+    }  
+} 
+
 module.exports = {
   isModernBrower : isSupport,
   cssVendor : cssVendor,
   prefixStyle : prefixStyle,
   isMobile : check,
-  isIE : isIE
+  isIE : isIE,
+  whichTransitionEvent : whichTransitionEvent
 };
 

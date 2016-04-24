@@ -32,7 +32,11 @@ var uploader = {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
                 mimeTypes: 'image/*'
-            }
+            },
+            formData: {
+                avatar: ""
+            },
+            fileVar : "avatar"
         });
 
         uploader.on( 'uploadProgress', function( file,percentage) {
