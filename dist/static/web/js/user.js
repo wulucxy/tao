@@ -899,43 +899,60 @@ webpackJsonp([39],{
 		bindEvt : function(){
 			var that = this,o = that.settings;
 	
-			 var settings = {
-	            flash_url : "http://www.tzhiyuan.net/data/upload/swfupload.swf",
-	            //flash_url : "http://223.95.73.206/static/swfupload.swf",
-	            upload_url: preServer+provinceId+"/attach/uploadAttach", 
-	            post_params: {"avatar":""},
-	            file_post_name : "avatar",
-	            file_size_limit : "4 MB",
-	            file_types : "*.jpg;*.gif;*.png;*.jpeg;*.bmp",
-	            file_types_description : "img",
-	            custom_settings : {
-	                cancelButtonId : "btnCancel"
-	            },
-	            debug: false,
-	            use_query_string : true,
-	            // Button settings
-	            button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",
-	            button_width: "82",
-	            button_height: "21",
-	            button_placeholder_id: "spanButtonPlaceHolder",
-	            button_action:SWFUpload.BUTTON_ACTION.SELECT_FILE,
+			var uploader = WebUploader.create({
 	
-	            file_queued_handler : fileQueued,
-	            file_queue_error_handler : fileQueueError,
-	            file_dialog_complete_handler : fileDialogComplete,
-	            upload_error_handler : uploadError,
-	            upload_success_handler : uploadSuccess
+	            auto : true,
+	            // swf文件路径
+	            swf: '/data/upload/swfupload.swf',
 	
-	        };
-	        swfu = new SWFUpload(settings);
+	            // 文件接收服务端。
+	            server: preServer+provinceId+"/attach/uploadAttach",
 	
-	        function froward(file,serveData){
-	            that.setAvatar(file,serveData);   
-		    }
+	            // 选择文件的按钮。可选。
+	            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+	            pick: '#picker',
 	
-		    window.froward = froward;
+	            // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+	            resize: false,
+	            // 只允许选择图片文件。
+	            accept: {
+	                title: 'Images',
+	                extensions: 'gif,jpg,jpeg,bmp,png',
+	                mimeTypes: 'image/*'
+	            }
+	        });
 	
+	        uploader.on( 'uploadProgress', function( file,percentage) {
+	            that.loadingStart();
+	        });
+	
+	        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+	        uploader.on( 'uploadSuccess', function( file,response) {
+	           that.setAvatar(file,response);
+	    
+	        });
+	
+	        uploader.on( 'uploadError', function( file,reason) {
+	            
+	        });
+	
+	        // 完成上传完了，成功或者失败，先删除进度条。
+	        uploader.on( 'uploadComplete', function( file ) {
+	            that.loadingStop();
+	        });
+	
+	        uploader.on('error', function(error){
+	            console.log(error);
+	        })
 		},
+	
+	    loadingStart : function(){
+	        document.getElementById("loading").style.display = "inline";
+	    },
+	
+	    loadingStop : function() {
+	        document.getElementById("loading").style.display = "none";
+	    },
 	
 	    setAvatar : function(file,serveData){
 	        var that = this;

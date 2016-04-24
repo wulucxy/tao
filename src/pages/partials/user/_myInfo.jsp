@@ -14,10 +14,10 @@
 					<i class="icon-location"></i>
 					<em class="vm">头像：</em></label>
 				<div class="col2 avatarWrap rel">
-					<div class="avatar thumbnail rel" id="picker">
+					<div class="avatar thumbnail rel">
 						<img src="${user.userAvatar}" class="responsive">
-						<div class="info">
-							<span id="spanButtonPlaceHolder"></span>
+						<div class="info" id="picker">
+							编辑头像
 						</div>
 					</div>
 				</div>
