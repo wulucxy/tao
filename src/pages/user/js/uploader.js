@@ -25,7 +25,11 @@ var uploader = {
             chunked: true,
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-            pick: '#picker',
+
+            pick: {
+                id: '#picker',
+                innerHTML: '编辑图片'
+            },
 
             // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
             resize: false,

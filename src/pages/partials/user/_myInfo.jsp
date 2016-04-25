@@ -17,7 +17,7 @@
 					<div class="avatar thumbnail rel">
 						<img src="${user.userAvatar}" class="responsive">
 						<div class="info" id="picker">
-							编辑头像
+							<span id="spanButtonPlaceHolder"></span>
 						</div>
 					</div>
 				</div>
