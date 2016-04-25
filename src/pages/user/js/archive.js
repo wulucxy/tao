@@ -6,7 +6,11 @@ var common = require("../../../assets/components/common");
 
 var searchSchool = require("../../../assets/components/searchSchool");
 
+var browser = require("../../../assets/components/browser");
+
 var uploader = require("./uploader.js");
+
+var uploaderFix = require("./uploaderFixIE.js");
 
 //provinceId
 var provinceId = $("[name=province]").val();
@@ -38,7 +42,12 @@ var archive = {
 
 		this.bindEvt();
 
-		uploader.init();
+		if(browser.isModernBrower){
+			uploader.init();
+		}else if(browser.isIE() == "9" || browser.isIE() == "8"){
+			uploaderFix.init();
+		}
+		
 	},
 
 	subFunc :  function(btn,oForm){

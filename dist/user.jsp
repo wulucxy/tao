@@ -108,6 +108,10 @@
 	<script type="text/javascript" src="//wacai-file.b0.upaiyun.com/assets/js/webuploader.min.js"></script>
 	
 
-
+	<!--[if lte IE 9]>
+	<script type="text/javascript" src="//wacai-file.b0.upaiyun.com/assets/js/swfupload.js"></script>
+  	<script type="text/javascript" src="//wacai-file.b0.upaiyun.com/assets/js/handlers.js"></script>
+	<![endif]-->
+	
 	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/user.js"></script></body>
 </html>

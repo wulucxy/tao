@@ -3,7 +3,7 @@ var extend = require("extend");
 
 var provinceId = $("[name=province]").val();
 
-var uploader = {
+var uploaderFixIE = {
 	init : function(settings){
 		this.settings = settings;
 		this.bindEvt();
@@ -88,4 +88,4 @@ var uploader = {
 
 };
 
-module.exports = uploader;
+module.exports = uploaderFixIE;
