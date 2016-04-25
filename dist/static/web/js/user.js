@@ -903,12 +903,13 @@ webpackJsonp([39],{
 			var uploader = WebUploader.create({
 	
 	            auto : true,
+	            runtimeOrder : "flash",
 	            // swf文件路径
 	            swf: 'http://www.tzhiyuan.net/data/upload/swfupload.swf',
 	
 	            // 文件接收服务端。
 	            server: preServer+provinceId+"/attach/uploadAttach",
-	
+	            chunked: true,
 	            // 选择文件的按钮。可选。
 	            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
 	            pick: '#picker',
@@ -931,6 +932,14 @@ webpackJsonp([39],{
 	        if(browser.isIE() == "8"){
 	            $(".webuploader-container div:last-child").css({width: '82px', height: '24px'});
 	        }
+	
+	        uploader.on("beforeFileQueued",function(file){
+	            alert("beforeFileQueued: "+file);
+	        })
+	
+	        uploader.on("fileQueued",function(file){
+	            alert("fileQueued "+file);
+	        })
 	        
 	
 	        uploader.on( 'uploadProgress', function( file,percentage) {
@@ -954,6 +963,7 @@ webpackJsonp([39],{
 	        });
 	
 	        uploader.on('error', function(error){
+	            alert("error event: "+error);
 	            console.log(error);
 	        })
 		},
