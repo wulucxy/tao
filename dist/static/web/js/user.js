@@ -941,17 +941,13 @@ webpackJsonp([39],{
 	            fileVal : "avatar"
 	        });
 	
-	        // ie8 bug
-	        if(browser.isIE() == "8"){
-	            $(".webuploader-container div:last-child").css({width: '82px', height: '24px'});
-	        }
 	
 	        uploader.on("beforeFileQueued",function(file){
-	            alert("beforeFileQueued: "+file);
+	            //alert("beforeFileQueued: "+file);
 	        })
 	
 	        uploader.on("fileQueued",function(file){
-	            alert("fileQueued "+file);
+	            //alert("fileQueued "+file);
 	        })
 	        
 	
@@ -967,7 +963,7 @@ webpackJsonp([39],{
 	
 	        uploader.on( 'uploadError', function( file,reason) {
 	            console.log(reason);
-	            alert(reason);
+	            //alert(reason);
 	        });
 	
 	        // 完成上传完了，成功或者失败，先删除进度条。
@@ -976,7 +972,7 @@ webpackJsonp([39],{
 	        });
 	
 	        uploader.on('error', function(error){
-	            alert("error event: "+error);
+	            //alert("error event: "+error);
 	            console.log(error);
 	        })
 		},
@@ -1153,7 +1149,7 @@ webpackJsonp([39],{
 	            custom_settings : {
 	                cancelButtonId : "btnCancel"
 	            },
-	            debug: false,
+	            debug: true,
 	            use_query_string : true,
 	            // Button settings
 	            button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",

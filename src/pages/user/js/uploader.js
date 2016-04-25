@@ -45,17 +45,13 @@ var uploader = {
             fileVal : "avatar"
         });
 
-        // ie8 bug
-        if(browser.isIE() == "8"){
-            $(".webuploader-container div:last-child").css({width: '82px', height: '24px'});
-        }
 
         uploader.on("beforeFileQueued",function(file){
-            alert("beforeFileQueued: "+file);
+            //alert("beforeFileQueued: "+file);
         })
 
         uploader.on("fileQueued",function(file){
-            alert("fileQueued "+file);
+            //alert("fileQueued "+file);
         })
         
 
@@ -71,7 +67,7 @@ var uploader = {
 
         uploader.on( 'uploadError', function( file,reason) {
             console.log(reason);
-            alert(reason);
+            //alert(reason);
         });
 
         // 完成上传完了，成功或者失败，先删除进度条。
@@ -80,7 +76,7 @@ var uploader = {
         });
 
         uploader.on('error', function(error){
-            alert("error event: "+error);
+            //alert("error event: "+error);
             console.log(error);
         })
 	},
