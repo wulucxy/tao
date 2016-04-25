@@ -912,7 +912,7 @@ webpackJsonp([39],{
 			var uploader = WebUploader.create({
 	
 	            auto : true,
-	            runtimeOrder : "flash",
+	            //runtimeOrder : "flash",
 	            // swf文件路径
 	            swf: 'http://www.tzhiyuan.net/data/upload/swfupload.swf',
 	
