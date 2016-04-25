@@ -889,6 +889,7 @@ webpackJsonp([39],{
 	var extend = __webpack_require__(398);
 	
 	var provinceId = $("[name=province]").val();
+	var browser = __webpack_require__(45);
 	
 	var uploader = {
 		init : function(settings){
@@ -925,6 +926,12 @@ webpackJsonp([39],{
 	            },
 	            fileVal : "avatar"
 	        });
+	
+	        // ie8 bug
+	        if(browser.isIE() == "8"){
+	            $(".webuploader-container div:last-child").css({width: '82px', height: '24px'});
+	        }
+	        
 	
 	        uploader.on( 'uploadProgress', function( file,percentage) {
 	            that.loadingStart();

@@ -2,6 +2,7 @@ var $ = window.$ || require("jquery");
 var extend = require("extend");
 
 var provinceId = $("[name=province]").val();
+var browser = require("../../../assets/components/browser");
 
 var uploader = {
 	init : function(settings){
@@ -38,6 +39,12 @@ var uploader = {
             },
             fileVal : "avatar"
         });
+
+        // ie8 bug
+        if(browser.isIE() == "8"){
+            $(".webuploader-container div:last-child").css({width: '82px', height: '24px'});
+        }
+        
 
         uploader.on( 'uploadProgress', function( file,percentage) {
             that.loadingStart();
