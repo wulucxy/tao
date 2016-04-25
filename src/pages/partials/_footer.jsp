@@ -28,11 +28,11 @@
 			</div>
 		</div>
 		<div class="col3 column fl f-lh">
-			<div>
+			<!-- <div>
 				<span class="c-list ">
 					<span class="label">总顾问：</span><span class="field">浙江省教育考试院</span>
 				</span>
-			</div>
+			</div> -->
 			<div>
 				<span class="c-list">
 					<span class="label">总策划：</span><span class="field">方卫英</span>

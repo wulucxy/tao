@@ -42,7 +42,8 @@ var archive = {
 
 		this.bindEvt();
 
-		if(browser.isModernBrower){
+
+		if(browser.isModernBrower && browser.isIE() != "9"){
 			uploader.init();
 		}else if(browser.isIE() == "9" || browser.isIE() == "8"){
 			uploaderFix.init();

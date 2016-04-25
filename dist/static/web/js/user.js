@@ -773,7 +773,8 @@ webpackJsonp([39],{
 	
 			this.bindEvt();
 	
-			if(browser.isModernBrower){
+	
+			if(browser.isModernBrower && browser.isIE() != "9"){
 				uploader.init();
 			}else if(browser.isIE() == "9" || browser.isIE() == "8"){
 				uploaderFix.init();
@@ -1149,7 +1150,7 @@ webpackJsonp([39],{
 	            custom_settings : {
 	                cancelButtonId : "btnCancel"
 	            },
-	            debug: true,
+	            debug: false,
 	            use_query_string : true,
 	            // Button settings
 	            button_image_url: "http://wacai-file.b0.upaiyun.com/assets/img/editAvatar.png",
