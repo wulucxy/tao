@@ -57,7 +57,8 @@ var uploader = {
         });
 
         uploader.on( 'uploadError', function( file,reason) {
-            
+            console.log(reason);
+            alert(reason);
         });
 
         // 完成上传完了，成功或者失败，先删除进度条。
