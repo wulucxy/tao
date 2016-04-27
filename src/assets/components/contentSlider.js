@@ -86,8 +86,6 @@ function contentSlider(target,options){
 
         var transitionendfn = function() {
 
-          console.log("transitionendfn")
-
           $oldItem.off( that.transEndEventName ).hide();
           that.isAnimating = false;
 
