@@ -15,24 +15,25 @@ Placeholder.prototype.init=function(){
         else
         var placeholder=$this.attr('placeholder');
         
-        if($this.val()==''){
-            
+        if($this.val()==''){    
             $this.val(placeholder);
+        }
+        $this.addClass("placeholder");
+        
+        $this.focus(function(){
+            if($(this).val()==placeholder){
+                $(this).val('');
             }
-            $this.css({color:'#ccc'});
-            
-            $this.focus(function(){
-                if($(this).val()==placeholder){
-                    $(this).val('');
-                }
-            })
-        
-        
-            $this.blur(function(){
-                if($(this).val()==''){
-                    $(this).val(placeholder);
-                }
-            })
+            $this.removeClass("placeholder");
+        })
+    
+    
+        $this.blur(function(){
+            if($(this).val()==''){
+                $(this).val(placeholder);
+                $this.addClass("placeholder");
+            }
+        })
         
         }
 }

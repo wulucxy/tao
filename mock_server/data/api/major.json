@@ -1,1 +1,26 @@
-{"code":"1","msg":"调用成功","result":[{"majorName":"工科试验班(信息)","majorId":"Y7500"},{"majorName":"工科试验班(机械与能源)","majorId":"Y7500"},{"majorName":"工科试验班(材料与化工)","majorId":"Y7500"},{"majorName":"工科试验班(建筑与土木)","majorId":"Y7500"},{"majorName":"工科试验班(电气与自动化)","majorId":"Y7500"},{"majorName":"工科试验班(航空航天与过程装备)","majorId":"Y7500"},{"majorName":"工科试验班(电气工程卓越人才)","majorId":"Y7500"}]}
+{
+	"code": "1",
+	"msg": "调用成功",
+	"result": [{
+		"majorName": "工科试验班（信息）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（机械与能源）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（材料与化工）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（建筑与土木）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（电气与自动化）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（航空航天与过程装备）",
+		"majorId": "Y7511"
+	}, {
+		"majorName": "工科试验班（电气工程卓越人才）",
+		"majorId": "Y7511"
+	}]
+}

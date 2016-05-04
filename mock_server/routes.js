@@ -48,7 +48,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/college' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/search' : 'mock::api/college.json',
 	'post::/v2_1/client/1/data/college/1/majors' : 'mock::api/majorDetailList.json',
-	'/v2_1/client/1/data/major/3322/category/28' : 'mock::api/major.json',
+	'/v2_1/client/1/data/major/1872/category/28' : 'mock::api/major.json',
 	'post::/v2_1/client/1/profile/favor/college/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/major/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/delete' : 'mock::api/delFav.json',
@@ -94,7 +94,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/2482':"mock::api/subjectDetailList.json",
 	'post::/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
-	'post::/v2_1/client/1/data/college/3322/category':"mock::api/collegeMajorList.json"
+	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json"
 
 
 
