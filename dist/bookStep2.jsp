@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.078167f5.css" rel="stylesheet"><link href="/static/web/css/bookStep2.fe841a99.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.588786b5.css" rel="stylesheet"><link href="/static/web/css/bookStep2.fe841a99.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>

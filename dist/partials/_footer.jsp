@@ -32,7 +32,7 @@
 				<span class="c-list ">
 					<span class="label">总顾问：</span><span class="field">浙江省教育考试院</span>
 				</span>
-			</div> -->
+			</div> 
 			<div>
 				<span class="c-list">
 					<span class="label">总策划：</span><span class="field">方卫英</span>
@@ -55,7 +55,7 @@
 					<p>浙江日报新闻发展有限公司</p>
 					<p>新媒体服务部</p>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 		<div class="col4 fr clearfix">

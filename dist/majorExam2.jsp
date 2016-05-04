@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.078167f5.css" rel="stylesheet"><link href="/static/web/css/majorExam2.f759be07.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.588786b5.css" rel="stylesheet"><link href="/static/web/css/majorExam2.f759be07.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
