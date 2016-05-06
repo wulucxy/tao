@@ -152,6 +152,28 @@
       {
             "collegeId":"1",
             "collegeName":"同济大学",
+            "tuodangList": [
+                {
+                    "name": "理科",
+                    "type": "高考科类"
+                },
+                {
+                    "name": "第一批",
+                    "type": "报考批次"
+                },
+                {
+                    "name": 693,
+                    "type": "2013年投档线"
+                },
+                {
+                    "name": 687,
+                    "type": "2014年投档线"
+                },
+                {
+                    "name": 690,
+                    "type": "2015年投档线"
+                }
+            ],
             "assessment":0,                 
             "city":"北京",
             "type":"综合",
@@ -163,7 +185,7 @@
             "majors" : [
                     {
                        "majorId":"1",           
-                       "majorName":"建筑学",     
+                       "majorName":"建筑学建筑学建筑学建筑学建筑学建筑学建筑学",     
                        "assessment":0,          
                        "category":{"name":"工学","code":"1"},
                        "scoreList": [

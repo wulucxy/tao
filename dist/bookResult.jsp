@@ -1,4 +1,5 @@
 <%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -41,9 +42,10 @@
 
 				<div class="bg bg-blue mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
-					
+				
+				<c:choose>	
+				<c:when test="${fn:length(normal) > 0 }">
 					<section class="caseSection">
-
 					<h4 class="bg bg-f1">正常方案</h4>
 					<c:forEach var="list" items="${normal}" varStatus="loop">
 						<div class="media detailContent">
@@ -72,14 +74,31 @@
 		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
 		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
+								
+				<div class="tableWrap">
+					<table class="table table-bordered text-center">
+						<tr>
+						<c:forEach var="toudang" items="${list.tuodangList}">
+						<td>${toudang.type}</td>
+						</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="toudang" items="${list.tuodangList}">
+							<td>${toudang.name}</td>
+							</c:forEach>
+						</tr>
+
+					</table>
+				</div>
+
 								<div class="tableWrap">
 									<table class="table table-bordered text-center">
 										<tbody>
 											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
+												<td width="240">专业名称</td>
+												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td>${year.year}年平均分</td>
+												<td width="140">${year.year}年平均分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -98,6 +117,11 @@
 						</div>	
 					</c:forEach>
 					</section>
+				</c:when>
+				</c:choose>
+				
+				<c:choose>	
+				<c:when test="${fn:length(radical) > 0 }">
 					<section class="caseSection">
 						<h4 class="bg bg-f1">冲刺方案</h4>
 						<c:forEach var="list" items="${radical}" varStatus="loop">
@@ -128,13 +152,28 @@
 		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
+					<table class="table table-bordered text-center">
+						<tr>
+						<c:forEach var="toudang" items="${list.tuodangList}">
+						<td>${toudang.type}</td>
+						</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="toudang" items="${list.tuodangList}">
+							<td>${toudang.name}</td>
+							</c:forEach>
+						</tr>
+
+					</table>
+				</div>
+								<div class="tableWrap">
 									<table class="table table-bordered text-center">
 										<tbody>
 											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
+												<td width="240">专业名称</td>
+												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td>${year.year}年平均分</td>
+												<td width="140">${year.year}年平均分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -153,6 +192,11 @@
 						</div>	
 					</c:forEach>
 					</section>
+				</c:when>
+				</c:choose>
+				
+				<c:choose>	
+				<c:when test="${fn:length(conservative) > 0 }">
 					<section class="caseSection">
 						<h4 class="bg bg-f1">保守方案</h4>
 						<c:forEach var="list" items="${conservative}" varStatus="loop">
@@ -183,13 +227,28 @@
 		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
+					<table class="table table-bordered text-center">
+						<tr>
+						<c:forEach var="toudang" items="${list.tuodangList}">
+						<td>${toudang.type}</td>
+						</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="toudang" items="${list.tuodangList}">
+							<td>${toudang.name}</td>
+							</c:forEach>
+						</tr>
+
+					</table>
+				</div>
+								<div class="tableWrap">
 									<table class="table table-bordered text-center">
 										<tbody>
 											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
+												<td width="240">专业名称</td>
+												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td>${year.year}年平均分</td>
+												<td width="140">${year.year}年平均分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -208,6 +267,8 @@
 						</div>	
 					</c:forEach>
 					</section>
+				</c:when>
+				</c:choose>
 				</div>
 
 			</div>

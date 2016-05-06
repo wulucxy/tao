@@ -72,15 +72,30 @@
 		<span class="label">院校层次：</span><span class="field">${list.level}</span>
 								</div>
 								<div class="tableWrap">
+					<table class="table table-bordered text-center">
+						<tr>
+						<c:forEach var="toudang" items="${list.tuodangList}">
+						<td>${toudang.type}</td>
+						</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="toudang" items="${list.tuodangList}">
+							<td>${toudang.name}</td>
+							</c:forEach>
+						</tr>
+
+					</table>
+				</div>
+								<div class="tableWrap">
 									<table class="table table-bordered text-center">
 										<tbody>
 											<tr>
-												<td>专业名称</td>
-												<td>所属科类</td>
+												<td width="200">专业名称</td>
+												<td width="120">所属科类</td>
 											<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td>${year.year}年平均分</td>
+												<td width="120">${year.year}年平均分</td>
 											</c:forEach>
-												<td>填报建议</td>
+												<td width="120">填报建议</td>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
 											<tr>

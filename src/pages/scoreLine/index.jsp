@@ -39,7 +39,7 @@
 						<div class="row clearfix">
 							<label for="courseType" class="control-label column col1 fl">
 								<i class="scoreIcon icon-book"></i>
-								<em class="vm">高考科目：</em></label>
+								<em class="vm">高考科类：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">  
 								<label for="courseType_0" class="label_radio inline">
