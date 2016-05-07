@@ -95,7 +95,11 @@ var searchSchool = {
 			res = res.result;
 
 	        that.renderList(res);
-	        that.detailpagination(res);
+
+	        if(!$(".modalBox .pagination").length){
+	        	that.detailpagination(res);
+	        }
+	        
 	        that.Evt();
 	      }
 	    });
