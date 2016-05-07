@@ -44,6 +44,81 @@
 				<div class="formWrap">
 				
 				<c:choose>	
+				<c:when test="${fn:length(radical) > 0 }">
+					<section class="caseSection">
+						<h4 class="bg bg-f1">冲刺方案</h4>
+						<c:forEach var="list" items="${radical}" varStatus="loop">
+						<div class="media detailContent">
+						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
+							<span class="fl index">${loop.index+1}</span>
+							<div class="media-body">
+								<h4 class="name badgeRow">
+									<em class="badgetitle vm">${list.collegeName}</em>
+									<c:forEach var="featurelist" items="${list.feature}">
+									 <c:choose>
+									 	<c:when test="${featurelist.type == 1}">
+									   		<span class="badge green">${featurelist.name}</span>
+										</c:when>
+										<c:when test="${featurelist.type == 2}">
+									   		<span class="badge red">${featurelist.name}</span>
+										</c:when>
+									 	<c:otherwise>
+											<span class="badge">${featurelist.name}</span>
+										</c:otherwise>
+									 </c:choose>
+									</c:forEach>
+								</h4>
+								<div class="detail">
+		<span class="label">院校属地：</span><span class="field">${list.city}</span>
+		<span class="label">院校分类：</span><span class="field">${list.type}</span>
+		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
+		<span class="label">院校层次：</span><span class="field">${list.level}</span>
+								</div>
+								<div class="tableWrap">
+					<table class="table table-bordered text-center">
+						<tr>
+						<c:forEach var="toudang" items="${list.tuodangList}">
+						<td>${toudang.type}</td>
+						</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="toudang" items="${list.tuodangList}">
+							<td>${toudang.name}</td>
+							</c:forEach>
+						</tr>
+
+					</table>
+				</div>
+								<div class="tableWrap">
+									<table class="table table-bordered text-center">
+										<tbody>
+											<tr>
+												<td width="240">专业名称</td>
+												<td width="140">所属科类</td>
+												<c:forEach var="year" items="${list.majors[0].scoreList}">
+												<td width="140">${year.year}年平均分</td>
+												</c:forEach>
+											</tr>
+											<c:forEach var="major" items="${list.majors}">
+											<tr>
+												<td>${major.majorName}</td>
+												<td>${major.fCategory}</td>
+												<c:forEach var="score" items="${major.scoreList}">
+													<td>${score.score}</td>
+												</c:forEach>
+											</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>	
+					</c:forEach>
+					</section>
+				</c:when>
+				</c:choose>
+				
+				<c:choose>	
 				<c:when test="${fn:length(normal) > 0 }">
 					<section class="caseSection">
 					<h4 class="bg bg-f1">正常方案</h4>
@@ -91,81 +166,6 @@
 					</table>
 				</div>
 
-								<div class="tableWrap">
-									<table class="table table-bordered text-center">
-										<tbody>
-											<tr>
-												<td width="240">专业名称</td>
-												<td width="140">所属科类</td>
-												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
-												</c:forEach>
-											</tr>
-											<c:forEach var="major" items="${list.majors}">
-											<tr>
-												<td>${major.majorName}</td>
-												<td>${major.fCategory}</td>
-												<c:forEach var="score" items="${major.scoreList}">
-													<td>${score.score}</td>
-												</c:forEach>
-											</tr>
-											</c:forEach>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>	
-					</c:forEach>
-					</section>
-				</c:when>
-				</c:choose>
-				
-				<c:choose>	
-				<c:when test="${fn:length(radical) > 0 }">
-					<section class="caseSection">
-						<h4 class="bg bg-f1">冲刺方案</h4>
-						<c:forEach var="list" items="${radical}" varStatus="loop">
-						<div class="media detailContent">
-						<a href="javascript:;" class="taoIcon toggleIcon toggle"></a>
-							<span class="fl index">${loop.index+1}</span>
-							<div class="media-body">
-								<h4 class="name badgeRow">
-									<em class="badgetitle vm">${list.collegeName}</em>
-									<c:forEach var="featurelist" items="${list.feature}">
-									 <c:choose>
-									 	<c:when test="${featurelist.type == 1}">
-									   		<span class="badge green">${featurelist.name}</span>
-										</c:when>
-										<c:when test="${featurelist.type == 2}">
-									   		<span class="badge red">${featurelist.name}</span>
-										</c:when>
-									 	<c:otherwise>
-											<span class="badge">${featurelist.name}</span>
-										</c:otherwise>
-									 </c:choose>
-									</c:forEach>
-								</h4>
-								<div class="detail">
-		<span class="label">院校属地：</span><span class="field">${list.city}</span>
-		<span class="label">院校分类：</span><span class="field">${list.type}</span>
-		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
-		<span class="label">院校层次：</span><span class="field">${list.level}</span>
-								</div>
-								<div class="tableWrap">
-					<table class="table table-bordered text-center">
-						<tr>
-						<c:forEach var="toudang" items="${list.tuodangList}">
-						<td>${toudang.type}</td>
-						</c:forEach>
-						</tr>
-						<tr>
-							<c:forEach var="toudang" items="${list.tuodangList}">
-							<td>${toudang.name}</td>
-							</c:forEach>
-						</tr>
-
-					</table>
-				</div>
 								<div class="tableWrap">
 									<table class="table table-bordered text-center">
 										<tbody>
