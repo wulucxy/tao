@@ -133,11 +133,11 @@
 										</span>
 										<div class="media-body">
 										  	<a href="${list.href}" class="db" target="_blank">
-												<div class="g3 txt">
+												<div class="g3 txt ellipsis">
 													${list.title}
 												</div>
 												<div class="clearfix detail">
-													<span class="fl source g9">${list.source}</span>
+													<span class="fl source g9 btn btn-primary btn-outlined">${list.source}</span>
 													<span class="fr moment g9">${list.moment}</span>
 												</div>
 											</a>

@@ -9,7 +9,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.4e09798a.css" rel="stylesheet"><link href="/static/web/css/home.2d5fd2c6.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.4e09798a.css" rel="stylesheet"><link href="/static/web/css/home.b7070d10.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -133,11 +133,11 @@
 										</span>
 										<div class="media-body">
 										  	<a href="${list.href}" class="db" target="_blank">
-												<div class="g3 txt">
+												<div class="g3 txt ellipsis">
 													${list.title}
 												</div>
 												<div class="clearfix detail">
-													<span class="fl source g9">${list.source}</span>
+													<span class="fl source g9 btn btn-primary btn-outlined">${list.source}</span>
 													<span class="fr moment g9">${list.moment}</span>
 												</div>
 											</a>

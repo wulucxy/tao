@@ -31,10 +31,16 @@
 		<p class="foot">
 			<i class="icon-major icon-hat"></i>
 			<em class="label g6 vm">所需科目：</em>
-			<% for (var k = 0; k < majors[i].subjects.length; k++) { %>
+			<% if (majors[i].subjects.length == 0) { %>
 				<span class="btn btn-primary btn-outlined vm">
-				<%= majors[i].subjects[k].subjectName %>
+					不限
 				</span>
+			<% }else{ %>
+				<% for (var k = 0; k < majors[i].subjects.length; k++) { %>
+					<span class="btn btn-primary btn-outlined vm">
+					<%= majors[i].subjects[k].subjectName %>
+					</span>
+				<% } %>
 			<% } %>
 		</p>
 	</div>

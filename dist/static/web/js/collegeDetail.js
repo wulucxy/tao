@@ -349,10 +349,16 @@ webpackJsonp([9],{
 	'年</em>\n			</span>\n			<span>\n				<i class="icon-major icon-human"></i>\n				<em class="label">招生人数：</em>\n				<em class="field orange">' +
 	((__t = ( majors[i].recruitCount )) == null ? '' : __t) +
 	'人</em>\n			</span>\n		</p>\n		<p class="foot">\n			<i class="icon-major icon-hat"></i>\n			<em class="label g6 vm">所需科目：</em>\n			';
+	 if (majors[i].subjects.length == 0) { ;
+	__p += '\n				<span class="btn btn-primary btn-outlined vm">\n					不限\n				</span>\n			';
+	 }else{ ;
+	__p += '\n				';
 	 for (var k = 0; k < majors[i].subjects.length; k++) { ;
-	__p += '\n				<span class="btn btn-primary btn-outlined vm">\n				' +
+	__p += '\n					<span class="btn btn-primary btn-outlined vm">\n					' +
 	((__t = ( majors[i].subjects[k].subjectName )) == null ? '' : __t) +
-	'\n				</span>\n			';
+	'\n					</span>\n				';
+	 } ;
+	__p += '\n			';
 	 } ;
 	__p += '\n		</p>\n	</div>\n</li>\n';
 	 }} ;

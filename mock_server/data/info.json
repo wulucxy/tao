@@ -85,7 +85,7 @@
     ],
     "bannerList" : {
 	    "big":{
-			"title":"",
+			"title":"adfafafa",
 			"time":"",
 			"imgUrl":"",
 			"tagList":"",
@@ -113,7 +113,21 @@
 				"imgUrl":"",
 				"tagList":"",
 				"href" : "small"
-			}
+			},
+            {
+                "title":"fasdafasdfasfasf",
+                "time":"",
+                "imgUrl":"",
+                "tagList":"",
+                "href" : "small"
+            },      
+            {
+                "title":"",
+                "time":"",
+                "imgUrl":"",
+                "tagList":"",
+                "href" : "small"
+            }
 		]
 	}
 

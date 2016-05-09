@@ -41,6 +41,10 @@ var info = {
 		parm.push("page="+that.pager);
 		parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
+		console.log(that.tagIndex);
+
+		var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+
 		$.ajax({
 			url : preServer+province+"/news?"+parm.join("&"),
 			type : "get",
@@ -54,6 +58,7 @@ var info = {
 					return;
 				}
 
+				res.result.tagType = tagType;
 				var res = res.result;
 
 				$(".infoListWrap").removeClass("preloading");
@@ -116,7 +121,7 @@ var info = {
     		if(btn.hasClass("active")) return;
     		btn.addClass("active");
     		$(".infoListWrap").addClass("preloading");
-    		that.tagIndex = btn.attr("code");
+    		that.tagIndex = btn.index();
     		that.requestList();
     	});
 

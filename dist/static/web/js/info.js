@@ -46,6 +46,10 @@ webpackJsonp([22],{
 			parm.push("page="+that.pager);
 			parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
+			console.log(that.tagIndex);
+	
+			var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+	
 			$.ajax({
 				url : preServer+province+"/news?"+parm.join("&"),
 				type : "get",
@@ -59,6 +63,7 @@ webpackJsonp([22],{
 						return;
 					}
 	
+					res.result.tagType = tagType;
 					var res = res.result;
 	
 					$(".infoListWrap").removeClass("preloading");
@@ -121,7 +126,7 @@ webpackJsonp([22],{
 	    		if(btn.hasClass("active")) return;
 	    		btn.addClass("active");
 	    		$(".infoListWrap").addClass("preloading");
-	    		that.tagIndex = btn.attr("code");
+	    		that.tagIndex = btn.index();
 	    		that.requestList();
 	    	});
 	
@@ -264,23 +269,25 @@ webpackJsonp([22],{
 	 for (var i = 0; i < news.length; i++) { ;
 	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
 	((__t = ( news[i].newsIconUrl )) == null ? '' : __t) +
-	'">\n		</span>\n		<div class="media-body">\n				<a class="detailTitle" href="' +
+	'">\n		</span>\n		<div class="media-body">\n				<h3 class="clearfix">\n					<span class="btn btn-primary infoTag btn-outlined fr">\n						' +
+	((__t = ( tagType )) == null ? '' : __t) +
+	'\n					</span>\n					<a class="detailTitle ellipsis" href="' +
 	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
-	'" target="_blank">\n					' +
+	'" target="_blank">\n						' +
 	((__t = ( news[i].newsName )) == null ? '' : __t) +
-	'\n				</a>\n				<div class="clearfix detailSub g6">\n					';
+	'\n					</a>\n					\n				</h3>\n				\n				<!-- <div class="clearfix detailSub g6">\n					';
 	 for (var k = 0; k < news[i].newsTags.length; k++) { ;
 	__p += '\n					<span class="fl article-tag mr10">' +
 	((__t = ( news[i].newsTags[k] )) == null ? '' : __t) +
 	'</span>\n					';
 	 } ;
-	__p += '\n				<span class="fr moment">' +
-	((__t = ( news[i].time )) == null ? '' : __t) +
-	'</span>\n				</div>\n				<a class="db detailCnt" href="' +
+	__p += '\n				\n				</div> -->\n\n				<div class="detailCnt clearfix">\n					<a href="' +
 	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
-	'" target="_blank">\n					' +
+	'" class="dib" target="_blank">\n						' +
 	((__t = ( news[i].discription )) == null ? '' : __t) +
-	'\n				</a>\n		</div>\n	</div>\n</li>\n';
+	'\n					</a>\n					<span class="moment">' +
+	((__t = ( news[i].time )) == null ? '' : __t) +
+	'</span>\n					\n\n				</div>\n				\n		</div>\n	</div>\n</li>\n';
 	 }} ;
 	
 	

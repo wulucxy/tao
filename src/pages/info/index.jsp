@@ -28,8 +28,8 @@
 						${bannerList.big.title}</div>
 				</a>
 			</div>
-			<div class="column fr col2">
-				<div class="top">
+			<div class="column fr col2 ovh">
+				<!-- <div class="top">
 					<a target="_blank" class="infoLink mid" href="${bannerList.middle.href}">
 						<span class="imgWrap">
 							<img src="${bannerList.middle.imgUrl}" class="responsive">
@@ -39,7 +39,9 @@
 					</a>
 				</div>
 
-				<div class="bot clearfix mt10">
+				<div class="bot clearfix mt10"> -->
+
+				<div class="smlLists">
 					<c:forEach var="list" items="${bannerList.smallList}">
 					<div class="column fl col">
 						<a target="_blank" class="infoLink sml" href="${list.href}">
@@ -50,7 +52,7 @@
 						<em class="vm w99 dib">${list.title}</em><em class="pixel1 vm"></em></div></a>	
 					</div>
 					</c:forEach>	
-
+				</div>
 					<!-- <div class="column fl col">
 						<a target="_blank"class="infoLink sml">
 							<span class="imgWrap">
@@ -58,8 +60,8 @@
 							</span>
 							<div class="figbar">
 						<em class="vm w99 dib">参加2017年新高考</em><em class="pixel1 vm"></em></div></a>
-					</div> -->
-				</div>
+					</div> 
+				</div>  -->
 			</div>
 		</div>
 

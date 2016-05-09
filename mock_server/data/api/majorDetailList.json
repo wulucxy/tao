@@ -14,15 +14,6 @@
             "recruitCount":7,              
             "subjects":                     
             [
-                {
-                    "subjectId":"",         
-                    "subjectName":""        
-                },
-                
-                {
-                    "subjectId":"",         
-                    "subjectName":""        
-                }
             ],
             "tags":                         
             [
