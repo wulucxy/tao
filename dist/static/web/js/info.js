@@ -46,8 +46,6 @@ webpackJsonp([22],{
 			parm.push("page="+that.pager);
 			parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
-			console.log(that.tagIndex);
-	
 			var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
 	
 			$.ajax({
@@ -269,9 +267,13 @@ webpackJsonp([22],{
 	 for (var i = 0; i < news.length; i++) { ;
 	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
 	((__t = ( news[i].newsIconUrl )) == null ? '' : __t) +
-	'">\n		</span>\n		<div class="media-body">\n				<h3 class="clearfix">\n					<span class="btn btn-primary infoTag btn-outlined fr">\n						' +
-	((__t = ( tagType )) == null ? '' : __t) +
-	'\n					</span>\n					<a class="detailTitle ellipsis" href="' +
+	'">\n		</span>\n		<div class="media-body">\n				<h3 class="clearfix">\n					';
+	 if (news[i].newsTags.length && !!news[i].newsTags[0]) { ;
+	__p += '\n					<span class="btn btn-primary infoTag btn-outlined fr">\n						' +
+	((__t = ( news[i].newsTags )) == null ? '' : __t) +
+	'\n					</span>\n					';
+	 } ;
+	__p += '\n					<a class="detailTitle ellipsis" href="' +
 	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
 	'" target="_blank">\n						' +
 	((__t = ( news[i].newsName )) == null ? '' : __t) +

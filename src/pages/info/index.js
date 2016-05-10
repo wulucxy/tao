@@ -41,8 +41,6 @@ var info = {
 		parm.push("page="+that.pager);
 		parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
-		console.log(that.tagIndex);
-
 		var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
 
 		$.ajax({

@@ -137,7 +137,13 @@
 													${list.title}
 												</div>
 												<div class="clearfix detail">
-													<span class="fl source g9 btn btn-primary btn-outlined">${list.source}</span>
+
+				<c:choose>
+				    <c:when test="${list.source != null}">
+				   		<span class="fl source g9 btn btn-primary btn-outlined">${list.source}</span>
+					</c:when>
+				</c:choose>
+													
 													<span class="fr moment g9">${list.moment}</span>
 												</div>
 											</a>

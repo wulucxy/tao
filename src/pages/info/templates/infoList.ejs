@@ -9,9 +9,11 @@
 		</span>
 		<div class="media-body">
 				<h3 class="clearfix">
+					<% if (news[i].newsTags.length && !!news[i].newsTags[0]) { %>
 					<span class="btn btn-primary infoTag btn-outlined fr">
-						<%= tagType %>
+						<%= news[i].newsTags %>
 					</span>
+					<% } %>
 					<a class="detailTitle ellipsis" href="<%= news[i].newsUrl %>" target="_blank">
 						<%= news[i].newsName %>
 					</a>
