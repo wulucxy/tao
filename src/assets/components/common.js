@@ -59,10 +59,8 @@ var common = {
 	searchForm : function(){
 		var that = this;
 		var oInput = $("#searchField");
-		$("#searchForm").on("click","[type=submit]",function(e){
+		$("#searchForm").on("click","#searchBtn",function(e){
 			e.preventDefault();
-
-
 
 			var btn = $(e.target).closest(".btn");
 			if($.trim(oInput.val())==""){
@@ -71,6 +69,24 @@ var common = {
 			}
 
 			that.goSearch(btn,$("#searchForm"));
+			return false;
+
+		});
+
+		$("#searchField").on("keyup",function(e){
+			e.preventDefault();
+			var keyCode = e.which || e.keyCode;
+			var btn = $(e.target);
+
+			if(keyCode == 13){
+				if($.trim(oInput.val())=="" || $.trim(oInput.val())== oInput.attr("placeholder") ){
+					warn("请输入搜索条件");
+					return false;
+				}
+
+				that.goSearch(btn,$("#searchForm"));
+				return false;
+			}
 
 		})
 	},

@@ -127,7 +127,7 @@
 
 				<div class="s-search fr">
 					<div class="clearfix">
-						<form action="/search" target="_blank" id="searchForm">
+						<form action="/search" target="_blank" id="searchForm" onsubmit="return false;">
 						<div class="btn-group fl" id="selectSwitch">
 						    <a class="btn btn-default btn-select trigger" href="javascript:;">
 						    	<em class="selectField"></em> 
@@ -142,7 +142,7 @@
 						<div class="input-group fl clearfix">
 				          <input type="text" class="form-control fl" placeholder="请输入关键字搜索" id="searchField" name="keyword">
 				          <span class="input-group-btn">
-				            <button class="btn btn-default btn-search" type="submit" id="searchBtn">
+				            <button class="btn btn-default btn-search" type="button" id="searchBtn">
 				            	<i class="iconList icon-search"></i>
 				            </button>
 				          </span>
