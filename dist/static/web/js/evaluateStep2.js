@@ -377,9 +377,10 @@ webpackJsonp([17],{
 	
 	    var parm = [];
 	    parm.push("courseType="+courseType);
+	    parm.push("batch="+batch);
 	
 	    $.ajax({
-	        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join(""),
+	        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
 	        type : "get",
 	        success : function(res){
 	            if(typeof res =="string"){
