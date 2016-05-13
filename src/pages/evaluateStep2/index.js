@@ -778,7 +778,7 @@ var school = {
       url : preServer+provinceId+"/tzy/plan/assessment/step2",
       type : "post",
       contentType: "application/json",
-      data : JSON.stringify({wishes : wishList,zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
+      data : JSON.stringify({batch : batch, wishes : wishList,zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
       success : function(res){
           if(typeof res =="string"){
               var res = $.parseJSON(res);
