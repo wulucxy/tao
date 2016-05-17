@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
 </head>
 <body>
