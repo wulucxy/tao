@@ -209,11 +209,11 @@
 								<em class="vm">高考分数：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-								<input type="text" class="input form-control dib c-9" id="score" name="score" placeholder="请输入高考分数" pattern="^[0-9]{1,3}" value="${score}" required> &nbsp;分
+								<input type="text" class="input form-control dib c-9" id="score" name="score" placeholder="请输入高考分数" min="0" max="800" value="${score}" required> &nbsp;分
 								</span>
 							</div>
 							<div class="errInfo">
-							<span class="p-error">高考分数为1-3位数字，请重新填写</span>
+							<span class="p-error">高考分数为0-800之间，请重新填写</span>
 							<span class="p-error-empty">高考分数不能为空</span>
 							</div>
 						</div>
@@ -224,7 +224,7 @@
 								<em class="vm">高考排名：</em></label>
 							<div class="col2 inputWrap rel">
 								<span class="fieldWrap">
-									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}" value="${place}" required> &nbsp;名
+									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}$" value="${place}" required> &nbsp;名
 								</span>
 							</div>
 							<div class="errInfo">
