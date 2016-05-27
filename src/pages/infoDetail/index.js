@@ -27,6 +27,8 @@ $(document).on("click",'.down',function(e){
 	updown(btn,2);
 });
 
+document.title = $(".articleWrap .head h4").text();
+
 function updown(btn,type){
 	if(btn.hasClass("btn-primary") ||  $("[btn-type=1]").length){
 		if($("[btn-type=1]").hasClass("up")){
