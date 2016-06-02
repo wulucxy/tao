@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.4e09798a.css" rel="stylesheet"><link href="/static/web/css/login.bcd8f186.css" rel="stylesheet"></head>
+</head>
 <body>
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
