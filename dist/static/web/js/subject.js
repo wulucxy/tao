@@ -1,11 +1,11 @@
-webpackJsonp([37],{
+webpackJsonp([38],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(385);
+	__webpack_require__(387);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -20,64 +20,29 @@ webpackJsonp([37],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(387);
+	var dataSet = __webpack_require__(389);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 385:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(386);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 386:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .s-search {\n  margin-bottom: 20px;\n}\n.formWrap .s-search > div {\n  padding-top: 0;\n}\n.formWrap .s-search .form-control {\n  width: 100%;\n  background-color: #f9f9f9;\n}\n.formWrap .s-search .input-group-btn {\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.m-nav .btn-default > em {\n  display: inline-block;\n  margin-right: 3px;\n}\n.m-nav .crumb .tagsWrap {\n  padding-left: 72px;\n  padding-right: 66px;\n  display: block;\n}\n.m-nav .crumb .tags {\n  display: inline-block;\n  margin-bottom: 10px;\n}\n.m-nav .crumb .tags:last-child {\n  margin-bottom: 0;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.schoolList li {\n  padding: 16px 0;\n  border-bottom: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 16px;\n  color: #f4b64f;\n}\n.schoolList .detail .field:last-child {\n  margin-right: 0;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.schoolListWrap {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 24px;\n}\n.favMajorBtn {\n  min-width: 84px;\n}\n.favMajorModal .majorListWrap {\n  padding-top: 16px;\n  padding-left: 12px;\n}\n.favMajorModal .row {\n  line-height: 30px;\n  margin-bottom: 16px;\n}\n.favMajorModal .col1 {\n  display: inline-block;\n  width: 200px;\n  font-size: 15px;\n}\n.favMajorModal .col1 a {\n  color: #444;\n  max-height: 30px;\n  overflow: hidden;\n  display: inline-block;\n  line-height: 1;\n}\n.favMajorModal .col2 {\n  display: block;\n  width: auto;\n}\n.favMajorModal .col2 .btn {\n  font-size: 13px;\n  padding-top: 0;\n  padding-bottom: 0;\n  line-height: 28px;\n  margin-right: 10px;\n}\n.favMajorModal .pagination {\n  padding-top: 10px;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-
 /***/ 387:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 389:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
-	var tmpl = __webpack_require__(388);
+	var tmpl = __webpack_require__(390);
 	
 	var localData = __webpack_require__(141);
-	var tmpl_favWrap = __webpack_require__(389);
-	var tmpl_favList = __webpack_require__(390);
+	var tmpl_favWrap = __webpack_require__(391);
+	var tmpl_favList = __webpack_require__(392);
 	
 	var pagination = __webpack_require__(179);
 	
@@ -455,7 +420,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 388:
+/***/ 390:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -511,7 +476,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 389:
+/***/ 391:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -528,7 +493,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 390:
+/***/ 392:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

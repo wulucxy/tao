@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.743842ac.css" rel="stylesheet"><link href="/static/web/css/home.b7070d10.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -134,7 +134,7 @@
 										</span>
 										<div class="media-body">
 										  	<a href="${list.href}" class="db" target="_blank">
-												<div class="g3 txt ellipsis">
+												<div class="g3 txt ellipsis" title="${list.fullTitle}">
 													${list.title}
 												</div>
 												<div class="clearfix detail">

@@ -23,13 +23,23 @@
             "imgUrl": "http://placehold.it/74x74",
             "href" : "#list",
             "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
             "moment":"1小时前"
         },
         {
             "imgUrl": "http://placehold.it/74x74",
             "href" : "#list",
             "title" : "参加2017年新高",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
             "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
             "moment":"1小时前"
         },
         {
@@ -43,6 +53,7 @@
             "imgUrl": "http://placehold.it/74x74",
             "href" : "#list",
             "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
             "source": "#1",
             "moment":"1小时前"
         },
@@ -50,13 +61,7 @@
             "imgUrl": "http://placehold.it/74x74",
             "href" : "#list",
             "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
-            "source": "#1",
-            "moment":"1小时前"
-        },
-        {
-            "imgUrl": "http://placehold.it/74x74",
-            "href" : "#list",
-            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
             "source": "#1",
             "moment":"1小时前"
         }

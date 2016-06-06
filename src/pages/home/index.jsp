@@ -134,7 +134,7 @@
 										</span>
 										<div class="media-body">
 										  	<a href="${list.href}" class="db" target="_blank">
-												<div class="g3 txt ellipsis">
+												<div class="g3 txt ellipsis" title="${list.fullTitle}">
 													${list.title}
 												</div>
 												<div class="clearfix detail">

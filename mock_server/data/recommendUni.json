@@ -1,0 +1,104 @@
+{"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userId" : "name",
+        "isLogin" : "1"
+    },
+"bannerList" : [
+        {
+            "imgUrl" : "http://placehold.it/1000x120",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/1000x120",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/1000x120",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/1000x120",
+            "href" : "#5"
+        }
+    ],
+ "recommendList": [
+        {
+            "title":"浙江本科院校推荐",
+            "uniList": [
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                }
+            ]
+        },
+        {
+            "title":"浙江本科院校推荐",
+            "uniList": [
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                },
+                {
+                    "name": "清华大学",
+                    "imgUrl": "http://www.tzhiyuan.net/data/upload/2016-04-25/517403854.jpg",
+                    "href": "#5"
+                }
+            ]
+        }
+    ]
+}
