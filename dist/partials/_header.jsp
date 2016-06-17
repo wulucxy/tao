@@ -77,6 +77,8 @@
 								<a class="ddlist" href="/box/score_management">成绩管理</a>
 								<a class="ddlist" href="/box/plan/major_exam1">专业选择测试</a>
 								<a class="ddlist" href="/box/plan/aboard">留学方案定制</a>
+								<a class="ddlist" href="/box/college_faq">高校问答</a>
+								<a class="ddlist" href="/expertOrder">专家预约</a>
 							</div>
 						</div>
 					</li>
