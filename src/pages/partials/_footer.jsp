@@ -78,6 +78,11 @@
 	<div class="bottomBar">
 		Copyrights © 2014-2016 浙江日报新闻发展有限公司版权所有 ｜ 服务热线：0571-85311211
 	</div>
+
+	<div style="width:300px;margin:0 auto; padding:20px 0;">
+ 		<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010302001932" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备 33010302001932号</p></a>
+ 	</div>
+
 </footer>
 
 <script>
