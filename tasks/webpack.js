@@ -17,7 +17,6 @@ module.exports = function (opts) {
 			fs.removeSync(path.join(dest, 'dist'));
 
 			console.log('       正在打包 ....');
-			console.time("webpackTiming");
 			var bundler = webpack(config);
 			var count;
 
@@ -30,11 +29,11 @@ module.exports = function (opts) {
 					return;
 				}
 				
-				console.timeEnd("webpackTiming")
 				plugins.util.log('webpack bundle file changed');
 				cb();
 			};
 
+			console.log('process.argv[2] ',process.argv[2])
 			if (process.argv[2] === 'server') {
 				bundler.watch({
 					aggregateTimeout: 300,

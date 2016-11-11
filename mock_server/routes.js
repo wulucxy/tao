@@ -41,6 +41,10 @@ module.exports = {
 	"/sampleEvaluate" : "sampleEvaluate.jsp",
 	"/sampleWishes" : "sampleWishes.jsp",
 	"/recommendUni" : "recommendUni.jsp",
+	"/invite" : "invite.jsp",
+	"/inviteSuccess" : "inviteSuccess.jsp",
+	"/recieveCoupon" : "recieveCoupon.jsp",
+	"/educationPlan" : "educationPlan.jsp",
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',

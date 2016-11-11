@@ -1,11 +1,11 @@
-webpackJsonp([39],{
+webpackJsonp([43],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(14);
-	__webpack_require__(393);
+	__webpack_require__(406);
 	var $ = window.$ || __webpack_require__(36);
 	
 	//工具类方法
@@ -18,26 +18,26 @@ webpackJsonp([39],{
 	//自定义功能写下面
 	var tabs = __webpack_require__(152);
 	//加载更多模块
-	var loadMore = __webpack_require__(202);
+	var loadMore = __webpack_require__(205);
 	
 	
 	//历史模块
-	var archive = __webpack_require__(395);
+	var archive = __webpack_require__(408);
 	
 	//历史模块
-	var history = __webpack_require__(399);
+	var history = __webpack_require__(412);
 	
 	//收藏模块
-	var collection = __webpack_require__(401);
+	var collection = __webpack_require__(414);
 	
 	//历史测试模块
-	var test = __webpack_require__(405);
+	var test = __webpack_require__(418);
 	
 	//qa模块
-	var qa = __webpack_require__(407);
+	var qa = __webpack_require__(420);
 	
 	//qa模块
-	var appointment = __webpack_require__(409);
+	var appointment = __webpack_require__(422);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -183,7 +183,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 202:
+/***/ 205:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -291,7 +291,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 231:
+/***/ 242:
 /***/ function(module, exports) {
 
 	var
@@ -472,21 +472,21 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 378:
+/***/ 391:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	__webpack_require__(379);
+	__webpack_require__(392);
 	//自定义功能写下面
-	var tmpl_school = __webpack_require__(381);
-	var tmpl_list = __webpack_require__(382);
-	var tmpl_highschool = __webpack_require__(383);
+	var tmpl_school = __webpack_require__(394);
+	var tmpl_list = __webpack_require__(395);
+	var tmpl_highschool = __webpack_require__(396);
 	
 	var browser = __webpack_require__(45);
 	//分页
-	var pagination = __webpack_require__(179);
+	var pagination = __webpack_require__(182);
 	
 	var searchSchool = {
 	
@@ -641,14 +641,49 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 379:
-/***/ function(module, exports) {
+/***/ 392:
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(393);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(33)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 
-/***/ 381:
+/***/ 393:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+
+/***/ 394:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -663,7 +698,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 382:
+/***/ 395:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -693,7 +728,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 383:
+/***/ 396:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -723,14 +758,49 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 393:
-/***/ function(module, exports) {
+/***/ 406:
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(407);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(33)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 
-/***/ 395:
+/***/ 407:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\nul li {\n  list-style-type: none;\n}\n.mainContainer {\n  margin-bottom: 36px;\n}\n.m-sideNav {\n  background-color: #ddd;\n  padding-top: 20px;\n}\n.avatarWrap .imgWrap {\n  display: inline-block;\n  width: 148px;\n  height: 148px;\n}\n.avatarWrap .imgWrap img {\n  width: 100%;\n  height: 100%;\n}\n.userInfoList {\n  margin-top: 20px;\n  font-size: 16px;\n  overflow: hidden;\n}\n.userInfoList a {\n  color: #fff;\n  display: block;\n}\n.blue {\n  color: #61c0e2;\n}\n.userInfoList li {\n  text-align: center;\n  line-height: 40px;\n  border-bottom: 1px solid #fff;\n  background-color: #606060;\n}\n.userInfoList li:hover,\n.userInfoList li.current {\n  background-color: #61c0e2;\n}\n.userInfoList li.last {\n  border-bottom: none;\n}\n.kefu {\n  margin-top: 180px;\n  font-size: 14px;\n  color: #333;\n  line-height: 2;\n  padding: 0 0 16px 16px;\n}\n.contentWrap .topWell {\n  color: #61c0e2;\n  font-size: 15px;\n  background-color: #fff;\n  padding-left: 16px;\n  line-height: 36px;\n  margin-bottom: 10px;\n}\n.contentWrap .topWell .square {\n  width: 10px;\n  height: 10px;\n  display: inline-block;\n  background-color: #61c0e2;\n  margin-right: 8px;\n}\n.contentInner .content {\n  background-color: #fff;\n  border: 1px solid #e5e5e5;\n  padding: 30px 24px;\n}\n.row label + .col2 {\n  width: 374px;\n}\n.contentInner {\n  display: none;\n}\n.myInfo {\n  display: block;\n}\n.wellWrapper .well {\n  background-color: #f9f9f9;\n  border: 1px solid #dadada;\n  padding: 15px;\n  font-size: 14px;\n  color: #333;\n  line-height: 20px;\n  margin-bottom: 30px;\n}\n#historyWrapper .well .media {\n  margin-top: 8px;\n  min-width: 480px;\n}\n#historyWrapper .well .media .well_body {\n  min-width: 280px;\n}\n.well .media .fl {\n  margin-right: 16px;\n}\n.well .media .fl .btn {\n  width: 108px;\n  padding: 9px 0;\n}\n.well .media-body .field {\n  display: inline-block;\n  margin-right: 30px;\n}\n.detailInfo .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n  margin-top: 7px;\n}\n.detailInfo .detailTxt {\n  color: #61c0e2;\n  margin-top: 4px;\n  display: block;\n  text-align: center;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badge {\n  font-size: 12px;\n  line-height: 18px;\n  border-radius: 10px;\n  text-align: center;\n  width: 36px;\n  color: #fff;\n  margin-left: 5px;\n}\n.badge.red {\n  background-color: #eb0748;\n}\n.badge.green {\n  background-color: #5aa403;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.myInfo .errInfo {\n  padding-left: 90px;\n}\n.schoolList li {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 20px;\n  color: #f4b64f;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.majorList li {\n  margin-bottom: 20px;\n}\n.majorList .bs {\n  font-size: 16px;\n  color: #333;\n  line-height: 36px;\n  padding-left: 10px;\n}\n.bg-gf {\n  background-color: #f1f1f1;\n}\n.majorList .btnsRow .btn {\n  min-width: 110px;\n  font-size: 14px;\n  border-radius: 0;\n  margin-right: 20px;\n  margin-bottom: 10px;\n}\n.infoList li {\n  margin-bottom: 20px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.detailCnt:hover {\n  color: #666;\n}\n.infoList .media > .fl {\n  margin-right: 14px;\n}\n.infoList .detailTitle {\n  font-size: 18px;\n  color: #333;\n  margin-bottom: 12px;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 24px;\n}\n.q-school {\n  margin-bottom: 24px;\n}\n.q-school h3 {\n  font-size: 16px;\n  margin-bottom: 16px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #61c0e2;\n  margin-right: 10px;\n}\n.book .media .btn {\n  border-radius: 3px;\n  color: #fff;\n  border: none;\n}\n.btn-green {\n  background-color: #5aa403;\n}\n.btn-gray {\n  background-color: #939393;\n}\n.btn-red {\n  background-color: #eb0748;\n}\n.btn-orange {\n  background-color: #f4b64f;\n  border-radius: 3px;\n  color: #fff;\n  border: none;\n}\n.book .media > .fl .btn-lines {\n  line-height: 1;\n  padding-top: 7px;\n  padding-bottom: 7px;\n  color: #fff;\n}\n.book .media-body span {\n  display: inline-block;\n  margin-right: 18px;\n}\n.book .detailInfo {\n  margin-top: 12px;\n  color: #999;\n}\n.btn-mid {\n  vertical-align: middle;\n  width: 108px;\n  padding-top: 9px;\n  padding-bottom: 9px;\n}\n.coupon .btn {\n  border-radius: 0;\n  margin-right: 16px;\n}\n.coupon .detailInfo {\n  color: #999;\n  font-size: 14px;\n  float: right;\n  text-align: right;\n  vertical-align: middle;\n  height: 40px;\n}\n.coupon .well .media {\n  margin-top: 0;\n}\n.coupon .well.disabled {\n  color: #999;\n}\n.coupon-type {\n  font-size: 20px;\n}\n.vm-wrapper {\n  width: 99%;\n  vertical-align: middle;\n}\n.avatarWrap .thumbnail {\n  width: 84px;\n  height: 84px;\n  border: 1px solid #dadada;\n  cursor: pointer;\n}\n.avatarWrap .thumbnail .info {\n  position: absolute;\n  height: 24px;\n  bottom: 0px;\n  left: 0;\n  right: 0;\n  color: #fff;\n  text-align: center;\n  background: #999;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.avatarWrap .thumbnail img.responsive {\n  width: 100%;\n  height: 100%;\n}\n.contentInner .no_transList {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.favorInfoList li {\n  border-bottom: 1px solid #e6e4e4;\n  padding-bottom: 14px;\n  padding-top: 14px;\n}\n.favorInfoList li .imgWrap {\n  display: inline-block;\n  width: 130px;\n  height: 130px;\n  margin-right: 10px;\n}\n.favorInfoList .detailTitle {\n  color: #333;\n  margin-bottom: 8px;\n  font-size: 18px;\n  display: inline-block;\n  overflow: hidden;\n  height: auto;\n  max-height: 50px;\n}\n.detailInfo.payRow {\n  margin-top: 0;\n}\n.detailInfo.payRow .btn-pay {\n  display: block;\n  margin-top: 0;\n  margin-bottom: 4px;\n}\n.payModal .modalSubCnt {\n  padding-top: 40px;\n  font-size: 14px;\n  color: #333;\n}\n.payModal .modalSubCnt .row {\n  margin-bottom: 18px;\n}\n.payModal .modalSubCnt .payIcon {\n  margin-left: 10px;\n}\n#sSchoolForm .schoolLists {\n  height: 310px\\9;\n}\n.avatarRow {\n  margin-bottom: 20px;\n}\n.pickerTxt {\n  display: none;\n}\n.webuploader-container {\n  position: relative;\n}\n.webuploader-element-invisible {\n  position: absolute !important;\n  clip: rect(1px 1px 1px 1px);\n  /* IE6, IE7 */\n  clip: rect(1px, 1px, 1px, 1px);\n}\n.webuploader-pick {\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  background: #999;\n  padding: 0 4px;\n  line-height: 24px;\n  color: #fff;\n  text-align: center;\n  border-radius: 3px;\n  overflow: hidden;\n  height: 24px;\n  width: 100%;\n}\n.webuploader-pick-hover {\n  background: #666;\n}\n.webuploader-pick-disable {\n  opacity: 0.6;\n  pointer-events: none;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+
+/***/ 408:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -739,13 +809,13 @@ webpackJsonp([39],{
 	//公共方法
 	var common = __webpack_require__(38);
 	
-	var searchSchool = __webpack_require__(378);
+	var searchSchool = __webpack_require__(391);
 	
 	var browser = __webpack_require__(45);
 	
-	var uploader = __webpack_require__(396);
+	var uploader = __webpack_require__(409);
 	
-	var uploaderFix = __webpack_require__(398);
+	var uploaderFix = __webpack_require__(411);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -896,11 +966,11 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 396:
+/***/ 409:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var extend = __webpack_require__(397);
+	var extend = __webpack_require__(410);
 	
 	var provinceId = $("[name=province]").val();
 	var browser = __webpack_require__(45);
@@ -1032,7 +1102,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 397:
+/***/ 410:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1125,11 +1195,11 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 398:
+/***/ 411:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
-	var extend = __webpack_require__(397);
+	var extend = __webpack_require__(410);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1222,13 +1292,13 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 399:
+/***/ 412:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(400);
+	var tmpl = __webpack_require__(413);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1342,7 +1412,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 400:
+/***/ 413:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1410,7 +1480,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 401:
+/***/ 414:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
@@ -1422,9 +1492,9 @@ webpackJsonp([39],{
 	//本地数据库
 	var localData = __webpack_require__(141);
 	
-	var tmpl_college = __webpack_require__(402);
-	var tmpl_major = __webpack_require__(403);
-	var tmpl_info = __webpack_require__(404);
+	var tmpl_college = __webpack_require__(415);
+	var tmpl_major = __webpack_require__(416);
+	var tmpl_info = __webpack_require__(417);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1587,7 +1657,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 402:
+/***/ 415:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1641,7 +1711,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 403:
+/***/ 416:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1671,7 +1741,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 404:
+/***/ 417:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1713,13 +1783,13 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 405:
+/***/ 418:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(406);
+	var tmpl = __webpack_require__(419);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1797,7 +1867,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 406:
+/***/ 419:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1827,13 +1897,13 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 407:
+/***/ 420:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(408);
+	var tmpl = __webpack_require__(421);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1908,7 +1978,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 408:
+/***/ 421:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1950,13 +2020,13 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 409:
+/***/ 422:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(36);
 	var extend =  __webpack_require__(41);
 	
-	var tmpl = __webpack_require__(410);
+	var tmpl = __webpack_require__(423);
 	
 	//公共方法
 	var util = __webpack_require__(37);
@@ -1964,10 +2034,10 @@ webpackJsonp([39],{
 	//本地数据库
 	var localData = __webpack_require__(141);
 	
-	var tmpl_pay = __webpack_require__(411);
+	var tmpl_pay = __webpack_require__(424);
 	
 	//ping++
-	var ping = __webpack_require__(231);
+	var ping = __webpack_require__(242);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -2135,7 +2205,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 410:
+/***/ 423:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2213,7 +2283,7 @@ webpackJsonp([39],{
 
 /***/ },
 
-/***/ 411:
+/***/ 424:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

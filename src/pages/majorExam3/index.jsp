@@ -15,7 +15,7 @@
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
 	
-		<div class="container proTestWrapper">
+		<div class="container proTestWrapper rel">
 			<section class="s-proTest">
 				<div class="content">
 					<h3 class="clearfix title neeRow">
@@ -29,7 +29,7 @@
 					
 					<div class="contentWrap">
 						
-						<div class="testResult">
+						<div class="testResult" id="printContent">
 							<!-- 测试结果 -->
 							<%@ include file = "/partials/_testRes.jsp" %>
 						</div>
@@ -37,10 +37,10 @@
 					</div>
 				</div>	
 			</section>
-		</div>
+			
+			<a href="javascript:;" id="printer" class="printer"></a>
 
-	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
-	<%@ include file = "/partials/_sidebar.jsp" %>
+		</div>
 
 	</div>
 	<!-- 公共尾部 -->

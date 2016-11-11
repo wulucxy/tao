@@ -11,3 +11,9 @@ var common = require("../../assets/components/common");
 
 
 //自定义功能写下面
+var printThis = require("../../assets/components/printThis");
+
+$('#printer').on('click',function(e){
+	e.preventDefault();
+	printThis($('#printContent'));
+})
