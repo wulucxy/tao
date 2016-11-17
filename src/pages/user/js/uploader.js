@@ -11,6 +11,7 @@ var uploader = {
 	},
 
 	bindEvt : function(){
+        return;
 		var that = this,o = that.settings;
 
 		var uploader = WebUploader.create({

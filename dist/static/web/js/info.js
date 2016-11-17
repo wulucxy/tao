@@ -4,22 +4,22 @@ webpackJsonp([23],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(14);
-	__webpack_require__(203);
-	var $ = window.$ || __webpack_require__(36);
+	__webpack_require__(16);
+	__webpack_require__(209);
+	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
-	var util = __webpack_require__(37);
+	var util = __webpack_require__(39);
 	
 	//公共方法
-	var common = __webpack_require__(38);
+	var common = __webpack_require__(40);
 	
 	
 	//自定义功能写下面
 	//
 	////加载更多模块
-	var loadMore = __webpack_require__(205);
-	var tmpl = __webpack_require__(206);
+	var loadMore = __webpack_require__(211);
+	var tmpl = __webpack_require__(212);
 	
 	var province = $("[name=province]").val();
 	
@@ -31,6 +31,51 @@ webpackJsonp([23],{
 			this.tagIndex = 0;
 			this.bindEvt();
 		},
+	
+		initRequest: function(){
+			var that = this;
+			var arrayOfAjax = [];
+			for(var i=0; i<window.__initData__.length; i++) {
+				arrayOfAjax.push(that.request(window.__initData__[i].id))
+			}
+	
+			$.when.apply($, arrayOfAjax)
+			.done(function(){
+				var args = Array.prototype.slice.call(arguments);
+				$(".infoListWrap").removeClass("preloading");
+	
+				console.log(that.loadList);
+	
+				for(var i=0;i<args.length;i++){
+					that.loadList.call(that,args[i][0],i);
+				}
+			})
+		},
+	
+		request: function(moduleId){
+			var parm = [];
+			parm.push("capacity="+5);
+			parm.push("moduleId="+moduleId);
+	
+			return $.ajax({
+				url : preServer+province+"/news?"+parm.join("&"),
+				type : "get",
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+				},
+				error : function(err){
+					console.log(err);
+				}
+			});
+		},
+	
 		requestList : function(btn){
 			var that = this;
 	
@@ -42,11 +87,11 @@ webpackJsonp([23],{
 	        }
 	
 			var parm = [];
-			parm.push("capacity="+10);
-			parm.push("page="+that.pager);
+			parm.push("capacity="+5);
+			//parm.push("page="+that.pager);
 			parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 	
-			var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+			//var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
 	
 			$.ajax({
 				url : preServer+province+"/news?"+parm.join("&"),
@@ -74,61 +119,19 @@ webpackJsonp([23],{
 				}
 			});
 		},
-		loadList : function(data,pager){
+		loadList : function(data,index){
 			var that = this,o = that.options;
-			var _html = tmpl(data);
+			var _html = tmpl(data.result);
 	
-			if(pager == 1){
-				$(".infoList").empty().html(_html);
-				$("#toggleTitle").text($(".infoTag.active").text());
-			}else{
-				$(".infoList").append(_html);
-			}
-	
-	
-			if(pager == 1 && data.total == 0){
-				$(".btn-loading").hide();
-			}else{
-				$(".btn-loading").show();
-				$(".btn-loading").removeClass("loading disabled");
-			}
-	
-			var pageCount = Math.ceil(data.total / that.capacity);
-	
-			//最后一页
-			if(pager >= pageCount){
-				$(".btn-loading").addClass("loading-all");
-			}else{
-	            $(".btn-loading").removeClass("loading-all");
-	        }
-	
-			// if($(".infoList .no_transList").length){
-			// 	$(".btn-loading").addClass("loading-all");
-			// }
+			console.log(_html);
+			
+			$(".infoList").eq(index).empty().html(_html);
 		},
 	
 		bindEvt : function(){
 			var that = this;
-			$(".btn-loading").on("click",function(e){
-	    		e.preventDefault();
-	    		var btn = $(this).closest(".btn");
-	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-	    		btn.addClass("disabled loading");
-	    		that.requestList(btn);
-	    	});
-	
-	    	$(".infoTag").on("click",function(e){
-	    		e.preventDefault();
-	    		var btn = $(this);
-	    		btn.siblings().removeClass("active");
-	    		if(btn.hasClass("active")) return;
-	    		btn.addClass("active");
-	    		$(".infoListWrap").addClass("preloading");
-	    		that.tagIndex = btn.index();
-	    		that.requestList();
-	    	});
-	
-	    	$(".infoTag").eq(0).trigger("click");
+			
+			this.initRequest();
 		}
 	};
 	
@@ -136,16 +139,16 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 203:
+/***/ 209:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(204);
+	var content = __webpack_require__(210);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
+	var update = __webpack_require__(35)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -163,26 +166,26 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 204:
+/***/ 210:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(18)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".jimu {\n  margin-top: 10px;\n}\n.jimu .col1 {\n  width: 50%;\n}\n.jimu .col2 {\n  width: 49%;\n}\n.jimu .imgWrap {\n  display: inline-block;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.jimu .imgWrap,\n.jimu .imgWrap img {\n  width: 100%;\n  height: 100%;\n}\n.jimu .infoLink {\n  position: relative;\n  display: block;\n  cursor: pointer;\n}\n.figbar {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  padding: 0 10px;\n  background-color: #999;\n  background: rgba(0, 0, 0, 0.5);\n  font-size: 14px;\n  color: #fff;\n}\n.figbar:hover {\n  color: #ddd;\n}\n.infoLink.big {\n  width: 500px;\n  height: 250px;\n}\n.infoLink.mid {\n  width: 490px;\n  height: 180px;\n}\n.infoLink.sml {\n  width: 240px;\n  height: 120px;\n  margin-bottom: 10px;\n  margin-right: 10px;\n}\n.big .figbar {\n  height: 38px;\n  line-height: 38px;\n}\n.mid .figbar {\n  height: 38px;\n  line-height: 38px;\n}\n.sml .figbar {\n  height: 38px;\n  line-height: 1.2;\n  padding: 6px 10px;\n}\n.bot {\n  margin-right: -10px;\n}\n.bot .column {\n  width: 240px;\n  margin-right: 10px;\n}\n.smlLists {\n  margin-right: -10px;\n  margin-bottom: -10px;\n}\n.infoLists {\n  margin-top: 28px;\n}\n.infoList li {\n  margin-bottom: 16px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 16px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.infoList .media > .fl {\n  margin-right: 10px;\n  display: inline-block;\n  width: 140px;\n  height: 70px;\n}\n.infoList .media > .fl img {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n}\n.infoList .detailTitle {\n  display: block;\n  font-size: 16px;\n  color: #000;\n  margin: 0 80px 0 0;\n  width: auto;\n  max-width: 100%;\n  font-weight: normal;\n}\n.infoList .detailTitle:hover {\n  color: #666;\n}\n.infoList h3 {\n  font-size: 16px;\n  line-height: 20px;\n  font-weight: normal;\n}\n.infoList h3 .infoTag {\n  font-size: 12px;\n  line-height: 18px;\n  padding: 0 3px;\n  min-width: 56px;\n  cursor: default;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 16px;\n  font-size: 0;\n}\n.infoList .detailCnt a {\n  width: 80%;\n  vertical-align: baseline;\n  color: #8c8c8c;\n  font-size: 12px;\n}\n.infoList .detailCnt a:hover {\n  color: #666;\n}\n.infoList .detailCnt .moment {\n  vertical-align: baseline;\n  text-align: right;\n  font-size: 12px;\n  width: 19.5%;\n  display: inline-block;\n}\n.tagsWrap .tagsList {\n  margin-right: -18px;\n}\n.tagsWrap .tagsList .btn {\n  display: inline-block;\n  margin: 0 14px 18px 0;\n  font-size: 16px;\n  width: 88px;\n  padding-left: 0;\n  padding-right: 0;\n}\n.infoLists .col1 {\n  width: 68%;\n}\n.infoLists .col2 {\n  width: 32%;\n}\n.timeline {\n  font-size: 14px;\n  color: #333;\n  line-height: 16px;\n  margin-bottom: 16px;\n}\n.timeline a {\n  display: block;\n  color: #333;\n}\n.timeline a:hover {\n  color: #666;\n}\n.timeline .label {\n  background-color: #d7d7d7;\n  display: inline-block;\n  line-height: 32px;\n  width: 80px;\n  margin-right: 8px;\n  text-align: center;\n}\n.btnLoadingWrap {\n  margin-bottom: 32px;\n}\n", ""]);
+	exports.push([module.id, ".v2-layout {\n  margin-left: -10px;\n  margin-right: -10px;\n}\n.v2-layout .column > .colPad {\n  padding: 0 10px;\n}\n.infoLists .v2-layout .column {\n  width: 49.5%;\n}\n.jimu {\n  margin-top: 10px;\n}\n.jimu .col1 {\n  width: 50%;\n}\n.jimu .col2 {\n  width: 49%;\n}\n.jimu .imgWrap {\n  display: inline-block;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.jimu .imgWrap,\n.jimu .imgWrap img {\n  width: 100%;\n  height: 100%;\n}\n.jimu .infoLink {\n  position: relative;\n  display: block;\n  cursor: pointer;\n}\n.figbar {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  padding: 0 10px;\n  background-color: #999;\n  background: rgba(0, 0, 0, 0.5);\n  font-size: 14px;\n  color: #fff;\n}\n.figbar:hover {\n  color: #ddd;\n}\n.infoLink.big {\n  width: 500px;\n  height: 250px;\n}\n.infoLink.mid {\n  width: 490px;\n  height: 180px;\n}\n.infoLink.sml {\n  width: 240px;\n  height: 120px;\n  margin-bottom: 10px;\n  margin-right: 10px;\n}\n.big .figbar {\n  height: 38px;\n  line-height: 38px;\n}\n.mid .figbar {\n  height: 38px;\n  line-height: 38px;\n}\n.sml .figbar {\n  height: 38px;\n  line-height: 1.2;\n  padding: 6px 10px;\n}\n.bot {\n  margin-right: -10px;\n}\n.bot .column {\n  width: 240px;\n  margin-right: 10px;\n}\n.smlLists {\n  margin-right: -10px;\n  margin-bottom: -10px;\n}\n.infoLists {\n  margin-top: 28px;\n}\n.infoList li {\n  margin-bottom: 16px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 16px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.infoList .media > .fl {\n  margin-right: 10px;\n  display: inline-block;\n  width: 140px;\n  height: 70px;\n}\n.infoList .media > .fl img {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n}\n.infoList .detailTitle {\n  display: block;\n  font-size: 16px;\n  color: #000;\n  margin: 0 80px 0 0;\n  width: auto;\n  max-width: 100%;\n  font-weight: normal;\n}\n.infoList .detailTitle:hover {\n  color: #666;\n}\n.infoList h3 {\n  font-size: 16px;\n  line-height: 20px;\n  font-weight: normal;\n}\n.infoList h3 .infoTag {\n  font-size: 12px;\n  line-height: 18px;\n  padding: 0 3px;\n  min-width: 56px;\n  cursor: default;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 16px;\n  font-size: 0;\n}\n.infoList .detailCnt a {\n  width: 80%;\n  vertical-align: baseline;\n  color: #8c8c8c;\n  font-size: 12px;\n}\n.infoList .detailCnt a:hover {\n  color: #666;\n}\n.infoList .detailCnt .moment {\n  vertical-align: baseline;\n  text-align: right;\n  font-size: 12px;\n  width: 19.5%;\n  display: inline-block;\n}\n.tagsWrap .tagsList {\n  margin-right: -18px;\n}\n.tagsWrap .tagsList .btn {\n  display: inline-block;\n  margin: 0 14px 18px 0;\n  font-size: 16px;\n  width: 88px;\n  padding-left: 0;\n  padding-right: 0;\n}\n.infoLists .col1 {\n  width: 68%;\n}\n.infoLists .col2 {\n  width: 32%;\n}\n.timeline {\n  font-size: 14px;\n  color: #333;\n  line-height: 16px;\n  margin-bottom: 16px;\n}\n.timeline a {\n  display: block;\n  color: #333;\n}\n.timeline a:hover {\n  color: #666;\n}\n.timeline .label {\n  background-color: #d7d7d7;\n  display: inline-block;\n  line-height: 32px;\n  width: 80px;\n  margin-right: 8px;\n  text-align: center;\n}\n.btnLoadingWrap {\n  margin-bottom: 32px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 205:
+/***/ 211:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(36);
-	var extend =  __webpack_require__(41);
+	var $ = window.$ || __webpack_require__(38);
+	var extend =  __webpack_require__(43);
 	 
 	function Plugin(t,o){
 			this.target=t;
@@ -286,7 +289,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 206:
+/***/ 212:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

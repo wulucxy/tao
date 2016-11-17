@@ -15,5 +15,6 @@
     "courseType" : 0,
     "batch" : 3,
     "score" : 3333,
-    "place" : 123
+    "place" : 123,
+    "subjects" : [1,2,3]
 }

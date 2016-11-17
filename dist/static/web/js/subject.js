@@ -4,15 +4,15 @@ webpackJsonp([42],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(14);
-	__webpack_require__(400);
-	var $ = window.$ || __webpack_require__(36);
+	__webpack_require__(16);
+	__webpack_require__(405);
+	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
-	var util = __webpack_require__(37);
+	var util = __webpack_require__(39);
 	
 	//公共方法
-	var common = __webpack_require__(38);
+	var common = __webpack_require__(40);
 	
 	
 	//自定义功能写下面
@@ -20,22 +20,22 @@ webpackJsonp([42],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(402);
+	var dataSet = __webpack_require__(407);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 400:
+/***/ 405:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(401);
+	var content = __webpack_require__(406);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
+	var update = __webpack_require__(35)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -53,10 +53,10 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 401:
+/***/ 406:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(18)();
 	// imports
 	
 	
@@ -68,21 +68,21 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 402:
+/***/ 407:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(36);
-	var extend =  __webpack_require__(41);
-	var tmpl = __webpack_require__(403);
+	var $ = window.$ || __webpack_require__(38);
+	var extend =  __webpack_require__(43);
+	var tmpl = __webpack_require__(408);
 	
-	var localData = __webpack_require__(141);
-	var tmpl_favWrap = __webpack_require__(404);
-	var tmpl_favList = __webpack_require__(405);
+	var localData = __webpack_require__(143);
+	var tmpl_favWrap = __webpack_require__(409);
+	var tmpl_favList = __webpack_require__(410);
 	
-	var pagination = __webpack_require__(182);
+	var pagination = __webpack_require__(188);
 	
 	//工具类方法
-	var util = __webpack_require__(37);
+	var util = __webpack_require__(39);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -455,7 +455,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 403:
+/***/ 408:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -511,7 +511,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 404:
+/***/ 409:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -528,7 +528,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 405:
+/***/ 410:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

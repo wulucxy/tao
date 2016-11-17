@@ -109,7 +109,7 @@
 											</div>
 											<div class="detailTxt media">
 												<span class="fl">院校简介：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${description}
 												</div>
 											</div>

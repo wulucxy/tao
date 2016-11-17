@@ -20,42 +20,42 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
-		<div class="container">
+		<div class="container bookWrapper">
 			<div class="container">
 				<div class="content">
 					<h3 class="clearfix title">
 						<span class="fl s-title">
-							升学规划专家预约
+							推荐有奖
 							<em class="underLine"></em>	
 						</span>
 					</h3>
 					<div class="formWrap clearfix">
 						<div class="column col1 fl">
 
-							<form action="#" id="educationPlanForm">
-								<div class="row inline">
-									<label for="province" class="control-label column col1 fl">
-										<em class="vm">高考所在地：</em>
-									</label>
-									<div class="col2 inputWrap rel">
-										<div class="fieldWrap">
-											<input type="text" class="input form-control" id="name" name="province" required value='name'>
-										</div>
+							<div class="pl10">
+								<div class="bg rel">
+									<div class="p10 imgWrap">
+										<img src="/static/web/img/coupon.png" alt="" class="responsive">
+									</div>
+									<div class="coupon_texts">
+										<p>支付<em class="positive">线上</em>服务时，可抵扣<em class="positive">30元</em>现金</p>
+										<p>支付<em class="positive">线下</em>服务时，可抵扣<em class="positive">80元</em>现金</p>
 									</div>
 								</div>
 
-								<div class="row inline">
-									<label for="province" class="control-label column col1 fl">
-										<em class="vm">高考所在地：</em>
-									</label>
-									<div class="col2 inputWrap rel">
-										<div class="fieldWrap">
-											<input type="text" class="input form-control" id="name" name="province" required value='name'>
-										</div>
-									</div>
+								<div class="recommend-texts">
+									送给朋友一张“升学规划专家预约”优惠券，当TA使用并付款后，你将获得一张力度更大的优惠券！
 								</div>
+							</div>
+							
 
-							</form>
+							<div class="copy row inline clearfix">
+								<span class="label">链接</span>
+								<a id="copy" data-stat="3616" class="link fr" href="javascript:;">复制</a>
+								<div class="inputWrap">
+									<input class="readonly input form-control" type="text" readonly name="inviteUrl" id="inviteUrl" value="http://www.tzhiyuan.net/coupon/dole?userId=${user.userId}">
+								</div>
+							</div>
 
 						</div>
 						<div class="column col2 fr">
@@ -92,5 +92,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/educationPlan.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/share.js"></script></body>
 </html>

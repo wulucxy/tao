@@ -1,27 +1,27 @@
-webpackJsonp([30],{
+webpackJsonp([29],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(14);
-	__webpack_require__(227);
-	var $ = window.$ || __webpack_require__(36);
+	__webpack_require__(16);
+	__webpack_require__(230);
+	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
-	var util = __webpack_require__(37);
+	var util = __webpack_require__(39);
 	
 	//公共方法
-	var common = __webpack_require__(38);
+	var common = __webpack_require__(40);
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(229);
+	var questions = __webpack_require__(232);
 	
-	var tmpl = __webpack_require__(230);
+	var tmpl = __webpack_require__(233);
 	
-	var Cookies = __webpack_require__(99);
-	var contentSlider = __webpack_require__(231);
+	var Cookies = __webpack_require__(101);
+	var contentSlider = __webpack_require__(234);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -153,16 +153,16 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 227:
+/***/ 230:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(228);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
+	var update = __webpack_require__(35)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -180,10 +180,10 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 228:
+/***/ 231:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(18)();
 	// imports
 	
 	
@@ -195,7 +195,7 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 229:
+/***/ 232:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -826,7 +826,7 @@ webpackJsonp([30],{
 			},
 			{
 				"index": 52,
-				"question": "奇想分析及预报",
+				"question": "气象分析及预报",
 				"answers": [
 					"非常不喜欢",
 					"不喜欢",
@@ -946,7 +946,7 @@ webpackJsonp([30],{
 			},
 			{
 				"index": 62,
-				"question": "动物的科学饲养和两种繁殖",
+				"question": "动物的科学饲养和良种繁殖",
 				"answers": [
 					"非常不喜欢",
 					"不喜欢",
@@ -2725,7 +2725,7 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 230:
+/***/ 233:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2777,12 +2777,12 @@ webpackJsonp([30],{
 
 /***/ },
 
-/***/ 231:
+/***/ 234:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(36);
-	var extend =  __webpack_require__(41);
-	var browser = __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(38);
+	var extend =  __webpack_require__(43);
+	var browser = __webpack_require__(47);
 	
 	function contentSlider(target,options){
 	

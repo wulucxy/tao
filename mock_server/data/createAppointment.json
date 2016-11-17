@@ -1,0 +1,50 @@
+{
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1"
+    },
+    "appointmentTypeList": [
+        {
+          "content": "sitePrice/1",
+          "typeRemarks": "价格设置", 
+          "price": 58000,  
+          "name": "线上志愿填报服务", 
+          "type": 1,  
+          "isFace":1 
+        },
+        {
+          "content": "sitePrice/2",
+          "typeRemarks": "价格设置",
+          "price": 168000,
+          "name": "线下志愿填报服务",
+          "isFace": 2,
+          "type": 2
+        },
+        {
+          "content": "sitePrice/3",
+          "typeRemarks": "价格设置",
+          "price": 5000,
+          "name": "新高考一站式服务套餐",
+          "isFace": 2,
+          "type": 3
+        },
+        {
+          "content": "sitePrice/4",
+          "typeRemarks": "价格设置",
+          "price": 5000,
+          "name": "新高考政策讲解小班",
+          "isFace": 2,
+          "type": 4
+        }
+  ]
+
+}

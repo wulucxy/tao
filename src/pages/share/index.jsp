@@ -35,7 +35,7 @@
 							<div class="pl10">
 								<div class="bg rel">
 									<div class="p10 imgWrap">
-										<img src="/static/web/img/coupon.png" alt="" class="responsive">
+										<img src="./img/coupon.png" alt="" class="responsive">
 									</div>
 									<div class="coupon_texts">
 										<p>支付<em class="positive">线上</em>服务时，可抵扣<em class="positive">30元</em>现金</p>
@@ -53,7 +53,7 @@
 								<span class="label">链接</span>
 								<a id="copy" data-stat="3616" class="link fr" href="javascript:;">复制</a>
 								<div class="inputWrap">
-									<input class="readonly input form-control" type="text" readonly name="inviteUrl" id="inviteUrl" value="http://www.wacai.com/invite/03ed45679">
+									<input class="readonly input form-control" type="text" readonly name="inviteUrl" id="inviteUrl" value="http://www.tzhiyuan.net/coupon/dole?userId=${user.userId}">
 								</div>
 							</div>
 
@@ -92,5 +92,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/invite.js"></script></body>
+	</body>
 </html>

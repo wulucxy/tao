@@ -26,6 +26,51 @@ var info = {
 		this.tagIndex = 0;
 		this.bindEvt();
 	},
+
+	initRequest: function(){
+		var that = this;
+		var arrayOfAjax = [];
+		for(var i=0; i<window.__initData__.length; i++) {
+			arrayOfAjax.push(that.request(window.__initData__[i].id))
+		}
+
+		$.when.apply($, arrayOfAjax)
+		.done(function(){
+			var args = Array.prototype.slice.call(arguments);
+			$(".infoListWrap").removeClass("preloading");
+
+			console.log(that.loadList);
+
+			for(var i=0;i<args.length;i++){
+				that.loadList.call(that,args[i][0],i);
+			}
+		})
+	},
+
+	request: function(moduleId){
+		var parm = [];
+		parm.push("capacity="+5);
+		parm.push("moduleId="+moduleId);
+
+		return $.ajax({
+			url : preServer+province+"/news?"+parm.join("&"),
+			type : "get",
+			success : function(res){
+				if(typeof res == "string"){
+					var res = $.parseJSON(res);
+				}
+
+				if(res.code!=1){
+					warn(res.msg);
+					return;
+				}
+			},
+			error : function(err){
+				console.log(err);
+			}
+		});
+	},
+
 	requestList : function(btn){
 		var that = this;
 
@@ -37,11 +82,11 @@ var info = {
         }
 
 		var parm = [];
-		parm.push("capacity="+10);
-		parm.push("page="+that.pager);
+		parm.push("capacity="+5);
+		//parm.push("page="+that.pager);
 		parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
 
-		var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+		//var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
 
 		$.ajax({
 			url : preServer+province+"/news?"+parm.join("&"),
@@ -69,61 +114,19 @@ var info = {
 			}
 		});
 	},
-	loadList : function(data,pager){
+	loadList : function(data,index){
 		var that = this,o = that.options;
-		var _html = tmpl(data);
+		var _html = tmpl(data.result);
 
-		if(pager == 1){
-			$(".infoList").empty().html(_html);
-			$("#toggleTitle").text($(".infoTag.active").text());
-		}else{
-			$(".infoList").append(_html);
-		}
-
-
-		if(pager == 1 && data.total == 0){
-			$(".btn-loading").hide();
-		}else{
-			$(".btn-loading").show();
-			$(".btn-loading").removeClass("loading disabled");
-		}
-
-		var pageCount = Math.ceil(data.total / that.capacity);
-
-		//最后一页
-		if(pager >= pageCount){
-			$(".btn-loading").addClass("loading-all");
-		}else{
-            $(".btn-loading").removeClass("loading-all");
-        }
-
-		// if($(".infoList .no_transList").length){
-		// 	$(".btn-loading").addClass("loading-all");
-		// }
+		console.log(_html);
+		
+		$(".infoList").eq(index).empty().html(_html);
 	},
 
 	bindEvt : function(){
 		var that = this;
-		$(".btn-loading").on("click",function(e){
-    		e.preventDefault();
-    		var btn = $(this).closest(".btn");
-    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
-    		btn.addClass("disabled loading");
-    		that.requestList(btn);
-    	});
-
-    	$(".infoTag").on("click",function(e){
-    		e.preventDefault();
-    		var btn = $(this);
-    		btn.siblings().removeClass("active");
-    		if(btn.hasClass("active")) return;
-    		btn.addClass("active");
-    		$(".infoListWrap").addClass("preloading");
-    		that.tagIndex = btn.index();
-    		that.requestList();
-    	});
-
-    	$(".infoTag").eq(0).trigger("click");
+		
+		this.initRequest();
 	}
 };
 

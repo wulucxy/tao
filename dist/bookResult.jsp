@@ -43,7 +43,17 @@
 
 				<div class="bg bg-blue mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
-				
+					
+					<div class="wellWrapper tabs" id="bookResultTab">
+						<nav class="clearfix">                
+				                 <ul>
+									<li  class="tab-item current"><a href="javascript:;">冲一冲</a></li>
+									<li  class="tab-item"><a href="javascript:;">平一平</a></li>
+									<li  class="tab-item"><a href="javascript:;">保一保</a></li>
+								</ul>
+				        </nav>
+					</div>
+
 				<c:choose>	
 				<c:when test="${fn:length(radical) > 0 }">
 					<section class="caseSection">

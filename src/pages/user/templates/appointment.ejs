@@ -2,54 +2,63 @@
 	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>
 <% }else{ %>
 <% for (var i = 0; i < appointments.length; i++) { %>
-<div class="well clearfix" >
-	<div class="media fl">
-		<div class="span fl">
-			<% if(appointments[i].status == 0) { %>
-				<span class="btn btn-primary">待审核</span>
-			<% }else if(appointments[i].status == 1) { %>
-				<span class="btn btn-green">待受理</span>
-			<% }else if(appointments[i].status == 2) { %>
-				<span class="btn btn-red">已受理</span>
-			<% }else if(appointments[i].status == 3) { %>
-				<% if(appointments[i].statusDesc) { %>
-				<span class="btn btn-gray btn-lines">已关闭
-					<span class="f12 db">(<%= appointments[i].statusDesc %>)</span>
-				</span>
-				<% }else{ %>
-					<span class="btn btn-gray">已关闭</span>
-				<% } %>
-			<% }else if(appointments[i].status == 4) { %>
-				<span class="btn btn-orange">待付款</span>
-			<% }else if(appointments[i].status == 5) { %>
-				<span class="btn btn-gray">已取消</span>
-			<% }else if(appointments[i].status == 6) { %>
-				<span class="btn btn-gray">已退款</span>
-			<% } %>
-		</div>
-		<div class="media-body g3 well_body">
-			<p>
-				<span><%= appointments[i].param.name %></span>
-				<span><%= appointments[i].param.cityName %></span><span><%= appointments[i].param.mobile %></span>
-				<span><%= appointments[i].param.courseTypeName %></span><span><%= appointments[i].param.score %></span>
-				<% if(appointments[i].appointmentType == 0) { %>
-					<span>线上服务</span>
-				<% }else if(appointments[i].appointmentType == 1) { %>
-					<span>面对面服务</span>
-				<% } %>
-			</p>
-			<p>
-				<%= appointments[i].content %>
-			</p>
-		</div>
+<div class="well clearfix appointments" >
+	<div class="clearfix well-hd">
+		<h3 class="fl">
+			<span class="name">
+				<%= appointments[i].name %>	
+			</span>
+			<span><%= appointments[i].mobile %></span>
+		</h3>
+		<span class="fr f16 g7"><%= appointments[i].createTime %></span>
+	</div>	
+	<div class="well-bd g6 f20">
+		<p><%= appointments[i].cityName %></p>
+		<p><%= appointments[i].appointmentTypeName %>
+			<% if(appointments[i].remarks) { %>
+				（<%= appointments[i].remarks %>）
+			<% } %>	
+		</p>
 	</div>
-	<% if(appointments[i].status == 4) { %>
-	<div class="detailInfo fr payRow">
-		<a href="javascript:;" class="btn btn-orange btn-pay db" orderid=<%= appointments[i].orderId %>>支付<%= appointments[i].price %>元</a>
-	<% }else{ %>
-	<div class="detailInfo fr">
-	<% } %>
-		<span class="moment"><%= appointments[i].createTime %></span>
+	<div class="well-ft clearfix">
+		<div class="statusRow clearfix">
+			<div class="fl">
+				<% if(appointments[i].status == 0) { %>
+					<span class="purple">待审核</span>
+				<% }else if(appointments[i].status == 1) { %>
+					<span class="green">待受理</span>
+				<% }else if(appointments[i].status == 2) { %>
+					<span class="darkgreen">已受理</span>
+				<% }else if(appointments[i].status == 3) { %>
+					<% if(appointments[i].statusDesc) { %>
+					<span class="gray">已关闭
+						<span class="f12 db">(<%= appointments[i].statusDesc %>)</span>
+					</span>
+					<% }else{ %>
+						<span class="gray">已关闭</span>
+					<% } %>
+				<% }else if(appointments[i].status == 4) { %>
+					<span class="orange">待支付</span>
+				<% }else if(appointments[i].status == 5) { %>
+					<span class="gray">已取消</span>
+				<% }else if(appointments[i].status == 6) { %>
+					<span class="gray">已退款</span>
+				<% } %>
+			</div>
+			<div class="fr price">
+				¥ <%= appointments[i].price %>元
+			</div>
+		</div>
+		<% if(appointments[i].status == 4) { %>
+			<div class="detailInfo payRow tc">
+				<a href="javascript:;" class="btn btn-positive btn-pay btn-form" orderid="<%= appointments[i].orderId %>"
+					price="<%= appointments[i].price %>"
+					appointmenttype="<%= appointments[i].appointmentType %>"
+					face=<%= appointments[i].isFace %>
+				>去支付</a>
+			</div>
+		<% } %>
 	</div>
+
 </div>
 <% }} %>

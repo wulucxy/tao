@@ -17,6 +17,7 @@ module.exports = {
 	"/library/college"   : 'college.jsp',
 	"/library/college/1"   : 'collegeDetail.jsp',
 	'/404'   : 'error.jsp',
+	'/infoV2'   : 'infoV2.jsp',
 	'/info'   : 'info.jsp',
 	'/infoDetail'   : 'infoDetail.jsp',
 	"/library/major"   : 'major.jsp',
@@ -41,10 +42,10 @@ module.exports = {
 	"/sampleEvaluate" : "sampleEvaluate.jsp",
 	"/sampleWishes" : "sampleWishes.jsp",
 	"/recommendUni" : "recommendUni.jsp",
-	"/invite" : "invite.jsp",
+	"/coupon/share" : "share.jsp",
 	"/inviteSuccess" : "inviteSuccess.jsp",
 	"/recieveCoupon" : "recieveCoupon.jsp",
-	"/educationPlan" : "educationPlan.jsp",
+	"/appointment/create" : "createAppointment.jsp",
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',
@@ -99,8 +100,9 @@ module.exports = {
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/2482':"mock::api/subjectDetailList.json",
 	'post::/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
-	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json"
+	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json",
 
-
+	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
+	'post::/v2_1/client/1/profile/couponList':"mock::api/couponList.json"
 
 };

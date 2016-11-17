@@ -47,8 +47,8 @@
 									<!-- <li><a href="javascript:;" data-link="achivement">我的成绩</a></li> -->
 									<li><a href="javascript:;" data-link="collection">我的收藏</a></li>
 									<li><a href="javascript:;" data-link="question">我的提问</a></li>
-									<li class="last"><a href="javascript:;" data-link="book">我的预约</a></li>
-									<!-- <li class="last"><a href="javascript:;" data-link="coupon">优惠券</a></li> -->
+									<li class=""><a href="javascript:;" data-link="book">我的预约</a></li>
+									<li class="last"><a href="javascript:;" data-link="coupon">我的优惠券</a></li>
 								</ul>
 								<div class="kefu">
 									<p>客服电话：</p>
@@ -89,10 +89,8 @@
 								<%@ include file = "/partials/user/_book.jsp" %>
 
 								<!--  我的优惠券 -->
-								<!-- <jsp:include page = "/partials/user/_coupon.jsp">
-									<jsp:param name="loadMoreUrl" value="/loadmore" />
-									<jsp:param name="loadMoreTmpl" value="coupon" />
-								</jsp:include> -->
+								<%@ include file = "/partials/user/_coupon.jsp" %>
+
 							</div>
 						</div>
 					</div>			

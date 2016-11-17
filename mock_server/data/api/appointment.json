@@ -2,113 +2,118 @@
     "code": "1",
     "msg": "调用成功",
     "result": [{
-        "content": "11111111",
-        "createTime": 1458198010000,
-        "price": 1680,
-        "param": {
-            "name": "111",
-            "score": 1111,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "13588888888"
-        },
-        "status": 0,
-        "appointmentId": "160775401024119376",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458198010000
-    }, {
-        "content": "5555",
-        "createTime": 1458198348000,
-        "price": 1680,
-        "param": {
-            "name": "合区",
-            "score": 5555,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "13588888888"
-        },
-        "status": 0,
-        "appointmentId": "160775434815814108",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458198348000
-    }, {
-        "content": "777",
-        "createTime": 1458198478000,
-        "price": 1680,
-        "param": {
-            "name": "呵呵",
-            "score": 777,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "13555555555"
-        },
-        "status": 0,
-        "appointmentId": "160775447786071893",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458198478000
-    }, {
-        "content": "111",
-        "createTime": 1458213767000,
-        "price": 1680,
-        "param": {
-            "name": "111",
-            "score": 111,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "13511111111"
-        },
-        "status": 0,
-        "appointmentId": "160776976739667120",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458213767000
-    }, {
-        "content": "11111",
-        "createTime": 1458214141000,
-        "price": 1680,
-        "param": {
-            "name": "呵呵",
-            "score": 1111,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "13588888888"
-        },
-        "status": 0,
-        "appointmentId": "160777014061470024",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458214141000
-    },{"content":"3月","createTime":1459708434000,"price":168000,"param":{"name":"青铜","score":666,"courseType":1,"city":330100,"mobile":"13333333333"},"status":4,"appointmentId":"160950923482842964","appointmentType":1,"appointmentDesc":null,"statusDesc":null,"orderId":"10000510","scheduleTime":1459708434000},
-     {
-        "content": "1111",
-        "createTime": 1458214162000,
-        "price": 1680,
-        "param": {
-            "name": "11111",
-            "score": 1111,
-            "courseType": 1,
-            "city": 330100,
-            "mobile": "11111111111"
-        },
-        "status": 0,
-        "appointmentId": "160777016178177176",
-        "appointmentType": 1,
-        "appointmentDesc": "",
-        "statusDesc": "",
-        "orderId": "",
-        "scheduleTime": 1458214162000
-    }]
+              "createTime": 1477546994000,
+              "status": 0, 
+              "score": 650,  
+              "remarks": "价格设置",  
+              "appointmentTypeName": "线上志愿填报服务",  
+              "city": 330900,  
+              "content": "",  
+              "price": 58000, 
+              "name": "fzy",  
+              "appointmentId": "163014939449047400",  
+              "courseType": [    
+                "物理",
+                "化学",
+                "生物"
+              ],
+              "appointmentType": 1,   
+              "statusDesc": "",  
+              "orderId": "1",  
+              "mobile": "15068831914", 
+               "isFace": 1, 
+               "cityName":"舟山市"  
+            },
+        {
+              "createTime": 1477546994000,
+              "status": 1, 
+              "score": 650,  
+              "remarks": "价格设置",  
+              "appointmentTypeName": "线上志愿填报服务",  
+              "city": 330900,  
+              "content": "",  
+              "price": 58000, 
+              "name": "fzy",  
+              "appointmentId": "163014939449047400",  
+              "courseType": [    
+                "物理",
+                "化学",
+                "生物"
+              ],
+              "appointmentType": 1,   
+              "statusDesc": "",  
+              "orderId": "",  
+              "mobile": "15068831914", 
+               "isFace": 1, 
+               "cityName":"舟山市"  
+            },
+        {
+              "createTime": 1477546994000,
+              "status": 2, 
+              "score": 650,  
+              "remarks": "价格设置",  
+              "appointmentTypeName": "线上志愿填报服务",  
+              "city": 330900,  
+              "content": "",  
+              "price": 58000, 
+              "name": "fzy",  
+              "appointmentId": "163014939449047400",  
+              "courseType": [    
+                "物理",
+                "化学",
+                "生物"
+              ],
+              "appointmentType": 1,   
+              "statusDesc": "",  
+              "orderId": "",  
+              "mobile": "15068831914", 
+               "isFace": 1, 
+               "cityName":"舟山市"  
+            },
+        {
+              "createTime": 1477546994000,
+              "status": 3, 
+              "score": 650,  
+              "remarks": "价格设置",  
+              "appointmentTypeName": "线上志愿填报服务",  
+              "city": 330900,  
+              "content": "",  
+              "price": 58000, 
+              "name": "fzy",  
+              "appointmentId": "163014939449047400",  
+              "courseType": [    
+                "物理",
+                "化学",
+                "生物"
+              ],
+              "appointmentType": 1,   
+              "statusDesc": "",  
+              "orderId": "",  
+              "mobile": "15068831914", 
+               "isFace": 1, 
+               "cityName":"舟山市"  
+            },
+        {
+              "createTime": 1477546994000,
+              "status": 4, 
+              "score": 650,  
+              "remarks": "价格设置",  
+              "appointmentTypeName": "线上志愿填报服务",  
+              "city": 330900,  
+              "content": "",  
+              "price": 58000, 
+              "name": "fzy",  
+              "appointmentId": "163014939449047400",  
+              "courseType": [    
+                "物理",
+                "化学",
+                "生物"
+              ],
+              "appointmentType": 1,   
+              "statusDesc": "",  
+              "orderId": "234",  
+              "mobile": "15068831914", 
+               "isFace": 1, 
+               "cityName":"舟山市"  
+            }]
 }

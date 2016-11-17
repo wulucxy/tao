@@ -6,13 +6,10 @@ var tmpl = require("../templates/appointment.ejs");
 //公共方法
 var util = require("../../../assets/components/util");
 
+
+var payModal = require("../../../assets/components/payModal");
 //本地数据库
 var localData = require("../../../assets/components/localData");
-
-var tmpl_pay = require("../templates/pay.ejs");
-
-//ping++
-var ping = require("../../../assets/components/ping");
 
 var provinceId = $("[name=province]").val();
 
@@ -59,9 +56,9 @@ module.exports = {
 
                  $.each(res.appointments,function(idx,ele){
                 	//获取city名称
-                    ele.param = extend(ele.param,{
-                    	cityName : localData.getCityName(ele.param.city),
-                    	courseTypeName : localData.getCourseTypeName(ele.param.courseType)
+                    ele.param = extend(ele,{
+                    	cityName : localData.getCityName(ele.city)
+                    	// courseTypeName : localData.getCourseTypeName(ele.param.courseType)
                     });
 
                     ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd hh:mm:ss");
@@ -102,6 +99,9 @@ module.exports = {
 			e.preventDefault();
 			var btn = $(e.target);
 
+			if(btn.hasClass('disabled')) return;
+			btn.addClass('disabled');
+
 			var orderId = btn.attr("orderid");
 			that.orderId = orderId;
 
@@ -111,69 +111,12 @@ module.exports = {
 				}
 			});
 
-			modalBox(btn,{
-				html:tmpl_pay(payList[0]),
-				klass : 'w540 shadow',
-		        closeByOverlay : false,
-		        completeCallback : function(){
-		        	$("#payBtn").on("click",function(e){
-						e.preventDefault();
-						var btn = $(this);
-						var channel = $("[name=channel]:checked").val();
-						
-						that.subPay(btn);
-						
-					});
-		        }
+			payModal.init(btn, {
+				provinceId: provinceId,
+				price: btn.attr('price'),
+				orderId:  btn.attr('orderid'),
+				appointmentType: btn.attr('appointmenttype')
 			});
-		});
-
-	},
-	subPay : function(btn){
-		var that = this;
-
-		if(btn.hasClass("disabled")) return;
-		btn.addClass("disabled");
-
-		var _data = {
-			orderId : that.orderId,
-			channel : $("[name=channel]:checked").val()
-		};
-
-		$.ajax({
-			url : preServer+provinceId+"/pay",
-			type : "post",
-			contentType: "application/json",
-        	data : JSON.stringify(_data),
-        	success : function(res){
-
-        		if(res.code != 1){
-        			warn(res.msg);
-        			btn.removeClass("disabled");
-        			return;
-        		}
-
-        		var charge = res.result;
-        		if(/alipay/.test(_data.channel)){
-        			that.requestAlipay(btn,charge);
-        		}
-
-        		btn.removeClass("disabled");
-
-        	},
-        	error : function(err){
-        		console.log(err);
-        		btn.removeClass("disabled");
-        	}
-		});
-	},
-
-	requestAlipay : function(btn,charge){
-		var that = this;
-		ping.createPayment(charge, function(result, err){
-			if(err){
-				warn(err.msg);
-			}
 		});
 	}
 };

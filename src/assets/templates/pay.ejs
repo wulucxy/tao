@@ -1,0 +1,49 @@
+<div class="modalCntWrap taoModal g9 modalForm">
+ <h3 class="clearfix">
+  <a href="javascript:;" class="icons btn-close fr"></a>
+  <span class="fl">支付</span>
+</h3>
+ <form class="modalSubCnt" id="payForm" onsubmit="return false;">
+
+<div class="patWrap">
+  <div class="payContent tc">
+      <div class="f20 mb10">
+        <em class="vm">支付金额：</em>
+        <span class="orange f28 vm"><%= price %>元</span>
+      </div>
+
+      <div class="row">
+        <label>
+          <input type="radio" name="channel" value="alipay_pc_direct" checked>
+          <i class="payIcon zhifubao"></i>
+          <em>支付宝</em>
+        </label>
+      </div>
+
+      <div class="couponSelectWrap row">
+        <div class="selectWrap beautify-select" id="couponSelect">
+         <div class="trigger usn" data-toggle>
+          <span class="triggerTxt">使用优惠券</span>
+          <em class="caret"></em>
+         </div>
+         <ul class="options" id="countryList">
+              <% for (var i = 0; i < items.length; i++) { %>
+                <li code="<%= items[i].coupinId %>" name="<%= items[i].title %>">使用<%= items[i].discount %>元优惠券</li>
+              <% } %>
+              <li id="" name="">不使用优惠券</li>
+         </ul>
+        </div>
+      </div>
+  </div>
+
+   <div class="footerCnt">
+       <p id="errTxt" class="errTxt"></p>
+       <div class="row btnRow">
+         <button type="submit" class="btn btn-primary btn-block" id="payBtn">
+         		<em class="subTxt">确定支付</em></button>
+       </div>
+   </div>
+ </div>
+
+</form>
+</div>
