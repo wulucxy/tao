@@ -95,7 +95,7 @@
 						</div>
 					</li>
 					<li class="navList no-dropdown">
-						<a href="/info">资讯</a>
+						<a href="/infoV2">资讯</a>
 					</li>
 					<li class="navList" data-toggle="dropdown" >
 						<a href="javascript:;" class="trigger">下载APP</a>
