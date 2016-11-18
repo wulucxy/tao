@@ -1,11 +1,11 @@
-webpackJsonp([34],{
+webpackJsonp([45],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(247);
+	__webpack_require__(438);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -16,31 +16,34 @@ webpackJsonp([34],{
 	
 	__webpack_require__(56);
 	
-	$("#recieveCouponForm").validator({
-		errorParent: '.row',
-	    successCallback: function(e) {
-	      var target = $(e.target).closest('.btn');
-	      //执行到下一步操作
+	if($("#recieveCouponForm").length){
+		$("#recieveCouponForm").validator({
+			errorParent: '.row',
+		    successCallback: function(e) {
+		      var target = $(e.target).closest('.btn');
+		      //执行到下一步操作
 	
-	    },
-	    focusinCallback: function() {
-	      
-	    },
-	    errorCallback: function(unvalidFields) {
-	      var oError = $('.errTxt');
-	      
-	    }
-	});
+		    },
+		    focusinCallback: function() {
+		      
+		    },
+		    errorCallback: function(unvalidFields) {
+		      var oError = $('.errTxt');
+		      
+		    }
+		})
+	}
+
 
 /***/ },
 
-/***/ 247:
+/***/ 438:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(248);
+	var content = __webpack_require__(439);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -61,7 +64,7 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 248:
+/***/ 439:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -69,7 +72,7 @@ webpackJsonp([34],{
 	
 	
 	// module
-	exports.push([module.id, ".positive {\n  color: #fff21e;\n}\n.bookWrapper {\n  margin-top: 12px;\n}\n.bookWrapper .col1 {\n  width: 500px;\n  margin-left: 64px;\n}\n.bookWrapper .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow {\n  margin-top: 80px;\n}\n.bg {\n  text-align: center;\n  display: inline-block;\n  margin: 0 auto;\n}\n.coupon_texts {\n  position: absolute;\n  bottom: 80px;\n  left: 124px;\n  line-height: 1.6;\n  color: #fff;\n  font-size: 14px;\n}\n.coupon_texts p {\n  margin-bottom: 4px;\n}\n.recieve {\n  width: 320px;\n  margin: 54px auto 36px;\n}\n.recieve .btn-block {\n  margin-top: 8px;\n  font-size: 20px;\n}\n.recieve .error-rows {\n  height: 18px;\n}\n", ""]);
+	exports.push([module.id, ".positive {\n  color: #fff21e;\n}\n.bookWrapper {\n  margin-top: 12px;\n}\n.bookWrapper .col1 {\n  width: 500px;\n  margin-left: 64px;\n}\n.bookWrapper .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow {\n  margin-top: 80px;\n}\n.bg {\n  text-align: center;\n  display: inline-block;\n  margin: 0 auto;\n}\n.coupon_texts {\n  position: absolute;\n  bottom: 80px;\n  left: 124px;\n  line-height: 1.6;\n  color: #fff;\n  font-size: 14px;\n}\n.coupon_texts p {\n  margin-bottom: 4px;\n}\n.recieveForm {\n  width: 320px;\n  margin: 54px auto 36px;\n}\n.recieveForm .btn-block {\n  margin-top: 8px;\n  font-size: 20px;\n}\n.recieveForm .error-rows {\n  height: 18px;\n}\n.recommend-texts {\n  width: 456px;\n  font-size: 18px;\n  line-height: 2.2;\n  color: #666;\n}\n.recieveTxts {\n  margin-top: 50px;\n  margin-bottom: 100px;\n  font-size: 22px;\n  color: #f87875;\n}\n", ""]);
 	
 	// exports
 
@@ -77,4 +80,4 @@ webpackJsonp([34],{
 /***/ }
 
 });
-//# sourceMappingURL=recieveCoupon.js.map
+//# sourceMappingURL=shareSuccess.js.map

@@ -1,11 +1,11 @@
-webpackJsonp([23],{
+webpackJsonp([32],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(209);
+	__webpack_require__(243);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -14,23 +14,28 @@ webpackJsonp([23],{
 	//公共方法
 	var common = __webpack_require__(40);
 	
-	
 	//自定义功能写下面
 	//
 	////加载更多模块
 	var loadMore = __webpack_require__(211);
-	var tmpl = __webpack_require__(212);
+	var tmpl = __webpack_require__(245);
 	
 	var province = $("[name=province]").val();
 	
-	var info = {
+	var infoModule = {
 		init : function(){
 			//默认分页开始
 			this.pager = 1;
 			this.capacity = 10;
 			this.tagIndex = 0;
+			this.initView();
 			this.bindEvt();
 		},
+	
+		initView: function(){
+			$('#moduleTitle').text(decodeURIComponent(util.getQuery('moduleName')));
+		},
+	
 		requestList : function(btn){
 			var that = this;
 	
@@ -44,9 +49,7 @@ webpackJsonp([23],{
 			var parm = [];
 			parm.push("capacity="+10);
 			parm.push("page="+that.pager);
-			parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
-	
-			var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+			parm.push("moduleId="+util.getQuery('moduleId'));
 	
 			$.ajax({
 				url : preServer+province+"/news?"+parm.join("&"),
@@ -61,11 +64,8 @@ webpackJsonp([23],{
 						return;
 					}
 	
-					res.result.tagType = tagType;
 					var res = res.result;
-	
-					$(".infoListWrap").removeClass("preloading");
-					
+					$('.preloading').removeClass('preloading');				
 	
 					that.loadList(res,that.pager);
 				},
@@ -80,7 +80,6 @@ webpackJsonp([23],{
 	
 			if(pager == 1){
 				$(".infoList").empty().html(_html);
-				$("#toggleTitle").text($(".infoTag.active").text());
 			}else{
 				$(".infoList").append(_html);
 			}
@@ -117,32 +116,21 @@ webpackJsonp([23],{
 	    		that.requestList(btn);
 	    	});
 	
-	    	$(".infoTag").on("click",function(e){
-	    		e.preventDefault();
-	    		var btn = $(this);
-	    		btn.siblings().removeClass("active");
-	    		if(btn.hasClass("active")) return;
-	    		btn.addClass("active");
-	    		$(".infoListWrap").addClass("preloading");
-	    		that.tagIndex = btn.index();
-	    		that.requestList();
-	    	});
-	
-	    	$(".infoTag").eq(0).trigger("click");
+	    	that.requestList();
 		}
 	};
 	
-	info.init();
+	infoModule.init();
 
 /***/ },
 
-/***/ 209:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(210);
+	var content = __webpack_require__(244);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -163,7 +151,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 210:
+/***/ 244:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -178,7 +166,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 212:
+/***/ 245:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -227,4 +215,4 @@ webpackJsonp([23],{
 /***/ }
 
 });
-//# sourceMappingURL=info.js.map
+//# sourceMappingURL=moduleSiteList.js.map

@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"createAppointment","15":"error","16":"evaluateResult","17":"evaluateStep1","18":"evaluateStep2","19":"evaluateStep3","20":"expertOrder","21":"expertOrderSuccess","22":"home","23":"info","24":"infoDetail","25":"inviteSuccess","26":"login","27":"major","28":"majorExam1","29":"majorExam2","30":"majorExam3","31":"major_2","32":"pay/assessment","33":"pay/book","34":"recieveCoupon","35":"recommendUni","36":"sampleEvaluate","37":"sampleWishes","38":"score","39":"scoreLine","40":"scoreLineResult","41":"share","42":"subject","43":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"createAppointment","15":"error","16":"evaluateResult","17":"evaluateStep1","18":"evaluateStep2","19":"evaluateStep3","20":"expertOrder","21":"expertOrderSuccess","22":"home","23":"info","24":"infoDetail","25":"infoV2","26":"login","27":"major","28":"majorExam1","29":"majorExam2","30":"majorExam3","31":"major_2","32":"moduleSiteList","33":"pay/assessment","34":"pay/book","35":"recommendUni","36":"sampleEvaluate","37":"sampleWishes","38":"score","39":"scoreLine","40":"scoreLineResult","41":"share","42":"subject","43":"user","45":"shareSuccess"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -22669,6 +22669,135 @@
 	};	
 	
 	module.exports = pagination;
+
+/***/ },
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(38);
+	var extend =  __webpack_require__(43);
+	 
+	function Plugin(t,o){
+			this.target=t;
+			this.options=o;
+			this.init(this.options);
+		   }
+	  
+	Plugin.prototype = {
+	   	init : function(o){
+	    	var that = this,$this = that.target;
+	    	// 分页默认从第1页开始
+	    	that.pager = o.pager;
+	    	that.capacity = 10;
+	
+	    	//模板地址
+	    	that.tmpl = o.tmpl;
+	    	that.btn = that.target.closest(".content").find(".btn-loading");
+	
+	    	if(Object.prototype.toString.call(that.tmpl) != '[object Function]'){
+	    		return;
+	    	}
+	
+	    	that.btn.off().on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	    		that.fetch.call(that);
+	    	});
+		},
+	
+		fetch : function(){
+			var that = this,o = that.options,$this = that.target;
+			$.ajax({
+				url : o.url || $this.data("url"),
+				type : o.type,
+				contentType: "application/json",
+				data : JSON.stringify({page : that.pager,capacity : 10}),
+				success : function(res){
+					if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                that.insertData.call(that,res);
+				}
+			});
+		},
+	
+		renderData : function(res){
+			var that = this;
+			return that.tmpl(res);
+		},
+	
+		insertData : function(res){
+			var that = this,$this = that.target,o = that.options;
+			if(res[o.listAttr].length){
+				var _html = that.renderData(res);
+				if(that.pager == 1){
+					$this.empty().append(_html);
+				}else{
+					$this.append(_html);
+				}
+	
+				that.pager++;
+	
+				var pageCount = Math.ceil(res.total / that.capacity);
+				//最后一页
+				if(that.pager >= pageCount){
+					that.btn.addClass("loading-all");
+				}else{
+		            $(".btn-loading").removeClass("loading-all");
+		        }
+	
+			}else{
+				that.target.html('<div class="no_transList"><p class="tc mb10"><i class="noListIcon"></i></p><em class="g9">暂无数据</em></div>');
+				$(".btn-loading").length && $(".btn-loading").hide();
+			}
+	
+	
+			that.btn.removeClass("loading disabled");
+		}
+	};
+	
+	 var loadMore = function(target,o){
+	 	var settings=extend({
+	 		url : "",
+	 		pager : 1,
+			button : ".btn-loading",
+			callback : null,
+			listAttr : "",
+			type : "post"
+		},o);
+	
+		return $(target).each(function(index) {
+			var me = $(this);  
+			return new Plugin(me,settings);
+		});
+	 };
+	
+	 module.exports = loadMore;
 
 /***/ }
 /******/ ]);

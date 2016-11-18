@@ -71,27 +71,32 @@
 				<div class="f-layout clearfix">
 					<div class="column col1 fl">
 						<div class="colPad">
-							<div class="content">
-								<h3 class="clearfix title">
-									<span class="fl s-title" id="toggleTitle">
-										全部资讯
-										<em class="underLine"></em>	
-									</span>
-								</h3>
-								<div class="preloading infoListWrap">
-								<ul class="infoList load-more-list contentWrap">
-									
-								</ul>
+							<div class="content v2-layout clearfix preloading infoListWrap">
+							<div class="contentWrap">
+							<c:forEach var="item" items="${moduleList}">
+							<div class="column fl">
+								<div class="colPad">
+									<h3 class="clearfix title">
+										<span class="fl s-title toggleTitle">
+											${item.name}
+											<em class="underLine"></em>	
+										</span>
+										<a href="/moduleSiteList?moduleId=${item.id}&moduleName=${item.name}" class="link fr more" target="_blank">更多&gt;&gt;</a>
+									</h3>
+									<ul class="infoList">
+										
+									</ul>
 								</div>
-								<!-- 加载更多模块 -->
-								<%@ include file = "/partials/_loadMore.jsp" %>
+							</div>
+							</c:forEach>
+							</div>	
 							</div>
 						</div>
 					</div>
 
 					<div class="column col2 fl">
 						<div class="colPad r-content">
-							<section class="r-lists">
+							<!-- <section class="r-lists">
 								<div class="content">
 									<h3 class="clearfix title">
 										<span class="fl s-title">
@@ -107,7 +112,7 @@
 									</c:forEach>
 									</div>
 								</div>
-							</section>
+							</section> -->
 							<section class="r-lists">
 							<div class="content">
 								<h3 class="clearfix title">
@@ -131,27 +136,8 @@
 								</ul>
 							</div>
 						</section>
-						<section class="directs mt20 mb20">
-							<div>
-								<ul>
-									<c:forEach var="list" items="${adList}">
-									<li>
-									<c:choose>
-									    <c:when test="${list.href != null}">
-									   		<a href="${list.href}" target="_blank" >
-									   			<img src="${list.imgUrl}" >
-									   		</a>
-										</c:when>
-										<c:otherwise>
-											<a href="javascript:;" >
-												<img src="${list.imgUrl}" >
-											</a>
-										</c:otherwise>
-									</c:choose>
-									</li>
-									</c:forEach>
-								</ul>
-							</div>
+						<section class="mt20 mb20">
+							<%@ include file = "/partials/_sidebar.jsp" %>
 						</section>
 						</div>
 					</div>
@@ -166,5 +152,10 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/info.js"></script></body>
+	
+	<script>
+		window.__initData__ = ${moduleList};
+	</script>
+
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/infoV2.js"></script></body>
 </html>

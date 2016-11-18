@@ -81,7 +81,7 @@
 											${item.name}
 											<em class="underLine"></em>	
 										</span>
-										<a href="/info/${item.id}" class="link fr more" target="_blank">更多&gt;&gt;</a>
+										<a href="/moduleSiteList?moduleId=${item.id}&moduleName=${item.name}" class="link fr more" target="_blank">更多&gt;&gt;</a>
 									</h3>
 									<ul class="infoList">
 										
@@ -136,27 +136,8 @@
 								</ul>
 							</div>
 						</section>
-						<section class="directs mt20 mb20">
-							<div>
-								<ul>
-									<c:forEach var="list" items="${adList}">
-									<li>
-									<c:choose>
-									    <c:when test="${list.href != null}">
-									   		<a href="${list.href}" target="_blank" >
-									   			<img src="${list.imgUrl}" >
-									   		</a>
-										</c:when>
-										<c:otherwise>
-											<a href="javascript:;" >
-												<img src="${list.imgUrl}" >
-											</a>
-										</c:otherwise>
-									</c:choose>
-									</li>
-									</c:forEach>
-								</ul>
-							</div>
+						<section class="mt20 mb20">
+							<%@ include file = "/partials/_sidebar.jsp" %>
 						</section>
 						</div>
 					</div>

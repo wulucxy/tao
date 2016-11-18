@@ -1,0 +1,42 @@
+<% if (news.length == 0 && page == 1) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>
+<% for (var i = 0; i < news.length; i++) { %>
+<li>
+   	 <div class="media">
+		<span class="fl imgWrap">
+			<img src="<%= news[i].newsIconUrl %>">
+		</span>
+		<div class="media-body">
+				<h3 class="clearfix">
+					<% if (news[i].newsTags.length && !!news[i].newsTags[0]) { %>
+					<span class="btn btn-primary infoTag btn-outlined fr">
+						<%= news[i].newsTags %>
+					</span>
+					<% } %>
+					<a class="detailTitle ellipsis" href="<%= news[i].newsUrl %>" target="_blank">
+						<%= news[i].newsName %>
+					</a>
+					
+				</h3>
+				
+				<!-- <div class="clearfix detailSub g6">
+					<% for (var k = 0; k < news[i].newsTags.length; k++) { %>
+					<span class="fl article-tag mr10"><%= news[i].newsTags[k] %></span>
+					<% } %>
+				
+				</div> -->
+
+				<div class="detailCnt clearfix">
+					<a href="<%= news[i].newsUrl %>" class="dib" target="_blank">
+						<%= news[i].discription %>
+					</a>
+					<span class="moment"><%= news[i].time %></span>
+					
+
+				</div>
+				
+		</div>
+	</div>
+</li>
+<% }} %>

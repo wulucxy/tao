@@ -43,9 +43,9 @@ module.exports = {
 	"/sampleWishes" : "sampleWishes.jsp",
 	"/recommendUni" : "recommendUni.jsp",
 	"/coupon/share" : "share.jsp",
-	"/inviteSuccess" : "inviteSuccess.jsp",
-	"/recieveCoupon" : "recieveCoupon.jsp",
+	"/shareSuccess" : "shareSuccess.jsp",
 	"/appointment/create" : "createAppointment.jsp",
+	'/moduleSiteList'   : 'moduleSiteList.jsp',
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',

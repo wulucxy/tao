@@ -35,7 +35,7 @@
 							<div class="pl10">
 								<div class="bg rel">
 									<div class="p10 imgWrap">
-										<img src="./img/coupon.png" alt="" class="responsive">
+										<img src="/static/web/img/coupon.png" alt="" class="responsive">
 									</div>
 									<div class="coupon_texts">
 										<p>支付<em class="positive">线上</em>服务时，可抵扣<em class="positive">30元</em>现金</p>
@@ -48,6 +48,15 @@
 								</div>
 							</div>
 							
+							<div class="recieveForm row inline clearfix" id="recieveCouponForm">
+								<input type="tel" class="input form-control" id="mobile" name="mobile" maxLength="11" placeholder="请输入手机号" required autocomplete="off">
+								<p class="error-rows">
+									<span class="p-error">手机号为11位数字格式</span>
+					    			<span class="p-error-empty">手机号不能为空</span>
+								</p>
+								
+								<a href="javascript:;" class="btn btn-primary btn-block" type="submit">领取优惠券</a>
+							</div>
 
 							<div class="recieveTxts">
 								优惠券已放入你的淘志愿账户中请注册或者登录后使用
@@ -55,26 +64,7 @@
 
 						</div>
 						<div class="column col2 fr">
-							<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div>
+							<%@ include file = "/partials/_direct.jsp" %>
 						</div>
 
 					</div>
@@ -88,5 +78,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	</body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/shareSuccess.js"></script></body>
 </html>
