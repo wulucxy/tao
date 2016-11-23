@@ -1,11 +1,11 @@
-webpackJsonp([42],{
+webpackJsonp([45],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(406);
+	__webpack_require__(416);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -20,19 +20,19 @@ webpackJsonp([42],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(408);
+	var dataSet = __webpack_require__(418);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 406:
+/***/ 416:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(407);
+	var content = __webpack_require__(417);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -53,7 +53,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 407:
+/***/ 417:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -68,18 +68,18 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 408:
+/***/ 418:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
 	var extend =  __webpack_require__(43);
-	var tmpl = __webpack_require__(409);
+	var tmpl = __webpack_require__(419);
 	
 	var localData = __webpack_require__(143);
-	var tmpl_favWrap = __webpack_require__(410);
-	var tmpl_favList = __webpack_require__(411);
+	var tmpl_favWrap = __webpack_require__(420);
+	var tmpl_favList = __webpack_require__(421);
 	
-	var pagination = __webpack_require__(188);
+	var pagination = __webpack_require__(178);
 	
 	//工具类方法
 	var util = __webpack_require__(39);
@@ -455,7 +455,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 409:
+/***/ 419:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -511,7 +511,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 410:
+/***/ 420:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -528,7 +528,7 @@ webpackJsonp([42],{
 
 /***/ },
 
-/***/ 411:
+/***/ 421:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

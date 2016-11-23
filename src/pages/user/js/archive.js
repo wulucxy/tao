@@ -26,7 +26,10 @@ var archive = {
 		    successCallback: function(e) {
 		      var target = $(e.target).closest('.btn');
 		      //执行到下一步操作
-		      that.subFunc(target,$("#myInfoForm"));
+		      
+		      options.submitFormCallback &&  options.submitFormCallback(target,$("#myInfoForm"))
+		     
+		      //that.subFunc(target,$("#myInfoForm"));
 
 		    },
 		    focusinCallback: function() {

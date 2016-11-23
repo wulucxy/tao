@@ -1,11 +1,11 @@
-webpackJsonp([35],{
+webpackJsonp([36],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(250);
+	__webpack_require__(262);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -16,13 +16,13 @@ webpackJsonp([35],{
 	
 	
 	//自定义功能写下面
-	var slider = __webpack_require__(202);
+	var slider = __webpack_require__(214);
 	
 	slider($("#bannerShow"));
 
 /***/ },
 
-/***/ 202:
+/***/ 214:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
@@ -152,13 +152,13 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 250:
+/***/ 262:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(251);
+	var content = __webpack_require__(263);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -179,7 +179,7 @@ webpackJsonp([35],{
 
 /***/ },
 
-/***/ 251:
+/***/ 263:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();

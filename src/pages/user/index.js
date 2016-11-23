@@ -57,7 +57,8 @@ $(".userInfoList").on("click","[data-link]",function(e){
 
 //我的资料
 archive.init({
-	provinceId : provinceId
+	provinceId : provinceId,
+	submitFormCallback: archive.subFunc
 });
 
 //历史方案模块调用

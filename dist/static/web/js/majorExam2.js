@@ -1,11 +1,11 @@
-webpackJsonp([29],{
+webpackJsonp([30],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(230);
+	__webpack_require__(242);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -16,12 +16,12 @@ webpackJsonp([29],{
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(232);
+	var questions = __webpack_require__(244);
 	
-	var tmpl = __webpack_require__(233);
+	var tmpl = __webpack_require__(245);
 	
 	var Cookies = __webpack_require__(101);
-	var contentSlider = __webpack_require__(234);
+	var contentSlider = __webpack_require__(246);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -153,13 +153,13 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 230:
+/***/ 242:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(231);
+	var content = __webpack_require__(243);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -180,7 +180,7 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 231:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -195,7 +195,7 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 232:
+/***/ 244:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2725,7 +2725,7 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 233:
+/***/ 245:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2777,7 +2777,7 @@ webpackJsonp([29],{
 
 /***/ },
 
-/***/ 234:
+/***/ 246:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
