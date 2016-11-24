@@ -23,9 +23,6 @@
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
-		<!-- 保存province属性 -->
-		<input type="hidden" name="province" value="${user.province.code}">
-
 		<div class="container">
 			<div class="container">
 				<div class="content">
@@ -46,7 +43,7 @@
 										</label>
 										<div class="col2 inputWrap rel">
 											<div class="fieldWrap">
-												<input type="text" class="input form-control" id="name" name="province" required value='' placeholder='请输入姓名'>
+												<input type="text" class="input form-control" id="name" name="name" required  placeholder='请输入姓名'>
 											</div>
 										</div>
 										<div class="errInfo">

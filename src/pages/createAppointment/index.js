@@ -40,7 +40,7 @@ var educationPlan = {
 		};
 
 		$.ajax({
-			url : preServer+"appointment/createSuccess",
+			url : preServer+province+"/tzy/appointment/create",
 			type : "post",
 			contentType: "application/json",
 			data : JSON.stringify(data),

@@ -104,7 +104,7 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
 	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json",
 
-	'post::/v2_1/client/appointment/createSuccess':"mock::api/appointmentCreation.json",
+	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
 	'post::/v2_1/client/1/profile/couponList':"mock::api/couponList.json"
 
 };
