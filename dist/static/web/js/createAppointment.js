@@ -44,8 +44,6 @@ webpackJsonp([15],{
 				appointmentType: $('[name=appointmentType]:checked').val()
 			};
 	
-			console.log(preServer);
-	
 			$.ajax({
 				url : preServer+"appointment/createSuccess",
 				type : "post",
