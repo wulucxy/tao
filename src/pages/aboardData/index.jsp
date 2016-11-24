@@ -140,26 +140,7 @@
 
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div> 
+						<%@ include file = "/partials/_direct.jsp" %>
 					</div>
 
 				</div>

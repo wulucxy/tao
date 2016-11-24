@@ -44,8 +44,10 @@ webpackJsonp([15],{
 				appointmentType: $('[name=appointmentType]:checked').val()
 			};
 	
+			console.log(preServer);
+	
 			$.ajax({
-				url : preServer+province+"/tzy/appointment/create",
+				url : preServer+"appointment/createSuccess",
 				type : "post",
 				contentType: "application/json",
 				data : JSON.stringify(data),

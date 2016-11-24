@@ -5,7 +5,7 @@ webpackJsonp([43],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(411);
+	__webpack_require__(412);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -15,7 +15,7 @@ webpackJsonp([43],{
 	var common = __webpack_require__(40);
 	
 	
-	var ZeroClipboard = __webpack_require__(413);
+	var ZeroClipboard = __webpack_require__(414);
 	
 	
 	ZeroClipboard.config({
@@ -39,13 +39,13 @@ webpackJsonp([43],{
 
 /***/ },
 
-/***/ 411:
+/***/ 412:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(412);
+	var content = __webpack_require__(413);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -66,7 +66,7 @@ webpackJsonp([43],{
 
 /***/ },
 
-/***/ 412:
+/***/ 413:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -81,7 +81,7 @@ webpackJsonp([43],{
 
 /***/ },
 
-/***/ 413:
+/***/ 414:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!

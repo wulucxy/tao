@@ -60,10 +60,17 @@ webpackJsonp([42],{
 	
 	
 	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.transformerWrapper {\n  margin-top: 12px;\n}\n.formWrap > .col1 {\n  width: 590px;\n}\n.formWrap > .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px 36px;\n  margin-bottom: 30px;\n}\n.list-group-item {\n  color: #555;\n  font-size: 15px;\n  line-height: 23px;\n  cursor: default;\n}\n.list-group-item .body {\n  display: block;\n  margin-right: 23px;\n}\n.list-group-item.cp {\n  cursor: pointer;\n}\n.icon-right {\n  width: 13px;\n  height: 23px;\n  background-position: -43px 0;\n}\n.active .icon-right {\n  width: 13px;\n  height: 23px;\n  background-position: -30px 0;\n}\n.faqList {\n  margin-bottom: 24px;\n}\n.faqList h4 {\n  color: #61c0e2;\n  font-weight: normal;\n  margin-bottom: 20px;\n  font-size: 18px;\n}\n.faqList .more > a {\n  color: #555;\n  font-size: 15px;\n}\n.faqList .more > a:hover {\n  color: #333;\n}\n.pre .list-group-item .fr {\n  margin-right: 36px;\n}\n.history .list-group-item .fr {\n  margin-top: 12px;\n}\n", ""]);
+	exports.push([module.id, ".orange {\n  color: #f76c86;\n}\n.blue {\n  color: #61c0e2;\n}\n.transformerWrapper {\n  margin-top: 12px;\n}\n.formWrap > .col1 {\n  width: 590px;\n}\n.formWrap > .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px 36px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow {\n  margin-top: 50px;\n}\n.dzWrapper {\n  margin-top: 66px;\n  margin-bottom: 88px;\n}\n.dz {\n  width: 531px;\n  height: 135px;\n  background: url(" + __webpack_require__(411) + ") no-repeat;\n  position: relative;\n  margin: 0 auto;\n  font-size: 20px;\n  color: #fff;\n}\n.dz p {\n  padding-top: 80px;\n}\n.dzLists {\n  font-size: 22px;\n  margin-top: 36px;\n  margin-bottom: 36px;\n}\n.dzLists li {\n  margin-bottom: 44px;\n}\n", ""]);
 	
 	// exports
 
+
+/***/ },
+
+/***/ 411:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/dz_title.png"
 
 /***/ }
 

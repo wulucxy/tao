@@ -5,7 +5,7 @@ webpackJsonp([45],{
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(416);
+	__webpack_require__(417);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -20,19 +20,19 @@ webpackJsonp([45],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(418);
+	var dataSet = __webpack_require__(419);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 416:
+/***/ 417:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(417);
+	var content = __webpack_require__(418);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -53,7 +53,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 417:
+/***/ 418:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -68,16 +68,16 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 418:
+/***/ 419:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
 	var extend =  __webpack_require__(43);
-	var tmpl = __webpack_require__(419);
+	var tmpl = __webpack_require__(420);
 	
 	var localData = __webpack_require__(143);
-	var tmpl_favWrap = __webpack_require__(420);
-	var tmpl_favList = __webpack_require__(421);
+	var tmpl_favWrap = __webpack_require__(421);
+	var tmpl_favList = __webpack_require__(422);
 	
 	var pagination = __webpack_require__(178);
 	
@@ -455,7 +455,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 419:
+/***/ 420:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -511,7 +511,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 420:
+/***/ 421:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -528,7 +528,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 421:
+/***/ 422:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
