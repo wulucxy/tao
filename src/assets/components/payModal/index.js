@@ -22,10 +22,11 @@ var payModal = {
 	requestCoupon: function(){
 		var that = this;
 		var _data = {
-			page: 1
+			page: 1,
+			couponStatus: 0
 		};
 		$.ajax({
-			url : preServer+that.options.provinceId+"/profile/couponList",
+			url : preServer+that.options.provinceId+"/profile/couponListWeb",
 			contentType: "application/json",
 			type : "post",
 		    data : JSON.stringify(_data),
@@ -47,9 +48,10 @@ var payModal = {
 		})
 	},
 
-	calCoupon: function(arr){
+	calCoupon: function(data){
 		var that = this;
 		var appointmentType = that.btn.attr('appointmenttype');
+		var arr = data.couponList || [];
 		var face = that.btn.attr('face');
 		var newArr = $.each(arr, function(index, ele){
 			// face：1代表线上，2代表线下

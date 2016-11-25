@@ -258,9 +258,15 @@ ul li {list-style-type:none;}
 				height: 112px;
 				right:20px;
 				top:4px;
-				background: url(./img/v2/disabled.png) left top no-repeat;
+				background: url(./img/v2/used.png) left top no-repeat;
 			}
 		}
+		&.disabled.outdated{
+			.coupon_inner:before{
+				background: url(./img/v2/outdated.png) left top no-repeat;
+			}
+		}
+
 	}
 	.coupon_title_primary{
 		color: @color-blue;
@@ -287,6 +293,9 @@ ul li {list-style-type:none;}
 		color: #999;
 		max-width: 332px;
 		line-height: 1.5;
+		position: absolute;
+		bottom: 20px;
+		left: 25px;
 	}
 	.coupon-deno{
 		font-size: 56px;
