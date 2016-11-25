@@ -44,7 +44,7 @@
 			<a href="/box/plan/aboard" class="enterLinks aboard" target="_blank">留学方案定制</a>
 			<a href="/box/plan/major_exam1" class="enterLinks test" target="_blank">专业选择测试</a>
 			<a href="/box/college_faq" class="enterLinks qa" target="_blank">高校问答</a>
-			<a href="/expertOrder" class="enterLinks expert" target="_blank">志愿填报专家预约</a>
+			<a href="/appointment/create" class="enterLinks expert" target="_blank">志愿填报专家预约</a>
 		</div>
 
 	</section>
