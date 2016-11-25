@@ -106,7 +106,7 @@ webpackJsonp([46],{
 	})
 	
 	coupon.init({
-		url : preServer+provinceId +"/profile/couponList"
+		url : preServer+provinceId +"/profile/couponListWeb"
 	})
 	
 	
