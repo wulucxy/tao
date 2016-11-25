@@ -55,7 +55,7 @@ var payModal = {
 		var face = that.btn.attr('face');
 		var newArr = $.each(arr, function(index, ele){
 			// face：1代表线上，2代表线下
-			ele.discount = face == 1 ? 50 : 100;
+			ele.discount = face == 1 ? ele.onlineValue : ele.lineValue;
 		})
 		return newArr;
 	},

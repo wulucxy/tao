@@ -207,7 +207,7 @@ webpackJsonp([16],{
 	var __t, __p = '', __j = Array.prototype.join;
 	function print() { __p += __j.call(arguments, '') }
 	with (obj) {
-	__p += '<div class="modalCntWrap taoModal g9 modalForm">\n <h3 class="clearfix">\n  <a href="javascript:;" class="icons btn-close fr"></a>\n  <span class="fl">支付</span>\n</h3>\n <form class="modalSubCnt" id="payForm" onsubmit="return false;">\n\n<div class="patWrap">\n  <div class="payContent tc">\n      <div class="f20 mb10">\n        <em class="vm">支付金额：</em>\n        <span class="orange f28 vm">' +
+	__p += '<div class="modalCntWrap taoModal g9 modalForm payModal">\n <h3 class="clearfix">\n  <a href="javascript:;" class="icons btn-close fr"></a>\n  <span class="fl">支付</span>\n</h3>\n <form class="modalSubCnt" id="payForm" onsubmit="return false;">\n\n<div class="patWrap">\n  <div class="payContent tc">\n      <div class="f20 mb10">\n        <em class="vm">支付金额：</em>\n        <span class="orange f28 vm">' +
 	((__t = ( price )) == null ? '' : __t) +
 	'元</span>\n      </div>\n\n      <div class="row">\n        <label>\n          <input type="radio" name="channel" value="alipay_pc_direct" checked>\n          <i class="payIcon zhifubao"></i>\n          <em>支付宝</em>\n        </label>\n      </div>\n\n      <div class="couponSelectWrap row">\n        <div class="selectWrap beautify-select" id="couponSelect">\n         <div class="trigger usn" data-toggle>\n          <span class="triggerTxt">使用优惠券</span>\n          <em class="caret"></em>\n         </div>\n         <ul class="options" id="countryList">\n              ';
 	 for (var i = 0; i < items.length; i++) { ;
