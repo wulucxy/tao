@@ -1,11 +1,11 @@
-webpackJsonp([19],{
+webpackJsonp([20],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(195);
+	__webpack_require__(197);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -26,10 +26,10 @@ webpackJsonp([19],{
 	var tmpl_questions = __webpack_require__(123);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(197);
-	var tmpl_list = __webpack_require__(198);
-	var tmpl_major = __webpack_require__(199);
-	var majors = __webpack_require__(200);
+	var tmpl_school = __webpack_require__(199);
+	var tmpl_list = __webpack_require__(200);
+	var tmpl_major = __webpack_require__(201);
+	var majors = __webpack_require__(202);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -1284,13 +1284,13 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 195:
+/***/ 197:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(196);
+	var content = __webpack_require__(198);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -1311,7 +1311,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 196:
+/***/ 198:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -1326,7 +1326,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 197:
+/***/ 199:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1341,7 +1341,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 198:
+/***/ 200:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1371,7 +1371,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 199:
+/***/ 201:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1386,7 +1386,7 @@ webpackJsonp([19],{
 
 /***/ },
 
-/***/ 200:
+/***/ 202:
 /***/ function(module, exports) {
 
 	module.exports = [

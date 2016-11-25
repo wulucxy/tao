@@ -43,7 +43,7 @@ module.exports = {
 	"/sampleWishes" : "sampleWishes.jsp",
 	"/recommendUni" : "recommendUni.jsp",
 	"/coupon/share" : "share.jsp",
-	"/shareSuccess" : "shareSuccess.jsp",
+	"/coupon/receive" : "couponReceive.jsp",
 	"/appointment/create" : "createAppointment.jsp",
 	'/moduleSiteList'   : 'moduleSiteList.jsp',
 	'/completeInfo'   : 'completeInfo.jsp',
@@ -105,6 +105,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json",
 
 	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
-	'post::/v2_1/client/1/profile/couponList':"mock::api/couponList.json"
+	'post::/v2_1/client/1/profile/couponList':"mock::api/couponList.json",
+	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json"
 
 };

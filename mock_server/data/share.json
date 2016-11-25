@@ -1,0 +1,14 @@
+{
+	"user":{
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1",
+        "userName":"江波",
+        "userAvatar":"http://www.baidu.com",
+    },
+    "shareUrl":"http://www.baidu.com"
+}

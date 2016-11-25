@@ -34,6 +34,9 @@ var qa = require("./js/qa");
 //qa模块
 var appointment = require("./js/appointment");
 
+//优惠券模块
+var coupon = require("./js/coupon");
+
 //图片上传模块
 //var uploader = require("./js/uploader");
 
@@ -97,6 +100,9 @@ appointment.init({
 	ele : "#bookWrapper"
 })
 
+coupon.init({
+	url : preServer+provinceId +"/profile/couponList"
+})
 
 
 

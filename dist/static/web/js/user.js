@@ -18,7 +18,7 @@ webpackJsonp([46],{
 	//自定义功能写下面
 	var tabs = __webpack_require__(154);
 	//加载更多模块
-	var loadMore = __webpack_require__(223);
+	var loadMore = __webpack_require__(225);
 	
 	
 	//历史模块
@@ -38,6 +38,9 @@ webpackJsonp([46],{
 	
 	//qa模块
 	var appointment = __webpack_require__(440);
+	
+	//优惠券模块
+	var coupon = __webpack_require__(445);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -102,6 +105,9 @@ webpackJsonp([46],{
 		ele : "#bookWrapper"
 	})
 	
+	coupon.init({
+		url : preServer+provinceId +"/profile/couponList"
+	})
 	
 	
 	
@@ -831,7 +837,7 @@ webpackJsonp([46],{
 
 /***/ },
 
-/***/ 186:
+/***/ 188:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -859,12 +865,12 @@ webpackJsonp([46],{
 
 /***/ },
 
-/***/ 187:
+/***/ 189:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
 	var extend =  __webpack_require__(43);
-	var ping = __webpack_require__(188);
+	var ping = __webpack_require__(190);
 	
 	var pay = {
 		subPay : function(btn, o){
@@ -1969,9 +1975,9 @@ webpackJsonp([46],{
 	var beautifySelect = __webpack_require__(103);
 	
 	//selct组件
-	var pay = __webpack_require__(187);
+	var pay = __webpack_require__(189);
 	
-	var tmpl_pay = __webpack_require__(186);
+	var tmpl_pay = __webpack_require__(188);
 	
 	var payModal = {
 		init: function(btn, options){
@@ -2108,6 +2114,156 @@ webpackJsonp([46],{
 	
 	// exports
 
+
+/***/ },
+
+/***/ 445:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(38);
+	var extend =  __webpack_require__(43);
+	
+	var tmpl = __webpack_require__(446);
+	
+	//公共方法
+	var util = __webpack_require__(39);
+	
+	var provinceId = $("[name=province]").val();
+	
+	module.exports = {
+		init : function(o){
+	    	//默认分页开始
+			this.pager = 1;
+			this.capacity = 10;
+	    	this.tmpl = tmpl;
+	    	this.options = extend({
+	
+	    	},o);
+	
+	    	this.target = $(o.ele);
+	
+			this.bindEvt();
+			this.fetch();
+		},
+	
+		fetch : function(btn){
+			var that = this,o = that.options,$this = that.target;
+	
+			//如果是点击加载更多，页码++，否则重置为1
+	        if(btn && $(btn).hasClass("btn-loading")){
+	            that.pager++;
+	        }else{
+	            that.pager = 1;
+	        }
+	
+			var parmData = {
+				page: that.pager,
+				capacity: that.capacity
+			};
+	
+			$.ajax({
+				url : o.url,
+				type : 'post',
+				data: JSON.stringify(parmData),
+				contentType: "application/json",
+				success : function(res){
+					if(typeof(res) == 'string'){
+	                   var res = $.parseJSON(res);
+	                }
+	
+	                res.couponList = res.result;
+	                
+	                 $.each(res.couponList,function(idx,ele){
+	                    ele.availableTime = util.buildDate(ele.activeTime,"yyyy-MM-dd");
+	                });
+	
+	                that.loadList(res,that.pager);
+				}
+			});
+		},
+	
+		loadList : function(data,pager){
+			var that = this,o = that.options;
+			var _html = that.tmpl(data);
+	
+			if(pager == 1){
+				$("#couponWrapper").empty().html(_html);
+			}else{
+				$("#couponWrapper").append(_html);
+			}
+	
+	
+			if(pager == 1 && data.total == 0){
+				$(".btn-loading").hide();
+			}else{
+				$(".btn-loading").show();
+				$(".btn-loading").removeClass("loading disabled");
+			}
+	
+			var pageCount = Math.ceil(data.total / that.capacity);
+	
+			//最后一页
+			if(pager >= pageCount){
+				$(".btn-loading").addClass("loading-all");
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			$(".btn-loading").on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	    		that.fetch(btn);
+	    	});
+		}
+	
+	};
+
+/***/ },
+
+/***/ 446:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (couponList.length == 0) { ;
+	__p += '\n	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < couponList.length; i++) { ;
+	__p += '\n';
+	 if(couponList[i].status == 0) { ;
+	__p += '\n	<div class="well clearfix" >\n';
+	 }else if(couponList[i].status == 1) { ;
+	__p += '\n	<div class="well clearfix disabled" >\n';
+	 }else if(couponList[i].status == 2) { ;
+	__p += '\n	<div class="well clearfix disabled outdated" >\n';
+	 } ;
+	__p += '\n	<div class="col2">\n		<p class="coupon_text">优惠券</p>\n	</div>\n	<div class="col1">\n		<div class="coupon_inner">\n			<h3 class="coupon_title">\n				<span class="coupon_title_primary">' +
+	((__t = ( couponList[i].title )) == null ? '' : __t) +
+	'</span>\n				<span class="coupon_title_second">有效期至' +
+	((__t = ( couponList[i].availableTime )) == null ? '' : __t) +
+	'</span>\n			</h3>\n			<div class="coupon_count">\n				¥<em class="coupon-deno">' +
+	((__t = ( couponList[i].onlineValue )) == null ? '' : __t) +
+	'</em>或<em class="coupon-deno">' +
+	((__t = ( couponList[i].lineValue )) == null ? '' : __t) +
+	'</em>\n			</div>\n			<p class="coupon_desc">' +
+	((__t = ( couponList[i].description )) == null ? '' : __t) +
+	'</p>\n		</div>\n	</div>\n	\n</div>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
 
 /***/ }
 

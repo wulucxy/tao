@@ -1,0 +1,29 @@
+<% if (couponList.length == 0) { %>
+	<div class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></div>
+<% }else{ %>
+<% for (var i = 0; i < couponList.length; i++) { %>
+<% if(couponList[i].status == 0) { %>
+	<div class="well clearfix" >
+<% }else if(couponList[i].status == 1) { %>
+	<div class="well clearfix disabled" >
+<% }else if(couponList[i].status == 2) { %>
+	<div class="well clearfix disabled outdated" >
+<% } %>
+	<div class="col2">
+		<p class="coupon_text">优惠券</p>
+	</div>
+	<div class="col1">
+		<div class="coupon_inner">
+			<h3 class="coupon_title">
+				<span class="coupon_title_primary"><%= couponList[i].title %></span>
+				<span class="coupon_title_second">有效期至<%= couponList[i].availableTime %></span>
+			</h3>
+			<div class="coupon_count">
+				¥<em class="coupon-deno"><%= couponList[i].onlineValue %></em>或<em class="coupon-deno"><%= couponList[i].lineValue %></em>
+			</div>
+			<p class="coupon_desc"><%= couponList[i].description %></p>
+		</div>
+	</div>
+	
+</div>
+<% }} %>

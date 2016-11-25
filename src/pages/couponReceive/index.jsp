@@ -35,7 +35,7 @@
 							<div class="pl10">
 								<div class="bg rel">
 									<div class="p10 imgWrap">
-										<img src="/static/web/img/coupon.png" alt="" class="responsive">
+										<img src="./img/coupon.png" alt="" class="responsive">
 									</div>
 									<div class="coupon_texts">
 										<p>支付<em class="positive">线上</em>服务时，可抵扣<em class="positive">30元</em>现金</p>
@@ -58,7 +58,7 @@
 								<a href="javascript:;" class="btn btn-primary btn-block" type="submit">领取优惠券</a>
 							</div>
 
-							<div class="recieveTxts">
+							<div class="recieveTxts dn">
 								优惠券已放入你的淘志愿账户中请注册或者登录后使用
 							</div>
 
@@ -78,5 +78,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/shareSuccess.js"></script></body>
+	</body>
 </html>

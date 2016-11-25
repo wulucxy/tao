@@ -8,7 +8,7 @@
 <div class="content">
 
 	<div class="wellWrapper" id="couponWrapper">
-		<div class="well clearfix" >
+		<!-- <div class="well clearfix" >
 			<div class="col2">
 				<p class="coupon_text">优惠券</p>
 			</div>
@@ -44,7 +44,9 @@
 				</div>
 			</div>
 			
-		</div>
+		</div> -->
 	</div>
+	<!-- 加载更多模块 -->
+	<%@ include file = "/partials/_loadMore.jsp" %>
 </div>
 </section>

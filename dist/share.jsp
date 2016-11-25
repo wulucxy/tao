@@ -53,7 +53,7 @@
 								<span class="label">链接</span>
 								<a id="copy" data-stat="3616" class="link fr" href="javascript:;">复制</a>
 								<div class="inputWrap">
-									<input class="readonly input form-control" type="text" readonly name="inviteUrl" id="inviteUrl" value="http://www.tzhiyuan.net/coupon/dole?userId=${user.userId}">
+									<input class="readonly input form-control" type="text" readonly name="inviteUrl" id="inviteUrl" value="${shareUrl}">
 								</div>
 							</div>
 

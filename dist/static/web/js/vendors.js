@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"completeInfo","15":"createAppointment","16":"error","17":"evaluateResult","18":"evaluateStep1","19":"evaluateStep2","20":"evaluateStep3","21":"expertOrder","22":"expertOrderSuccess","23":"home","24":"info","25":"infoDetail","26":"infoV2","27":"login","28":"major","29":"majorExam1","30":"majorExam2","31":"majorExam3","32":"major_2","33":"moduleSiteList","34":"pay/assessment","35":"pay/book","36":"recommendUni","37":"sampleEvaluate","38":"sampleWishes","39":"score","40":"scoreLine","41":"scoreLineResult","42":"scoreTransformer","43":"share","44":"shareSuccess","45":"subject","46":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bookResult","4":"bookStep1","5":"bookStep2","6":"bookStep3","7":"bookStep4","8":"college","9":"collegeDetail","10":"collegeFaq","11":"collegeFaqDetail","12":"collegeFaqHistory","13":"collegeFaqSuccess","14":"completeInfo","15":"couponReceive","16":"createAppointment","17":"error","18":"evaluateResult","19":"evaluateStep1","20":"evaluateStep2","21":"evaluateStep3","22":"expertOrder","23":"expertOrderSuccess","24":"home","25":"info","26":"infoDetail","27":"infoV2","28":"login","29":"major","30":"majorExam1","31":"majorExam2","32":"majorExam3","33":"major_2","34":"moduleSiteList","35":"pay/assessment","36":"pay/book","37":"recommendUni","38":"sampleEvaluate","39":"sampleWishes","40":"score","41":"scoreLine","42":"scoreLineResult","43":"scoreTransformer","44":"share","45":"subject","46":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -22765,7 +22765,9 @@
 /* 185 */,
 /* 186 */,
 /* 187 */,
-/* 188 */
+/* 188 */,
+/* 189 */,
+/* 190 */
 /***/ function(module, exports) {
 
 	var
@@ -22945,8 +22947,6 @@
 	module.exports = new PingppSDK();
 
 /***/ },
-/* 189 */,
-/* 190 */,
 /* 191 */,
 /* 192 */,
 /* 193 */,
@@ -22979,7 +22979,9 @@
 /* 220 */,
 /* 221 */,
 /* 222 */,
-/* 223 */
+/* 223 */,
+/* 224 */,
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
