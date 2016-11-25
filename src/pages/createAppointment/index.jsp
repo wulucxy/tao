@@ -107,7 +107,7 @@
 									   </c:choose>
 									</em>
 								</label>
-								<span class="fr price orange">¥${list.price}元</span>
+								<span class="fr price orange">¥${list.price/100}元</span>
 							</div>
 						</div>
 					</c:forEach>
