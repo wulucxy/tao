@@ -2171,13 +2171,13 @@ webpackJsonp([46],{
 	                   var res = $.parseJSON(res);
 	                }
 	
-	                res.couponList = res.result;
+	                var couponList = res.result.couponList;
 	                
-	                 $.each(res.couponList,function(idx,ele){
+	                 $.each(couponList,function(idx,ele){
 	                    ele.availableTime = util.buildDate(ele.activeTime,"yyyy-MM-dd");
 	                });
 	
-	                that.loadList(res,that.pager);
+	                that.loadList(res.result,that.pager);
 				}
 			});
 		},

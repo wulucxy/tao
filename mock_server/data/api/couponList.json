@@ -1,8 +1,9 @@
 {
   "code": "1",
   "msg": "调用成功",
-  "result": [
-    {
+  "result": {
+    "couponList": 
+    [{
       "coupinId": "1",
       "onlineValue": 50,
       "lineValue": 100,
@@ -21,6 +22,9 @@
       "createDate": 1477466435000,
       "title": "志愿填报专家预约",
       "description": "当用于“新高考升学全程服务”、“新高考政策讲解小班” 或“线下志愿填报服务”时，抵扣100元。当用于“线上 志愿填报服务”时，抵扣200元。"
-    }
-  ]
+    }],
+    "capacity":10,
+    "count":3,
+    "page":1
+}
 }
