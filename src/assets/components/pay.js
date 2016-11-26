@@ -43,14 +43,20 @@ var pay = {
         			btn.removeClass("disabled");
         			warn(res.msg);
         			return;
-        		}
-
-        		var charge = res.result;
-        		if(/alipay/.test(options.channel)){
-        			that.requestAlipay(btn,charge);
+        		}else if(res.code ==1 && typeof res.result == 'undefined'){
+        			// 此时不需要请求ping++
+        			warn(res.msg, function(){
+        				window.location.href = '/user';
+        				return false;
+        			});
         		}else{
-        			that.requestCoupon(btn,charge);
-        		}
+	        		var charge = res.result;
+	        		if(/alipay/.test(options.channel)){
+	        			that.requestAlipay(btn,charge);
+	        		}else{
+	        			that.requestCoupon(btn,charge);
+	        		}
+	        	}
 
         	},
         	error : function(err){
