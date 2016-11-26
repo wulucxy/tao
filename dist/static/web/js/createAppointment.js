@@ -298,6 +298,9 @@ webpackJsonp([16],{
 				if(err){
 					warn(err.msg);
 					btn.removeClass("disabled");
+				}else{
+					console.log(result);
+					window.location.href = '/user';
 				}
 			});
 		},

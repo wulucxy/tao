@@ -66,6 +66,9 @@ var pay = {
 			if(err){
 				warn(err.msg);
 				btn.removeClass("disabled");
+			}else{
+				console.log(result);
+				window.location.href = '/user';
 			}
 		});
 	},
