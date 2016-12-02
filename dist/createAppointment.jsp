@@ -68,7 +68,7 @@
 
 									<div class="row inline fl">
 										<label for="mobile" class="control-label column col1 fl">
-											<em class="vm">生源地：</em>
+											<em class="vm">所在城市：</em>
 										</label>
 										<div class="col2 selectWrap rel">
 											<select name="city" id="city" class="form-control">
@@ -98,7 +98,7 @@
 									</c:choose>
 									<em class="service_name">${list.name}
 										<c:choose>
-									    <c:when test="${list.typeRemarks != null}">
+									    <c:when test="${!!list.typeRemarks}">
 									   		<em class="c7">（${list.typeRemarks}）</em>
 										</c:when>
 										<c:otherwise>
@@ -121,7 +121,7 @@
 											申请
 										</a>
 									</div>
-									<a href="" target="_blank" class="inviteLink" >
+									<a href="/coupon/share" target="_blank" class="inviteLink" >
 										<img src="/static/web/img/invite.png" class="responsive">
 									</a>
 								</div>

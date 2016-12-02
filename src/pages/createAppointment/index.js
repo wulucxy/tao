@@ -54,7 +54,7 @@ var educationPlan = {
 					return;
 				}
 
-				window.location = "/user";
+				window.location = "/expertOrderSuccess";
 				btn.removeClass('disabled')
 				return false;
 
