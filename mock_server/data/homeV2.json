@@ -1,0 +1,148 @@
+{
+	"user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "isLogin" : "0",
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userId" : "name"
+    },
+    "bannerList" : [
+        {
+            "href": "3333",
+            "imgUrl": "http://placehold.it/1920x460"
+        },
+        {
+            "href": "3333",
+            "imgUrl": "http://placehold.it/1920x460"
+        },
+        {
+            "href": "3333",
+            "imgUrl": "http://placehold.it/1920x460"
+        }
+	],
+    "recommendList" : [
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        }
+    ],
+    "countdown" : "123",
+    "number1" : "1234",
+    "number2" : "1234",
+    "number3" : "1234",   
+    "number4" : "1234",
+    "adList" : [
+        {
+            "imgUrl" : "http://placehold.it/300x260"
+        }
+    ],
+    "adList2" : [
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        },
+        {
+            "imgUrl" : "http://placehold.it/300x260",
+            "href" : "#5"
+        }
+    ],
+    "collegeList" : [
+        {
+            "href": null,
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#1",
+            "imgUrl": "http://placehold.it/140x60"
+        },
+        {
+            "href": "#2",
+            "imgUrl": "http://placehold.it/140x60"
+        }
+
+    ]
+}

@@ -1,11 +1,11 @@
-webpackJsonp([45],{
+webpackJsonp([46],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(16);
-	__webpack_require__(417);
+	__webpack_require__(424);
 	var $ = window.$ || __webpack_require__(38);
 	
 	//工具类方法
@@ -20,19 +20,19 @@ webpackJsonp([45],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(419);
+	var dataSet = __webpack_require__(426);
 	
 	dataSet.init();
 
 /***/ },
 
-/***/ 417:
+/***/ 424:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(418);
+	var content = __webpack_require__(425);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(35)(content, {});
@@ -53,7 +53,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 418:
+/***/ 425:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(18)();
@@ -68,16 +68,16 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 419:
+/***/ 426:
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(38);
 	var extend =  __webpack_require__(43);
-	var tmpl = __webpack_require__(420);
+	var tmpl = __webpack_require__(427);
 	
 	var localData = __webpack_require__(143);
-	var tmpl_favWrap = __webpack_require__(421);
-	var tmpl_favList = __webpack_require__(422);
+	var tmpl_favWrap = __webpack_require__(428);
+	var tmpl_favList = __webpack_require__(429);
 	
 	var pagination = __webpack_require__(178);
 	
@@ -455,7 +455,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 420:
+/***/ 427:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -511,7 +511,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 421:
+/***/ 428:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -528,7 +528,7 @@ webpackJsonp([45],{
 
 /***/ },
 
-/***/ 422:
+/***/ 429:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
