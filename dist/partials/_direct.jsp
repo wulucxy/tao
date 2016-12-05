@@ -26,6 +26,6 @@
 		</div>
 	</c:when>
 	<c:otherwise>
-		
+		<span class="dn">${fn:length(adList)}</span>
 	</c:otherwise>
 </c:choose>
