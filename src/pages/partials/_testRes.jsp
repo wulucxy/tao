@@ -23,19 +23,10 @@
 
 .testResult .content{padding:0 32px 32px;margin-bottom: 32px;border-bottom:1px solid #dddddd;}
 
-.content{
-	p{margin-left:20px;margin-right:40px;font-size:1em;text-indent: 20px;}
-	img{
-		margin:0 auto;
-		display: block;
-	}
-	.ParaNoIndentBold{
-		font-size: 1.3em;
-		font-weight: bold;
-		margin-top: 10px;
+.content p{margin-left:20px;margin-right:40px;font-size:1em;text-indent: 20px;}
+.content img{margin:0 auto;display: block;}
+.content .ParaNoIndentBold{font-size: 1.3em;font-weight: bold;margin-top: 10px;}
 
-	}
-}
 .ParaNoIndent{font-size:1em;}
 /*ParaIndentBold*/
 .ParaIndentBold{font-size:1.4em;margin-top:14px;font-family: "Microsoft YaHei!";font-weight:bold;}
