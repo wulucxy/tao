@@ -283,7 +283,7 @@ webpackJsonp([16],{
 	        			return;
 	        		}else if(res.code ==1 && typeof res.result == 'undefined'){
 	        			// 此时不需要请求ping++
-	        			warn(res.msg, function(){
+	        			warn('支付成功', function(){
 	        				window.location.href = '/user';
 	        				return false;
 	        			});
