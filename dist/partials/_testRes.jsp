@@ -27,12 +27,12 @@
 .content img{margin:0 auto;display: block;}
 .content .ParaNoIndentBold{font-size: 1.3em;font-weight: bold;margin-top: 10px;}
 
-.ParaNoIndent{font-size:1em;}
+.content .ParaNoIndent{font-size:1em;}
 /*ParaIndentBold*/
-.ParaIndentBold{font-size:1.4em;margin-top:14px;font-family: "Microsoft YaHei!";font-weight:bold;}
+.content .ParaIndentBold{font-size:1.4em;margin-top:14px;font-family: "Microsoft YaHei!";font-weight:bold;}
 /*ParaIndentBold*/
 /*ParaCenter*/
-.ParaCenter{
+.content .ParaCenter{
 		font-size:1.6em;
 		font-weight:bold;
 		margin:10px;
@@ -42,11 +42,11 @@
 		font-family: "Microsoft YaHei!";
 	}
 	
-.ParaCenter img{width:80%;margin:20px;}
+.content .ParaCenter img{width:80%;margin:20px;}
 </style>
 <title>职业测试</title>
 
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/vendors.0cd2f40b.css" rel="stylesheet"></head>
 	<body id="zycs">
 	<div class="content">
 		<c:forEach items="${bjsbList}" var="unit" varStatus="status">

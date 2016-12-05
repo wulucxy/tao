@@ -153,44 +153,9 @@ webpackJsonp([38],{
 /***/ },
 
 /***/ 271:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(272);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(35)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./index.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 272:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(18)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".bannerShow {\n  position: relative;\n  overflow: hidden;\n  margin-top: 20px;\n}\n.bannerShow ul {\n  height: 100%;\n  position: relative;\n}\n.bannerShow ul li {\n  float: left;\n}\n.picSlide a {\n  background-position: center center;\n  background-repeat: no-repeat;\n  display: block;\n  height: 120px;\n}\n.picSlide a > img {\n  width: 100%;\n  height: auto;\n}\n.bannerShow .dots {\n  position: absolute;\n  bottom: 20px;\n  z-index: 99;\n}\n.bannerShow .dots a {\n  display: block;\n  float: left;\n  width: 24px;\n  font: 0/0 a;\n  height: 24px;\n  margin: 0 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  background-color: #cfcfcf;\n  -webkit-transition: all 0.4s ease;\n          transition: all 0.4s ease;\n}\n.bannerShow .dots a.active {\n  background: #61c0e2;\n}\n.s-carousel {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.collegeWrap {\n  position: relative;\n}\n.collegeList {\n  margin-left: 0;\n  margin-right: -12px;\n}\n.collegeList li {\n  float: left;\n  margin-right: 12px;\n  margin-bottom: 10px;\n  width: 190px;\n  height: 60px;\n  line-height: 58px;\n  background-color: #fff;\n  border: 1px solid #e2e2e2;\n  text-align: center;\n}\n.collegeList li a {\n  display: block;\n  padding: 0 20px;\n}\n.collegeList li img {\n  max-width: 100%;\n  max-height: 100%;\n  vertical-align: top;\n}\n.collegeListWrap {\n  margin-top: 24px;\n}\n.collegeListWrap + .collegeListWrap {\n  margin-top: 10px;\n}\n.recWrap {\n  margin-bottom: 40px;\n}\n", ""]);
-	
-	// exports
-
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 
