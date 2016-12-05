@@ -526,7 +526,6 @@ webpackJsonp([47],{
 		},
 	
 		bindEvt : function(){
-	        return;
 			var that = this,o = that.settings;
 	
 			var uploader = WebUploader.create({

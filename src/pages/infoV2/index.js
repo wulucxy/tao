@@ -39,8 +39,6 @@ var info = {
 			var args = Array.prototype.slice.call(arguments);
 			$(".infoListWrap").removeClass("preloading");
 
-			console.log(that.loadList);
-
 			for(var i=0;i<args.length;i++){
 				that.loadList.call(that,args[i][0],i);
 			}

@@ -37,7 +37,7 @@
 									<img src="/static/web/img/confirm.png" class="responsive">
 								</span>
 								
-								<div class="blue f18 rTxt">提问成功，请耐心等待工作人员与您联系</div>
+								<div class="blue f18 rTxt">申请成功，请耐心等待工作人员与您联系</div>
 								<div class="g6 f15">详情请进入“个人中心－我的预约”功能查看！</div>
 							</div>
 

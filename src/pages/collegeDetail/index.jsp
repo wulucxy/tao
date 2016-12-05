@@ -56,27 +56,27 @@
 										<div class="detailContent">
 											<div class="detailInfos clearfix">
 												<div class="col">
-													<span class="label">所在地区：</span><span class="field orange">${city}</span>
+													<span class="label">所在地区：</span><span class="field g9">${city}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校性质：</span><span class="field orange">${ownerType}</span>
+													<span class="label">院校性质：</span><span class="field g9">${ownerType}</span>
 												</div>
 												<div class="col">
-													<span class="label">院校分类：</span><span class="field orange">${type}</span>
+													<span class="label">院校分类：</span><span class="field g9">${type}</span>
 												</div>
 												
 												<div class="col">
-													<span class="label">院校层次：</span><span class="field orange">${level}</span>
+													<span class="label">院校层次：</span><span class="field g9">${level}</span>
 												</div>
 												
 												<div class="col">
 													<span class="label">院校排名：</span><span class="field place">
-														<em class="orange">NO.${place}</em>
+														<em class="g9">NO.${place}</em>
 													</span>
 													<input type="hidden" name="place" value="${place}">
 												</div>
 												<div class="col">
-													<span class="label">联系方式：</span><span class="field orange">${phone}</span>
+													<span class="label">联系方式：</span><span class="field g9">${phone}</span>
 												</div>
 												<div class="col badgeRow c-10">
 													<span class="label">院校特色：</span><span class="field">
@@ -96,10 +96,10 @@
 													</span>
 												</div>
 												<div class="col c-10">
-													<span class="label">院校网址：</span><a class="field orange" href="${site}" target="_blank">${site}</a>
+													<span class="label">院校网址：</span><a class="field g9" href="${site}" target="_blank">${site}</a>
 												</div>
 												<div class="col c-10">
-													<span class="label">通讯地址：</span><span class="field orange">${location.address}</span>
+													<span class="label">通讯地址：</span><span class="field g9">${location.address}</span>
 												</div>
 											</div>	
 											

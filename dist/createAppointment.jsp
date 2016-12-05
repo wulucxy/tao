@@ -98,7 +98,7 @@
 									</c:choose>
 									<em class="service_name">${list.name}
 										<c:choose>
-									    <c:when test="${!!list.typeRemarks}">
+									    <c:when test="${list.typeRemarks != null && list.typeRemarks != '' }">
 									   		<em class="c7">（${list.typeRemarks}）</em>
 										</c:when>
 										<c:otherwise>
