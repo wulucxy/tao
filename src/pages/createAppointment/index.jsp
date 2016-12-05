@@ -87,7 +87,7 @@
 										
 					<c:forEach var="list" items="${appointmentTypeList}" varStatus="status">
 						<div class="serviceItem clearfix">
-							<a data-url="${list.content}" href="javascript:;" class="fr link" target="_blank">详情</a>
+							<a href="${list.content}" class="fr link" target="_blank">详情</a>
 							<div class="serviceDetail clearfix">
 								<label for="appointmentType_${list.type}" class="label_radio inline fl">
 									<em class="checkmark"></em>

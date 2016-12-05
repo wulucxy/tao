@@ -23,15 +23,14 @@
 
 .testResult .content{padding:0 32px 32px;margin-bottom: 32px;border-bottom:1px solid #dddddd;}
 
-p{margin-left:20px;margin-right:40px;font-size:1em;}
+p{margin-left:20px;margin-right:40px;font-size:1em;text-indent: 2em;}
 .ParaNoIndent{font-size:1em;}
 /*ParaIndentBold*/
-.ParaIndentBold{font-size:1em;font-family: "Microsoft YaHei!";font-weight:bold;}
+.ParaIndentBold{font-size:1.4em;margin-top:14px;font-family: "Microsoft YaHei!";font-weight:bold;}
 /*ParaIndentBold*/
-.ParaIndentBold{font-size:1em;font-family: "Microsoft YaHei!";}
 /*ParaCenter*/
 .ParaCenter{
-		font-size:1em;
+		font-size:1.6em;
 		font-weight:bold;
 		margin:10px;
 		margin-left:20px;
