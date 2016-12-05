@@ -77,6 +77,12 @@ webpackJsonp([16],{
 	
 		bindEvt: function(){
 			var that = this;
+	
+			$('.serviceItem .link').each(function(idx, item){
+				var $item = $(item);
+				$(item).attr('href', '/'+$item.data('url'));
+			})
+	
 			// 表单校验
 			$("#educationPlanForm").validator({
 				errorParent: '.row',
