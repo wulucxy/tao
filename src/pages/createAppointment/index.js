@@ -98,7 +98,7 @@ var educationPlan = {
 		});
 
 		// 请求地区
-		requestArea($('#city'));
+		//requestArea($('#city'));
 	}
 
 };

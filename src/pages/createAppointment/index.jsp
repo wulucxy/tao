@@ -72,6 +72,9 @@
 										</label>
 										<div class="col2 selectWrap rel">
 											<select name="city" id="city" class="form-control">
+												<c:forEach var="list" items="${areaList}">
+												<option value="${list.code}">${list.name}</option>
+												</c:forEach>
 											</select>
 										</div>
 										<div class="errInfo"></div>
