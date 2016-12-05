@@ -24,7 +24,15 @@
 .smlLists{margin-right: -10px;margin-bottom: -10px;}
 
 .infoLists{margin-top: 28px;}
-.infoList li{margin-bottom: 16px;border-bottom:1px solid #e2e2e2;padding-bottom: 16px;}
+.infoList{
+	min-height: 560px;
+}
+.infoList li{
+	margin-bottom: 16px;border-bottom:1px solid #e2e2e2;padding-bottom: 16px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
 .detailCnt{
 	font-size: 14px;color: #999;line-height: 1.5;cursor: pointer;
 }
@@ -33,7 +41,8 @@
 	margin-right: 10px;display: inline-block;width: 80px;height: 60px;
 	img{width: 100%;height: 100%;display: inline-block;}
 }
-.infoList .detailTitle{display:block;font-size: 16px;color: #000;margin: 0 80px 0 0;width:100%;font-weight: normal;
+.infoList .detailTitle{display:block;font-size: 16px;
+	height:40px;overflow:hidden;color: #000;margin: 0 80px 0 0;width:100%;font-weight: normal;
 	&:hover{color:#666;}
 }
 
