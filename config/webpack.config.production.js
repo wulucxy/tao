@@ -2,6 +2,8 @@ var config = require('./webpack.config.base');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 config.output.publicPath = "/";
+config.output.filename = 'static/web/js/[name].[chunkhash:8].js';
+
 config.module.loaders = [
 		{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?minimize!autoprefixer') },
 		{ test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css?minimize!autoprefixer!less') },

@@ -211,5 +211,5 @@
 
 	<pre name="wishesString">${wishesString}</pre>
 
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/evaluateStep3.js"></script></body>
+	<script src="/static/web/js/vendors.eeb85896.js"></script><script src="/static/web/js/evaluateStep3.36bfcdfa.js"></script></body>
 </html>

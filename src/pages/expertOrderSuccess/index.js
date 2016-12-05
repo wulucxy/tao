@@ -15,7 +15,7 @@ var book = {
 	init : function(){
 		var that = this;
 		util.count($(".count"),3,function(){
-			window.location = "/expertOrder";
+			window.location = "/appointment/create";
 		});
 	}
 
