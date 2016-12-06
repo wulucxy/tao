@@ -136,6 +136,9 @@
 								</ul>
 							</div>
 						</section>
+						<section class="r-list mt20 mb20">
+							<%@ include file = "/partials/_direct.jsp" %>
+						</section>
 						<section class="mt20 mb20">
 							<%@ include file = "/partials/_sidebar.jsp" %>
 						</section>

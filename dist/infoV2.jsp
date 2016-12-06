@@ -136,6 +136,9 @@
 								</ul>
 							</div>
 						</section>
+						<section class="r-list mt20 mb20">
+							<%@ include file = "/partials/_direct.jsp" %>
+						</section>
 						<section class="mt20 mb20">
 							<%@ include file = "/partials/_sidebar.jsp" %>
 						</section>
@@ -157,5 +160,5 @@
 		window.__initData__ = ${moduleList};
 	</script>
 
-	<script src="/static/web/js/vendors.33b609d6.js"></script><script src="/static/web/js/infoV2.6693b121.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/infoV2.js"></script></body>
 </html>

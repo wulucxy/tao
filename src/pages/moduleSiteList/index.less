@@ -22,7 +22,7 @@
 .smlLists{margin-right: -10px;margin-bottom: -10px;}
 
 .infoLists{margin-top: 28px;}
-.infoList li{margin-bottom: 16px;border-bottom:1px solid #e2e2e2;padding-bottom: 16px;}
+.infoList li{margin-bottom: 16px;border-bottom:1px solid #e2e2e2;padding-bottom: 16px;position: relative;}
 .detailCnt{
 	font-size: 14px;color: #999;line-height: 1.5;cursor: pointer;
 }
@@ -31,7 +31,7 @@
 	margin-right: 10px;display: inline-block;width: 140px;height: 105px;
 	img{width: 100%;height: 100%;display: inline-block;}
 }
-.infoList .detailTitle{display:block;font-size: 16px;color: #000;margin: 0 80px 0 0;width:auto;max-width:100%;font-weight: normal;
+.infoList .detailTitle{display:block;font-size: 16px;color: #000;margin: 0 80px 0 0;width:100%;font-weight: normal;
 	&:hover{color:#666;}
 }
 
@@ -46,7 +46,11 @@
 		width:80%;vertical-align:baseline;color:#8c8c8c;font-size: 12px;
 		&:hover{color:#666;}
 	}
-	.moment{vertical-align: baseline;text-align: right;font-size:12px;width:19.5%;display: inline-block;}
+	.moment{vertical-align: baseline;text-align: right;font-size:12px;display: inline-block;
+		position: absolute;
+		right: 0;
+		bottom: 17px;
+	}
 }
 
 .tagsWrap .tagsList{

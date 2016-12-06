@@ -112,6 +112,11 @@
 			"tagList":"",
 			"href" : "big"
 		},
+        "adList" : [
+            {
+                "imgUrl" : "http://placehold.it/300x260"
+            }
+        ],
 
 		"smallList":[{
 				"title":"",
