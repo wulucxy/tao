@@ -85,45 +85,45 @@
 								</label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">  
-									<label for="subject_1" class="label_radio inline">
+									<label for="subject_1" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_1" name="subject" value="1" checked required>
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required>
 									<em class="vm">物理</em>
 									</label>
 
-									<label for="subject_2"  class="label_radio inline">
+									<label for="subject_2"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_2" name="subject" value="2" required>
+									<input type="checkbox" class="input form-control" id="subject_2" name="subject" value="2" required>
 									<em class="vm">化学</em>
 									</label>
 
-									<label for="subject_3" class="label_radio inline">
+									<label for="subject_3" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_3" name="subject" value="3" checked required>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" checked required>
 									<em class="vm">生物</em>
 									</label>
 
-									<label for="subject_4"  class="label_radio inline">
+									<label for="subject_4"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_4" name="subject" value="4" required>
+									<input type="checkbox" class="input form-control" id="subject_4" name="subject" value="4" required>
 									<em class="vm">技术</em>
 									</label>
 
-									<label for="subject_5" class="label_radio inline">
+									<label for="subject_5" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_5" name="subject" value="5" checked required>
+									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" checked required>
 									<em class="vm">政治</em>
 									</label>
 
-									<label for="subject_6"  class="label_radio inline">
+									<label for="subject_6"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_6" name="subject" value="6" required>
+									<input type="checkbox" class="input form-control" id="subject_6" name="subject" value="6" required>
 									<em class="vm">历史</em>
 									</label>
 
-									<label for="subject_7"  class="label_radio inline">
+									<label for="subject_7"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" id="subject_7" name="subject" value="7" required>
+									<input type="checkbox" class="input form-control" id="subject_7" name="subject" value="7" required>
 									<em class="vm">地理</em>
 									</label>
 								</div>

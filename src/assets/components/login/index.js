@@ -41,8 +41,36 @@ var login = {
 
 	        	that.loginEvt();
 	        	that.forget_reg_Evt(btn);
+
+	        	that.openIdEvt();
 	        }
 	    });
+	},
+
+	openIdEvt: function(){
+		$('.openOauth').on('click', function(e){
+			e.preventDefault();
+
+			var target = $(e.target).closest('a');
+			var url = target.attr('url');
+
+			$.ajax({
+				url: url,
+				success: function(res){
+					if(typeof res == 'string'){
+						var res = $.parseJSON(res);
+					}
+
+					if(res.result && res.result.authorizeUrl){
+						window.location = res.result.authorizeUrl;
+					}
+				}
+			})
+		});
+
+
+
+
 	},
 
 	forget_reg_Evt : function(button){

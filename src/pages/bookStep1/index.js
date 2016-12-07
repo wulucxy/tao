@@ -13,16 +13,13 @@ var common = require("../../assets/components/common");
 // 验证组件
 require("../../assets/components/validator");
 
+var checkBox = require("../../assets/components/checkBox");
+
 //弹窗模板
 var tmpl_detail = require("../../assets/templates/detail.ejs");
 var tmpl_questions = require("../../assets/templates/questions.ejs");
 
-//checkbox定制
-$('.label_radio').click(function(){
-  util.setupLabel();
-});
-
-util.setupLabel();
+checkBox.init();
 
 //切换顶部nav高亮
 common.switchNav(1);
@@ -31,10 +28,7 @@ var provinceId = $("[name=province]").val();
 
 function subFunc(btn,oForm){
   var _data = {
-    courseType : $("[name=courseType]:checked").val(),
-    batch : $("[name=batch]:checked").val(),
-    score : $("[name=score]").val(),
-    place : $("[name=place]").val(),
+    score : $("[name=score]").val()
   };
   $.ajax({
     url : preServer+provinceId+"/tzy/plan/wishes/step1",
