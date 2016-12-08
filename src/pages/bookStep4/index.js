@@ -71,6 +71,9 @@ var book = {
 			}).get(),
 			majorList : $("[name=majorId]:checked").map(function(idx,ele){
 				return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
+			}).get(),
+			subjects : $("[name=subjectId]:checked").map(function(idx,ele){
+				return {"name":$(ele).attr("subjectname"),"majorId":$(ele).val()}
 			}).get()
 		};
 

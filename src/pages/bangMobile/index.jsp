@@ -32,9 +32,6 @@
 			<!-- 保存bangUrl属性 -->
 			<input type="hidden" name="uid" value="${uid}">
 
-			<!-- 保存areaList属性 -->
-			<input type="hidden" name="areaList" value='${areaList}'>
-
 			<div class="content">
 				<h3 class="clearfix title neeRow">
 					<span class="fl s-title">
@@ -70,6 +67,11 @@
 								<div class="col2 selectWrap rel">
 									<div class="fieldWrap">
 										<select name="province" id="provinceId" class="form-control">
+											
+										<c:forEach var="list" items="${areaList}">
+											<option value=${list.code}>${list.name}</option>
+										</c:forEach>
+
 							      		</select>
 									</div>
 								</div>

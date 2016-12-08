@@ -194,5 +194,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.6551d704.js"></script><script src="/static/web/js/college.daa5540f.js"></script></body>
+	<script src="/static/web/js/vendors.02bb6bf1.js"></script><script src="/static/web/js/college.6b4fe255.js"></script></body>
 </html>

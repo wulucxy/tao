@@ -96,11 +96,15 @@
 				    <em class="vm">选考科目：</em></label>
 				  <div class="col2 inputWrap rel">
 				    <div class="fieldWrap">
-					   	<label for="subject_1" class="label_check inline">
-							<em class="icon-radio"></em>
-							<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required n="物理" >
-							<em class="vm">物理</em>
-						</label>
+					   	
+					<c:forEach var="list" items="${subjects}" varStatus="loop">
+				      <label for="subjectId_${list.code}" class="label_check inline">
+				      <em class="icon-radio"></em>
+				      <input type="checkbox" class="input form-control" id="subjectId_${list.code}" subjectname="${list.name}" name="subjectId" value="${list.code}" disabled checked>
+				      <em class="vm">${list.name}</em>
+				      </label>
+				    </c:forEach>
+
 				    </div>
 				  </div>
 				</div>

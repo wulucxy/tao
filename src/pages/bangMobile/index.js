@@ -20,24 +20,11 @@ var accessToken = $('[name=accessToken]').val();
 var bangUrl = $('[name=bangUrl]').val();
 var openId = $('[name=openId]').val();
 var uid = $('[name=uid]').val();
-var areaList = JSON.parse($('[name=areaList]').val());
 
 var bang = {
 	init: function(){
-		this.reqAreaList();
 		this.bangEvt();
 		this.verifyEvt();
-	},
-
-	reqAreaList: function(){
-		var optionList = [];
-
-		$.each(areaList,function(idx,ele){
-			optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
-		});
-
-		$("#provinceId").empty();
-		$("#provinceId").append(optionList.join(""));    		
 	},
 
 	verifyEvt: function(){

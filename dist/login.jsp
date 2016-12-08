@@ -78,5 +78,5 @@
 	<div class="bBar tc">
 		Copyrights © 2014-2016 浙江日报新闻发展有限公司版权所有 ｜ 服务热线：0571-85311211
 	</div>
-	<script src="/static/web/js/vendors.6551d704.js"></script><script src="/static/web/js/login.76b5099c.js"></script></body>
+	<script src="/static/web/js/vendors.02bb6bf1.js"></script><script src="/static/web/js/login.02507d95.js"></script></body>
 </html>
