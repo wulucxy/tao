@@ -14,6 +14,9 @@
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
 	<%@ include file = "/partials/_header.jsp" %>
+	
+	<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
 
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">

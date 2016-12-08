@@ -47,6 +47,7 @@ module.exports = {
 	"/coupon/receive" : "couponReceive.jsp",
 	"/appointment/create" : "createAppointment.jsp",
 	'/moduleSiteList'   : 'moduleSiteList.jsp',
+	'/bangMobile'   : 'bangMobile.jsp',
 	'/completeInfo'   : 'completeInfo.jsp',
 	'/scoreTransformer'   : 'scoreTransformer.jsp',
 	//异步加载
@@ -62,7 +63,7 @@ module.exports = {
 	'post::/v2_1/client/1/profile/favor/major/add' : 'mock::api/addFav.json',
 	'post::/v2_1/client/1/profile/favor/delete' : 'mock::api/delFav.json',
 	'post::/v2_1/client/auth/signin' : 'mock::api/siginin.json',
-	'post::/v2_1/client/auth/requestCode' : 'mock::ap/profile/favor/major/addi/code.json',
+	'post::/v2_1/client/auth/requestCode' : 'mock::api/profile/favor/major/addi/code.json',
 	'post::/v2_1/client/auth/signup' : 'mock::api/signup.json',
 	'get::/v2_1/client/1/data/major/all'  : 'mock::api/majorList.json',
 	'post::/v2_1/client/1/data/major' :  'mock::api/majors.json',

@@ -26,9 +26,22 @@ common.switchNav(1);
 
 var provinceId = $("[name=province]").val();
 
+
+
 function subFunc(btn,oForm){
+
+  var subjects = $('[name=subject]').map(function(idx, ele){
+      if(ele.checked){
+        return {
+          name: $(ele).attr('n'),
+          code: $(ele).val()
+        }
+      }
+    });
+
   var _data = {
-    score : $("[name=score]").val()
+    score : $("[name=score]").val(),
+    subjects: subjects
   };
   $.ajax({
     url : preServer+provinceId+"/tzy/plan/wishes/step1",

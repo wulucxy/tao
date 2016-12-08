@@ -13,6 +13,8 @@ var uploader = {
 	bindEvt : function(){
 		var that = this,o = that.settings;
 
+        if(!$('#picker').length) return;
+
 		var uploader = WebUploader.create({
 
             auto : true,

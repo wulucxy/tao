@@ -82,7 +82,7 @@ var verify = {
       var _data = {mobile: document.getElementById('mobile').value,type:that.settings.type};
 
         $.ajax({
-            url: sendSMSUrl || preServer+"/auth/requestCode",
+            url: sendSMSUrl || preServer+"auth/requestCode",
             type: 'POST',
             contentType: "application/json",
             data: JSON.stringify(_data),

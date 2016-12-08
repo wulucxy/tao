@@ -77,71 +77,7 @@
 				    </div>
 				  </div>
 				</div>
-
-				<div class="row clearfix">
-				  <label for="courseType" class="control-label column col1 fl">
-				    <i class="icon-location icon-book"></i>
-				    <em class="vm">高考科类：</em></label>
-				  <div class="col2 inputWrap rel">
-				    <div class="fieldWrap">
-				      <c:choose>
-					    <c:when test="${courseType == 0}">
-					   		<label for="courseType_0" class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_0" value="0" name="courseType" checked disabled>
-						      <em class="vm">理科</em>
-						      </label>
-						     
-						</c:when>
-						<c:otherwise>
-							
-						       <label for="courseType_1"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="courseType_1" value="1" name="courseType" disabled checked>
-						      <em class="vm">文科</em>
-						    </label>
-						</c:otherwise>
-					   </c:choose>
-				    </div>
-				  </div>
-				</div>
-
-				<div class="row clearfix">
-				  <label for="courseType" class="control-label column col1 fl">
-				    <i class="icon-location icon-pic"></i>
-				    <em class="vm">报考批次：</em></label>
-				  <div class="col2 inputWrap rel">
-				    <div class="fieldWrap">
-				    <c:choose>
-					    <c:when test="${batch == 1}">
-					    	 <label for="batch_1" class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_1" name="batch" value="1" checked disabled>
-						      <em class="vm">第一批</em>
-						      </label>
-					    </c:when>
-					    <c:when test="${batch == 2}">
-					    	
-						      <label for="batch_2"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_2" name="batch" value="2" checked disabled>
-						      <em class="vm">第二批</em>
-						      </label>
-						     
-					    </c:when>
-					    <c:otherwise>
-					    	 
-						      <label for="batch_3"  class="label_radio inline">
-						      <em class="icon-radio"></em>
-						      <input type="radio" class="input form-control" id="batch_3" name="batch" value="3" checked disabled>
-						      <em class="vm">第三批</em>
-						      </label>
-					    </c:otherwise>
-				   	</c:choose> 
-				    </div>
-				  </div>
-				</div>
-
+				
 				<div class="row clearfix inline">
 				  <label for="score" class="control-label column col1 fl">
 				    <i class="icon-location icon-fenshu"></i>
@@ -154,14 +90,17 @@
 				  </div>
 				</div>
 
-				<div class="row clearfix inline">
-				  <label for="score" class="control-label column col1 fl">
-				    <i class="icon-location icon-rank"></i>
-				    <em class="vm">全省排名：</em></label>
+				<div class="row clearfix">
+				  <label for="subjects" class="control-label column col1 fl">
+				    <i class="icon-location icon-book"></i>
+				    <em class="vm">选考科目：</em></label>
 				  <div class="col2 inputWrap rel">
-				    <div class="fieldWrap lh34">
-				      <span>${place}名</span>
-				      <input type="hidden" name="place" value="${place}">
+				    <div class="fieldWrap">
+					   	<label for="subject_1" class="label_check inline">
+							<em class="icon-radio"></em>
+							<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required n="物理" >
+							<em class="vm">物理</em>
+						</label>
 				    </div>
 				  </div>
 				</div>

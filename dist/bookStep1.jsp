@@ -80,50 +80,50 @@
 						<div class="row clearfix subjectsRow">
 							<label for="subject" class="control-label column col1 fl">
 								<i class="icon-location icon-book"></i>
-								<em class="vm">高考科类：</em> 
+								<em class="vm">选考科目：</em> 
 								<p class="label-desc">（选择三门）</p> 
 								</label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">  
 									<label for="subject_1" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required>
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required n="物理" >
 									<em class="vm">物理</em>
 									</label>
 
 									<label for="subject_2"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_2" name="subject" value="2" required>
+									<input type="checkbox" class="input form-control" id="subject_2" name="subject" value="2" n="化学" required>
 									<em class="vm">化学</em>
 									</label>
 
 									<label for="subject_3" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" checked required>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" checked n="生物" required>
 									<em class="vm">生物</em>
 									</label>
 
 									<label for="subject_4"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_4" name="subject" value="4" required>
+									<input type="checkbox" class="input form-control" id="subject_4" name="subject" value="4" n="技术" required>
 									<em class="vm">技术</em>
 									</label>
 
 									<label for="subject_5" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" checked required>
+									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治" checked required>
 									<em class="vm">政治</em>
 									</label>
 
 									<label for="subject_6"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_6" name="subject" value="6" required>
+									<input type="checkbox" class="input form-control" id="subject_6" name="subject" value="6" n="历史" required>
 									<em class="vm">历史</em>
 									</label>
 
 									<label for="subject_7"  class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_7" name="subject" value="7" required>
+									<input type="checkbox" class="input form-control" id="subject_7" name="subject" value="7" n="地理" required>
 									<em class="vm">地理</em>
 									</label>
 								</div>
@@ -155,5 +155,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ce5f18a3.js"></script><script src="/static/web/js/bookStep1.8e47dbd2.js"></script></body>
+	<script src="/static/web/js/vendors.6551d704.js"></script><script src="/static/web/js/bookStep1.4d1d901b.js"></script></body>
 </html>
