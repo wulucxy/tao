@@ -1,0 +1,11 @@
+ <% if (majorList.length == 0) { %>
+	<li>暂无该专业数据</li>
+<% }else{ %>
+	<% for (var i = 0; i < majorList.length; i++) { %>
+	 	<li>
+		 	<label for="major_<%= majorList[i].code %>" >
+		 		<input type="radio" name="city" n="<%= majorList[i].name %>" value="<%= majorList[i].code %>" id="major_<%= majorList[i].code %>" />
+		 		<em><%= majorList[i].name %></em>
+		 	</label>
+		</li>
+ <% }} %>

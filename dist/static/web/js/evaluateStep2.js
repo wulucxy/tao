@@ -4,32 +4,34 @@ webpackJsonp([22],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(16);
-	__webpack_require__(203);
-	var $ = window.$ || __webpack_require__(38);
+	__webpack_require__(17);
+	__webpack_require__(204);
+	var $ = window.$ || __webpack_require__(39);
 	
 	//工具类方法
-	var util = __webpack_require__(39);
+	var util = __webpack_require__(40);
 	
 	//公共方法
-	var common = __webpack_require__(40);
+	var common = __webpack_require__(41);
 	
 	/* 具体实现 */
 	
 	// 表单验证组件
-	__webpack_require__(56);
+	__webpack_require__(57);
 	
-	var extend =  __webpack_require__(43);
+	var searchSchool = __webpack_require__(179);
 	
-	//弹窗模板
-	var tmpl_detail = __webpack_require__(129);
-	var tmpl_questions = __webpack_require__(130);
+	var extend =  __webpack_require__(44);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(205);
-	var tmpl_list = __webpack_require__(206);
-	var tmpl_major = __webpack_require__(207);
-	var majors = __webpack_require__(208);
+	var tmpl_detail = __webpack_require__(130);
+	var tmpl_questions = __webpack_require__(131);
+	
+	//弹窗模板
+	var tmpl_school = __webpack_require__(207);
+	var tmpl_list = __webpack_require__(208);
+	var tmpl_major = __webpack_require__(209);
+	var majors = __webpack_require__(210);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -38,13 +40,19 @@ webpackJsonp([22],{
 	
 	var batch = $("[name=batch]").val();
 	
-	//是否更新志愿方案
-	var  isChange = $("[name=isChange]").val();
-	
 	//分页
-	var pagination = __webpack_require__(184);
+	var pagination = __webpack_require__(185);
 	//自定义滚动
-	var scroll = __webpack_require__(133);
+	var scroll = __webpack_require__(134);
+	
+	// panel
+	var tmpl_panel = __webpack_require__(211);
+	
+	// major
+	var tmpl_majorList = __webpack_require__(471);
+	
+	// divider
+	var tmpl_divider = __webpack_require__(473);
 	
 	//兼容every实现
 	if (typeof Array.prototype.every != "function") {
@@ -74,7 +82,320 @@ webpackJsonp([22],{
 	  };
 	}
 	
-	var school = {
+	var evaluate = {
+	
+	  init : function(o){
+	
+	      this.pager = 1;
+	      this.capacity = 10;
+	      
+	      this.options = o;
+	
+	      this.state = {
+	        wishes : $.parseJSON($("[name=wishes]").text()) || [],
+	        provList : [],
+	        cityList : [],
+	        current: {
+	          college: {},
+	          major: {}
+	        }
+	      };
+	
+	      this.bindEvt();
+	
+	      this.render();
+	  },
+	
+	  render : function(type){
+	    var that = this, o = that.options;
+	
+	    // 操作区域
+	    // 未选择学校，专业不可点
+	    $('#js-addSchool').toggleClass('disabled', !!that.state.current.college.code);
+	    $('#js-addMajor').toggleClass('disabled', !!that.state.current.major.code || !that.state.current.college.code);
+	   
+	    $('#js-addNext').toggleClass('disabled', !(that.state.current.college.code && that.state.current.major.code))
+	
+	    if(that.state.wishes.length >= 50){
+	      $('.downRow').hide();
+	    }
+	
+	    $('#divider').empty().html(tmpl_divider(that.state));
+	
+	    // panel列表
+	    $('.panelWrap').empty().html(tmpl_panel(that.state));
+	
+	    // 省列表
+	      if(that.state.provList.length){
+	          var provLis = $.map(that.state.provList,function(item){
+	              return '<li data-code="'+item.code+'">'+item.name+'</li>';
+	          });
+	      }
+	
+	      if($(".prov").length && !$(".prov").children().length){
+	        $(".prov").html(provLis);
+	        that.boxEvt();
+	        that.options.startCallback && that.options.startCallback.call(that);
+	      }
+	
+	      //城市列表
+	      if($(".city").length && that.state.cityList.length){
+	          
+	        $(".city").html(tmpl_majorList(
+	          {majorList:that.state.cityList}
+	        ));
+	        that.options.completeCallback && that.options.completeCallback.call(that);
+	    }
+	
+	  },
+	
+	  boxEvt : function(){
+	    var that = this,o = that.options;
+	    that.prov = $(".prov"),
+	    that.city = $(".city");
+	    // 选择省份时发生事件
+	    that.prov.on("click","li",function(){
+	        that.provIndex = that.prov.find("li").index($(this));
+	        $(this).siblings().removeClass(o.klass);
+	        $(this).addClass(o.klass);
+	
+	        that.city.empty();
+	        //城市id
+	        that.requestCityData.call(that,$(this).data("code"));
+	    });
+	
+	    // 点中选择专业
+	    // 注意不能选择已选中的志愿
+	    $(document).off().on("click","[name=city]",function(e){
+	         
+	        var ele = this,$ele = $(this);
+	
+	        // 当前选中
+	        that.state.current.major.code = $ele.val();
+	        that.state.current.major.name = $ele.attr('n');
+	
+	        var current = that.state.current;
+	        var wishes = that.state.wishes;
+	
+	        var isRepeat = false;
+	        $(wishes).each(function(idx,ele){
+	          if(ele.majorId == current.major.code && ele.collegeId == current.college.code){
+	            warn("不能选择重复的志愿方案");
+	            isRepeat = true;
+	            return false;
+	          }
+	        })
+	
+	        if(isRepeat) return false;
+	
+	        // wishes
+	        that.state.wishes[0].majorId = $ele.val();
+	        that.state.wishes[0].majorName = $ele.attr('n');
+	
+	        $(".btn-close").trigger("click");
+	        that.render();
+	    });
+	  },
+	
+	  requestCityData : function(val){
+	    var that = this,o = that.options;
+	
+	    var collegeId = that.state.current.college.code;
+	
+	    var parm = [];
+	    parm.push("courseType="+courseType);
+	    parm.push("batch="+batch);
+	
+	    $.ajax({
+	        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
+	        type : "get",
+	        success : function(res){
+	            if(typeof res =="string"){
+	                var res = $.parseJSON(res);
+	            }
+	
+	            if(res.code!=1){
+	              warn(res.msg);
+	              return;
+	            }
+	
+	            var res = res.result;
+	            
+	            if(!res.length){
+	              that.state.cityList = [];
+	              that.render();
+	              return;
+	            }
+	            //默认未选中
+	            $.each(res,function(idx,ele){
+	                ele.status = 0;
+	                ele.code = ele.majorId;
+	                ele.name = ele.majorName;
+	            });
+	
+	            that.state.cityList = res;
+	
+	            that.render();
+	
+	        },
+	        error : function(err){
+	            console.log(err);
+	        }
+	    });
+	  },
+	
+	  bindEvt: function(){
+	
+	    this.addSchool();
+	    this.addMajor();
+	
+	    this.removePanel();
+	
+	    this.addWishList();
+	
+	    this.submitForm();
+	  },
+	
+	  submitForm: function(){
+	    var that = this;
+	    //异步提交结果
+	    $("#verifyBtn").on("click",function(e){
+	      e.preventDefault();
+	
+	      var wishes = that.state.wishes;
+	
+	      //只要有一个选中即ok
+	      var wishStatus = wishes.some(function(ele,idx){
+	         return !!(ele.collegeId && ele.majorId);
+	      });
+	      
+	      //只要有大学选中那么也必须选择专业
+	      var wishMajorStatus = true;
+	      $.each(wishes, function(idx,ele){
+	        if(ele.collegeId && ele.collegeName){
+	         if(!ele.majorId || !ele.majorName){
+	          wishMajorStatus = false;
+	          return false;
+	         }
+	        }
+	        
+	      });
+	
+	   
+	    if(!wishStatus){
+	      warn("请至少选择一个志愿方案");
+	      return false;
+	    }else if(!wishMajorStatus){
+	      warn("请确保每所学校至少选择一个专业");
+	      return false;
+	    }
+	
+	    console.log(that.state.wishes);
+	    
+	    $.ajax({
+	      url : preServer+provinceId+"/tzy/plan/assessment/step2",
+	      type : "post",
+	      contentType: "application/json",
+	      data : JSON.stringify({
+	        wishes : that.state.wishes
+	      }),
+	      success : function(res){
+	          if(typeof res =="string"){
+	              var res = $.parseJSON(res);
+	          }
+	
+	          if(res.code==1){
+	              window.location = "/box/plan/evaluate_step3";
+	              return false;
+	          }else{
+	              warn(res.msg);
+	              return false;
+	          }
+	      },
+	      error : function(err){
+	          console.log(err);
+	      }
+	    });
+	  });
+	  },
+	
+	  resetWishes: function(){
+	    var that = this;
+	    // 重置
+	    that.state.current['college'].name = '';
+	    that.state.current['college'].code = '';
+	    that.state.current['major'].code = '';
+	    that.state.current['major'].name = '';
+	  },
+	
+	  addWishList: function(){
+	    var that = this;
+	    $('body').on('click', '#js-addNext', function(e){
+	      e.preventDefault();
+	
+	      that.resetWishes();
+	      that.render();
+	
+	    })
+	
+	  },
+	
+	  removePanel: function(){
+	    var that = this;
+	    $('body').on('click', '.panel-close', function(e){
+	      e.preventDefault();
+	
+	      var panel = $(e.target).closest('.panel');
+	      var collegeId = panel.attr('collegeid'),
+	          majorId = panel.attr('majorid');
+	
+	      var panelIndex;
+	
+	      $(that.state.wishes).each(function(idx, ele){
+	        if(collegeId == ele.collegeId && majorId == ele.majorId){
+	          panelIndex = idx;
+	          return false;
+	        }  
+	      });
+	
+	      that.resetWishes();
+	
+	      that.state.wishes.splice(panelIndex,1);
+	      that.render();
+	
+	    })
+	  },
+	
+	  addSchool : function(){
+	    var o = this.options, that = this;
+	    searchSchool.init({
+	      el : "#js-addSchool",
+	      provinceId : provinceId,
+	      event:'click',
+	      url : "/v2_1/client/"+provinceId+"/data/college/search",
+	      startCallback  : function(modal){
+	        
+	      },
+	      selectListCallback : function(li){
+	        var self = this, $li = $(li);
+	
+	        $(".btn-close").trigger("click");
+	
+	        // 当前输入的内容
+	        that.state.current['college'].name = $li.attr("name");
+	        that.state.current['college'].code = $li.attr("code");
+	
+	        // wishes列表
+	        that.state.wishes.unshift({
+	          collegeId:$li.attr("code"),
+	          collegeName:$li.attr("name")
+	        })
+	
+	        that.render();
+	      }
+	    });
+	
+	  },
 	
 	  requestMajors : function(options){
 	    var that = this;
@@ -110,559 +431,16 @@ webpackJsonp([22],{
 	    })
 	  },
 	
-	  init : function(o){
-	
-	      this.bindEvt();
-	
-	      this.pager = 1;
-	      this.capacity = 10;
-	      
-	      this.options = o;
-	
-	      this.state = {
-	        "provList" : [],
-	        "cityList" : [
-	          {
-	            "type" : 1,
-	            "list" : []
-	          },
-	          {
-	            "type" : 2,
-	            "list" : []
-	          },
-	          {
-	            "type" : 3,
-	            "list" : []
-	          },
-	          {
-	            "type" : 4,
-	            "list" : []
-	          },
-	          {
-	            "type" : 5,
-	            "list" : []
-	          }
-	        ],
-	        "selected" :  isChange == 0 ? $.parseJSON($("[name=selected]").text()) :  $.parseJSON($("[name=selected_blank]").text()) ,
-	        "zhiyuanList" :isChange == 0 ? $.parseJSON($("[name=zhiyuanList]").text()) : $.parseJSON($("[name=zhiyuanList_blank]").text())
-	        
-	      };
-	
-	      this.render();
-	  },
-	
-	  render : function(type){
-	    var that = this, o = that.options;
-	
-	      //渲染选中的大学，并激活右侧是否可添加专业
-	      $.each(that.state.zhiyuanList,function(idx,item){
-	          if(item.code && item.name){
-	            //显示选中的大学
-	            $("[major="+item.type+"]").val(item.name);
-	            //选中大学的id
-	            $("[major="+item.type+"]").attr("code",item.code);
-	            $("[data-rel="+item.type+"]").removeClass("disabled");
-	            $("[major="+item.type+"]").closest(".row").addClass("active");
-	          }else{
-	            //清除选中的大学
-	            $("[major="+item.type+"]").val("");
-	            //清除code
-	            $("[major="+item.type+"]").attr("code","");
-	
-	            $("[data-rel="+item.type+"]").addClass("disabled");
-	            $("[major="+item.type+"]").closest(".row").removeClass("active");
-	          }
-	
-	          //增加回调方法
-	          o.schoolSelectedCallback && o.schoolSelectedCallback.call(that,$("[major="+item.type+"]"));
-	
-	      });
-	
-	      //省列表
-	      if(that.state.provList.length){
-	          var provLis = $.map(that.state.provList,function(item){
-	              return '<li data-code="'+item.code+'">'+item.name+'</li>';
-	          });
-	      }
-	
-	      if($(".prov").length && !$(".prov").children().length){
-	        $(".prov").html(provLis);
-	        that.boxEvt();
-	        that.options.startCallback && that.options.startCallback.call(that);
-	      }
-	
-	      //城市列表
-	      if($(".city").length && that.state.cityList[that.modal.majorType-1].list){
-	          
-	        var cityLis;
-	        if(that.state.cityList[that.modal.majorType-1].list.length == 0){
-	          cityLis = '<li>暂无该专业数据</li>';
-	        }else{
-	          cityLis = $.map(that.state.cityList[that.modal.majorType-1].list,function(city){
-	              if(city.status == 1){
-	                  return '<li><label><input type="checkbox" checked="true" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
-	              }else{
-	                  return '<li><label><input type="checkbox" name="city" n="'+city["name"]+'" value="'+city["code"]+'" ><em>'+city["name"]+'</em></label></li>';
-	              }
-	          });
-	        }
-	
-	        $(".city").html(cityLis);
-	        that.options.completeCallback && that.options.completeCallback.call(that);
-	    }
-	
-	      //选中城市列表(弹窗)
-	      var lis = [];
-	      if($(".city").length && !that.state.selected[that.modal.majorType-1].list.length){
-	          lis.push('<li class="noList"></li>');
-	          //$(".btn-positive").addClass("disabled");
-	          $('#tagsWrap').html(lis.join('')); 
-	      }else if($(".city").length && that.state.selected[that.modal.majorType-1].list){
-	          lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
-	              return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
-	          });
-	          if($(".btn-positive").hasClass("disabled")){
-	            $(".btn-positive").removeClass("disabled"); 
-	          }
-	          if(that.state.selected[that.modal.majorType-1].list.length>=6){
-	            $("[name=city]").attr("disabled",true);
-	          }else{
-	            $("[name=city]").attr("disabled",false);
-	          }
-	          $('#tagsWrap').html(lis.join('')); 
-	      }
-	      
-	      //当前页面展示的选中专业（单项）
-	      if(typeof type != "undefined" && that.state.selected[type].list){
-	        var lis = $.map(that.state.selected[type].list,function (item) {
-	            return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
-	        });
-	
-	        $("[major="+(type+1)+"]").closest(".m-select").find(".tagsWrap").html(lis.join(""));
-	        $("[major="+(type+1)+"]").closest(".m-select").find(".count").text(lis.length);
-	      }else{
-	        //全部渲染（全页面）
-	        var _lis = [];
-	
-	        $.each(that.state.selected,function(idx,item){
-	          if(item.list.length){
-	            _lis = $.map(item.list,function(l){
-	              return '<li class="tagList" data-name="'+l.name+'" data-code="'+l.code+'"><span class="icon-close">X</span><span class="tagContent">' +l.name+ '</span></li>';
-	            });
-	
-	            if(that.state.zhiyuanList[idx].name && that.state.zhiyuanList[idx].name){
-	              $("[major="+(idx+1)+"]").closest(".m-select").find(".tagsWrap").html(_lis.join(""));
-	              $("[major="+(idx+1)+"]").closest(".m-select").find(".count").text(_lis.length);
-	            }
-	            _lis = [];
-	          }
-	        });
-	
-	          //tag点击效果
-	          $.each($(".m-select"),function(idx,ele){
-	            var btn = $(ele).find(".addMajor");
-	
-	            (function (btn) {       
-	              that.updateTags(btn); 
-	            })(btn);     
-	
-	          });
-	    
-	      }
-	  },
-	
-	  boxEvt : function(){
-	    var that = this,o = that.options;
-	    that.prov = $(".prov"),
-	    that.city = $(".city");
-	    // 选择省份时发生事件
-	    that.prov.on("click","li",function(){
-	        that.provIndex = that.prov.find("li").index($(this));
-	        $(this).siblings().removeClass(o.klass);
-	        $(this).addClass(o.klass);
-	
-	        that.city.empty();
-	        //城市id
-	        that.requestCityData.call(that,$(this).data("code"));
-	    });
-	
-	    $(document).off().on("change","[name=city]",function(e){
-	         
-	        var ele = this,$ele = $(this);
-	
-	        if($ele.prop("checked")){
-	          var eleObj = {
-	              p : $(ele).attr("p"),
-	              name : $(ele).attr("n"),
-	              code : ele.value
-	          };
-	
-	          //保存到当前志愿list列表中
-	          that.state.selected[that.modal.majorType-1].list.push(eleObj);
-	
-	          //分志愿类型处理，将当前志愿选中项列出来
-	          //需要判断id一致，name一致（挖坑）
-	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code && eleObj.name == item.name){
-	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 1;
-	                   return false;
-	              }
-	          });
-	
-	        }else{
-	          var eleObj = {
-	              name : $(ele).attr("n"),
-	              code : ele.value
-	          };
-	
-	          //去除选择项
-	          $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code && eleObj.name == item.name ){
-	                  that.state.selected[that.modal.majorType-1].list.splice(idx,1);
-	                   return false;
-	              }
-	          });
-	
-	
-	          $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	              if(eleObj.code == item.code && eleObj.name == item.name ){
-	                  that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
-	                   return false;
-	              }
-	          });
-	
-	        }
-	
-	        that.render();
-	    });
-	
-	    $(".s-major").off().on('click', '.icon-close', function (e) {
-	
-	        var $li = $(this).closest(".tagList");
-	        var val = $li.data("code"),n = $li.data("name");
-	            
-	        var ele = {
-	            name : n,
-	            code : val
-	        };
-	
-	       $.each(that.state.selected[that.modal.majorType-1].list,function(idx,item){
-	            if(ele.code == item.code && ele.name == item.name){
-	                that.state.selected[that.modal.majorType-1].list.splice(idx,1);
-	                return false;
-	            }
-	       });
-	
-	       $.each(that.state.cityList[that.modal.majorType-1].list,function(idx,item){
-	            if(ele.code == item.code && ele.name == item.name){
-	                that.state.cityList[that.modal.majorType-1].list[idx].status = 0;
-	                 return false;
-	            }
-	        });
-	
-	        
-	        that.render();
-	    });
-	
-	  },
-	
-	  requestCityData : function(val){
-	    var that = this,o = that.options;
-	
-	    //对应的院校对象
-	    var rel = that.addMajorTrigger.data("rel");
-	    var schoolInput = $("[major="+rel+"]");
-	    //学校code
-	    var collegeId = schoolInput.attr("code");
-	
-	    var parm = [];
-	    parm.push("courseType="+courseType);
-	    parm.push("batch="+batch);
-	
-	    $.ajax({
-	        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
-	        type : "get",
-	        success : function(res){
-	            if(typeof res =="string"){
-	                var res = $.parseJSON(res);
-	            }
-	
-	            if(res.code!=1){
-	              warn(res.msg);
-	              return;
-	            }
-	
-	            var res = res.result;
-	            
-	            if(!res.length){
-	               that.state.cityList[that.modal.majorType-1].list = [];
-	                that.render();
-	               return;
-	            }
-	            //默认未选中
-	            $.each(res,function(idx,ele){
-	                ele.status = 0;
-	                ele.code = ele.majorId;
-	                ele.name = ele.majorName;
-	            });
-	
-	            that.state.cityList[that.modal.majorType-1].list = res;
-	
-	            //添加已选中的单元
-	            $.each(that.state.selected,function(idx,ele){
-	               //当前模块索引
-	               if(that.modal.majorType-1 == idx){
-	                  $.each(that.state.cityList[that.modal.majorType-1].list,function(idx2,ele2){
-	                    $.each(ele.list,function(idx3,ele3){
-	                      if(ele2.name == ele3.name && ele2.code == ele3.code){
-	                        ele2.status = 1;
-	                        return false;
-	                      }
-	                    });
-	                    
-	                  });
-	               }
-	            });
-	
-	            
-	            that.render();
-	
-	        },
-	        error : function(err){
-	            console.log(err);
-	        }
-	    });
-	  },
-	
-	  renderList : function(res){
+	  addMajor: function(){
 	    var that = this;
-	    var modal = that.modal;
-	
-	    $('.schoolLists').empty().append(tmpl_list(res)).hide().fadeIn();
-	
-	  },
-	
-	  detailpagination : function(res){
-	    var that = this;
-	    var modal = that.modal;
-	    if(!modal.find('.pagination').length){
-	       modal.find('.s-Content').append('<div class="pagination"></div>');
-	     }
-	        
-	     var $page = modal.find(".pagination");
-	      pagination($page,{
-	        pages:  Math.ceil(res.total / that.capacity),
-	        displayedPages: 3,
-	        currentPage : 1,
-	        edges: 1,
-	        onPageClick : function(pageNo){
-	          that.requestData(pageNo);
-	        }
-	      });
-	
-	  },
-	
-	  updateRes : function(btn){
-	    var that = this;
-	    btn.find(".count").text(that.state.selected[that.modal.majorType-1].list.length);
-	    var lis = $.map(that.state.selected[that.modal.majorType-1].list,function (item) {
-	        return '<li class="tagList" data-name="'+item.name+'" data-code="'+item.code+'"><span class="icon-close">X</span><span class="tagContent">' +item.name+ '</span></li>';
-	    });
-	    btn.closest(".m-select").find(".tagsWrap").empty().html(lis.join(""));
-	  },
-	
-	  updateTags : function(btn){
-	    var that = this;
-	    var type = btn.data("rel") - 1;
-	    $(".showTagList").off().on("click",".icon-close",function(e){
-	
-	      e.preventDefault();
-	      var $li = $(this).closest(".tagList");
-	
-	      var type = $li.closest(".m-select").find(".addMajor").data("rel") - 1;
-	
-	      var code = $li.data("code"),name = $li.data("name");
-	          
-	      var ele = {
-	          name : name,
-	          code : code
-	      };
-	
-	     $.each(that.state.selected[type].list,function(idx,item){
-	          if(ele.code == item.code){
-	              that.state.selected[type].list.splice(idx,1);
-	              return false;
-	          }
-	     });
-	
-	     $.each(that.state.cityList[type].list,function(idx,item){
-	          if(ele.code == item.code){
-	              that.state.cityList[type].list[idx].status = 0;
-	               return false;
-	          }
-	      });
-	
-	      
-	      that.render(type);
-	
-	    });
-	
-	  },
-	
-	
-	  requestData : function(pager){
-	    var that = this;
-	    $.ajax({
-	      url : preServer+provinceId+"/data/college/search",
-	      type : "post",
-	      contentType: "application/json",
-	      data : JSON.stringify({capacity:that.capacity,batch:batch,page:pager,"keyword":$.trim($("#wd").val())}),
-	      success : function(res){
-	        if(typeof res == "string"){
-	          var res = $.parseJSON(res);
-	        }
-	
-	        if(res.code!=1){
-	          warn(res.msg);
-	          return;
-	        }
-	
-	        var res = res.result;
-	
-	        that.renderList(res);
-	        if(!$(".modalBox .pagination").length){
-	          that.detailpagination(res);
-	        }
-	        that.Evt();
-	      }
-	    });
-	  },
-	
-	  Evt : function(){
-	    var that = this;
-	
-	
-	    $(document).off().on("click",".schoolList",function(e){
-	      e.preventDefault();
-	      var $this = $(this);
-	      $this.siblings().removeClass("active");
-	      $this.addClass("active");
-	
-	      //清空选中cityList和selectedlist
-	      that.state.selected[that.modal.majorType-1].list = [];
-	      that.state.cityList[that.modal.majorType-1].list = [];
-	
-	      //不能同时选择同一所学校判断
-	      var repeat = false;
-	      $.each(that.state.zhiyuanList,function(idx,ele){
-	        var code = $this.attr("code");
-	        var name = $this.attr("name");
-	
-	        if(ele.code == code && ele.name == name){
-	          warn("请勿重复选择该学校");
-	          repeat = true;
-	          return false;
-	        }else{
-	          repeat = false;
-	        }
-	      });
-	
-	      if(repeat) return;
-	
-	      $.each(that.state.zhiyuanList,function(idx,ele){
-	        if(that.modal.majorType == ele.type){
-	          //保存志愿信息
-	          that.state.zhiyuanList[idx].name = $this.attr("name");
-	          that.state.zhiyuanList[idx].code = $this.attr("code");
-	        }
-	      });
-	
-	      $(".btn-close").trigger("click");
-	      that.render(that.modal.majorType-1);
-	    })
-	  },
-	
-	  bindEvt : function(){
-	    var that = this;
-	    //切换顶部nav高亮
-	    common.switchNav(1);
-	
-	    //checkbox定制
-	    $('.label_radio').click(function(){
-	      util.setupLabel();
-	    });
-	
-	    util.setupLabel();
-	
-	    $("[data-trigger]").on("click",function(e){
-	        e.preventDefault();
-	        var btn = $(e.target).closest(".trigger");
-	        var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
-	
-	        modalBox( btn.get(0), {
-	              html:tmpl(),
-	              klass : 'w540 shadow',
-	              closeByOverlay : false,
-	              completeCallback : function(){ 
-	                
-	              }
-	          });
-	    });
-	
-	
-	    $(".addSchool").on("focusin",function(e){
-	      e.preventDefault();
-	      var oInput = $(e.target);
-	      if(oInput.hasClass("cur")) return;
-	      oInput.addClass("cur");
-	
-	      modalBox(oInput,{
-	        html : tmpl_school(),
-	        klass : 'w540 shadow',
-	        closeByOverlay : false,
-	        startCallback : function(modal){
-	          //指向
-	          that.modal = modal;
-	          that.modal.ref = this;
-	
-	          //增加trigger
-	          that.addSchoolTrigger = oInput;
-	
-	          modal.majorType = oInput.attr("major");
-	          that.requestData(that.pager);
-	          
-	        },
-	        completeCallback : function(){
-	          var self = oInput; 
-	          var oInput = $("#wd");
-	          $("#sBtn").on("click",function(e){
-	            e.preventDefault();
-	            if($.trim(oInput.val()) == ""){
-	              warn("请输入搜索关键词");
-	              return false;
-	            }
-	
-	            that.requestData(that.pager);
-	
-	
-	          })
-	          
-	        },
-	        closeCallback : function(){
-	          oInput.removeClass("cur");
-	        }
-	      });
-	
-	    });
-	
-	    $(".addMajor").on("click",function(e){
+	    $("#js-addMajor").on("click",function(e){
 	      e.preventDefault();
 	      var btn = $(e.target).closest(".btn");
 	      if(btn.hasClass("disabled")) return;
 	
-	      var collegeId = $('[major='+btn.data("rel")+']').attr("code");
+	      var collegeId = that.state.current.college.code;
 	
-	      //动态获取院校下的大专业列表
+	      // 动态获取院校下的大专业列表
 	      that.requestMajors({
 	        collegeId : collegeId,
 	        callback : majorBox
@@ -675,138 +453,21 @@ webpackJsonp([22],{
 	          closeByOverlay : false,
 	          startCallback : function(modal){
 	            that.modal = modal;
-	            
-	            //增加trigger
-	            that.addMajorTrigger = btn;
-	
-	            modal.majorType = btn.data("rel");
-	
 	            that.render();
 	          },
 	
 	          completeCallback : function(){
-	            $("#majorBtn").on("click",function(e){
-	              e.preventDefault();
-	
-	              if(that.state.selected.length > 6){
-	                warn("请重新选择选项");
-	                return;
-	              }
-	
-	              $(".btn-close").trigger("click");
-	              that.updateRes(btn);
-	              that.updateTags(btn);
-	            });
+	            
 	          }
 	        });
 	      }
 	
 	    });
-	
-	
-	    //清理选中的学校
-	    $(".row .clear").on("click",function(e){
-	      e.preventDefault();
-	      var type = $(this).siblings(".input").attr("major");
-	      
-	      //清空选中cityList和selectedlist
-	      that.state.selected[type-1].list = [];
-	      that.state.cityList[type-1].list = [];
-	
-	      //清除zhiyuanList数据
-	      that.state.zhiyuanList[type-1].name = "";
-	      that.state.zhiyuanList[type-1].code = "";
-	
-	      that.render(type-1);
-	
-	    });
-	
-	    //异步提交结果
-	    $("#verifyBtn").on("click",function(e){
-	      e.preventDefault();
-	
-	    //只要有一个选中即ok
-	    var zhiyuanStatus = that.state.zhiyuanList.some(function(ele,idx){
-	       return !!(ele.name && ele.code);
-	    });
-	
-	    //只要有大学选中那么也必须选择专业
-	    var zhiyuanMajorStatus = true;
-	    $.each(that.state.zhiyuanList,function(idx,ele){
-	      var idx = ele.type - 1;
-	
-	      if(ele.name && ele.code){
-	       if(!(that.state.selected[idx].list.length)){
-	        zhiyuanMajorStatus = false;
-	        return false;
-	       }
-	      }
-	      
-	    });
-	
-	    //有专业选中
-	    var selectedStatus = that.state.selected.some(function(ele,idx){
-	      var type = ele.type;
-	       return (ele.list.length > 0 && $("[major="+type+"]").length);
-	    });
-	
-	
-	    if(!zhiyuanStatus){
-	      warn("请至少选择一所志愿院校");
-	      return false;
-	    }else if(!zhiyuanMajorStatus){
-	      warn("请确保每所学校至少选择一个专业");
-	      return false;
-	    }else if(!selectedStatus){
-	      warn("请至少选择一个志愿院校对应的专业");
-	      return false;
-	    }
-	
-	    //组装数据
-	    var wishList = [];
-	    $.each(that.state.zhiyuanList,function(idx,ele){
-	       var wish = {};
-	       if(ele.name && ele.code && that.state.selected[idx].list.length){
-	          wish.college = ele.code;
-	          wish.collegeName = ele.name;
-	          wish.type = ele.type;
-	          $.each(that.state.selected[idx].list,function(listIndex,list){
-	            list.majorId = list.code;
-	            list.majorName = list.name;
-	          });
-	          wish.majors = that.state.selected[idx].list;
-	       }
-	
-	       wishList.push(wish);
-	    });
-	
-	    $.ajax({
-	      url : preServer+provinceId+"/tzy/plan/assessment/step2",
-	      type : "post",
-	      contentType: "application/json",
-	      data : JSON.stringify({batch : batch, wishes : wishList,zhiyuanList : that.state.zhiyuanList,selected:that.state.selected}),
-	      success : function(res){
-	          if(typeof res =="string"){
-	              var res = $.parseJSON(res);
-	          }
-	
-	          if(res.code==1){
-	              window.location = "/box/plan/evaluate_step3";
-	              return false;
-	          }else{
-	              warn(res.msg);
-	              return false;
-	          }
-	      },
-	      error : function(err){
-	          console.log(err);
-	      }
-	    });
-	  });
 	  }
+	
 	};
 	
-	school.init({
+	evaluate.init({
 	  klass : "current",
 	  startCallback : function(){
 	    scroll($(".prov"),{
@@ -829,7 +490,6 @@ webpackJsonp([22],{
 	    var oRow = oInput.closest(".row");
 	
 	  }
-	
 	});
 	
 	
@@ -839,16 +499,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 133:
+/***/ 134:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(134);
+	__webpack_require__(135);
 	
-	var $ = window.$ || __webpack_require__(38);
-	var extend =  __webpack_require__(43);
+	var $ = window.$ || __webpack_require__(39);
+	var extend =  __webpack_require__(44);
 	
 	//mousewheel
-	__webpack_require__(136);
+	__webpack_require__(137);
 	
 	function scroll(target,options){
 	
@@ -1033,16 +693,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 134:
+/***/ 135:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(135);
+	var content = __webpack_require__(136);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(35)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1060,10 +720,10 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 135:
+/***/ 136:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(18)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1075,10 +735,10 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 136:
+/***/ 137:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(38);
+	var $ = window.$ || __webpack_require__(39);
 	
 	var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
 	    toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -1284,16 +944,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 203:
+/***/ 204:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(204);
+	var content = __webpack_require__(205);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(35)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1311,22 +971,29 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 204:
+/***/ 205:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(18)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(33) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
+	exports.push([module.id, ".clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n.hide-text {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.mr32 {\n  margin-right: 32px;\n}\n.upRow {\n  margin-bottom: 24px;\n}\n.icon-close {\n  display: inline-block;\n  vertical-align: middle;\n  width: 19px;\n  height: 19px;\n  background: url(" + __webpack_require__(206) + ");\n  position: relative;\n  z-index: 2;\n}\n.collegeName {\n  margin-right: 20px;\n}\n.actionContent {\n  margin-bottomp: 32px;\n}\n.actionContent .btn {\n  font-size: 18px;\n}\n.wux-divider {\n  height: 1px;\n  border-top: 1px solid #ddd;\n  text-align: center;\n  margin-top: 18px;\n  margin-bottom: 18px;\n  font-size: 16px;\n  line-height: 1;\n  color: #777;\n}\n.wux-divider span {\n  position: relative;\n  top: -8px;\n  background-color: #fff;\n  padding: 0 20px;\n}\n.downRow .btn {\n  border-radius: 3px;\n}\n.panelLists {\n  margin-top: 32px;\n  margin-right: -25px;\n}\n.panelLists .panel {\n  display: block;\n  float: left;\n  margin-right: 25px;\n  margin-bottom: 20px;\n  width: 300px;\n  border: 1px solid #61c0e2;\n  font-size: 16px;\n  vertical-align: top;\n}\n.panelLists .panel .panel-hd {\n  line-height: 40px;\n  color: #fff;\n  background-color: #61c0e2;\n  padding: 0 4px 0 16px;\n}\n.panelLists .panel .panel-hd .icon-close {\n  margin-top: 10px;\n}\n.panelLists .panel .panel-bd {\n  padding: 10px 0 10px 16px;\n  line-height: 1.5;\n  color: #61c0e2;\n}\n.s-major .col2 .selectWrap {\n  width: 312px;\n}\n.s-major .col2 .city label {\n  position: relative;\n}\n.s-major .col2 .city label input {\n  background: transparent;\n  border: 0;\n  position: absolute;\n  left: -100%;\n  width: 0;\n  height: 0;\n}\n.s-major .col2 .city label em {\n  max-width: none;\n}\n.no_wishList {\n  font-size: 18px;\n  color: #999;\n  padding-left: 24px;\n}\n.breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 205:
+/***/ 206:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/web/img/closeIcon.png"
+
+/***/ },
+
+/***/ 207:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1341,7 +1008,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 206:
+/***/ 208:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1371,14 +1038,14 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 207:
+/***/ 209:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
 	obj || (obj = {});
 	var __t, __p = '';
 	with (obj) {
-	__p += '<div class="modalCntWrap g9 modalForm">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">专业选择</span></h3>\n <form action="javascript:;" onsubmit="return false" autocomplete="off" id="majorForm" class="rel">\n            \n    <div class="selectContent s-major clearfix" id="majorContainer">\n      <div class="column col1 fl">\n        <h4>专业门类</h4>\n        <div class="selectWrap">\n          <ul class="prov">\n            \n          </ul>\n        </div>\n      </div>\n      <div class="column col2 fl">\n        <h4>专业</h4>\n        <div class="selectWrap">\n          <ul class="city">\n        </ul>\n        </div>\n      </div>\n      <div class="column col3 fl">\n        <h4>已选</h4>\n        <ul class="tagsWrap clearfix" id="tagsWrap">\n        </ul>\n      </div>\n\n    </div>\n            \n    <div class="footerCnt tc">\n      <p id="errTxt" class="errTxt"></p>\n      <div class="row btnRow">\n            <button type="submit" class="btn btn-positive btn-form" id="majorBtn">\n                <em class="subTxt">保存</em>\n            </button>\n          </div>\n    </div>\n\n  </form>\n</div>';
+	__p += '<div class="modalCntWrap g9 modalForm">\n <h3 class="clearfix"><a href="javascript:;" class="icons btn-close fr"></a><span class="fl">专业选择</span></h3>\n <form action="javascript:;" onsubmit="return false" autocomplete="off" id="majorForm" class="rel">\n            \n    <div class="selectContent s-major clearfix" id="majorContainer">\n      <div class="column col1 fl">\n        <h4>专业门类</h4>\n        <div class="selectWrap">\n          <ul class="prov">\n            \n          </ul>\n        </div>\n      </div>\n      <div class="column col2 fl">\n        <h4>专业</h4>\n        <div class="selectWrap">\n          <ul class="city">\n        </ul>\n        </div>\n      </div>\n      \n    </div>\n            \n    <div class="footerCnt tc">\n      <p id="errTxt" class="errTxt"></p>\n      <div class="row btnRow">\n            <button type="submit" class="btn btn-positive btn-form" id="majorBtn">\n                <em class="subTxt">保存</em>\n            </button>\n          </div>\n    </div>\n\n  </form>\n</div>';
 	
 	}
 	return __p
@@ -1386,7 +1053,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 208:
+/***/ 210:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1398,6 +1065,104 @@ webpackJsonp([22],{
 		{"level": "2", "code": 32, "name": "法律"}
 	
 	];
+
+/***/ },
+
+/***/ 211:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (wishes.length == 0) { ;
+	__p += '\n	<div class="no_wishList">\n		请使用上方控件选择学校和专业，录入志愿信息\n	</div>\n';
+	 }else{ ;
+	__p += '\n<div class="panelLists clearfix">\n	';
+	 for (var i = 0; i < wishes.length; i++) { ;
+	__p += '\n		<div class="panel" collegename="' +
+	((__t = ( wishes[i].collegeName )) == null ? '' : __t) +
+	'" collegeid="' +
+	((__t = ( wishes[i].collegeId )) == null ? '' : __t) +
+	'" majorname="' +
+	((__t = ( wishes[i].majorName )) == null ? '' : __t) +
+	'" majorid="' +
+	((__t = ( wishes[i].majorId )) == null ? '' : __t) +
+	'" >\n			<div class="panel-hd">\n				<i class="icon icon-close fr panel-close"></i>\n				<div class="collegeName">' +
+	((__t = ( wishes[i].collegeName )) == null ? '' : __t) +
+	'</div>\n			</div>\n			<div class="panel-bd">' +
+	((__t = ( wishes[i].majorName )) == null ? '' : __t) +
+	'</div>\n		</div>\n	';
+	 } ;
+	__p += '\n</div>\n';
+	 } ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 471:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (majorList.length == 0) { ;
+	__p += '\n	<li>暂无该专业数据</li>\n';
+	 }else{ ;
+	__p += '\n	';
+	 for (var i = 0; i < majorList.length; i++) { ;
+	__p += '\n	 	<li>\n		 	<label for="major_' +
+	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	'" >\n		 		<input type="radio" name="city" n="' +
+	((__t = ( majorList[i].name )) == null ? '' : __t) +
+	'" value="' +
+	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	'" id="major_' +
+	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	'" />\n		 		<em>' +
+	((__t = ( majorList[i].name )) == null ? '' : __t) +
+	'</em>\n		 	</label>\n		</li>\n ';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 473:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += ' ';
+	 if (wishes.length == 0) { ;
+	__p += '\n	<span class="divider-content">已填志愿（ ' +
+	((__t = ( wishes.length )) == null ? '' : __t) +
+	'/50）</span>\n';
+	 }else{ ;
+	__p += '\n	<span class="divider-content">已填志愿（ ' +
+	((__t = ( wishes.length )) == null ? '' : __t) +
+	'/50）</span>\n ';
+	 } ;
+	
+	
+	}
+	return __p
+	}
 
 /***/ }
 

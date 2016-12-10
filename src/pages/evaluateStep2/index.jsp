@@ -57,95 +57,25 @@
 				</div>
 
 				<div class="formWrap">
-					<form action="#" onsubmit="return false" autocomplete="off" id="assessForm_2" class="rel">
+					<form action="javascript:;" onsubmit="return false" autocomplete="off" id="assessForm_2" class="rel">
 						
-						<div class="m-select">
-							<div class="bg bg-f1">志愿学校1</div>
-							<div class="row inline">
-							   <span class="inputWrap rel">
-								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="1">
-								<a href="javascript:;" class="clear">X</a>
-							   </span>
-								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="1">
-									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
-								</a>
+						<div class="actionContent tc">
+							<div class="upRow">
+								<a href="javascript:;" class="btn btn-primary mr32" id="js-addSchool">选择学校</a>
+								<a href="javascript:;" class="btn btn-primary disabled" id="js-addMajor">选择专业</a>
 							</div>
-							<ul class="tagsWrap clearfix showTagList">
-							</ul>
-							<input type="hidden" name="major1">
+							<div class="downRow">
+								<a href="javascript:;" class="btn btn-positive disabled" id="js-addNext">增&ensp;&ensp;加</a>
+							</div>
 						</div>
 
-						<div class="m-select">
-							<div class="bg bg-f1">志愿学校2</div>
-							<div class="row inline">
-							<span class="inputWrap rel">
-								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="2">
-								<a href="javascript:;" class="clear">X</a>
-							</span>
-								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="2">
-									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
-								</a>
-							</div>
-							<ul class="tagsWrap clearfix showTagList">
-								
-							</ul>
-
-						</div>
-
-						<div class="m-select">
-							<div class="bg bg-f1">志愿学校3</div>
-							<div class="row inline">
-							<span class="inputWrap rel">
-								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="3">
-								<a href="javascript:;" class="clear">X</a>
-							</span>
-								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="3">
-									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
-								</a>
-							</div>
-							<ul class="tagsWrap clearfix showTagList">
-							</ul>
-							<input type="hidden" name="major3">
-						</div>
-
-						<div class="m-select">
-							<div class="bg bg-f1">志愿学校4</div>
-							<div class="row inline">
-							<span class="inputWrap rel">
-								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="4">
-								<a href="javascript:;" class="clear">X</a>
-							</span>
-								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="4">
-									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
-								</a>
-							</div>
-							<ul class="tagsWrap clearfix showTagList">
-								
-							</ul>
-							<input type="hidden" name="major4">
-						</div>
-
-						<div class="m-select">
-							<div class="bg bg-f1">志愿学校5</div>
-							<div class="row inline">
-							<span class="inputWrap rel">
-								<input type="text" class="addSchool form-control input dib" placeholder="请选择大学" major="5">
-								<a href="javascript:;" class="clear">X</a>
-							</span>
-								<a href="javascript:;" class="addMajor btn btn-primary" data-rel="5">
-									<em class="vm">添加专业</em>
-									<span class="vm">(<em class="count">0</em>/<em class="all">6</em>)</span>
-								</a>
-							</div>
-							<ul class="tagsWrap clearfix showTagList">
-							</ul>
-							<input type="hidden" name="major5">
+						<div class="wux-divider" id="divider">
 						</div>
 						
+						<div class="panelWrap ovh">
+																					
+						</div>
+
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
@@ -156,11 +86,9 @@
 			                        <em class="subTxt">下一步</em>
 			                    </button>
                   			</div>
-
 						</div>
 
 					</form>
-
 				</div>
 
 			</div>
@@ -172,11 +100,7 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-		
-		<pre name="zhiyuanList">${zhiyuanList}</pre>
-		<pre name="zhiyuanList_blank">[{"code":"","name":"","type":1},{"code":"","name":"","type":2},{"code":"","name":"","type":3},{"code":"","name":"","type":4},{"code":"","name":"","type":5}]</pre>
-		<pre name="selected">${selected}</pre>
-	<pre name="selected_blank">[{"type" : 1,"list" : []},{ "type" : 2,"list" : []},{"type" : 3,"list" : []},{ "type" : 4,"list" : []},{"type" : 5,"list" : []}]</pre>
-
+	
+	<pre name="wishes">${wishes}</pre>
 	</body>
 </html>

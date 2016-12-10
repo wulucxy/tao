@@ -3,6 +3,7 @@ module.exports = {
 	'/': 'home.jsp',
 	'/default': 'homeV2.jsp',
 	'/box/plan/evaluate_step1': 'evaluateStep1.jsp',
+	'/box/plan/es2': 'evaluateStep2Back.jsp',
 	'/box/plan/evaluate_step2': 'evaluateStep2.jsp',
 	'/box/plan/evaluate_step3': 'evaluateStep3.jsp',
 	"/box/plan/major_exam1"   : 'majorExam1.jsp',
@@ -108,6 +109,7 @@ module.exports = {
 
 	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
 	'post::/v2_1/client/1/profile/couponListWeb':"mock::api/couponList.json",
-	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json"
+	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json",
+	'post::/v2_1/client/1/tzy/plan/scoreChange':"mock::api/scoreChange.json"
 
 };

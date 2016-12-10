@@ -1,0 +1,13 @@
+<div class="dz">
+	<p><%= score %>分在2016年相应的分数和排名</p>
+</div>
+<ul class="dzLists">
+	<% for (var i = 0; i < result.length; i++) { 
+		var batchArr = ['一','二','三']
+	  	var batch = batchArr[i]
+	%>
+	<li><span class="blue">总分<%= batch %>（第<%= batch %>批）：</span><span class="orange"><%= result[i].score %>分</span>
+	</li>
+	<% } %>
+</ul>
+<div class="g9 f20">分数转换了，你才能更好地使用数据库</div>

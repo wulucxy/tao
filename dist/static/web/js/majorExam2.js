@@ -1,27 +1,27 @@
-webpackJsonp([34],{
+webpackJsonp([35],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(16);
-	__webpack_require__(257);
-	var $ = window.$ || __webpack_require__(38);
+	__webpack_require__(17);
+	__webpack_require__(266);
+	var $ = window.$ || __webpack_require__(39);
 	
 	//工具类方法
-	var util = __webpack_require__(39);
+	var util = __webpack_require__(40);
 	
 	//公共方法
-	var common = __webpack_require__(40);
+	var common = __webpack_require__(41);
 	
 	
 	/* 可选，视需求而定 */
-	var questions = __webpack_require__(259);
+	var questions = __webpack_require__(268);
 	
-	var tmpl = __webpack_require__(260);
+	var tmpl = __webpack_require__(269);
 	
-	var Cookies = __webpack_require__(101);
-	var contentSlider = __webpack_require__(261);
+	var Cookies = __webpack_require__(102);
+	var contentSlider = __webpack_require__(270);
 	
 	//需要配置
 	var allItems = questions.questions.length;
@@ -153,16 +153,16 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 257:
+/***/ 266:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(258);
+	var content = __webpack_require__(267);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(35)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -180,10 +180,10 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 258:
+/***/ 267:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(18)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -195,7 +195,7 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 259:
+/***/ 268:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2725,7 +2725,7 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 260:
+/***/ 269:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2777,12 +2777,12 @@ webpackJsonp([34],{
 
 /***/ },
 
-/***/ 261:
+/***/ 270:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(38);
-	var extend =  __webpack_require__(43);
-	var browser = __webpack_require__(47);
+	var $ = window.$ || __webpack_require__(39);
+	var extend =  __webpack_require__(44);
+	var browser = __webpack_require__(48);
 	
 	function contentSlider(target,options){
 	
