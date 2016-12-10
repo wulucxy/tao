@@ -63,26 +63,8 @@ $("#verifyBtn").on("click",function(e){
     score : $("[name=score]").val(),
     batch : $("[name=batch]").val(),
     place : $("[name=place]").val(),
-    wishes : $.parseJSON($("[name=wishesString]").text())
+    wishes : $.parseJSON($("[name=wishes]").text())
   };
-
-  $.each(_data.wishes,function(idx,ele){
-      var majorList = [];
-
-      if(ele.majors){
-        $.each(ele.majors,function(l,n){
-          if(n.majorId && n.majorName){
-             majorList.push({
-              "majorId":n.majorId,
-              "majorName":n.majorName
-             });
-          }
-        });
-
-        ele.majors = majorList;
-      }
-  });
-
 
 
   $.ajax({

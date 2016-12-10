@@ -16,10 +16,21 @@
 	"batch" : 1,
 	"score" : 300,
 	"place" : 3000,
-    "wishes":[ 
-        {"college":"1785","collegeName":"西北工业大学","majors":[{"code":"071251","majorId":"071251","majorName":"材料物理","name":"材料物理"}],"type":1},{},{},{},{}
+    "wishes":[
+          {
+             "collegeId":"175",
+             "collegeName":"北京中医药大学",
+             "majorId":"67",
+             "majorName":"法学",
+             "field":"医药卫生"
+          }
     ],
     "wishesString":[ 
         {"college":"1785","collegeName":"西北工业大学","majors":[{"code":"071251","majorId":"071251","majorName":"材料物理","name":"材料物理"}],"type":1},{},{},{},{}
+    ],
+    "subjects":[
+        {"name":"物理","code":"1"},
+        {"name":"化学","code":"2"},
+        {"name":"生物","code":"3"}
     ]
 }

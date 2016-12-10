@@ -4,30 +4,30 @@ webpackJsonp([0],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(17);
-	__webpack_require__(37);
-	var $ = window.$ || __webpack_require__(39);
+	__webpack_require__(18);
+	__webpack_require__(38);
+	var $ = window.$ || __webpack_require__(40);
 	
 	//工具类方法
-	var util = __webpack_require__(40);
+	var util = __webpack_require__(41);
 	
 	//公共方法
-	var common = __webpack_require__(41);
+	var common = __webpack_require__(42);
 	
 	/* 具体实现 */
 	// 验证组件
-	__webpack_require__(57);
+	__webpack_require__(58);
 	
 	//selct组件
-	var beautifySelect = __webpack_require__(104);
+	var beautifySelect = __webpack_require__(105);
 	
 	// 城市
-	var countryJSON =  __webpack_require__(107);
-	var tmpl_country = __webpack_require__(108);
+	var countryJSON =  __webpack_require__(108);
+	var tmpl_country = __webpack_require__(109);
 	
 	//考试
-	var examJSON =  __webpack_require__(109);
-	var tmpl_exam = __webpack_require__(110);
+	var examJSON =  __webpack_require__(110);
+	var tmpl_exam = __webpack_require__(111);
 	
 	//checkbox定制
 	$('.label_radio').click(function(){
@@ -289,16 +289,16 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 37:
+/***/ 38:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(38);
+	var content = __webpack_require__(39);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -316,28 +316,28 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 38:
+/***/ 39:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n}\n.formWrap .row .col2 .fieldWrap {\n  display: inline-block;\n  width: 374px;\n}\n.formWrap .row .errInfo {\n  margin-left: 160px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.aboard .beautify-select .options {\n  border-bottom: 1px solid #e7e7e7;\n}\n.aboard .beautify-select .options li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding: 0 0 0 10px;\n  height: 24px;\n}\n.aboard .beautify-select .options li.current,\n.aboard .beautify-select .options li:hover {\n  background-color: #61c0e2;\n  color: #fff;\n}\n.beautify-select .trigger {\n  color: #61c0e2;\n}\n", ""]);
+	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(35) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n}\n.formWrap .row .col2 .fieldWrap {\n  display: inline-block;\n  width: 374px;\n}\n.formWrap .row .errInfo {\n  margin-left: 160px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.aboard .beautify-select .options {\n  border-bottom: 1px solid #e7e7e7;\n}\n.aboard .beautify-select .options li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding: 0 0 0 10px;\n  height: 24px;\n}\n.aboard .beautify-select .options li.current,\n.aboard .beautify-select .options li:hover {\n  background-color: #61c0e2;\n  color: #fff;\n}\n.beautify-select .trigger {\n  color: #61c0e2;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 104:
+/***/ 105:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(39);
-	var extend =  __webpack_require__(44);
+	var $ = window.$ || __webpack_require__(40);
+	var extend =  __webpack_require__(45);
 	
-	__webpack_require__(105);
+	__webpack_require__(106);
 	
 		function Plugin(t,o){
 			this.target=t;
@@ -440,16 +440,16 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 105:
+/***/ 106:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(106);
+	var content = __webpack_require__(107);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -467,10 +467,10 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 106:
+/***/ 107:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
@@ -482,7 +482,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 107:
+/***/ 108:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -2271,7 +2271,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 108:
+/***/ 109:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -2297,7 +2297,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 109:
+/***/ 110:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -2397,7 +2397,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 110:
+/***/ 111:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

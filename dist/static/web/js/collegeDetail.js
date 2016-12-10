@@ -4,25 +4,25 @@ webpackJsonp([11],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(17);
-	__webpack_require__(159);
-	var $ = window.$ || __webpack_require__(39);
+	__webpack_require__(18);
+	__webpack_require__(160);
+	var $ = window.$ || __webpack_require__(40);
 	
 	//工具类方法
-	var util = __webpack_require__(40);
+	var util = __webpack_require__(41);
 	
 	//公共方法
-	var common = __webpack_require__(41);
+	var common = __webpack_require__(42);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(126);
+	var tabs = __webpack_require__(127);
 	
 	//百度地图
-	var baidu = __webpack_require__(162);
+	var baidu = __webpack_require__(163);
 	
 	//报考专业
-	var major =  __webpack_require__(163);
+	var major =  __webpack_require__(164);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -88,16 +88,16 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 159:
+/***/ 160:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(160);
+	var content = __webpack_require__(161);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -115,32 +115,32 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 160:
+/***/ 161:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 20px 24px 36px;\n  margin-bottom: 30px;\n}\n.row.inline > * {\n  display: inline-block;\n}\n.contentWrap h4 {\n  font-weight: normal;\n  font-size: 18px;\n  margin-bottom: 24px;\n}\n.contentWrap .btn-mid {\n  width: 118px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 16px;\n}\n.detailInfos {\n  font-size: 13px;\n  color: #555;\n  line-height: 1.5;\n}\n.detailInfos .field {\n  display: inline-block;\n}\n.detailInfos .col {\n  float: left;\n  width: 33.3%;\n  margin-bottom: 14px;\n  font-size: 14px;\n  line-height: 18px;\n  height: 18px;\n}\n.detailInfos .col.c-6 {\n  width: 60%;\n}\n.detailInfos .col.c-8 {\n  width: 80%;\n}\n.detailInfos .col.c-10 {\n  width: 100%;\n}\n.baiduWrapper {\n  height: 260px;\n}\n.detailTxt {\n  margin-top: 16px;\n  line-height: 1.5;\n}\n.majorWrap .pad {\n  margin-right: -60px;\n}\n.majorWrap .bg {\n  padding: 14px 20px 0;\n}\n.majorWrap .bg .row {\n  margin-right: 60px;\n}\n.majorWrap .bg label {\n  width: 4em;\n}\n.majorWrap .row {\n  margin-bottom: 14px;\n}\n.majorWrap .selectWrap {\n  width: 180px;\n}\n.majorWrap .selectWrap .form-control {\n  width: 100%;\n}\n.row label {\n  font-size: 14px;\n  color: #666;\n}\n.majorLists {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 20px;\n  padding-top: 20px;\n}\n.majorList {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n  position: relative;\n}\n.majorList .next {\n  position: absolute;\n  top: 50%;\n  margin-top: -26px;\n  right: 10px;\n}\n.majorList h5 {\n  font-size: 15px;\n  color: #333;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.majorList .details {\n  margin-bottom: 20px;\n}\n.majorList .details span {\n  display: inline-block;\n  margin-right: 36px;\n  line-height: 18px;\n  height: 18px;\n}\n.majorList .details .label {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n  color: #666;\n}\n.majorList .details .field {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n}\n.majorList .btn-primary {\n  padding: 1px 12px;\n  border-radius: 0;\n}\n.icon-major {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(161) + ");\n  width: 24px;\n  height: 18px;\n}\n.icon-score {\n  background-position: 0 0;\n}\n.icon-term {\n  background-position: -24px 0;\n}\n.icon-human {\n  background-position: -48px 0;\n}\n.icon-hat {\n  background-position: -72px 0;\n}\n.next {\n  width: 18px;\n  height: 32px;\n  background-position: 0 -35px;\n}\n.threholdTableWrap {\n  height: 440px;\n}\n", ""]);
+	exports.push([module.id, ".orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 20px 24px 36px;\n  margin-bottom: 30px;\n}\n.row.inline > * {\n  display: inline-block;\n}\n.contentWrap h4 {\n  font-weight: normal;\n  font-size: 18px;\n  margin-bottom: 24px;\n}\n.contentWrap .btn-mid {\n  width: 118px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 16px;\n}\n.detailInfos {\n  font-size: 13px;\n  color: #555;\n  line-height: 1.5;\n}\n.detailInfos .field {\n  display: inline-block;\n}\n.detailInfos .col {\n  float: left;\n  width: 33.3%;\n  margin-bottom: 14px;\n  font-size: 14px;\n  line-height: 18px;\n  height: 18px;\n}\n.detailInfos .col.c-6 {\n  width: 60%;\n}\n.detailInfos .col.c-8 {\n  width: 80%;\n}\n.detailInfos .col.c-10 {\n  width: 100%;\n}\n.baiduWrapper {\n  height: 260px;\n}\n.detailTxt {\n  margin-top: 16px;\n  line-height: 1.5;\n}\n.majorWrap .pad {\n  margin-right: -60px;\n}\n.majorWrap .bg {\n  padding: 14px 20px 0;\n}\n.majorWrap .bg .row {\n  margin-right: 60px;\n}\n.majorWrap .bg label {\n  width: 4em;\n}\n.majorWrap .row {\n  margin-bottom: 14px;\n}\n.majorWrap .selectWrap {\n  width: 180px;\n}\n.majorWrap .selectWrap .form-control {\n  width: 100%;\n}\n.row label {\n  font-size: 14px;\n  color: #666;\n}\n.majorLists {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 20px;\n  padding-top: 20px;\n}\n.majorList {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n  position: relative;\n}\n.majorList .next {\n  position: absolute;\n  top: 50%;\n  margin-top: -26px;\n  right: 10px;\n}\n.majorList h5 {\n  font-size: 15px;\n  color: #333;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.majorList .details {\n  margin-bottom: 20px;\n}\n.majorList .details span {\n  display: inline-block;\n  margin-right: 36px;\n  line-height: 18px;\n  height: 18px;\n}\n.majorList .details .label {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n  color: #666;\n}\n.majorList .details .field {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n}\n.majorList .btn-primary {\n  padding: 1px 12px;\n  border-radius: 0;\n}\n.icon-major {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(162) + ");\n  width: 24px;\n  height: 18px;\n}\n.icon-score {\n  background-position: 0 0;\n}\n.icon-term {\n  background-position: -24px 0;\n}\n.icon-human {\n  background-position: -48px 0;\n}\n.icon-hat {\n  background-position: -72px 0;\n}\n.next {\n  width: 18px;\n  height: 32px;\n  background-position: 0 -35px;\n}\n.threholdTableWrap {\n  height: 440px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 161:
+/***/ 162:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/major.png"
 
 /***/ },
 
-/***/ 162:
+/***/ 163:
 /***/ function(module, exports, __webpack_require__) {
 
-	var extend =  __webpack_require__(44);
+	var extend =  __webpack_require__(45);
 	
 	var baidu = {
 	
@@ -172,12 +172,12 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 163:
+/***/ 164:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(39);
-	var extend =  __webpack_require__(44);
-	var tmpl = __webpack_require__(164);
+	var $ = window.$ || __webpack_require__(40);
+	var extend =  __webpack_require__(45);
+	var tmpl = __webpack_require__(165);
 	
 	var major = {
 		init : function(o){
@@ -288,7 +288,7 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 164:
+/***/ 165:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

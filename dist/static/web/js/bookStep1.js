@@ -4,25 +4,25 @@ webpackJsonp([6],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(17);
-	__webpack_require__(127);
-	var $ = window.$ || __webpack_require__(39);
+	__webpack_require__(18);
+	__webpack_require__(128);
+	var $ = window.$ || __webpack_require__(40);
 	
 	//工具类方法
-	var util = __webpack_require__(40);
+	var util = __webpack_require__(41);
 	
 	//公共方法
-	var common = __webpack_require__(41);
+	var common = __webpack_require__(42);
 	
 	/* 具体实现 */
 	// 验证组件
-	__webpack_require__(57);
+	__webpack_require__(58);
 	
-	var checkBox = __webpack_require__(129);
+	var checkBox = __webpack_require__(130);
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(130);
-	var tmpl_questions = __webpack_require__(131);
+	var tmpl_detail = __webpack_require__(131);
+	var tmpl_questions = __webpack_require__(132);
 	
 	checkBox.init();
 	
@@ -111,16 +111,16 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 127:
+/***/ 128:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(128);
+	var content = __webpack_require__(129);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -138,25 +138,25 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 128:
+/***/ 129:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 25%;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n}\n.formWrap .row .col2 .fieldWrap {\n  display: inline-block;\n  width: 374px;\n}\n.formWrap .row .errInfo {\n  margin-left: 160px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.formWrap .subjectsRow .col2 .fieldWrap {\n  width: auto;\n}\n.label-desc {\n  font-size: 12px;\n  color: #999;\n  margin-left: 30px;\n  line-height: 1;\n  display: block;\n}\n", ""]);
+	exports.push([module.id, ".breadcrumb li {\n  width: 25%;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(35) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n}\n.formWrap .row .col2 .fieldWrap {\n  display: inline-block;\n  width: 374px;\n}\n.formWrap .row .errInfo {\n  margin-left: 160px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.formWrap .subjectsRow .col2 .fieldWrap {\n  width: auto;\n}\n.label-desc {\n  font-size: 12px;\n  color: #999;\n  margin-left: 30px;\n  line-height: 1;\n  display: block;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 129:
+/***/ 130:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(39);
+	var $ = window.$ || __webpack_require__(40);
 	
 	var checkBox = {
 	

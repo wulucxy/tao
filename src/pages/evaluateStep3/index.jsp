@@ -75,68 +75,7 @@
 									</div>
 								</div>
 							</div>
-							
-							<div class="row clearfix">
-								<label for="courseType" class="control-label column col1 fl">
-									<i class="icon-location icon-book"></i>
-									<em class="vm">高考科类：</em></label>
-								<div class="col2 inputWrap rel">
-									<div class="fieldWrap">
-									<c:choose>
-									    <c:when test="${courseType == 0}">
-									   		<label for="courseType_0"  class="label_radio inline">
-											<em class="icon-radio"></em>
-											<input type="radio" class="input form-control" id="courseType_0" name="courseType" checked required readonly>
-											<em class="vm">理科</em>
-											</label>
-										</c:when>
-										<c:otherwise>
-											<label for="courseType_1" class="label_radio inline">
-											<em class="icon-radio"></em>
-											<input type="radio" class="input form-control" id="courseType_1" name="courseType" checked required readonly>
-											<em class="vm">文科</em>
-											</label>
-										</c:otherwise>
-								   </c:choose>	
-									</div>
-								</div>
-							</div>
-
-
-							<div class="row clearfix">
-								<label for="batch" class="control-label column col1 fl">
-									<i class="icon-location icon-list"></i>
-									<em class="vm">报考批次：</em></label>
-								<div class="col2 inputWrap rel">
-									<div class="fieldWrap">
-										<c:choose>
-									    <c:when test="${batch == 1}">
-									   		<label for="batch_1" class="label_radio inline">
-											<em class="icon-radio"></em>
-											<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required readonly>
-											<em class="vm">第一批</em>
-											</label>
-										</c:when>
-										<c:when test="${batch == 2}">
-											<label for="batch_2"  class="label_radio inline">
-											<em class="icon-radio"></em>
-											<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" checked required readonly>
-											<em class="vm">第二批</em>
-											</label>
-										</c:when>
-										<c:otherwise>
-											<label for="batch_3"  class="label_radio inline">
-											<em class="icon-radio"></em>
-											<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" checked required readonly>
-											<em class="vm">第三批</em>
-											</label>
-										</c:otherwise>
-								   </c:choose>		
-									</div>
-								</div>
-							</div>
-
-							
+									
 							<div class="row clearfix inline">
 								<label for="score" class="control-label column col1 fl">
 									<i class="icon-location icon-fenshu"></i>
@@ -148,36 +87,38 @@
 								</div>
 							</div>
 
-							<div class="row clearfix inline">
-								<label for="place" class="control-label column col1 fl">
-									<i class="icon-location icon-rank"></i>
-									<em class="vm">高考排名：</em></label>
-								<div class="col2 inputWrap rel">
-									<span class="fieldWrap">
-										<span class="onlyTxt">${place}名</span>
-									</span>
-								</div>
-							</div>
+					<div class="row clearfix">
+					  <label for="subjects" class="control-label column col1 fl">
+					    <i class="icon-location icon-book"></i>
+					    <em class="vm">选考科目：</em></label>
+					  <div class="col2 inputWrap rel">
+					    <div class="fieldWrap">
+						   	
+						<c:forEach var="list" items="${subjects}" varStatus="loop">
+					      <label for="subjectId_${list.code}" class="label_check inline">
+					      <em class="icon-radio"></em>
+					      <input type="checkbox" class="input form-control" id="subjectId_${list.code}" subjectname="${list.name}" name="subjectId" value="${list.code}" disabled checked>
+					      <em class="vm">${list.name}</em>
+					      </label>
+					    </c:forEach>
+
+					    </div>
+					  </div>
+					</div>
 						</section>
 
 						<section class="p2">
+						<div class="f15 g3 mb20">志愿信息：</div>
 						<c:forEach var="list" items="${wishes}" varStatus="loop">
-							<div class="cInfo">
-								<div class="bg bg-f1">志愿学校${loop.index+1}：</div>
-								<div class="collegeList">
-									<c:choose>
-								    <c:when test="${list.collegeName != null}">
-								   		<span class="n">${list.collegeName}</span>
-									</c:when>
-									<c:otherwise>
-										<span class="n">无</span>
-									</c:otherwise>
-								   </c:choose>
-									<c:forEach var="major" items="${list.majors}">
-									<span class="c">${major.majorName}</span>
-									</c:forEach>
-								</div>
-							</div>					
+		<div class="panelWrap ovh">
+			<div class="panel" collegename="${list.collegeName}" collegeid="${ list.collegeId}" majorname="${list.majorName}" majorid="${list.majorId}" >
+				<div class="panel-hd">
+					<i class="icon icon-close fr panel-close"></i>
+					<div class="collegeName">${list.collegeName}</div>
+				</div>
+				<div class="panel-bd">${list.majorName}</div>
+			</div>														
+		</div>					
 						</c:forEach>
 						</section>
 

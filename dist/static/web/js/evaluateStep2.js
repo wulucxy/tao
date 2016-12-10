@@ -4,34 +4,34 @@ webpackJsonp([22],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(17);
-	__webpack_require__(204);
-	var $ = window.$ || __webpack_require__(39);
+	__webpack_require__(18);
+	__webpack_require__(205);
+	var $ = window.$ || __webpack_require__(40);
 	
 	//工具类方法
-	var util = __webpack_require__(40);
+	var util = __webpack_require__(41);
 	
 	//公共方法
-	var common = __webpack_require__(41);
+	var common = __webpack_require__(42);
 	
 	/* 具体实现 */
 	
 	// 表单验证组件
-	__webpack_require__(57);
+	__webpack_require__(58);
 	
-	var searchSchool = __webpack_require__(179);
+	var searchSchool = __webpack_require__(180);
 	
-	var extend =  __webpack_require__(44);
-	
-	//弹窗模板
-	var tmpl_detail = __webpack_require__(130);
-	var tmpl_questions = __webpack_require__(131);
+	var extend =  __webpack_require__(45);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(207);
-	var tmpl_list = __webpack_require__(208);
-	var tmpl_major = __webpack_require__(209);
-	var majors = __webpack_require__(210);
+	var tmpl_detail = __webpack_require__(131);
+	var tmpl_questions = __webpack_require__(132);
+	
+	//弹窗模板
+	var tmpl_school = __webpack_require__(208);
+	var tmpl_list = __webpack_require__(209);
+	var tmpl_major = __webpack_require__(210);
+	var majors = __webpack_require__(211);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -41,18 +41,18 @@ webpackJsonp([22],{
 	var batch = $("[name=batch]").val();
 	
 	//分页
-	var pagination = __webpack_require__(185);
+	var pagination = __webpack_require__(186);
 	//自定义滚动
-	var scroll = __webpack_require__(134);
+	var scroll = __webpack_require__(135);
 	
 	// panel
-	var tmpl_panel = __webpack_require__(211);
+	var tmpl_panel = __webpack_require__(212);
 	
 	// major
-	var tmpl_majorList = __webpack_require__(471);
+	var tmpl_majorList = __webpack_require__(213);
 	
 	// divider
-	var tmpl_divider = __webpack_require__(473);
+	var tmpl_divider = __webpack_require__(214);
 	
 	//兼容every实现
 	if (typeof Array.prototype.every != "function") {
@@ -499,16 +499,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 134:
+/***/ 135:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(135);
+	__webpack_require__(136);
 	
-	var $ = window.$ || __webpack_require__(39);
-	var extend =  __webpack_require__(44);
+	var $ = window.$ || __webpack_require__(40);
+	var extend =  __webpack_require__(45);
 	
 	//mousewheel
-	__webpack_require__(137);
+	__webpack_require__(138);
 	
 	function scroll(target,options){
 	
@@ -693,16 +693,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 135:
+/***/ 136:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(136);
+	var content = __webpack_require__(137);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -720,10 +720,10 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 136:
+/***/ 137:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
@@ -735,10 +735,10 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 137:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(39);
+	var $ = window.$ || __webpack_require__(40);
 	
 	var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
 	    toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -944,16 +944,16 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 204:
+/***/ 205:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(206);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(36)(content, {});
+	var update = __webpack_require__(37)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -971,29 +971,29 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 205:
+/***/ 206:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n.hide-text {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.mr32 {\n  margin-right: 32px;\n}\n.upRow {\n  margin-bottom: 24px;\n}\n.icon-close {\n  display: inline-block;\n  vertical-align: middle;\n  width: 19px;\n  height: 19px;\n  background: url(" + __webpack_require__(206) + ");\n  position: relative;\n  z-index: 2;\n}\n.collegeName {\n  margin-right: 20px;\n}\n.actionContent {\n  margin-bottomp: 32px;\n}\n.actionContent .btn {\n  font-size: 18px;\n}\n.wux-divider {\n  height: 1px;\n  border-top: 1px solid #ddd;\n  text-align: center;\n  margin-top: 18px;\n  margin-bottom: 18px;\n  font-size: 16px;\n  line-height: 1;\n  color: #777;\n}\n.wux-divider span {\n  position: relative;\n  top: -8px;\n  background-color: #fff;\n  padding: 0 20px;\n}\n.downRow .btn {\n  border-radius: 3px;\n}\n.panelLists {\n  margin-top: 32px;\n  margin-right: -25px;\n}\n.panelLists .panel {\n  display: block;\n  float: left;\n  margin-right: 25px;\n  margin-bottom: 20px;\n  width: 300px;\n  border: 1px solid #61c0e2;\n  font-size: 16px;\n  vertical-align: top;\n}\n.panelLists .panel .panel-hd {\n  line-height: 40px;\n  color: #fff;\n  background-color: #61c0e2;\n  padding: 0 4px 0 16px;\n}\n.panelLists .panel .panel-hd .icon-close {\n  margin-top: 10px;\n}\n.panelLists .panel .panel-bd {\n  padding: 10px 0 10px 16px;\n  line-height: 1.5;\n  color: #61c0e2;\n}\n.s-major .col2 .selectWrap {\n  width: 312px;\n}\n.s-major .col2 .city label {\n  position: relative;\n}\n.s-major .col2 .city label input {\n  background: transparent;\n  border: 0;\n  position: absolute;\n  left: -100%;\n  width: 0;\n  height: 0;\n}\n.s-major .col2 .city label em {\n  max-width: none;\n}\n.no_wishList {\n  font-size: 18px;\n  color: #999;\n  padding-left: 24px;\n}\n.breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
+	exports.push([module.id, ".clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n.hide-text {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.mr32 {\n  margin-right: 32px;\n}\n.upRow {\n  margin-bottom: 24px;\n}\n.icon-close {\n  display: inline-block;\n  vertical-align: middle;\n  width: 19px;\n  height: 19px;\n  background: url(" + __webpack_require__(207) + ");\n  position: relative;\n  z-index: 2;\n}\n.collegeName {\n  margin-right: 20px;\n}\n.actionContent {\n  margin-bottomp: 32px;\n}\n.actionContent .btn {\n  font-size: 18px;\n}\n.wux-divider {\n  height: 1px;\n  border-top: 1px solid #ddd;\n  text-align: center;\n  margin-top: 18px;\n  margin-bottom: 18px;\n  font-size: 16px;\n  line-height: 1;\n  color: #777;\n}\n.wux-divider span {\n  position: relative;\n  top: -8px;\n  background-color: #fff;\n  padding: 0 20px;\n}\n.downRow .btn {\n  border-radius: 3px;\n}\n.panelLists {\n  margin-top: 32px;\n  margin-right: -25px;\n}\n.s-major .col2 .selectWrap {\n  width: 312px;\n}\n.s-major .col2 .city label {\n  position: relative;\n}\n.s-major .col2 .city label input {\n  background: transparent;\n  border: 0;\n  position: absolute;\n  left: -100%;\n  width: 0;\n  height: 0;\n}\n.s-major .col2 .city label em {\n  max-width: none;\n}\n.no_wishList {\n  font-size: 18px;\n  color: #999;\n  padding-left: 24px;\n}\n.breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(35) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 206:
+/***/ 207:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/closeIcon.png"
 
 /***/ },
 
-/***/ 207:
+/***/ 208:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1008,7 +1008,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 208:
+/***/ 209:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1038,7 +1038,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 209:
+/***/ 210:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1053,7 +1053,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 210:
+/***/ 211:
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1068,7 +1068,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 211:
+/***/ 212:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1106,7 +1106,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 471:
+/***/ 213:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1140,7 +1140,7 @@ webpackJsonp([22],{
 
 /***/ },
 
-/***/ 473:
+/***/ 214:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
