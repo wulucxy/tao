@@ -26,6 +26,16 @@ common.switchNav(1);
 
 var provinceId = $("[name=province]").val();
 
+var __INITDATA__ = $('.subjectInput').map(function(idx, ele){
+  var $ele = $(ele);
+  return {
+    name: $ele.attr('name'),
+    code: $ele.val()
+  }
+}).get()
+
+console.log( __INITDATA__)
+
 var book = {
   init: function(){
     this.render();

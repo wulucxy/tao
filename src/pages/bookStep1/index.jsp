@@ -154,12 +154,13 @@
 
 		<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 		<%@ include file = "/partials/_sidebar.jsp" %>
+		
+		<c:forEach var="subject" items="${subjects}">
+			<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+		</c:forEach>	
 
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script>
-		window.__INITDATA__ = ${subjects}
-	</script>
 	</body>
 </html>

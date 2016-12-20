@@ -31,6 +31,16 @@ webpackJsonp([6],{
 	
 	var provinceId = $("[name=province]").val();
 	
+	var __INITDATA__ = $('.subjectInput').map(function(idx, ele){
+	  var $ele = $(ele);
+	  return {
+	    name: $ele.attr('name'),
+	    code: $ele.val()
+	  }
+	}).get()
+	
+	console.log( __INITDATA__)
+	
 	var book = {
 	  init: function(){
 	    this.render();
@@ -225,4 +235,4 @@ webpackJsonp([6],{
 /***/ }
 
 });
-//# sourceMappingURL=bookStep1.3c12bc04.js.map
+//# sourceMappingURL=bookStep1.2e3a146c.js.map

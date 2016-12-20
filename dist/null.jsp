@@ -176,5 +176,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.44849dc1.js"></script></body>
+	<script src="/static/web/js/vendors.b543b1f9.js"></script></body>
 </html>

@@ -89,8 +89,7 @@
 
 <label for="subject_1" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" 
-									required n="物理" >
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" required n="物理" >
 									<em class="vm">物理</em>
 									</label>
 
@@ -102,8 +101,7 @@
 
 									<label for="subject_3" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3"
-									 n="生物" required>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" n="生物" required>
 									<em class="vm">生物</em>
 									</label>
 
@@ -156,12 +154,13 @@
 
 		<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 		<%@ include file = "/partials/_sidebar.jsp" %>
+		
+		<c:forEach var="subject" items="${subjects}">
+			<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+		</c:forEach>	
 
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script>
-		window.__INITDATA__ = ${subjects}
-	</script>
 	</body>
 </html>
