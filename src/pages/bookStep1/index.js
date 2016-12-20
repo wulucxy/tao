@@ -37,7 +37,7 @@ function subFunc(btn,oForm){
           code: $(ele).val()
         }
       }
-    });
+    }).get()
 
   var _data = {
     score : $("[name=score]").val(),

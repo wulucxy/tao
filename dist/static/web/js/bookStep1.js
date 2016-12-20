@@ -42,7 +42,7 @@ webpackJsonp([6],{
 	          code: $(ele).val()
 	        }
 	      }
-	    });
+	    }).get()
 	
 	  var _data = {
 	    score : $("[name=score]").val(),
