@@ -19,73 +19,102 @@ var checkBox = require("../../assets/components/checkBox");
 var tmpl_detail = require("../../assets/templates/detail.ejs");
 var tmpl_questions = require("../../assets/templates/questions.ejs");
 
-checkBox.init();
+
 
 //切换顶部nav高亮
 common.switchNav(1);
 
 var provinceId = $("[name=province]").val();
 
+var book = {
+  init: function(){
+    this.render();
+    this.bindEvt();
+  },
 
-
-function subFunc(btn,oForm){
-
-  var subjects = $('[name=subject]').map(function(idx, ele){
-      if(ele.checked){
-        return {
-          name: $(ele).attr('n'),
-          code: $(ele).val()
+  render: function(){
+    $('[name=subject]').each(function(idx, ele){
+      var $ele = $(ele);
+      $(__INITDATA__).each(function(l, k){
+        if (k.code == $ele.val()){
+          $ele.prop('checked',true);
         }
-      }
-    }).get()
+      })
+    })
+  },
 
-  var _data = {
-    score : $("[name=score]").val(),
-    subjects: subjects
-  };
-  $.ajax({
-    url : preServer+provinceId+"/tzy/plan/wishes/step1",
-    type : "post",
-    contentType: "application/json",
-    data : JSON.stringify(_data),
-    success : function(res){
-      if(typeof res == "string"){
-        var res = $.parseJSON(res);
-      }
+  bindEvt: function(){
+    checkBox.init();
+    this.formValidator();
+  },
 
-      if(res.code==1){
-        window.location = "/box/plan/book_step2";
-        return false;
-      }else{
-        warn(res.msg);
-        return;
-      }
-    },
-    error : function(err){
-       console.log(err);
-    }
-  })
+  formValidator: function(){
+    var that = this;
+    // 表单校验
+    $("#assessForm_1").validator({
+      errorParent: '.row',
+        successCallback: function(e) {
+          var target = $(e.target).closest('.btn');
+          //执行到下一步操作
+          that.subFunc(target,$("#assessForm_1"));
 
-}
+        },
+        focusinCallback: function() {
+          var _ele = $(this);
+          common.hideError($('.errTxt'));
+        },
 
-// 表单校验
-$("#assessForm_1").validator({
-	errorParent: '.row',
-    successCallback: function(e) {
-      var target = $(e.target).closest('.btn');
-      //执行到下一步操作
-      subFunc(target,$("#assessForm_1"));
+        errorCallback: function(unvalidFields) {
+          var oError = $('.errTxt');
+        }
+    });
+  },
 
-    },
-    focusinCallback: function() {
-      var _ele = $(this);
-      common.hideError($('.errTxt'));
-    },
+  subFunc: function(btn,oForm) {
+      var that = this;
+      var subjects = $('[name=subject]').map(function(idx, ele){
+          if(ele.checked){
+            return {
+              name: $(ele).attr('n'),
+              code: $(ele).val()
+            }
+          }
+        }).get()
 
-    errorCallback: function(unvalidFields) {
-      var oError = $('.errTxt');
-    }
-});
+      var _data = {
+        score : $("[name=score]").val(),
+        subjects: subjects
+      };
+      $.ajax({
+        url : preServer+provinceId+"/tzy/plan/wishes/step1",
+        type : "post",
+        contentType: "application/json",
+        data : JSON.stringify(_data),
+        success : function(res){
+          if(typeof res == "string"){
+            var res = $.parseJSON(res);
+          }
+
+          if(res.code==1){
+            window.location = "/box/plan/book_step2";
+            return false;
+          }else{
+            warn(res.msg);
+            return;
+          }
+        },
+        error : function(err){
+           console.log(err);
+        }
+      })
+
+  }
+
+};
+
+
+book.init();
+
 
 $("[data-trigger]").on("click",function(e){
     e.preventDefault();
@@ -100,6 +129,4 @@ $("[data-trigger]").on("click",function(e){
             
           }
       });
-
-
 });

@@ -102,5 +102,5 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 	
 	<pre name="wishes">${wishes}</pre>
-	<script src="/static/web/js/vendors.556fdb57.js"></script><script src="/static/web/js/evaluateStep2.df7f0e6b.js"></script></body>
+	<script src="/static/web/js/vendors.44849dc1.js"></script><script src="/static/web/js/evaluateStep2.df7f0e6b.js"></script></body>
 </html>

@@ -24,63 +24,102 @@ webpackJsonp([21],{
 	var tmpl_detail = __webpack_require__(132);
 	var tmpl_questions = __webpack_require__(133);
 	
-	checkBox.init();
+	
 	
 	//切换顶部nav高亮
 	common.switchNav(1);
 	
 	var provinceId = $("[name=province]").val();
 	
-	function subFunc(btn,oForm){
-	  var _data = {
-	    courseType : $("[name=courseType]:checked").val(),
-	    batch : $("[name=batch]:checked").val(),
-	    score : $("[name=score]").val(),
-	    place : $("[name=place]").val()
-	  };
-	  $.ajax({
-	    url : preServer+provinceId+"/tzy/plan/assessment/step1",
-	    type : "post",
-	    contentType: "application/json",
-	    data : JSON.stringify(_data),
-	    success : function(res){
-	      if(typeof res == "string"){
-	        var res = $.parseJSON(res);
-	      }
+	var book = {
+	  init: function(){
+	    this.render();
+	    this.bindEvt();
+	  },
 	
-	      if(res.code==1){
-	        window.location = "/box/plan/evaluate_step2";
-	        return false;
-	      }else{
-	        warn(res.msg);
-	        return;
-	      }
-	    },
-	    error : function(err){
-	       console.log(err);
-	    }
-	  });
+	  render: function(){
+	    $('[name=subject]').each(function(idx, ele){
+	      var $ele = $(ele);
+	      $(__INITDATA__).each(function(l, k){
+	        if (k.code == $ele.val()){
+	          $ele.prop('checked',true);
+	        }
+	      })
+	    })
+	  },
 	
-	}
+	  bindEvt: function(){
+	    checkBox.init();
+	    this.formValidator();
+	  },
 	
-	// 表单校验
-	$("#assessForm_1").validator({
-		  errorParent: '.row',
-	    successCallback: function(e) {
-	      var target = $(e.target).closest('.btn');
-	      //执行到下一步操作
-	      subFunc(target,$("#assessForm_1"));
+	  formValidator: function(){
+	    var that = this;
+	    // 表单校验
+	    $("#assessForm_1").validator({
+	      errorParent: '.row',
+	        successCallback: function(e) {
+	          var target = $(e.target).closest('.btn');
+	          //执行到下一步操作
+	          that.subFunc(target,$("#assessForm_1"));
 	
-	    },
-	    focusinCallback: function() {
-	      var _ele = $(this);
-	      common.hideError($('.errTxt'));
-	    },
+	        },
+	        focusinCallback: function() {
+	          var _ele = $(this);
+	          common.hideError($('.errTxt'));
+	        },
 	
-	    errorCallback: function(unvalidFields) {
-	      var oError = $('.errTxt');
-	    }
-	});
+	        errorCallback: function(unvalidFields) {
+	          var oError = $('.errTxt');
+	        }
+	    });
+	  },
+	
+	  subFunc: function(btn,oForm) {
+	      var that = this;
+	      var subjects = $('[name=subject]').map(function(idx, ele){
+	          if(ele.checked){
+	            return {
+	              name: $(ele).attr('n'),
+	              code: $(ele).val()
+	            }
+	          }
+	        }).get()
+	
+	      var _data = {
+	        score : $("[name=score]").val(),
+	        subjects: subjects
+	      };
+	      $.ajax({
+	        url : preServer+provinceId+"/tzy/plan/wishes/step1",
+	        type : "post",
+	        contentType: "application/json",
+	        data : JSON.stringify(_data),
+	        success : function(res){
+	          if(typeof res == "string"){
+	            var res = $.parseJSON(res);
+	          }
+	
+	          if(res.code==1){
+	            window.location = "/box/plan/book_step2";
+	            return false;
+	          }else{
+	            warn(res.msg);
+	            return;
+	          }
+	        },
+	        error : function(err){
+	           console.log(err);
+	        }
+	      })
+	
+	  }
+	
+	};
+	
+	
+	book.init();
+	
 	
 	$("[data-trigger]").on("click",function(e){
 	    e.preventDefault();
@@ -95,8 +134,6 @@ webpackJsonp([21],{
 	            
 	          }
 	      });
-	
-	
 	});
 
 /***/ },
@@ -188,4 +225,4 @@ webpackJsonp([21],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep1.726bfe49.js.map
+//# sourceMappingURL=evaluateStep1.fd67847d.js.map

@@ -152,5 +152,5 @@
 
 	<pre name="wishesString">${wishesString}</pre>
 
-	<script src="/static/web/js/vendors.556fdb57.js"></script><script src="/static/web/js/evaluateStep3.2c78fd29.js"></script></body>
+	<script src="/static/web/js/vendors.44849dc1.js"></script><script src="/static/web/js/evaluateStep3.2c78fd29.js"></script></body>
 </html>
