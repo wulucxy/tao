@@ -12,9 +12,6 @@
 	</head>
 <body>
 	
-	<c:set var="subjectsAll" value='${[{"name":"物理","code":"1"},{"name":"化学","code":"2"},{"name":"生物","code":"3"},
-	{"name":"技术","code":"4"},{"name":"政治","code":"5"},{"name":"历史","code":"6"},
-	{"name":"地理","code":"7"}]}'/>
 
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -92,7 +89,8 @@
 
 <label for="subject_1" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required n="物理" >
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" 
+									required n="物理" >
 									<em class="vm">物理</em>
 									</label>
 
@@ -104,7 +102,8 @@
 
 									<label for="subject_3" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" checked n="生物" required>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3"
+									 n="生物" required>
 									<em class="vm">生物</em>
 									</label>
 
@@ -116,7 +115,7 @@
 
 									<label for="subject_5" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治" checked required>
+									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治"  required>
 									<em class="vm">政治</em>
 									</label>
 

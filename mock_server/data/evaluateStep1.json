@@ -15,5 +15,7 @@
     "courseType" : 0,
     "batch" : 3,
     "score" : 3333,
-    "place" : 123
+    "place" : 123,
+    "subjects":[{"name":"物理","code":"1"},{"name":"化学","code":"2"},{"name":"生物","code":"3"}]
+
 }
