@@ -67,6 +67,7 @@ module.exports = {
 	'post::/v2_1/client/auth/requestCode' : 'mock::api/profile/favor/major/addi/code.json',
 	'post::/v2_1/client/auth/signup' : 'mock::api/signup.json',
 	'get::/v2_1/client/1/data/major/all'  : 'mock::api/majorList.json',
+	'get::/v2_1/client/1/data/major/categoryList'  : 'mock::api/categoryList.json',
 	'post::/v2_1/client/1/data/major' :  'mock::api/majors.json',
 	'post::/v2_1/client/1/news/down':  'mock::api/down.json',
 	'post::/v2_1/client/1/news/up':  'mock::api/up.json',

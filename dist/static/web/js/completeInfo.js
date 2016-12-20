@@ -4,19 +4,19 @@ webpackJsonp([16],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(18);
-	__webpack_require__(177);
-	var $ = window.$ || __webpack_require__(40);
+	__webpack_require__(19);
+	__webpack_require__(178);
+	var $ = window.$ || __webpack_require__(41);
 	
 	//工具类方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
 	/* 具体实现 */
 	//历史模块
-	var archive = __webpack_require__(179);
+	var archive = __webpack_require__(180);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -30,16 +30,16 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 177:
+/***/ 178:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(178);
+	var content = __webpack_require__(179);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -57,10 +57,10 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 178:
+/***/ 179:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
@@ -72,22 +72,22 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 179:
+/***/ 180:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	__webpack_require__(58);
+	var $ = window.$ || __webpack_require__(41);
+	__webpack_require__(59);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
-	var searchSchool = __webpack_require__(180);
+	var searchSchool = __webpack_require__(181);
 	
-	var browser = __webpack_require__(49);
+	var browser = __webpack_require__(50);
 	
-	var uploader = __webpack_require__(187);
+	var uploader = __webpack_require__(188);
 	
-	var uploaderFix = __webpack_require__(189);
+	var uploaderFix = __webpack_require__(190);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -241,14 +241,14 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 187:
+/***/ 188:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend = __webpack_require__(188);
+	var $ = window.$ || __webpack_require__(41);
+	var extend = __webpack_require__(189);
 	
 	var provinceId = $("[name=province]").val();
-	var browser = __webpack_require__(49);
+	var browser = __webpack_require__(50);
 	
 	var uploader = {
 		init : function(settings){
@@ -379,7 +379,7 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 188:
+/***/ 189:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -472,11 +472,11 @@ webpackJsonp([16],{
 
 /***/ },
 
-/***/ 189:
+/***/ 190:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend = __webpack_require__(188);
+	var $ = window.$ || __webpack_require__(41);
+	var extend = __webpack_require__(189);
 	
 	var provinceId = $("[name=province]").val();
 	

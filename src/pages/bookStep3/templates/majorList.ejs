@@ -1,39 +1,41 @@
-<% if (batch == 1 || batch == 2 ) { %>
+<% if (undergraduateList.length > 0) { %>
 <div class="row">
 	<p class="g6 mb12">本科大类：</p>
 
-	<% for (var i = 0; i < subs[0].subs.length; i++) { %>
+	<% for (var i = 0; i <undergraduateList.length; i++) { %>
 		<% var checkedStatus;
-		 if(subs[0].subs[i].status == 1) {
+		 if(undergraduateList[i].status == 1) {
 			checkedStatus = "checked";
 		 }else{
 			checkedStatus = "";
 		 } %>
-	<label class="label_check" for="majorType<%= subs[0].id %>_<%= subs[0].subs[i].id %>">
-		<em class="icon-eye" data-supType=<%= subs[0].id %> data-majorId=<%= subs[0].subs[i].id %> data-name="<%= subs[0].subs[i].name %>" ></em>
-		<input type="checkbox" class="input form-control" id="majorType<%= subs[0].id %>_<%= subs[0].subs[i].id %>" name="majorType" <%= checkedStatus %> required>
-		<em class="vm"><%= subs[0].subs[i].name %></em>
+	<label class="label_check" for="majorType<%= undergraduateList[i].categoryId %>" >
+		<em class="icon-eye"></em>
+		<input type="checkbox" class="input form-control" id="majorType<%= undergraduateList[i].categoryId %>" name="majorType" <%= checkedStatus %> required>
+		<em class="vm"><%= undergraduateList[i].categoryName %></em>
 		<em class="icon-yes">
 			<i></i>
 		</em>
 	</label>
 	<% } %>
 </div>
-<% }else if(batch == 3){ %>
+<% } %>
+
+<% if( juniorList.length > 0){ %>
 <div class="row">
 	<p class="g6 mb12">专科大类：</p>
 
-	<% for (var m = 0; m < subs[1].subs.length; m++) { %>
+	<% for (var i = 0; i < juniorList.length; i++) { %>
 		<% var checkedStatus; 
-		 if(subs[1].subs[m].status == 1) { 
+		 if(juniorList[i].status == 1) { 
 			checkedStatus = "checked"; 
 		 }else{ 
 			checkedStatus = ""; 
 		 } %>
-	<label class="label_check" for="majorType<%= subs[1].id %>_<%= subs[1].subs[m].id %>">
-		<em class="icon-eye" data-supType=<%= subs[1].id %> data-majorId=<%= subs[1].subs[m].id %> data-name="<%= subs[1].subs[m].name %>" ></em>
-		<input type="checkbox" class="input form-control" id="majorType<%= subs[1].id %>_<%= subs[1].subs[m].id %>" name="majorType" <%= checkedStatus %> required>
-		<em class="vm"><%= subs[1].subs[m].name %></em>
+	<label class="label_check" for="majorType<%= juniorList[i].categoryId %>" >
+		<em class="icon-eye"></em>
+		<input type="checkbox" class="input form-control" id="majorType<%= juniorList[i].categoryId %>" name="majorType" <%= checkedStatus %> required>
+		<em class="vm"><%= juniorList[i].categoryName %></em>
 		<em class="icon-yes">
 			<i></i>
 		</em>

@@ -4,32 +4,32 @@ webpackJsonp([23],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(18);
-	__webpack_require__(215);
-	var $ = window.$ || __webpack_require__(40);
+	__webpack_require__(19);
+	__webpack_require__(216);
+	var $ = window.$ || __webpack_require__(41);
 	
 	//工具类方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
 	/* 具体实现 */
 	
 	// 表单验证组件
-	__webpack_require__(58);
+	__webpack_require__(59);
 	
-	var extend =  __webpack_require__(45);
-	
-	//弹窗模板
-	var tmpl_detail = __webpack_require__(131);
-	var tmpl_questions = __webpack_require__(132);
+	var extend =  __webpack_require__(46);
 	
 	//弹窗模板
-	var tmpl_school = __webpack_require__(217);
-	var tmpl_list = __webpack_require__(218);
-	var tmpl_major = __webpack_require__(219);
-	var majors = __webpack_require__(220);
+	var tmpl_detail = __webpack_require__(132);
+	var tmpl_questions = __webpack_require__(133);
+	
+	//弹窗模板
+	var tmpl_school = __webpack_require__(218);
+	var tmpl_list = __webpack_require__(219);
+	var tmpl_major = __webpack_require__(220);
+	var majors = __webpack_require__(221);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -42,9 +42,9 @@ webpackJsonp([23],{
 	var  isChange = $("[name=isChange]").val();
 	
 	//分页
-	var pagination = __webpack_require__(186);
+	var pagination = __webpack_require__(187);
 	//自定义滚动
-	var scroll = __webpack_require__(135);
+	var scroll = __webpack_require__(136);
 	
 	//兼容every实现
 	if (typeof Array.prototype.every != "function") {
@@ -839,16 +839,16 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 135:
+/***/ 136:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(136);
+	__webpack_require__(137);
 	
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
 	//mousewheel
-	__webpack_require__(138);
+	__webpack_require__(139);
 	
 	function scroll(target,options){
 	
@@ -1033,16 +1033,16 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 136:
+/***/ 137:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(137);
+	var content = __webpack_require__(138);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1060,10 +1060,10 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 137:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
@@ -1075,10 +1075,10 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 138:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
+	var $ = window.$ || __webpack_require__(41);
 	
 	var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
 	    toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -1284,16 +1284,16 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 215:
+/***/ 216:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(216);
+	var content = __webpack_require__(217);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1311,22 +1311,22 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 216:
+/***/ 217:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(35) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
+	exports.push([module.id, ".breadcrumb li {\n  width: 33.3%;\n}\n/* react默认样式覆盖 */\n.title a {\n  color: inherit;\n}\n.title a:hover {\n  color: inherit;\n}\n.p_assess {\n  margin-top: 24px;\n}\n.icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(36) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 28px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .row .col2 {\n  margin-left: 160px;\n  width: 374px;\n}\n.formWrap .row .control-label {\n  font-size: 15px;\n  color: #444;\n}\n.formWrap .row .control-label em {\n  margin-left: 10px;\n}\n.modalBox .modalCntWrap .footerCnt {\n  margin-top: 0;\n}\n.m-select .bg {\n  margin-bottom: 20px;\n}\n.tagList {\n  position: relative;\n  margin-bottom: 30px;\n  width: 90px;\n  line-height: 32px;\n  background-color: #ededed;\n  color: #333;\n  text-align: center;\n  margin-right: 30px;\n  border: 1px solid #ccc;\n  float: left;\n}\n.tagList .icon-close {\n  position: absolute;\n  right: -10px;\n  top: -10px;\n  color: #fff;\n  text-align: center;\n  line-height: 20px;\n  cursor: pointer;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background-color: #e71218;\n  z-index: 1;\n}\n.addMajor {\n  font-size: 16px;\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n.m-select .tagsWrap {\n  margin-top: 24px;\n}\n.s-Content {\n  padding: 12px 14px;\n}\n.s-Content .btn-search {\n  background-color: #1d718f;\n  border: none;\n  padding-left: 10px;\n  padding-right: 10px;\n  width: 41px;\n}\n.s-Content .inputWrap {\n  margin-right: 41px;\n}\n.s-Content .inputWrap .form-control {\n  border-radius: 0;\n}\n.s-Content .schoolLists {\n  margin-top: 8px;\n}\n.s-Content .schoolList {\n  line-height: 30px;\n  position: relative;\n  font-size: 14px;\n  padding-left: 10px;\n  color: #444;\n  -webkit-transition: background-color 0.4s, color 0.4s;\n          transition: background-color 0.4s, color 0.4s;\n  cursor: pointer;\n}\n.s-Content .schoolList .icon-check {\n  visibility: hidden;\n  margin-right: 4px;\n  vertical-align: middle;\n}\n.s-Content .schoolList.active,\n.s-Content .schoolList:hover {\n  color: #fff;\n  background-color: #61c0e2;\n}\n.s-Content .schoolList.active .icon-check,\n.s-Content .schoolList:hover .icon-check {\n  visibility: visible;\n}\n.s-Content .no_transList {\n  color: #333;\n  margin-top: 20px;\n}\n.ie8 .s-Content .schoolLists {\n  height: 310px;\n}\n.s-major {\n  padding: 14px 12px;\n}\n.s-major .col1 {\n  margin-right: 8px;\n}\n.s-major .col2 {\n  margin-right: 14px;\n}\n.s-major h4 {\n  color: #333;\n  font-size: 15px;\n  font-weight: normal;\n  margin-bottom: 10px;\n}\n.s-major .selectWrap {\n  width: 160px;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  height: 300px;\n  padding: 5px 0;\n  background-color: #fff;\n}\n.s-major .selectWrap li {\n  color: #333;\n  line-height: 24px;\n  font-size: 14px;\n  padding-left: 10px;\n  height: 24px;\n}\n.s-major .selectWrap li:hover {\n  background-color: #ededed;\n}\n.s-major .prov li.current {\n  background-color: #ededed;\n}\n.s-major .scrollBeautifyBar {\n  background-color: #c1c1c1;\n  width: 8px;\n  border-radius: 4px;\n}\n.s-major .city.disabled {\n  background-color: #fff;\n}\n.s-major .city label {\n  cursor: pointer;\n  display: block;\n}\n.s-major .city label em,\n.s-major .city label input {\n  vertical-align: middle;\n}\n.s-major .city label em {\n  display: inline-block;\n  margin-left: 4px;\n  max-width: 120px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.s-major .tagList {\n  float: none;\n  margin-bottom: 16px;\n  margin-right: 0;\n  min-width: 90px;\n  max-width: 140px;\n  width: auto;\n  background-color: #f3f3f3;\n  line-height: 20px;\n  padding: 8px 0 8px 8px;\n  text-align: left;\n}\n.m-select .inputWrap {\n  display: inline-block;\n  width: 248px;\n  margin-right: 10px;\n}\n.m-select .inputWrap .clear {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  background-color: #aaa;\n  cursor: pointer;\n  top: 7px;\n  right: 13px;\n  color: #fff;\n  display: none;\n}\n.m-select .inputWrap .clear:hover {\n  background-color: #999;\n}\n.m-select .row.active .clear {\n  display: block;\n}\n.m-select .form-control {\n  width: 100%;\n}\npre {\n  display: none;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 217:
+/***/ 218:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1341,7 +1341,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 218:
+/***/ 219:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1371,7 +1371,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 219:
+/***/ 220:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1386,7 +1386,7 @@ webpackJsonp([23],{
 
 /***/ },
 
-/***/ 220:
+/***/ 221:
 /***/ function(module, exports) {
 
 	module.exports = [

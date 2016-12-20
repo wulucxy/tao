@@ -4,43 +4,43 @@ webpackJsonp([50],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(18);
-	__webpack_require__(449);
-	var $ = window.$ || __webpack_require__(40);
+	__webpack_require__(19);
+	__webpack_require__(450);
+	var $ = window.$ || __webpack_require__(41);
 	
 	//工具类方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(127);
+	var tabs = __webpack_require__(128);
 	//加载更多模块
-	var loadMore = __webpack_require__(250);
+	var loadMore = __webpack_require__(251);
 	
 	
 	//历史模块
-	var archive = __webpack_require__(179);
+	var archive = __webpack_require__(180);
 	
 	//历史模块
-	var history = __webpack_require__(457);
+	var history = __webpack_require__(458);
 	
 	//收藏模块
-	var collection = __webpack_require__(459);
+	var collection = __webpack_require__(460);
 	
 	//历史测试模块
-	var test = __webpack_require__(463);
+	var test = __webpack_require__(464);
 	
 	//qa模块
-	var qa = __webpack_require__(465);
+	var qa = __webpack_require__(466);
 	
 	//qa模块
-	var appointment = __webpack_require__(467);
+	var appointment = __webpack_require__(468);
 	
 	//优惠券模块
-	var coupon = __webpack_require__(472);
+	var coupon = __webpack_require__(473);
 	
 	//图片上传模块
 	//var uploader = require("./js/uploader");
@@ -118,13 +118,13 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 105:
+/***/ 106:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	__webpack_require__(106);
+	__webpack_require__(107);
 	
 		function Plugin(t,o){
 			this.target=t;
@@ -227,16 +227,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 106:
+/***/ 107:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(107);
+	var content = __webpack_require__(108);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -254,10 +254,10 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 107:
+/***/ 108:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
@@ -269,22 +269,22 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 179:
+/***/ 180:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	__webpack_require__(58);
+	var $ = window.$ || __webpack_require__(41);
+	__webpack_require__(59);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
-	var searchSchool = __webpack_require__(180);
+	var searchSchool = __webpack_require__(181);
 	
-	var browser = __webpack_require__(49);
+	var browser = __webpack_require__(50);
 	
-	var uploader = __webpack_require__(187);
+	var uploader = __webpack_require__(188);
 	
-	var uploaderFix = __webpack_require__(189);
+	var uploaderFix = __webpack_require__(190);
 	
 	//provinceId
 	var provinceId = $("[name=province]").val();
@@ -438,14 +438,14 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 187:
+/***/ 188:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend = __webpack_require__(188);
+	var $ = window.$ || __webpack_require__(41);
+	var extend = __webpack_require__(189);
 	
 	var provinceId = $("[name=province]").val();
-	var browser = __webpack_require__(49);
+	var browser = __webpack_require__(50);
 	
 	var uploader = {
 		init : function(settings){
@@ -576,7 +576,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 188:
+/***/ 189:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -669,11 +669,11 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 189:
+/***/ 190:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend = __webpack_require__(188);
+	var $ = window.$ || __webpack_require__(41);
+	var extend = __webpack_require__(189);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -766,7 +766,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 196:
+/***/ 197:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -794,12 +794,12 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 197:
+/***/ 198:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
-	var ping = __webpack_require__(198);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
+	var ping = __webpack_require__(199);
 	
 	var pay = {
 		subPay : function(btn, o){
@@ -892,16 +892,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 449:
+/***/ 450:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(450);
+	var content = __webpack_require__(451);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -919,73 +919,73 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 450:
+/***/ 451:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".g7 {\n  color: #c7c7c7;\n}\n.appointments .purple {\n  color: #7ca6f2;\n}\n.appointments .gray {\n  color: #818a8d;\n}\n.appointments .green {\n  color: #63bd60;\n}\n.appointments .darkgreen {\n  color: #65c0e0;\n}\n.appointments .red {\n  color: #eb0748;\n}\n.appointments .orange {\n  color: #f8481f;\n}\n.appointments .statusRow {\n  font-size: 22px;\n}\n.appointments .detailInfo.payRow {\n  margin-top: 16px;\n}\n.appointments h3 {\n  font-weight: normal;\n  font-size: 24px;\n  color: #333;\n}\n.appointments h3 .name {\n  display: inline-block;\n  margin-right: 24px;\n}\n.appointments .well-bd {\n  line-height: 1.6;\n  margin-top: 10px;\n}\n.appointments .well-ft {\n  margin-top: 64px;\n}\n.appointments .price {\n  color: #f8481f;\n  font-size: 22px;\n}\n.orange {\n  color: #f4b64f;\n}\nul li {\n  list-style-type: none;\n}\n.f56 {\n  font-size: 56px;\n}\n.mainContainer {\n  margin-bottom: 36px;\n}\n.m-sideNav {\n  background-color: #ddd;\n  padding-top: 20px;\n}\n.avatarWrap .imgWrap {\n  display: inline-block;\n  width: 148px;\n  height: 148px;\n}\n.avatarWrap .imgWrap img {\n  width: 100%;\n  height: 100%;\n}\n.userInfoList {\n  margin-top: 20px;\n  font-size: 16px;\n  overflow: hidden;\n}\n.userInfoList a {\n  color: #fff;\n  display: block;\n}\n.blue {\n  color: #59afec;\n}\n.userInfoList li {\n  text-align: center;\n  line-height: 40px;\n  border-bottom: 1px solid #fff;\n  background-color: #606060;\n}\n.userInfoList li:hover,\n.userInfoList li.current {\n  background-color: #59afec;\n}\n.userInfoList li.last {\n  border-bottom: none;\n}\n.kefu {\n  margin-top: 180px;\n  font-size: 14px;\n  color: #333;\n  line-height: 2;\n  padding: 0 0 16px 16px;\n}\n.contentWrap .topWell {\n  color: #59afec;\n  font-size: 15px;\n  background-color: #fff;\n  padding-left: 16px;\n  line-height: 36px;\n  margin-bottom: 10px;\n}\n.contentWrap .topWell .square {\n  width: 10px;\n  height: 10px;\n  display: inline-block;\n  background-color: #59afec;\n  margin-right: 8px;\n}\n.contentInner .content {\n  background-color: #fff;\n  border: 1px solid #e5e5e5;\n  padding: 30px 24px;\n}\n.row label + .col2 {\n  width: 374px;\n}\n.contentInner {\n  display: none;\n}\n.myInfo {\n  display: block;\n}\n.wellWrapper .well {\n  background-color: #f9f9f9;\n  border: 1px solid #dadada;\n  padding: 15px;\n  font-size: 14px;\n  color: #333;\n  line-height: 20px;\n  margin-bottom: 30px;\n}\n#historyWrapper .well .media {\n  margin-top: 8px;\n  min-width: 480px;\n}\n#historyWrapper .well .media .well_body {\n  min-width: 280px;\n}\n.well .media .fl {\n  margin-right: 16px;\n}\n.well .media .fl .btn {\n  width: 108px;\n  padding: 9px 0;\n}\n.well .media-body .field {\n  display: inline-block;\n  margin-right: 30px;\n}\n.detailInfo .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n  margin-top: 7px;\n}\n.detailInfo .detailTxt {\n  color: #59afec;\n  margin-top: 4px;\n  display: block;\n  text-align: center;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badge {\n  font-size: 12px;\n  line-height: 18px;\n  border-radius: 10px;\n  text-align: center;\n  width: 36px;\n  color: #fff;\n  margin-left: 5px;\n}\n.badge.red {\n  background-color: #eb0748;\n}\n.badge.green {\n  background-color: #5aa403;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.myInfo .errInfo {\n  padding-left: 90px;\n}\n.schoolList li {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 20px;\n  color: #f4b64f;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.majorList li {\n  margin-bottom: 20px;\n}\n.majorList .bs {\n  font-size: 16px;\n  color: #333;\n  line-height: 36px;\n  padding-left: 10px;\n}\n.bg-gf {\n  background-color: #f1f1f1;\n}\n.majorList .btnsRow .btn {\n  min-width: 110px;\n  font-size: 14px;\n  border-radius: 0;\n  margin-right: 20px;\n  margin-bottom: 10px;\n}\n.infoList li {\n  margin-bottom: 20px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.detailCnt:hover {\n  color: #666;\n}\n.infoList .media > .fl {\n  margin-right: 14px;\n}\n.infoList .detailTitle {\n  font-size: 18px;\n  color: #333;\n  margin-bottom: 12px;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 24px;\n}\n.q-school {\n  margin-bottom: 24px;\n}\n.q-school h3 {\n  font-size: 16px;\n  margin-bottom: 16px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #59afec;\n  margin-right: 10px;\n}\n.btn-mid {\n  vertical-align: middle;\n  width: 108px;\n  padding-top: 9px;\n  padding-bottom: 9px;\n}\n.coupon .btn {\n  border-radius: 0;\n  margin-right: 16px;\n}\n.coupon .detailInfo {\n  color: #999;\n  font-size: 14px;\n  float: right;\n  text-align: right;\n  vertical-align: middle;\n  height: 40px;\n}\n.coupon .well .media {\n  margin-top: 0;\n}\n.coupon .well.disabled {\n  color: #999;\n}\n.coupon-type {\n  font-size: 20px;\n}\n.vm-wrapper {\n  width: 99%;\n  vertical-align: middle;\n}\n.avatarWrap .thumbnail {\n  width: 84px;\n  height: 84px;\n  border: 1px solid #dadada;\n  cursor: pointer;\n}\n.avatarWrap .thumbnail .info {\n  position: absolute;\n  height: 24px;\n  bottom: 0px;\n  left: 0;\n  right: 0;\n  color: #fff;\n  text-align: center;\n  background: #999;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.avatarWrap .thumbnail img.responsive {\n  width: 100%;\n  height: 100%;\n}\n.contentInner .no_transList {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.favorInfoList li {\n  border-bottom: 1px solid #e6e4e4;\n  padding-bottom: 14px;\n  padding-top: 14px;\n}\n.favorInfoList li .imgWrap {\n  display: inline-block;\n  width: 130px;\n  height: 130px;\n  margin-right: 10px;\n}\n.favorInfoList .detailTitle {\n  color: #333;\n  margin-bottom: 8px;\n  font-size: 18px;\n  display: inline-block;\n  overflow: hidden;\n  height: auto;\n  max-height: 50px;\n}\n.payModal .modalSubCnt {\n  padding-top: 40px;\n  font-size: 14px;\n  color: #333;\n}\n.payModal .modalSubCnt .row {\n  margin-bottom: 18px;\n}\n.payModal .modalSubCnt .payIcon {\n  margin-left: 10px;\n}\n#sSchoolForm .schoolLists {\n  height: 310px\\9;\n}\n.avatarRow {\n  margin-bottom: 20px;\n}\n.pickerTxt {\n  display: none;\n}\n.webuploader-container {\n  position: relative;\n}\n.webuploader-element-invisible {\n  position: absolute !important;\n  clip: rect(1px 1px 1px 1px);\n  /* IE6, IE7 */\n  clip: rect(1px, 1px, 1px, 1px);\n}\n.webuploader-pick {\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  background: #999;\n  padding: 0 4px;\n  line-height: 24px;\n  color: #fff;\n  text-align: center;\n  border-radius: 3px;\n  overflow: hidden;\n  height: 24px;\n  width: 100%;\n}\n.webuploader-pick-hover {\n  background: #666;\n}\n.webuploader-pick-disable {\n  opacity: 0.6;\n  pointer-events: none;\n}\n.coupon .well {\n  background: none;\n  border: none;\n  width: 680px;\n}\n.coupon .well .col1 {\n  width: auto;\n  margin-right: 160px;\n  position: relative;\n  padding-left: 10px;\n  background-color: #dce7f0;\n}\n.coupon .well .col1:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  left: -10px;\n  background: url(" + __webpack_require__(451) + ") left top no-repeat;\n}\n.coupon .well .col2 {\n  float: right;\n  position: relative;\n  width: 160px;\n  text-align: center;\n  height: 242px;\n  background-color: #8ec5ec;\n}\n.coupon .well .col2:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  right: -10px;\n  background: url(" + __webpack_require__(452) + ") right top no-repeat;\n}\n.coupon .well .col2 .coupon_text {\n  padding-top: 44px;\n  color: #fff;\n  margin: 0 auto;\n  line-height: 1.5;\n  font-size: 36px;\n  width: 1em;\n}\n.coupon .well.disabled .col2 {\n  background: #bdbdbd;\n}\n.coupon .well.disabled .col2 .coupon_text {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col2:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  right: -10px;\n  background: url(" + __webpack_require__(453) + ") right top no-repeat;\n}\n.coupon .well.disabled .col1 {\n  background: #ebebeb;\n}\n.coupon .well.disabled .col1 .coupon_title_primary {\n  color: #d6d6d6;\n}\n.coupon .well.disabled .col1 .coupon_title_second {\n  color: #bdbdbd;\n}\n.coupon .well.disabled .col1 .coupon_count {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col1 .coupon_count .coupon-deno {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col1:after {\n  background: url(" + __webpack_require__(454) + ") left top no-repeat;\n}\n.coupon .well.disabled .coupon_inner:before {\n  content: \"\";\n  position: absolute;\n  width: 112px;\n  height: 112px;\n  right: 20px;\n  top: 4px;\n  background: url(" + __webpack_require__(455) + ") left top no-repeat;\n}\n.coupon .well.disabled.outdated .coupon_inner:before {\n  background: url(" + __webpack_require__(456) + ") left top no-repeat;\n}\n.coupon .coupon_title_primary {\n  color: #59afec;\n  font-weight: normal;\n}\n.coupon .coupon_title_second {\n  float: right;\n  color: #333;\n  font-size: 18px;\n  font-weight: normal;\n}\n.coupon .coupon_count {\n  font-size: 24px;\n  color: #59afec;\n  margin: 36px 0 44px;\n}\n.coupon .coupon_inner {\n  padding: 20px 25px 0;\n  height: 242px;\n  position: relative;\n}\n.coupon .coupon_desc {\n  font-size: 14px;\n  color: #999;\n  max-width: 332px;\n  line-height: 1.5;\n  position: absolute;\n  bottom: 20px;\n  left: 25px;\n}\n.coupon .coupon-deno {\n  font-size: 56px;\n  color: #3193d9;\n  display: inline-block;\n  line-height: 1;\n}\n", ""]);
+	exports.push([module.id, ".g7 {\n  color: #c7c7c7;\n}\n.appointments .purple {\n  color: #7ca6f2;\n}\n.appointments .gray {\n  color: #818a8d;\n}\n.appointments .green {\n  color: #63bd60;\n}\n.appointments .darkgreen {\n  color: #65c0e0;\n}\n.appointments .red {\n  color: #eb0748;\n}\n.appointments .orange {\n  color: #f8481f;\n}\n.appointments .statusRow {\n  font-size: 22px;\n}\n.appointments .detailInfo.payRow {\n  margin-top: 16px;\n}\n.appointments h3 {\n  font-weight: normal;\n  font-size: 24px;\n  color: #333;\n}\n.appointments h3 .name {\n  display: inline-block;\n  margin-right: 24px;\n}\n.appointments .well-bd {\n  line-height: 1.6;\n  margin-top: 10px;\n}\n.appointments .well-ft {\n  margin-top: 64px;\n}\n.appointments .price {\n  color: #f8481f;\n  font-size: 22px;\n}\n.orange {\n  color: #f4b64f;\n}\nul li {\n  list-style-type: none;\n}\n.f56 {\n  font-size: 56px;\n}\n.mainContainer {\n  margin-bottom: 36px;\n}\n.m-sideNav {\n  background-color: #ddd;\n  padding-top: 20px;\n}\n.avatarWrap .imgWrap {\n  display: inline-block;\n  width: 148px;\n  height: 148px;\n}\n.avatarWrap .imgWrap img {\n  width: 100%;\n  height: 100%;\n}\n.userInfoList {\n  margin-top: 20px;\n  font-size: 16px;\n  overflow: hidden;\n}\n.userInfoList a {\n  color: #fff;\n  display: block;\n}\n.blue {\n  color: #59afec;\n}\n.userInfoList li {\n  text-align: center;\n  line-height: 40px;\n  border-bottom: 1px solid #fff;\n  background-color: #606060;\n}\n.userInfoList li:hover,\n.userInfoList li.current {\n  background-color: #59afec;\n}\n.userInfoList li.last {\n  border-bottom: none;\n}\n.kefu {\n  margin-top: 180px;\n  font-size: 14px;\n  color: #333;\n  line-height: 2;\n  padding: 0 0 16px 16px;\n}\n.contentWrap .topWell {\n  color: #59afec;\n  font-size: 15px;\n  background-color: #fff;\n  padding-left: 16px;\n  line-height: 36px;\n  margin-bottom: 10px;\n}\n.contentWrap .topWell .square {\n  width: 10px;\n  height: 10px;\n  display: inline-block;\n  background-color: #59afec;\n  margin-right: 8px;\n}\n.contentInner .content {\n  background-color: #fff;\n  border: 1px solid #e5e5e5;\n  padding: 30px 24px;\n}\n.row label + .col2 {\n  width: 374px;\n}\n.contentInner {\n  display: none;\n}\n.myInfo {\n  display: block;\n}\n.wellWrapper .well {\n  background-color: #f9f9f9;\n  border: 1px solid #dadada;\n  padding: 15px;\n  font-size: 14px;\n  color: #333;\n  line-height: 20px;\n  margin-bottom: 30px;\n}\n#historyWrapper .well .media {\n  margin-top: 8px;\n  min-width: 480px;\n}\n#historyWrapper .well .media .well_body {\n  min-width: 280px;\n}\n.well .media .fl {\n  margin-right: 16px;\n}\n.well .media .fl .btn {\n  width: 108px;\n  padding: 9px 0;\n}\n.well .media-body .field {\n  display: inline-block;\n  margin-right: 30px;\n}\n.detailInfo .btn {\n  padding-top: 5px;\n  padding-bottom: 5px;\n  margin-top: 7px;\n}\n.detailInfo .detailTxt {\n  color: #59afec;\n  margin-top: 4px;\n  display: block;\n  text-align: center;\n}\n.badgeRow {\n  margin-bottom: 10px;\n}\n.badgeRow .badge {\n  font-size: 12px;\n  line-height: 18px;\n  border-radius: 10px;\n  text-align: center;\n  width: 36px;\n  color: #fff;\n  margin-left: 5px;\n}\n.badge.red {\n  background-color: #eb0748;\n}\n.badge.green {\n  background-color: #5aa403;\n}\n.badgeRow .badgetitle {\n  display: inline-block;\n  color: #333;\n  font-size: 18px;\n  margin-right: 8px;\n}\n.myInfo .errInfo {\n  padding-left: 90px;\n}\n.schoolList li {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.schoolList .detail {\n  font-size: 14px;\n  color: #555;\n  line-height: 1.5;\n}\n.schoolList .detail .field {\n  display: inline-block;\n  margin-right: 20px;\n  color: #f4b64f;\n}\n.schoolList .btn {\n  margin-top: 6px;\n}\n.majorList li {\n  margin-bottom: 20px;\n}\n.majorList .bs {\n  font-size: 16px;\n  color: #333;\n  line-height: 36px;\n  padding-left: 10px;\n}\n.bg-gf {\n  background-color: #f1f1f1;\n}\n.majorList .btnsRow .btn {\n  min-width: 110px;\n  font-size: 14px;\n  border-radius: 0;\n  margin-right: 20px;\n  margin-bottom: 10px;\n}\n.infoList li {\n  margin-bottom: 20px;\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n}\n.detailCnt {\n  font-size: 14px;\n  color: #999;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.detailCnt:hover {\n  color: #666;\n}\n.infoList .media > .fl {\n  margin-right: 14px;\n}\n.infoList .detailTitle {\n  font-size: 18px;\n  color: #333;\n  margin-bottom: 12px;\n}\n.infoList .btn-negative {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.infoList .detailCnt {\n  margin-top: 24px;\n}\n.q-school {\n  margin-bottom: 24px;\n}\n.q-school h3 {\n  font-size: 16px;\n  margin-bottom: 16px;\n}\n.s-faq {\n  font-size: 15px;\n  color: #333;\n  padding: 0 12px;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 20px;\n}\n.s-faq .q,\n.s-faq .a {\n  padding: 16px 0px;\n}\n.s-faq .q {\n  border-bottom: 1px solid #e2e2e2;\n}\n.s-faq .badges {\n  margin-top: 16px;\n}\n.s-faq .badge {\n  display: inline-block;\n  min-width: 72px;\n  font-size: 14px;\n  color: #fff;\n  text-align: center;\n  line-height: 24px;\n  border-radius: 12px;\n  background-color: #59afec;\n  margin-right: 10px;\n}\n.btn-mid {\n  vertical-align: middle;\n  width: 108px;\n  padding-top: 9px;\n  padding-bottom: 9px;\n}\n.coupon .btn {\n  border-radius: 0;\n  margin-right: 16px;\n}\n.coupon .detailInfo {\n  color: #999;\n  font-size: 14px;\n  float: right;\n  text-align: right;\n  vertical-align: middle;\n  height: 40px;\n}\n.coupon .well .media {\n  margin-top: 0;\n}\n.coupon .well.disabled {\n  color: #999;\n}\n.coupon-type {\n  font-size: 20px;\n}\n.vm-wrapper {\n  width: 99%;\n  vertical-align: middle;\n}\n.avatarWrap .thumbnail {\n  width: 84px;\n  height: 84px;\n  border: 1px solid #dadada;\n  cursor: pointer;\n}\n.avatarWrap .thumbnail .info {\n  position: absolute;\n  height: 24px;\n  bottom: 0px;\n  left: 0;\n  right: 0;\n  color: #fff;\n  text-align: center;\n  background: #999;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.avatarWrap .thumbnail img.responsive {\n  width: 100%;\n  height: 100%;\n}\n.contentInner .no_transList {\n  padding: 16px 14px;\n  background-color: #f9f9f9;\n  border: 1px solid #e2e2e2;\n  margin-bottom: 10px;\n}\n.favorInfoList li {\n  border-bottom: 1px solid #e6e4e4;\n  padding-bottom: 14px;\n  padding-top: 14px;\n}\n.favorInfoList li .imgWrap {\n  display: inline-block;\n  width: 130px;\n  height: 130px;\n  margin-right: 10px;\n}\n.favorInfoList .detailTitle {\n  color: #333;\n  margin-bottom: 8px;\n  font-size: 18px;\n  display: inline-block;\n  overflow: hidden;\n  height: auto;\n  max-height: 50px;\n}\n.payModal .modalSubCnt {\n  padding-top: 40px;\n  font-size: 14px;\n  color: #333;\n}\n.payModal .modalSubCnt .row {\n  margin-bottom: 18px;\n}\n.payModal .modalSubCnt .payIcon {\n  margin-left: 10px;\n}\n#sSchoolForm .schoolLists {\n  height: 310px\\9;\n}\n.avatarRow {\n  margin-bottom: 20px;\n}\n.pickerTxt {\n  display: none;\n}\n.webuploader-container {\n  position: relative;\n}\n.webuploader-element-invisible {\n  position: absolute !important;\n  clip: rect(1px 1px 1px 1px);\n  /* IE6, IE7 */\n  clip: rect(1px, 1px, 1px, 1px);\n}\n.webuploader-pick {\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  background: #999;\n  padding: 0 4px;\n  line-height: 24px;\n  color: #fff;\n  text-align: center;\n  border-radius: 3px;\n  overflow: hidden;\n  height: 24px;\n  width: 100%;\n}\n.webuploader-pick-hover {\n  background: #666;\n}\n.webuploader-pick-disable {\n  opacity: 0.6;\n  pointer-events: none;\n}\n.coupon .well {\n  background: none;\n  border: none;\n  width: 680px;\n}\n.coupon .well .col1 {\n  width: auto;\n  margin-right: 160px;\n  position: relative;\n  padding-left: 10px;\n  background-color: #dce7f0;\n}\n.coupon .well .col1:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  left: -10px;\n  background: url(" + __webpack_require__(452) + ") left top no-repeat;\n}\n.coupon .well .col2 {\n  float: right;\n  position: relative;\n  width: 160px;\n  text-align: center;\n  height: 242px;\n  background-color: #8ec5ec;\n}\n.coupon .well .col2:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  right: -10px;\n  background: url(" + __webpack_require__(453) + ") right top no-repeat;\n}\n.coupon .well .col2 .coupon_text {\n  padding-top: 44px;\n  color: #fff;\n  margin: 0 auto;\n  line-height: 1.5;\n  font-size: 36px;\n  width: 1em;\n}\n.coupon .well.disabled .col2 {\n  background: #bdbdbd;\n}\n.coupon .well.disabled .col2 .coupon_text {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col2:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 100%;\n  right: -10px;\n  background: url(" + __webpack_require__(454) + ") right top no-repeat;\n}\n.coupon .well.disabled .col1 {\n  background: #ebebeb;\n}\n.coupon .well.disabled .col1 .coupon_title_primary {\n  color: #d6d6d6;\n}\n.coupon .well.disabled .col1 .coupon_title_second {\n  color: #bdbdbd;\n}\n.coupon .well.disabled .col1 .coupon_count {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col1 .coupon_count .coupon-deno {\n  color: #d3d3d3;\n}\n.coupon .well.disabled .col1:after {\n  background: url(" + __webpack_require__(455) + ") left top no-repeat;\n}\n.coupon .well.disabled .coupon_inner:before {\n  content: \"\";\n  position: absolute;\n  width: 112px;\n  height: 112px;\n  right: 20px;\n  top: 4px;\n  background: url(" + __webpack_require__(456) + ") left top no-repeat;\n}\n.coupon .well.disabled.outdated .coupon_inner:before {\n  background: url(" + __webpack_require__(457) + ") left top no-repeat;\n}\n.coupon .coupon_title_primary {\n  color: #59afec;\n  font-weight: normal;\n}\n.coupon .coupon_title_second {\n  float: right;\n  color: #333;\n  font-size: 18px;\n  font-weight: normal;\n}\n.coupon .coupon_count {\n  font-size: 24px;\n  color: #59afec;\n  margin: 36px 0 44px;\n}\n.coupon .coupon_inner {\n  padding: 20px 25px 0;\n  height: 242px;\n  position: relative;\n}\n.coupon .coupon_desc {\n  font-size: 14px;\n  color: #999;\n  max-width: 332px;\n  line-height: 1.5;\n  position: absolute;\n  bottom: 20px;\n  left: 25px;\n}\n.coupon .coupon-deno {\n  font-size: 56px;\n  color: #3193d9;\n  display: inline-block;\n  line-height: 1;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 451:
+/***/ 452:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/coupon1.png"
 
 /***/ },
 
-/***/ 452:
+/***/ 453:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/coupon2.png"
 
 /***/ },
 
-/***/ 453:
+/***/ 454:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/coupon4.png"
 
 /***/ },
 
-/***/ 454:
+/***/ 455:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/coupon3.png"
 
 /***/ },
 
-/***/ 455:
+/***/ 456:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/used.png"
 
 /***/ },
 
-/***/ 456:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/outdated.png"
 
 /***/ },
 
-/***/ 457:
+/***/ 458:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	var tmpl = __webpack_require__(458);
+	var tmpl = __webpack_require__(459);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	module.exports = {
 		init : function(o){
@@ -1096,7 +1096,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 458:
+/***/ 459:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1164,21 +1164,21 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 459:
+/***/ 460:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var tabs = __webpack_require__(127);
+	var $ = window.$ || __webpack_require__(41);
+	var tabs = __webpack_require__(128);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	//本地数据库
-	var localData = __webpack_require__(152);
+	var localData = __webpack_require__(153);
 	
-	var tmpl_college = __webpack_require__(460);
-	var tmpl_major = __webpack_require__(461);
-	var tmpl_info = __webpack_require__(462);
+	var tmpl_college = __webpack_require__(461);
+	var tmpl_major = __webpack_require__(462);
+	var tmpl_info = __webpack_require__(463);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1341,7 +1341,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 460:
+/***/ 461:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1395,7 +1395,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 461:
+/***/ 462:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1425,7 +1425,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 462:
+/***/ 463:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1467,16 +1467,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 463:
+/***/ 464:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	var tmpl = __webpack_require__(464);
+	var tmpl = __webpack_require__(465);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	module.exports = {
 		init : function(o){
@@ -1551,7 +1551,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 464:
+/***/ 465:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1581,16 +1581,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 465:
+/***/ 466:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	var tmpl = __webpack_require__(466);
+	var tmpl = __webpack_require__(467);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	module.exports = {
 		init : function(o){
@@ -1662,7 +1662,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 466:
+/***/ 467:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1704,21 +1704,21 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 467:
+/***/ 468:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	var tmpl = __webpack_require__(468);
+	var tmpl = __webpack_require__(469);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	
-	var payModal = __webpack_require__(469);
+	var payModal = __webpack_require__(470);
 	//本地数据库
-	var localData = __webpack_require__(152);
+	var localData = __webpack_require__(153);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -1832,7 +1832,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 468:
+/***/ 469:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -1910,19 +1910,19 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 469:
+/***/ 470:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	__webpack_require__(470);
+	var $ = window.$ || __webpack_require__(41);
+	__webpack_require__(471);
 	
 	//selct组件
-	var beautifySelect = __webpack_require__(105);
+	var beautifySelect = __webpack_require__(106);
 	
 	//selct组件
-	var pay = __webpack_require__(197);
+	var pay = __webpack_require__(198);
 	
-	var tmpl_pay = __webpack_require__(196);
+	var tmpl_pay = __webpack_require__(197);
 	
 	var payModal = {
 		init: function(btn, options){
@@ -2022,16 +2022,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 470:
+/***/ 471:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(471);
+	var content = __webpack_require__(472);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2049,10 +2049,10 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 471:
+/***/ 472:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
@@ -2064,16 +2064,16 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 472:
+/***/ 473:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
 	
-	var tmpl = __webpack_require__(473);
+	var tmpl = __webpack_require__(474);
 	
 	//公共方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	var provinceId = $("[name=province]").val();
 	
@@ -2172,7 +2172,7 @@ webpackJsonp([50],{
 
 /***/ },
 
-/***/ 473:
+/***/ 474:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {

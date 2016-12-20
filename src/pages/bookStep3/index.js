@@ -54,10 +54,19 @@ var majors = {
 		});
 	},
 
+	travelMajorList: function(selectList, list){
+		//遍历结果列表
+		$.each(list,function(m,l){
+			if(selectList.indexOf(l.categoryId) != "-1"){
+				l.status = 1;
+			}
+		})
+	},
+
 	requestData : function(){
 		var that = this;
 		$.ajax({
-			url : preServer+provinceId + "/data/major/all",
+			url : preServer+provinceId + "/data/major/categoryList",
 			type : "get",
 			success : function(res){
 				if(typeof rs == "string"){
@@ -70,7 +79,7 @@ var majors = {
 					return;
 				}
 
-				res.result.batch = batch;
+				// res.result.batch = batch;
 				that.res = res.result;
 
 				//读取选择项
@@ -79,14 +88,13 @@ var majors = {
 					selectList = Cookie.get(userId).split("&");
 				}
 
-				//遍历结果列表
-				$.each(that.res.subs,function(m,l){
-					$.each(l.subs,function(n,k){
-						if(selectList.indexOf(k.id) != "-1"){
-							k.status = 1;
-						}
-					})
-				})
+				// 遍历本科
+				that.travelMajorList(selectList, that.res.undergraduateList);
+
+				// 遍历专科
+				that.travelMajorList(selectList, that.res.juniorList);
+
+				console.log(that.res);
 
 				that.insertData(res.result);
 
@@ -119,20 +127,20 @@ var majors = {
 		//checkbox定制
 		$('.label_check').on("click",function(e){
 		  e.stopPropagation();
-		  
+		   util.setupLabel();
 		  var target = $(e.target);
 		  var label = $(this).closest("label");
-		  if(target.is(".icon-eye")){
-		  	e.preventDefault();
-		  	that.subMajorModal(target);
-		  }else{
-		  	if(!isModernBrower){
-		  		if (label.attr("for") != ""){
-			        $("#" + label.attr("for")).trigger("click");
-			        util.setupLabel();
-		  		}
-		  	}
-		  }
+		  // if(target.is(".icon-eye")){
+		  // 	e.preventDefault();
+		  // 	that.subMajorModal(target);
+		  // }else{
+		  // 	if(!isModernBrower){
+		  // 		if (label.attr("for") != ""){
+			 //        $("#" + label.attr("for")).trigger("click");
+			 //        util.setupLabel();
+		  // 		}
+		  // 	}
+		  // }
 		});
 
 		util.setupLabel();		
@@ -160,11 +168,8 @@ var majors = {
           }
 	    });
 
-	    // if(selectAll){
-	    // 	boxList = eleBoxs;
-	    // }else{
-	     	boxList = $('input[type=checkbox][name=majorType]:checked');
-	    // }
+	
+	    boxList = $('input[type=checkbox][name=majorType]:checked');
 
 	    var majorList = that.selectList(boxList);
 

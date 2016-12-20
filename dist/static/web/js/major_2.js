@@ -4,22 +4,22 @@ webpackJsonp([37],{
 /***/ function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(18);
-	__webpack_require__(278);
-	var $ = window.$ || __webpack_require__(40);
+	__webpack_require__(19);
+	__webpack_require__(279);
+	var $ = window.$ || __webpack_require__(41);
 	
 	//工具类方法
-	var util = __webpack_require__(41);
+	var util = __webpack_require__(42);
 	
 	//公共方法
-	var common = __webpack_require__(42);
+	var common = __webpack_require__(43);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(127);
+	var tabs = __webpack_require__(128);
 	
 	//报考专业
-	var major =  __webpack_require__(280);
+	var major =  __webpack_require__(281);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -34,16 +34,16 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 278:
+/***/ 279:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(279);
+	var content = __webpack_require__(280);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(37)(content, {});
+	var update = __webpack_require__(38)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -61,10 +61,10 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 279:
+/***/ 280:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(20)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 	
 	
@@ -76,13 +76,13 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 280:
+/***/ 281:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(40);
-	var extend =  __webpack_require__(45);
-	var tmpl = __webpack_require__(281);
-	var localData = __webpack_require__(152);
+	var $ = window.$ || __webpack_require__(41);
+	var extend =  __webpack_require__(46);
+	var tmpl = __webpack_require__(282);
+	var localData = __webpack_require__(153);
 	
 	var major = {
 		init : function(o){
@@ -217,7 +217,7 @@ webpackJsonp([37],{
 
 /***/ },
 
-/***/ 281:
+/***/ 282:
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
