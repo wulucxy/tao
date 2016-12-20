@@ -191,6 +191,8 @@ webpackJsonp([8],{
 				majorList : majorList
 			};
 	
+			console.log(_data);
+	
 			$.ajax({
 				url : preServer+provinceId+"/tzy/plan/wishes/step3",
 				type : "post",
@@ -340,7 +342,11 @@ webpackJsonp([8],{
 			 } ;
 	__p += '\n	<label class="label_check" for="majorType' +
 	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
-	'" >\n		<em class="icon-eye"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
+	'" >\n		<em class="icon-eye"  data-majorId=' +
+	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
+	' data-name="' +
+	((__t = ( undergraduateList[i].categoryName )) == null ? '' : __t) +
+	'"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
 	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
 	'" name="majorType" ' +
 	((__t = ( checkedStatus )) == null ? '' : __t) +
@@ -363,7 +369,11 @@ webpackJsonp([8],{
 			 } ;
 	__p += '\n	<label class="label_check" for="majorType' +
 	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
-	'" >\n		<em class="icon-eye"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
+	'" >\n		<em class="icon-eye" data-majorId=' +
+	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
+	' data-name="' +
+	((__t = ( juniorList[i].categoryName )) == null ? '' : __t) +
+	'"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
 	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
 	'" name="majorType" ' +
 	((__t = ( checkedStatus )) == null ? '' : __t) +

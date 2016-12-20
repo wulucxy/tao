@@ -186,6 +186,8 @@ var majors = {
 			majorList : majorList
 		};
 
+		console.log(_data);
+
 		$.ajax({
 			url : preServer+provinceId+"/tzy/plan/wishes/step3",
 			type : "post",

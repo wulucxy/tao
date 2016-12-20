@@ -10,7 +10,7 @@
 			checkedStatus = "";
 		 } %>
 	<label class="label_check" for="majorType<%= undergraduateList[i].categoryId %>" >
-		<em class="icon-eye"></em>
+		<em class="icon-eye"  data-majorId=<%= undergraduateList[i].categoryId %> data-name="<%= undergraduateList[i].categoryName %>"></em>
 		<input type="checkbox" class="input form-control" id="majorType<%= undergraduateList[i].categoryId %>" name="majorType" <%= checkedStatus %> required>
 		<em class="vm"><%= undergraduateList[i].categoryName %></em>
 		<em class="icon-yes">
@@ -33,7 +33,7 @@
 			checkedStatus = ""; 
 		 } %>
 	<label class="label_check" for="majorType<%= juniorList[i].categoryId %>" >
-		<em class="icon-eye"></em>
+		<em class="icon-eye" data-majorId=<%= juniorList[i].categoryId %> data-name="<%= juniorList[i].categoryName %>"></em>
 		<input type="checkbox" class="input form-control" id="majorType<%= juniorList[i].categoryId %>" name="majorType" <%= checkedStatus %> required>
 		<em class="vm"><%= juniorList[i].categoryName %></em>
 		<em class="icon-yes">
