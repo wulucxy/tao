@@ -96,7 +96,7 @@ var book = {
         subjects: subjects
       };
       $.ajax({
-        url : preServer+provinceId+"/tzy/plan/wishes/step1",
+        url : preServer+provinceId+"/tzy/plan/assessment/step1",
         type : "post",
         contentType: "application/json",
         data : JSON.stringify(_data),
@@ -106,7 +106,7 @@ var book = {
           }
 
           if(res.code==1){
-            window.location = "/box/plan/book_step2";
+             window.location = "/box/plan/evaluate_step2";
             return false;
           }else{
             warn(res.msg);
