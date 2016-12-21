@@ -59,8 +59,11 @@
 									<c:when test="${fn:length(radical) > 0 }">
 										<c:forEach var="list" items="${radical}" varStatus="loop">
 										<div class="caseSection">
-											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+											<h3>${list.majorName}
+											<small class="g9">
+												${list.batch}
+												<c:if test="${list.field != null }" >(${list.field})</c:if>
+											</small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">
@@ -135,7 +138,7 @@
 										<c:forEach var="list" items="${normal}" varStatus="loop">
 										<div class="caseSection">
 											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+												${list.batch}<c:if test="${list.field != null }" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">
@@ -210,7 +213,7 @@
 										<c:forEach var="list" items="${conservative}" varStatus="loop">
 										<div class="caseSection">
 											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+												${list.batch}<c:if test="${list.field != null }" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">

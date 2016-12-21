@@ -114,7 +114,7 @@
         "collegeName": "中央民族大学",
         "majorId": "00000000067",
         "city": "北京市",
-        "field": "",
+        "field": "123",
         "level": "本科",
         "batch": "第一批",
         "feature": [
@@ -146,7 +146,6 @@
         "collegeName": "北京科技大学",
         "majorId": "00000000872",
         "city": "北京市",
-        "field": "",
         "level": "本科",
         "batch": "第一批",
         "feature": [

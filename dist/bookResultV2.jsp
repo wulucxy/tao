@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/bookResultV2.ee916c89.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/bookResultV2.9ec57431.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -59,8 +59,11 @@
 									<c:when test="${fn:length(radical) > 0 }">
 										<c:forEach var="list" items="${radical}" varStatus="loop">
 										<div class="caseSection">
-											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+											<h3>${list.majorName}
+											<small class="g9">
+												${list.batch}
+												<c:if test="${list.field != null }" >(${list.field})</c:if>
+											</small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">
@@ -135,7 +138,7 @@
 										<c:forEach var="list" items="${normal}" varStatus="loop">
 										<div class="caseSection">
 											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+												${list.batch}<c:if test="${list.field != null }" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">
@@ -210,7 +213,7 @@
 										<c:forEach var="list" items="${conservative}" varStatus="loop">
 										<div class="caseSection">
 											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+												${list.batch}<c:if test="${list.field != null }" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
 												<em class="badgetitle vm">${list.collegeName}</em>
 												<c:forEach var="featurelist" items="${list.feature}">
@@ -300,5 +303,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.0bb30470.js"></script><script src="/static/web/js/bookResultV2.21aeceab.js"></script></body>
+	<script src="/static/web/js/vendors.09faf46f.js"></script><script src="/static/web/js/bookResultV2.a4c8dda5.js"></script></body>
 </html>
