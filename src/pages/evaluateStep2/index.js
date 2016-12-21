@@ -77,6 +77,18 @@ if (typeof Array.prototype.some != "function") {
   };
 }
 
+var __INITDATA__ = $('.wishInput').map(function(idx, ele){
+  var $ele = $(ele);
+  return {
+    collegeId: $ele.attr('collegeid'),
+    collegeName: $ele.attr('collegename'),
+    majorId:$ele.attr('majorid'),
+    majorName:$ele.attr('majorname'),
+    field:$ele.attr('field'),
+  }
+}).get()
+
+
 var evaluate = {
 
   init : function(o){
@@ -87,7 +99,7 @@ var evaluate = {
       this.options = o;
 
       this.state = {
-        wishes : $.parseJSON($("[name=wishes]").text()) || [],
+        wishes : __INITDATA__ || [],
         provList : [],
         cityList : [],
         current: {

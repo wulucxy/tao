@@ -34,8 +34,6 @@ var __INITDATA__ = $('.subjectInput').map(function(idx, ele){
   }
 }).get()
 
-console.log( __INITDATA__)
-
 var book = {
   init: function(){
     this.render();

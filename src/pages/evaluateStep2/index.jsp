@@ -100,7 +100,15 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	
-	<pre name="wishes">${wishes}</pre>
+
+	<c:forEach var="wish" items="${wishes}">
+		<input type="hidden" class="wishInput" 
+				collegeid="${wish.collegeId}" 
+				collegename="${wish.collegeName}" 
+				majorid="${wish.majorId}" 
+				majorname="${wish.majorName}" 
+				field="${wish.field}"
+		>
+	</c:forEach>	
 	</body>
 </html>

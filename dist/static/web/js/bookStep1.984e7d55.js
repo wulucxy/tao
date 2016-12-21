@@ -39,8 +39,6 @@ webpackJsonp([6],{
 	  }
 	}).get()
 	
-	console.log( __INITDATA__)
-	
 	var book = {
 	  init: function(){
 	    this.render();
@@ -235,4 +233,4 @@ webpackJsonp([6],{
 /***/ }
 
 });
-//# sourceMappingURL=bookStep1.2e3a146c.js.map
+//# sourceMappingURL=bookStep1.984e7d55.js.map

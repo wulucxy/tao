@@ -121,5 +121,5 @@
 	<pre name="score">${score}</pre>
 	<pre name="place">${place}</pre>
 
-	<script src="/static/web/js/vendors.da2348f4.js"></script><script src="/static/web/js/pay/book.44f86c46.js"></script></body>
+	<script src="/static/web/js/vendors.1a27330a.js"></script><script src="/static/web/js/pay/book.44f86c46.js"></script></body>
 </html>

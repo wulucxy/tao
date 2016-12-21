@@ -82,6 +82,18 @@ webpackJsonp([22],{
 	  };
 	}
 	
+	var __INITDATA__ = $('.wishInput').map(function(idx, ele){
+	  var $ele = $(ele);
+	  return {
+	    collegeId: $ele.attr('collegeid'),
+	    collegeName: $ele.attr('collegename'),
+	    majorId:$ele.attr('majorid'),
+	    majorName:$ele.attr('majorname'),
+	    field:$ele.attr('field')
+	  }
+	}).get()
+	
+	
 	var evaluate = {
 	
 	  init : function(o){
@@ -92,7 +104,7 @@ webpackJsonp([22],{
 	      this.options = o;
 	
 	      this.state = {
-	        wishes : $.parseJSON($("[name=wishes]").text()) || [],
+	        wishes : __INITDATA__ || [],
 	        provList : [],
 	        cityList : [],
 	        current: {
@@ -1090,4 +1102,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.df7f0e6b.js.map
+//# sourceMappingURL=evaluateStep2.c20e85fc.js.map

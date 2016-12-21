@@ -30,6 +30,13 @@
              "majorId":"67",
              "majorName":"法学",
              "field":"医药卫生"
+          },
+          {
+             "collegeId":"175",
+             "collegeName":"北京中医药大学",
+             "majorId":"67",
+             "majorName":"法学",
+             "field":"医药卫生"
           }
     ]
 }
