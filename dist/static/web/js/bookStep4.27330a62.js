@@ -94,7 +94,7 @@ webpackJsonp([9],{
 					}
 	
 					 if(res.code==1 && res.result.planId){
-	                    window.location = "/pay/wishes?planId="+res.result.planId;
+	                    window.location = "/box/plan/result?planId="+res.result.planId;
 	                    return false;
 	                }else{
 	                    warn(res.msg);
@@ -125,4 +125,4 @@ webpackJsonp([9],{
 /***/ }
 
 });
-//# sourceMappingURL=bookStep4.492ef66d.js.map
+//# sourceMappingURL=bookStep4.27330a62.js.map
