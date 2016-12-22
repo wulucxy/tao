@@ -329,7 +329,7 @@ var evaluate = {
           }
 
           if(res.code==1){
-              // window.location = "/box/plan/evaluate_step3";
+              window.location = "/box/plan/evaluate_step3";
               return false;
           }else{
               warn(res.msg);

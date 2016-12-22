@@ -334,7 +334,7 @@ webpackJsonp([22],{
 	          }
 	
 	          if(res.code==1){
-	              // window.location = "/box/plan/evaluate_step3";
+	              window.location = "/box/plan/evaluate_step3";
 	              return false;
 	          }else{
 	              warn(res.msg);
@@ -1148,4 +1148,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.cec6fd20.js.map
+//# sourceMappingURL=evaluateStep2.6ec0d966.js.map
