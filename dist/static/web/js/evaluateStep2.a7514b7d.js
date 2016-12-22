@@ -228,8 +228,6 @@ webpackJsonp([22],{
 	
 	   that.state.cityList = !!majors.length ? majors[0].majorList : []
 	
-	   console.log(that.state.cityList);
-	
 	   that.render();
 	   
 	    // var parm = [];
@@ -429,10 +427,16 @@ webpackJsonp([22],{
 	
 	  requestMajors : function(options){
 	    var that = this;
+	    var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
+	      return ele.code
+	    }).get();
+	
+	    console.log(subjects)
+	
 	     $.ajax({
 	        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
 	        type : "post",
-	        data : JSON.stringify({subjects : __INITSUBJECTS__}),
+	        data : JSON.stringify({subjects: subjects}),
 	        success : function(res){
 	            if(typeof res =="string"){
 	                var res = $.parseJSON(res);
@@ -497,6 +501,9 @@ webpackJsonp([22],{
 	
 	          completeCallback : function(){
 	            
+	          },
+	          closeCallback: function(){
+	
 	          }
 	        });
 	      }
@@ -1129,4 +1136,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.1ade892d.js.map
+//# sourceMappingURL=evaluateStep2.a7514b7d.js.map

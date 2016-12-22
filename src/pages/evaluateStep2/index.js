@@ -223,8 +223,6 @@ var evaluate = {
 
    that.state.cityList = !!majors.length ? majors[0].majorList : []
 
-   console.log(that.state.cityList);
-
    that.render();
    
     // var parm = [];
@@ -424,10 +422,16 @@ var evaluate = {
 
   requestMajors : function(options){
     var that = this;
+    var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
+      return ele.code
+    }).get();
+
+    console.log(subjects)
+
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
         type : "post",
-        data : JSON.stringify({subjects : __INITSUBJECTS__}),
+        data : JSON.stringify({subjects: subjects}),
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);
@@ -492,6 +496,9 @@ var evaluate = {
 
           completeCallback : function(){
             
+          },
+          closeCallback: function(){
+
           }
         });
       }
