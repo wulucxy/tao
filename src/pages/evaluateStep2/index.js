@@ -206,6 +206,7 @@ var evaluate = {
         // wishes
         that.state.wishes[0].majorId = $ele.val();
         that.state.wishes[0].majorName = $ele.attr('n');
+        that.state.wishes[0].field = $ele.attr('field');
 
         $(".btn-close").trigger("click");
         that.render();
@@ -328,7 +329,7 @@ var evaluate = {
           }
 
           if(res.code==1){
-              window.location = "/box/plan/evaluate_step3";
+              // window.location = "/box/plan/evaluate_step3";
               return false;
           }else{
               warn(res.msg);
@@ -425,8 +426,6 @@ var evaluate = {
     var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
       return Number(ele.code)
     }).get();
-
-    console.log(subjects)
 
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",

@@ -211,6 +211,7 @@ webpackJsonp([22],{
 	        // wishes
 	        that.state.wishes[0].majorId = $ele.val();
 	        that.state.wishes[0].majorName = $ele.attr('n');
+	        that.state.wishes[0].field = $ele.attr('field');
 	
 	        $(".btn-close").trigger("click");
 	        that.render();
@@ -333,7 +334,7 @@ webpackJsonp([22],{
 	          }
 	
 	          if(res.code==1){
-	              window.location = "/box/plan/evaluate_step3";
+	              // window.location = "/box/plan/evaluate_step3";
 	              return false;
 	          }else{
 	              warn(res.msg);
@@ -430,8 +431,6 @@ webpackJsonp([22],{
 	    var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
 	      return Number(ele.code)
 	    }).get();
-	
-	    console.log(subjects)
 	
 	     $.ajax({
 	        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
@@ -1061,9 +1060,14 @@ webpackJsonp([22],{
 	((__t = ( wishes[i].majorId )) == null ? '' : __t) +
 	'" >\n			<div class="panel-hd">\n				<i class="icon icon-close fr panel-close"></i>\n				<div class="collegeName">' +
 	((__t = ( wishes[i].collegeName )) == null ? '' : __t) +
-	'</div>\n			</div>\n			<div class="panel-bd">' +
-	((__t = ( wishes[i].majorName )) == null ? '' : __t) +
-	'</div>\n		</div>\n	';
+	'</div>\n			</div>\n			<div class="panel-bd">\n				' +
+	((__t = ( wishes[i].majorName )) == null ? '' : __t);
+	 if(wishes[i].field) { ;
+	__p += '\n		 			  (' +
+	((__t = ( wishes[i].field )) == null ? '' : __t) +
+	')\n		 		';
+	 } ;
+	__p += '\n			</div>\n		</div>\n	';
 	 } ;
 	__p += '\n</div>\n';
 	 } ;
@@ -1097,6 +1101,8 @@ webpackJsonp([22],{
 	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
 	'" id="major_' +
 	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
+	'" field="' +
+	((__t = ( majorList[i].field )) == null ? '' : __t) +
 	'" />\n		 		<em>' +
 	((__t = ( majorList[i].majorName )) == null ? '' : __t) +
 	'\n		 			';
@@ -1142,4 +1148,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.7525fd11.js.map
+//# sourceMappingURL=evaluateStep2.cec6fd20.js.map

@@ -10,7 +10,11 @@
 				<i class="icon icon-close fr panel-close"></i>
 				<div class="collegeName"><%= wishes[i].collegeName %></div>
 			</div>
-			<div class="panel-bd"><%= wishes[i].majorName %></div>
+			<div class="panel-bd">
+				<%= wishes[i].majorName %><% if(wishes[i].field) { %>
+		 			  (<%= wishes[i].field %>)
+		 		<% } %>
+			</div>
 		</div>
 	<% } %>
 </div>
