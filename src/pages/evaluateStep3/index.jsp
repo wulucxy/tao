@@ -116,7 +116,9 @@
 					<i class="icon icon-close fr panel-close"></i>
 					<div class="collegeName">${list.collegeName}</div>
 				</div>
-				<div class="panel-bd">${list.majorName}</div>
+				<div class="panel-bd">${list.majorName}
+			 		<c:if test="${list.field != null and list.field != ''}" >(${list.field})</c:if>
+				</div>
 			</div>														
 		</div>					
 						</c:forEach>
