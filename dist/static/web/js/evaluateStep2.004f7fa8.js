@@ -428,7 +428,7 @@ webpackJsonp([22],{
 	  requestMajors : function(options){
 	    var that = this;
 	    var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
-	      return ele.code
+	      return Number(ele.code)
 	    }).get();
 	
 	    console.log(subjects)
@@ -1136,4 +1136,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.a7514b7d.js.map
+//# sourceMappingURL=evaluateStep2.004f7fa8.js.map

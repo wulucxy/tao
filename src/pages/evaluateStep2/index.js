@@ -423,7 +423,7 @@ var evaluate = {
   requestMajors : function(options){
     var that = this;
     var subjects = $(__INITSUBJECTS__).map(function(idx, ele){
-      return ele.code
+      return Number(ele.code)
     }).get();
 
     console.log(subjects)
