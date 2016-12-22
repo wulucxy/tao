@@ -93,6 +93,14 @@ webpackJsonp([22],{
 	  }
 	}).get()
 	
+	var __INITSUBJECTS__ = $('.subjectInput').map(function(idx, ele){
+	  var $ele = $(ele);
+	  return {
+	    name: $ele.attr('name'),
+	    code: $ele.val()
+	  }
+	}).get()
+	
 	
 	var evaluate = {
 	
@@ -151,7 +159,7 @@ webpackJsonp([22],{
 	      }
 	
 	      //城市列表
-	      if($(".city").length && that.state.cityList.length){
+	      if($(".city").length){
 	          
 	        $(".city").html(tmpl_majorList(
 	          {majorList:that.state.cityList}
@@ -214,46 +222,56 @@ webpackJsonp([22],{
 	
 	    var collegeId = that.state.current.college.code;
 	
-	    var parm = [];
-	    parm.push("courseType="+courseType);
-	    parm.push("batch="+batch);
-	
-	    $.ajax({
-	        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
-	        type : "get",
-	        success : function(res){
-	            if(typeof res =="string"){
-	                var res = $.parseJSON(res);
-	            }
-	
-	            if(res.code!=1){
-	              warn(res.msg);
-	              return;
-	            }
-	
-	            var res = res.result;
-	            
-	            if(!res.length){
-	              that.state.cityList = [];
-	              that.render();
-	              return;
-	            }
-	            //默认未选中
-	            $.each(res,function(idx,ele){
-	                ele.status = 0;
-	                ele.code = ele.majorId;
-	                ele.name = ele.majorName;
-	            });
-	
-	            that.state.cityList = res;
-	
-	            that.render();
-	
-	        },
-	        error : function(err){
-	            console.log(err);
-	        }
+	   var majors = that.state.majorListAll.filter(function(ele, idx){
+	      return ele.code == val;
 	    });
+	
+	   that.state.cityList = !!majors.length ? majors[0].majorList : []
+	
+	   console.log(that.state.cityList);
+	
+	   that.render();
+	   
+	    // var parm = [];
+	    // parm.push("courseType="+courseType);
+	    // parm.push("batch="+batch);
+	
+	    // $.ajax({
+	    //     url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
+	    //     type : "get",
+	    //     success : function(res){
+	    //         if(typeof res =="string"){
+	    //             var res = $.parseJSON(res);
+	    //         }
+	
+	    //         if(res.code!=1){
+	    //           warn(res.msg);
+	    //           return;
+	    //         }
+	
+	    //         var res = res.result;
+	            
+	    //         if(!res.length){
+	    //           that.state.cityList = [];
+	    //           that.render();
+	    //           return;
+	    //         }
+	    //         //默认未选中
+	    //         $.each(res,function(idx,ele){
+	    //             ele.status = 0;
+	    //             ele.code = ele.majorId;
+	    //             ele.name = ele.majorName;
+	    //         });
+	
+	    //         that.state.cityList = res;
+	
+	    //         that.render();
+	
+	    //     },
+	    //     error : function(err){
+	    //         console.log(err);
+	    //     }
+	    // });
 	  },
 	
 	  bindEvt: function(){
@@ -414,7 +432,7 @@ webpackJsonp([22],{
 	     $.ajax({
 	        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
 	        type : "post",
-	        data : JSON.stringify({courseType : courseType,batch : batch}),
+	        data : JSON.stringify({subjects : __INITSUBJECTS__}),
 	        success : function(res){
 	            if(typeof res =="string"){
 	                var res = $.parseJSON(res);
@@ -432,7 +450,16 @@ webpackJsonp([22],{
 	              }
 	           });
 	
+	           // 专业大类
 	           that.state.provList = that.majors;
+	
+	           // 专业小类
+	           that.state.majorListAll = $.map(res.result,function(ele){
+	              return {
+	                majorList : ele.majorList,
+	                code : ele.id
+	              }
+	           });
 	
 	           options.callback && options.callback.call(that);
 	
@@ -1056,15 +1083,15 @@ webpackJsonp([22],{
 	__p += '\n	';
 	 for (var i = 0; i < majorList.length; i++) { ;
 	__p += '\n	 	<li>\n		 	<label for="major_' +
-	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
 	'" >\n		 		<input type="radio" name="city" n="' +
-	((__t = ( majorList[i].name )) == null ? '' : __t) +
+	((__t = ( majorList[i].majorName )) == null ? '' : __t) +
 	'" value="' +
-	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
 	'" id="major_' +
-	((__t = ( majorList[i].code )) == null ? '' : __t) +
+	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
 	'" />\n		 		<em>' +
-	((__t = ( majorList[i].name )) == null ? '' : __t) +
+	((__t = ( majorList[i].majorName )) == null ? '' : __t) +
 	'</em>\n		 	</label>\n		</li>\n ';
 	 }} ;
 	
@@ -1102,4 +1129,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.c20e85fc.js.map
+//# sourceMappingURL=evaluateStep2.1ade892d.js.map

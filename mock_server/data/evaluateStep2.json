@@ -38,5 +38,6 @@
              "majorName":"法学",
              "field":"医药卫生"
           }
-    ]
+    ],
+    "subjects":[{"name":"物理","code":"1"},{"name":"化学","code":"2"},{"name":"生物","code":"3"}]
 }

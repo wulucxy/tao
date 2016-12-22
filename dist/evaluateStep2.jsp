@@ -109,6 +109,11 @@
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
 		>
-	</c:forEach>	
-	<script src="/static/web/js/vendors.1a27330a.js"></script><script src="/static/web/js/evaluateStep2.c20e85fc.js"></script></body>
+	</c:forEach>
+	
+	<c:forEach var="subject" items="${subjects}">
+		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+	</c:forEach>
+
+	<script src="/static/web/js/vendors.a918b12b.js"></script><script src="/static/web/js/evaluateStep2.1ade892d.js"></script></body>
 </html>

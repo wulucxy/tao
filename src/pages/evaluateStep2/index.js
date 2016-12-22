@@ -88,6 +88,14 @@ var __INITDATA__ = $('.wishInput').map(function(idx, ele){
   }
 }).get()
 
+var __INITSUBJECTS__ = $('.subjectInput').map(function(idx, ele){
+  var $ele = $(ele);
+  return {
+    name: $ele.attr('name'),
+    code: $ele.val()
+  }
+}).get()
+
 
 var evaluate = {
 
@@ -146,7 +154,7 @@ var evaluate = {
       }
 
       //城市列表
-      if($(".city").length && that.state.cityList.length){
+      if($(".city").length){
           
         $(".city").html(tmpl_majorList(
           {majorList:that.state.cityList}
@@ -209,46 +217,56 @@ var evaluate = {
 
     var collegeId = that.state.current.college.code;
 
-    var parm = [];
-    parm.push("courseType="+courseType);
-    parm.push("batch="+batch);
-
-    $.ajax({
-        url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
-        type : "get",
-        success : function(res){
-            if(typeof res =="string"){
-                var res = $.parseJSON(res);
-            }
-
-            if(res.code!=1){
-              warn(res.msg);
-              return;
-            }
-
-            var res = res.result;
-            
-            if(!res.length){
-              that.state.cityList = [];
-              that.render();
-              return;
-            }
-            //默认未选中
-            $.each(res,function(idx,ele){
-                ele.status = 0;
-                ele.code = ele.majorId;
-                ele.name = ele.majorName;
-            });
-
-            that.state.cityList = res;
-
-            that.render();
-
-        },
-        error : function(err){
-            console.log(err);
-        }
+   var majors = that.state.majorListAll.filter(function(ele, idx){
+      return ele.code == val;
     });
+
+   that.state.cityList = !!majors.length ? majors[0].majorList : []
+
+   console.log(that.state.cityList);
+
+   that.render();
+   
+    // var parm = [];
+    // parm.push("courseType="+courseType);
+    // parm.push("batch="+batch);
+
+    // $.ajax({
+    //     url : preServer+provinceId+"/data/major/"+collegeId+"/category/"+val+"?"+parm.join("&"),
+    //     type : "get",
+    //     success : function(res){
+    //         if(typeof res =="string"){
+    //             var res = $.parseJSON(res);
+    //         }
+
+    //         if(res.code!=1){
+    //           warn(res.msg);
+    //           return;
+    //         }
+
+    //         var res = res.result;
+            
+    //         if(!res.length){
+    //           that.state.cityList = [];
+    //           that.render();
+    //           return;
+    //         }
+    //         //默认未选中
+    //         $.each(res,function(idx,ele){
+    //             ele.status = 0;
+    //             ele.code = ele.majorId;
+    //             ele.name = ele.majorName;
+    //         });
+
+    //         that.state.cityList = res;
+
+    //         that.render();
+
+    //     },
+    //     error : function(err){
+    //         console.log(err);
+    //     }
+    // });
   },
 
   bindEvt: function(){
@@ -409,7 +427,7 @@ var evaluate = {
      $.ajax({
         url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
         type : "post",
-        data : JSON.stringify({courseType : courseType,batch : batch}),
+        data : JSON.stringify({subjects : __INITSUBJECTS__}),
         success : function(res){
             if(typeof res =="string"){
                 var res = $.parseJSON(res);
@@ -427,7 +445,16 @@ var evaluate = {
               }
            });
 
+           // 专业大类
            that.state.provList = that.majors;
+
+           // 专业小类
+           that.state.majorListAll = $.map(res.result,function(ele){
+              return {
+                majorList : ele.majorList,
+                code : ele.id
+              }
+           });
 
            options.callback && options.callback.call(that);
 

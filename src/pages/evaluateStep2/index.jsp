@@ -109,6 +109,11 @@
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
 		>
-	</c:forEach>	
+	</c:forEach>
+	
+	<c:forEach var="subject" items="${subjects}">
+		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+	</c:forEach>
+
 	</body>
 </html>
