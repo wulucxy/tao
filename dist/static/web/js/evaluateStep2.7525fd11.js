@@ -1099,7 +1099,13 @@ webpackJsonp([22],{
 	((__t = ( majorList[i].majorId )) == null ? '' : __t) +
 	'" />\n		 		<em>' +
 	((__t = ( majorList[i].majorName )) == null ? '' : __t) +
-	'</em>\n		 	</label>\n		</li>\n ';
+	'\n		 			';
+	 if(majorList[i].field) { ;
+	__p += '\n		 			  (' +
+	((__t = ( majorList[i].field )) == null ? '' : __t) +
+	')\n		 			';
+	 } ;
+	__p += '\n		 		</em>\n		 	</label>\n		</li>\n ';
 	 }} ;
 	
 	
@@ -1136,4 +1142,4 @@ webpackJsonp([22],{
 /***/ }
 
 });
-//# sourceMappingURL=evaluateStep2.004f7fa8.js.map
+//# sourceMappingURL=evaluateStep2.7525fd11.js.map

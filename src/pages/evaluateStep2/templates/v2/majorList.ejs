@@ -5,7 +5,11 @@
 	 	<li>
 		 	<label for="major_<%= majorList[i].majorId %>" >
 		 		<input type="radio" name="city" n="<%= majorList[i].majorName %>" value="<%= majorList[i].majorId %>" id="major_<%= majorList[i].majorId %>" />
-		 		<em><%= majorList[i].majorName %></em>
+		 		<em><%= majorList[i].majorName %>
+		 			<% if(majorList[i].field) { %>
+		 			  (<%= majorList[i].field %>)
+		 			<% } %>
+		 		</em>
 		 	</label>
 		</li>
  <% }} %>
