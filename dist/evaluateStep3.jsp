@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.b89535d8.css" rel="stylesheet"></head>
+	</head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -107,21 +107,23 @@
 					</div>
 						</section>
 
-						<section class="p2">
+			<section class="p2">
 						<div class="f15 g3 mb20">志愿信息：</div>
+			<div class="panelWrap ovh">
 						<c:forEach var="list" items="${wishes}" varStatus="loop">
-		<div class="panelWrap ovh">
-			<div class="panel" collegename="${list.collegeName}" collegeid="${ list.collegeId}" majorname="${list.majorName}" majorid="${list.majorId}" >
-				<div class="panel-hd">
-					<i class="icon icon-close fr panel-close"></i>
-					<div class="collegeName">${list.collegeName}</div>
-				</div>
-				<div class="panel-bd">${list.majorName}</div>
-			</div>														
-		</div>					
+				<div class="panel" collegename="${list.collegeName}" collegeid="${ list.collegeId}" majorname="${list.majorName}" majorid="${list.majorId}" >
+					<div class="panel-hd">
+						<i class="icon icon-close fr panel-close"></i>
+						<div class="collegeName">${list.collegeName}</div>
+					</div>
+					<div class="panel-bd">${list.majorName}
+				 		<c:if test="${list.field != null and list.field != ''}" >(${list.field}方向)</c:if>
+					</div>
+				</div>																
 						</c:forEach>
-						</section>
-
+			</div>
+		</section>
+			
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							
@@ -148,9 +150,19 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	
-	<pre name="wishes">${wishes}</pre>
+	<c:forEach var="wish" items="${wishes}">
+		<input type="hidden" class="wishInput" 
+				collegeid="${wish.collegeId}" 
+				collegename="${wish.collegeName}" 
+				majorid="${wish.majorId}" 
+				majorname="${wish.majorName}" 
+				field="${wish.field}"
+		>
+	</c:forEach>
+	
+	<c:forEach var="subject" items="${subjects}">
+		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+	</c:forEach>
 
-	<pre name="wishesString">${wishesString}</pre>
-
-	<script src="/static/web/js/vendors.1aec8c94.js"></script><script src="/static/web/js/evaluateStep3.16759708.js"></script></body>
+	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/evaluateStep3.js"></script></body>
 </html>

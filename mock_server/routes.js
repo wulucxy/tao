@@ -15,7 +15,7 @@ module.exports = {
 	"/box/plan/book_step3"   : 'bookStep3.jsp',
 	"/box/plan/book_step4"   : 'bookStep4.jsp',
 	"/box/plan/result"   : 'bookResultV2.jsp',
-	"/box/plan/result2"   : 'evaluateResult.jsp',
+	"/box/plan/result2"   : 'evaluateResultV2.jsp',
 	"/library/college"   : 'college.jsp',
 	"/library/college/1"   : 'collegeDetail.jsp',
 	'/404'   : 'error.jsp',

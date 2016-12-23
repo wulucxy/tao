@@ -21,6 +21,24 @@ var modalBox = require("../../assets/components/modalBox");
 var tmpl_detail = require("../../assets/templates/detail.ejs");
 var tmpl_questions = require("../../assets/templates/questions.ejs");
 
+var __INITWISHES__ = $('.wishInput').map(function(idx, ele){
+  var $ele = $(ele);
+  return {
+    collegeId: $ele.attr('collegeid'),
+    collegeName: $ele.attr('collegename'),
+    majorId:$ele.attr('majorid'),
+    majorName:$ele.attr('majorname'),
+    field:$ele.attr('field'),
+  }
+}).get()
+
+var __INITSUBJECTS__ = $('.subjectInput').map(function(idx, ele){
+  var $ele = $(ele);
+  return {
+    name: $ele.attr('name'),
+    code: $ele.val()
+  }
+}).get()
 
 
 //切换顶部nav高亮
@@ -59,16 +77,14 @@ $("#verifyBtn").on("click",function(e){
   var _data = {
     mobile : $("[name=mobile]").val(),
     province : $("[name=province]").val(),
-    courseType : $("[name=courseType]").val(),
     score : $("[name=score]").val(),
-    batch : $("[name=batch]").val(),
-    place : $("[name=place]").val(),
-    wishes : $.parseJSON($("[name=wishes]").text())
+    wishes: __INITWISHES__,
+    subjects: __INITSUBJECTS__
   };
 
 
   $.ajax({
-    url : preServer+provinceId +"/tzy/plan/upgradeAssessment/create",
+    url : preServer+provinceId +"/tzy/plan/assessment/step3",
     type : "post",
     contentType: "application/json",
     data : JSON.stringify(_data),
@@ -78,7 +94,7 @@ $("#verifyBtn").on("click",function(e){
       }
 
       if(res.code==1 && res.result.planId){
-          window.location = "/pay/assessment?planId="+res.result.planId;
+          window.location = "/box/plan/result?planId="+res.result.planId;
           return false;
       }else{
           warn(res.msg);

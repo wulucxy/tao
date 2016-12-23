@@ -107,23 +107,23 @@
 					</div>
 						</section>
 
-						<section class="p2">
+			<section class="p2">
 						<div class="f15 g3 mb20">志愿信息：</div>
+			<div class="panelWrap ovh">
 						<c:forEach var="list" items="${wishes}" varStatus="loop">
-		<div class="panelWrap ovh">
-			<div class="panel" collegename="${list.collegeName}" collegeid="${ list.collegeId}" majorname="${list.majorName}" majorid="${list.majorId}" >
-				<div class="panel-hd">
-					<i class="icon icon-close fr panel-close"></i>
-					<div class="collegeName">${list.collegeName}</div>
-				</div>
-				<div class="panel-bd">${list.majorName}
-			 		<c:if test="${list.field != null and list.field != ''}" >(${list.field})</c:if>
-				</div>
-			</div>														
-		</div>					
+				<div class="panel" collegename="${list.collegeName}" collegeid="${ list.collegeId}" majorname="${list.majorName}" majorid="${list.majorId}" >
+					<div class="panel-hd">
+						<i class="icon icon-close fr panel-close"></i>
+						<div class="collegeName">${list.collegeName}</div>
+					</div>
+					<div class="panel-bd">${list.majorName}
+				 		<c:if test="${list.field != null and list.field != ''}" >(${list.field}方向)</c:if>
+					</div>
+				</div>																
 						</c:forEach>
-						</section>
-
+			</div>
+		</section>
+			
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							
@@ -150,9 +150,19 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	
-	<pre name="wishes">${wishes}</pre>
-
-	<pre name="wishesString">${wishesString}</pre>
+	<c:forEach var="wish" items="${wishes}">
+		<input type="hidden" class="wishInput" 
+				collegeid="${wish.collegeId}" 
+				collegename="${wish.collegeName}" 
+				majorid="${wish.majorId}" 
+				majorname="${wish.majorName}" 
+				field="${wish.field}"
+		>
+	</c:forEach>
+	
+	<c:forEach var="subject" items="${subjects}">
+		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+	</c:forEach>
 
 	</body>
 </html>
