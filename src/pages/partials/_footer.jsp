@@ -18,7 +18,7 @@
 
 		</div>
 		<div class="col2 fl column">
-			<h4 class="h4">资料库</h4>
+			<h4 class="h4">数据库</h4>
 			<div class="tagLists f-lh">
 				<a href="/library/college" class="links" target="_blank">高校数据库</a>
 				<a href="/library/subject" class="links" target="_blank">科目数据库</a>
