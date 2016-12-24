@@ -39,5 +39,5 @@
 	</div>
 	<script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 
-	<script src="/static/web/js/vendors.ebc5a1f3.js"></script><script src="/static/web/js/error.aae82c52.js"></script></body>
+	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/error.aae82c52.js"></script></body>
 </html>

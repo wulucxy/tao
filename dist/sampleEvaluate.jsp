@@ -380,5 +380,5 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ebc5a1f3.js"></script><script src="/static/web/js/sampleEvaluate.cee98e11.js"></script></body>
+	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/sampleEvaluate.cee98e11.js"></script></body>
 </html>
