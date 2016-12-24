@@ -35,7 +35,7 @@ glob.sync(path.join(pagePath, '**/*.js')).forEach(function (file) {
 var chunks = Object.keys(entries);
 
 var defaults = {
-	devtool: 'source-map',
+	devtool: false,
 	entry: entries,
 	output: {
 		path: distPath,
