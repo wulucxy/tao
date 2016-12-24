@@ -83,7 +83,7 @@
 						</div>
 					</li>
 					<li class="navList" data-toggle="dropdown">
-						<a href="javascript:;" class="trigger">资料库</a>
+						<a href="javascript:;" class="trigger">数据库</a>
 						<div class="listWrap">
 							<div class="options">
 								<a class="ddlist" href="/library/college">院校数据库</a>

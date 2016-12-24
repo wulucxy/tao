@@ -31,7 +31,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高考志愿定制
+						高考志愿评估
 						<em class="underLine"></em>	
 					</span>
 					<div class="fr f16 g6">
