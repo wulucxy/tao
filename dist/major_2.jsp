@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/major_2.41fe7393.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -122,5 +122,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/major_2.js"></script></body>
+	<script src="/static/web/js/vendors.ebc5a1f3.js"></script><script src="/static/web/js/major_2.3dee5f24.js"></script></body>
 </html>

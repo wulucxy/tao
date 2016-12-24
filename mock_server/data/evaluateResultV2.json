@@ -87,5 +87,77 @@
           }
         ]
       }
+    ],
+    "wishesString": [
+      {
+        "collegeId": "00000000175",
+        "ownerType": "公办",
+        "type": "综合",
+        "collegeName": "北京中医药大学",
+        "majorId": "00000000067",
+        "city": "北京市",
+        "field": "医药卫生",
+        "level": "本科",
+        "batch": "第一批",
+        "feature": [
+          {
+            "name": "教育部直属",
+            "type": 3
+          }
+        ],
+        "majorName": "法学",
+        "assessment": 1,
+        "scoreList": [
+          {
+            "admittedScore": 647,
+            "eductionalSystme": 4,
+            "recruitCount": 1,
+            "diffScore": 44,
+            "courseType": 1
+          },
+          {
+            "admittedScore": 647,
+            "eductionalSystme": 4,
+            "recruitCount": 1,
+            "diffScore": 47,
+            "courseType": 0
+          }
+        ]
+      },
+      {
+        "collegeId": "00000000175",
+        "ownerType": "公办",
+        "type": "综合",
+        "collegeName": "北京中医药大学",
+        "majorId": "00000000067",
+        "city": "北京市",
+        "field": "医药卫生",
+        "level": "本科",
+        "batch": "第一批",
+        "feature": [
+          {
+            "name": "教育部直属",
+            "type": 3
+          }
+        ],
+        "majorName": "法学",
+        "assessment": -2,
+        "scoreList": [
+          {
+            "admittedScore": 647,
+            "eductionalSystme": 4,
+            "recruitCount": 1,
+            "diffScore": 44,
+            "courseType": 1
+          },
+          {
+            "admittedScore": 647,
+            "eductionalSystme": 4,
+            "recruitCount": 1,
+            "diffScore": 47,
+            "courseType": 0
+          }
+        ]
+      }
     ]
 }

@@ -55,90 +55,14 @@
 				        </nav>
 						
 						<div class="content-wrap" id="evaluateContentWrap">
-						<c:forEach var="wish" items="${wishes}" varStatus="loop">
-							
-							<c:set var="preCls" value="${wish.assessment + 2}"/>
-							<c:set var="currentCls" value="${loop.index == 0 ? 'current': ''}" />
-
-							<section class="tab-box wish${preCls}Wrap ${currentCls} detailContent">
-								<c:choose>	
-									<c:when test="${fn:length(radical) > 0 }">
-										<c:forEach var="list" items="${radical}" varStatus="loop">
-										<div class="caseSection">
-											<h3>${list.majorName}
-											<small class="g9">
-												${list.batch}
-												<c:if test="${list.field != null and list.field != ''}" >(${list.field}方向)</c:if>
-											</small></h3>
-											<h4 class="name badgeRow">
-												<em class="badgetitle vm">${list.collegeName}</em>
-												<c:forEach var="featurelist" items="${list.feature}">
-													<span class="badge">${featurelist.name}</span>
-												</c:forEach>
-											</h4>
-		<div class="detail">
-		<i class="icon icon-city"></i><span class="field">${list.city}</span>
-		<span class="label">院校分类：</span><span class="field">${list.type}</span>
-		<span class="label">院校性质：</span><span class="field">${list.ownerType}</span>
-		<span class="label">院校层次：</span><span class="field">${list.level}</span>
-		</div>
-		
-	<c:choose>
-		<c:when test="${fn:length(list.scoreList) > 0}">
-		<div class="tableWrap">
-			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
-			<table class="table table-bordered text-center">
-				<thead>
-					<tr>
-						<td width="240"></td>
-						<td width="240">平均分</td>
-						<td width="140">分差</td>
-						<td width="140">学制</td>
-						<td width="140">人数</td>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="score" items="${list.scoreList}">
-					<tr>
-						<td>
-							<c:choose>
-							 	<c:when test="${score.courseType == 1}">
-							   		文科
-								</c:when>
-								<c:when test="${score.courseType == 0}">
-							   		理科
-								</c:when>
-							 	<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>
-						</td>
-						<td>${score.admittedScore}分</td>
-						<td>${score.diffScore}分</td>
-						<td>${score.eductionalSystme}年</td>
-						<td>${score.recruitCount}人</td>
-					</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-		</c:when>
-	 	<c:otherwise>
-			<div class="f16 g3 empty">暂无历史数据</div>
-		</c:otherwise>
-	</c:choose>
-
-
-										</div>
-										</c:forEach>
-									</c:when>
-									<c:otherwise>
-										<div class="f16 g3">暂无数据</div>
-									</c:otherwise>
-								</c:choose>
+							<section class="tab-box wish0Wrap current detailContent">
 							</section>
-						</c:forEach>
-							
+							<section class="tab-box wish1Wrap detailContent">
+							</section>
+							<section class="tab-box wish2Wrap detailContent">
+							</section>
+							<section class="tab-box wish3Wrap detailContent">
+							</section>
 						</div>
 					</div>
 				</div>
@@ -146,14 +70,12 @@
 			</div>
 		</div>
 
-		<pre name="majorList">${majorList}</pre>
-		<pre name="majorListJson">${majorListJson}</pre>
-		<pre name="c">${c}</pre>
-		<pre name="cJson">${cJson}</pre>
 		<pre name="courseType">${courseType}</pre>
 		<pre name="batch">${batch}</pre>
 		<pre name="score">${score}</pre>
 		<pre name="place">${place}</pre>
+
+		<pre name="wishesString">${wishesString}</pre>
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>

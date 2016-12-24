@@ -1,28 +1,46 @@
-<section class="tab-box rushWrap current detailContent">
-	<% if (wishes.length > 0) { %>
-			<% for (var i = 0; i < wishes.length; i++) { %>
-	<div class="caseSection">
-		<h3><%= wishes[i].majorName %>
-		<small class="g9">
-			<%= list.batch %>
-			<% if (list.field){ %>
-				(<%= list.field %>) 
+<section class="tab-box <%= klass %> current detailContent">
+<% if (wishes.length > 0) { %>
+
+	
+
+	<% for (var i = 0; i < wishes.length; i++) { 
+			var list = wishes[i];
+		%>
+
+		<span class="badge squre wishBadge">
+			<% if (list.assessment == '-2') { %>
+				不建议
+			<% }else if (list.assessment == '-1') { %>
+			   	保守
+			<% }else if (list.assessment == 0) { %>
+			   	平稳
+			<% }else if (list.assessment == 1) { %>
+			   	冲刺
 			<% } %>
-		</small></h3>
-		<h4 class="name badgeRow">
-			<em class="badgetitle vm"><%= list.collegeName %></em>
-			<% for (var k = 0; k < wishes[i].featurelist.length; k++) { %>
-				<span class="badge"><%= wishes[i].featurelist[k].name %></span>
-			<% } %>
-		</h4>
-		<div class="detail">
+		</span>
+
+		<div class="caseSection">
+			<h3><%= list.majorName %>
+			<small class="g9">
+				<%= list.batch %>
+				<% if (list.field){ %>
+					(<%= list.field %>) 
+				<% } %>
+			</small></h3>
+			<h4 class="name badgeRow">
+				<em class="badgetitle vm"><%= list.collegeName %></em>
+				<% for (var k = 0; k < list.feature.length; k++) { %>
+					<span class="badge"><%= list.feature[k].name %></span>
+				<% } %>
+			</h4>
+			<div class="detail">
 		<i class="icon icon-city"></i><span class="field"><%= list.city %></span>
 		<span class="label">院校分类：</span><span class="field"><%= list.type %></span>
 		<span class="label">院校性质：</span><span class="field"><%= list.ownerType %></span>
 		<span class="label">院校层次：</span><span class="field"><%= list.level %></span>
 		</div>
 
-<% if (wishes[i].scoreList.length > 0) { %>
+	<% if (list.scoreList.length > 0) { %>
 		<div class="tableWrap">
 			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
 				<table class="table table-bordered text-center">
@@ -36,14 +54,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% for (var j = 0; j < wishes[i].scoreList; j++) {
-							var score= wishes[i].scoreList[j];
-						 %>
+						<% for (var j = 0; j < list.scoreList.length; j++) { 
+							var score = list.scoreList[j];
+						%>
 						<tr>
 							<td>
-							<% if score.courseType == 1) { %>
+							<% if (score.courseType == 1) { %>
 							   		文科
-							<% }else if score.courseType == 0) { %>
+							<% }else if (score.courseType == 0) { %>
 							   		理科
 							<% } %>
 							</td>
@@ -56,12 +74,12 @@
 					</tbody>
 				</table>
 		</div>
-<% }else{ %>
-		<div class="f16 g3 empty">暂无历史数据</div>
-<% } %>
+	<% }else{ %>
+			<div class="f16 g3 empty">暂无历史数据</div>
+	<% } %>
 	</div>
-<% }} %>
+<% } %>		
 <% }else{ %>
-			<div class="f16 g3">暂无数据</div>
+	<div class="f16 g3">暂无数据</div>
 <% } %>
 </section>

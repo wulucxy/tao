@@ -15,6 +15,9 @@ var common = require("../../assets/components/common");
 //弹窗模板
 var tmpl_Info = require("../../assets/templates/applyInfo.ejs");
 
+//弹窗模板
+var tmpl_wish = require("./templates/wish.ejs");
+
 //自定义功能写下面
 var tabs = require("../../assets/components/tabs");
 
@@ -24,10 +27,58 @@ tabs($("#bookResultTab"),{
 	klass : "current"
 });
 
+var wishes = $.parseJSON($("[name=wishesString]").text()) || [];
+
+var conservative = $(wishes).filter(function(idx, ele){
+	return ele.assessment == -1;
+}).get();
+
+var normal = $(wishes).filter(function(idx, ele){
+	return ele.assessment == 0;
+}).get();
+
+var rush = $(wishes).filter(function(idx, ele){
+	return ele.assessment == 1;
+}).get();
+
+var bad = $(wishes).filter(function(idx, ele){
+	return ele.assessment == -2;
+}).get();
+
+
+$('.wish0Wrap').empty().html(tmpl_wish(
+  {
+  	wishes:conservative,
+  	klass: 'conservative'
+  }
+))
+
+$('.wish1Wrap').empty().html(tmpl_wish(
+  {
+  	wishes:normal,
+  	klass: 'normal'
+  }
+))
+
+$('.wish2Wrap').empty().html(tmpl_wish(
+  {
+  	wishes:rush,
+  	klass: 'rush'
+  }
+))
+
+$('.wish3Wrap').empty().html(tmpl_wish(
+  {
+  	wishes:bad,
+  	klass: 'bad'
+  }
+))
+
+
 function transformData(){
 	var _data = {
-		// majorList : $.parseJSON($("[name=majorListJson]").text()),
-		// c :  $.parseJSON($("[name=cJson]").text()),
+		majorList :0,
+		c :  0,
 		batch : $("[name=batch]").text(),
 		courseType : $("[name=courseType]").text(),
 		score : $("[name=score]").text(),

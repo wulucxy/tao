@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-</head>
+<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/homeV2.e03dc6ab.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -248,5 +248,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.js"></script><script src="/static/web/js/homeV2.js"></script></body>
+	<script src="/static/web/js/vendors.ebc5a1f3.js"></script><script src="/static/web/js/homeV2.8c0e5c97.js"></script></body>
 </html>
