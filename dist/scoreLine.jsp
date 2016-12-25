@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/scoreLine.e8c0711c.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/scoreLine.e8c0711c.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -168,5 +168,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/scoreLine.dbbaf756.js"></script></body>
+	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/scoreLine.caaacc7a.js"></script></body>
 </html>

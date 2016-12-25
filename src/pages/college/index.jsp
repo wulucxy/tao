@@ -36,6 +36,11 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
+						
+						<div class="bg bg-yellow">
+							使用数据库前，请同学先将2017年高考成绩转化为2016年的分数，这样查找数据更有效哦！
+						</div>
+
 						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入院校名称" id="collegeInput">

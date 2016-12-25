@@ -39,8 +39,29 @@ major.init();
 
 var college = {
 	init : function(){
+        this.addYear();
 		this.renderArea();
 	},
+
+    addYear : function(){
+        var that = this;
+
+        var nowYear = new Date().getFullYear();
+        var yearArr = [];
+
+        for(var i=0;i<3;i++){
+            yearArr.push(nowYear--);
+        }
+
+        var optionList = [];
+
+        $.each(yearArr,function(idx,ele){
+            optionList.push('<option value='+ele+'>'+ele+'</option>');
+        });
+
+        $("[name=Year]").empty().append(optionList.join(""));
+    },
+
 	renderArea : function(){
 		var that = this;
 		$.ajax({

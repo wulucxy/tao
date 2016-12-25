@@ -1,6 +1,6 @@
 var $ = window.$ || require("jquery");
 var extend =  require('object-assign');
-var tmpl = require("../templates/major.ejs");
+var tmpl = require("../templates/v2/major.ejs");
 
 var major = {
 	init : function(o){
@@ -21,11 +21,9 @@ var major = {
 			capacity : that.capacity,
 			province : $("[name=studentProvince]").val(),
 			year : $("[name=year]").val(),
-			courseType : $("[name=courseType]").val(),
+			batch : $("[name=batch]").val(),
 			collegeId : that.collegeId
 		};
-
-		var _key = _data.province + _data.courseType + _data.year;
 
 		that.pager = that.pager || 1;
 
@@ -84,10 +82,9 @@ var major = {
 			var _data = {
 				province : $("[name=studentProvince]").val(),
 				year : $("[name=year]").val(),
-				courseType : $("[name=courseType]").val()
+				batch : $("[name=batch]").val()
 			};
 
-			var _key = _data.province + _data.courseType + _data.year;
 			that.pager = 1;
 
 		

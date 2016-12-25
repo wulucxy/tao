@@ -11,7 +11,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/college.d8d6c43c.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/college.86b23192.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -36,6 +36,11 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
+						
+						<div class="bg bg-yellow">
+							使用数据库前，请同学先将2017年高考成绩转化为2016年的分数，这样查找数据更有效哦！
+						</div>
+
 						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入院校名称" id="collegeInput">
@@ -194,5 +199,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/college.bbdbf8bf.js"></script></body>
+	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/college.6bf98b29.js"></script></body>
 </html>

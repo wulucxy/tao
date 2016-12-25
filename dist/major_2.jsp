@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/major_2.41fe7393.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/major_2.77dc9671.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -74,6 +74,41 @@
 									</section>
 									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">
+											
+										<div class="bg bg-f5">
+											<div class="pad clearfix">
+												<div class="row clearfix inline fl">
+													<label for="studentProvince" class="control-label">
+														<em class="vm">生源地：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="studentProvince">
+															
+														</select>	
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="year" class="control-label">
+														<em class="vm">年&emsp;份：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="Year">
+															  
+														</select>
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="batch" class="control-label">
+														<em class="vm">批&emsp;次：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="batch">
+															  <option value="1">第一批</option>
+															  <option value="2">第二批</option>
+															  <option value="3">第三批</option>
+														</select>	
+													</div>
+												</div>
+											</div>
+										</div>
+
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
 											</ul>
 											<!-- 加载更多模块 -->
@@ -87,26 +122,8 @@
 						</div>
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
+
 					</div>
 
 				</div>
@@ -122,5 +139,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/major_2.3dee5f24.js"></script></body>
+	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/major_2.0dd8b875.js"></script></body>
 </html>

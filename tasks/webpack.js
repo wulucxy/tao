@@ -8,7 +8,8 @@ var fs = require('fs-extra');
 module.exports = function (opts) {
 	return function (cb) {
 		var files = glob.sync(opts.paths.base + '/**/*.js');
-
+		var doCallback = true;
+		
 		if (files.length) {
 			//var config = require('../webpack.config');
 			var config = require('../config/webpack.config.' + process.env.NODE_ENV + '.js');
@@ -30,7 +31,10 @@ module.exports = function (opts) {
 				}
 				
 				plugins.util.log('webpack bundle file changed');
-				cb();
+				if(doCallback){
+					doCallback = false;
+					cb();
+				}
 			};
 
 			console.log('process.argv[2] ',process.argv[2])

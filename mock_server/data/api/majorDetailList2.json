@@ -1,0 +1,115 @@
+{
+    "code" : 1,
+    "result": {
+        "total":22,
+        "count":10,
+        "page":1,
+        "majors":
+        [
+            {
+                "majorId":"1",
+                "majorName":"majorName",
+                "field": "专业方向",
+                "subjects":
+                [
+                    {
+                        "subjectId":"2",         
+                        "subjectName":"物理"        
+                    },
+                    
+                    {
+                        "subjectId":"3",         
+                        "subjectName":"物理2"        
+                    }
+                ],
+                "scores":
+                [
+                    {
+                        "courseType":1,          
+                        "admittedScore":734,     
+                        "diffScore":131,        
+                        "eductionalSystme":4,    
+                        "recruitCount":7    
+                    }
+                    
+                ],
+                
+                "batch": 1
+            },
+            {
+                "majorId":"1",
+                "majorName":"majorName",
+                "field": "专业方向",
+                "subjects":
+                [
+                    {
+                        "subjectId":"2",         
+                        "subjectName":"物理"        
+                    },
+                    
+                    {
+                        "subjectId":"3",         
+                        "subjectName":"物理2"        
+                    },
+                    {
+                        "subjectId":"2",         
+                        "subjectName":"物理"        
+                    },
+                    
+                    {
+                        "subjectId":"3",         
+                        "subjectName":"物理2"        
+                    },
+                    {
+                        "subjectId":"2",         
+                        "subjectName":"物理"        
+                    },
+                    
+                    {
+                        "subjectId":"3",         
+                        "subjectName":"物理2"        
+                    },
+                    {
+                        "subjectId":"3",         
+                        "subjectName":"物理2"        
+                    }
+                ],
+                "scores":
+                [
+                    {
+                        "courseType":1,          
+                        "admittedScore":734,     
+                        "diffScore":131,        
+                        "eductionalSystme":4,    
+                        "recruitCount":7    
+                    }
+                    
+                ],
+                
+                "batch": 1
+            },
+            {
+                "majorId":"1",
+                "majorName":"majorName",
+                "field": "专业方向",
+                "subjects":
+                [
+                    
+                ],
+                "scores":
+                [
+                    {
+                        "courseType":1,          
+                        "admittedScore":734,     
+                        "diffScore":131,        
+                        "eductionalSystme":4,    
+                        "recruitCount":7    
+                    }
+                    
+                ],
+                
+                "batch": 1
+            }
+        ]
+    }
+}

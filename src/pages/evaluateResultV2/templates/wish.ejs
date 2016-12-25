@@ -1,8 +1,6 @@
 <section class="tab-box <%= klass %> current detailContent">
 <% if (wishes.length > 0) { %>
 
-	
-
 	<% for (var i = 0; i < wishes.length; i++) { 
 			var list = wishes[i];
 		%>
@@ -20,7 +18,11 @@
 		</span>
 
 		<div class="caseSection">
-			<h3><%= list.majorName %>
+			<h3>
+				
+			<a href="/library/major/<%= list.majorId %>" class="textLink" target="_blank">${list.majorName}
+			</a>
+
 			<small class="g9">
 				<%= list.batch %>
 				<% if (list.field){ %>
@@ -28,7 +30,9 @@
 				<% } %>
 			</small></h3>
 			<h4 class="name badgeRow">
-				<em class="badgetitle vm"><%= list.collegeName %></em>
+				<a class="badgetitle vm textLink"  
+				href='/library/college/<%= list.collegeId %>'
+				target="_blank" ><%= list.collegeName %></a>
 				<% for (var k = 0; k < list.feature.length; k++) { %>
 					<span class="badge"><%= list.feature[k].name %></span>
 				<% } %>

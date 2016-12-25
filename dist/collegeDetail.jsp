@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.da0ee6f1.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.1ea7dbfe.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.4076d0d7.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -47,7 +47,7 @@
 						                 <ul>
 											<li  class="tab-item current"><a href="javascript:;">学校简介</a></li>
 											<li  class="tab-item"><a href="javascript:;">开设专业</a></li>
-											<li  class="tab-item"><a href="javascript:;">分数线</a></li>
+											<!-- <li  class="tab-item"><a href="javascript:;">分数线</a></li> -->
 										</ul>
 						        </nav>
 								
@@ -133,20 +133,19 @@
 													<label for="year" class="control-label">
 														<em class="vm">年&emsp;份：</em></label>
 													<div class="selectWrap rel">
-														<select class="form-control trigger" name="year">
-															  <option value="2015">2015</option>
-															  <option value="2014">2014</option>
-															  <option value="2013">2013</option>
-														</select>	
+														<select class="form-control trigger" name="Year">
+															  
+														</select>
 													</div>
 												</div>
 												<div class="row clearfix inline fl">
-													<label for="courseType" class="control-label">
-														<em class="vm">科&emsp;目：</em></label>
+													<label for="batch" class="control-label">
+														<em class="vm">批&emsp;次：</em></label>
 													<div class="selectWrap rel">
-														<select class="form-control trigger" name="courseType">
-															  <option value="0">理科</option>
-															  <option value="1">文科</option>
+														<select class="form-control trigger" name="batch">
+															  <option value="1">第一批</option>
+															  <option value="2">第二批</option>
+															  <option value="3">第三批</option>
 														</select>	
 													</div>
 												</div>
@@ -161,13 +160,13 @@
 										<%@ include file = "/partials/_loadMore.jsp" %>
 
 									</section>
-									<section class="tab-box infoWrap">
+									<!-- <section class="tab-box infoWrap">
 										
 										<div class="threholdTableWrap">
 											<iframe src="/v2_1/mobile/${user.province.code}/data/college/${collegeId}/thresholds" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
 										</div>
 
-									</section>
+									</section> -->
 								</div>
 							</div>
 
@@ -209,5 +208,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.a4fc0a52.js"></script><script src="/static/web/js/collegeDetail.2a848290.js"></script></body>
+	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/collegeDetail.ba0181ec.js"></script></body>
 </html>

@@ -1,0 +1,68 @@
+<% if (majors.length == 0 && page == 1) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+<% for (var i = 0; i < majors.length; i++) {
+	var list = majors[i];
+ %>
+<li class="majorList clearfix v2">
+	<h3>		
+	<a href="/library/major/<%= list.majorId %>" class="textLink" target="_blank">${list.majorName}
+	</a>
+	</h3>
+	<% if (list.field){ %>
+	<div class="g9">
+		(<%= list.field %>) 
+	</div>
+	<% } %>
+	<% if (list.scores.length > 0) { %>
+		<div class="tableWrap mt20 mb20">
+				<table class="table table-bordered text-center">
+					<thead>
+						<tr>
+							<td width="140">科类</td>
+							<td width="240">录取平均分（分）</td>
+							<td width="140">分差（分）</td>
+							<td width="140">学制（年）</td>
+							<td width="240">招生人数（人）</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% for (var j = 0; j < list.scores.length; j++) { 
+							var score = list.scores[j];
+						%>
+						<tr>
+							<td>
+							<% if (score.courseType == 1) { %>
+							   		文科
+							<% }else if (score.courseType == 0) { %>
+							   		理科
+							<% } %>
+							</td>
+					<td><%= score.admittedScore %></td>
+					<td><%= score.diffScore %></td>
+					<td><%= score.eductionalSystme %></td>
+					<td><%= score.recruitCount %></td>
+					</tr>
+					<% } %>
+					</tbody>
+				</table>
+		</div>
+	<% }else{ %>
+			<div class="f16 g3 empty">暂无历史数据</div>
+	<% } %>
+	<div class="row">
+		<span class="label">所需科目：</span>
+		<% if (!list.subjects.length) { %>
+		   	<span class="field">无</span>
+		<% }else if (list.subjects.length >= 7) { %>
+		   	<span class="field">不限</span>
+		<% }else{ %>
+			<% for (var k = 0; k < list.subjects.length; k++) { 
+				var subject = list.subjects[k];
+			%>
+			<span class="field"><%= subject.subjectName %></span>
+		<% }} %>
+		
+	</div>
+</li>
+<% }} %>

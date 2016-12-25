@@ -74,6 +74,41 @@
 									</section>
 									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">
+											
+										<div class="bg bg-f5">
+											<div class="pad clearfix">
+												<div class="row clearfix inline fl">
+													<label for="studentProvince" class="control-label">
+														<em class="vm">生源地：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="studentProvince">
+															
+														</select>	
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="year" class="control-label">
+														<em class="vm">年&emsp;份：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="Year">
+															  
+														</select>
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="batch" class="control-label">
+														<em class="vm">批&emsp;次：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="batch">
+															  <option value="1">第一批</option>
+															  <option value="2">第二批</option>
+															  <option value="3">第三批</option>
+														</select>	
+													</div>
+												</div>
+											</div>
+										</div>
+
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
 											</ul>
 											<!-- 加载更多模块 -->
@@ -87,26 +122,8 @@
 						</div>
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
+
 					</div>
 
 				</div>

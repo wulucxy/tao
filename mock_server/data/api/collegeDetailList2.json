@@ -1,0 +1,44 @@
+{
+	"code": "1",
+	"msg": "调用成功",
+	"result": {
+        "count":10,                     
+        "total":120,                    
+        "page":1,                        
+        "colleges":
+        [
+            {
+                "field": "field",                  
+                "collegeId": "3108",            
+                "subjects":                     
+                [
+                    {
+                        "subjectId":"",         
+                        "subjectName":""        
+                    },
+                    
+                    {
+                        "subjectId":"",         
+                        "subjectName":""        
+                    }
+                ],
+                
+                "scores":
+                [
+                    {
+                        "courseType":1,               
+                        "admittedScore":734,     
+                        "diffScore":131,       
+                        "eductionalSystme":4,    
+                        "recruitCount":7     
+                    }
+                    
+                ],
+                "collegeName": "浙江大学",
+                "city": 330100,                  
+                "batch": 1
+            }
+            
+        ]
+    }
+}
