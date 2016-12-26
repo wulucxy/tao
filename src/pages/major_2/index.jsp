@@ -79,7 +79,7 @@
 											<div class="pad clearfix">
 												<div class="row clearfix inline fl">
 													<label for="studentProvince" class="control-label">
-														<em class="vm">生源地：</em></label>
+														<em class="vm">院校属地：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="studentProvince">
 															
@@ -88,7 +88,7 @@
 												</div>
 												<div class="row clearfix inline fl">
 													<label for="year" class="control-label">
-														<em class="vm">年&emsp;份：</em></label>
+														<em class="vm">年&emsp;&emsp;份：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="Year">
 															  
@@ -97,7 +97,7 @@
 												</div>
 												<div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
-														<em class="vm">批&emsp;次：</em></label>
+														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="batch">
 															  <option value="1">第一批</option>

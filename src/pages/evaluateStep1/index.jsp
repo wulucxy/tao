@@ -131,7 +131,10 @@
 									
 								</div>
 							</div>
-							<div class="errInfo"></div>
+							<div class="errInfo">
+								<span class="p-error">请选择3门选考科目</span>
+								<span class="p-error-empty">选考科目不能为空</span>
+							</div>
 						</div>
 						
 						<div class="footerCnt">

@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.975eaec7.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.975eaec7.css" rel="stylesheet"></head>
 <body>
 	
 
@@ -131,7 +131,10 @@
 									
 								</div>
 							</div>
-							<div class="errInfo"></div>
+							<div class="errInfo">
+								<span class="p-error">请选择3门选考科目</span>
+								<span class="p-error-empty">选考科目不能为空</span>
+							</div>
 						</div>
 						
 						<div class="footerCnt">
@@ -162,5 +165,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/evaluateStep1.7e8610f2.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/evaluateStep1.59d50a7a.js"></script></body>
 </html>

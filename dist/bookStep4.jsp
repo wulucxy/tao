@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -58,7 +58,7 @@
 				<div class="row clearfix">
 				  <label for="province" class="control-label column col1 fl">
 				    <i class="icon-location"></i>
-				    <em class="vm">高考所在地：</em></label>
+				    <em class="vm">生源地：</em></label>
 				  <div class="col2 selectWrap rel">
 				    <div class="fieldWrap lh34">
 				      <span>${user.province.name}</span>
@@ -67,7 +67,7 @@
 				  </div>
 				</div>
 
-				<div class="row clearfix">
+				<!-- <div class="row clearfix">
 				  <label for="province" class="control-label column col1 fl">
 				    <i class="icon-location icon-newuser"></i>
 				    <em class="vm">姓名：</em></label>
@@ -76,7 +76,7 @@
 				      <span>${user.userName}</span>
 				    </div>
 				  </div>
-				</div>
+				</div> -->
 				
 				<div class="row clearfix inline">
 				  <label for="score" class="control-label column col1 fl">
@@ -189,5 +189,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/bookStep4.0762041f.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/bookStep4.0762041f.js"></script></body>
 </html>

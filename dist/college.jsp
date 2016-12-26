@@ -11,7 +11,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/college.86b23192.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/college.dceddcf4.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -37,9 +37,7 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<div class="bg bg-yellow">
-							使用数据库前，请同学先将2017年高考成绩转化为2016年的分数，这样查找数据更有效哦！
-						</div>
+						<%@ include file = "/partials/_scoreTransform.jsp" %>
 
 						<div class="s-search">
 							<div class="input-group rel clearfix">
@@ -176,15 +174,7 @@
 
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-								<c:forEach var="list" items="${adList}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
 					</div>
 
 				</div>
@@ -199,5 +189,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/college.6bf98b29.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/college.a115804a.js"></script></body>
 </html>

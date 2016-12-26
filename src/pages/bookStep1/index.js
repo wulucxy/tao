@@ -63,6 +63,15 @@ var book = {
       errorParent: '.row',
         successCallback: function(e) {
           var target = $(e.target).closest('.btn');
+
+          var subjects = that.getSubjects();
+          if(subjects.length != 3){
+            $('.subjectsRow').addClass('error unvalid');
+            return false;
+          }else{
+            $('.subjectsRow').removeClass('error unvalid');
+          }
+
           //执行到下一步操作
           that.subFunc(target,$("#assessForm_1"));
 
@@ -78,16 +87,23 @@ var book = {
     });
   },
 
+  getSubjects: function(){
+    var that = this;
+    var subjects = $('[name=subject]').map(function(idx, ele){
+        if(ele.checked){
+          return {
+            name: $(ele).attr('n'),
+            code: $(ele).val()
+          }
+        }
+      }).get();
+
+    return subjects;
+  },
+
   subFunc: function(btn,oForm) {
       var that = this;
-      var subjects = $('[name=subject]').map(function(idx, ele){
-          if(ele.checked){
-            return {
-              name: $(ele).attr('n'),
-              code: $(ele).val()
-            }
-          }
-        }).get()
+      var subjects = that.getSubjects();
 
       var _data = {
         score : $("[name=score]").val(),

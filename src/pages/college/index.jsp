@@ -37,9 +37,7 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<div class="bg bg-yellow">
-							使用数据库前，请同学先将2017年高考成绩转化为2016年的分数，这样查找数据更有效哦！
-						</div>
+						<%@ include file = "/partials/_scoreTransform.jsp" %>
 
 						<div class="s-search">
 							<div class="input-group rel clearfix">
@@ -176,15 +174,7 @@
 
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-								<c:forEach var="list" items="${adList}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
 					</div>
 
 				</div>

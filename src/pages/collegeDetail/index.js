@@ -46,10 +46,10 @@ var college = {
     addYear : function(){
         var that = this;
 
-        var nowYear = new Date().getFullYear();
+        var nowYear = 2017;
         var yearArr = [];
 
-        for(var i=0;i<3;i++){
+        for(var i=0;i<2;i++){
             yearArr.push(nowYear--);
         }
 

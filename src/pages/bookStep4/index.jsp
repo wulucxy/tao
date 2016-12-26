@@ -58,7 +58,7 @@
 				<div class="row clearfix">
 				  <label for="province" class="control-label column col1 fl">
 				    <i class="icon-location"></i>
-				    <em class="vm">高考所在地：</em></label>
+				    <em class="vm">生源地：</em></label>
 				  <div class="col2 selectWrap rel">
 				    <div class="fieldWrap lh34">
 				      <span>${user.province.name}</span>
@@ -67,7 +67,7 @@
 				  </div>
 				</div>
 
-				<div class="row clearfix">
+				<!-- <div class="row clearfix">
 				  <label for="province" class="control-label column col1 fl">
 				    <i class="icon-location icon-newuser"></i>
 				    <em class="vm">姓名：</em></label>
@@ -76,7 +76,7 @@
 				      <span>${user.userName}</span>
 				    </div>
 				  </div>
-				</div>
+				</div> -->
 				
 				<div class="row clearfix inline">
 				  <label for="score" class="control-label column col1 fl">

@@ -46,7 +46,7 @@
 </style>
 <title>职业测试</title>
 
-<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.5dd41735.css" rel="stylesheet"><link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"></head>
 	<body id="zycs">
 	<div class="content">
 		<c:forEach items="${bjsbList}" var="unit" varStatus="status">

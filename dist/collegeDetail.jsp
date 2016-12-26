@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.4076d0d7.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.a97e9fce.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -122,7 +122,7 @@
 											<div class="pad clearfix">
 												<div class="row clearfix inline fl">
 													<label for="studentProvince" class="control-label">
-														<em class="vm">生源地：</em></label>
+														<em class="vm">院校属地：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="studentProvince">
 															
@@ -131,7 +131,7 @@
 												</div>
 												<div class="row clearfix inline fl">
 													<label for="year" class="control-label">
-														<em class="vm">年&emsp;份：</em></label>
+														<em class="vm">年&emsp;&emsp;份：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="Year">
 															  
@@ -140,7 +140,7 @@
 												</div>
 												<div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
-														<em class="vm">批&emsp;次：</em></label>
+														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="batch">
 															  <option value="1">第一批</option>
@@ -208,5 +208,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/collegeDetail.ba0181ec.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/collegeDetail.89ab2582.js"></script></body>
 </html>

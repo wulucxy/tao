@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/subject.c06e3899.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/subject.c06e3899.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -37,6 +37,9 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
+						
+						<%@ include file = "/partials/_scoreTransform.jsp" %>
+
 						<!-- <div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入科目名称">
@@ -148,26 +151,7 @@
 
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
 					</div>
 
 				</div>
@@ -182,5 +166,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/subject.6c7d3228.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/subject.6c7d3228.js"></script></body>
 </html>

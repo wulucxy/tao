@@ -68,7 +68,7 @@
 							<div class="row clearfix">
 								<label for="province" class="control-label column col1 fl">
 									<i class="icon-location"></i>
-									<em class="vm">高考所在地：</em></label>
+									<em class="vm">生源地：</em></label>
 								<div class="col2 inputWrap rel">
 									<div class="fieldWrap">
 										<span class="onlyTxt">${user.province.name}</span>

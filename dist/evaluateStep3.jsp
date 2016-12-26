@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.42c2d263.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.b89535d8.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.b89535d8.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -68,7 +68,7 @@
 							<div class="row clearfix">
 								<label for="province" class="control-label column col1 fl">
 									<i class="icon-location"></i>
-									<em class="vm">高考所在地：</em></label>
+									<em class="vm">生源地：</em></label>
 								<div class="col2 inputWrap rel">
 									<div class="fieldWrap">
 										<span class="onlyTxt">${user.province.name}</span>
@@ -164,5 +164,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.ea70127b.js"></script><script src="/static/web/js/evaluateStep3.06c978b2.js"></script></body>
+	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/evaluateStep3.06c978b2.js"></script></body>
 </html>
