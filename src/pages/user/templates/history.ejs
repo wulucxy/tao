@@ -20,11 +20,7 @@
 		</div>
 		<div class="detailInfo fr">
 			<div class="row btnRow">
-			<% if (caseList[i].payed) { %>
-			<a href="/box/plan/result?planId=<%= caseList[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
-			<% }else{ %>
-			<a href="/pay/wishes?planId=<%= caseList[i].planId %>" class="btn btn-primary btn-medium">付款</a>
-			<% } %>
+				<a href="/box/plan/result?planId=<%= caseList[i].planId %>" class="btn btn-positive btn-medium bd">查看</a>
 			</div>
 		</div>
 	</div>

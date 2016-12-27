@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -59,5 +59,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/majorExam1.22395771.js"></script></body>
+	<script src="/static/web/js/vendors.016ea447.js"></script><script src="/static/web/js/majorExam1.22395771.js"></script></body>
 </html>

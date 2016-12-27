@@ -74,11 +74,12 @@
 							<div class="options">
 								<a class="ddlist" href="/box/plan/book_step1">高考志愿定制</a>
 								<a class="ddlist" href="/box/plan/evaluate_step1">高考志愿评估</a>
-								<a class="ddlist" href="/box/score_management">成绩管理</a>
 								<a class="ddlist" href="/box/plan/major_exam1">专业选择测试</a>
 								<a class="ddlist" href="/box/plan/aboard">留学方案定制</a>
-								<a class="ddlist" href="/box/college_faq">高校问答</a>
 								<a class="ddlist" href="/appointment/create">专家预约</a>
+								<a class="ddlist" href="/box/score_management">成绩管理</a>
+								<a class="ddlist" href="/box/college_faq">专家问答</a>
+								
 							</div>
 						</div>
 					</li>
@@ -89,8 +90,9 @@
 								<a class="ddlist" href="/library/college">院校数据库</a>
 								<a class="ddlist" href="/library/major">专业数据库</a>
 								<a class="ddlist" href="/library/subject">科目数据库</a>
-								<!-- <a class="ddlist" href="/library/score_line">分数线数据库</a> -->
+								
 								<a class="ddlist" href="/library/aboard_data">海外院校库</a>
+								<a class="ddlist" href="/library/scoreTransformer">分数转换</a>
 							</div>
 						</div>
 					</li>

@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.97b27cfb.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.97b27cfb.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -115,5 +115,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/evaluateStep2.f5a818b4.js"></script></body>
+	<script src="/static/web/js/vendors.016ea447.js"></script><script src="/static/web/js/evaluateStep2.9f84700f.js"></script></body>
 </html>

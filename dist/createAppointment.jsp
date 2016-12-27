@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.ba049ff4.css" rel="stylesheet"><link href="/static/web/css/createAppointment.bf615b08.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/createAppointment.bf615b08.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -148,5 +148,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.71db2eea.js"></script><script src="/static/web/js/createAppointment.77b1525f.js"></script></body>
+	<script src="/static/web/js/vendors.016ea447.js"></script><script src="/static/web/js/createAppointment.77b1525f.js"></script></body>
 </html>

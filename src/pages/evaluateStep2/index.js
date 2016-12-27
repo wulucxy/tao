@@ -131,7 +131,7 @@ var evaluate = {
    
     $('#js-addNext').toggleClass('disabled', !(that.state.current.college.code && that.state.current.major.code))
 
-    if(that.state.wishes.length >= 50){
+    if(that.state.wishes.length >= 80){
       $('.downRow').hide();
     }
 
@@ -356,6 +356,8 @@ var evaluate = {
     var that = this;
     $('body').on('click', '#js-addNext', function(e){
       e.preventDefault();
+
+      if($(e.target).hasClass('disabled')) return false;
 
       that.resetWishes();
       that.render();
