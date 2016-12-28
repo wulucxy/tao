@@ -129,7 +129,7 @@
 											${list.time}
 										</span>
 										<div class="media-body"><a href="${list.href}" target="_blank">
-											${list.title}
+											${list.fullTitle}
 										</a></div>
 									   </li>
 									</c:forEach>

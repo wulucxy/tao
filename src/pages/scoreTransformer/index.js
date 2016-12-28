@@ -25,7 +25,7 @@ function subFunc(target, oForm) {
 	};
 
 	$.ajax({
-		url: preServer+province+'/tzy/plan/scoreChange',
+		url: preServer+'tzy/plan/scoreChange',
 		type: 'post',
 		contentType: "application/json",
 		data: JSON.stringify(_data),
