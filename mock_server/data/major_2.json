@@ -22,5 +22,10 @@
             "imgUrl" : "http://placehold.it/300x260",
             "href" : "#5"
         }
-    ]
+    ],
+    "majorAd" : {
+        "href":"http:www.baidu.com",
+        "imgUrl":"http://placehold.it/640x170"
+     }
+
 }

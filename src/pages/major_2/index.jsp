@@ -71,6 +71,15 @@
 											</div>
 										</div>
 										
+							<c:if test="${majorAd != null and majorAd != ''}">
+								<div class="majorAdWrap mt40">
+									<a href="${majorAd.href}" target="_blank" class="db">
+										<img src="${majorAd.imgUrl}" class="responsive">
+									</a>
+								</div>				   
+							</c:if>
+
+										
 									</section>
 									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">

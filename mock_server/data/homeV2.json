@@ -12,6 +12,7 @@
         "userId" : "123",
         "userId" : "name"
     },
+    "ad3" :  { "href":"http:www.baidu.com","imgUrl":"/data/upload/2016-12-28/169606053.jpg" },
     "bannerList" : [
         {
             "href": "3333",

@@ -51,7 +51,7 @@
 									</span>
 									<div class="media-body">
 										<h3>高考志愿定制</h3>
-										<div>已成功帮助<span class="yellow">10000</span>名学生</div>
+										<div>已成功帮助<span class="yellow">${number1}</span>名学生</div>
 									</div>
 								</a>
 								<a href="/box/plan/evaluate_step1" target="_blank" class="grid-item media link-evaluate fr">
@@ -60,7 +60,7 @@
 									</span>
 									<div class="media-body">
 										<h3>高考志愿评估</h3>
-										<div>已成功帮助<span class="yellow">10000</span>名学生</div>
+										<div>已成功帮助<span class="yellow">${number2}</span>名学生</div>
 									</div>
 								</a>
 							</div>
@@ -206,13 +206,17 @@
 		</div>
 	  </div>
 	</section>
-
-	<section class="ovh s-banner">
-		<div class="container tc">
-			<img src="http://placehold.it/74x74" class="responsive">
-		</div>
-	</section>
-
+	
+	<c:if test="${ad3 != null and ad3 != ''}">
+		<section class="ovh mt40">
+			<div class="container tc">
+				<a href="${ad3.href}" target="_blank" class="db">
+					<img src="${ad3.imgUrl}" class="responsive">
+				</a>
+			</div>
+		</section>				   
+	</c:if>
+	
 	<section class="ovh s-feature">
 		<div class="container ovh">
 			<div class="featureList justify">
