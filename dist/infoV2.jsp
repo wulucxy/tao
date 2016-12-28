@@ -160,5 +160,5 @@
 		window.__initData__ = ${moduleList};
 	</script>
 
-	<script src="/static/web/js/vendors.016ea447.js"></script><script src="/static/web/js/infoV2.519c218e.js"></script></body>
+	<script src="/static/web/js/vendors.f2eda443.js"></script><script src="/static/web/js/infoV2.519c218e.js"></script></body>
 </html>

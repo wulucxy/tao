@@ -33,7 +33,7 @@
 					<a href="/library/aboard_data" class="links" target="_blank">海外院校库</a>
 				</div>
 				<div class="fTag-col2 fr">
-					<a href="/library/scoreTransformer" class="links" target="_blank">分数转换</a>
+					<a href="/scoreTransformer" class="links" target="_blank">分数转换</a>
 				</div>
 				
 				

@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <div class="bg bg-yellow">
-	<a class="link" href="/library/scoreTransformer" target="_blank">
+	<a class="link" href="/scoreTransformer" target="_blank">
 		使用数据库前，请同学先将2017年高考成绩转化为2016年的分数，这样查找数据更有效哦！
 	</a>
 </div>

@@ -92,7 +92,7 @@
 								<a class="ddlist" href="/library/subject">科目数据库</a>
 								
 								<a class="ddlist" href="/library/aboard_data">海外院校库</a>
-								<a class="ddlist" href="/library/scoreTransformer">分数转换</a>
+								<a class="ddlist" href="/scoreTransformer">分数转换</a>
 							</div>
 						</div>
 					</li>
