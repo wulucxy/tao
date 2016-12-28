@@ -19,5 +19,7 @@ var provinceId = $("[name=province]").val();
 //我的资料
 archive.init({
 	provinceId : provinceId,
-	submitFormCallback: archive.subFunc
+	submitFormCallback: function(){
+		archive.subFunc.call(archive)
+	}
 });
