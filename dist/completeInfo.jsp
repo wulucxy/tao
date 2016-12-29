@@ -46,7 +46,7 @@
 								<em class="vm">姓名：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
-									<input type="text" class="input form-control" id="name" name="name" value="" required placeholder="请输入姓名">
+									<input type="text" class="input form-control" id="name" name="name" value="${name}" required placeholder="请输入姓名">
 								</div>
 							</div>
 							<div class="errInfo">
@@ -62,9 +62,21 @@
 							<div class="col2 selectWrap rel">
 								<div class="fieldWrap">
 									<select class="form-control" name="sex" readonly required>
-										<option value="">请选择</option>
-										<option value="1">男</option>
-										<option value="2">女</option>
+										<c:choose>
+										    <c:when test="${gender == 1}">
+										   		<option value="1" selected>男</option>
+										   		<option value="2">女</option>
+											</c:when>
+											<c:when test="${gender == 2}">
+												<option value="1">男</option>
+										   		<option value="2" selected>女</option>
+											</c:when>
+											<c:otherwise>
+												<option value="">请选择</option>
+												<option value="1">男</option>
+												<option value="2">女</option>
+											</c:otherwise>
+										</c:choose>
 									</select>
 								</div>
 							</div>
@@ -80,7 +92,7 @@
 								<em class="vm">高中：</em></label>
 							<div class="col2 inputWrap rel">
 								<div class="fieldWrap">
-									<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" required placeholder="请选择高中" >
+									<input type="text" class="input form-control addSchool" id="highSchool" name="highSchool" required placeholder="请选择高中" value="${ highSchoolName }" code="${ highSchoolCode }">
 								</div>
 							</div>
 							<div class="errInfo">
@@ -96,8 +108,8 @@
 								<div class="fieldWrap">
 									
 									<c:choose>
-									    <c:when test="${user.highYear != 0}">
-									   		<input type="hidden" name="highYearInput" value=${user.highYear}>
+									    <c:when test="${highSchoolEntryYear != 0}">
+									   		<input type="hidden" name="highYearInput" value=${highSchoolEntryYear}>
 									   		<select class="form-control" name="highYear" required>
 											</select>
 										</c:when>
