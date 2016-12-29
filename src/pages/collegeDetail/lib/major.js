@@ -20,7 +20,7 @@ var major = {
 		var _data = {
 			capacity : that.capacity,
 			province : $("[name=studentProvince]").val(),
-			year : $("[name=year]").val(),
+			year : $("[name=Year]").val(),
 			batch : $("[name=batch]").val(),
 			collegeId : that.collegeId
 		};

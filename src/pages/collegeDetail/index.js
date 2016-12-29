@@ -35,8 +35,6 @@ baidu.init(document.getElementById("baiduMap"),{
 	} 
 });
 
-major.init();
-
 var college = {
 	init : function(){
         this.addYear();
@@ -87,6 +85,8 @@ var college = {
 
     			$("[name=studentProvince]").empty();
     			$("[name=studentProvince]").append(optionList.join(""));
+
+                major.init();
     		},
     		error : function(){
     			warn("网络请求失败，请稍后重试");
