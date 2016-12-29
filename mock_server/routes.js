@@ -74,6 +74,7 @@ module.exports = {
 	'post::/v2_1/client/1/profile/favor/news/add' : 'mock::api/addInfoFav.json',
 	'post::/v2_1/client/1/tzy/mtest/code' : 'mock::api/verifyCode.json',
 	'/system/area' : 'mock::api/cityList.json',
+	'/system/allProvinces' : 'mock::api/cityList.json',
 	'/system/city' : 'mock::api/cityList2.json',
 	'post::/v2_1/client/1/data/college/search' : 'mock::api/collegeJSON.json',
 	'post::/v2_1/client/1/highSchool/search' : 'mock::api/highschoolJSON.json',

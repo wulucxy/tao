@@ -63,14 +63,14 @@ var major = {
 
                     //获取getCollegeTypeName(院校性质)
                     ele.ownerType = {
-                        code : ele.ownerType,
-                        name : localData.getOwnerTypeName(ele.ownerType)
+                        code : ele.collegeNature,
+                        name : localData.getOwnerTypeName(ele.collegeNature)
                     };
 
                     //获取getLevelName(院校层次)
                     ele.level = {
                         code : ele.level,
-                        name : localData.getLevelName(ele.level)
+                        name : localData.getLevelName(ele.collegeLevel)
                     };
 
                     //获取featrueList
@@ -83,6 +83,8 @@ var major = {
                 });
 
                 res = res.result;
+
+                console.log(res);
 
 				that.insertData(res,that.pager);
 			}

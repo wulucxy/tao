@@ -53,7 +53,7 @@ var archive = {
 	renderArea : function(){
 		var that = this;
 		$.ajax({
-    		url : "/system/area",
+    		url : "/system/allProvinces",
     		type : "get",
     		contentType: "application/json",
     		success : function(res){

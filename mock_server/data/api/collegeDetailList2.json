@@ -35,7 +35,11 @@
                     
                 ],
                 "collegeName": "浙江大学",
-                "city": 330100,                  
+                "city": 330100,
+                "feature":[1,2,3],
+                "collegeNature": "0",
+                "collegeType": "1", 
+                "collegeLevel": "1",               
                 "batch": 1
             }
             

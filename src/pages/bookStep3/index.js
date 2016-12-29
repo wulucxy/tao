@@ -130,17 +130,17 @@ var majors = {
 		   util.setupLabel();
 		  var target = $(e.target);
 		  var label = $(this).closest("label");
-		  // if(target.is(".icon-eye")){
-		  // 	e.preventDefault();
-		  // 	that.subMajorModal(target);
-		  // }else{
-		  // 	if(!isModernBrower){
-		  // 		if (label.attr("for") != ""){
-			 //        $("#" + label.attr("for")).trigger("click");
-			 //        util.setupLabel();
-		  // 		}
-		  // 	}
-		  // }
+		  if(target.is(".icon-eye")){
+		  	e.preventDefault();
+		  	that.subMajorModal(target);
+		  }else{
+		  	if(!isModernBrower){
+		  		if (label.attr("for") != ""){
+			        $("#" + label.attr("for")).trigger("click");
+			        util.setupLabel();
+		  		}
+		  	}
+		  }
 		});
 
 		util.setupLabel();		
@@ -186,8 +186,6 @@ var majors = {
 			majorList : majorList
 		};
 
-		console.log(_data);
-
 		$.ajax({
 			url : preServer+provinceId+"/tzy/plan/wishes/step3",
 			type : "post",
@@ -230,32 +228,38 @@ var majors = {
 		var supId = btn.data("suptype"),
 			majorId = btn.data("majorid");
 
-		var subList1 = $.grep(that.res.subs,function(e,i){
-			if(e.id == supId){
-				return true;
-			}
-		});
+		$.ajax({
+			url : preServer+provinceId+"/data/major/category/"+majorId,
+			type : "get",
+            contentType: "application/json",
+            success : function(res){
+                if(typeof res == "string"){
+                    var res = $.parseJSON(res);
+                }
 
+                if(res.code != 1){
+                    warn(res.msg);
+                    btn.removeClass("disabled");
+                    return false;
+                }
 
-		//var idx = (batch==3) ? 1 : 0;
+                var detailData = {
+					name : btn.data("name"),
+					list : res.result || []
+				};
 
-		var subList = $.grep(subList1[0].subs,function(e,i){
-			if(e.id == majorId){
-				return true;
-			}
-		});
-
-		var detailData = {
-			name : btn.data("name"),
-			list : subList[0].subs
-		};
-
-		modalBox( btn, {
-		        html:tmpl_subMajor(detailData),
-		        klass : 'w540 shadow',
-		        closeByOverlay : true,
-		        completeCallback : function(){}
-		});
+				modalBox(btn, {
+				        html:tmpl_subMajor(detailData),
+				        klass : 'w540 shadow',
+				        closeByOverlay : true,
+				        completeCallback : function(){}
+				});
+            },
+            error : function(err){
+            	btn.removeClass("disabled");
+                console.log(err);
+            }
+		})
 	}
 
 };
