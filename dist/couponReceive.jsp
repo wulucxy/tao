@@ -78,5 +78,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.9db8b460.js"></script><script src="/static/web/js/couponReceive.29aa27ed.js"></script></body>
+	<script src="/static/web/js/vendors.dc2a4ec2.js"></script><script src="/static/web/js/couponReceive.29aa27ed.js"></script></body>
 </html>
