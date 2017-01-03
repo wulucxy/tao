@@ -54,18 +54,18 @@
 									<section class="tab-box detailWrap current">
 										<div class="detailTxt">
 											<div class="inline row">
-												<span class="label">所属门类：</span><span class="field orange">${category}</span>
-												<span class="label">专业代码：</span><span class="field orange">${majorId}</span>
+												<span class="label">所属门类：</span><span class="field g9">${category}</span>
+												<span class="label">专业代码：</span><span class="field g9">${majorId}</span>
 											</div>
 											<div class="media row">
 												<span class="fl label">主要课程：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${mainCourse}
 												</div>
 											</div>
 											<div class="media row">
 												<span class="fl label">培养目标：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${target}
 												</div>
 											</div>

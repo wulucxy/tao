@@ -67,20 +67,24 @@
 				</table>
 		</div>
 	<% }else{ %>
-			<div class="f16 g3 empty">暂无历史数据</div>
+			<% 
+				/* 
+					<div class="f16 g9 empty mt10 mb10">暂无历史数据</div> 
+				*/ 
+			%>
 	<% } %>
 
-	<div class="row">
+	<div class="row mt10">
 		<span class="label">所需科目：</span>
 		<% if (!list.subjects.length) { %>
-		   	<span class="field">无</span>
+		   	<span class="field g9">无</span>
 		<% }else if (list.subjects.length >= 7) { %>
-		   	<span class="field">不限</span>
+		   	<span class="field g9">不限</span>
 		<% }else{ %>
 			<% for (var k = 0; k < list.subjects.length; k++) { 
 				var subject = list.subjects[k];
 			%>
-			<span class="field"><%= subject.subjectName %></span>
+			<span class="field g9"><%= subject.subjectName %></span>
 		<% }} %>
 		
 	</div>

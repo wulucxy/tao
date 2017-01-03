@@ -54,18 +54,18 @@
 									<section class="tab-box detailWrap current">
 										<div class="detailTxt">
 											<div class="inline row">
-												<span class="label">所属门类：</span><span class="field orange">${category}</span>
-												<span class="label">专业代码：</span><span class="field orange">${majorId}</span>
+												<span class="label">所属门类：</span><span class="field g9">${category}</span>
+												<span class="label">专业代码：</span><span class="field g9">${majorId}</span>
 											</div>
 											<div class="media row">
 												<span class="fl label">主要课程：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${mainCourse}
 												</div>
 											</div>
 											<div class="media row">
 												<span class="fl label">培养目标：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${target}
 												</div>
 											</div>
@@ -149,5 +149,5 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 	
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.dc2a4ec2.js"></script><script src="/static/web/js/major_2.4ce27d68.js"></script></body>
+	<script src="/static/web/js/vendors.a4715ff9.js"></script><script src="/static/web/js/major_2.920580bb.js"></script></body>
 </html>

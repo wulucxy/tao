@@ -49,7 +49,7 @@
               			</form>
 						
 						<div class="dzWrapper tc dn">
-	              			<div class="dz">
+	              			<!-- <div class="dz">
 								<p>XXX分在2016年相应的分数和排名</p>
 							</div>
 							<ul class="dzLists">
@@ -57,7 +57,7 @@
 								<li><span class="blue">总分二（第二批）：</span><span class="orange">XXX分</span></li>
 								<li><span class="blue">总分三（第三批）：</span><span class="orange">XXX分</span></li>
 							</ul>
-							<div class="g9 f20">分数转换了，你才能更好地使用数据库</div>
+							<div class="g9 f20">分数转换了，你才能更好地使用数据库</div> -->
 						</div>
 
 					</div>
@@ -74,5 +74,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.dc2a4ec2.js"></script><script src="/static/web/js/scoreTransformer.31cb6146.js"></script></body>
+	<script src="/static/web/js/vendors.a4715ff9.js"></script><script src="/static/web/js/scoreTransformer.a4b6efae.js"></script></body>
 </html>
