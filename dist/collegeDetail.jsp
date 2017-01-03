@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.a97e9fce.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/collegeDetail.c16f1b78.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -122,7 +122,7 @@
 											<div class="pad clearfix">
 												<div class="row clearfix inline fl">
 													<label for="studentProvince" class="control-label">
-														<em class="vm">院校属地：</em></label>
+														<em class="vm">生源地：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="studentProvince">
 															
@@ -208,5 +208,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.fb984474.js"></script><script src="/static/web/js/collegeDetail.b9345030.js"></script></body>
+	<script src="/static/web/js/vendors.9db8b460.js"></script><script src="/static/web/js/collegeDetail.ded17805.js"></script></body>
 </html>
