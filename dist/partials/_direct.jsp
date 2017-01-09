@@ -28,4 +28,4 @@
 	<c:otherwise>
 		<span class="dn">${fn:length(adList)}</span>
 	</c:otherwise>
-</c:choose><script type="text/javascript" src="/static/web/js/vendors.4f264994.js"></script>
+</c:choose><script type="text/javascript" src="/static/web/js/vendors.59cee7d2.js"></script>

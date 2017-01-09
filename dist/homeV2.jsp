@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/homeV2.da818e0a.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/homeV2.1a2f8afb.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -105,6 +105,7 @@
 			<div class="collegeTipTxt">推荐院校</div>
 			<span class="mc mcRt"></span>
 		</div>
+		<div class="collegeListWrap">
 		<ul class="collegeList clearfix">
 			<c:forEach var="list" items="${collegeList}">
 				<li class="college">
@@ -123,6 +124,7 @@
 				</li>
 			</c:forEach>
 		</ul>
+		</div>
 		</div>
 	</section>
 	
@@ -252,5 +254,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script type="text/javascript" src="/static/web/js/vendors.4f264994.js"></script><script type="text/javascript" src="/static/web/js/homeV2.b773d141.js"></script></body>
+	<script type="text/javascript" src="/static/web/js/vendors.59cee7d2.js"></script><script type="text/javascript" src="/static/web/js/homeV2.d803ce97.js"></script></body>
 </html>

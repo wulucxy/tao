@@ -16,4 +16,4 @@
 		${context}
 	</div>
 	
-</article><script type="text/javascript" src="/static/web/js/vendors.4f264994.js"></script>
+</article><script type="text/javascript" src="/static/web/js/vendors.59cee7d2.js"></script>

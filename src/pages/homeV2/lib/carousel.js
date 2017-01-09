@@ -26,7 +26,7 @@ var carousel = {
 
 	bindEvt : function(){
 		this.setWidth();
-		this.auto();
+		// this.auto();
 	},
 
 	setWidth : function(){

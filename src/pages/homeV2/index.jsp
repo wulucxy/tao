@@ -105,6 +105,7 @@
 			<div class="collegeTipTxt">推荐院校</div>
 			<span class="mc mcRt"></span>
 		</div>
+		<div class="collegeListWrap">
 		<ul class="collegeList clearfix">
 			<c:forEach var="list" items="${collegeList}">
 				<li class="college">
@@ -123,6 +124,7 @@
 				</li>
 			</c:forEach>
 		</ul>
+		</div>
 		</div>
 	</section>
 	
