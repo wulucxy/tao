@@ -219,7 +219,7 @@
         
         {
             "majorId":"",                  
-            "majorName":"经济学14",                
+            "majorName":"经济学new",                
             "subjects":                     
             [
                 {
@@ -227,6 +227,27 @@
                     "subjectName":"化学"        
                 },
                 
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },{
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
+                
+                {
+                    "subjectId":"",         
+                    "subjectName":"化学"        
+                },
                 {
                     "subjectId":"",         
                     "subjectName":"化学"        
