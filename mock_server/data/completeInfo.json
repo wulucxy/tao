@@ -11,5 +11,10 @@
         "userId" : "123",
         "userId" : "name",
         "isLogin" : "1"
-    }
+    },
+    "name":"姓名", 
+    "gender":"1",
+    "highSchoolEntryYear" :2015,
+    "highSchoolCode": "学校编号",
+    "highSchoolName" :"需要名称"
 }

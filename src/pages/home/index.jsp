@@ -201,7 +201,7 @@
 					<div class="content">
 						<h3 class="clearfix title" rel="library">
 							<span class="fl s-title">
-								资料库
+								数据库
 								<em class="underLine"></em>	
 							</span>
 						</h3>

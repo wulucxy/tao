@@ -36,6 +36,9 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
+						
+						<%@ include file = "/partials/_scoreTransform.jsp" %>
+
 						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入院校名称" id="collegeInput">
@@ -171,15 +174,7 @@
 
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-								<c:forEach var="list" items="${adList}">
-								<li><a href="${list.href}" target="_blank">
-									<img src="${list.imgUrl}" >
-								</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
 					</div>
 
 				</div>

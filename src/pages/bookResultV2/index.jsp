@@ -59,10 +59,14 @@
 									<c:when test="${fn:length(radical) > 0 }">
 										<c:forEach var="list" items="${radical}" varStatus="loop">
 										<div class="caseSection">
-											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+											<h3>
+											<a href="/library/major/${list.majorId}" class="textLink" target="_blank">${list.majorName}</a>
+											<small class="g9">
+												${list.batch}
+												<c:if test="${list.field != null and list.field != ''}" >(${list.field})</c:if>
+											</small></h3>
 											<h4 class="name badgeRow">
-												<em class="badgetitle vm">${list.collegeName}</em>
+												<a class="badgetitle vm textLink" href="/library/college/${list.collegeId}" target="_blank" >${list.collegeName}</a>
 												<c:forEach var="featurelist" items="${list.feature}">
 													<span class="badge">${featurelist.name}</span>
 												</c:forEach>
@@ -134,10 +138,15 @@
 									<c:when test="${fn:length(normal) > 0 }">
 										<c:forEach var="list" items="${normal}" varStatus="loop">
 										<div class="caseSection">
-											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+											<h3>
+											<a href="/library/major/${list.majorId}" class="textLink" target="_blank">${list.majorName}</a>
+											<small class="g9">
+												${list.batch}<c:if test="${list.field != null and list.field != ''}" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
-												<em class="badgetitle vm">${list.collegeName}</em>
+												
+												
+												<a class="badgetitle vm textLink" href="/library/college/${list.collegeId}" target="_blank" >${list.collegeName}</a>
+
 												<c:forEach var="featurelist" items="${list.feature}">
 													<span class="badge">${featurelist.name}</span>
 												</c:forEach>
@@ -209,10 +218,14 @@
 									<c:when test="${fn:length(conservative) > 0 }">
 										<c:forEach var="list" items="${conservative}" varStatus="loop">
 										<div class="caseSection">
-											<h3>${list.majorName} <small class="g9">
-												${list.batch}</small></h3>
+											<h3>
+											<a href="/library/major/${list.majorId}" class="textLink" target="_blank">${list.majorName}</a>
+											<small class="g9">
+												${list.batch}<c:if test="${list.field != null and list.field != ''}" >(${list.field})</c:if></small></h3>
 											<h4 class="name badgeRow">
-												<em class="badgetitle vm">${list.collegeName}</em>
+												
+												<a class="badgetitle vm textLink" href="/library/college/${list.collegeId}" target="_blank" >${list.collegeName}</a>
+
 												<c:forEach var="featurelist" items="${list.feature}">
 													<span class="badge">${featurelist.name}</span>
 												</c:forEach>

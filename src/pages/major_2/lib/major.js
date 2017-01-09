@@ -7,31 +7,32 @@ var major = {
 	init : function(o){
 		
         this.majorId = $("[name=majorId]").val();
-        this.province = $("[name=province]").val();
         this.pager = 1;
         this.capacity = 10;
-		//this.requestData();
 		this.bindEvt();
 	},
 
 	requestData : function(btn){
 		var that = this;
-		// var _data = {
-		// 	province : that.province,
-		// 	majorId : that.majorId,
-		// 	page : that.pager
-		// };
 
-		var parm = [];
-		parm.push("capacity="+that.capacity);
-		parm.push("province="+that.province);
-		parm.push("majorId="+that.majorId);
-		parm.push("page="+that.pager);
+		that.province = $("[name=studentProvince]").val();
+        that.year = $("[name=Year]").val();
+        that.batch = $("[name=batch]").val();
+		
+		var _data = {
+			capacty: that.capacity,
+			province: that.province,
+			year: that.year,
+			batch: that.batch,
+			majorId: that.majorId,
+			page: that.pager
+		};
 
 		$.ajax({
-			url : preServer+that.province + "/data/major/college?"+parm.join("&"),
-			type : "get",
-			contentType: "application/json",
+			url : preServer+that.province + "/data/major/college",
+			type : "post",
+			data : JSON.stringify(_data),
+            contentType: "application/json",
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
@@ -62,26 +63,28 @@ var major = {
 
                     //获取getCollegeTypeName(院校性质)
                     ele.ownerType = {
-                        code : ele.ownerType,
-                        name : localData.getOwnerTypeName(ele.ownerType)
+                        code : ele.collegeNature,
+                        name : localData.getOwnerTypeName(ele.collegeNature)
                     };
 
                     //获取getLevelName(院校层次)
                     ele.level = {
                         code : ele.level,
-                        name : localData.getLevelName(ele.level)
+                        name : localData.getLevelName(ele.collegeLevel)
                     };
 
                     //获取featrueList
-                    ele.feature = $.map(ele.feature,function(el,index){
+                    ele.feature = ele.feature ? $.map(ele.feature,function(el,index){
                         return {
                             type : el,
                             name : localData.getFeatureName(el)
                         };
-                    });
+                    }) : [];
                 });
 
                 res = res.result;
+
+                console.log(res);
 
 				that.insertData(res,that.pager);
 			}
@@ -118,6 +121,11 @@ var major = {
 
 	bindEvt : function(){
 		var that = this;
+
+		$(".trigger").on("change",function(){
+			that.pager = 1;
+			that.requestData();
+		});
 
 		$(".btn-loading").on("click",function(e){
     		e.preventDefault();

@@ -14,7 +14,7 @@ var tmpl_recommend = require("./templates/recommend.ejs");
 var tmpl_exam = require("./templates/exam.ejs");
 
 
-var charts = require("./lib/chart");
+// var charts = require("./lib/chart");
 
 var provinceId = $("[name=province]").val();
 

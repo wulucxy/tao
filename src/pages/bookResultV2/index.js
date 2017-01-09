@@ -12,6 +12,8 @@ var common = require("../../assets/components/common");
 
 //自定义功能写下面
 
+console.log('aaaaa');
+
 //弹窗模板
 var tmpl_Info = require("../../assets/templates/applyInfo.ejs");
 

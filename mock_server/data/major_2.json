@@ -12,6 +12,13 @@
         "userId" : "name",
         "isLogin" : "1"
     },
+    "provinces":[
+        {"name":"北京","code":"1"},
+        {"name":"上海","code":"2"},
+        {"name":"杭州","code":"3"},
+        {"name":"深圳","code":"4"},
+        {"name":"武汉","code":"5"}
+    ],
     "majorId":"010101",
     "category":"专业大类",
     "mainCourse":"主要课程",
@@ -22,5 +29,10 @@
             "imgUrl" : "http://placehold.it/300x260",
             "href" : "#5"
         }
-    ]
+    ],
+    "majorAd" : {
+        "href":"http:www.baidu.com",
+        "imgUrl":"http://placehold.it/640x170"
+     }
+
 }

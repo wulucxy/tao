@@ -19,7 +19,8 @@ var searchSchool = {
 			el : ".addSchool",
 			provinceId : 330000,
 			type  : "college",
-			capacity : 10
+			capacity : 10,
+			event: "focusin"
 		},options);
 
 		this.bindEvt();
@@ -28,9 +29,10 @@ var searchSchool = {
 	bindEvt : function(){
 		var that = this,o = that.options;
 		
-		$(o.el).on("focusin",function(e){
+		$(o.el).on(o.event,function(e){
 	      e.preventDefault();
 	      var oInput = $(e.target);
+	      if(oInput.hasClass("disabled")) return;
 	      if(oInput.hasClass("cur")) return;
 	      oInput.addClass("cur");
 

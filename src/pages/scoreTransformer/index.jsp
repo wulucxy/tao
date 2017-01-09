@@ -14,6 +14,9 @@
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
+
+	<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
@@ -29,18 +32,24 @@
 
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
-						<div class="inputWrap">
-							<input class="input form-control" type="text" name="score" id="score" placeholder="请输入2017年高考分数">
-						</div>
+						<form action="javascript:;" onsubmit="return false;" id="scoreTransformerForm">
+							<div class="inputWrap row">
+								<input class="input form-control" type="number" name="score" id="score" placeholder="请输入2017年高考分数" required max="800" min="0" noPtnCheck=true>
+								<div class="errInfo">
+								<span class="p-error">高考分数为0-800之间，请重新填写</span>
+								<span class="p-error-empty">高考分数不能为空</span>
+								</div>
+							</div>
+							
+							<div class="row btnRow">
+			                    <button type="submit" class="btn btn-primary btn-block" id="verifyBtn">
+			                        <em class="subTxt">转换</em>
+			                    </button>
+	              			</div>
+              			</form>
 						
-						<div class="row btnRow">
-		                    <button type="submit" class="btn btn-primary btn-block" id="verifyBtn">
-		                        <em class="subTxt">转换</em>
-		                    </button>
-              			</div>
-						
-						<div class="dzWrapper tc">
-	              			<div class="dz">
+						<div class="dzWrapper tc dn">
+	              			<!-- <div class="dz">
 								<p>XXX分在2016年相应的分数和排名</p>
 							</div>
 							<ul class="dzLists">
@@ -48,7 +57,7 @@
 								<li><span class="blue">总分二（第二批）：</span><span class="orange">XXX分</span></li>
 								<li><span class="blue">总分三（第三批）：</span><span class="orange">XXX分</span></li>
 							</ul>
-							<div class="g9 f20">分数转换了，你才能更好地使用数据库</div>
+							<div class="g9 f20">分数转换了，你才能更好地使用数据库</div> -->
 						</div>
 
 					</div>

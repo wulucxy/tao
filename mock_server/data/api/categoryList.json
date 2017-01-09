@@ -1,0 +1,142 @@
+{
+"code": "1",
+"msg": "调用成功",
+"result": {
+"undergraduateList": [
+  {
+    "categoryName": "哲学",
+    "categoryId": "3"
+  },
+  {
+    "categoryName": "经济学",
+    "categoryId": "4"
+  },
+  {
+    "categoryName": "法学",
+    "categoryId": "5"
+  },
+  {
+    "categoryName": "教育学",
+    "categoryId": "6"
+  },
+  {
+    "categoryName": "文学",
+    "categoryId": "7"
+  },
+  {
+    "categoryName": "历史学",
+    "categoryId": "8"
+  },
+  {
+    "categoryName": "理学",
+    "categoryId": "9"
+  },
+  {
+    "categoryName": "工学",
+    "categoryId": "10"
+  },
+  {
+    "categoryName": "农学",
+    "categoryId": "11"
+  },
+  {
+    "categoryName": "医学",
+    "categoryId": "12"
+  },
+  {
+    "categoryName": "管理学",
+    "categoryId": "13"
+  },
+  {
+    "categoryName": "艺术学",
+    "categoryId": "33"
+  },
+  {
+    "categoryName": "少数民族预科班",
+    "categoryId": "34"
+  }
+],
+"juniorList": [
+  {
+    "categoryName": "农林牧渔",
+    "categoryId": "14"
+  },
+  {
+    "categoryName": "交通运输",
+    "categoryId": "15"
+  },
+  {
+    "categoryName": "生化与药品",
+    "categoryId": "16"
+  },
+  {
+    "categoryName": "能源开发与测绘",
+    "categoryId": "17"
+  },
+  {
+    "categoryName": "材料与能源",
+    "categoryId": "18"
+  },
+  {
+    "categoryName": "土建",
+    "categoryId": "19"
+  },
+  {
+    "categoryName": "水利",
+    "categoryId": "20"
+  },
+  {
+    "categoryName": "制造",
+    "categoryId": "21"
+  },
+  {
+    "categoryName": "电子信息",
+    "categoryId": "22"
+  },
+  {
+    "categoryName": "环保、气象与安全",
+    "categoryId": "23"
+  },
+  {
+    "categoryName": "轻纺食品",
+    "categoryId": "24"
+  },
+  {
+    "categoryName": "财经",
+    "categoryId": "25"
+  },
+  {
+    "categoryName": "医药卫生",
+    "categoryId": "26"
+  },
+  {
+    "categoryName": "旅游",
+    "categoryId": "27"
+  },
+  {
+    "categoryName": "公共事业",
+    "categoryId": "28"
+  },
+  {
+    "categoryName": "文化教育",
+    "categoryId": "29"
+  },
+  {
+    "categoryName": "艺术设计传媒",
+    "categoryId": "30"
+  },
+  {
+    "categoryName": "公安",
+    "categoryId": "31"
+  },
+  {
+    "categoryName": "法律",
+    "categoryId": "32"
+  },
+  {
+    "categoryName": "少数名族预科班",
+    "categoryId": "35"
+  }
+]
+}
+}

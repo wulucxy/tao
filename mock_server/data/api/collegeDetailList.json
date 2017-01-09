@@ -1,1 +1,17 @@
-{"code":"1","msg":"调用成功","result":{"total":1,"colleges":[{"collegeId":"2981","level":1,"feature":[1,2,3],"collegeName":"山东大学","city":370100}],"count":1,"page":1}}
+{
+	"code": "1",
+	"msg": "调用成功",
+	"result": {
+		"total": 1,
+		"colleges": [{
+			"collegeId": "2981",
+			"feature": [1, 2, 3],
+			"collegeName": "山东大学",
+			"city": 370100,
+			"collegeNature": "0",
+            "collegeLevel": "1"
+		}],
+		"count": 1,
+		"page": 1
+	}
+}

@@ -35,12 +35,31 @@ baidu.init(document.getElementById("baiduMap"),{
 	} 
 });
 
-major.init();
-
 var college = {
 	init : function(){
+        this.addYear();
 		this.renderArea();
 	},
+
+    addYear : function(){
+        var that = this;
+
+        var nowYear = 2017;
+        var yearArr = [];
+
+        for(var i=0;i<2;i++){
+            yearArr.push(nowYear--);
+        }
+
+        var optionList = [];
+
+        $.each(yearArr,function(idx,ele){
+            optionList.push('<option value='+ele+'>'+ele+'</option>');
+        });
+
+        $("[name=Year]").empty().append(optionList.join(""));
+    },
+
 	renderArea : function(){
 		var that = this;
 		$.ajax({
@@ -66,6 +85,8 @@ var college = {
 
     			$("[name=studentProvince]").empty();
     			$("[name=studentProvince]").append(optionList.join(""));
+
+                major.init();
     		},
     		error : function(){
     			warn("网络请求失败，请稍后重试");

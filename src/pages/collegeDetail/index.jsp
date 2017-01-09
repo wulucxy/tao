@@ -47,7 +47,7 @@
 						                 <ul>
 											<li  class="tab-item current"><a href="javascript:;">学校简介</a></li>
 											<li  class="tab-item"><a href="javascript:;">开设专业</a></li>
-											<li  class="tab-item"><a href="javascript:;">分数线</a></li>
+											<!-- <li  class="tab-item"><a href="javascript:;">分数线</a></li> -->
 										</ul>
 						        </nav>
 								
@@ -131,22 +131,21 @@
 												</div>
 												<div class="row clearfix inline fl">
 													<label for="year" class="control-label">
-														<em class="vm">年&emsp;份：</em></label>
+														<em class="vm">年&emsp;&emsp;份：</em></label>
 													<div class="selectWrap rel">
-														<select class="form-control trigger" name="year">
-															  <option value="2015">2015</option>
-															  <option value="2014">2014</option>
-															  <option value="2013">2013</option>
-														</select>	
+														<select class="form-control trigger" name="Year">
+															  
+														</select>
 													</div>
 												</div>
 												<div class="row clearfix inline fl">
-													<label for="courseType" class="control-label">
-														<em class="vm">科&emsp;目：</em></label>
+													<label for="batch" class="control-label">
+														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
-														<select class="form-control trigger" name="courseType">
-															  <option value="0">理科</option>
-															  <option value="1">文科</option>
+														<select class="form-control trigger" name="batch">
+															  <option value="1">第一批</option>
+															  <option value="2">第二批</option>
+															  <option value="3">第三批</option>
 														</select>	
 													</div>
 												</div>
@@ -161,13 +160,13 @@
 										<%@ include file = "/partials/_loadMore.jsp" %>
 
 									</section>
-									<section class="tab-box infoWrap">
+									<!-- <section class="tab-box infoWrap">
 										
 										<div class="threholdTableWrap">
 											<iframe src="/v2_1/mobile/${user.province.code}/data/college/${collegeId}/thresholds" style="width:100%;height:100%;border:none;padding:0;margin:0;" scolling="no" frameBorder="0"></iframe>
 										</div>
 
-									</section>
+									</section> -->
 								</div>
 							</div>
 

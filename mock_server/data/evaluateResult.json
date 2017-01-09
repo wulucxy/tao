@@ -97,7 +97,7 @@
         {
             "collegeId":"1",
             "collegeName":"同济大学",
-            "assessment":0,                 
+            "assessment":-2,                 
             "city":"北京",
             "type":"综合",
             "level":"本科",

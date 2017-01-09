@@ -11,13 +11,14 @@
 	<title>高考志愿</title>
 	</head>
 <body>
+	
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
 	<%@ include file = "/partials/_header.jsp" %>
 
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
-		
+			
 		<!-- 保存province属性 -->
 		<input type="hidden" name="province" value="${user.province.code}">
 
@@ -72,7 +73,7 @@
 								</span>
 							</div>
 							<div class="errInfo">
-							<span class="p-error">高考分数为0-800之间，请重新填写</span>
+							<span class="p-error">高考分数为0-750之间，请重新填写</span>
 							<span class="p-error-empty">高考分数不能为空</span>
 							</div>
 						</div>
@@ -84,10 +85,11 @@
 								<p class="label-desc">（选择三门）</p> 
 								</label>
 							<div class="col2 inputWrap rel">
-								<div class="fieldWrap">  
-									<label for="subject_1" class="label_check inline">
+								<div class="fieldWrap"> 
+
+<label for="subject_1" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" checked required n="物理" >
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" required n="物理" >
 									<em class="vm">物理</em>
 									</label>
 
@@ -99,7 +101,7 @@
 
 									<label for="subject_3" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" checked n="生物" required>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" n="生物" required>
 									<em class="vm">生物</em>
 									</label>
 
@@ -111,7 +113,7 @@
 
 									<label for="subject_5" class="label_check inline">
 									<em class="icon-radio"></em>
-									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治" checked required>
+									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治" required>
 									<em class="vm">政治</em>
 									</label>
 
@@ -126,9 +128,13 @@
 									<input type="checkbox" class="input form-control" id="subject_7" name="subject" value="7" n="地理" required>
 									<em class="vm">地理</em>
 									</label>
+									
 								</div>
 							</div>
-							<div class="errInfo"></div>
+							<div class="errInfo">
+								<span class="p-error">请选择3门选考科目</span>
+								<span class="p-error-empty">选考科目不能为空</span>
+							</div>
 						</div>
 						
 						<div class="footerCnt">
@@ -151,6 +157,10 @@
 
 		<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 		<%@ include file = "/partials/_sidebar.jsp" %>
+		
+		<c:forEach var="subject" items="${subjects}">
+			<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+		</c:forEach>	
 
 	</div>
 	<!-- 公共尾部 -->

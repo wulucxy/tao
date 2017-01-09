@@ -1,0 +1,21 @@
+ <% if (wishes.length == 0) { %>
+	<div class="no_wishList">
+		请使用上方控件选择学校和专业，录入志愿信息
+	</div>
+<% }else{ %>
+<div class="panelLists clearfix">
+	<% for (var i = 0; i < wishes.length; i++) { %>
+		<div class="panel" collegename="<%= wishes[i].collegeName %>" collegeid="<%= wishes[i].collegeId %>" majorname="<%= wishes[i].majorName %>" majorid="<%= wishes[i].majorId %>" >
+			<div class="panel-hd">
+				<i class="icon icon-close fr panel-close"></i>
+				<div class="collegeName"><%= wishes[i].collegeName %></div>
+			</div>
+			<div class="panel-bd">
+				<%= wishes[i].majorName %><% if(wishes[i].field) { %>
+		 			  (<%= wishes[i].field %>方向)
+		 		<% } %>
+			</div>
+		</div>
+	<% } %>
+</div>
+<% } %>

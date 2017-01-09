@@ -6,25 +6,37 @@
 	  <div class="container clearfix ovh">
 		<div class="col1 fl column">
 			<h4 class="h4">工具箱</h4>
-			<div class="tagLists f-lh">
-				<a href="/box/score_management" class="links" target="_blank">成绩管理</a>
-				<a href="/box/college_faq" class="links" target="_blank">高校问答</a>
+			<div class="tagLists f-lh clearfix">
+			<div class="fTag-col1 fl">
 				<a href="/box/plan/book_step1" class="links" target="_blank">高考志愿定制</a>
-				<a href="/box/plan/major_exam1" class="links" target="_blank">专业选择测试</a>
 				<a href="/box/plan/evaluate_step1" class="links" target="_blank">高考志愿评估</a>
+				<a href="/box/plan/major_exam1" class="links" target="_blank">专业选择测试</a>
 				<a href="/box/plan/aboard" class="links" target="_blank">留学方案定制</a>
+			</div>
+			<div class="fTag-col2 fr">
 				<a href="/appointment/create" class="links" target="_blank">升学规划专家预约</a>
+				<a href="/box/score_management" class="links" target="_blank">成绩管理</a>
+				<a href="/box/college_faq" class="links" target="_blank">专家问答</a>	
+			</div>
+			
+			
 			</div>
 
 		</div>
 		<div class="col2 fl column">
-			<h4 class="h4">资料库</h4>
-			<div class="tagLists f-lh">
-				<a href="/library/college" class="links" target="_blank">高校数据库</a>
-				<a href="/library/subject" class="links" target="_blank">科目数据库</a>
-				<a href="/library/major" class="links" target="_blank">专业数据库</a>
-				<a href="/library/aboard_data" class="links" target="_blank">海外院校库</a>
-				<a href="/library/score_line" class="links" target="_blank">分数线数据库</a>
+			<h4 class="h4">数据库</h4>
+			<div class="tagLists f-lh clearfix">
+				<div class="fTag-col1 fl">
+					<a href="/library/college" class="links" target="_blank">高校数据库</a>
+					<a href="/library/subject" class="links" target="_blank">科目数据库</a>
+					<a href="/library/major" class="links" target="_blank">专业数据库</a>
+					<a href="/library/aboard_data" class="links" target="_blank">海外院校库</a>
+				</div>
+				<div class="fTag-col2 fr">
+					<a href="/scoreTransformer" class="links" target="_blank">分数转换</a>
+				</div>
+				
+				
 			</div>
 		</div>
 		<div class="col3 column fl f-lh">

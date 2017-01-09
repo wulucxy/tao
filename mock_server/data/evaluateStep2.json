@@ -22,5 +22,22 @@
       {"code":"","name":"","type":4},
       {"code":"","name":"","type":5}
     ],
-    "selected" : [{"list":[{"name":"建筑学（含城乡规划）","code":"050252P","majorId":"050252P","majorName":"建筑学（含城乡规划）"}],"type":1},{"list":[],"type":2},{"list":[],"type":3},{"list":[],"type":4},{"list":[],"type":5}]
+    "selected" : [{"list":[{"name":"建筑学（含城乡规划）","code":"050252P","majorId":"050252P","majorName":"建筑学（含城乡规划）"}],"type":1},{"list":[],"type":2},{"list":[],"type":3},{"list":[],"type":4},{"list":[],"type":5}],
+    "wishes":[
+          {
+             "collegeId":"175",
+             "collegeName":"北京中医药大学",
+             "majorId":"67",
+             "majorName":"法学",
+             "field":"医药卫生"
+          },
+          {
+             "collegeId":"175",
+             "collegeName":"北京中医药大学",
+             "majorId":"67",
+             "majorName":"法学",
+             "field":"医药卫生"
+          }
+    ],
+    "subjects":[{"name":"物理","code":"1"},{"name":"化学","code":"2"},{"name":"生物","code":"3"}]
 }

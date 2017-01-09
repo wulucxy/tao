@@ -54,26 +54,70 @@
 									<section class="tab-box detailWrap current">
 										<div class="detailTxt">
 											<div class="inline row">
-												<span class="label">所属门类：</span><span class="field orange">${category}</span>
-												<span class="label">专业代码：</span><span class="field orange">${majorId}</span>
+												<span class="label">所属门类：</span><span class="field g9">${category}</span>
+												<span class="label">专业代码：</span><span class="field g9">${majorId}</span>
 											</div>
 											<div class="media row">
 												<span class="fl label">主要课程：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${mainCourse}
 												</div>
 											</div>
 											<div class="media row">
 												<span class="fl label">培养目标：</span>
-												<div class="media-body orange">
+												<div class="media-body g9">
 													${target}
 												</div>
 											</div>
 										</div>
 										
+							<c:if test="${majorAd != null and majorAd != ''}">
+								<div class="majorAdWrap mt40">
+									<a href="${majorAd.href}" target="_blank" class="db">
+										<img src="${majorAd.imgUrl}" class="responsive">
+									</a>
+								</div>				   
+							</c:if>
+
+										
 									</section>
 									<section class="tab-box majorWrap dn">
 										<div class="schoolListWrap">
+											
+										<div class="bg bg-f5">
+											<div class="pad clearfix">
+												<div class="row clearfix inline fl">
+													<label for="studentProvince" class="control-label">
+														<em class="vm">院校属地：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="studentProvince">
+															
+														</select>	
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="year" class="control-label">
+														<em class="vm">年&emsp;&emsp;份：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="Year">
+															  
+														</select>
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="batch" class="control-label">
+														<em class="vm">批&emsp;&emsp;次：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="batch">
+															  <option value="1">第一批</option>
+															  <option value="2">第二批</option>
+															  <option value="3">第三批</option>
+														</select>	
+													</div>
+												</div>
+											</div>
+										</div>
+
 											<ul class="schoolList load-more-list" data-url="/loadmore/school" data-tmpl="">	
 											</ul>
 											<!-- 加载更多模块 -->
@@ -87,26 +131,8 @@
 						</div>
 					</div>
 					<div class="col2 col2 fr">
-						<div class="directs">
-							<ul>
-							<c:forEach var="list" items="${adList}">
-							<li>
-							<c:choose>
-							    <c:when test="${list.href != null}">
-							   		<a href="${list.href}" target="_blank" >
-							   			<img src="${list.imgUrl}" >
-							   		</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:;" >
-										<img src="${list.imgUrl}" >
-									</a>
-								</c:otherwise>
-							</c:choose>
-							</li>
-							</c:forEach>
-						</ul>
-						</div>
+						<%@ include file = "/partials/_direct.jsp" %>
+
 					</div>
 
 				</div>
@@ -121,6 +147,7 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+	
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
 	</body>
 </html>

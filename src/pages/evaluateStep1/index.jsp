@@ -11,6 +11,8 @@
 	<title>高考志愿</title>
 	</head>
 <body>
+	
+
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
 	<%@ include file = "/partials/_header.jsp" %>
@@ -61,149 +63,6 @@
 							<div class="errInfo"></div>
 						</div>
 						
-						<div class="row clearfix">
-							<label for="courseType" class="control-label column col1 fl">
-								<i class="icon-location icon-book"></i>
-								<em class="vm">高考科类：</em></label>
-							<div class="col2 inputWrap rel">
-								<div class="fieldWrap">  
-								<c:choose>
-								   <c:when test="${courseType == 0 }">
-										<label for="courseType_0" class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
-										<em class="vm">理科</em>
-										</label>
-
-										<label for="courseType_1"  class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
-										<em class="vm">文科</em>
-										</label>
-									</c:when>
-									<c:when test="${courseType == 1 }">
-										<label for="courseType_0" class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" required>
-										<em class="vm">理科</em>
-										</label>
-
-										<label for="courseType_1"  class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" checked required>
-										<em class="vm">文科</em>
-										</label>
-									</c:when>
-									<c:otherwise>
-										<label for="courseType_0" class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_0" name="courseType" value="0" checked required>
-										<em class="vm">理科</em>
-										</label>
-
-										<label for="courseType_1"  class="label_radio inline">
-										<em class="icon-radio"></em>
-										<input type="radio" class="input form-control" id="courseType_1" name="courseType" value="1" required>
-										<em class="vm">文科</em>
-										</label>
-									</c:otherwise>
-								</c:choose>
-								</div>
-							</div>
-							<div class="errInfo"></div>
-						</div>
-
-
-						<div class="row clearfix">
-							<label for="courseType" class="control-label column col1 fl">
-								<i class="icon-location icon-list"></i>
-								<em class="vm">报考批次：</em></label>
-							<div class="col2 inputWrap rel">
-								<div class="fieldWrap">
-								<c:choose>
-								   <c:when test="${batch == 1 }">
-									<label for="batch_1" class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required>
-									<em class="vm">第一批</em>
-									</label>
-
-									<label for="batch_2"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
-									<em class="vm">第二批</em>
-									</label>
-
-									<label for="batch_3"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
-									<em class="vm">第三批</em>
-									</label>
-									</c:when>
-									<c:when test="${batch == 2 }">
-									<label for="batch_1" class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" required>
-									<em class="vm">第一批</em>
-									</label>
-
-									<label for="batch_2"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" checked required>
-									<em class="vm">第二批</em>
-									</label>
-
-									<label for="batch_3"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
-									<em class="vm">第三批</em>
-									</label>
-									</c:when>
-									<c:when test="${batch == 3 }">
-									<label for="batch_1" class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" required>
-									<em class="vm">第一批</em>
-									</label>
-
-									<label for="batch_2"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
-									<em class="vm">第二批</em>
-									</label>
-
-									<label for="batch_3"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" checked required>
-									<em class="vm">第三批</em>
-									</label>
-									</c:when>
-									<c:otherwise>
-									<label for="batch_1" class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="1" id="batch_1" name="batch" checked required>
-									<em class="vm">第一批</em>
-									</label>
-
-									<label for="batch_2"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="2" id="batch_2" name="batch" required>
-									<em class="vm">第二批</em>
-									</label>
-
-									<label for="batch_3"  class="label_radio inline">
-									<em class="icon-radio"></em>
-									<input type="radio" class="input form-control" value="3" id="batch_3" name="batch" required>
-									<em class="vm">第三批</em>
-									</label>
-									</c:otherwise>
-								</c:choose>
-								</div>
-							</div>
-							<div class="errInfo"></div>
-						</div>
-
-						
 						<div class="row clearfix inline">
 							<label for="score" class="control-label column col1 fl">
 								<i class="icon-location icon-fenshu"></i>
@@ -214,23 +73,67 @@
 								</span>
 							</div>
 							<div class="errInfo">
-							<span class="p-error">高考分数为0-800之间，请重新填写</span>
+							<span class="p-error">高考分数为0-750之间，请重新填写</span>
 							<span class="p-error-empty">高考分数不能为空</span>
 							</div>
 						</div>
 
-						<div class="row clearfix inline">
-							<label for="place" class="control-label column col1 fl">
-								<i class="icon-location icon-rank"></i>
-								<em class="vm">高考排名：</em></label>
+						<div class="row clearfix subjectsRow">
+							<label for="subject" class="control-label column col1 fl">
+								<i class="icon-location icon-book"></i>
+								<em class="vm">选考科目：</em> 
+								<p class="label-desc">（选择三门）</p> 
+								</label>
 							<div class="col2 inputWrap rel">
-								<span class="fieldWrap">
-									<input type="text" class="input form-control dib c-9" id="place" name="place" placeholder="请输入高考排名" pattern="^[0-9]{1,8}" value="${place}" required> &nbsp;名
-								</span>
+								<div class="fieldWrap"> 
+
+<label for="subject_1" class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_1" name="subject" value="1" required n="物理" >
+									<em class="vm">物理</em>
+									</label>
+
+									<label for="subject_2"  class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_2" name="subject" value="2" n="化学" required>
+									<em class="vm">化学</em>
+									</label>
+
+									<label for="subject_3" class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_3" name="subject" value="3" n="生物" required>
+									<em class="vm">生物</em>
+									</label>
+
+									<label for="subject_4"  class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_4" name="subject" value="4" n="技术" required>
+									<em class="vm">技术</em>
+									</label>
+
+									<label for="subject_5" class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_5" name="subject" value="5" n="政治"  required>
+									<em class="vm">政治</em>
+									</label>
+
+									<label for="subject_6"  class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_6" name="subject" value="6" n="历史" required>
+									<em class="vm">历史</em>
+									</label>
+
+									<label for="subject_7"  class="label_check inline">
+									<em class="icon-radio"></em>
+									<input type="checkbox" class="input form-control" id="subject_7" name="subject" value="7" n="地理" required>
+									<em class="vm">地理</em>
+									</label>
+									
+								</div>
 							</div>
 							<div class="errInfo">
-							<span class="p-error">高考排名为1-8位数字，请重新填写</span>
-							<span class="p-error-empty">高考排名不能为空</span>
+								<span class="p-error">请选择3门选考科目</span>
+								<span class="p-error-empty">选考科目不能为空</span>
 							</div>
 						</div>
 						
@@ -254,6 +157,10 @@
 
 		<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 		<%@ include file = "/partials/_sidebar.jsp" %>
+		
+		<c:forEach var="subject" items="${subjects}">
+			<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
+		</c:forEach>	
 
 	</div>
 	<!-- 公共尾部 -->
