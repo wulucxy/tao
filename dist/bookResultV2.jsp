@@ -87,7 +87,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -167,7 +167,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -246,7 +246,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -313,5 +313,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.59cee7d2.js"></script><script src="/static/web/js/bookResultV2.ab4c1c55.js"></script></body>
+	<script src="/static/web/js/vendors.8a18fe91.js"></script><script src="/static/web/js/bookResultV2.ab4c1c55.js"></script></body>
 </html>

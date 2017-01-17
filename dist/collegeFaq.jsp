@@ -22,7 +22,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						高校问答
+						专家问答
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -132,5 +132,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.59cee7d2.js"></script><script src="/static/web/js/collegeFaq.01adb150.js"></script></body>
+	<script src="/static/web/js/vendors.8a18fe91.js"></script><script src="/static/web/js/collegeFaq.01adb150.js"></script></body>
 </html>

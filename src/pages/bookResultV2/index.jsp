@@ -87,7 +87,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -167,7 +167,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -246,7 +246,7 @@
 					<tr>
 						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">分差</td>
+						<td width="140">省控线分差</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
