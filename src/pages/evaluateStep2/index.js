@@ -188,13 +188,17 @@ var evaluate = {
         // 当前选中
         that.state.current.major.code = $ele.val();
         that.state.current.major.name = $ele.attr('n');
+        that.state.current.major.field = $ele.attr('field');
 
         var current = that.state.current;
         var wishes = that.state.wishes;
 
         var isRepeat = false;
         $(wishes).each(function(idx,ele){
-          if(ele.majorId == current.major.code && ele.collegeId == current.college.code){
+          if(ele.majorId == current.major.code 
+              && ele.collegeId == current.college.code
+              && ele.field == current.major.field
+            ){
             warn("不能选择重复的志愿方案");
             isRepeat = true;
             return false;

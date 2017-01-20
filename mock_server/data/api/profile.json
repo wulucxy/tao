@@ -1,0 +1,47 @@
+{
+  "code": "1",
+  "msg": "调用成功",
+  "result": {
+    "createTime": 1481100074000,
+    "planType": 1,
+    "param": {
+      "subjects": [
+        1,
+        2,
+        3
+      ],
+      "cities": [
+        {
+          "name": "杭州市",
+          "code": "330100"
+        },
+        {
+          "name": "北京市",
+          "code": "110100"
+        },
+        {
+          "name": "宁波市",
+          "code": "330200"
+        }
+      ],
+      "score": 600,
+      "majors": [
+        {
+          "name": "经济学",
+          "code": "4"
+        },
+        {
+          "name": "法学",
+          "code": "5"
+        },
+        {
+          "name": "文学",
+          "code": "7"
+        }
+      ],
+      "examProvince": 330000
+    },
+    "score": 600,
+    "planId": "28857"
+  }
+}

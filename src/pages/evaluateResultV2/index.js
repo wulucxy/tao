@@ -13,13 +13,12 @@ var common = require("../../assets/components/common");
 //自定义功能写下面
 
 //弹窗模板
-var tmpl_Info = require("../../assets/templates/applyInfo.ejs");
-
-//弹窗模板
 var tmpl_wish = require("./templates/wish.ejs");
 
 //自定义功能写下面
 var tabs = require("../../assets/components/tabs");
+
+var myProfile = require("../../assets/components/myProfile");
 
 tabs($("#bookResultTab"),{
 	tabsItem : "nav li",
@@ -75,43 +74,12 @@ $('.wish3Wrap').empty().html(tmpl_wish(
 ))
 
 
-function transformData(){
-	var _data = {
-		majorList :0,
-		c :  0,
-		batch : $("[name=batch]").text(),
-		courseType : $("[name=courseType]").text(),
-		score : $("[name=score]").text(),
-		place : $("[name=place]").text(),
-		province : $("[name=province]").val(),
-		provinceName : $("[name=provinceName]").val(),
-		userName : $("[name=userName]").val()
-	}
+var planId = util.getQuery("planId");
+var provinceId = $("[name=province]").val();
+var provinceName = $('[name=provinceName]').val();
 
-	return _data;
-}
-
-
-function detailTrigger(){
-	var data = transformData();
-	//详情弹窗
-	$("[data-trigger]").on("click",function(e){
-	    e.preventDefault();
-	    var btn = $(e.target).closest(".trigger");
-
-	    modalBox( btn.get(0), {
-	          html:tmpl_Info(data),
-	          klass : 'w540 shadow',
-	          closeByOverlay : false,
-	          startCallback : function(){
-				util.setupLabel();
-	          },
-	          completeCallback : function(){ 
-	            
-	          }
-	      });
-	});
-};
-
-
-detailTrigger();
+myProfile.init({
+	planId: planId,
+	provinceId: provinceId,
+	provinceName: provinceName
+})

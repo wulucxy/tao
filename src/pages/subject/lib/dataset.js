@@ -50,6 +50,8 @@ var dataSet = {
             return Number(ele.value);
         });
 
+        if(!subjectList.length) subjectList.push(0);
+
 		var _data = {
             capacity : that.capacity,
             subjectList : subjectList

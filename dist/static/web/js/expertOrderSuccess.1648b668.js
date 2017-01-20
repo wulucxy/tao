@@ -1,0 +1,1 @@
+webpackJsonp([26],{0:function(n,i,o){o(21),o(230);var t=window.$||o(44),c=o(45),u=(o(46),{init:function(){c.count(t(".count"),3,function(){window.location="/appointment/create"})}});u.init()},230:function(n,i){}});

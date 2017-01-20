@@ -7,5 +7,6 @@ module.exports = extend(
 	require('./lib/level'),
 	require('./lib/ownerType'),
 	require('./lib/courseType'),
-	require('./lib/feature')
+	require('./lib/feature'),
+	require('./lib/subjects')
 );

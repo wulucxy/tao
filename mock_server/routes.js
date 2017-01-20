@@ -113,6 +113,7 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
 	'post::/v2_1/client/1/profile/couponListWeb':"mock::api/couponList.json",
 	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json",
-	'post::/v2_1/client/1/tzy/plan/scoreChange':"mock::api/scoreChange.json"
+	'post::/v2_1/client/1/tzy/plan/scoreChange':"mock::api/scoreChange.json",
+	'/v2_1/client/1/profile/plan/param':"mock::api/profile.json",
 
 };

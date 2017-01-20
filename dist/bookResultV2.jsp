@@ -298,14 +298,6 @@
 			</div>
 		</div>
 
-		<pre name="majorList">${majorList}</pre>
-		<pre name="majorListJson">${majorListJson}</pre>
-		<pre name="c">${c}</pre>
-		<pre name="cJson">${cJson}</pre>
-		<pre name="courseType">${courseType}</pre>
-		<pre name="batch">${batch}</pre>
-		<pre name="score">${score}</pre>
-		<pre name="place">${place}</pre>
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>
@@ -313,5 +305,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.8a18fe91.js"></script><script src="/static/web/js/bookResultV2.ab4c1c55.js"></script></body>
+	<script src="/static/web/js/vendors.5bd9bbcd.js"></script><script src="/static/web/js/bookResultV2.906c8e13.js"></script></body>
 </html>
