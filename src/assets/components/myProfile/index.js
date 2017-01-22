@@ -64,18 +64,22 @@ var myProfile = {
 					code: sb
 				}})
 
-
-		var cities = $.map(param.cities, function(city){
+		var cities;
+		if(param.cities){
+			cities = $.map(param.cities, function(city){
 				return {
 					name: localData.getCityName(city),
 					code: city
 				}})
+		}else {
+			cities = [];
+		}
 
 		return {
 			provinceName: o.provinceName,
 			score: param.score,
 			subjects: subjects,
-			cities: param.cities,
+			cities: cities,
 			majors: param.majors
 		}
 	},

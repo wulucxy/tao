@@ -5,19 +5,18 @@
 			var list = wishes[i];
 		%>
 
-		<span class="badge squre wishBadge">
-			<% if (list.assessment == '-2') { %>
-				不建议
-			<% }else if (list.assessment == '-1') { %>
-			   	保守
-			<% }else if (list.assessment == 0) { %>
-			   	平稳
-			<% }else if (list.assessment == 1) { %>
-			   	冲刺
-			<% } %>
-		</span>
-
 		<div class="caseSection">
+			<span class="badge squre wishBadge">
+				<% if (list.assessment == '-2') { %>
+					不建议
+				<% }else if (list.assessment == '-1') { %>
+				   	保守
+				<% }else if (list.assessment == 0) { %>
+				   	平稳
+				<% }else if (list.assessment == 1) { %>
+				   	冲刺
+				<% } %>
+			</span>
 			<h3>
 				
 			<a href="/library/major/<%= list.majorId %>" class="textLink" target="_blank">${list.majorName}

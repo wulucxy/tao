@@ -29,7 +29,7 @@ tabs($("#bookResultTab"),{
 var wishes = $.parseJSON($("[name=wishesString]").text()) || [];
 
 var conservative = $(wishes).filter(function(idx, ele){
-	return ele.assessment == -1;
+	return ele.assessment == 1;
 }).get();
 
 var normal = $(wishes).filter(function(idx, ele){
@@ -37,7 +37,7 @@ var normal = $(wishes).filter(function(idx, ele){
 }).get();
 
 var rush = $(wishes).filter(function(idx, ele){
-	return ele.assessment == 1;
+	return ele.assessment == -1;
 }).get();
 
 var bad = $(wishes).filter(function(idx, ele){

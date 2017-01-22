@@ -10,7 +10,7 @@ var carousel = {
 			speed: 500,   
 			delay: 4000,  
 			pause: true,
-			slideNum:6
+			slideNum:5
 		},o);
 
 		this.iNow = 0;

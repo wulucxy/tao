@@ -317,8 +317,6 @@ var evaluate = {
       warn("请确保每所学校至少选择一个专业");
       return false;
     }
-
-    console.log(that.state.wishes);
     
     $.ajax({
       url : preServer+provinceId+"/tzy/plan/assessment/step2",
@@ -398,6 +396,12 @@ var evaluate = {
 
   addSchool : function(){
     var o = this.options, that = this;
+
+    $('#js-addSchool').on('dblclick', function(e){
+      e.preventDefault();
+    })
+
+
     searchSchool.init({
       el : "#js-addSchool",
       provinceId : provinceId,
