@@ -1,1 +1,128 @@
-webpackJsonp([9],{0:function(e,a,t){t(21),t(160);var n=window.$||t(44),c=t(45),r=(t(46),t(145)),i=t(146),o=n("[name=province]").val(),l={init:function(){this.detailTrigger(),this.bindEvt()},detailTrigger:function(){n("[data-trigger]").on("click",function(e){e.preventDefault();var a=n(e.target).closest(".trigger"),t="detail"==a.data("trigger")?r:i;modalBox(a.get(0),{html:t(),klass:"w540 shadow",closeByOverlay:!1,completeCallback:function(){}})})},bindEvt:function(){var e=this;c.setupLabel(),n("#nBtn").on("click",function(a){a.preventDefault();var t=n(a.target).closest(".btn");t.hasClass("disabled")||(t.addClass("disabled"),e.submitFunc(t))})},submitFunc:function(e){var a={province:n("[name=province]").val(),mobile:n("[name=mobile]").val(),courseType:n("[name=courseType]:checked").val(),batch:n("[name=batch]:checked").val(),score:n("[name=score]").val(),place:n("[name=place]").val(),c:n("[name=city]:checked").map(function(e,a){return{name:n(a).attr("cityname"),code:n(a).val()}}).get(),majorList:n("[name=majorId]:checked").map(function(e,a){return{majorName:n(a).attr("majorname"),majorId:n(a).val()}}).get(),subjects:n("[name=subjectId]:checked").map(function(e,a){return{name:n(a).attr("subjectname"),majorId:n(a).val()}}).get()};n.ajax({url:preServer+o+"/tzy/plan/wishes/step4",type:"post",contentType:"application/json",data:JSON.stringify(a),success:function(a){if("string"==typeof a)var a=n.parseJSON(a);return 1==a.code&&a.result.planId?(window.location="/box/plan/result?planId="+a.result.planId,!1):(warn(a.msg),e.removeClass("disabled"),!1)},error:function(a){e.removeClass("disabled"),console.log(a)}})}};l.init()},160:function(e,a){}});
+webpackJsonp([9],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* 建议这里都引入 */
+	__webpack_require__(21);
+	__webpack_require__(160);
+	var $ = window.$ || __webpack_require__(44);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	//公共方法
+	var common = __webpack_require__(46);
+	
+	
+	//自定义功能写下面
+	//弹窗模板
+	var tmpl_detail = __webpack_require__(145);
+	var tmpl_questions = __webpack_require__(146);
+	
+	var provinceId = $("[name=province]").val();
+	
+	var book = {
+	
+		init : function(){
+	
+			this.detailTrigger();
+			this.bindEvt();
+		},
+	
+		detailTrigger : function(){
+			//详情弹窗
+			$("[data-trigger]").on("click",function(e){
+			    e.preventDefault();
+			    var btn = $(e.target).closest(".trigger");
+			    var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
+	
+			    modalBox( btn.get(0), {
+			          html:tmpl(),
+			          klass : 'w540 shadow',
+			          closeByOverlay : false,
+			          completeCallback : function(){ 
+			            
+			          }
+			      });
+			});
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			util.setupLabel();
+	
+			$("#nBtn").on("click",function(e){
+				e.preventDefault();
+				var btn = $(e.target).closest(".btn");
+				if(btn.hasClass("disabled")) return;
+				btn.addClass("disabled");
+				that.submitFunc(btn);
+			});
+		},
+	
+		submitFunc : function(btn){
+			var that = this;
+	
+			var _data = {
+				province : $("[name=province]").val(),
+				mobile : $("[name=mobile]").val(),
+				courseType : $("[name=courseType]:checked").val(),
+				batch : $("[name=batch]:checked").val(),
+				score : $("[name=score]").val(),
+				place : $("[name=place]").val(),
+				c : $("[name=city]:checked").map(function(idx,ele){
+					return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
+				}).get(),
+				majorList : $("[name=majorId]:checked").map(function(idx,ele){
+					return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
+				}).get(),
+				subjects : $("[name=subjectId]:checked").map(function(idx,ele){
+					return {"name":$(ele).attr("subjectname"),"majorId":$(ele).val()}
+				}).get()
+			};
+	
+	
+			$.ajax({
+				url : preServer+provinceId+"/tzy/plan/wishes/step4",
+				type : "post",
+				contentType: "application/json",
+	    		data : JSON.stringify(_data),
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					 if(res.code==1 && res.result.planId){
+	                    window.location = "/box/plan/result?planId="+res.result.planId;
+	                    return false;
+	                }else{
+	                    warn(res.msg);
+	                    btn.removeClass("disabled");
+	                    return false;
+	                }
+	            },
+	            error : function(err){
+	            	btn.removeClass("disabled");
+	            	console.log(err);
+	            }
+			});
+		}
+	};
+	
+	
+	book.init();
+	
+
+
+/***/ },
+
+/***/ 160:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }
+
+});
+//# sourceMappingURL=bookStep4.4df52eb1.js.map

@@ -141,6 +141,9 @@
 							<p id="errTxt" class="errTxt"></p>
 
 							<div class="row btnRow">
+								<a class="btn btn-primary btn-form mr30" href="/box/plan/result?platId=31744" target="_blank">
+			                        <em class="subTxt">查看样本</em>
+			                    </a>
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>

@@ -1,1 +1,192 @@
-webpackJsonp([31],{0:function(t,n,i){i(21),i(260);var s=window.$||i(44),e=(i(45),i(46),i(254),i(262)),a=s("[name=province]").val(),r={init:function(){this.pager=1,this.capacity=10,this.tagIndex=0,this.bindEvt()},initRequest:function(){for(var t=this,n=[],i=0;i<window.__initData__.length;i++)n.push(t.request(window.__initData__[i].id));s.when.apply(s,n).done(function(){var n=Array.prototype.slice.call(arguments);s(".infoListWrap").removeClass("preloading");for(var i=0;i<n.length;i++)t.loadList.call(t,n[i][0],i)})},request:function(t){var n=[];return n.push("capacity=5"),n.push("moduleId="+t),s.ajax({url:preServer+a+"/news?"+n.join("&"),type:"get",success:function(t){if("string"==typeof t)var t=s.parseJSON(t);if(1!=t.code)return void warn(t.msg)},error:function(t){console.log(t)}})},requestList:function(t){var n=this;t&&s(t).hasClass("btn-loading")?n.pager++:n.pager=1;var i=[];i.push("capacity=5"),i.push("tag="+s(".infoTag").eq(n.tagIndex).attr("code")),s.ajax({url:preServer+a+"/news?"+i.join("&"),type:"get",success:function(t){if("string"==typeof t)var t=s.parseJSON(t);if(1!=t.code)return void warn(t.msg);t.result.tagType=tagType;var t=t.result;s(".infoListWrap").removeClass("preloading"),n.loadList(t,n.pager)},error:function(t){console.log(t)}})},loadList:function(t,n){var i=this,a=(i.options,e(t.result));console.log(a),s(".infoList").eq(n).empty().html(a)},bindEvt:function(){this.initRequest()}};r.init()},260:function(t,n){},262:function(module,exports){module.exports=function(obj){function print(){__p+=__j.call(arguments,"")}obj||(obj={});var __t,__p="",__j=Array.prototype.join;with(obj)if(0==news.length&&1==page)__p+='\n\t<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';else{__p+="\n";for(var i=0;i<news.length;i++){__p+='\n<li>\n   \t <div class="media">\n\t\t<span class="fl imgWrap">\n\t\t\t<img src="'+(null==(__t=news[i].newsIconUrl)?"":__t)+'">\n\t\t</span>\n\t\t<div class="media-body">\n\t\t\t\t<h3 class="clearfix">\n\t\t\t\t\t',news[i].newsTags.length&&news[i].newsTags[0]&&(__p+='\n\t\t\t\t\t<span class="btn btn-primary infoTag btn-outlined fr">\n\t\t\t\t\t\t'+(null==(__t=news[i].newsTags)?"":__t)+"\n\t\t\t\t\t</span>\n\t\t\t\t\t"),__p+='\n\t\t\t\t\t<a class="detailTitle" href="'+(null==(__t=news[i].newsUrl)?"":__t)+'" target="_blank">\n\t\t\t\t\t\t'+(null==(__t=news[i].newsName)?"":__t)+'\n\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</h3>\n\t\t\t\t\n\t\t\t\t<!-- <div class="clearfix detailSub g6">\n\t\t\t\t\t';for(var k=0;k<news[i].newsTags.length;k++)__p+='\n\t\t\t\t\t<span class="fl article-tag mr10">'+(null==(__t=news[i].newsTags[k])?"":__t)+"</span>\n\t\t\t\t\t";__p+='\n\t\t\t\t\n\t\t\t\t</div> -->\n\n\t\t\t\t<div class="detailCnt clearfix">\n\t\t\t\t\t<span class="moment">'+(null==(__t=news[i].time)?"":__t)+"</span>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t</div>\n\t</div>\n</li>\n"}}return __p}}});
+webpackJsonp([31],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* 建议这里都引入 */
+	__webpack_require__(21);
+	__webpack_require__(260);
+	var $ = window.$ || __webpack_require__(44);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	//公共方法
+	var common = __webpack_require__(46);
+	
+	
+	//自定义功能写下面
+	//
+	////加载更多模块
+	var loadMore = __webpack_require__(254);
+	var tmpl = __webpack_require__(262);
+	
+	var province = $("[name=province]").val();
+	
+	var info = {
+		init : function(){
+			//默认分页开始
+			this.pager = 1;
+			this.capacity = 10;
+			this.tagIndex = 0;
+			this.bindEvt();
+		},
+	
+		initRequest: function(){
+			var that = this;
+			var arrayOfAjax = [];
+			for(var i=0; i<window.__initData__.length; i++) {
+				arrayOfAjax.push(that.request(window.__initData__[i].id))
+			}
+	
+			$.when.apply($, arrayOfAjax)
+			.done(function(){
+				var args = Array.prototype.slice.call(arguments);
+				$(".infoListWrap").removeClass("preloading");
+	
+				for(var i=0;i<args.length;i++){
+					that.loadList.call(that,args[i][0],i);
+				}
+			})
+		},
+	
+		request: function(moduleId){
+			var parm = [];
+			parm.push("capacity="+5);
+			parm.push("moduleId="+moduleId);
+	
+			return $.ajax({
+				url : preServer+province+"/news?"+parm.join("&"),
+				type : "get",
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+				},
+				error : function(err){
+					console.log(err);
+				}
+			});
+		},
+	
+		requestList : function(btn){
+			var that = this;
+	
+			//如果是点击加载更多，页码++，否则重置为1
+	        if(btn && $(btn).hasClass("btn-loading")){
+	            that.pager++;
+	        }else{
+	            that.pager = 1;
+	        }
+	
+			var parm = [];
+			parm.push("capacity="+5);
+			//parm.push("page="+that.pager);
+			parm.push("tag="+$(".infoTag").eq(that.tagIndex).attr("code"));
+	
+			//var tagType = $(".tagsList .infoTag").eq(that.tagIndex).text();
+	
+			$.ajax({
+				url : preServer+province+"/news?"+parm.join("&"),
+				type : "get",
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					res.result.tagType = tagType;
+					var res = res.result;
+	
+					$(".infoListWrap").removeClass("preloading");
+					
+	
+					that.loadList(res,that.pager);
+				},
+				error : function(err){
+					console.log(err);
+				}
+			});
+		},
+		loadList : function(data,index){
+			var that = this,o = that.options;
+			var _html = tmpl(data.result);
+	
+			console.log(_html);
+			
+			$(".infoList").eq(index).empty().html(_html);
+		},
+	
+		bindEvt : function(){
+			var that = this;
+			
+			this.initRequest();
+		}
+	};
+	
+	info.init();
+
+/***/ },
+
+/***/ 260:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 262:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (news.length == 0 && page == 1) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '\n';
+	 for (var i = 0; i < news.length; i++) { ;
+	__p += '\n<li>\n   	 <div class="media">\n		<span class="fl imgWrap">\n			<img src="' +
+	((__t = ( news[i].newsIconUrl )) == null ? '' : __t) +
+	'">\n		</span>\n		<div class="media-body">\n				<h3 class="clearfix">\n					';
+	 if (news[i].newsTags.length && !!news[i].newsTags[0]) { ;
+	__p += '\n					<span class="btn btn-primary infoTag btn-outlined fr">\n						' +
+	((__t = ( news[i].newsTags )) == null ? '' : __t) +
+	'\n					</span>\n					';
+	 } ;
+	__p += '\n					<a class="detailTitle" href="' +
+	((__t = ( news[i].newsUrl )) == null ? '' : __t) +
+	'" target="_blank">\n						' +
+	((__t = ( news[i].newsName )) == null ? '' : __t) +
+	'\n					</a>\n					\n				</h3>\n				\n				<!-- <div class="clearfix detailSub g6">\n					';
+	 for (var k = 0; k < news[i].newsTags.length; k++) { ;
+	__p += '\n					<span class="fl article-tag mr10">' +
+	((__t = ( news[i].newsTags[k] )) == null ? '' : __t) +
+	'</span>\n					';
+	 } ;
+	__p += '\n				\n				</div> -->\n\n				<div class="detailCnt clearfix">\n					<span class="moment">' +
+	((__t = ( news[i].time )) == null ? '' : __t) +
+	'</span>\n				</div>\n				\n		</div>\n	</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ }
+
+});
+//# sourceMappingURL=infoV2.d0664287.js.map

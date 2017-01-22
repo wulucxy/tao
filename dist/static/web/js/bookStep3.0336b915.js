@@ -1,1 +1,381 @@
-webpackJsonp([8],{0:function(t,e,a){a(21),a(155);var n=window.$||a(44),r=a(45),s=(a(46),a(158)),o=a(159),i=a(145),l=a(146),c=a(53),u=a(107),d=n("[name=province]").val(),_=(n("[name=batch]").val(),n("[name=userId]").val()),p=c.isModernBrower,m={init:function(){this.detailTrigger(),this.requestData()},detailTrigger:function(){n("[data-trigger]").on("click",function(t){t.preventDefault();var e=n(t.target).closest(".trigger"),a="detail"==e.data("trigger")?i:l;modalBox(e.get(0),{html:a(),klass:"w540 shadow",closeByOverlay:!1,completeCallback:function(){}})})},travelMajorList:function(t,e){n.each(e,function(e,a){"-1"!=t.indexOf(a.categoryId)&&(a.status=1)})},requestData:function(){var t=this;n.ajax({url:preServer+d+"/data/major/categoryList",type:"get",success:function(e){if("string"==typeof rs)var e=n.parseJSON(e);if(1!=e.code)return void warn(e.msg);t.res=e.result;var a=[];u.get(_)&&(a=u.get(_).split("&")),t.travelMajorList(a,t.res.undergraduateList),t.travelMajorList(a,t.res.juniorList),console.log(t.res),t.insertData(e.result)},error:function(t){console.log(t)}})},insertData:function(t){n("#caseFormWrapper").removeClass("preloading"),n("#majorSelectWrapper").empty().html(s(t)),this.bindEvt()},bindEvt:function(){var t=this;n(".label_check").on("click",function(e){e.stopPropagation(),r.setupLabel();var a=n(e.target),s=n(this).closest("label");a.is(".icon-eye")?(e.preventDefault(),t.subMajorModal(a)):p||""!=s.attr("for")&&(n("#"+s.attr("for")).trigger("click"),r.setupLabel())}),r.setupLabel(),n("#nBtn").on("click",function(e){e.preventDefault();var a=n(this).closest(".btn");a.hasClass("disabled")||(a.addClass("disabled"),t.submitFunc.call(t,a))})},submitFunc:function(t){var e=this,a=n("input[type=checkbox][name=majorType]"),r=[],s=!0;a.each(function(){n(this).prop("checked")&&(s=!1)}),r=n("input[type=checkbox][name=majorType]:checked");var o=e.selectList(r),i=n.map(o,function(t){return t.majorId}),l=i.length>0?i.join("&"):0;u.set(_,l);var c={majorList:o};n.ajax({url:preServer+d+"/tzy/plan/wishes/step3",type:"post",contentType:"application/json",data:JSON.stringify(c),success:function(e){if("string"==typeof e)var e=n.parseJSON(e);return 1==e.code?(window.location="/box/plan/book_step4",!1):(warn(e.msg),t.removeClass("disabled"),!1)},error:function(e){t.removeClass("disabled"),console.log(e)}})},selectList:function(t){return n.map(t,function(t,e){var a=n(t).siblings("[data-majorid]");return{majorId:a.data("majorid"),majorName:a.data("name")}})},subMajorModal:function(t){var e=(t.data("suptype"),t.data("majorid"));n.ajax({url:preServer+d+"/data/major/category/"+e,type:"get",contentType:"application/json",success:function(e){if("string"==typeof e)var e=n.parseJSON(e);if(1!=e.code)return warn(e.msg),t.removeClass("disabled"),!1;var a={name:t.data("name"),list:e.result||[]};modalBox(t,{html:o(a),klass:"w540 shadow",closeByOverlay:!0,completeCallback:function(){}})},error:function(e){t.removeClass("disabled"),console.log(e)}})}};m.init()},155:function(t,e){},158:function(module,exports){module.exports=function(obj){function print(){__p+=__j.call(arguments,"")}obj||(obj={});var __t,__p="",__j=Array.prototype.join;with(obj){if(undergraduateList.length>0){__p+='\n<div class="row">\n\t<p class="g6 mb12">本科大类：</p>\n\n\t';for(var i=0;i<undergraduateList.length;i++){__p+="\n\t\t";var checkedStatus;checkedStatus=1==undergraduateList[i].status?"checked":"",__p+='\n\t<label class="label_check" for="majorType'+(null==(__t=undergraduateList[i].categoryId)?"":__t)+'" >\n\t\t<em class="icon-eye"  data-majorId='+(null==(__t=undergraduateList[i].categoryId)?"":__t)+' data-name="'+(null==(__t=undergraduateList[i].categoryName)?"":__t)+'"></em>\n\t\t<input type="checkbox" class="input form-control" id="majorType'+(null==(__t=undergraduateList[i].categoryId)?"":__t)+'" name="majorType" '+(null==(__t=checkedStatus)?"":__t)+' required>\n\t\t<em class="vm">'+(null==(__t=undergraduateList[i].categoryName)?"":__t)+'</em>\n\t\t<em class="icon-yes">\n\t\t\t<i></i>\n\t\t</em>\n\t</label>\n\t'}__p+="\n</div>\n"}if(__p+="\n\n",juniorList.length>0){__p+='\n<div class="row">\n\t<p class="g6 mb12">专科大类：</p>\n\n\t';for(var i=0;i<juniorList.length;i++){__p+="\n\t\t";var checkedStatus;checkedStatus=1==juniorList[i].status?"checked":"",__p+='\n\t<label class="label_check" for="majorType'+(null==(__t=juniorList[i].categoryId)?"":__t)+'" >\n\t\t<em class="icon-eye" data-majorId='+(null==(__t=juniorList[i].categoryId)?"":__t)+' data-name="'+(null==(__t=juniorList[i].categoryName)?"":__t)+'"></em>\n\t\t<input type="checkbox" class="input form-control" id="majorType'+(null==(__t=juniorList[i].categoryId)?"":__t)+'" name="majorType" '+(null==(__t=checkedStatus)?"":__t)+' required>\n\t\t<em class="vm">'+(null==(__t=juniorList[i].categoryName)?"":__t)+'</em>\n\t\t<em class="icon-yes">\n\t\t\t<i></i>\n\t\t</em>\n\t</label>\n\t'}__p+="\n</div>\n"}}return __p}},159:function(module,exports){module.exports=function(obj){function print(){__p+=__j.call(arguments,"")}obj||(obj={});var __t,__p="",__j=Array.prototype.join;with(obj){__p+='<div class="modalCntWrap taoModal g9 majorListModal">\n <h3 class="clearfix">\n <a href="javascript:;" class="icons btn-close fr"></a>\n <span class="fl"><em class="majorName">'+(null==(__t=name)?"":__t)+'</em>&nbsp;包含的专业</span>\n</h3>\n\n<div class="majorListWrap">\n  <div class="majorList">\n  \t  ';for(var i=0;i<list.length;i++)__p+='\n      <span class="btn btn-default btn-list">'+(null==(__t=list[i].majorName)?"":__t)+"</span>\n      ";__p+="\n  </div>\n</div>\n\n</div>"}return __p}}});
+webpackJsonp([8],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* 建议这里都引入 */
+	__webpack_require__(21);
+	__webpack_require__(155);
+	var $ = window.$ || __webpack_require__(44);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	//公共方法
+	var common = __webpack_require__(46);
+	
+	//自定义功能写下面
+	var tmpl_list = __webpack_require__(158);
+	var tmpl_subMajor = __webpack_require__(159);
+	//require("../../assets/components/validator");
+	
+	//弹窗模板
+	var tmpl_detail = __webpack_require__(145);
+	var tmpl_questions = __webpack_require__(146);
+	
+	var browser = __webpack_require__(53);
+	
+	var Cookie = __webpack_require__(107);
+	
+	var provinceId = $("[name=province]").val();
+	var batch = $("[name=batch]").val();
+	
+	var userId =  $("[name=userId]").val();
+	
+	var isModernBrower = browser.isModernBrower;
+	
+	var majors = {
+	
+		init : function(){
+			this.detailTrigger();
+			this.requestData();
+		},
+	
+		detailTrigger : function(){
+			//详情弹窗
+			$("[data-trigger]").on("click",function(e){
+			    e.preventDefault();
+			    var btn = $(e.target).closest(".trigger");
+			    var tmpl = btn.data("trigger") == "detail" ? tmpl_detail : tmpl_questions;
+	
+			    modalBox( btn.get(0), {
+			          html:tmpl(),
+			          klass : 'w540 shadow',
+			          closeByOverlay : false,
+			          completeCallback : function(){ 
+			            
+			          }
+			      });
+			});
+		},
+	
+		travelMajorList: function(selectList, list){
+			//遍历结果列表
+			$.each(list,function(m,l){
+				if(selectList.indexOf(l.categoryId) != "-1"){
+					l.status = 1;
+				}
+			})
+		},
+	
+		requestData : function(){
+			var that = this;
+			$.ajax({
+				url : preServer+provinceId + "/data/major/categoryList",
+				type : "get",
+				success : function(res){
+					if(typeof rs == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+				
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					// res.result.batch = batch;
+					that.res = res.result;
+	
+					//读取选择项
+					var selectList = [];
+					if(!!Cookie.get(userId)){
+						selectList = Cookie.get(userId).split("&");
+					}
+	
+					// 遍历本科
+					that.travelMajorList(selectList, that.res.undergraduateList);
+	
+					// 遍历专科
+					that.travelMajorList(selectList, that.res.juniorList);
+	
+					console.log(that.res);
+	
+					that.insertData(res.result);
+	
+				},
+				error : function(err){
+					console.log(err);
+					return;
+				}
+			});
+		},
+	
+		insertData : function(res){
+			var that = this;
+	
+			$("#caseFormWrapper").removeClass("preloading");
+			$("#majorSelectWrapper").empty().html(tmpl_list(res));
+	
+			this.bindEvt();
+		},
+	
+		bindEvt : function(){
+			var that = this;
+	
+			// $("#caseForm_3").validator({
+			// 	autoDisabled : true,
+			// 	autoValidate : true,
+			// 	onSubmitActive : true
+			// });
+			
+			//checkbox定制
+			$('.label_check').on("click",function(e){
+			  e.stopPropagation();
+			   util.setupLabel();
+			  var target = $(e.target);
+			  var label = $(this).closest("label");
+			  if(target.is(".icon-eye")){
+			  	e.preventDefault();
+			  	that.subMajorModal(target);
+			  }else{
+			  	if(!isModernBrower){
+			  		if (label.attr("for") != ""){
+				        $("#" + label.attr("for")).trigger("click");
+				        util.setupLabel();
+			  		}
+			  	}
+			  }
+			});
+	
+			util.setupLabel();		
+	
+			$("#nBtn").on("click",function(e){
+				e.preventDefault();
+				var btn = $(this).closest(".btn");
+				if(btn.hasClass("disabled")) return;
+				btn.addClass('disabled');
+	
+				that.submitFunc.call(that,btn);
+			});
+		},
+	
+		submitFunc : function(btn){
+			var that = this;
+	
+			var eleBoxs=$('input[type=checkbox][name=majorType]'),
+				boxList = [],
+		        selectAll = true;
+	
+		    eleBoxs.each(function(){
+	          if($(this).prop("checked")){
+	            selectAll=false;
+	          }
+		    });
+	
+		
+		    boxList = $('input[type=checkbox][name=majorType]:checked');
+	
+		    var majorList = that.selectList(boxList);
+	
+		    //保存到cookie里面
+		    var cookieList = $.map(majorList,function(c){
+		    	return c.majorId;
+		    })
+	
+		    //保存选择
+		    var majorSelectList = (cookieList.length > 0) ? cookieList.join("&") : 0;
+		    Cookie.set(userId,majorSelectList);
+	
+			var _data = {
+				majorList : majorList
+			};
+	
+			$.ajax({
+				url : preServer+provinceId+"/tzy/plan/wishes/step3",
+				type : "post",
+	            contentType: "application/json",
+	            data : JSON.stringify(_data),
+	            success : function(res){
+	                if(typeof res == "string"){
+	                    var res = $.parseJSON(res);
+	                }
+	
+	                if(res.code==1){
+	                    window.location = "/box/plan/book_step4";
+	                    return false;
+	                }else{
+	                    warn(res.msg);
+	                    btn.removeClass("disabled");
+	                    return false;
+	                }
+	            },
+	            error : function(err){
+	            	btn.removeClass("disabled");
+	                console.log(err);
+	            }
+			})
+		},
+	
+		selectList : function(eleBoxs){
+			return $.map(eleBoxs,function(ele,idx){
+	    		var icon = $(ele).siblings("[data-majorid]");
+	    		return {
+	    			"majorId":icon.data("majorid"),
+	    			"majorName":icon.data("name")
+	    		};
+	    	});
+		},
+	
+		subMajorModal :function(btn){
+			var that = this;
+	
+			var supId = btn.data("suptype"),
+				majorId = btn.data("majorid");
+	
+			$.ajax({
+				url : preServer+provinceId+"/data/major/category/"+majorId,
+				type : "get",
+	            contentType: "application/json",
+	            success : function(res){
+	                if(typeof res == "string"){
+	                    var res = $.parseJSON(res);
+	                }
+	
+	                if(res.code != 1){
+	                    warn(res.msg);
+	                    btn.removeClass("disabled");
+	                    return false;
+	                }
+	
+	                var detailData = {
+						name : btn.data("name"),
+						list : res.result || []
+					};
+	
+					modalBox(btn, {
+					        html:tmpl_subMajor(detailData),
+					        klass : 'w540 shadow',
+					        closeByOverlay : true,
+					        completeCallback : function(){}
+					});
+	            },
+	            error : function(err){
+	            	btn.removeClass("disabled");
+	                console.log(err);
+	            }
+			})
+		}
+	
+	};
+	
+	
+	majors.init();
+	
+
+
+/***/ },
+
+/***/ 155:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 158:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (undergraduateList.length > 0) { ;
+	__p += '\n<div class="row">\n	<p class="g6 mb12">本科大类：</p>\n\n	';
+	 for (var i = 0; i <undergraduateList.length; i++) { ;
+	__p += '\n		';
+	 var checkedStatus;
+			 if(undergraduateList[i].status == 1) {
+				checkedStatus = "checked";
+			 }else{
+				checkedStatus = "";
+			 } ;
+	__p += '\n	<label class="label_check" for="majorType' +
+	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
+	'" >\n		<em class="icon-eye"  data-majorId=' +
+	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
+	' data-name="' +
+	((__t = ( undergraduateList[i].categoryName )) == null ? '' : __t) +
+	'"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
+	((__t = ( undergraduateList[i].categoryId )) == null ? '' : __t) +
+	'" name="majorType" ' +
+	((__t = ( checkedStatus )) == null ? '' : __t) +
+	' required>\n		<em class="vm">' +
+	((__t = ( undergraduateList[i].categoryName )) == null ? '' : __t) +
+	'</em>\n		<em class="icon-yes">\n			<i></i>\n		</em>\n	</label>\n	';
+	 } ;
+	__p += '\n</div>\n';
+	 } ;
+	__p += '\n\n';
+	 if( juniorList.length > 0){ ;
+	__p += '\n<div class="row">\n	<p class="g6 mb12">专科大类：</p>\n\n	';
+	 for (var i = 0; i < juniorList.length; i++) { ;
+	__p += '\n		';
+	 var checkedStatus; 
+			 if(juniorList[i].status == 1) { 
+				checkedStatus = "checked"; 
+			 }else{ 
+				checkedStatus = ""; 
+			 } ;
+	__p += '\n	<label class="label_check" for="majorType' +
+	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
+	'" >\n		<em class="icon-eye" data-majorId=' +
+	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
+	' data-name="' +
+	((__t = ( juniorList[i].categoryName )) == null ? '' : __t) +
+	'"></em>\n		<input type="checkbox" class="input form-control" id="majorType' +
+	((__t = ( juniorList[i].categoryId )) == null ? '' : __t) +
+	'" name="majorType" ' +
+	((__t = ( checkedStatus )) == null ? '' : __t) +
+	' required>\n		<em class="vm">' +
+	((__t = ( juniorList[i].categoryName )) == null ? '' : __t) +
+	'</em>\n		<em class="icon-yes">\n			<i></i>\n		</em>\n	</label>\n	';
+	 } ;
+	__p += '\n</div>\n';
+	 } ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ },
+
+/***/ 159:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += '<div class="modalCntWrap taoModal g9 majorListModal">\n <h3 class="clearfix">\n <a href="javascript:;" class="icons btn-close fr"></a>\n <span class="fl"><em class="majorName">' +
+	((__t = ( name )) == null ? '' : __t) +
+	'</em>&nbsp;包含的专业</span>\n</h3>\n\n<div class="majorListWrap">\n  <div class="majorList">\n  	  ';
+	 for (var i = 0; i < list.length; i++) { ;
+	__p += '\n      <span class="btn btn-default btn-list">' +
+	((__t = ( list[i].majorName )) == null ? '' : __t) +
+	'</span>\n      ';
+	 } ;
+	__p += '\n  </div>\n</div>\n\n</div>';
+	
+	}
+	return __p
+	}
+
+/***/ }
+
+});
+//# sourceMappingURL=bookStep3.0336b915.js.map

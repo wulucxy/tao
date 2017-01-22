@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.975eaec7.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/evaluateStep1.f8df706c.css" rel="stylesheet"></head>
 <body>
 	
 
@@ -141,6 +141,9 @@
 							<p id="errTxt" class="errTxt"></p>
 
 							<div class="row btnRow">
+								<a class="btn btn-primary btn-form mr30" href="/box/plan/result?platId=31744" target="_blank">
+			                        <em class="subTxt">查看样本</em>
+			                    </a>
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
@@ -165,5 +168,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.a98cb96c.js"></script><script src="/static/web/js/evaluateStep1.fed4bf73.js"></script></body>
+	<script src="/static/web/js/vendors.fee878e3.js"></script><script src="/static/web/js/evaluateStep1.c043c501.js"></script></body>
 </html>

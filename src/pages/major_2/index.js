@@ -69,6 +69,8 @@ var archive = {
 				var res = res.result;
     			var optionList = [];
 
+                optionList.push('<option value=0>全部区域</option>');
+
     			$.each(res,function(idx,ele){
     				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
     			});

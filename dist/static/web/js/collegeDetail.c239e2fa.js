@@ -1,1 +1,350 @@
-webpackJsonp([11],{0:function(t,n,a){a(21),a(166);var e=window.$||a(44),i=(a(45),a(46)),s=a(131),r=a(169),l=a(170);i.switchNav(2),s(e("#collegeWrapper"),{tabsItem:"nav li",items:".content-wrap > section",klass:"current"}),r.init(document.getElementById("baiduMap"),{location:{lat:e("[name=location]").val().split(":")[1],lng:e("[name=location]").val().split(":")[0]}});var o={init:function(){this.addYear(),this.renderArea()},addYear:function(){for(var t=2017,n=[],a=0;a<2;a++)n.push(t--);var i=[];e.each(n,function(t,n){i.push("<option value="+n+">"+n+"</option>")}),e("[name=Year]").empty().append(i.join(""))},renderArea:function(){e.ajax({url:"/system/area",type:"get",contentType:"application/json",success:function(t){if("string"==typeof t)var t=e.parseJSON(t);if(1!=t.code)return void warn(t.msg);var t=t.result,n=[];e.each(t,function(t,a){n.push("<option value="+a.code+">"+a.name+"</option>")}),e("[name=studentProvince]").empty(),e("[name=studentProvince]").append(n.join("")),l.init()},error:function(){warn("网络请求失败，请稍后重试")}})}};o.init()},166:function(t,n){},169:function(t,n,a){var e=a(49),i={init:function(t,n){var n=e({location:{lat:"39.915",lng:"116.404"}},n);this.wrapper=t,this.options=n,this.renderMap()},renderMap:function(){var t=this,n=t.options,a=new BMap.Map(this.wrapper),e=new BMap.Point(n.location.lng,n.location.lat);a.centerAndZoom(e,15);var i=new BMap.Marker(e);a.addOverlay(i)}};t.exports=i},170:function(t,n,a){var e=window.$||a(44),i=(a(49),a(171)),s={init:function(t){this.pager=1,this.collegeId=e("[name=collegeId]").val(),this.province=e("[name=province]").val(),this.capacity=10,this.bindEvt()},requestData:function(t){var n=this,a={capacity:n.capacity,province:e("[name=studentProvince]").val(),year:e("[name=Year]").val(),batch:e("[name=batch]").val(),collegeId:n.collegeId};n.pager=n.pager||1,a.page=n.pager,e.ajax({url:preServer+n.province+"/data/college/"+n.collegeId+"/majors",type:"post",contentType:"application/json",data:JSON.stringify(a),success:function(a){if("string"==typeof a)var a=e.parseJSON(a);return 1!=a.code?void warn(a.msg):void n.insertData(t,a.result,n.pager)}})},insertData:function(t,n,a){var s=this,r=i(n);1==a?e(".majorLists").empty().html(r):e(".majorLists").append(r),e(".btn-loading").removeClass("loading disabled");var l=Math.ceil(n.total/s.capacity);a>=l?e(".btn-loading").addClass("loading-all"):e(".btn-loading").removeClass("loading-all"),s.pager++},bindEvt:function(){var t=this;e(".trigger").on("change",function(){({province:e("[name=studentProvince]").val(),year:e("[name=year]").val(),batch:e("[name=batch]").val()});t.pager=1,t.requestData()}),e(".btn-loading").on("click",function(n){n.preventDefault();var a=e(this).closest(".btn");a.hasClass("disabled")||a.hasClass("loading-all")||(a.addClass("disabled loading"),t.requestData(a))}),e(".btn-loading").trigger("click")}};t.exports=s},171:function(module,exports){module.exports=function(obj){function print(){__p+=__j.call(arguments,"")}obj||(obj={});var __t,__p="",__j=Array.prototype.join;with(obj)if(0==majors.length&&1==page)__p+='\n\t<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';else{__p+="\t\n";for(var i=0;i<majors.length;i++){var list=majors[i];if(__p+='\n<li class="majorList clearfix v2">\n\t<h3>\t\t\n\t<a href="/library/major/'+(null==(__t=list.majorId)?"":__t)+'" class="textLink" target="_blank">'+(null==(__t=list.majorName)?"":__t)+"\n\t</a>\n\t</h3>\n\t",list.field&&(__p+='\n\t<div class="g9">\n\t\t（'+(null==(__t=list.field)?"":__t)+"）\n\t</div>\n\t"),__p+="\n\t",list.scores.length>0){__p+='\n\t\t<div class="tableWrap mt20 mb20">\n\t\t\t\t<table class="table table-bordered text-center">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td width="140">科类</td>\n\t\t\t\t\t\t\t<td width="240">录取平均分（分）</td>\n\t\t\t\t\t\t\t<td width="140">分差（分）</td>\n\t\t\t\t\t\t\t<td width="140">学制（年）</td>\n\t\t\t\t\t\t\t<td width="240">招生人数（人）</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t';for(var j=0;j<list.scores.length;j++){var score=list.scores[j];__p+="\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t",1==score.courseType?__p+="\n\t\t\t\t\t\t\t   \t\t文科\n\t\t\t\t\t\t\t":0==score.courseType&&(__p+="\n\t\t\t\t\t\t\t   \t\t理科\n\t\t\t\t\t\t\t"),__p+="\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t<td>"+(null==(__t=score.admittedScore)?"":__t)+"</td>\n\t\t\t\t\t<td>"+(null==(__t=score.diffScore)?"":__t)+"</td>\n\t\t\t\t\t<td>"+(null==(__t=score.eductionalSystme)?"":__t)+"</td>\n\t\t\t\t\t<td>"+(null==(__t=score.recruitCount)?"":__t)+"</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t"}__p+="\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t</div>\n\t"}else __p+="\n\t\t\t",__p+="\n\t";if(__p+='\n\t<div class="row mt10">\n\t\t<span class="label">所需科目：</span>\n\t\t',list.subjects.length)if(list.subjects.length>=7)__p+='\n\t\t   \t<span class="field g9">不限</span>\n\t\t';else{__p+="\n\t\t\t";for(var k=0;k<list.subjects.length;k++){var subject=list.subjects[k];__p+='\n\t\t\t<span class="field g9">'+(null==(__t=subject.subjectName)?"":__t)+"</span>\n\t\t"}}else __p+='\n\t\t   \t<span class="field g9">无</span>\n\t\t';__p+="\n\t\t\n\t</div>\n</li>\n"}}return __p}}});
+webpackJsonp([11],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* 建议这里都引入 */
+	__webpack_require__(21);
+	__webpack_require__(166);
+	var $ = window.$ || __webpack_require__(44);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	//公共方法
+	var common = __webpack_require__(46);
+	
+	
+	//自定义功能写下面
+	var tabs = __webpack_require__(131);
+	
+	//百度地图
+	var baidu = __webpack_require__(169);
+	
+	//报考专业
+	var major =  __webpack_require__(170);
+	
+	//切换顶部nav高亮
+	common.switchNav(2);
+	
+	tabs($("#collegeWrapper"),{
+		tabsItem : "nav li",
+		items : ".content-wrap > section",
+		klass : "current"
+	});
+	
+	baidu.init(document.getElementById("baiduMap"),{
+		location : {
+			lat : $("[name=location]").val().split(":")[1],
+			lng : $("[name=location]").val().split(":")[0]
+		} 
+	});
+	
+	var college = {
+		init : function(){
+	        this.addYear();
+			this.renderArea();
+		},
+	
+	    addYear : function(){
+	        var that = this;
+	
+	        var nowYear = 2017;
+	        var yearArr = [];
+	
+	        for(var i=0;i<2;i++){
+	            yearArr.push(nowYear--);
+	        }
+	
+	        var optionList = [];
+	
+	        $.each(yearArr,function(idx,ele){
+	            optionList.push('<option value='+ele+'>'+ele+'</option>');
+	        });
+	
+	        $("[name=Year]").empty().append(optionList.join(""));
+	    },
+	
+		renderArea : function(){
+			var that = this;
+			$.ajax({
+	    		url : "/system/area",
+	    		type : "get",
+	    		contentType: "application/json",
+	    		success : function(res){
+	    			if(typeof res == "string"){
+	    				var res = $.parseJSON(res);
+	    			}
+	
+	    			if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					var res = res.result;
+	    			var optionList = [];
+	
+	    			$.each(res,function(idx,ele){
+	    				optionList.push('<option value='+ele.code+'>'+ele.name+'</option>');
+	    			});
+	
+	    			$("[name=studentProvince]").empty();
+	    			$("[name=studentProvince]").append(optionList.join(""));
+	
+	                major.init();
+	    		},
+	    		error : function(){
+	    			warn("网络请求失败，请稍后重试");
+	    		}
+	    	});
+		}
+	};
+	
+	college.init();
+	
+	
+	
+	
+
+
+/***/ },
+
+/***/ 166:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 169:
+/***/ function(module, exports, __webpack_require__) {
+
+	var extend =  __webpack_require__(49);
+	
+	var baidu = {
+	
+		init : function(wrapper,options){
+			var options = extend({
+				location : {
+					lat : "39.915",
+					lng : "116.404"
+				}
+			},options);
+	
+			this.wrapper = wrapper;
+			this.options = options;
+			this.renderMap();
+		},
+	
+		renderMap : function(){
+			var that = this,o = that.options;
+			var map = new BMap.Map(this.wrapper);          // 创建地图实例  
+			var point = new BMap.Point(o.location.lng,o.location.lat);  // 创建点坐标 
+			map.centerAndZoom(point, 15); 
+			var marker = new BMap.Marker(point);        // 创建标注    
+			map.addOverlay(marker);                     // 将标注添加到地图中
+		}
+	
+	};
+	
+	module.exports = baidu;
+
+/***/ },
+
+/***/ 170:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(44);
+	var extend =  __webpack_require__(49);
+	var tmpl = __webpack_require__(171);
+	
+	var major = {
+		init : function(o){
+			 //保存分页对象
+	        this.pager = 1;
+	
+	        this.collegeId = $("[name=collegeId]").val();
+	        this.province = $("[name=province]").val();
+	
+	        this.capacity = 10;
+			//this.requestData();
+			this.bindEvt();
+		},
+	
+		requestData : function(btn){
+			var that = this;
+			var _data = {
+				capacity : that.capacity,
+				province : $("[name=studentProvince]").val(),
+				year : $("[name=Year]").val(),
+				batch : $("[name=batch]").val(),
+				collegeId : that.collegeId
+			};
+	
+			that.pager = that.pager || 1;
+	
+			_data.page = that.pager;
+	
+			$.ajax({
+				url : preServer+that.province + "/data/college/"+that.collegeId+"/majors",
+				type : "post",
+				contentType: "application/json",
+				data : JSON.stringify(_data),
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+					if(res.code!=1){
+						warn(res.msg);
+						return;
+					}
+	
+					
+					that.insertData(btn,res.result,that.pager);
+				}
+			});
+		},
+	
+		insertData : function(btn,res,pager){
+	
+			var that = this;
+			var _html = tmpl(res);
+	
+			if(pager == 1){
+				$(".majorLists").empty().html(_html);
+			}else{
+				$(".majorLists").append(_html);
+			}
+	
+			$(".btn-loading").removeClass("loading disabled");
+	
+			var pageCount = Math.ceil(res.total / that.capacity);
+			//最后一页
+			if(pager >= pageCount){
+				$(".btn-loading").addClass("loading-all");
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
+	
+			//如果是点击加载更多，页码++
+	        that.pager++;
+		},
+	
+		bindEvt : function(){
+			var that = this;
+	
+			$(".trigger").on("change",function(){
+				var _data = {
+					province : $("[name=studentProvince]").val(),
+					year : $("[name=year]").val(),
+					batch : $("[name=batch]").val()
+				};
+	
+				that.pager = 1;
+	
+			
+				that.requestData();
+			});
+	
+			$(".btn-loading").on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	    		that.requestData(btn);
+	    	});
+	
+			$(".btn-loading").trigger("click");
+	
+		}
+	};
+	
+	module.exports = major;
+
+/***/ },
+
+/***/ 171:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (majors.length == 0 && page == 1) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '	\n';
+	 for (var i = 0; i < majors.length; i++) {
+		var list = majors[i];
+	 ;
+	__p += '\n<li class="majorList clearfix v2">\n	<h3>		\n	<a href="/library/major/' +
+	((__t = ( list.majorId )) == null ? '' : __t) +
+	'" class="textLink" target="_blank">' +
+	((__t = (list.majorName)) == null ? '' : __t) +
+	'\n	</a>\n	</h3>\n	';
+	 if (list.field){ ;
+	__p += '\n	<div class="g9">\n		（' +
+	((__t = ( list.field )) == null ? '' : __t) +
+	'）\n	</div>\n	';
+	 } ;
+	__p += '\n	';
+	 if (list.scores.length > 0) { ;
+	__p += '\n		<div class="tableWrap mt20 mb20">\n				<table class="table table-bordered text-center">\n					<thead>\n						<tr>\n							<td width="140">科类</td>\n							<td width="240">录取平均分（分）</td>\n							<td width="140">分差（分）</td>\n							<td width="140">学制（年）</td>\n							<td width="240">招生人数（人）</td>\n						</tr>\n					</thead>\n					<tbody>\n						';
+	 for (var j = 0; j < list.scores.length; j++) { 
+								var score = list.scores[j];
+							;
+	__p += '\n						<tr>\n							<td>\n							';
+	 if (score.courseType == 1) { ;
+	__p += '\n							   		文科\n							';
+	 }else if (score.courseType == 0) { ;
+	__p += '\n							   		理科\n							';
+	 } ;
+	__p += '\n							</td>\n					<td>' +
+	((__t = ( score.admittedScore )) == null ? '' : __t) +
+	'</td>\n					<td>' +
+	((__t = ( score.diffScore )) == null ? '' : __t) +
+	'</td>\n					<td>' +
+	((__t = ( score.eductionalSystme )) == null ? '' : __t) +
+	'</td>\n					<td>' +
+	((__t = ( score.recruitCount )) == null ? '' : __t) +
+	'</td>\n					</tr>\n					';
+	 } ;
+	__p += '\n					</tbody>\n				</table>\n		</div>\n	';
+	 }else{ ;
+	__p += '\n			';
+	 
+					/* 
+						<div class="f16 g9 empty mt10 mb10">暂无历史数据</div> 
+					*/ 
+				;
+	__p += '\n	';
+	 } ;
+	__p += '\n	<div class="row mt10">\n		<span class="label">所需科目：</span>\n		';
+	 if (!list.subjects.length) { ;
+	__p += '\n		   	<span class="field g9">无</span>\n		';
+	 }else if (list.subjects.length >= 7) { ;
+	__p += '\n		   	<span class="field g9">不限</span>\n		';
+	 }else{ ;
+	__p += '\n			';
+	 for (var k = 0; k < list.subjects.length; k++) { 
+					var subject = list.subjects[k];
+				;
+	__p += '\n			<span class="field g9">' +
+	((__t = ( subject.subjectName )) == null ? '' : __t) +
+	'</span>\n		';
+	 }} ;
+	__p += '\n		\n	</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ }
+
+});
+//# sourceMappingURL=collegeDetail.c239e2fa.js.map

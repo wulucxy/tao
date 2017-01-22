@@ -1,1 +1,495 @@
-webpackJsonp([10],{0:function(e,t,a){a(21),a(162);var n=(window.$||a(44),a(45),a(46));n.switchNav(2);var l=a(164);l.init()},162:function(e,t){},164:function(e,t,a){var n=window.$||a(44),l=(a(49),a(165)),s=a(133),i=a(45),o=n("[name=province]").val(),c={render:function(){var e=this;if(this.state.tagList.length){var t=n.map(e.state.tagList,function(e){var t=e.type+":"+e.value;return'<a class="tags" data-action="remove" href="javascript:;" data-value="'+t+'">'+e.text+'<span class="taoIcon btn-x"></span></a>'}),a=[];a.push('<a href="javascript:;" class="fr btn btn-default" data-action="clear">清空所有</a>'),a.push('<span class="cat-text fl">已选择：</span>'),a.push(t.join("")),n(".crumb").html(a.join(""))}else n(".crumb").html('<span class="cat-text fl">已选择：</span>');if(!n("input[name=city]").length){var l=[];l.push('<input type="hidden" name="city">'),l.push('<input type="hidden" name="level">'),l.push('<input type="hidden" name="feature">'),n(".crumb").append(l.join(""))}var s="0";n.each(e.state.tagList,function(e,t){n("[name="+t.type+"]").val(t.value||""),s+=n("[name="+t.type+"]").val()})},requestData:function(e){var t=this,a=(t.options,{province:Number(n("[name=city]").val()),capacity:t.capacity,level:n("[name=level]").val(),feature:[Number(n("[name=feature]").val())]});a.city+a.level+a.feature;e&&n(e).hasClass("btn-loading")?t.pager++:t.pager=1,a.page=t.pager,n.ajax({url:preServer+o+"/data/college",type:"post",contentType:"application/json",data:JSON.stringify(a),success:function(e){if("string"==typeof e)var e=n.parseJSON(e);return 1!=e.code?void warn(e.msg):(e=e.result,n.each(e.colleges,function(e,t){t.code=t.collegeId,t.name=t.collegeName,t.city={code:t.city,name:s.getCityName(t.city)},t.collegeType={code:t.collegeType,name:s.getCollegeTypeName(t.collegeType)},t.ownerType={code:t.ownerType,name:s.getOwnerTypeName(t.ownerType)},t.level={code:t.level,name:s.getLevelName(t.level)},t.feature=n.map(t.feature,function(e,t){return{type:e,name:s.getFeatureName(e)}})}),void t.loadList(e,t.pager))}})},loadList:function(e,t){var a=this,s=(a.options,l(e));1==t?n(".schoolList").empty().html(s):n(".schoolList").append(s),1==t&&0==e.total?n(".btn-loading").hide():(n(".btn-loading").show(),n(".btn-loading").removeClass("loading disabled"));var i=Math.ceil(e.total/a.capacity);t>=i?n(".btn-loading").addClass("loading-all"):n(".btn-loading").removeClass("loading-all")},updateUI:function(){this.render()},init:function(e){this.state={tagList:[]},this.options=e,this.capacity=10,this.pager=1,this.render(),this.bindEvt()},searchCollegeReq:function(e,t){var a=this,l=n("#collegeInput");n.ajax({url:preServer+o+"/data/college/search",type:"post",data:JSON.stringify({keyword:t||l.val(),page:a.pager}),contentType:"application/json",success:function(t){if("string"==typeof t)var t=n.parseJSON(t);return 1!=t.code?(warn(t.msg),void e.removeClass("disabled")):(t=t.result,n.each(t.colleges,function(e,t){t.code=t.collegeId,t.name=t.collegeName,t.city={code:t.city,name:s.getCityName(t.city)},t.collegeType={code:t.collegeType,name:s.getCollegeTypeName(t.collegeType)},t.ownerType={code:t.ownerType,name:s.getOwnerTypeName(t.ownerType)},t.level={code:t.level,name:s.getLevelName(t.level)},t.feature=n.map(t.feature,function(e,t){return{type:e,name:s.getFeatureName(e)}})}),e.removeClass("disabled"),a.loadList(t,a.pager),void a.pager++)},error:function(t){e.removeClass("disabled"),console.log(t)}})},bindEvt:function(){function e(e){e.preventDefault(),t.pager=1;var a=n("#collegeInput"),l=n(this).closest(".btn");return""==n.trim(a.val())?void warn("请输入院校名称"):(t.state.searchType=1,void(l.hasClass("disabled")||(l.addClass("disabled"),t.state.tagList=[],n(".itemLists .item").removeClass("current"),t.render(),t.searchCollegeReq(l))))}var t=this;n(document).on("click","[data-action=add]",function(e){e.preventDefault();var a=n(e.target);n("#collegeInput").val(""),t.state.searchType=0;var l=a.data("value").split(":")[0],s=a.data("value").split(":")[1];a.hasClass("current")||""==s||(a.closest(".row").find(".item").removeClass("current"),n.each(t.state.tagList,function(e,a){if(l==a.type)return t.state.tagList.splice(e,1),!1}),a.addClass("current"),t.state.tagList.push({type:l,value:s,text:a.text()}),t.render(),t.requestData(a))}),n(document).on("click","[data-action=clear]",function(e){e.preventDefault(),t.state.searchType=0,n("#collegeInput").val(""),n("[data-action=add]").removeClass("current"),t.state.tagList=[],t.render(),t.requestData()}),n(document).on("click","[data-action=remove]",function(e){e.preventDefault(),n("#collegeInput").val(""),t.state.searchType=0;var a=n(e.target).closest(".tags"),l=a.data("value").split(":")[0],s=a.data("value").split(":")[1];n.each(t.state.tagList,function(e,a){if(l==a.type&&s==a.value){t.state.tagList.splice(e,1);var i='[data-value="'+l+":"+s+'"]';return n(i).removeClass("current"),!1}}),t.render(),t.requestData(a)}),n(".btn-loading").on("click",function(e){e.preventDefault();var a=n(this).closest(".btn");if(!a.hasClass("disabled")&&!a.hasClass("loading-all"))if(a.addClass("disabled loading"),1==t.state.searchType){var l=n("#collegeInput").val()||decodeURI(i.getQuery("keyword"));t.searchCollegeReq(n("#sBtn"),l)}else 0==t.state.searchType&&t.requestData(a)}),n("#sBtn").on("click",function(t){e(t)}),n("#collegeInput").on("keyup",function(t){return 13==t.keyCode&&void e(t)}),i.getQuery("keyword")?(t.state.searchType=1,t.searchCollegeReq(n("#sBtn"),decodeURI(i.getQuery("keyword")))):(t.state.searchType=0,t.requestData())}};e.exports=c},165:function(module,exports){module.exports=function(obj){function print(){__p+=__j.call(arguments,"")}obj||(obj={});var __t,__p="",__j=Array.prototype.join;with(obj)if(0==colleges.length&&1==page)__p+='\n\t<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';else{__p+="\t\n";for(var i=0;i<colleges.length;i++){__p+='\n<li class="clearfix">\n\t\n\t<div class="fr">\n\t\t<a href="/library/college/'+(null==(__t=colleges[i].collegeId)?"":__t)+'" target="_blank" class="btn btn-primary btn-mid">查看详情</a>\n\t</div>\n\t<div class="media">\n\t<span class="fl imgWrap mr10 dib">\n\t\t<img src="'+(null==(__t=colleges[i].logo)?"":__t)+'" class="responsive" />\n\t</span>\n\t<div className="media-body">\n\t\t<h4 class="name badgeRow"><em class="badgetitle vm">'+(null==(__t=colleges[i].collegeName)?"":__t)+"</em>\n\t\t\t";for(var j=0;j<colleges[i].feature.length;j++)__p+="\n\t\t\t\t",__p+=1==colleges[i].feature[j].type?'\n\t\t\t\t\t<span class="badge green">'+(null==(__t=colleges[i].feature[j].name)?"":__t)+"</span>\n\t\t\t\t":2==colleges[i].feature[j].type?'\n\t\t\t\t\t<span class="badge red">'+(null==(__t=colleges[i].feature[j].name)?"":__t)+"</span>\n\t\t\t\t":'\n\t\t\t\t\t<span class="badge">'+(null==(__t=colleges[i].feature[j].name)?"":__t)+"</span>\n\t\t\t\t",__p+="\n\t\t\t";__p+='\n\t\t</h4>\n\t\t<div class="detail">\n\t\t\t<span class="label">院校属地：</span><span class="field">'+(null==(__t=colleges[i].city.name)?"":__t)+'</span>\n\t\t\t<span class="label">院校分类：</span><span class="field">'+(null==(__t=colleges[i].collegeType.name)?"":__t)+'</span>\n\t\t\t<span class="label">院校性质：</span><span class="field">'+(null==(__t=colleges[i].ownerType.name)?"":__t)+'</span>\n\t\t\t<span class="label">院校层次：</span><span class="field">'+(null==(__t=colleges[i].level.name)?"":__t)+"</span>\n\t\t</div>\n\t</div>\n\t</div>\n</li>\n"}}return __p}}});
+webpackJsonp([10],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* 建议这里都引入 */
+	__webpack_require__(21);
+	__webpack_require__(162);
+	var $ = window.$ || __webpack_require__(44);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	//公共方法
+	var common = __webpack_require__(46);
+	
+	
+	//自定义功能写下面
+	//切换顶部nav高亮
+	common.switchNav(2);
+	
+	//数据绑定
+	var dataSet = __webpack_require__(164);
+	
+	dataSet.init();
+
+/***/ },
+
+/***/ 162:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 164:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = window.$ || __webpack_require__(44);
+	var extend =  __webpack_require__(49);
+	var tmpl = __webpack_require__(165);
+	
+	var localData = __webpack_require__(133);
+	
+	//工具类方法
+	var util = __webpack_require__(45);
+	
+	var provinceId = $("[name=province]").val();
+	
+	var dataSet = { 
+		render : function(){
+			var that = this;
+			//省列表
+	        if(this.state.tagList.length){
+	            var tagLis = $.map(that.state.tagList,function(item){
+	            	var _val = item.type+":"+item.value;
+	                return '<a class="tags" data-action="remove" href="javascript:;" data-value="'+_val+'">'+item.text+'<span class="taoIcon btn-x"></span></a>';
+	            });
+	
+	            var _htmlArr = [];
+	            _htmlArr.push('<a href="javascript:;" class="fr btn btn-default" data-action="clear">清空所有</a>');
+	            _htmlArr.push('<span class="cat-text fl">已选择：</span>');
+	            _htmlArr.push(tagLis.join(""));
+	            $(".crumb").html(_htmlArr.join(""));
+	        }else{
+	        	$(".crumb").html('<span class="cat-text fl">已选择：</span>');
+	        }
+	
+	        if(!$("input[name=city]").length){
+	        	var inputList = [];
+	        	inputList.push('<input type="hidden" name="city">');
+	        	// inputList.push('<input type="hidden" name="collegeType">');
+	        	// inputList.push('<input type="hidden" name="ownerType">');
+	        	inputList.push('<input type="hidden" name="level">');
+	        	inputList.push('<input type="hidden" name="feature">');
+	        	$(".crumb").append(inputList.join(""));
+	        }
+	
+	        var _key = "0";
+	    	$.each(that.state.tagList,function(idx,item){
+	    		$('[name='+item.type+']').val(item.value || "");
+	    		_key += $('[name='+item.type+']').val();
+	    	});
+	
+	    	//分页
+	    	// if(!that.pager){
+	    	// 	that.pager = 1;
+	    	// }
+		},
+	
+		requestData : function(btn){
+			var that = this,o = that.options;
+	
+			var _data = {
+	            province: Number($("[name=city]").val()),
+	            capacity : that.capacity,
+				// collegeType : $("[name=collegeType]").val(),
+				// ownerType : $("[name=ownerType]").val(),
+				level : $("[name=level]").val(),
+				feature : [Number($("[name=feature]").val())]
+			};
+	
+			var _key = _data.city + _data.level + _data.feature;
+			
+	        //如果是点击加载更多，页码++，否则重置为1
+	        if(btn && $(btn).hasClass("btn-loading")){
+	            that.pager++;
+	        }else{
+	            that.pager = 1;
+	        }
+	
+	        _data.page = that.pager;
+	
+	      
+			$.ajax({
+				url : preServer+provinceId + "/data/college",
+				type : "post",
+	            contentType: "application/json",
+				data : JSON.stringify(_data),
+				success : function(res){
+					if(typeof res == "string"){
+						var res = $.parseJSON(res);
+					}
+	
+	                if(res.code !=1){
+	                    warn(res.msg);
+	                    return;
+	                }
+	
+	                res = res.result;
+	
+	                //客户端修改数据
+	                $.each(res.colleges,function(idx,ele){
+	
+	                    //增加code,name
+	                    ele.code = ele.collegeId;
+	                    ele.name = ele.collegeName;
+	
+	                    //获取city名称
+	                    ele.city = {
+	                        code : ele.city,
+	                        name : localData.getCityName(ele.city)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校属性)
+	                    ele.collegeType = {
+	                        code : ele.collegeType,
+	                        name : localData.getCollegeTypeName(ele.collegeType)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校性质)
+	                    ele.ownerType = {
+	                        code : ele.ownerType,
+	                        name : localData.getOwnerTypeName(ele.ownerType)
+	                    };
+	
+	                    //获取getLevelName(院校层次)
+	                    ele.level = {
+	                        code : ele.level,
+	                        name : localData.getLevelName(ele.level)
+	                    };
+	
+	                    //获取featrueList
+	                    ele.feature = $.map(ele.feature,function(el,index){
+	                        return {
+	                            type : el,
+	                            name : localData.getFeatureName(el)
+	                        };
+	                    });
+	                });
+					
+					that.loadList(res,that.pager);
+				}
+			});
+		},
+	
+		loadList : function(data,pager){
+			var that = this,o = that.options;
+			var _html = tmpl(data);
+	
+			if(pager == 1){
+				$(".schoolList").empty().html(_html);
+			}else{
+				$(".schoolList").append(_html);
+			}
+	
+	        if(pager == 1 && data.total == 0){
+	            $(".btn-loading").hide();
+	        }else{
+	            $(".btn-loading").show();
+	            $(".btn-loading").removeClass("loading disabled");
+	        }
+	
+	        var pageCount = Math.ceil(data.total / that.capacity);
+	
+			//最后一页
+			if(pager >= pageCount){
+				$(".btn-loading").addClass("loading-all");
+			}else{
+	            $(".btn-loading").removeClass("loading-all");
+	        }
+		},
+	
+		updateUI : function() {
+	       this.render(); 
+	    },
+	
+	    init : function(o){
+	    	this.state = {
+	            tagList:  []
+	        };
+	
+	        this.options = o;
+	
+	        this.capacity = 10;
+	
+	        //保存分页对象
+	        this.pager = 1;
+	
+	        this.render();
+	        this.bindEvt();
+	        
+	    },
+	
+	    searchCollegeReq : function(btn,keyword){
+	        var that = this;
+	        var oInput = $("#collegeInput");
+	        $.ajax({
+	            url : preServer+provinceId + "/data/college/search",
+	            type : "post",
+	            data : JSON.stringify({keyword : keyword || oInput.val(),page : that.pager }),
+	            contentType: "application/json",
+	            success : function(res){
+	                if(typeof res == "string"){
+	                    var res = $.parseJSON(res);
+	                }
+	
+	                if(res.code != 1){
+	                    warn(res.msg);
+	                    btn.removeClass("disabled");
+	                    return;
+	                }
+	
+	                res = res.result;
+	
+	                //客户端修改数据
+	                $.each(res.colleges,function(idx,ele){
+	                    //增加code,name
+	                    ele.code = ele.collegeId;
+	                    ele.name = ele.collegeName;
+	
+	                    //获取city名称
+	                    ele.city = {
+	                        code : ele.city,
+	                        name : localData.getCityName(ele.city)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校属性)
+	                    ele.collegeType = {
+	                        code : ele.collegeType,
+	                        name : localData.getCollegeTypeName(ele.collegeType)
+	                    };
+	
+	                    //获取getCollegeTypeName(院校性质)
+	                    ele.ownerType = {
+	                        code : ele.ownerType,
+	                        name : localData.getOwnerTypeName(ele.ownerType)
+	                    };
+	
+	                    //获取getLevelName(院校层次)
+	                    ele.level = {
+	                        code : ele.level,
+	                        name : localData.getLevelName(ele.level)
+	                    };
+	
+	                    //获取featrueList
+	                    ele.feature = $.map(ele.feature,function(el,index){
+	                        return {
+	                            type : el,
+	                            name : localData.getFeatureName(el)
+	                        };
+	                    });
+	                });
+	
+	                btn.removeClass("disabled");
+	                that.loadList(res,that.pager);
+	                that.pager++;
+	            },
+	            error : function(err){
+	                btn.removeClass("disabled");
+	                console.log(err);
+	            }
+	        });
+	
+	    },
+	
+	    bindEvt : function(){
+	    	var that = this;
+	    	$(document).on("click","[data-action=add]",function(e){
+	    		e.preventDefault();
+	    		var link = $(e.target);
+	
+	            $("#collegeInput").val("");
+	
+	            that.state.searchType = 0;
+	    		
+	    		var type = link.data("value").split(":")[0],
+	    			val =  link.data("value").split(":")[1];
+	
+	    		if(link.hasClass("current") || val == "" ) return;
+	            link.closest(".row").find(".item").removeClass("current");
+	
+	            $.each(that.state.tagList,function(idx,item){
+	                if(type == item.type){
+	                    that.state.tagList.splice(idx,1);
+	                    return false;
+	                }
+	            });
+	
+	    		link.addClass("current");
+	
+				that.state.tagList.push({
+					type : type,
+					value : val,
+					text : link.text()
+				});  
+	
+	             that.render();
+				that.requestData(link);  		
+	    	});
+	
+	    	$(document).on("click","[data-action=clear]",function(e){
+	    		e.preventDefault();
+	
+	            that.state.searchType = 0;
+	
+	            $("#collegeInput").val("");
+	    		$("[data-action=add]").removeClass("current");
+				that.state.tagList = [];
+	
+	            that.render();
+				that.requestData();  		
+	    	});
+	
+	    	$(document).on("click","[data-action=remove]",function(e){
+	    		e.preventDefault();
+	
+	            $("#collegeInput").val("");
+	
+	            //searchType控制是否为关键词搜索
+	            that.state.searchType = 0;
+	
+	    		var link = $(e.target).closest(".tags");
+	    		var type = link.data("value").split(":")[0],
+	    			value =  link.data("value").split(":")[1];
+				
+				 $.each(that.state.tagList,function(idx,item){
+	                if(type == item.type && value == item.value){
+	                    that.state.tagList.splice(idx,1);
+	                    var attr = '[data-value="'+type+':'+value+'"]';
+	                    $(attr).removeClass("current");
+	                    return false;
+	                }
+	            });
+	
+	            that.render();
+				that.requestData(link);  		
+	    	});
+	
+	    	$(".btn-loading").on("click",function(e){
+	    		e.preventDefault();
+	    		var btn = $(this).closest(".btn");
+	    		if(btn.hasClass("disabled") || btn.hasClass("loading-all")) return;
+	    		btn.addClass("disabled loading");
+	
+	            // 区分是否为关键字搜索 or 筛选
+	            if(that.state.searchType == 1){
+	                var _key = $("#collegeInput").val() || decodeURI(util.getQuery("keyword"));
+	                that.searchCollegeReq($("#sBtn"),_key);
+	            }else if(that.state.searchType == 0){
+	                that.requestData(btn);
+	            }
+	    	});
+	
+	        $("#sBtn").on("click",function(e){
+	            goSearch(e);
+	        });
+	
+	        $("#collegeInput").on("keyup",function(e){
+	            if(e.keyCode == 13){
+	                goSearch(e);
+	            }else{
+	                return false;
+	            }
+	            
+	        });
+	
+	        function goSearch(e){
+	            e.preventDefault();
+	
+	            that.pager = 1;
+	
+	            var oInput = $("#collegeInput"),btn = $(this).closest(".btn");
+	            if($.trim(oInput.val()) == ""){
+	                warn("请输入院校名称");
+	                return;
+	            }
+	
+	            that.state.searchType = 1;
+	
+	            if(btn.hasClass('disabled')) return;
+	            btn.addClass("disabled");
+	
+	            that.state.tagList = [];
+	            $(".itemLists .item").removeClass("current");
+	            that.render();
+	
+	            that.searchCollegeReq(btn);
+	        };
+	
+	        //需要区分是通过导航搜索进来还是直接进来
+	        if(!!util.getQuery("keyword")){
+	            that.state.searchType = 1;
+	            that.searchCollegeReq($("#sBtn"),decodeURI(util.getQuery("keyword")));
+	            
+	        }else{
+	            that.state.searchType = 0;
+	            that.requestData();
+	        }
+	        
+	    }
+	};
+	
+	module.exports = dataSet;
+
+/***/ },
+
+/***/ 165:
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	
+	 if (colleges.length == 0 && page == 1) { ;
+	__p += '\n	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>\n';
+	 }else{ ;
+	__p += '	\n';
+	 for (var i = 0; i < colleges.length; i++) { ;
+	__p += '\n<li class="clearfix">\n	\n	<div class="fr">\n		<a href="/library/college/' +
+	((__t = ( colleges[i].collegeId )) == null ? '' : __t) +
+	'" target="_blank" class="btn btn-primary btn-mid">查看详情</a>\n	</div>\n	<div class="media">\n	<span class="fl imgWrap mr10 dib">\n		<img src="' +
+	((__t = ( colleges[i].logo )) == null ? '' : __t) +
+	'" class="responsive" />\n	</span>\n	<div className="media-body">\n		<h4 class="name badgeRow"><em class="badgetitle vm">' +
+	((__t = ( colleges[i].collegeName )) == null ? '' : __t) +
+	'</em>\n			';
+	 for (var j = 0; j < colleges[i].feature.length; j++) { ;
+	__p += '\n				';
+	 if(colleges[i].feature[j].type == 1) { ;
+	__p += '\n					<span class="badge green">' +
+	((__t = ( colleges[i].feature[j].name )) == null ? '' : __t) +
+	'</span>\n				';
+	 }else if(colleges[i].feature[j].type == 2){ ;
+	__p += '\n					<span class="badge red">' +
+	((__t = ( colleges[i].feature[j].name )) == null ? '' : __t) +
+	'</span>\n				';
+	 }else{ ;
+	__p += '\n					<span class="badge">' +
+	((__t = ( colleges[i].feature[j].name )) == null ? '' : __t) +
+	'</span>\n				';
+	 } ;
+	__p += '\n			';
+	 } ;
+	__p += '\n		</h4>\n		<div class="detail">\n			<span class="label">院校属地：</span><span class="field">' +
+	((__t = ( colleges[i].city.name )) == null ? '' : __t) +
+	'</span>\n			<span class="label">院校分类：</span><span class="field">' +
+	((__t = ( colleges[i].collegeType.name )) == null ? '' : __t) +
+	'</span>\n			<span class="label">院校性质：</span><span class="field">' +
+	((__t = ( colleges[i].ownerType.name )) == null ? '' : __t) +
+	'</span>\n			<span class="label">院校层次：</span><span class="field">' +
+	((__t = ( colleges[i].level.name )) == null ? '' : __t) +
+	'</span>\n		</div>\n	</div>\n	</div>\n</li>\n';
+	 }} ;
+	
+	
+	}
+	return __p
+	}
+
+/***/ }
+
+});
+//# sourceMappingURL=college.71716fc8.js.map
