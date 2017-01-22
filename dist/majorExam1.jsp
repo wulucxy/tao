@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/majorExam1.d3367ccd.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/majorExam1.c47ae3bd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -42,6 +42,9 @@
 					
 					<div class="footerCnt">
 						<div class="row btnRow">
+							<a class="btn btn-primary btn-form mr30" href="/majorExamMode" target="_blank">
+			                        <em class="subTxt">查看样本</em>
+			                    </a>
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
 		                        <em class="subTxt">填写授权码，并开始测试</em>
 		                    </a>
@@ -59,5 +62,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.fee878e3.js"></script><script src="/static/web/js/majorExam1.92ebc69e.js"></script></body>
+	<script src="/static/web/js/vendors.af121442.js"></script><script src="/static/web/js/majorExam1.737e0c16.js"></script></body>
 </html>

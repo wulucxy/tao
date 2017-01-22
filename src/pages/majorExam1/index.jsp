@@ -42,6 +42,9 @@
 					
 					<div class="footerCnt">
 						<div class="row btnRow">
+							<a class="btn btn-primary btn-form mr30" href="/majorExamMode" target="_blank">
+			                        <em class="subTxt">查看样本</em>
+			                    </a>
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
 		                        <em class="subTxt">填写授权码，并开始测试</em>
 		                    </a>
