@@ -22,6 +22,10 @@ var util = {
         return new Date(Date.parse(s.replace(/-/g,  "/")));  
     },
 
+    uuid: function(){
+      return Math.random().toString(36).substring(3, 8)
+    },
+
     //接收时间戳转时间
     buildDate : function(time,format){
       var that = this,date = new Date(time),data;

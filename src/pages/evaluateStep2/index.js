@@ -121,6 +121,10 @@ var evaluate = {
       this.render();
   },
 
+  uuid: function(){
+    return Math.random().toString(36).substring(3, 8)
+  },
+
   render : function(type){
     var that = this, o = that.options;
 
@@ -195,6 +199,7 @@ var evaluate = {
 
         var isRepeat = false;
         $(wishes).each(function(idx,ele){
+
           if(ele.majorId == current.major.code 
               && ele.collegeId == current.college.code
               && ele.field == current.major.field
@@ -460,6 +465,13 @@ var evaluate = {
 
            // 专业大类
            that.state.provList = that.majors;
+
+           // 针对field做id的特殊处理
+           $.each(res.result, function(idx, ele){
+            $.each(ele.majorList, function(idx2, ele2){
+              ele2.majorUuid = ele2.majorId + that.uuid();
+            })
+           })
 
            // 专业小类
            that.state.majorListAll = $.map(res.result,function(ele){

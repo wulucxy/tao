@@ -88,16 +88,7 @@ var defaults = {
             { allChunks: false }
         ),
         new ManifestPlugin(),
-        new WebpackErrorNotificationPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            output: {
-                comments: false
-            },
-            compressor: {
-                warnings: false
-            }
-        })
+        new WebpackErrorNotificationPlugin()
     ]
 };
 

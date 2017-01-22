@@ -45,5 +45,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.1b82d283.js"></script><script src="/static/web/js/majorExam3.a48fb33f.js"></script></body>
+	<script src="/static/web/js/vendors.a98cb96c.js"></script><script src="/static/web/js/majorExam3.a48fb33f.js"></script></body>
 </html>
