@@ -21,12 +21,15 @@ var major = {
 		
 		var _data = {
 			capacty: that.capacity,
-			province: that.province,
 			year: that.year,
 			batch: that.batch,
 			majorId: that.majorId,
 			page: that.pager
 		};
+
+		if(that.province){
+			_data.province = that.province;
+		}
 
 		$.ajax({
 			url : preServer+that.province + "/data/major/college",
