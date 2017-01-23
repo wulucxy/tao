@@ -75,12 +75,19 @@ var myProfile = {
 			cities = [];
 		}
 
+		var majors;
+		if(param.majors){
+			majors = param.majors;
+		}else {
+			majors = [];
+		}
+
 		return {
 			provinceName: o.provinceName,
 			score: param.score,
 			subjects: subjects,
 			cities: cities,
-			majors: param.majors
+			majors: majors
 		}
 	},
 

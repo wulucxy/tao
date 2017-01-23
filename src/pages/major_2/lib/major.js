@@ -15,7 +15,7 @@ var major = {
 	requestData : function(btn){
 		var that = this;
 
-		that.province = $("[name=studentProvince]").val();
+		that.province = $("[name=province]").val();
         that.year = $("[name=Year]").val();
         that.batch = $("[name=batch]").val();
 		

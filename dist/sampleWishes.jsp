@@ -395,5 +395,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.d10a4c81.js"></script><script src="/static/web/js/sampleWishes.11cc8205.js"></script></body>
+	<script src="/static/web/js/vendors.42500605.js"></script><script src="/static/web/js/sampleWishes.11cc8205.js"></script></body>
 </html>

@@ -141,7 +141,7 @@
 							<p id="errTxt" class="errTxt"></p>
 
 							<div class="row btnRow">
-								<a class="btn btn-primary btn-form mr30" href="/box/plan/result?platId=29665" target="_blank">
+								<a class="btn btn-primary btn-form mr30" href="/box/plan/result?planId=29665" target="_blank">
 			                        <em class="subTxt">查看样本</em>
 			                    </a>
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
@@ -168,5 +168,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.d10a4c81.js"></script><script src="/static/web/js/bookStep1.52d30e85.js"></script></body>
+	<script src="/static/web/js/vendors.42500605.js"></script><script src="/static/web/js/bookStep1.52d30e85.js"></script></body>
 </html>
