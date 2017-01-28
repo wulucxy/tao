@@ -47,12 +47,15 @@ var searchSchool = {
 	          that.modal = modal;
 	          that.modal.ref = this;
 
+	          that.startTime = new Date().getTime();
+
 	          modal.majorType = oInput.attr("major");
 	          that.requestData(that.pager);
 	          
 	          o.startCallback && o.startCallback.call(that,modal);
 	        },
 	        completeCallback : function(){
+	          
 	          var self = oInput; 
 	          var oInput = $("#wd");
 	          $("#sBtn").on("click",function(e){
@@ -150,8 +153,12 @@ var searchSchool = {
 
 	Evt : function(){
 	    var that = this,o = that.options;
+
 	    $(document).off().on("click",".schoolList",function(e){
 	      e.preventDefault();
+	      that.updateTime = new Date().getTime();
+
+	      if(that.updateTime - that.startTime < 400) return; 
 	      var $this = $(this);
 	      $this.siblings().removeClass("active");
 	      $this.addClass("active");

@@ -456,6 +456,11 @@ var evaluate = {
               return;
             }
 
+            if(res.result.length == 0) {
+              warn('该学校没有符合条件的专业可选');
+              return;
+            }
+
            that.majors = $.map(res.result,function(ele){
               return {
                 name : ele.name,
