@@ -9,11 +9,11 @@
 			<span class="badge squre wishBadge">
 				<% if (list.assessment == '-2') { %>
 					不建议
-				<% }else if (list.assessment == '-1') { %>
+				<% }else if (list.assessment == 1) { %>
 				   	保守
 				<% }else if (list.assessment == 0) { %>
 				   	平稳
-				<% }else if (list.assessment == 1) { %>
+				<% }else if (list.assessment == -1) { %>
 				   	冲刺
 				<% } %>
 			</span>
