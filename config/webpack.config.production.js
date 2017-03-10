@@ -90,13 +90,15 @@ var defaults = {
         new ManifestPlugin(),
         new WebpackErrorNotificationPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            output: {
-                comments: false
-            },
-            compressor: {
-                warnings: false
-            }
+            mangle: { screw_ie8: false },
+			output: {
+				screw_ie8: false,
+			    comments: false
+			},
+			compressor: {
+				screw_ie8: false,
+			    warnings: false
+			}
         })
 	]
 };
