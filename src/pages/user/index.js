@@ -38,7 +38,7 @@ var appointment = require("./js/appointment");
 var coupon = require("./js/coupon");
 
 //图片上传模块
-//var uploader = require("./js/uploader");
+var uploader = require("./js/uploader");
 
 //provinceId
 var provinceId = $("[name=province]").val();
@@ -90,9 +90,9 @@ qa.init({
 });
 
 //图片上传
-// uploader.init({
-// 	ele : $("#picker")
-// });
+uploader.init({
+	ele : $("#picker")
+});
 
 appointment.init({
 	url : preServer+provinceId +"/tzy/appointment/all",
