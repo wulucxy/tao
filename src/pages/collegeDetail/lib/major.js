@@ -22,6 +22,7 @@ var major = {
 			province : $("[name=studentProvince]").val(),
 			year : $("[name=Year]").val(),
 			batch : $("[name=batch]").val(),
+			orderCondition:  $("[name=orderCondition]").val(),
 			collegeId : that.collegeId
 		};
 
@@ -82,7 +83,8 @@ var major = {
 			var _data = {
 				province : $("[name=studentProvince]").val(),
 				year : $("[name=year]").val(),
-				batch : $("[name=batch]").val()
+				batch : $("[name=batch]").val(),
+				orderCondition:  $("[name=orderCondition]").val(),
 			};
 
 			that.pager = 1;

@@ -143,9 +143,20 @@
 														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="batch">
-															  <option value="1">第一批</option>
+															  <option value="">第一批</option>
 															  <option value="2">第二批</option>
 															  <option value="3">第三批</option>
+														</select>	
+													</div>
+												</div>
+												<div class="row clearfix inline fl">
+													<label for="batch" class="control-label">
+														<em class="vm">排&emsp;&emsp;序：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="orderCondition">
+															  <option value="liberal">文科平均分</option>
+															  <option value="science">理科平均分</option>
+															  <option value="number">录取人数</option>
 														</select>	
 													</div>
 												</div>

@@ -115,6 +115,17 @@
 														</select>	
 													</div>
 												</div>
+												<div class="row clearfix inline fl">
+													<label for="batch" class="control-label">
+														<em class="vm">排&emsp;&emsp;序：</em></label>
+													<div class="selectWrap rel">
+														<select class="form-control trigger" name="orderCondition">
+															  <option value="liberal">文科平均分</option>
+															  <option value="science">理科平均分</option>
+															  <option value="number">录取人数</option>
+														</select>	
+													</div>
+												</div>
 											</div>
 										</div>
 
@@ -149,5 +160,5 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 	
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.e32939af.js"></script><script src="/static/web/js/major_2.7fc0cd36.js"></script></body>
+	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/major_2.2a8c201a.js"></script></body>
 </html>
