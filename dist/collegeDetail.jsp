@@ -143,7 +143,7 @@
 														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="batch">
-															  <option value="">第一批</option>
+															  <option value="1">第一批</option>
 															  <option value="2">第二批</option>
 															  <option value="3">第三批</option>
 														</select>	
