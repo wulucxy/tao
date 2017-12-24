@@ -24,4 +24,4 @@ var jiathis_config = {
     title:title,
     summary:""
 }
-</script>
+</script><script type="text/javascript" src="/static/web/js/vendors.js"></script>

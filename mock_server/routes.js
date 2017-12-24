@@ -1,6 +1,6 @@
 module.exports = {
 	// 页面路由
-	'/': 'home.jsp',
+	'/': 'homeV2.jsp',
 	'/default': 'homeV2.jsp',
 	'/box/plan/evaluate_step1': 'evaluateStep1.jsp',
 	'/box/plan/es2': 'evaluateStep2Back.jsp',

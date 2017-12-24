@@ -11,4 +11,4 @@
 
 
 </div>
-</section>
+</section><script type="text/javascript" src="/static/web/js/vendors.js"></script>

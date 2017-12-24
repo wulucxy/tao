@@ -72,13 +72,10 @@
 						<a href="javascript:;" class="trigger">工具箱</a>
 						<div class="listWrap">
 							<div class="options">
-								<a class="ddlist" href="/box/plan/book_step1">高考志愿定制</a>
-								<a class="ddlist" href="/box/plan/evaluate_step1">高考志愿评估</a>
-								<a class="ddlist" href="/box/plan/major_exam1">专业选择测试</a>
-								<a class="ddlist" href="/box/plan/aboard">留学方案定制</a>
-								<a class="ddlist" href="/appointment/create">专家预约</a>
-								<a class="ddlist" href="/box/score_management">成绩管理</a>
-								<a class="ddlist" href="/box/college_faq">专家问答</a>
+								<a class="ddlist" href="/box/plan/book_step1">智能志愿定制</a>
+								<a class="ddlist" href="/box/plan/major_exam1">专业测试</a>
+								<a class="ddlist" href="/appointment/create">专家问答</a>
+								<a class="ddlist" href="/box/college_faq">专家服务</a>
 								
 							</div>
 						</div>
@@ -87,17 +84,17 @@
 						<a href="javascript:;" class="trigger">数据库</a>
 						<div class="listWrap">
 							<div class="options">
-								<a class="ddlist" href="/library/college">院校数据库</a>
-								<a class="ddlist" href="/library/major">专业数据库</a>
-								<a class="ddlist" href="/library/subject">科目数据库</a>
-								
-								<a class="ddlist" href="/library/aboard_data">海外院校库</a>
-								<a class="ddlist" href="/scoreTransformer">分数转换</a>
+								<a class="ddlist" href="/library/college">院校数据</a>
+								<a class="ddlist" href="/library/major">专业数据</a>
+								<a class="ddlist" href="/library/subject">学科数据</a>
 							</div>
 						</div>
 					</li>
 					<li class="navList no-dropdown">
-						<a href="/infoV2">资讯</a>
+						<a href="/infoV2">专业解读</a>
+					</li>
+					<li class="navList no-dropdown">
+						<a href="/infoV2">填报政策</a>
 					</li>
 					<li class="navList" data-toggle="dropdown" >
 						<a href="javascript:;" class="trigger">下载APP</a>
@@ -159,4 +156,4 @@
 
 		</nav>
 
-	</header>
+	</header><script type="text/javascript" src="/static/web/js/vendors.js"></script>
