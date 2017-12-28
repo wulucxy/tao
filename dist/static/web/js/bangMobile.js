@@ -4,20 +4,20 @@ webpackJsonp([3],{
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(21);
-	__webpack_require__(123);
-	var $ = window.$ || __webpack_require__(44);
+	__webpack_require__(22);
+	__webpack_require__(124);
+	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
-	var util = __webpack_require__(45);
+	var util = __webpack_require__(46);
 	
 	//公共方法
-	var common = __webpack_require__(46);
+	var common = __webpack_require__(47);
 	
-	__webpack_require__(62);
+	__webpack_require__(63);
 	
-	var userUtil = __webpack_require__(64);
-	var verify = __webpack_require__(101);
+	var userUtil = __webpack_require__(65);
+	var verify = __webpack_require__(102);
 	
 	var telReg = /^1\d{10}$/;
 	
@@ -111,16 +111,16 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(124);
+	var content = __webpack_require__(125);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(41)(content, {});
+	var update = __webpack_require__(42)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -138,10 +138,10 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
+	exports = module.exports = __webpack_require__(24)();
 	// imports
 	
 	

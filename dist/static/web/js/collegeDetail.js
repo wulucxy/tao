@@ -4,25 +4,25 @@ webpackJsonp([11],{
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(21);
-	__webpack_require__(166);
-	var $ = window.$ || __webpack_require__(44);
+	__webpack_require__(22);
+	__webpack_require__(167);
+	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
-	var util = __webpack_require__(45);
+	var util = __webpack_require__(46);
 	
 	//公共方法
-	var common = __webpack_require__(46);
+	var common = __webpack_require__(47);
 	
 	
 	//自定义功能写下面
-	var tabs = __webpack_require__(131);
+	var tabs = __webpack_require__(132);
 	
 	//百度地图
-	var baidu = __webpack_require__(169);
+	var baidu = __webpack_require__(170);
 	
 	//报考专业
-	var major =  __webpack_require__(170);
+	var major =  __webpack_require__(171);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -109,16 +109,16 @@ webpackJsonp([11],{
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(167);
+	var content = __webpack_require__(168);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(41)(content, {});
+	var update = __webpack_require__(42)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -136,32 +136,32 @@ webpackJsonp([11],{
 
 /***/ }),
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
+	exports = module.exports = __webpack_require__(24)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".majorList.v2 {\n  padding-bottom: 0;\n}\n.majorList.v2 h3 {\n  font-size: 20px;\n  margin-bottom: 8px;\n}\n.mt20 {\n  margin-top: 20px;\n}\n.orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 20px 24px 36px;\n  margin-bottom: 30px;\n}\n.row.inline > * {\n  display: inline-block;\n}\n.contentWrap h4 {\n  font-weight: normal;\n  font-size: 18px;\n  margin-bottom: 24px;\n}\n.contentWrap .btn-mid {\n  width: 118px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 16px;\n}\n.detailInfos {\n  font-size: 13px;\n  color: #555;\n  line-height: 1.5;\n}\n.detailInfos .field {\n  display: inline-block;\n}\n.detailInfos .col {\n  float: left;\n  width: 33.3%;\n  margin-bottom: 14px;\n  font-size: 14px;\n  line-height: 18px;\n  height: 18px;\n}\n.detailInfos .col.c-6 {\n  width: 60%;\n}\n.detailInfos .col.c-8 {\n  width: 80%;\n}\n.detailInfos .col.c-10 {\n  width: 100%;\n}\n.baiduWrapper {\n  height: 260px;\n}\n.detailTxt {\n  margin-top: 16px;\n  line-height: 1.5;\n}\n.majorWrap .pad {\n  margin-right: -40px;\n}\n.majorWrap .pad label {\n  width: 5em;\n}\n.majorWrap .bg {\n  padding: 14px 20px 0;\n}\n.majorWrap .bg .row {\n  margin-right: 40px;\n}\n.majorWrap .row {\n  margin-bottom: 14px;\n}\n.majorWrap .selectWrap {\n  width: 180px;\n}\n.majorWrap .selectWrap .form-control {\n  width: 100%;\n}\n.row label {\n  font-size: 14px;\n  color: #666;\n}\n.majorLists {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 20px;\n  padding-top: 20px;\n}\n.majorList {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n  position: relative;\n}\n.majorList .next {\n  position: absolute;\n  top: 50%;\n  margin-top: -26px;\n  right: 10px;\n}\n.majorList h5 {\n  font-size: 15px;\n  color: #333;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.majorList .details {\n  margin-bottom: 20px;\n}\n.majorList .details span {\n  display: inline-block;\n  margin-right: 36px;\n  line-height: 18px;\n  height: 18px;\n}\n.majorList .details .label {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n  color: #666;\n}\n.majorList .details .field {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n}\n.majorList .btn-primary {\n  padding: 1px 12px;\n  border-radius: 0;\n}\n.icon-major {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(168) + ");\n  width: 24px;\n  height: 18px;\n}\n.icon-score {\n  background-position: 0 0;\n}\n.icon-term {\n  background-position: -24px 0;\n}\n.icon-human {\n  background-position: -48px 0;\n}\n.icon-hat {\n  background-position: -72px 0;\n}\n.next {\n  width: 18px;\n  height: 32px;\n  background-position: 0 -35px;\n}\n.threholdTableWrap {\n  height: 440px;\n}\n", ""]);
+	exports.push([module.id, ".majorList.v2 {\n  padding-bottom: 0;\n}\n.majorList.v2 h3 {\n  font-size: 20px;\n  margin-bottom: 8px;\n}\n.mt20 {\n  margin-top: 20px;\n}\n.orange {\n  color: #f4b64f;\n}\n.dbWrapper {\n  margin-top: 12px;\n}\n.db .col1 {\n  width: 590px;\n}\n.db .col2 {\n  width: 300px;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 20px 24px 36px;\n  margin-bottom: 30px;\n}\n.row.inline > * {\n  display: inline-block;\n}\n.contentWrap h4 {\n  font-weight: normal;\n  font-size: 18px;\n  margin-bottom: 24px;\n}\n.contentWrap .btn-mid {\n  width: 118px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 16px;\n}\n.detailInfos {\n  font-size: 13px;\n  color: #555;\n  line-height: 1.5;\n}\n.detailInfos .field {\n  display: inline-block;\n}\n.detailInfos .col {\n  float: left;\n  width: 33.3%;\n  margin-bottom: 14px;\n  font-size: 14px;\n  line-height: 18px;\n  height: 18px;\n}\n.detailInfos .col.c-6 {\n  width: 60%;\n}\n.detailInfos .col.c-8 {\n  width: 80%;\n}\n.detailInfos .col.c-10 {\n  width: 100%;\n}\n.baiduWrapper {\n  height: 260px;\n}\n.detailTxt {\n  margin-top: 16px;\n  line-height: 1.5;\n}\n.majorWrap .pad {\n  margin-right: -40px;\n}\n.majorWrap .pad label {\n  width: 5em;\n}\n.majorWrap .bg {\n  padding: 14px 20px 0;\n}\n.majorWrap .bg .row {\n  margin-right: 40px;\n}\n.majorWrap .row {\n  margin-bottom: 14px;\n}\n.majorWrap .selectWrap {\n  width: 180px;\n}\n.majorWrap .selectWrap .form-control {\n  width: 100%;\n}\n.row label {\n  font-size: 14px;\n  color: #666;\n}\n.majorLists {\n  border-top: 1px solid #e2e2e2;\n  margin-top: 20px;\n  padding-top: 20px;\n}\n.majorList {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n  position: relative;\n}\n.majorList .next {\n  position: absolute;\n  top: 50%;\n  margin-top: -26px;\n  right: 10px;\n}\n.majorList h5 {\n  font-size: 15px;\n  color: #333;\n  font-weight: normal;\n  margin-bottom: 12px;\n}\n.majorList .details {\n  margin-bottom: 20px;\n}\n.majorList .details span {\n  display: inline-block;\n  margin-right: 36px;\n  line-height: 18px;\n  height: 18px;\n}\n.majorList .details .label {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n  color: #666;\n}\n.majorList .details .field {\n  display: inline-block;\n  vertical-align: middle;\n  font-size: 13px;\n}\n.majorList .btn-primary {\n  padding: 1px 12px;\n  border-radius: 0;\n}\n.icon-major {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url(" + __webpack_require__(169) + ");\n  width: 24px;\n  height: 18px;\n}\n.icon-score {\n  background-position: 0 0;\n}\n.icon-term {\n  background-position: -24px 0;\n}\n.icon-human {\n  background-position: -48px 0;\n}\n.icon-hat {\n  background-position: -72px 0;\n}\n.next {\n  width: 18px;\n  height: 32px;\n  background-position: 0 -35px;\n}\n.threholdTableWrap {\n  height: 440px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/major.png"
 
 /***/ }),
 
-/***/ 169:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var extend =  __webpack_require__(49);
+	var extend =  __webpack_require__(50);
 	
 	var baidu = {
 	
@@ -193,12 +193,12 @@ webpackJsonp([11],{
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var $ = window.$ || __webpack_require__(44);
-	var extend =  __webpack_require__(49);
-	var tmpl = __webpack_require__(171);
+	var $ = window.$ || __webpack_require__(45);
+	var extend =  __webpack_require__(50);
+	var tmpl = __webpack_require__(172);
 	
 	var major = {
 		init : function(o){
@@ -308,7 +308,7 @@ webpackJsonp([11],{
 
 /***/ }),
 
-/***/ 171:
+/***/ 172:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

@@ -115,5 +115,6 @@ module.exports = {
 	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json",
 	'post::/v2_1/client/1/tzy/plan/scoreChange':"mock::api/scoreChange.json",
 	'/v2_1/client/1/profile/plan/param':"mock::api/profile.json",
-
+	// v3
+	'post::/v2_1/client/1/profile/fillExamInfo':"mock::api/fillExamInfo.json",
 };

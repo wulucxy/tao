@@ -140,14 +140,14 @@
 						        <li data-field="2">专业</li>
 						    </ul>
 					    </div>
-						<div class="input-group fl clearfix">
-				          <input type="text" class="form-control fl" placeholder="请输入关键字搜索" id="searchField" name="keyword">
-				          <span class="input-group-btn">
-				            <button class="btn btn-default btn-search" type="button" id="searchBtn">
-				            	<i class="iconList icon-search"></i>
-				            </button>
-				          </span>
-				        </div>
+							<div class="input-group fl">
+			          <input type="text" class="form-control fl" placeholder="请输入关键字搜索" id="searchField" name="keyword">
+			          <span class="input-group-btn">
+			            <button class="btn btn-default btn-search" type="button" id="searchBtn">
+			            	<i class="iconList icon-search"></i>
+			            </button>
+			          </span>
+				      </div>
 				    </form>
 				    </div>
 				</div>

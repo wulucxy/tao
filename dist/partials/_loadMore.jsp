@@ -8,4 +8,4 @@
 		<em class="subTxt">加载更多</em>
 		<em class="loading-all">数据已加载完毕</em>
 	</a>
-</div><script type="text/javascript" src="/static/web/js/vendors.js"></script>
+</div>

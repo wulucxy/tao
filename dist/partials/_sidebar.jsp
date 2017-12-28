@@ -22,4 +22,4 @@
 	</div>
   </a>
   <a href="javascript:;" class="btn-aside btn-backtotop"><em class="vm">回到顶部</em></a>
-</div><script type="text/javascript" src="/static/web/js/vendors.js"></script>
+</div>

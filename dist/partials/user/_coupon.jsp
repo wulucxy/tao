@@ -49,4 +49,4 @@
 	<!-- 加载更多模块 -->
 	<%@ include file = "/partials/_loadMore.jsp" %>
 </div>
-</section><script type="text/javascript" src="/static/web/js/vendors.js"></script>
+</section>

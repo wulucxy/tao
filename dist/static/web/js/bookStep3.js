@@ -4,28 +4,28 @@ webpackJsonp([8],{
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
-	__webpack_require__(21);
-	__webpack_require__(155);
-	var $ = window.$ || __webpack_require__(44);
+	__webpack_require__(22);
+	__webpack_require__(156);
+	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
-	var util = __webpack_require__(45);
+	var util = __webpack_require__(46);
 	
 	//公共方法
-	var common = __webpack_require__(46);
+	var common = __webpack_require__(47);
 	
 	//自定义功能写下面
-	var tmpl_list = __webpack_require__(158);
-	var tmpl_subMajor = __webpack_require__(159);
+	var tmpl_list = __webpack_require__(159);
+	var tmpl_subMajor = __webpack_require__(160);
 	//require("../../assets/components/validator");
 	
 	//弹窗模板
-	var tmpl_detail = __webpack_require__(145);
-	var tmpl_questions = __webpack_require__(146);
+	var tmpl_detail = __webpack_require__(146);
+	var tmpl_questions = __webpack_require__(147);
 	
-	var browser = __webpack_require__(53);
+	var browser = __webpack_require__(54);
 	
-	var Cookie = __webpack_require__(107);
+	var Cookie = __webpack_require__(108);
 	
 	var provinceId = $("[name=province]").val();
 	var batch = $("[name=batch]").val();
@@ -276,16 +276,16 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 155:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(156);
+	var content = __webpack_require__(157);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(41)(content, {});
+	var update = __webpack_require__(42)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -303,29 +303,29 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
+	exports = module.exports = __webpack_require__(24)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".breadcrumb li {\n  width: 25%;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n.label_check {\n  font-size: 13px;\n  color: #333;\n  overflow: visible;\n  line-height: 32px;\n  cursor: pointer;\n  margin-right: 30px;\n  background-color: #f3f3f3;\n  border: 1px solid #ccc;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  margin-bottom: 12px;\n  min-width: 128px;\n  width: auto;\n}\n.label_check input {\n  background: transparent;\n  border: 0;\n  position: absolute;\n  left: -100%;\n  width: 0;\n  height: 0;\n  visibility: hidden;\n}\n.label_check.c_on {\n  border-color: #61c0e2;\n}\n.label_check:hover {\n  background-color: #f3f3f3;\n}\n.mb12 {\n  margin-bottom: 12px;\n}\n.icon-eye {\n  display: inline-block;\n  width: 28px;\n  height: 15px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(157) + ");\n  margin-right: 3px;\n}\n.c_on .icon-eye {\n  background-position: 0 -15px;\n}\n.icon-yes {\n  position: absolute;\n}\n.c_on .icon-yes {\n  width: 24px;\n  height: 24px;\n  display: inline-block;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 24px;\n  right: -10px;\n  top: -10px;\n  background-color: #61c0e2;\n}\n.c_on .icon-yes i {\n  display: inline-block;\n  width: 18px;\n  height: 11px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(25) + ");\n}\n.selectContent .row {\n  margin-bottom: 40px;\n}\n.footerCnt {\n  padding-top: 28px;\n}\n.modalCntWrap.majorListModal {\n  padding-bottom: 0;\n}\n.majorListWrap {\n  background-color: #e5e5e5;\n  overflow: scroll;\n  max-height: 368px;\n  padding: 16px 12px 0;\n}\n.majorList .btn-list {\n  display: inline-block;\n  width: 208px;\n  font-size: 13px;\n  background-color: #f3f3f3;\n  margin-bottom: 14px;\n  margin-right: 16px;\n  border-color: #ccc;\n  cursor: default;\n  line-height: 28px;\n  padding-top: 0;\n  padding-bottom: 0;\n}\n.majorList .btn-list:hover {\n  border-color: #ccc;\n}\n.label_check input {\n  background-color: red;\n}\n", ""]);
+	exports.push([module.id, ".breadcrumb li {\n  width: 25%;\n}\n.formWrap {\n  background-color: #fff;\n  padding: 32px 24px;\n  margin-bottom: 30px;\n}\n.formWrap .btnRow .btn {\n  margin-right: 30px;\n}\n.label_check {\n  font-size: 13px;\n  color: #333;\n  overflow: visible;\n  line-height: 32px;\n  cursor: pointer;\n  margin-right: 30px;\n  background-color: #f3f3f3;\n  border: 1px solid #ccc;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  margin-bottom: 12px;\n  min-width: 128px;\n  width: auto;\n}\n.label_check input {\n  background: transparent;\n  border: 0;\n  position: absolute;\n  left: -100%;\n  width: 0;\n  height: 0;\n  visibility: hidden;\n}\n.label_check.c_on {\n  border-color: #61c0e2;\n}\n.label_check:hover {\n  background-color: #f3f3f3;\n}\n.mb12 {\n  margin-bottom: 12px;\n}\n.icon-eye {\n  display: inline-block;\n  width: 28px;\n  height: 15px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(158) + ");\n  margin-right: 3px;\n}\n.c_on .icon-eye {\n  background-position: 0 -15px;\n}\n.icon-yes {\n  position: absolute;\n}\n.c_on .icon-yes {\n  width: 24px;\n  height: 24px;\n  display: inline-block;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 24px;\n  right: -10px;\n  top: -10px;\n  background-color: #61c0e2;\n}\n.c_on .icon-yes i {\n  display: inline-block;\n  width: 18px;\n  height: 11px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(26) + ");\n}\n.selectContent .row {\n  margin-bottom: 40px;\n}\n.footerCnt {\n  padding-top: 28px;\n}\n.modalCntWrap.majorListModal {\n  padding-bottom: 0;\n}\n.majorListWrap {\n  background-color: #e5e5e5;\n  overflow: scroll;\n  max-height: 368px;\n  padding: 16px 12px 0;\n}\n.majorList .btn-list {\n  display: inline-block;\n  width: 208px;\n  font-size: 13px;\n  background-color: #f3f3f3;\n  margin-bottom: 14px;\n  margin-right: 16px;\n  border-color: #ccc;\n  cursor: default;\n  line-height: 28px;\n  padding-top: 0;\n  padding-bottom: 0;\n}\n.majorList .btn-list:hover {\n  border-color: #ccc;\n}\n.label_check input {\n  background-color: red;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 157:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/eye.png"
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {
@@ -395,7 +395,7 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 159:
+/***/ 160:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

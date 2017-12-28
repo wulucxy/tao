@@ -12,6 +12,8 @@
 	<title>淘志愿</title>
 </head>
 <body>
+	<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
 	
@@ -40,60 +42,68 @@
 	
 	<section class="s-grids">
 		<div class="container ovh">
-			<div class="f-layout clearfix">
-				<div class="column c-68 fl">
-					<div class="colPad">
-						<div class="grid-items">
-							<div class="row upRow clearfix">
-								<a href="/box/plan/book_step1" target="_blank" class="grid-item media link-book fl">
-									<span class="fl imgWrap">
-										<img src="./img/v2/book.png" class="responsive">
-									</span>
-									<div class="media-body">
-										<h3>高考志愿定制</h3>
-										<div>已成功帮助<span class="yellow">${number1}</span>名学生</div>
-									</div>
-								</a>
-								<a href="/box/plan/evaluate_step1" target="_blank" class="grid-item media link-evaluate fr">
-									<span class="fl imgWrap">
-										<img src="./img/v2/book2.png" class="responsive">
-									</span>
-									<div class="media-body">
-										<h3>高考志愿评估</h3>
-										<div>已成功帮助<span class="yellow">${number2}</span>名学生</div>
-									</div>
-								</a>
-							</div>
-							<div class="row downRow">
-								<a href="/box/plan/major_exam1" target="_blank" class="grid-item">
-									<i class="icon1 down-icon"></i>
-									<div class="figcaption">专业选择测试</div>
-								</a>
-								<a href="/box/plan/aboard" target="_blank" class="grid-item">
-									<i class="icon2 down-icon"></i>
-									<div class="figcaption">留学方案定制</div>
-								</a>
-								<a href="/appointment/create" target="_blank" class="grid-item item3">
-									<i class="icon3 down-icon"></i>
-									<div class="figcaption">升学规划专家预约</div>
-								</a>
-								<a href="/box/score_management" target="_blank" class="grid-item">
-									<i class="icon4 down-icon"></i>
-									<div class="figcaption">成绩管理</div>
-								</a>
-								<a href="/box/college_faq" target="_blank" class="grid-item">
-									<i class="icon5 down-icon"></i>
-									<div class="figcaption">专家问答</div>
-								</a>
-								<span class="justify_fix"></span>
+			<div class="interSection clearfix">
+				<div class="column c-7 fl clearfix">
+					<div class="column fl">
+						<div class="card plan-card">
+							<div class="card-inner tc">
+								<div class="score">
+									<c:choose>
+								    <c:when test="${examInfo.score != null}">
+								   		<span class="orange">
+									   		<span class="h1">${examInfo.score}</span>
+												<span>分</span>
+											</span>
+										</c:when>
+										<c:otherwise>
+											<a href="javascript:;" class='unScore'>输入预估分数、位次号及选考科目<br>开启智能志愿定制</a>
+										</c:otherwise>
+								  </c:choose>
+									<i class="icon icon-v3 icon-edit js-edit"></i>
+								</div>
+								<div class="subjects">
+									<c:forEach var="subject" items="${examInfo.subjectList}" varStatus="varStatus">
+										${subject.name}
+									  <c:if test="${ varStatus.last == false}">
+									 	|
+									 	</c:if>
+									</c:forEach>
+								</div>
+								<a class="btn btn-primary btn-block js-edit" href="javascript:;">智能志愿定制</a>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="column c-32 fl">
-					<div class="colPad">
-						<%@ include file = "/partials/_direct.jsp" %>
+					<div class="column fl">
+						<ul class="items-card card">
+							<li class="colItem">
+								<a href="/box/plan/major_exam1" class="db" target='_blank'>
+									<span class="imgWrap">
+										<img src="./img/v3/i-test.png" class="responsive">
+									</span>
+									<span class='vm'>专业测试</span>
+								</a>
+							</li>
+							<li class="colItem">
+								<a href="/box/college_faq" class="db" target='_blank'>
+									<span class="imgWrap">
+										<img src="./img/v3/i-qa.png" class="responsive">
+									</span>
+									<span class='vm'>专家问答</span>
+								</a>
+							</li>
+							<li class="colItem">
+								<a href="/appointment/create" class="db" target='_blank'>
+									<span class="imgWrap">
+										<img src="./img/v3/i-test.png" class="responsive">
+									</span>
+									<span class='vm'>专家服务</span>
+								</a>
+							</li>
+						</ul>
 					</div>
+				</div>
+				<div class="column c-3 fl direct">
+					<%@ include file = "/partials/_direct.jsp" %>
 				</div>
 			</div>
 		</div>
@@ -129,21 +139,22 @@
 	</section>
 	
 	<section class="ovh s-recommend">
-	  <div class="container ovh">
-		<div class="f-layout clearfix">
-			<div class="column c-68 fl">
-				<div class="colPad">
-
-					<div class="content recommend">
+	  <div class="container ovh clearfix">
+	  	<!-- column 1 -->
+			<div class="column c-7 fl">
+				<div class="column fl c-5 major">
+					<div class="content recommend recommend-box">
 						<h3 class="clearfix title" rel="recommend">
 							<span class="fl s-title">
-								推荐阅读
+								专业解读
 							</span>
-							<a href="/info" class="link fr more" target="_blank"><em class="plus">+</em><span class="vm">更多</span></a>
+							<a href="/info" class="link fr more" target="_blank">
+								<span class="vm">查看更多</span>
+							</a>
 						</h3>
 
 						<ul class="listView recommendList clearfix">
-							<c:forEach var="list" items="${recommendList}">
+							<c:forEach var="list" items="${fillPolicRecommendList}">
 							   <li>
 									<div class="media">
 										<span class="fl imgWrap">
@@ -171,10 +182,50 @@
 							</c:forEach>
 						</ul>
 					</div>
+				</div>
+				<div class="column fl c-5 fillPolic">
+					<div class="content recommend recommend-box">
+						<h3 class="clearfix title" rel="recommend">
+							<span class="fl s-title">
+								填报政策
+							</span>
+							<a href="/info" class="link fr more" target="_blank">
+								<span class="vm">查看更多</span>
+							</a>
+						</h3>
 
+						<ul class="listView recommendList clearfix">
+							<c:forEach var="list" items="${majorUnscrambleRecommendList}">
+							   <li>
+									<div class="media">
+										<span class="fl imgWrap">
+											<img src="${list.imgUrl}" class="responsive">
+										</span>
+										<div class="media-body">
+										  	<a href="${list.href}" class="db" target="_blank">
+												<div class="g0 txt" title="${list.fullTitle}">
+													${list.title}
+												</div>
+												<div class="clearfix detail">
+
+				<c:choose>
+				    <c:when test="${list.source != null}">
+				   		<span class="fl source g9 btn btn-primary btn-outlined">${list.source}</span>
+					</c:when>
+				</c:choose>
+													
+													<span class="moment g9">${list.moment}</span>
+												</div>
+											</a>
+										</div>
+									</div>
+								</li>
+							</c:forEach>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="column c-32 fl">
+			<div class="column c-3 fl">
 				<div class="colPad">
 					
 					<div class="countdown g3">
@@ -221,11 +272,19 @@
 	
 	<section class="ovh s-feature">
 		<div class="container ovh">
-			<div class="featureList justify">
-				<a href="/library/college" target="_blank" class="featureLink feature_1"></a>
-				<a href="/library/major" class="featureLink feature_2" target="_blank"></a>
-				<a href="/library/subject" class="featureLink feature_3" target="_blank"></a>
-				<span class="justify_fix"></span>
+			<div class="featureList clearfix">
+				<a href="/library/college" target="_blank" class="featureLink feature_1">
+					<i class="icon-college icon-feature"></i>
+					<span class="featureTxt">院校数据</span>
+				</a>
+				<a href="/library/major" class="featureLink feature_2" target="_blank">
+					<i class="icon-major icon-feature"></i>
+					<span class="featureTxt">专业数据</span>
+				</a>
+				<a href="/library/subject" class="featureLink feature_3" target="_blank">
+					<i class="icon-subject icon-feature"></i>
+					<span class="featureTxt">学科数据</span>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -239,10 +298,6 @@
 			<div class="coopLists">
 				<a class="imgWrap coop tc" href="javascript:;">
 					<img src="./img/nee.png" class="responsive">
-				</a>
-
-				<a class="imgWrap coop last" target="_blank" href="//www.strong-study.com/">
-					<img src="./img/sq.png" class="responsive">
 				</a>
 			</div>				
 		</div>

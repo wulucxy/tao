@@ -99,4 +99,4 @@
 	} else if (/android/.test(ua)) {
 		   
 	}
-	</script><script type="text/javascript" src="/static/web/js/vendors.js"></script>
+	</script>

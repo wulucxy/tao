@@ -8,14 +8,15 @@ var util = require("../../assets/components/util");
 
 //公共方法
 var common = require("../../assets/components/common");
-
+var userUtil = require("../../assets/components/userUtil");
 
 /* 可选，视需求而定 */
 var slider = require("../../assets/components/unslider");
+var checkBox = require("../../assets/components/checkBox");
 var carousel = require("./lib/carousel");
 var updateBrowser = require("../../assets/components/updateBrowser");
-
-
+var tmpl_plan = require("../../assets/templates/plan.ejs");
+var provinceId = $("[name=province]").val();
 slider($("#bannerShow"));
 
 updateBrowser.init();
@@ -32,5 +33,106 @@ $(".sloganTag").on("click",function(e){
 	$("html,body").animate({
 		"scrollTop" : offset
 	},600);
-
 });
+
+const home = {
+	init: function () {
+		this.bindEvt()
+	},
+
+	getSubjects: function(){
+    var that = this;
+    var subjects = $('[name=subject]').map(function(idx, ele){
+        if(ele.checked){
+          return {
+            name: $(ele).attr('n'),
+            code: $(ele).val()
+          }
+        }
+      }).get();
+
+    return subjects;
+  },
+
+	postPlanInfo: function(btn,oForm){
+	    btn.addClass('disabled');
+	    var oError = $('.errTxt');
+	    const subjects = this.getSubjects().map(item => Number(item.code))
+	    $.ajax({
+	        url: preServer+provinceId + "/profile/fillExamInfo",
+	        type: "post",
+	        data: JSON.stringify({
+	          score: oForm.find('[name=score]').val(),
+	          rank: oForm.find('[name=rank]').val(),
+	          subjects: subjects
+	        }),
+	        contentType: "application/json",
+	        success: function(res) {
+	          if (typeof res == "string") {
+	            var res = $.parseJSON(res);
+	          }
+
+	          if(res.code==1){
+	          	setTimeout(function(){
+	          		window.location = '/'
+	          	}, 400)
+	          }else{
+	          	btn.removeClass('disabled');
+	          	userUtil.showError(oError, res.msg);
+	          	return;
+	          }
+
+	        },
+	        error : function(err){
+	        	btn.removeClass('disabled');
+	        	return;
+	        }
+		});
+	},
+	bindEvt: function () {
+		var that = this
+		$(".js-edit").on('click', function(e){
+			e.preventDefault();
+			var btn = $(e.target);
+			modalBox( btn.get(0), {
+		      html:tmpl_plan(),
+		      klass : 'w540 shadow',
+		      closeByOverlay : false,
+		      startCallback: function () {
+		      	checkBox.init()
+		      },
+		      completeCallback : function(){ 
+		        $("#planForm").validator({
+							errorParent: '.row',
+						    successCallback: function(e) {
+						      var target = $(e.target).closest('.btn');
+						      var oError = $('.errTxt');
+						      var subjects = that.getSubjects();
+						      console.log('subjects', subjects)
+				          if(subjects.length != 3){
+				          	$('.subjectListRow').addClass('unvalid')
+				          	userUtil.showErrorMsg($("#planForm"), oError, $('.subjectListRow'));
+				            return false;
+				          }else{
+				          	$('.subjectListRow').removeClass('unvalid')
+				            userUtil.hideError($('.errTxt'));
+				          }
+						      //执行到下一步操作
+						      that.postPlanInfo(target, $("#planForm"));
+						    },
+						    focusinCallback: function() {
+					          userUtil.hideError($('.errTxt'));
+					          $(".row").removeClass('errorIpt');
+					        },
+					        errorCallback: function(unvalidFields) {
+					          var oError = $('.errTxt');
+					          userUtil.showErrorMsg($("#planForm"), oError, unvalidFields);
+					        }
+						});
+		      }
+		  });
+		})
+	}
+}
+
+home.init()

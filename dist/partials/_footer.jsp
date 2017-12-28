@@ -10,32 +10,19 @@
 			<div class="fTag-col1 fl">
 				<a href="/box/plan/book_step1" class="links" target="_blank">智能志愿定制</a>
 				<a href="/box/plan/major_exam1" class="links" target="_blank">专业测试</a>
-				<a href="/box/plan/aboard" class="links" target="_blank">留学方案定制</a>
+				<a href="/box/college_faq" class="links" target="_blank">专家问答</a>
+				<a href="/appointment/create" class="links" target="_blank">专家服务</a>
 			</div>
-			<div class="fTag-col2 fr">
-				<a href="/appointment/create" class="links" target="_blank">升学规划专家预约</a>
-				<a href="/box/score_management" class="links" target="_blank">成绩管理</a>
-				<a href="/box/college_faq" class="links" target="_blank">专家问答</a>	
 			</div>
-			
-			
-			</div>
-
 		</div>
 		<div class="col2 fl column">
 			<h4 class="h4">数据库</h4>
 			<div class="tagLists f-lh clearfix">
 				<div class="fTag-col1 fl">
-					<a href="/library/college" class="links" target="_blank">高校数据库</a>
-					<a href="/library/subject" class="links" target="_blank">科目数据库</a>
-					<a href="/library/major" class="links" target="_blank">专业数据库</a>
-					<a href="/library/aboard_data" class="links" target="_blank">海外院校库</a>
+					<a href="/library/college" class="links" target="_blank">院校数据</a>
+					<a href="/library/major" class="links" target="_blank">专业数据</a>
+					<a href="/library/subject" class="links" target="_blank">学科数据</a>	
 				</div>
-				<div class="fTag-col2 fr">
-					<a href="/scoreTransformer" class="links" target="_blank">分数转换</a>
-				</div>
-				
-				
 			</div>
 		</div>
 		<div class="col3 column fl f-lh">
@@ -105,4 +92,3 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<script type="text/javascript" src="/static/web/js/vendors.js"></script>
