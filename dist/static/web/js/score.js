@@ -1,11 +1,11 @@
-webpackJsonp([44],{
+webpackJsonp([46],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(22);
-	__webpack_require__(303);
+	__webpack_require__(309);
 	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
@@ -15,8 +15,8 @@ webpackJsonp([44],{
 	var common = __webpack_require__(47);
 	
 	//自定义功能写下面
-	var tmpl_recommend = __webpack_require__(305);
-	var tmpl_exam = __webpack_require__(306);
+	var tmpl_recommend = __webpack_require__(311);
+	var tmpl_exam = __webpack_require__(312);
 	
 	
 	// var charts = require("./lib/chart");
@@ -372,13 +372,13 @@ webpackJsonp([44],{
 
 /***/ }),
 
-/***/ 303:
+/***/ 309:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(304);
+	var content = __webpack_require__(310);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -399,7 +399,7 @@ webpackJsonp([44],{
 
 /***/ }),
 
-/***/ 304:
+/***/ 310:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -414,7 +414,7 @@ webpackJsonp([44],{
 
 /***/ }),
 
-/***/ 305:
+/***/ 311:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {
@@ -433,7 +433,7 @@ webpackJsonp([44],{
 
 /***/ }),
 
-/***/ 306:
+/***/ 312:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

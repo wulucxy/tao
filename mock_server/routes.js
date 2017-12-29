@@ -51,6 +51,8 @@ module.exports = {
 	'/bangMobile'   : 'bangMobile.jsp',
 	'/completeInfo'   : 'completeInfo.jsp',
 	'/scoreTransformer'   : 'scoreTransformer.jsp',
+	'/box/planEntrance'   : 'planEntrance.jsp',
+	'/infoV3/majorUnscrambleList'   : 'majorList.jsp',
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',
@@ -117,4 +119,5 @@ module.exports = {
 	'/v2_1/client/1/profile/plan/param':"mock::api/profile.json",
 	// v3
 	'post::/v2_1/client/1/profile/fillExamInfo':"mock::api/fillExamInfo.json",
+	'post::/v2_1/client/1/newsV3/majorUnscrambleList': "mock::api/majorUnscrambleList.json"
 };

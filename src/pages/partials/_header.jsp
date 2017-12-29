@@ -72,7 +72,7 @@
 						<a href="javascript:;" class="trigger">工具箱</a>
 						<div class="listWrap">
 							<div class="options">
-								<a class="ddlist" href="/box/plan/book_step1">智能志愿定制</a>
+								<a class="ddlist" href="/box/planEntrance">智能志愿定制</a>
 								<a class="ddlist" href="/box/plan/major_exam1">专业测试</a>
 								<a class="ddlist" href="/appointment/create">专家问答</a>
 								<a class="ddlist" href="/box/college_faq">专家服务</a>

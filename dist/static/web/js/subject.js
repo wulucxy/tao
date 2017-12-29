@@ -1,11 +1,11 @@
-webpackJsonp([49],{
+webpackJsonp([51],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(22);
-	__webpack_require__(320);
+	__webpack_require__(326);
 	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
@@ -20,19 +20,19 @@ webpackJsonp([49],{
 	common.switchNav(2);
 	
 	//数据绑定
-	var dataSet = __webpack_require__(322);
+	var dataSet = __webpack_require__(328);
 	
 	dataSet.init();
 
 /***/ }),
 
-/***/ 320:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(321);
+	var content = __webpack_require__(327);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -53,7 +53,7 @@ webpackJsonp([49],{
 
 /***/ }),
 
-/***/ 321:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -68,16 +68,16 @@ webpackJsonp([49],{
 
 /***/ }),
 
-/***/ 322:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(45);
 	var extend =  __webpack_require__(50);
-	var tmpl = __webpack_require__(323);
+	var tmpl = __webpack_require__(329);
 	
 	var localData = __webpack_require__(134);
-	var tmpl_favWrap = __webpack_require__(324);
-	var tmpl_favList = __webpack_require__(325);
+	var tmpl_favWrap = __webpack_require__(330);
+	var tmpl_favList = __webpack_require__(331);
 	
 	var pagination = __webpack_require__(193);
 	
@@ -457,7 +457,7 @@ webpackJsonp([49],{
 
 /***/ }),
 
-/***/ 323:
+/***/ 329:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {
@@ -513,7 +513,7 @@ webpackJsonp([49],{
 
 /***/ }),
 
-/***/ 324:
+/***/ 330:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {
@@ -530,7 +530,7 @@ webpackJsonp([49],{
 
 /***/ }),
 
-/***/ 325:
+/***/ 331:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

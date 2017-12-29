@@ -32,7 +32,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		51:0
+/******/ 		53:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -78,7 +78,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bangMobile","4":"bookResult","5":"bookResultV2","6":"bookStep1","7":"bookStep2","8":"bookStep3","9":"bookStep4","10":"college","11":"collegeDetail","12":"collegeFaq","13":"collegeFaqDetail","14":"collegeFaqHistory","15":"collegeFaqSuccess","16":"completeInfo","17":"couponReceive","18":"createAppointment","19":"error","20":"evaluateResult","21":"evaluateResultV2","22":"evaluateStep1","23":"evaluateStep2","24":"evaluateStep3","25":"expertOrder","26":"expertOrderSuccess","27":"home","28":"homeV2","29":"info","30":"infoDetail","31":"infoV2","32":"login","33":"major","34":"majorExam1","35":"majorExam2","36":"majorExam3","37":"major_2","38":"moduleSiteList","39":"pay/assessment","40":"pay/book","41":"recommendUni","42":"sampleEvaluate","43":"sampleWishes","44":"score","45":"scoreLine","46":"scoreLineResult","47":"scoreTransformer","48":"share","49":"subject","50":"user"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".static/web/js/" + ({"0":"aboard","1":"aboardData","2":"aboardSuccess","3":"bangMobile","4":"bookResult","5":"bookResultV2","6":"bookStep1","7":"bookStep2","8":"bookStep3","9":"bookStep4","10":"college","11":"collegeDetail","12":"collegeFaq","13":"collegeFaqDetail","14":"collegeFaqHistory","15":"collegeFaqSuccess","16":"completeInfo","17":"couponReceive","18":"createAppointment","19":"error","20":"evaluateResult","21":"evaluateResultV2","22":"evaluateStep1","23":"evaluateStep2","24":"evaluateStep3","25":"expertOrder","26":"expertOrderSuccess","27":"home","28":"homeV2","29":"info","30":"infoDetail","31":"infoV2","32":"login","33":"major","34":"majorExam1","35":"majorExam2","36":"majorExam3","37":"majorList","38":"major_2","39":"moduleSiteList","40":"pay/assessment","41":"pay/book","42":"planEntrance","43":"recommendUni","44":"sampleEvaluate","45":"sampleWishes","46":"score","47":"scoreLine","48":"scoreLineResult","49":"scoreTransformer","50":"share","51":"subject","52":"user"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

@@ -1,0 +1,31 @@
+{
+    "universityList": [
+        {
+            "universityId": 1,
+            "universityName": "浙江大学"
+        }
+    ],
+    "majorList": [
+        {
+            "id": 1,
+            "name": "法学"
+        }
+    ],
+    "universityLevelList": [
+        1,
+        2
+    ],
+    "user":{
+        "province" : {
+            "name" : "浙江",
+            "code" : "1"
+        },
+        "mobile" : "1385809394",
+        "userAvatar" : "/",
+        "sex"  : "1",
+        "token" : "12",
+        "userId" : "123",
+        "userName" : "name",
+        "isLogin" : "1"
+    }
+}

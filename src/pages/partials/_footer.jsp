@@ -8,7 +8,7 @@
 			<h4 class="h4">工具箱</h4>
 			<div class="tagLists f-lh clearfix">
 			<div class="fTag-col1 fl">
-				<a href="/box/plan/book_step1" class="links" target="_blank">智能志愿定制</a>
+				<a href="/box/planEntrance" class="links" target="_blank">智能志愿定制</a>
 				<a href="/box/plan/major_exam1" class="links" target="_blank">专业测试</a>
 				<a href="/box/college_faq" class="links" target="_blank">专家问答</a>
 				<a href="/appointment/create" class="links" target="_blank">专家服务</a>

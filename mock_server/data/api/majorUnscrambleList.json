@@ -1,0 +1,15 @@
+{
+"code": "1",
+"msg": "调用成功",
+"result": [{
+	  "newsId": "1",
+	  "newsTitle": "标题",
+	  "newsIconUrl": "http://www.tzhiyuan.net/data/upload/1.jpg",
+	  "newsDate": 1512895034000,
+	   "newsUniversityId": "133",
+	 "newsUniversityName": "浙江海洋大学（中外合作专业）",
+	  "videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
+	  "videoWidth": 300,
+	  "videoHeight": 200
+	}]
+}
