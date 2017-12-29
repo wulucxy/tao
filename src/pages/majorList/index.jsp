@@ -46,7 +46,7 @@
 									</a>
 								</div>	
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="major:0">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="major:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 										<c:forEach var="list" items="${majorList}">
@@ -61,7 +61,7 @@
 							</div>
 							<div class="row">
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="university:0">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="university:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 										<c:forEach var="list" items="${universityList}">
@@ -77,7 +77,7 @@
 
 							<div class="row last">
 								<div class="body media">
-									<a class="fl item" href="javascript:;" data-action="add" data-value="universityLevel:0">不限</a>
+									<a class="fl item" href="javascript:;" data-action="add" data-value="universityLevel:">不限</a>
 									<div class="media-body">
 										<div class="itemLists">
 										<c:forEach var="list" items="${universityLevelList}">
@@ -98,7 +98,7 @@
 								</span>
 							</div>
 						</div>
-						<div class="majorListWrap">
+						<div class="majorList-inner">
 							<ul class="majorList load-more-list">
 								
 							</ul>

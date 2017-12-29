@@ -17,6 +17,21 @@ var util = {
         return that.formatDate(new Date(Date.parse(data.replace(/-/g,  "/"))),format);
     },
 
+    // 日期格式化,第一个参数为日期类型，第二个参数为yyy，yy,MM,dd,hh,mm,ss的组合
+    formatDate: function(date, type){
+      var norm
+      if (typeof date === 'number') {
+        norm = this.normByFormat(new Date(date))
+      } else if (typeof date === 'string') {
+        norm = this.normByFormat(this.str2Date(date))
+      }
+
+      console.log('norm', norm)
+      return type.replace(/([a-z]+)/ig, function (n) {
+        return (typeof norm[n] !== 'undefined' ? (norm[n] < 10 ? '0' + norm[n] : norm[n]) : n)
+      })
+    },
+
     //字符串转时间
     str2Date : function(s){
         return new Date(Date.parse(s.replace(/-/g,  "/")));  
@@ -39,7 +54,7 @@ var util = {
 
       data = (Y+M+D+h+m+s);
 
-      return that.formatTime(data,format);
+      return this.formatTime(data,format);
     },
 
     // 格式化银行卡
@@ -78,13 +93,6 @@ var util = {
 	       'mm': date.getMinutes(),
 	       'ss': date.getSeconds()
 	    }
-	},
-	//日期格式化,第一个参数为日期类型，第二个参数为yyy，yy,MM,dd,hh,mm,ss的组合
-	formatDate : function(date,type){
-		var norm = this.normByFormat(date);
-	    return type.replace(/([a-z]+)/ig, function(n){
-	        return (typeof norm[n] !="undefined" ? (norm[n] < 10 ? '0' + norm[n] : norm[n]) : n);
-	    });
 	},
 	thousand : function(num,splitter){
 		if(typeof Number(num) != "number") return;
@@ -264,7 +272,11 @@ var util = {
 		return Object.keys(data).map(function (key) {
 			return key + '=' + data[key];
 		}).join('&');
-	}
+	},
+
+  isUndefined: function (obj) {
+    return typeof obj === 'undefined'
+  }
 };
 
 module.exports = util;

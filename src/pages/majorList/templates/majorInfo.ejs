@@ -1,19 +1,19 @@
-<% if (list.length == 0 && page == 1) { %>
+<% if (majorList.length == 0 && page == 1) { %>
 	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
 <% }else{ %>	
-<% for (var i = 0; i < list.length; i++) { %>
+<% for (var i = 0; i < majorList.length; i++) { %>
 <li class="clearfix">
-	<div class="media">
+	<a class="media" href='/<%= provinceId %>/newsV3/majorUnscrambleDetail?newsId=<%= majorList[i].newsId %>'>
 	<span class="fl imgWrap mr10 dib">
-		<img src="<%= list[i].newsIconUrl %>" class="responsive" />
+		<img src="<%= majorList[i].newsIconUrl %>" class="responsive" />
 	</span>
 	<div className="media-body">
-		<h4 class="name"><%= list[i].newsTitle %></h4>
-		<div class="detail">	</div>
+		<h4 class="name"><%= majorList[i].newsTitle %></h4>
+		<div class="detail">样本院校：<%= majorList[i].newsUniversityName %></div>
 	</div>
-	<div class="detailCnt clearfix">
-		<span class="moment">08-29</span>
+	<div class="footCnt clearfix">
+		<span class="moment"><%= majorList[i].date %></span>
 	</div>
-	</div>
+	</a>
 </li>
 <% }} %>
