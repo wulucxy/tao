@@ -57,7 +57,9 @@ const home = {
 	postPlanInfo: function(btn,oForm){
 	    btn.addClass('disabled');
 	    var oError = $('.errTxt');
-	    const subjects = this.getSubjects().map(item => Number(item.code))
+	    const subjects = this.getSubjects().map(function(item){
+	    	 return Number(item.code)
+	    })
 	    $.ajax({
 	        url: preServer+provinceId + "/profile/fillExamInfo",
 	        type: "post",
