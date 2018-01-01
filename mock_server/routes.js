@@ -52,7 +52,7 @@ module.exports = {
 	'/completeInfo'   : 'completeInfo.jsp',
 	'/scoreTransformer'   : 'scoreTransformer.jsp',
 	'/box/planEntrance'   : 'planEntrance.jsp',
-	'/330000/newsV3/majorUnscrambleList' : 'majorUnscrambleList.jsp',
+	'/infoV3/majorUnscrambleList' : 'majorUnscrambleList.jsp',
 	'/infoV3/1/majorUnscrambleDetail' : 'majorUnscrambleDetail.jsp',
 	'/infoV3/fillPolicList' : 'fillPolicList.jsp',
 	'/infoV3/1/fillPolicDetial': 'fillPolicDetail.jsp',
