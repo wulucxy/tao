@@ -1,11 +1,11 @@
-webpackJsonp([28],{
+webpackJsonp([30],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(22);
-	__webpack_require__(246);
+	__webpack_require__(252);
 	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
@@ -16,11 +16,11 @@ webpackJsonp([28],{
 	var userUtil = __webpack_require__(65);
 	
 	/* 可选，视需求而定 */
-	var slider = __webpack_require__(239);
+	var slider = __webpack_require__(245);
 	var checkBox = __webpack_require__(145);
-	var carousel = __webpack_require__(254);
-	var updateBrowser = __webpack_require__(241);
-	var tmpl_plan = __webpack_require__(255);
+	var carousel = __webpack_require__(260);
+	var updateBrowser = __webpack_require__(247);
+	var tmpl_plan = __webpack_require__(261);
 	var provinceId = $("[name=province]").val();
 	slider($("#bannerShow"));
 	
@@ -224,7 +224,7 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 239:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(45);
@@ -354,18 +354,18 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 241:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(45);
 	var extend =  __webpack_require__(50);
 	
-	__webpack_require__(242);
+	__webpack_require__(248);
 	
 	var browser = __webpack_require__(54);
 	var Cookies = __webpack_require__(108);
 	
-	var tmpl = __webpack_require__(245);
+	var tmpl = __webpack_require__(251);
 	
 	var updateBrowser = {
 		init : function(){
@@ -405,13 +405,13 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 242:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(243);
+	var content = __webpack_require__(249);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -432,7 +432,7 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 243:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -440,21 +440,21 @@ webpackJsonp([28],{
 	
 	
 	// module
-	exports.push([module.id, ".browser_nav {\n  height: 50px;\n  line-height: 50px;\n  color: #414040;\n  background: #ffe9ad;\n  width: 100%;\n  font-size: 14px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: none;\n}\n.browser_nav_room {\n  width: 1000px;\n  margin: 0 auto;\n}\n.browser_nav_room .txt {\n  float: left;\n}\n.browser_nav_room .blue {\n  color: #61c0e2;\n  display: inline-block;\n  padding: 0 5px;\n}\n.browser_nav_room .blue:hover {\n  color: #46a4c5;\n}\n.browser_nav_room .nav_close {\n  position: absolute;\n  top: 15px;\n  right: 0;\n  display: inline-block;\n  width: 19px;\n  height: 19px;\n  overflow: hidden;\n  font: 0/0 a;\n  background: url(" + __webpack_require__(244) + ");\n}\n", ""]);
+	exports.push([module.id, ".browser_nav {\n  height: 50px;\n  line-height: 50px;\n  color: #414040;\n  background: #ffe9ad;\n  width: 100%;\n  font-size: 14px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: none;\n}\n.browser_nav_room {\n  width: 1000px;\n  margin: 0 auto;\n}\n.browser_nav_room .txt {\n  float: left;\n}\n.browser_nav_room .blue {\n  color: #61c0e2;\n  display: inline-block;\n  padding: 0 5px;\n}\n.browser_nav_room .blue:hover {\n  color: #46a4c5;\n}\n.browser_nav_room .nav_close {\n  position: absolute;\n  top: 15px;\n  right: 0;\n  display: inline-block;\n  width: 19px;\n  height: 19px;\n  overflow: hidden;\n  font: 0/0 a;\n  background: url(" + __webpack_require__(250) + ");\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 244:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/browserClose.png"
 
 /***/ }),
 
-/***/ 245:
+/***/ 251:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {
@@ -469,13 +469,13 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 246:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(247);
+	var content = __webpack_require__(253);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -496,7 +496,7 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 247:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -504,56 +504,56 @@ webpackJsonp([28],{
 	
 	
 	// module
-	exports.push([module.id, ".icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(39) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.subjectListRow .option-label {\n  margin: 10px 0;\n  font-size: 14px;\n}\n.subjectListRow .fieldWrap .label_check {\n  margin-bottom: 10px;\n}\n.planCnt .btnRow {\n  text-align: center;\n}\n.planCnt .btnRow .btn {\n  margin-right: 20px;\n  width: 40%;\n}\n.planCnt .btnRow .btn:last-child {\n  margin-right: 0;\n}\n.bannerShow {\n  position: relative;\n  overflow: hidden;\n}\n.bannerShow ul {\n  height: 100%;\n  position: relative;\n}\n.bannerShow ul li {\n  float: left;\n}\n.picSlide a {\n  background-position: center center;\n  background-repeat: no-repeat;\n  display: block;\n  height: 360px;\n}\n.picSlide a > img {\n  width: 100%;\n  height: auto;\n}\n.bannerShow .dots {\n  position: absolute;\n  bottom: 20px;\n  z-index: 99;\n}\n.bannerShow .dots a {\n  display: block;\n  float: left;\n  width: 48px;\n  font: 0/0 a;\n  height: 8px;\n  margin: 0 12px;\n  border-radius: 4px;\n  cursor: pointer;\n  background-color: #2c7fbc;\n  transition: all 0.4s ease;\n}\n.bannerShow .dots a.active {\n  background: #fff;\n}\n.s-recommend {\n  padding: 32px 0 0;\n  border-top: 1px solid #e2e2e2;\n}\n.s-recommend .major .recommend-box {\n  border-right: 0;\n}\n.recommendList {\n  padding: 20px 20px 0;\n  height: 278px;\n  overflow: auto;\n  width: 100%;\n}\n.recommendList li {\n  margin-bottom: 10px;\n}\n.recommendList .media {\n  position: relative;\n}\n.recommendList .media .link {\n  color: #333;\n}\n.recommendList .media .link:hover {\n  color: #666;\n}\n.recommendList .media > .fl {\n  margin-right: 6px;\n  display: inline-block;\n  width: 120px;\n  height: 90px;\n}\n.recommendList .media > .fl img.responsive {\n  width: 100%;\n  height: 100%;\n}\n.recommendList .media .media-body {\n  line-height: 24px;\n}\n.recommendList .media .media-body .txt {\n  font-size: 14px;\n  color: #000;\n}\n.recommendList .media .media-body .txt:hover {\n  color: #333;\n}\n.recommendList .media .detail {\n  margin-top: 8px;\n}\n.recommendList .media .detail .source {\n  padding: 0 3px;\n  min-width: 56px;\n  font-size: 12px;\n  line-height: 16px;\n  cursor: default;\n}\n.recommendList .media .detail .source:hover {\n  background: transparent;\n  color: #61c0e2;\n}\n.recommendList .media .detail .moment {\n  font-size: 12px;\n  line-height: 18px;\n  position: absolute;\n  bottom: 0;\n  right: 25px;\n}\n.countdown {\n  line-height: 48px;\n  height: 48px;\n  background-color: #fe775d;\n  margin-bottom: 10px;\n  color: #fff;\n  text-align: center;\n}\n.cd-day {\n  font-size: 24px;\n  color: #fcca00;\n  margin: 0 6px;\n}\n.red {\n  color: #e93c59;\n}\n.s-coop {\n  margin: 48px 0 100px;\n}\n.s-coop h2 {\n  font-size: 28px;\n  color: #333;\n  margin-bottom: 32px;\n}\n.coop {\n  box-shadow: 1px 2px 1px #eaeaea;\n  display: inline-block;\n  width: 220px;\n  text-align: center;\n  background-color: #fff;\n  margin-bottom: 20px;\n  line-height: 140px;\n}\n.coop.last {\n  margin-right: 0;\n}\n.s-carousel {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.collegeWrap {\n  height: 102px;\n  position: relative;\n  padding: 20px 0 20px 100px;\n  background-color: #cde9f2;\n}\n.collegeWrap .collegeTip {\n  position: absolute;\n  width: 88px;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  font-size: 22px;\n  color: #fff;\n  background-color: #1d718f;\n  font-weight: bold;\n}\n.collegeWrap .collegeTip .mc {\n  position: absolute;\n  right: -20px;\n  top: 50%;\n  margin-top: -10px;\n  border-width: 10px;\n  border-left-color: #1d718f;\n}\n.collegeWrap .collegeTip .collegeTipTxt {\n  width: 44px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 20px;\n}\n.collegeList {\n  margin-left: 0;\n  display: none;\n}\n.collegeList li {\n  float: left;\n  margin-right: 20px;\n  width: 160px;\n  background-color: #fff;\n  border: 1px solid #e2e2e2;\n  text-align: center;\n}\n.collegeList li a {\n  display: block;\n  width: 160px;\n  height: 60px;\n  text-align: center;\n}\n.collegeList li img {\n  max-width: 100%;\n  max-height: 100%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.s-grids {\n  margin-top: 40px;\n}\n.grid-items .upRow {\n  margin-right: -10px;\n}\n.grid-items .upRow .media-body h3 {\n  margin-bottom: 12px;\n}\n.grid-items .upRow .media-body div {\n  font-size: 16px;\n}\n.grid-items .upRow .media-body .yellow {\n  color: #f6ff00;\n}\n.grid-items .upRow .grid-item {\n  border-radius: 4px;\n  display: inline-block;\n  width: 330px;\n  height: 164px;\n  padding: 20px 0 30px 8px;\n  color: #fff;\n}\n.grid-items .upRow .grid-item:hover {\n  color: #fff;\n}\n.grid-items .upRow .grid-item .media-body {\n  margin-top: 40px;\n}\n.grid-items .upRow .link-book {\n  background-color: #fb9450;\n}\n.grid-items .upRow .link-book .imgWrap {\n  margin-top: 10px;\n  margin-right: 15px;\n}\n.grid-items .upRow .link-book:hover {\n  background-color: #E58749;\n}\n.grid-items .upRow .link-evaluate {\n  background-color: #fe775d;\n}\n.grid-items .upRow .link-evaluate .imgWrap {\n  margin-right: 8px;\n}\n.grid-items .upRow .link-evaluate:hover {\n  background-color: #E06952;\n}\n.grid-items .downRow {\n  margin-right: -10px;\n  margin-top: 20px;\n  text-align: justify;\n}\n.grid-items .downRow .grid-item {\n  background-color: #5acbf3;\n  border-radius: 4px;\n  width: 120px;\n  padding-top: 10px;\n  text-align: center;\n  display: inline-block;\n  font-size: 14px;\n  color: #fff;\n  vertical-align: top;\n}\n.grid-items .downRow .grid-item:hover {\n  color: #fff;\n  background-color: #2c7fbc;\n  transition: background-color ease 0.4s;\n}\n.grid-items .downRow .grid-item .figcaption {\n  margin-top: -10px;\n  height: 35px;\n  padding-top: 5px;\n}\n.grid-items .downRow .item3 .figcaption {\n  max-width: 60px;\n  padding-top: 0;\n  margin-left: auto;\n  margin-right: auto;\n  word-wrap: break-word;\n  line-height: 16px;\n}\n.grid-items .downRow .down-icon {\n  display: inline-block;\n  vertical-align: middle;\n  width: 75px;\n  height: 75px;\n  background-image: url(" + __webpack_require__(248) + ");\n}\n.grid-items .downRow .icon1 {\n  background-position: 0 0;\n}\n.grid-items .downRow .icon2 {\n  background-position: -75px 0;\n}\n.grid-items .downRow .icon3 {\n  background-position: -150px 0;\n}\n.grid-items .downRow .icon4 {\n  background-position: -225px 0;\n}\n.grid-items .downRow .icon5 {\n  background-position: -300px 0;\n}\n.s-recommend .title {\n  background: #F7F7F7;\n  font-size: 20px;\n  color: #333;\n  line-height: 40px;\n  height: 40px;\n  border-bottom: none;\n  padding: 0 20px;\n  margin-bottom: 0;\n}\n.s-recommend .title .s-title {\n  line-height: 40px;\n}\n.s-recommend .title .more {\n  font-size: 14px;\n  color: #61c0e2;\n}\n.s-feature {\n  margin-top: 40px;\n}\n.s-feature .container {\n  border-radius: 6px;\n  border: 1px solid #e5e5e5;\n  background-color: #fff;\n}\n.featureLink {\n  width: 33.33%;\n  float: left;\n  height: 128px;\n  text-align: center;\n  border-right: 1px solid #e5e5e5;\n  display: inline-block;\n  padding: 37px 40px;\n  color: inherit;\n  line-height: 54px;\n}\n.featureLink:last-child {\n  border: none;\n}\n.featureLink:hover {\n  opacity: 0.8;\n}\n.featureLink .featureTxt {\n  vertical-align: middle;\n  display: inline-block;\n  float: right;\n  width: 128px;\n  height: 46px;\n  border-width: 1px;\n  border-style: solid;\n  font-size: 22px;\n  border-radius: 24px;\n  line-height: 46px;\n  padding: 0 18px;\n}\n.featureLink .icon-feature {\n  display: inline-block;\n  vertical-align: middle;\n}\n.featureLink .icon-college {\n  background: url(" + __webpack_require__(249) + ");\n  width: 50px;\n  height: 52px;\n}\n.featureLink .icon-major {\n  background: url(" + __webpack_require__(250) + ");\n  width: 48px;\n  height: 48px;\n}\n.featureLink .icon-subject {\n  background: url(" + __webpack_require__(251) + ");\n  width: 43px;\n  height: 43px;\n}\n.featureLink.feature_2 .featureTxt {\n  color: #40CBFC;\n  border-color: #40CBFC;\n}\n.featureLink.feature_3 .featureTxt {\n  color: #FC836B;\n  border-color: #FC836B;\n}\n.featureLink.feature_1 .featureTxt {\n  color: #459CF5;\n  border-color: #459CF5;\n}\n.coopIcon {\n  display: inline-block;\n  width: 33px;\n  height: 31px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(252) + ");\n}\n.collegeListWrap {\n  margin-left: 0;\n}\n.interSection {\n  background-color: #fff;\n}\n.interSection .column .card {\n  height: 260px;\n}\n.plan-card {\n  width: 468px;\n  padding: 44px 66px;\n  border-right: 1px solid #E5E5E5;\n}\n.plan-card .score {\n  font-size: 24px;\n}\n.plan-card .score .unScore {\n  color: #333;\n  font-size: 20px;\n}\n.plan-card .subjects {\n  color: #999;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.plan-card .h1 {\n  font-weight: bold;\n  font-size: 48px;\n}\n.plan-card .btn-block {\n  margin-top: 24px;\n  line-height: 32px;\n  border-radius: 0;\n}\n.items-card {\n  width: 232px;\n  text-align: center;\n}\n.items-card .colItem {\n  height: 33.3%;\n  color: #333;\n  padding-top: 26px;\n  font-size: 20px;\n  line-height: 32px;\n  border-bottom: 1px solid #E5E5E5;\n}\n.items-card .colItem a {\n  color: inherit;\n}\n.items-card .colItem:hover {\n  opacity: 0.8;\n}\n.items-card .colItem:last-child {\n  border-bottom: none;\n}\n.items-card .colItem .imgWrap {\n  display: inline-block;\n  width: 32px;\n  height: 32px;\n}\n.icon-edit {\n  display: inline-block;\n  cursor: pointer;\n  margin-left: 12px;\n  width: 24px;\n  height: 24px;\n  background: url(" + __webpack_require__(253) + ");\n  background-size: 24px 24px;\n}\n.recommend-box {\n  border: 1px solid #e5e5e5;\n  background-color: #fff;\n}\n", ""]);
+	exports.push([module.id, ".icon-location {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 21px;\n  background-image: url(" + __webpack_require__(39) + ");\n  background-position: 0 0;\n}\n.icon-book {\n  background-position: -20px 0;\n}\n.icon-list {\n  background-position: -40px 0;\n}\n.icon-fenshu {\n  background-position: -60px 0;\n}\n.icon-rank {\n  background-position: -80px 0;\n}\n.subjectListRow .option-label {\n  margin: 10px 0;\n  font-size: 14px;\n}\n.subjectListRow .fieldWrap .label_check {\n  margin-bottom: 10px;\n}\n.planCnt .btnRow {\n  text-align: center;\n}\n.planCnt .btnRow .btn {\n  margin-right: 20px;\n  width: 40%;\n}\n.planCnt .btnRow .btn:last-child {\n  margin-right: 0;\n}\n.bannerShow {\n  position: relative;\n  overflow: hidden;\n}\n.bannerShow ul {\n  height: 100%;\n  position: relative;\n}\n.bannerShow ul li {\n  float: left;\n}\n.picSlide a {\n  background-position: center center;\n  background-repeat: no-repeat;\n  display: block;\n  height: 360px;\n}\n.picSlide a > img {\n  width: 100%;\n  height: auto;\n}\n.bannerShow .dots {\n  position: absolute;\n  bottom: 20px;\n  z-index: 99;\n}\n.bannerShow .dots a {\n  display: block;\n  float: left;\n  width: 48px;\n  font: 0/0 a;\n  height: 8px;\n  margin: 0 12px;\n  border-radius: 4px;\n  cursor: pointer;\n  background-color: #2c7fbc;\n  transition: all 0.4s ease;\n}\n.bannerShow .dots a.active {\n  background: #fff;\n}\n.s-recommend {\n  padding: 32px 0 0;\n  border-top: 1px solid #e2e2e2;\n}\n.s-recommend .major .recommend-box {\n  border-right: 0;\n}\n.recommendList {\n  padding: 20px 20px 0;\n  height: 278px;\n  overflow: auto;\n  width: 100%;\n}\n.recommendList li {\n  margin-bottom: 10px;\n}\n.recommendList .media {\n  position: relative;\n}\n.recommendList .media .link {\n  color: #333;\n}\n.recommendList .media .link:hover {\n  color: #666;\n}\n.recommendList .media > .fl {\n  margin-right: 6px;\n  display: inline-block;\n  width: 120px;\n  height: 90px;\n}\n.recommendList .media > .fl img.responsive {\n  width: 100%;\n  height: 100%;\n}\n.recommendList .media .media-body {\n  line-height: 24px;\n}\n.recommendList .media .media-body .txt {\n  font-size: 14px;\n  color: #000;\n}\n.recommendList .media .media-body .txt:hover {\n  color: #333;\n}\n.recommendList .media .detail {\n  margin-top: 8px;\n}\n.recommendList .media .detail .source {\n  padding: 0 3px;\n  min-width: 56px;\n  font-size: 12px;\n  line-height: 16px;\n  cursor: default;\n}\n.recommendList .media .detail .source:hover {\n  background: transparent;\n  color: #61c0e2;\n}\n.recommendList .media .detail .moment {\n  font-size: 12px;\n  line-height: 18px;\n  position: absolute;\n  bottom: 0;\n  right: 25px;\n}\n.countdown {\n  line-height: 48px;\n  height: 48px;\n  background-color: #fe775d;\n  margin-bottom: 10px;\n  color: #fff;\n  text-align: center;\n}\n.cd-day {\n  font-size: 24px;\n  color: #fcca00;\n  margin: 0 6px;\n}\n.red {\n  color: #e93c59;\n}\n.s-coop {\n  margin: 48px 0 100px;\n}\n.s-coop h2 {\n  font-size: 28px;\n  color: #333;\n  margin-bottom: 32px;\n}\n.coop {\n  box-shadow: 1px 2px 1px #eaeaea;\n  display: inline-block;\n  width: 220px;\n  text-align: center;\n  background-color: #fff;\n  margin-bottom: 20px;\n  line-height: 140px;\n}\n.coop.last {\n  margin-right: 0;\n}\n.s-carousel {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.collegeWrap {\n  height: 102px;\n  position: relative;\n  padding: 20px 0 20px 100px;\n  background-color: #cde9f2;\n}\n.collegeWrap .collegeTip {\n  position: absolute;\n  width: 88px;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  font-size: 22px;\n  color: #fff;\n  background-color: #1d718f;\n  font-weight: bold;\n}\n.collegeWrap .collegeTip .mc {\n  position: absolute;\n  right: -20px;\n  top: 50%;\n  margin-top: -10px;\n  border-width: 10px;\n  border-left-color: #1d718f;\n}\n.collegeWrap .collegeTip .collegeTipTxt {\n  width: 44px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 20px;\n}\n.collegeList {\n  margin-left: 0;\n  display: none;\n}\n.collegeList li {\n  float: left;\n  margin-right: 20px;\n  width: 160px;\n  background-color: #fff;\n  border: 1px solid #e2e2e2;\n  text-align: center;\n}\n.collegeList li a {\n  display: block;\n  width: 160px;\n  height: 60px;\n  text-align: center;\n}\n.collegeList li img {\n  max-width: 100%;\n  max-height: 100%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.s-grids {\n  margin-top: 40px;\n}\n.grid-items .upRow {\n  margin-right: -10px;\n}\n.grid-items .upRow .media-body h3 {\n  margin-bottom: 12px;\n}\n.grid-items .upRow .media-body div {\n  font-size: 16px;\n}\n.grid-items .upRow .media-body .yellow {\n  color: #f6ff00;\n}\n.grid-items .upRow .grid-item {\n  border-radius: 4px;\n  display: inline-block;\n  width: 330px;\n  height: 164px;\n  padding: 20px 0 30px 8px;\n  color: #fff;\n}\n.grid-items .upRow .grid-item:hover {\n  color: #fff;\n}\n.grid-items .upRow .grid-item .media-body {\n  margin-top: 40px;\n}\n.grid-items .upRow .link-book {\n  background-color: #fb9450;\n}\n.grid-items .upRow .link-book .imgWrap {\n  margin-top: 10px;\n  margin-right: 15px;\n}\n.grid-items .upRow .link-book:hover {\n  background-color: #E58749;\n}\n.grid-items .upRow .link-evaluate {\n  background-color: #fe775d;\n}\n.grid-items .upRow .link-evaluate .imgWrap {\n  margin-right: 8px;\n}\n.grid-items .upRow .link-evaluate:hover {\n  background-color: #E06952;\n}\n.grid-items .downRow {\n  margin-right: -10px;\n  margin-top: 20px;\n  text-align: justify;\n}\n.grid-items .downRow .grid-item {\n  background-color: #5acbf3;\n  border-radius: 4px;\n  width: 120px;\n  padding-top: 10px;\n  text-align: center;\n  display: inline-block;\n  font-size: 14px;\n  color: #fff;\n  vertical-align: top;\n}\n.grid-items .downRow .grid-item:hover {\n  color: #fff;\n  background-color: #2c7fbc;\n  transition: background-color ease 0.4s;\n}\n.grid-items .downRow .grid-item .figcaption {\n  margin-top: -10px;\n  height: 35px;\n  padding-top: 5px;\n}\n.grid-items .downRow .item3 .figcaption {\n  max-width: 60px;\n  padding-top: 0;\n  margin-left: auto;\n  margin-right: auto;\n  word-wrap: break-word;\n  line-height: 16px;\n}\n.grid-items .downRow .down-icon {\n  display: inline-block;\n  vertical-align: middle;\n  width: 75px;\n  height: 75px;\n  background-image: url(" + __webpack_require__(254) + ");\n}\n.grid-items .downRow .icon1 {\n  background-position: 0 0;\n}\n.grid-items .downRow .icon2 {\n  background-position: -75px 0;\n}\n.grid-items .downRow .icon3 {\n  background-position: -150px 0;\n}\n.grid-items .downRow .icon4 {\n  background-position: -225px 0;\n}\n.grid-items .downRow .icon5 {\n  background-position: -300px 0;\n}\n.s-recommend .title {\n  background: #F7F7F7;\n  font-size: 20px;\n  color: #333;\n  line-height: 40px;\n  height: 40px;\n  border-bottom: none;\n  padding: 0 20px;\n  margin-bottom: 0;\n}\n.s-recommend .title .s-title {\n  line-height: 40px;\n}\n.s-recommend .title .more {\n  font-size: 14px;\n  color: #61c0e2;\n}\n.s-feature {\n  margin-top: 40px;\n}\n.s-feature .container {\n  border-radius: 6px;\n  border: 1px solid #e5e5e5;\n  background-color: #fff;\n}\n.featureLink {\n  width: 33.33%;\n  float: left;\n  height: 128px;\n  text-align: center;\n  border-right: 1px solid #e5e5e5;\n  display: inline-block;\n  padding: 37px 40px;\n  color: inherit;\n  line-height: 54px;\n}\n.featureLink:last-child {\n  border: none;\n}\n.featureLink:hover {\n  opacity: 0.8;\n}\n.featureLink .featureTxt {\n  vertical-align: middle;\n  display: inline-block;\n  float: right;\n  width: 128px;\n  height: 46px;\n  border-width: 1px;\n  border-style: solid;\n  font-size: 22px;\n  border-radius: 24px;\n  line-height: 46px;\n  padding: 0 18px;\n}\n.featureLink .icon-feature {\n  display: inline-block;\n  vertical-align: middle;\n}\n.featureLink .icon-college {\n  background: url(" + __webpack_require__(255) + ");\n  width: 50px;\n  height: 52px;\n}\n.featureLink .icon-major {\n  background: url(" + __webpack_require__(256) + ");\n  width: 48px;\n  height: 48px;\n}\n.featureLink .icon-subject {\n  background: url(" + __webpack_require__(257) + ");\n  width: 43px;\n  height: 43px;\n}\n.featureLink.feature_2 .featureTxt {\n  color: #40CBFC;\n  border-color: #40CBFC;\n}\n.featureLink.feature_3 .featureTxt {\n  color: #FC836B;\n  border-color: #FC836B;\n}\n.featureLink.feature_1 .featureTxt {\n  color: #459CF5;\n  border-color: #459CF5;\n}\n.coopIcon {\n  display: inline-block;\n  width: 33px;\n  height: 31px;\n  vertical-align: middle;\n  background: url(" + __webpack_require__(258) + ");\n}\n.collegeListWrap {\n  margin-left: 0;\n}\n.interSection {\n  background-color: #fff;\n}\n.interSection .column .card {\n  height: 260px;\n}\n.plan-card {\n  width: 468px;\n  padding: 44px 66px;\n  border-right: 1px solid #E5E5E5;\n}\n.plan-card .score {\n  font-size: 24px;\n}\n.plan-card .score .unScore {\n  color: #333;\n  font-size: 20px;\n}\n.plan-card .subjects {\n  color: #999;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.plan-card .h1 {\n  font-weight: bold;\n  font-size: 48px;\n}\n.plan-card .btn-block {\n  margin-top: 24px;\n  line-height: 32px;\n  border-radius: 0;\n}\n.items-card {\n  width: 232px;\n  text-align: center;\n}\n.items-card .colItem {\n  height: 33.3%;\n  color: #333;\n  padding-top: 26px;\n  font-size: 20px;\n  line-height: 32px;\n  border-bottom: 1px solid #E5E5E5;\n}\n.items-card .colItem a {\n  color: inherit;\n}\n.items-card .colItem:hover {\n  opacity: 0.8;\n}\n.items-card .colItem:last-child {\n  border-bottom: none;\n}\n.items-card .colItem .imgWrap {\n  display: inline-block;\n  width: 32px;\n  height: 32px;\n}\n.icon-edit {\n  display: inline-block;\n  cursor: pointer;\n  margin-left: 12px;\n  width: 24px;\n  height: 24px;\n  background: url(" + __webpack_require__(259) + ");\n  background-size: 24px 24px;\n}\n.recommend-box {\n  border: 1px solid #e5e5e5;\n  background-color: #fff;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 248:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/itemIcon.png"
 
 /***/ }),
 
-/***/ 249:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/college.png"
 
 /***/ }),
 
-/***/ 250:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/major.png"
 
 /***/ }),
 
-/***/ 251:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/subject.png"
 
 /***/ }),
 
-/***/ 252:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/coopIcon.png"
 
 /***/ }),
 
-/***/ 253:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/web/img/i-edit.png"
 
 /***/ }),
 
-/***/ 254:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(45);
@@ -690,7 +690,7 @@ webpackJsonp([28],{
 
 /***/ }),
 
-/***/ 255:
+/***/ 261:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

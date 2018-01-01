@@ -1,11 +1,11 @@
-webpackJsonp([30],{
+webpackJsonp([32],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(22);
-	__webpack_require__(260);
+	__webpack_require__(265);
 	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
@@ -16,7 +16,7 @@ webpackJsonp([30],{
 	
 	
 	//自定义功能写下面
-	__webpack_require__(262);
+	__webpack_require__(267);
 	var province = $("[name=province]").val();
 	var newsId = $("[name=newsId]").val();
 	
@@ -86,13 +86,13 @@ webpackJsonp([30],{
 
 /***/ }),
 
-/***/ 260:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(261);
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -113,7 +113,7 @@ webpackJsonp([30],{
 
 /***/ }),
 
-/***/ 261:
+/***/ 266:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -128,13 +128,13 @@ webpackJsonp([30],{
 
 /***/ }),
 
-/***/ 262:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(263);
+	var content = __webpack_require__(268);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -155,7 +155,7 @@ webpackJsonp([30],{
 
 /***/ }),
 
-/***/ 263:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();

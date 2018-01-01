@@ -94,7 +94,7 @@
 						<a href="/${provinceId != null ? provinceId : 330000}/newsV3/majorUnscrambleList">专业解读</a>
 					</li>
 					<li class="navList no-dropdown">
-						<a href="/infoV2">填报政策</a>
+						<a href="/infoV3/fillPolicList">填报政策</a>
 					</li>
 					<li class="navList" data-toggle="dropdown" >
 						<a href="javascript:;" class="trigger">下载APP</a>

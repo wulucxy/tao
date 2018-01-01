@@ -1,11 +1,11 @@
-webpackJsonp([38],{
+webpackJsonp([41],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* 建议这里都引入 */
 	__webpack_require__(22);
-	__webpack_require__(290);
+	__webpack_require__(297);
 	var $ = window.$ || __webpack_require__(45);
 	
 	//工具类方法
@@ -19,7 +19,7 @@ webpackJsonp([38],{
 	var tabs = __webpack_require__(132);
 	
 	//报考专业
-	var major =  __webpack_require__(292);
+	var major =  __webpack_require__(299);
 	
 	//切换顶部nav高亮
 	common.switchNav(2);
@@ -96,13 +96,13 @@ webpackJsonp([38],{
 
 /***/ }),
 
-/***/ 290:
+/***/ 297:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(291);
+	var content = __webpack_require__(298);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(42)(content, {});
@@ -123,7 +123,7 @@ webpackJsonp([38],{
 
 /***/ }),
 
-/***/ 291:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -138,12 +138,12 @@ webpackJsonp([38],{
 
 /***/ }),
 
-/***/ 292:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var $ = window.$ || __webpack_require__(45);
 	var extend =  __webpack_require__(50);
-	var tmpl = __webpack_require__(293);
+	var tmpl = __webpack_require__(300);
 	var localData = __webpack_require__(134);
 	
 	var major = {
@@ -292,7 +292,7 @@ webpackJsonp([38],{
 
 /***/ }),
 
-/***/ 293:
+/***/ 300:
 /***/ (function(module, exports) {
 
 	module.exports = function (obj) {

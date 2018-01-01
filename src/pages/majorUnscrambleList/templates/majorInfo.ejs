@@ -3,7 +3,7 @@
 <% }else{ %>	
 <% for (var i = 0; i < majorList.length; i++) { %>
 <li class="clearfix">
-	<a class="media" href='/<%= provinceId %>/newsV3/majorUnscrambleDetail?newsId=<%= majorList[i].newsId %>'>
+	<a href='/infoV3/<%= majorList[i].newsId %>/majorUnscrambleDetail' class="media">
 	<span class="fl imgWrap mr10 dib">
 		<img src="<%= majorList[i].newsIconUrl %>" class="responsive" />
 	</span>
