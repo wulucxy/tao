@@ -76,8 +76,9 @@ const home = {
 	          if (typeof res == "string") {
 	            var res = $.parseJSON(res);
 	          }
-
-	          if(res.code==1){
+	          if(res.code == 1011){
+	          	window.location = '/home/signin'
+	          }else if(res.code==1){
 	          	setTimeout(function(){
 	          		window.location = '/'
 	          	}, 400)

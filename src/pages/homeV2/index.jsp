@@ -52,8 +52,9 @@
 								    <c:when test="${examInfo.score != null}">
 								   		<span class="orange">
 									   		<span class="h1">${examInfo.score}</span>
-												<span>分</span>
+												<span>分</span>/
 											</span>
+											<span class='rank'>${examInfo.rank}名</span>
 										</c:when>
 										<c:otherwise>
 											<a href="javascript:;" class='unScore'>输入预估分数、位次号及选考科目<br>开启智能志愿定制</a>
@@ -94,7 +95,7 @@
 							<li class="colItem">
 								<a href="/appointment/create" class="db" target='_blank'>
 									<span class="imgWrap">
-										<img src="./img/v3/i-test.png" class="responsive">
+										<img src="./img/v3/i-serve.png" class="responsive">
 									</span>
 									<span class='vm'>专家服务</span>
 								</a>

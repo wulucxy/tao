@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.0896ea8b.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.74ab1105.css" rel="stylesheet"></head>
 <body>
 	<!-- 保存province属性 -->
 	<input type="hidden" name="province" value="${user.province.code}">
@@ -52,8 +52,9 @@
 								    <c:when test="${examInfo.score != null}">
 								   		<span class="orange">
 									   		<span class="h1">${examInfo.score}</span>
-												<span>分</span>
+												<span>分</span>/
 											</span>
+											<span class='rank'>${examInfo.rank}名</span>
 										</c:when>
 										<c:otherwise>
 											<a href="javascript:;" class='unScore'>输入预估分数、位次号及选考科目<br>开启智能志愿定制</a>
@@ -94,7 +95,7 @@
 							<li class="colItem">
 								<a href="/appointment/create" class="db" target='_blank'>
 									<span class="imgWrap">
-										<img src="/static/web/img/i-test.png" class="responsive">
+										<img src="/static/web/img/i-serve.png" class="responsive">
 									</span>
 									<span class='vm'>专家服务</span>
 								</a>
@@ -312,5 +313,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.1f07af65.js"></script><script src="/static/web/js/homeV2.e430b137.js"></script></body>
+	<script src="/static/web/js/vendors.6331695d.js"></script><script src="/static/web/js/homeV2.6529642c.js"></script></body>
 </html>
