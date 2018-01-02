@@ -1,23 +1,23 @@
-<% if (news.length == 0 && page == 1) { %>
+<% if (fillPolicList.length == 0 && page == 1) { %>
 	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
 <% }else{ %>
-<% for (var i = 0; i < news.length; i++) { %>
+<% for (var i = 0; i < fillPolicList.length; i++) { %>
 <li>
    	 <div class="media">
 		<span class="fl imgWrap">
-			<img src="<%= news[i].newsIconUrl %>">
+			<img src="<%= fillPolicList[i].newsIconUrl %>">
 		</span>
 		<div class="media-body">
 				<h3 class="clearfix">
-					<a class="detailTitle ellipsis" href="/infoV3/<%= news[i].newsId %>/fillPolicDetial" target="_blank">
-						<%= news[i].newsTitle %>
+					<a class="detailTitle ellipsis" href="/infoV3/<%= fillPolicList[i].newsId %>/fillPolicDetial" target="_blank">
+						<%= fillPolicList[i].newsTitle %>
 					</a>
 				</h3>
 				<div class="detailCnt clearfix">
-					<a href="/infoV3/<%= news[i].newsId %>/fillPolicDetial" class="dib" target="_blank">
-						<%= news[i].newsTitle %>
+					<a href="/infoV3/<%= fillPolicList[i].newsId %>/fillPolicDetial" class="dib" target="_blank">
+						<%= fillPolicList[i].newsTitle %>
 					</a>
-					<span class="moment"><%= news[i].date %></span>
+					<span class="moment"><%= fillPolicList[i].date %></span>
 				</div>
 		</div>
 	</div>

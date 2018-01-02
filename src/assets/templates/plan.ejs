@@ -7,7 +7,7 @@
     <div class="inputWrap inputTextWrap">
       <span class="iconWrap"><i class="icon-location icon-fenshu"></i></span>
       <input type="text" class="input form-control" id="score" name="score" 
-      min="0" max="750" placeholder="请输入高考/模拟考分数" required autocomplete="off">
+      min="0" max="750" placeholder="请输入高考/模拟考分数" required autocomplete="off" value="<%= score %>">
     </div>
     <span class="p-error">高考分数为0-750之间，请重新填写</span>
     <span class="p-error-empty">分数不能为空</span>
@@ -16,7 +16,7 @@
  <div class="row clearfix">
     <div class="inputWrap inputTextWrap">
       <span class="iconWrap"><i class="icon-location icon-rank"></i></span>
-      <input type="number" class="input form-control" id="rank" name="rank" placeholder="请输入位次号" required autocomplete="off">
+      <input type="number" class="input form-control" id="rank" name="rank" placeholder="请输入位次号" required autocomplete="off" value="<%= rank %>">
     </div>
     <span class="p-error-empty">位次号不能为空</span>
  </div>

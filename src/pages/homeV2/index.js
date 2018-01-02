@@ -17,6 +17,8 @@ var carousel = require("./lib/carousel");
 var updateBrowser = require("../../assets/components/updateBrowser");
 var tmpl_plan = require("../../assets/templates/plan.ejs");
 var provinceId = $("[name=province]").val();
+var INITDATA = window.__INITDATA__
+
 slider($("#bannerShow"));
 
 updateBrowser.init();
@@ -91,19 +93,34 @@ const home = {
 	        }
 		});
 	},
+	initSubject: function(){
+		if(!INITDATA.subjectList) return
+    $('[name=subject]').each(function(idx, ele){
+      var $ele = $(ele);
+      $(INITDATA.subjectList).each(function(l, k){
+        if (k.type == $ele.val()){
+          $ele.prop('checked',true);
+        }
+      })
+    })
+  },
 	bindEvt: function () {
 		var that = this
 		$(".js-edit").on('click', function(e){
 			e.preventDefault();
 			var btn = $(e.target);
 			modalBox( btn.get(0), {
-		      html:tmpl_plan(),
+		      html:tmpl_plan(INITDATA),
 		      klass : 'w540 shadow',
 		      closeByOverlay : false,
 		      startCallback: function () {
+		      	that.initSubject()
 		      	checkBox.init()
 		      },
-		      completeCallback : function(){ 
+		      completeCallback : function(){
+		      	// 聚焦
+		      	$('#score').focus()
+		      	// 表单校验
 		        $("#planForm").validator({
 							errorParent: '.row',
 						    successCallback: function(e) {

@@ -26,7 +26,6 @@ var util = {
         norm = this.normByFormat(this.str2Date(date))
       }
 
-      console.log('norm', norm)
       return type.replace(/([a-z]+)/ig, function (n) {
         return (typeof norm[n] !== 'undefined' ? (norm[n] < 10 ? '0' + norm[n] : norm[n]) : n)
       })

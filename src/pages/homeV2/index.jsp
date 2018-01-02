@@ -309,5 +309,8 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
+	<script>
+		window.__INITDATA__ = ${examInfo}
+	</script>
 	</body>
 </html>

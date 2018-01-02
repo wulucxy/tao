@@ -57,7 +57,7 @@ var infoModule = {
 					warn(res.msg);
 					return;
 				}
-				res.result.news.forEach(function(item){
+				res.result.fillPolicList.forEach(function(item){
           item.date = util.formatDate(item.newsDate, 'yyyy-MM-dd hh:mm:ss')
         })
 				var res = res.result;
