@@ -148,7 +148,7 @@
 							<span class="fl s-title">
 								专业解读
 							</span>
-							<a href="/info" class="link fr more" target="_blank">
+							<a href="/infoV3/majorUnscrambleList" class="link fr more" target="_blank">
 								<span class="vm">查看更多</span>
 							</a>
 						</h3>
@@ -189,7 +189,7 @@
 							<span class="fl s-title">
 								填报政策
 							</span>
-							<a href="/info" class="link fr more" target="_blank">
+							<a href="/infoV3/fillPolicList" class="link fr more" target="_blank">
 								<span class="vm">查看更多</span>
 							</a>
 						</h3>

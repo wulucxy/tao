@@ -95,7 +95,7 @@ var dataSet = {
                     warn(res.msg);
                     return;
                 }
-                res.result.majorList.forEach(function(item){
+                res.result.majorUnscrambleList.forEach(function(item){
                     item.date = util.formatDate(item.newsDate, 'yyyy-MM-dd hh:mm:ss')
                 })
                 res.result.provinceId = provinceId

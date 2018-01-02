@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.ac3d3f9d.css" rel="stylesheet"><link href="/static/web/css/homeV2.0896ea8b.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.0896ea8b.css" rel="stylesheet"></head>
 <body>
 	<!-- 保存province属性 -->
 	<input type="hidden" name="province" value="${user.province.code}">
@@ -148,7 +148,7 @@
 							<span class="fl s-title">
 								专业解读
 							</span>
-							<a href="/info" class="link fr more" target="_blank">
+							<a href="/infoV3/majorUnscrambleList" class="link fr more" target="_blank">
 								<span class="vm">查看更多</span>
 							</a>
 						</h3>
@@ -189,7 +189,7 @@
 							<span class="fl s-title">
 								填报政策
 							</span>
-							<a href="/info" class="link fr more" target="_blank">
+							<a href="/infoV3/fillPolicList" class="link fr more" target="_blank">
 								<span class="vm">查看更多</span>
 							</a>
 						</h3>
@@ -309,5 +309,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.bc66c79a.js"></script><script src="/static/web/js/homeV2.f08956e4.js"></script></body>
+	<script src="/static/web/js/vendors.0ddb8b7e.js"></script><script src="/static/web/js/homeV2.2967bc71.js"></script></body>
 </html>

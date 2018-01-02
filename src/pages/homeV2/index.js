@@ -64,8 +64,8 @@ const home = {
 	        url: preServer+provinceId + "/profile/fillExamInfo",
 	        type: "post",
 	        data: JSON.stringify({
-	          score: oForm.find('[name=score]').val(),
-	          rank: oForm.find('[name=rank]').val(),
+	          score: Number(oForm.find('[name=score]').val()),
+	          rank: Number(oForm.find('[name=rank]').val()),
 	          subjects: subjects
 	        }),
 	        contentType: "application/json",
@@ -110,7 +110,6 @@ const home = {
 						      var target = $(e.target).closest('.btn');
 						      var oError = $('.errTxt');
 						      var subjects = that.getSubjects();
-						      console.log('subjects', subjects)
 				          if(subjects.length != 3){
 				          	$('.subjectListRow').addClass('unvalid')
 				          	userUtil.showErrorMsg($("#planForm"), oError, $('.subjectListRow'));

@@ -1,20 +1,50 @@
 {
-"code": "1",
-"msg": "调用成功",
-"result": {
-		"majorList": [{
-		  "newsId": "1",
-		  "newsTitle": "标题",
-		  "newsIconUrl": "http://www.tzhiyuan.net/data/upload/1.jpg",
-		  "newsDate": 1512895034000,
-		   "newsUniversityId": "133",
-		 "newsUniversityName": "浙江海洋大学（中外合作专业）",
-		  "videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
-		  "videoWidth": 300,
-		  "videoHeight": 200
+	"code": "1",
+	"msg": "调用成功",
+	"result": {
+		"total": 4,
+		"majorUnscrambleList": [{
+			"newsUniversityId": "1",
+			"videoHeight": 200.0,
+			"newsId": "173514914632696596",
+			"videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
+			"newsIconUrl": "http://118.31.75.146:8080/data/upload/wallet.jpg",
+			"videoWidth": 300.0,
+			"newsDate": 1513489146000,
+			"newsUniversityName": "浙江大学",
+			"newsTitle": "次二十"
+		}, {
+			"newsUniversityId": "133",
+			"videoHeight": 200.0,
+			"newsId": "173514905296058932",
+			"videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
+			"newsIconUrl": "http://118.31.75.146:8080/data/upload/wallet.jpg",
+			"videoWidth": 300.0,
+			"newsDate": 1513489053000,
+			"newsUniversityName": "浙江海洋大学（中外合作专业）",
+			"newsTitle": "测试此为免费is"
+		}, {
+			"newsUniversityId": "31",
+			"videoHeight": 200.0,
+			"newsId": "173514836779410564",
+			"videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
+			"newsIconUrl": "http://118.31.75.146:8080/data/upload/wallet.jpg",
+			"videoWidth": 300.0,
+			"newsDate": 1513488368000,
+			"newsUniversityName": "杭州医学院",
+			"newsTitle": "ceshi12"
+		}, {
+			"newsUniversityId": "1",
+			"videoHeight": 200.0,
+			"newsId": "173446157416715031",
+			"videoUrl": "http://118.31.75.146:8080/data/upload/test.mp4",
+			"newsIconUrl": "http://118.31.75.146:8080/data/upload/wallet.jpg",
+			"videoWidth": 300.0,
+			"newsDate": 1512895034000,
+			"newsUniversityName": "浙江大学",
+			"newsTitle": "专业解读"
 		}],
-		"total": 147,
-		"count": 20,
-  	"page": 1
+		"page": 1,
+		"pageSize": 6
 	}
 }

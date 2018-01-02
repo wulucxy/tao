@@ -10,8 +10,10 @@ var util = require("../../assets/components/util");
 var common = require("../../assets/components/common");
 
 //自定义功能写下面
-//
-////加载更多模块
+//切换顶部nav高亮
+common.switchNav(4);
+
+//加载更多模块
 var loadMore = require("../../assets/components/loadMore");
 var tmpl = require("./templates/infoList.ejs");
 
@@ -36,14 +38,16 @@ var infoModule = {
             that.pager = 1;
         }
 
-		var parm = [];
-		parm.push("pageSize="+10);
-		parm.push("page="+that.pager);
+		var parm = {
+			pageSize: 10,
+			page: that.pager
+		};
 
 		$.ajax({
 			url : preServer+province+"/newsV3/fillPolicList",
 			type : "post",
-			data: parm,
+			contentType: "application/json",
+			data: JSON.stringify(parm),
 			success : function(res){
 				if(typeof res == "string"){
 					var res = $.parseJSON(res);
