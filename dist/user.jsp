@@ -112,5 +112,5 @@
   	<script type="text/javascript" src="//wacai-file.b0.upaiyun.com/assets/js/handlers.js"></script>
 	<![endif]-->
 	
-	<script src="/static/web/js/vendors.6331695d.js"></script><script src="/static/web/js/user.6f45868a.js"></script></body>
+	<script src="/static/web/js/vendors.9cf1e94a.js"></script><script src="/static/web/js/user.6f45868a.js"></script></body>
 </html>

@@ -55,7 +55,7 @@ module.exports = {
 	'/infoV3/majorUnscrambleList' : 'majorUnscrambleList.jsp',
 	'/infoV3/1/majorUnscrambleDetail' : 'majorUnscrambleDetail.jsp',
 	'/infoV3/fillPolicList' : 'fillPolicList.jsp',
-	'/infoV3/1/fillPolicDetial': 'fillPolicDetail.jsp',
+	'/infoV3/1/fillPolicDetail': 'fillPolicDetail.jsp',
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',
