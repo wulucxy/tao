@@ -60,6 +60,7 @@
 										<p class="g6 label">关联专业</p>
 										<c:forEach var="list" items="${majorUnscrambleDetial.majorList}">
 											<a class='blue' href='/library/major/${list.id}' target='_blank'>${list.name}</a>
+											<br />
 										</c:forEach>
 									</div>
 							</div>

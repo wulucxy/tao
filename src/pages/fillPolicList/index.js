@@ -44,7 +44,7 @@ var infoModule = {
 		};
 
 		$.ajax({
-			url : preServer+province+"/newsV3/fillPolicList",
+			url : preServer+province+"/newsV3/fillPolicListWeb",
 			type : "post",
 			contentType: "application/json",
 			data: JSON.stringify(parm),
@@ -57,7 +57,7 @@ var infoModule = {
 					warn(res.msg);
 					return;
 				}
-				res.result.fillPolicList.forEach(function(item){
+				res.result.news.forEach(function(item){
           item.date = util.formatDate(item.newsDate, 'yyyy-MM-dd hh:mm:ss')
         })
 				var res = res.result;

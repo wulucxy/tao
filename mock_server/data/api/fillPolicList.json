@@ -2,7 +2,7 @@
 	"code": "1",
 	"msg": "调用成功",
 	"result": {
-		"fillPolicList": [
+		"news": [
 			{
 			  "newsId": "2", 
 			  "newsUrl": "http://www.tzhiyuan.net/v2_1/mobile/330000/newsV3/2",

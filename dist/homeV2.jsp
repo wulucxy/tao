@@ -154,7 +154,7 @@
 						</h3>
 
 						<ul class="listView recommendList clearfix">
-							<c:forEach var="list" items="${fillPolicRecommendList}">
+							<c:forEach var="list" items="${majorUnscrambleRecommendList}">
 							   <li>
 									<div class="media">
 										<span class="fl imgWrap">
@@ -193,9 +193,8 @@
 								<span class="vm">查看更多</span>
 							</a>
 						</h3>
-
 						<ul class="listView recommendList clearfix">
-							<c:forEach var="list" items="${majorUnscrambleRecommendList}">
+							<c:forEach var="list" items="${fillPolicRecommendList}">
 							   <li>
 									<div class="media">
 										<span class="fl imgWrap">
@@ -222,6 +221,7 @@
 								</li>
 							</c:forEach>
 						</ul>
+						
 					</div>
 				</div>
 			</div>
@@ -312,5 +312,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.bad6df89.js"></script><script src="/static/web/js/homeV2.cf66da16.js"></script></body>
+	<script src="/static/web/js/vendors.1f07af65.js"></script><script src="/static/web/js/homeV2.e430b137.js"></script></body>
 </html>

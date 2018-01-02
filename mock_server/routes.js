@@ -123,5 +123,5 @@ module.exports = {
 	// v3
 	'post::/v2_1/client/1/profile/fillExamInfo':"mock::api/fillExamInfo.json",
 	'post::/v2_1/client/1/newsV3/majorUnscrambleListWeb': "mock::api/majorUnscrambleList.json",
-	'post::/v2_1/client/1/newsV3/fillPolicList': "mock::api/fillPolicList.json"
+	'post::/v2_1/client/1/newsV3/fillPolicListWeb': "mock::api/fillPolicList.json"
 };

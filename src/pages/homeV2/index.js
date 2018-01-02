@@ -1,6 +1,7 @@
 /* 建议这里都引入 */
 require('../../assets/less/common.less');
 require('./index.less');
+var extend =  require('object-assign');
 var $ = window.$ || require("jquery");
 
 //工具类方法
@@ -17,7 +18,7 @@ var carousel = require("./lib/carousel");
 var updateBrowser = require("../../assets/components/updateBrowser");
 var tmpl_plan = require("../../assets/templates/plan.ejs");
 var provinceId = $("[name=province]").val();
-var INITDATA = window.__INITDATA__
+var INITDATA = extend({score: '', rank: ''}, window.__INITDATA__)
 
 slider($("#bannerShow"));
 

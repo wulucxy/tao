@@ -60,6 +60,7 @@
 										<p class="g6 label">关联专业</p>
 										<c:forEach var="list" items="${majorUnscrambleDetial.majorList}">
 											<a class='blue' href='/library/major/${list.id}' target='_blank'>${list.name}</a>
+											<br />
 										</c:forEach>
 									</div>
 							</div>
@@ -108,5 +109,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 
-	<script src="/static/web/js/vendors.bad6df89.js"></script><script src="/static/web/js/majorUnscrambleDetail.85fa496b.js"></script></body>
+	<script src="/static/web/js/vendors.1f07af65.js"></script><script src="/static/web/js/majorUnscrambleDetail.85fa496b.js"></script></body>
 </html>
