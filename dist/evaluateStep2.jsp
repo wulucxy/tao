@@ -78,9 +78,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-								<a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
+								<!-- <a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
 			                        <em class="subTxt">上一步</em>
-			                    </a>
+			                    </a> -->
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
@@ -114,5 +114,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.9cf1e94a.js"></script><script src="/static/web/js/evaluateStep2.9b202e86.js"></script></body>
+	<script src="/static/web/js/vendors.9fc1c82e.js"></script><script src="/static/web/js/evaluateStep2.9b202e86.js"></script></body>
 </html>

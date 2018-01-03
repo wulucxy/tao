@@ -52,9 +52,9 @@
 								    <c:when test="${examInfo.score != null}">
 								   		<span class="orange">
 									   		<span class="h1">${examInfo.score}</span>
-												<span>分</span>/
+												<span>分</span>
 											</span>
-											<span class='rank'>${examInfo.rank}名</span>
+											<c:if test="${examInfo.rank != null}" ><span class="orange f24">/</span><span class='rank'>${examInfo.rank}名</span></c:if>
 										</c:when>
 										<c:otherwise>
 											<a href="javascript:;" class='unScore'>输入预估分数、位次号及选考科目<br>开启智能志愿定制</a>
@@ -70,7 +70,15 @@
 									 	</c:if>
 									</c:forEach>
 								</div>
-								<a class="btn btn-primary btn-block js-edit" href="javascript:;">智能志愿定制</a>
+								<c:choose>
+							    <c:when test="${examInfo.score != null and examInfo.subjectList != null}">
+							   		<a class="btn btn-primary btn-block" href="/box/planEntrance" target='_blank'>智能志愿定制</a>
+									</c:when>
+									<c:otherwise>
+										<a class="btn btn-primary btn-block js-edit" href="javascript:;">智能志愿定制</a>
+									</c:otherwise>
+							  </c:choose>
+								
 							</div>
 						</div>
 					</div>

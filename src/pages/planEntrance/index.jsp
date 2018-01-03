@@ -13,6 +13,9 @@
 	
 	<!-- 所有页面内容必须包裹在mainContainer里面 -->
 	<div class="mainContainer">
+		<!-- 保存province属性 -->
+	<input type="hidden" name="province" value="${user.province.code}">
+	
 		<div class="container planEntrance">
 			<div class="content">
 				<h3 class="clearfix title">
