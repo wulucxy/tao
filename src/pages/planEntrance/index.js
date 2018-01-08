@@ -17,9 +17,19 @@ var provinceId = $("[name=province]").val();
 planModal.init($(document), {
 	provinceId: provinceId,
 	data: {score: '', rank: ''},
-	successCallback: function(){
+	successCallback: function(info){
 		$('.btn-close').trigger('click')
+		if(info && info.target) {
+			var href = info.target.attr('href')
+			window.location = href
+		}
+		
 	}
 })
 
-planModal.requestExamInfo()
+$('.planCard').on('click', function(e){
+	e.preventDefault()
+	var target = $(e.currentTarget)
+	planModal.requestExamInfo({target: target})
+})
+

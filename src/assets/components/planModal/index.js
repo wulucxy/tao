@@ -11,7 +11,7 @@ var payModal = {
 		this.provinceId = this.options.provinceId
 	},
 
-	requestExamInfo: function(){
+	requestExamInfo: function(info){
 		var that = this;
 		
 		$.ajax({
@@ -25,7 +25,7 @@ var payModal = {
 
 		      if(res.code==1){
 		      	var result = res.result
-		      	!result.isFill && that.box();
+		      	!result.isFill && that.box(info);
 		      }else{
 		        warn(res.msg);
 		        return;
@@ -64,7 +64,7 @@ var payModal = {
     return subjects;
   },
 
-  postPlanInfo: function(btn,oForm){
+  postPlanInfo: function(btn,oForm, info){
   		var that = this
 	    btn.addClass('disabled');
 	    var oError = $('.errTxt');
@@ -94,7 +94,7 @@ var payModal = {
 	          if(res.code == 1011){
 	          	window.location = '/home/signin'
 	          }else if(res.code==1){
-	          	that.options.successCallback()
+	          	that.options.successCallback(info)
 	          }else{
 	          	btn.removeClass('disabled');
 	          	userUtil.showError(oError, res.msg);
@@ -109,7 +109,7 @@ var payModal = {
 		});
 	},
 
-	box: function(){
+	box: function(info){
 		var that = this;
 		var planData = this.options.data || {}
 
@@ -140,7 +140,7 @@ var payModal = {
 				            userUtil.hideError($('.errTxt'));
 				          }
 						      //执行到下一步操作
-						      that.postPlanInfo(target, $("#planForm"));
+						      that.postPlanInfo(target, $("#planForm"), info);
 						    },
 						    focusinCallback: function() {
 					          userUtil.hideError($('.errTxt'));
