@@ -64,17 +64,17 @@ var book = {
 			mobile : $("[name=mobile]").val(),
 			courseType : $("[name=courseType]:checked").val(),
 			batch : $("[name=batch]:checked").val(),
-			score : $("[name=score]").val(),
+			score : Number($("[name=score]").val()),
 			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
-			c : $("[name=city]:checked").map(function(idx,ele){
-				return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
+			cities : $("[name=city]:checked").map(function(idx,ele){
+				return Number($(ele).val())
 			}).get(),
-			majorList : $("[name=majorId]:checked").map(function(idx,ele){
-				return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
+			majors : $("[name=majorId]:checked").map(function(idx,ele){
+				return $(ele).val()
 			}).get(),
 			subjects : $("[name=subjectId]:checked").map(function(idx,ele){
-				return {"name":$(ele).attr("subjectname"),"majorId":$(ele).val()}
+				return Number($(ele).val())
 			}).get()
 		};
 

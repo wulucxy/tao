@@ -35,10 +35,8 @@ var __INITWISHES__ = $('.wishInput').map(function(idx, ele){
 
 var __INITSUBJECTS__ = $('.subjectInput').map(function(idx, ele){
   var $ele = $(ele);
-  return {
-    name: $ele.attr('name'),
-    code: $ele.val()
-  }
+  return Number($ele.val())
+
 }).get()
 
 

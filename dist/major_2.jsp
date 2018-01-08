@@ -160,5 +160,5 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 	
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.d21aa778.js"></script><script src="/static/web/js/major_2.b5db5c49.js"></script></body>
+	<script src="/static/web/js/vendors.0a158688.js"></script><script src="/static/web/js/major_2.b5db5c49.js"></script></body>
 </html>
