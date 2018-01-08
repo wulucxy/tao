@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.74ab1105.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.eb885270.css" rel="stylesheet"></head>
 <body>
 	<!-- 保存province属性 -->
 	<input type="hidden" name="province" value="${user.province.code}">
@@ -163,7 +163,8 @@
 						</h3>
 
 						<ul class="listView recommendList clearfix">
-							<c:forEach var="list" items="${majorUnscrambleRecommendList}">
+							<c:forEach var="list" items="${majorUnscrambleRecommendList}" varStatus="loop">
+							   <c:if test="${ loop.index <= 2}">
 							   <li>
 									<div class="media">
 										<span class="fl imgWrap">
@@ -188,6 +189,7 @@
 										</div>
 									</div>
 								</li>
+								 	</c:if>
 							</c:forEach>
 						</ul>
 					</div>
@@ -298,7 +300,7 @@
 		</div>
 	</section>
 
-	<section class="ovh s-coop">
+	<!-- <section class="ovh s-coop">
 	  	<div class="container ovh tc">
 	  		<h2>
 	  			<icon class="coopIcon vm"></icon>
@@ -310,7 +312,7 @@
 				</a>
 			</div>				
 		</div>
-	</section>
+	</section> -->
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>
@@ -321,5 +323,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.12148da9.js"></script><script src="/static/web/js/homeV2.52fdb7f9.js"></script></body>
+	<script src="/static/web/js/vendors.608ad43b.js"></script><script src="/static/web/js/homeV2.bac2a1a2.js"></script></body>
 </html>

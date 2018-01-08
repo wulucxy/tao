@@ -163,7 +163,8 @@
 						</h3>
 
 						<ul class="listView recommendList clearfix">
-							<c:forEach var="list" items="${majorUnscrambleRecommendList}">
+							<c:forEach var="list" items="${majorUnscrambleRecommendList}" varStatus="loop">
+							   <c:if test="${ loop.index <= 2}">
 							   <li>
 									<div class="media">
 										<span class="fl imgWrap">
@@ -188,6 +189,7 @@
 										</div>
 									</div>
 								</li>
+								 	</c:if>
 							</c:forEach>
 						</ul>
 					</div>
@@ -298,7 +300,7 @@
 		</div>
 	</section>
 
-	<section class="ovh s-coop">
+	<!-- <section class="ovh s-coop">
 	  	<div class="container ovh tc">
 	  		<h2>
 	  			<icon class="coopIcon vm"></icon>
@@ -310,7 +312,7 @@
 				</a>
 			</div>				
 		</div>
-	</section>
+	</section> -->
 
 	<!-- 公共右侧悬浮导航模块，需要放到maincontainer类的最后 -->
 	<%@ include file = "/partials/_sidebar.jsp" %>
