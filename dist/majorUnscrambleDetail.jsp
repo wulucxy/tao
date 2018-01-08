@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/majorUnscrambleDetail.be2df66e.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/majorUnscrambleDetail.6e0b6870.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -109,5 +109,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 
-	<script src="/static/web/js/vendors.9fc1c82e.js"></script><script src="/static/web/js/majorUnscrambleDetail.fb64a1e1.js"></script></body>
+	<script src="/static/web/js/vendors.12148da9.js"></script><script src="/static/web/js/majorUnscrambleDetail.eebc3b37.js"></script></body>
 </html>

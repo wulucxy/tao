@@ -29,6 +29,7 @@ var __INITWISHES__ = $('.wishInput').map(function(idx, ele){
     majorId:$ele.attr('majorid'),
     majorName:$ele.attr('majorname'),
     field:$ele.attr('field'),
+    universityMajorId: $ele.attr('universitymajorid')
   }
 }).get()
 
@@ -78,13 +79,14 @@ $("#verifyBtn").on("click",function(e){
     mobile : $("[name=mobile]").val(),
     province : $("[name=province]").val(),
     score : $("[name=score]").val(),
+    rank : Number($("[name=rank]").val()),
     wishes: __INITWISHES__,
     subjects: __INITSUBJECTS__
   };
 
 
   $.ajax({
-    url : preServer+provinceId +"/tzy/plan/assessment/step3",
+    url : preServer+provinceId +"/tzy/plan/accessment2018",
     type : "post",
     contentType: "application/json",
     data : JSON.stringify(_data),

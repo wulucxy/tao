@@ -87,7 +87,7 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json',
-	'post::/v2_1/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
+	'post::/v2_1/client/1/tzy/plan/wishes2018': 'mock::api/step4.json',
 	'post::/v2_1/client/1/pay' : 'mock::api/pay.json',
 	'/v2_1/client/1/profile/score/detail' : 'mock::api/scoreDetail.json',
 	'post::/v2_1/client/1/profile/score/edit': 'mock::api/scoreEdit.json',
@@ -113,7 +113,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/1872':"mock::api/subjectDetailList.json",
 	'post::/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
-	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json",
+	'post::/v2_1/client/1/data/college/1872/category2018':"mock::api/collegeMajorList.json",
 
 	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
 	'post::/v2_1/client/1/profile/couponListWeb':"mock::api/couponList.json",

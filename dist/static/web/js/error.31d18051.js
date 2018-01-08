@@ -1,1 +1,0 @@
-webpackJsonp([19],{0:function(n,o,c){c(22),c(206);var i=window.$||c(45),t=c(46);c(47);t.count(i(".count"),5,function(){window.location="/"})},206:function(n,o){}});

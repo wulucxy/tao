@@ -7,15 +7,18 @@
       "name": "公共事业",
       "majorList": [
         {
+          "universityMajorId": "187",
           "majorName": "护理",
           "field": "哲学\\宗教学\\哲学（科技哲学与逻辑学方向）",
           "majorId": "630201"
         },
         {
+          "universityMajorId": "188",
           "majorName": "助产",
           "majorId": "630202"
         },
         {
+          "universityMajorId": "189",
           "majorName": "医学影像技术",
           "majorId": "630403"
         }
@@ -26,6 +29,7 @@
       "name": "旅游",
       "majorList": [
         {
+          "universityMajorId": "178",
           "majorName": "会计",
           "field": "哲学\\宗教学\\哲学（科技哲学与逻辑学方向）",
           "majorId": "620203"

@@ -65,6 +65,7 @@ var book = {
 			courseType : $("[name=courseType]:checked").val(),
 			batch : $("[name=batch]:checked").val(),
 			score : $("[name=score]").val(),
+			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
 			c : $("[name=city]:checked").map(function(idx,ele){
 				return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
@@ -79,7 +80,7 @@ var book = {
 
 
 		$.ajax({
-			url : preServer+provinceId+"/tzy/plan/wishes/step4",
+			url : preServer+provinceId+"/tzy/plan/wishes2018",
 			type : "post",
 			contentType: "application/json",
     		data : JSON.stringify(_data),

@@ -107,6 +107,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	

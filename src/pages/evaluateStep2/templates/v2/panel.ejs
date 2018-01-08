@@ -5,7 +5,7 @@
 <% }else{ %>
 <div class="panelLists clearfix">
 	<% for (var i = 0; i < wishes.length; i++) { %>
-		<div class="panel" collegename="<%= wishes[i].collegeName %>" collegeid="<%= wishes[i].collegeId %>" majorname="<%= wishes[i].majorName %>" majorid="<%= wishes[i].majorId %>" >
+		<div class="panel" collegename="<%= wishes[i].collegeName %>" collegeid="<%= wishes[i].collegeId %>" majorname="<%= wishes[i].majorName %>" majorid="<%= wishes[i].majorId %>" universitymajorid="<%= wishes[i].universityMajorId %>">
 			<div class="panel-hd">
 				<i class="icon icon-close fr panel-close"></i>
 				<div class="collegeName"><%= wishes[i].collegeName %></div>

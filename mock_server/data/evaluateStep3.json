@@ -15,6 +15,7 @@
 	"courseType": 1,
 	"batch" : 1,
 	"score" : 300,
+    "rank" : 300,
 	"place" : 3000,
     "wishes":[
           {
@@ -22,6 +23,7 @@
              "collegeName":"北京中医药大学",
              "majorId":"67",
              "majorName":"法学",
+             "universityMajorId": 111,
              "field":"医药卫生"
           },
           {
@@ -29,6 +31,7 @@
              "collegeName":"北京中医药大学",
              "majorId":"67",
              "majorName":"法学",
+             "universityMajorId": 111,
              "field":"医药卫生"
           }
     ],

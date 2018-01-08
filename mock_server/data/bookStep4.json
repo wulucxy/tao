@@ -14,7 +14,8 @@
     },
 	"courseType":1,
     "batch":1,
-    "socre":765,
+    "score":765,
+    "rank":765,
     "place":1234,
     "c":[
     	{"name":"杭州","code":"330100"},

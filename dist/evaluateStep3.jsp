@@ -30,6 +30,9 @@
 		<!-- 保存score属性 -->
 		<input type="hidden" name="score" value="${score}">
 
+		<!-- 保存rank属性 -->
+		<input type="hidden" name="rank" value="${rank}">
+
 		<!-- 保存place属性 -->
 		<input type="hidden" name="place" value="${place}">
 
@@ -82,6 +85,17 @@
 								<div class="col2 inputWrap rel">
 									<span class="fieldWrap">
 										<span class="onlyTxt">${score}分</span>
+									</span>
+								</div>
+							</div>
+
+							<div class="row clearfix inline">
+								<label for="rank" class="control-label column col1 fl">
+									<i class="icon-location icon-fenshu"></i>
+									<em class="vm">位次：</em></label>
+								<div class="col2 inputWrap rel">
+									<span class="fieldWrap">
+										<span class="onlyTxt">${rank}</span>
 									</span>
 								</div>
 							</div>
@@ -156,6 +170,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	
@@ -163,5 +178,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.9fc1c82e.js"></script><script src="/static/web/js/evaluateStep3.9f8b96fd.js"></script></body>
+	<script src="/static/web/js/vendors.12148da9.js"></script><script src="/static/web/js/evaluateStep3.618c7dfb.js"></script></body>
 </html>

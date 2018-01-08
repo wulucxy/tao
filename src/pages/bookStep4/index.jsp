@@ -66,17 +66,6 @@
 				  </div>
 				</div>
 
-				<!-- <div class="row clearfix">
-				  <label for="province" class="control-label column col1 fl">
-				    <i class="icon-location icon-newuser"></i>
-				    <em class="vm">姓名：</em></label>
-				  <div class="col2 inputWrap rel">
-				    <div class="fieldWrap lh34">
-				      <span>${user.userName}</span>
-				    </div>
-				  </div>
-				</div> -->
-				
 				<div class="row clearfix inline">
 				  <label for="score" class="control-label column col1 fl">
 				    <i class="icon-location icon-fenshu"></i>
@@ -85,6 +74,18 @@
 				    <div class="fieldWrap lh34">
 				      <span>${score}分</span>
 				      <input type="hidden" name="score" value="${score}">
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix inline">
+				  <label for="score" class="control-label column col1 fl">
+				    <i class="icon-location icon-rank"></i>
+				    <em class="vm">位次：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${rank}</span>
+				      <input type="hidden" name="rank" value="${rank}">
 				    </div>
 				  </div>
 				</div>
