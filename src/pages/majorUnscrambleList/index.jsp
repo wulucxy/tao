@@ -25,7 +25,7 @@
 					</span>
 				</h3>
 
-				<div class="majorListWrap clearfix">
+				<div class="majorListWrap f-layout clearfix">
 					<div class="column col1 fl">
 						<div class="m-nav clearfix college">
 							<div class="crumb clearfix">
@@ -109,8 +109,38 @@
 						</div>
 
 					</div>
-					<div class="col2 col2 fr">
-						<%@ include file = "/partials/_direct.jsp" %>
+					<div class="column col2 fr">
+						<div class="colPad r-content">
+							<section class="r-lists">
+							<div class="content">
+								<h3 class="clearfix title">
+									<span class="fl s-title">
+										热门资讯
+										<em class="underLine"></em>	
+									</span>
+								</h3>
+								
+								<ul class="timelineList">
+									<c:forEach var="list" items="${hotList}">
+									   <li class="timeline media">
+									   <span class="label fl">
+											${list.time}
+										</span>
+										<div class="media-body"><a href="${list.href}" target="_blank">
+											${list.fullTitle}
+										</a></div>
+									   </li>
+									</c:forEach>
+								</ul>
+							</div>
+						</section>
+						<section class="r-list mt20 mb20">
+							<%@ include file = "/partials/_direct.jsp" %>
+						</section>
+						<section class="mt20 mb20">
+							<%@ include file = "/partials/_sidebar.jsp" %>
+						</section>
+						</div>
 					</div>
 
 				</div>
