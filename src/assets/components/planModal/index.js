@@ -25,7 +25,11 @@ var payModal = {
 
 		      if(res.code==1){
 		      	var result = res.result
-		      	!result.isFill && that.box(info);
+		      	if(!result.isFill) {
+		      		that.box(info);
+		      	} else {
+		      		that.options.successCallback(info)
+		      	}
 		      }else{
 		        warn(res.msg);
 		        return;

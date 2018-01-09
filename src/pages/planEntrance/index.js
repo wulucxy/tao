@@ -18,12 +18,11 @@ planModal.init($(document), {
 	provinceId: provinceId,
 	data: {score: '', rank: ''},
 	successCallback: function(info){
-		$('.btn-close').trigger('click')
+		$('.btn-close').length && $('.btn-close').trigger('click')
 		if(info && info.target) {
 			var href = info.target.attr('href')
 			window.location = href
 		}
-		
 	}
 })
 
