@@ -323,5 +323,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.091b9fda.js"></script><script src="/static/web/js/homeV2.a0c8369a.js"></script></body>
+	<script src="/static/web/js/vendors.0809b0e9.js"></script><script src="/static/web/js/homeV2.a0c8369a.js"></script></body>
 </html>

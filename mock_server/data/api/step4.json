@@ -1,4 +1,6 @@
 {
-	"msg" : "123",
-	"planId" : "123"
+	"code" : 1,
+	"result": {
+		"planId" : "123"
+	}
 }

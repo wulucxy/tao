@@ -94,7 +94,7 @@ $("#verifyBtn").on("click",function(e){
       }
 
       if(res.code==1 && res.result.planId){
-          window.location = "/box/plan/result?planId="+res.result.planId;
+          window.location = "/pay/assessment?planId="+res.result.planId;
           return false;
       }else{
           warn(res.msg);
