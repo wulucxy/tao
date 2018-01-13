@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.eb885270.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/homeV2.02fee038.css" rel="stylesheet"></head>
 <body>
 	<!-- 保存province属性 -->
 	<input type="hidden" name="province" value="${user.province.code}">
@@ -323,5 +323,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.9617e058.js"></script><script src="/static/web/js/homeV2.7f96fe75.js"></script></body>
+	<script src="/static/web/js/vendors.091b9fda.js"></script><script src="/static/web/js/homeV2.a0c8369a.js"></script></body>
 </html>

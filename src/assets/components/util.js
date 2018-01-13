@@ -40,22 +40,6 @@ var util = {
       return Math.random().toString(36).substring(3, 8)
     },
 
-    //接收时间戳转时间
-    buildDate : function(time,format){
-      var that = this,date = new Date(time),data;
-
-      Y = date.getFullYear() + '-';
-      M = (date.getMonth()+1) + '-';
-      D = date.getDate() + ' ';
-      h = date.getHours() + ':';
-      m = date.getMinutes() + ':';
-      s = date.getSeconds(); 
-
-      data = (Y+M+D+h+m+s);
-
-      return this.formatTime(data,format);
-    },
-
     // 格式化银行卡
 	formatBankCard : function(card){  
 		var val = card,

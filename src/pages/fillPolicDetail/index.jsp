@@ -31,7 +31,11 @@
 				<div class="column c-66 fl">
 					<div class="colPad">
 						<div class="articleWrap">
-							${context}
+							<h3>填报政策：${title}</h3>
+							<p class="g6 moment">${moment}</p>
+							<div class="article-content">
+								${context}
+							</div>
 						</div>
 					</div>
 				</div>

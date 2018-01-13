@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/majorUnscrambleList.92bd5d22.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/majorUnscrambleList.faddc75d.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -155,5 +155,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.9617e058.js"></script><script src="/static/web/js/majorUnscrambleList.dd55ce04.js"></script></body>
+	<script src="/static/web/js/vendors.091b9fda.js"></script><script src="/static/web/js/majorUnscrambleList.dedd5bd5.js"></script></body>
 </html>

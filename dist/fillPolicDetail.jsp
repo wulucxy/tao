@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/fillPolicDetail.57e579e7.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/fillPolicDetail.274331c5.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -31,7 +31,11 @@
 				<div class="column c-66 fl">
 					<div class="colPad">
 						<div class="articleWrap">
-							${context}
+							<h3>填报政策：${title}</h3>
+							<p class="g6 moment">${moment}</p>
+							<div class="article-content">
+								${context}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -77,5 +81,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 
-	<script src="/static/web/js/vendors.9617e058.js"></script><script src="/static/web/js/fillPolicDetail.439e60b7.js"></script></body>
+	<script src="/static/web/js/vendors.091b9fda.js"></script><script src="/static/web/js/fillPolicDetail.93fa9bbe.js"></script></body>
 </html>
