@@ -32,8 +32,6 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<%@ include file = "/partials/_scoreTransform.jsp" %>
-
 						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入专业名称" id="majorInput">
@@ -137,5 +135,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.0809b0e9.js"></script><script src="/static/web/js/major.87002b06.js"></script></body>
+	<script src="/static/web/js/vendors.dba87de6.js"></script><script src="/static/web/js/major.87002b06.js"></script></body>
 </html>

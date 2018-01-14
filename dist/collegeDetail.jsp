@@ -138,7 +138,7 @@
 														</select>
 													</div>
 												</div>
-												<div class="row clearfix inline fl">
+												<!-- <div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
 														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
@@ -148,15 +148,15 @@
 															  <option value="3">第三批</option>
 														</select>	
 													</div>
-												</div>
+												</div> -->
 												<div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
 														<em class="vm">排&emsp;&emsp;序：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="orderCondition">
-															  <option value="liberal">文科平均分</option>
-															  <option value="science">理科平均分</option>
-															  <option value="number">录取人数</option>
+															  <option value="average">分数</option>
+															  <option value="rank">位次号</option>
+															  <option value="number">招生人数</option>
 														</select>	
 													</div>
 												</div>
@@ -219,5 +219,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.0809b0e9.js"></script><script src="/static/web/js/collegeDetail.adb20e4f.js"></script></body>
+	<script src="/static/web/js/vendors.dba87de6.js"></script><script src="/static/web/js/collegeDetail.b7e96b5e.js"></script></body>
 </html>

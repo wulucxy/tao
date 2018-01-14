@@ -44,7 +44,7 @@ var college = {
     addYear : function(){
         var that = this;
 
-        var nowYear = 2017;
+        var nowYear = 2018;
         var yearArr = [];
 
         for(var i=0;i<2;i++){

@@ -68,13 +68,13 @@ var book = {
 			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
 			cities : $("[name=city]:checked").map(function(idx,ele){
-				return Number($(ele).val())
+				return $(ele).val()
 			}).get(),
 			majors : $("[name=majorId]:checked").map(function(idx,ele){
 				return $(ele).val()
 			}).get(),
 			subjects : $("[name=subjectId]:checked").map(function(idx,ele){
-				return Number($(ele).val())
+				return $(ele).val()
 			}).get()
 		};
 

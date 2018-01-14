@@ -86,5 +86,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.0809b0e9.js"></script><script src="/static/web/js/fillPolicList.6527c00a.js"></script></body>
+	<script src="/static/web/js/vendors.dba87de6.js"></script><script src="/static/web/js/fillPolicList.6527c00a.js"></script></body>
 </html>

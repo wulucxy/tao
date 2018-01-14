@@ -32,8 +32,6 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<%@ include file = "/partials/_scoreTransform.jsp" %>
-
 						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入专业名称" id="majorInput">

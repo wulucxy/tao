@@ -81,13 +81,12 @@
 	<c:choose>
 		<c:when test="${fn:length(list.scoreList) > 0}">
 		<div class="tableWrap">
-			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
+			<div class="orange tc f24 mt10 mb10">2017年录取情况</div>
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">省控线分差</td>
+						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -95,21 +94,8 @@
 				<tbody>
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
-						<td>
-							<c:choose>
-							 	<c:when test="${score.courseType == 1}">
-							   		文科
-								</c:when>
-								<c:when test="${score.courseType == 0}">
-							   		理科
-								</c:when>
-							 	<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>
-						</td>
 						<td>${score.admittedScore}分</td>
-						<td>${score.diffScore}分</td>
+						<td>${score.adminttedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -161,13 +147,12 @@
 	<c:choose>
 		<c:when test="${fn:length(list.scoreList) > 0}">
 		<div class="tableWrap">
-			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
+			<div class="orange tc f24 mt10 mb10">2017年录取情况</div>
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">省控线分差</td>
+						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -175,21 +160,8 @@
 				<tbody>
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
-						<td>
-							<c:choose>
-							 	<c:when test="${score.courseType == 1}">
-							   		文科
-								</c:when>
-								<c:when test="${score.courseType == 0}">
-							   		理科
-								</c:when>
-							 	<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>
-						</td>
 						<td>${score.admittedScore}分</td>
-						<td>${score.diffScore}分</td>
+						<td>${score.adminttedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -240,13 +212,12 @@
 	<c:choose>
 		<c:when test="${fn:length(list.scoreList) > 0}">
 		<div class="tableWrap">
-			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
+			<div class="orange tc f24 mt10 mb10">2017年录取情况</div>
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240"></td>
 						<td width="240">平均分</td>
-						<td width="140">省控线分差</td>
+						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
 					</tr>
@@ -254,21 +225,8 @@
 				<tbody>
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
-						<td>
-							<c:choose>
-							 	<c:when test="${score.courseType == 1}">
-							   		文科
-								</c:when>
-								<c:when test="${score.courseType == 0}">
-							   		理科
-								</c:when>
-							 	<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>
-						</td>
 						<td>${score.admittedScore}分</td>
-						<td>${score.diffScore}分</td>
+						<td>${score.adminttedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -305,5 +263,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.0809b0e9.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
+	<script src="/static/web/js/vendors.dba87de6.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
 </html>

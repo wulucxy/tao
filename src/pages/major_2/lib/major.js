@@ -17,13 +17,11 @@ var major = {
 
 		that.province = $('[name=studentProvince]').val();
         that.year = $("[name=Year]").val();
-        that.batch = $("[name=batch]").val();
         that.orderCondition = $("[name=orderCondition]").val();
 		
 		var _data = {
 			capacty: that.capacity,
 			year: that.year,
-			batch: that.batch,
 			majorId: that.majorId,
 			page: that.pager,
 			orderCondition: that.orderCondition

@@ -126,7 +126,7 @@
             "moment":"1小时前"
         }
     ],
-    "countdown" : "123",
+    "countdown" : "距离2018高考还有<span class='daySpan'><em class='cd-day'>145</em>天</span>",
     "number1" : "1234",
     "number2" : "1234",
     "number3" : "1234",   

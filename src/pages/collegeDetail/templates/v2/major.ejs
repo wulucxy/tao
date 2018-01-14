@@ -19,9 +19,8 @@
 				<table class="table table-bordered text-center">
 					<thead>
 						<tr>
-							<td width="140">科类</td>
 							<td width="240">录取平均分（分）</td>
-							<td width="140">分差（分）</td>
+							<td width="140">位次号</td>
 							<td width="140">学制（年）</td>
 							<td width="240">招生人数（人）</td>
 						</tr>
@@ -31,15 +30,8 @@
 							var score = list.scores[j];
 						%>
 						<tr>
-							<td>
-							<% if (score.courseType == 1) { %>
-							   		文科
-							<% }else if (score.courseType == 0) { %>
-							   		理科
-							<% } %>
-							</td>
 					<td><%= score.admittedScore %></td>
-					<td><%= score.diffScore %></td>
+					<td><%= score.adminttedRank %></td>
 					<td><%= score.eductionalSystme %></td>
 					<td><%= score.recruitCount %></td>
 					</tr>
