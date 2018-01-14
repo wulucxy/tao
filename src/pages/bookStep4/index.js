@@ -67,15 +67,15 @@ var book = {
 			score : Number($("[name=score]").val()),
 			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
-			cities : $("[name=city]:checked").map(function(idx,ele){
+			cities : $("[name=city]:checked").length ? $("[name=city]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get(),
-			majors : $("[name=majorId]:checked").map(function(idx,ele){
+			}).get() : [],
+			majors : $("[name=majorId]:checked").length ? $("[name=majorId]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get(),
-			subjects : $("[name=subjectId]:checked").map(function(idx,ele){
+			}).get() : [],
+			subjects : $("[name=subjectId]:checked").length ? $("[name=subjectId]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get()
+			}).get() : []
 		};
 
 

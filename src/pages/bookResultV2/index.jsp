@@ -95,7 +95,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -161,7 +161,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -226,7 +226,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>

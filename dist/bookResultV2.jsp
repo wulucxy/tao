@@ -95,7 +95,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -161,7 +161,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -226,7 +226,7 @@
 					<c:forEach var="score" items="${list.scoreList}">
 					<tr>
 						<td>${score.admittedScore}分</td>
-						<td>${score.adminttedRank}</td>
+						<td>${score.admittedRank}</td>
 						<td>${score.eductionalSystme}年</td>
 						<td>${score.recruitCount}人</td>
 					</tr>
@@ -263,5 +263,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.dba87de6.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
+	<script src="/static/web/js/vendors.8c47545d.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
 </html>
