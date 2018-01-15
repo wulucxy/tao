@@ -108,7 +108,7 @@ module.exports = {
 	'post::/v2_1/client/1/data/major/search':"mock::api/major.json",
 	'/v2_1/client/1/data/college/threshold/compare':"mock::api/compare.json",
 	'post::/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json",
-	'post::/v2_1/client/1/data/major/college':"mock::api/collegeDetailList2.json",
+	'post::/v2_1/client/0/data/major/college':"mock::api/collegeDetailList2.json",
 	'post::/v2_1/client/1/tzy/plan/abroad/assessment':"mock::api/abordDataList.json",
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/1872':"mock::api/subjectDetailList.json",

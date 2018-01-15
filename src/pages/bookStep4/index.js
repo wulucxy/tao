@@ -56,6 +56,14 @@ var book = {
 		});
 	},
 
+	transformArr: function(arr){
+		console.log(arr, arr.length, arr[0])
+		if(arr.length === 1 && arr[0] === "") {
+			return []
+		}
+		return arr
+	},
+
 	submitFunc : function(btn){
 		var that = this;
 
@@ -67,15 +75,15 @@ var book = {
 			score : Number($("[name=score]").val()),
 			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
-			cities : $("[name=city]:checked").length ? $("[name=city]:checked").map(function(idx,ele){
+			cities :  this.transformArr($("[name=city]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get() : [],
-			majors : $("[name=majorId]:checked").length ? $("[name=majorId]:checked").map(function(idx,ele){
+			}).get()),
+			majors :  this.transformArr($("[name=majorId]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get() : [],
-			subjects : $("[name=subjectId]:checked").length ? $("[name=subjectId]:checked").map(function(idx,ele){
+			}).get()),
+			subjects : this.transformArr($("[name=subjectId]:checked").map(function(idx,ele){
 				return $(ele).val()
-			}).get() : []
+			}).get())
 		};
 
 
