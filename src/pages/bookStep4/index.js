@@ -82,7 +82,7 @@ var book = {
 				return $(ele).val()
 			}).get()),
 			subjects : this.transformArr($("[name=subjectId]:checked").map(function(idx,ele){
-				return $(ele).val()
+				return Number($(ele).val())
 			}).get())
 		};
 
