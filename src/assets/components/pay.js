@@ -17,6 +17,8 @@ var pay = {
 
 		this.options = options;
 
+		console.log(this.options)
+
 		if(btn.hasClass("disabled")) return;
 		btn.addClass("disabled");
 

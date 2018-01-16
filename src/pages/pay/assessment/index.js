@@ -92,7 +92,8 @@ var pay = {
 		btn.addClass("disabled");
 
 		var _data = {
-			orderId : $("[name=orderId]").val(),
+			planId : planId,
+			planType: 1,
 			channel : $("[name=channel]:checked").val()
 		};
 
