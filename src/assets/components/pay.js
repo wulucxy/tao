@@ -12,12 +12,11 @@ var pay = {
 			planId: '',
 			orderId: '',
 			type: 1,
+			planType: '',
 			couponCode: ''
 		},o);
 
 		this.options = options;
-
-		console.log(this.options)
 
 		if(btn.hasClass("disabled")) return;
 		btn.addClass("disabled");
@@ -27,6 +26,7 @@ var pay = {
 			provinceId: options.provinceId,
 			orderId: options.orderId,
 			type: options.type,
+			planType: options.planType,
 			couponCode: options.couponCode
 		};
 

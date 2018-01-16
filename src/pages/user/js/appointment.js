@@ -112,6 +112,7 @@ module.exports = {
 			});
 
 			payModal.init(btn, {
+				planType: 2,
 				provinceId: provinceId,
 				price: btn.attr('price'),
 				orderId:  btn.attr('orderid'),
