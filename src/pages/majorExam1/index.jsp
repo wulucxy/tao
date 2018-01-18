@@ -42,7 +42,7 @@
 					
 					<div class="footerCnt">
 						<div class="row btnRow">
-							<a class="btn btn-primary btn-form mr30" href="/majorExamMode" target="_blank">
+							<a class="btn btn-primary btn-form mr30" href="//www.tzhiyuan.net/data/upload/career_test_model.pdf" target="_blank">
 			                        <em class="subTxt">查看样本</em>
 			                    </a>
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
