@@ -86,7 +86,7 @@
 							<div class="options">
 								<a class="ddlist" href="/library/college">院校数据</a>
 								<a class="ddlist" href="/library/major">专业数据</a>
-								<a class="ddlist" href="/library/subject">学科数据</a>
+								<a class="ddlist" href="/library/subject">科目数据</a>
 							</div>
 						</div>
 					</li>

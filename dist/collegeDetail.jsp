@@ -219,5 +219,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.b89c0e77.js"></script><script src="/static/web/js/collegeDetail.c9e1c40c.js"></script></body>
+	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/collegeDetail.fcd44930.js"></script></body>
 </html>

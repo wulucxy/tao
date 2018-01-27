@@ -24,7 +24,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						专业数据库
+						专业数据
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -135,5 +135,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b89c0e77.js"></script><script src="/static/web/js/major.87002b06.js"></script></body>
+	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/major.87002b06.js"></script></body>
 </html>

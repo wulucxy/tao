@@ -24,7 +24,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						专业数据库
+						专业数据
 						<em class="underLine"></em>	
 					</span>
 				</h3>

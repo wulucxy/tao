@@ -29,7 +29,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						院校数据库
+						院校数据
 						<em class="underLine"></em>	
 					</span>
 				</h3>

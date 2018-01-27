@@ -294,7 +294,7 @@
 				</a>
 				<a href="/library/subject" class="featureLink feature_3" target="_blank">
 					<i class="icon-subject icon-feature"></i>
-					<span class="featureTxt">学科数据</span>
+					<span class="featureTxt">科目数据</span>
 				</a>
 			</div>
 		</div>

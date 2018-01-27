@@ -30,7 +30,7 @@
 			<div class="content">
 				<h3 class="clearfix title">
 					<span class="fl s-title">
-						科目数据库
+						科目数据
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -38,9 +38,9 @@
 				<div class="formWrap clearfix">
 					<div class="column col1 fl">
 						
-						<%@ include file = "/partials/_scoreTransform.jsp" %>
+						<!-- <%@ include file = "/partials/_scoreTransform.jsp" %> -->
 
-						<!-- <div class="s-search">
+						<div class="s-search">
 							<div class="input-group rel clearfix">
 					          <input type="text" class="form-control fl" placeholder="请输入科目名称">
 					          <span class="input-group-btn">
@@ -49,7 +49,7 @@
 					            </button>
 					          </span>
 					        </div>
-				        </div> -->
+				        </div>
 						
 						<div class="m-nav clearfix college">
 							<div class="crumb clearfix">
@@ -166,5 +166,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b89c0e77.js"></script><script src="/static/web/js/subject.2e1b014e.js"></script></body>
+	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/subject.2e1b014e.js"></script></body>
 </html>

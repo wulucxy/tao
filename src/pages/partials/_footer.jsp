@@ -21,7 +21,7 @@
 				<div class="fTag-col1 fl">
 					<a href="/library/college" class="links" target="_blank">院校数据</a>
 					<a href="/library/major" class="links" target="_blank">专业数据</a>
-					<a href="/library/subject" class="links" target="_blank">学科数据</a>	
+					<a href="/library/subject" class="links" target="_blank">科目数据</a>	
 				</div>
 			</div>
 		</div>

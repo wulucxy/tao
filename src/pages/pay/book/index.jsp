@@ -75,9 +75,9 @@
 									<label>
 									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
-									<em>支付码</em>
+									<em>预售卡支付&nbsp;</em>
 									<span class="inputWrap dib">
-										<input type="text" class="form-control input" id="card" placeholder="请输入支付码">
+										<input type="text" class="form-control input" id="card" placeholder="请输入预售卡支付">
 									</span>
 									</label>
 								</div>

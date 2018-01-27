@@ -294,7 +294,7 @@
 				</a>
 				<a href="/library/subject" class="featureLink feature_3" target="_blank">
 					<i class="icon-subject icon-feature"></i>
-					<span class="featureTxt">学科数据</span>
+					<span class="featureTxt">科目数据</span>
 				</a>
 			</div>
 		</div>
@@ -323,5 +323,5 @@
 	<script>
 		window.__INITDATA__ = ${examInfo}
 	</script>
-	<script src="/static/web/js/vendors.b89c0e77.js"></script><script src="/static/web/js/homeV2.ebcd66eb.js"></script></body>
+	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/homeV2.ebcd66eb.js"></script></body>
 </html>
