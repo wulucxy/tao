@@ -115,5 +115,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/evaluateStep2.561d1845.js"></script></body>
+	<script src="/static/web/js/vendors.2dac73ab.js"></script><script src="/static/web/js/evaluateStep2.561d1845.js"></script></body>
 </html>

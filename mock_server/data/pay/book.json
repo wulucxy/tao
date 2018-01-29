@@ -22,9 +22,10 @@
     "majorListJson":[
         
     ],
+    "planTitle": 444,
+    "planDes": 555,
     "planId":"", 
     "orderId":"",
-    "planDes":"",
     "price":49,
     "priceDes":"dsfadfa"
 }

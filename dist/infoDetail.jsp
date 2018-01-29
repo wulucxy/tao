@@ -142,5 +142,5 @@
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
 
-	<script src="/static/web/js/vendors.679264d9.js"></script><script src="/static/web/js/infoDetail.c8943725.js"></script></body>
+	<script src="/static/web/js/vendors.2dac73ab.js"></script><script src="/static/web/js/infoDetail.c8943725.js"></script></body>
 </html>
