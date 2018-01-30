@@ -42,7 +42,7 @@
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240">平均分</td>
+						<td width="240">录取分</td>
 						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
@@ -108,7 +108,7 @@
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240">平均分</td>
+						<td width="240">录取分</td>
 						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>
@@ -173,7 +173,7 @@
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td width="240">平均分</td>
+						<td width="240">录取分</td>
 						<td width="140">专业位次号</td>
 						<td width="140">学制</td>
 						<td width="140">人数</td>

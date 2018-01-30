@@ -94,7 +94,7 @@
 												<td width="200">专业名称</td>
 												<td width="120">所属科类</td>
 											<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="120">${year.year}年平均分</td>
+												<td width="120">${year.year}年录取分</td>
 											</c:forEach>
 												<td width="120">填报建议</td>
 											</tr>
@@ -149,5 +149,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.2dac73ab.js"></script><script src="/static/web/js/evaluateResult.1577644d.js"></script></body>
+	<script src="/static/web/js/vendors.7caac044.js"></script><script src="/static/web/js/evaluateResult.1577644d.js"></script></body>
 </html>

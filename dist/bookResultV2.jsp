@@ -43,7 +43,7 @@
 
 				<div class="bg bg-blue mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
-					<%@ include file = "/bookResultV2/tmpl/_bookRes.jsp" %>
+					<%@ include file = "../bookResultV2/tmpl/_bookRes.jsp" %>
 				</div>
 
 			</div>
@@ -56,5 +56,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.2dac73ab.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
+	<script src="/static/web/js/vendors.7caac044.js"></script><script src="/static/web/js/bookResultV2.7c904d74.js"></script></body>
 </html>

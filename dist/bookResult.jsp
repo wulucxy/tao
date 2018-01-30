@@ -107,7 +107,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -184,7 +184,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -259,7 +259,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -300,5 +300,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.2dac73ab.js"></script><script src="/static/web/js/bookResult.511ccdc2.js"></script></body>
+	<script src="/static/web/js/vendors.7caac044.js"></script><script src="/static/web/js/bookResult.511ccdc2.js"></script></body>
 </html>

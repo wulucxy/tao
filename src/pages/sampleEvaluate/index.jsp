@@ -67,9 +67,9 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 								<thead>
 									<tr>
 										<th scope="col" width="30%">专业名称</th>
-										<th scope="col" width="17%">2015年专业平均分</th>
-										<th scope="col" width="17%">2014年专业平均分</th>
-										<th scope="col" width="17%">2013年专业平均分</th>
+										<th scope="col" width="17%">2015年专业录取分</th>
+										<th scope="col" width="17%">2014年专业录取分</th>
+										<th scope="col" width="17%">2013年专业录取分</th>
 										<th scope="col" width="19%">填报建议</th>
 									</tr>
 								</thead>
@@ -134,9 +134,9 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 								<thead>
 									<tr>
 										<th scope="col" width="30%">专业名称</th>
-										<th scope="col" width="17%">2015年专业平均分</th>
-										<th scope="col" width="17%">2014年专业平均分</th>
-										<th scope="col" width="17%">2013年专业平均分</th>
+										<th scope="col" width="17%">2015年专业录取分</th>
+										<th scope="col" width="17%">2014年专业录取分</th>
+										<th scope="col" width="17%">2013年专业录取分</th>
 										<th scope="col" width="19%">填报建议</th>
 									</tr>
 								</thead>
@@ -201,9 +201,9 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 								<thead>
 									<tr>
 										<th scope="col" width="30%">专业名称</th>
-										<th scope="col" width="17%">2015年专业平均分</th>
-										<th scope="col" width="17%">2014年专业平均分</th>
-										<th scope="col" width="17%">2013年专业平均分</th>
+										<th scope="col" width="17%">2015年专业录取分</th>
+										<th scope="col" width="17%">2014年专业录取分</th>
+										<th scope="col" width="17%">2013年专业录取分</th>
 										<th scope="col" width="19%">填报建议</th>
 									</tr>
 								</thead>
@@ -268,9 +268,9 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 								<thead>
 									<tr>
 										<th scope="col" width="30%">专业名称</th>
-										<th scope="col" width="17%">2015年专业平均分</th>
-										<th scope="col" width="17%">2014年专业平均分</th>
-										<th scope="col" width="17%">2013年专业平均分</th>
+										<th scope="col" width="17%">2015年专业录取分</th>
+										<th scope="col" width="17%">2014年专业录取分</th>
+										<th scope="col" width="17%">2013年专业录取分</th>
 										<th scope="col" width="19%">填报建议</th>
 									</tr>
 								</thead>
@@ -328,9 +328,9 @@ l<%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://jav
 								<thead>
 									<tr>
 										<th scope="col" width="30%">专业名称</th>
-										<th scope="col" width="17%">2015年专业平均分</th>
-										<th scope="col" width="17%">2014年专业平均分</th>
-										<th scope="col" width="17%">2013年专业平均分</th>
+										<th scope="col" width="17%">2015年专业录取分</th>
+										<th scope="col" width="17%">2014年专业录取分</th>
+										<th scope="col" width="17%">2013年专业录取分</th>
 										<th scope="col" width="19%">填报建议</th>
 									</tr>
 								</thead>

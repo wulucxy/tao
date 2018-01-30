@@ -105,7 +105,7 @@
 					<h3>方案预览</h3>
 					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个自愿</p>
 				</div>
-				<%@ include file = "/bookResultV2/tmpl/_bookRes.jsp" %>
+				<%@ include file = "../../bookResultV2/tmpl/_bookRes.jsp" %>
 			</div>
 		</div>
 

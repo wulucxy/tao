@@ -43,7 +43,7 @@
 
 				<div class="bg bg-blue mb20 lh42 tc">结&nbsp;&nbsp;果</div>
 				<div class="formWrap">
-					<%@ include file = "/bookResultV2/tmpl/_bookRes.jsp" %>
+					<%@ include file = "../bookResultV2/tmpl/_bookRes.jsp" %>
 				</div>
 
 			</div>
