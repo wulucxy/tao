@@ -54,7 +54,7 @@ var college = {
         var optionList = [];
 
         $.each(yearArr,function(idx,ele){
-            optionList.push('<option selected='+ (ele === nowYear) +' value='+ele+'>'+ele+'</option>');
+            optionList.push('<option selected='+ (ele === (nowYear - 1)) +' value='+ele+'>'+ele+'</option>');
         });
 
         $("[name=Year]").empty().append(optionList.join(""));
