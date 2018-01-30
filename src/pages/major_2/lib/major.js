@@ -20,7 +20,7 @@ var major = {
         that.orderCondition = $("[name=orderCondition]").val();
 		
 		var _data = {
-			capacty: that.capacity,
+			capacity: that.capacity,
 			year: that.year,
 			majorId: that.majorId,
 			page: that.pager,
@@ -86,9 +86,6 @@ var major = {
                 });
 
                 res = res.result;
-
-                console.log(res);
-
 				that.insertData(res,that.pager);
 			}
 		});

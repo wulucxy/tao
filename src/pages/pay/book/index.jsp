@@ -103,7 +103,7 @@
 			<div class="previewBook">
 				<div class="previewTitle tc">
 					<h3>方案预览</h3>
-					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个自愿</p>
+					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个志愿</p>
 				</div>
 				<%@ include file = "../../bookResultV2/tmpl/_bookRes.jsp" %>
 			</div>

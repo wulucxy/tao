@@ -103,7 +103,7 @@
 			<div class="previewBook">
 				<div class="previewTitle tc">
 					<h3>方案预览</h3>
-					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个自愿</p>
+					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个志愿</p>
 				</div>
 				<%@ include file = "../../bookResultV2/tmpl/_bookRes.jsp" %>
 			</div>
@@ -125,5 +125,5 @@
 	<pre name="score">${score}</pre>
 	<pre name="place">${place}</pre>
 
-	<script src="/static/web/js/vendors.7caac044.js"></script><script src="/static/web/js/pay/book.6af1e54b.js"></script></body>
+	<script src="/static/web/js/vendors.5096a13a.js"></script><script src="/static/web/js/pay/book.6af1e54b.js"></script></body>
 </html>
