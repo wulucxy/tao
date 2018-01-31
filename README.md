@@ -77,3 +77,11 @@ require("./a.ejs");
 
 console.log("首页");
 ```
+
+## 6.编译
+
+本地执行如下命令
+```
+gulp build -e production
+```
+会将源代码编译到dist目录，再本地执行git push代码即可
