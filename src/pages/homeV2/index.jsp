@@ -245,7 +245,7 @@
 
 					<div class="directs">
 						<ul>
-							<c:forEach var="list" items="${adList}">
+							<c:forEach var="list" items="${adList2}">
 							<li>
 							<c:choose>
 							    <c:when test="${list.href != null}">

@@ -60,16 +60,16 @@
 								</span>
 							</div>
 							<div class="row">
-								<div class="foot">
-									<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">
-										<em class="vm">收起</em>
-										<span class="taoIcon btn-arrow-up vm"></span>
-									</a>
-									<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">
-										<em class="vm">更多</em>
-										<span class="taoIcon btn-arrow-down vm"></span>
-									</a>
-								</div>
+								<%--<div class="foot">--%>
+									<%--<a href="javascript:;" class="btn btn-default show-less" data-action="toggle">--%>
+										<%--<em class="vm">收起</em>--%>
+										<%--<span class="taoIcon btn-arrow-up vm"></span>--%>
+									<%--</a>--%>
+									<%--<a href="javascript:;" class="btn btn-default show-more" data-action="toggle">--%>
+										<%--<em class="vm">更多</em>--%>
+										<%--<span class="taoIcon btn-arrow-down vm"></span>--%>
+									<%--</a>--%>
+								<%--</div>--%>
 								<div class="body media">
 									<a class="fl item" href="javascript:;" data-action="add" data-value="university:">不限</a>
 									<div class="media-body">
