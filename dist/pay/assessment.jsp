@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/pay/assessment.719892b2.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/pay/assessment.49a846b6.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -49,6 +49,7 @@
 				<div class="bg bg-blue mb20 lh42 tc">支&nbsp;&nbsp;付</div>
 				<div class="formWrap">
 					<div class="payContent f18">
+					<p class="planTitle">${planTitle}</p>
 					<p class="txts">${planDes}</p>
 					<form action="#" onsubmit="return false" autocomplete="off" id="payForm" class="g4">
 						<div class="media">
@@ -75,7 +76,7 @@
 									<label>
 									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
-									<em>支付码</em>
+									<em>预售卡</em>
 									<span class="inputWrap dib">
 										<input type="text" class="form-control input" id="card" placeholder="请输入支付码">
 									</span>
@@ -119,5 +120,5 @@
 	<pre name="score">${score}</pre>
 	<pre name="place">${place}</pre>
 
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/pay/assessment.bb471d8a.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/pay/assessment.be0ae8e0.js"></script></body>
 </html>

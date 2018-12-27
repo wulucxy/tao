@@ -72,9 +72,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -174,9 +174,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -287,9 +287,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>

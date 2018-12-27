@@ -138,6 +138,7 @@ var dataSet = {
 
 	loadList : function(data,pager){
 		var that = this,o = that.options;
+        console.log('data', data)
 		var _html = tmpl(data);
 
 		if(pager == 1){

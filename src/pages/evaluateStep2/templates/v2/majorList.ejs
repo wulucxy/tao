@@ -4,7 +4,7 @@
 	<% for (var i = 0; i < majorList.length; i++) { %>
 	 	<li>
 		 	<label for="major_<%= majorList[i].majorUuid %>" >
-		 		<input type="radio" name="city" n="<%= majorList[i].majorName %>" value="<%= majorList[i].majorId %>" id="major_<%= majorList[i].majorUuid %>" field="<%= majorList[i].field %>" />
+		 		<input type="radio" name="city" n="<%= majorList[i].majorName %>" value="<%= majorList[i].majorId %>" id="major_<%= majorList[i].majorUuid %>" field="<%= majorList[i].field %>" universitymajorid="<%= majorList[i].universityMajorId %>" />
 		 		<em><%= majorList[i].majorName %>
 		 			<% if(majorList[i].field) { %>
 		 			  (<%= majorList[i].field %>方向)

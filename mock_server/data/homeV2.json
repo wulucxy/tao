@@ -27,7 +27,10 @@
             "imgUrl": "http://placehold.it/1920x460"
         }
 	],
-    "recommendList" : [
+    "examInfo" : {
+        
+    },
+    "majorUnscrambleRecommendList" : [
         {
             "imgUrl": "http://placehold.it/74x74",
             "href" : "#list",
@@ -75,7 +78,55 @@
             "moment":"1小时前"
         }
     ],
-    "countdown" : "123",
+    "fillPolicRecommendList" : [
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        },
+        {
+            "imgUrl": "http://placehold.it/74x74",
+            "href" : "#list",
+            "title" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "fullTitle" : "参加2017年新高考的考生们，从现在起，规划你的升学方向吧！",
+            "source": "#1",
+            "moment":"1小时前"
+        }
+    ],
+    "countdown" : "距离2018高考还有<span class='daySpan'><em class='cd-day'>145</em>天</span>",
     "number1" : "1234",
     "number2" : "1234",
     "number3" : "1234",   
@@ -136,6 +187,18 @@
             "href": "#2",
             "imgUrl": "http://placehold.it/140x60"
         }
-
-    ]
+    ],
+    "examInfo": {
+        "rank": 1000,
+        "subjectList": [{
+            "type": 1,
+            "name": "物理"
+        }, {
+            "type": 2,
+            "name": "化学"
+        }, {
+            "type": 3,
+            "name": "生物"
+        }]
+    }
 }

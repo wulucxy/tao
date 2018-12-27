@@ -87,6 +87,7 @@ var payModal = {
 					pay.subPay(target,{
 						provinceId: that.options.provinceId,
 						channel: channel,
+						planType: that.options.planType,
 						planId: that.options.planId,
 						orderId: that.options.orderId,
 						type: !!that.couponState.couponCode ? 2 : 1,

@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>专业选择测试</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/majorExam1.c47ae3bd.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/majorExam1.c47ae3bd.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -27,7 +27,7 @@
 					<span class="fl s-title">
 						<span class="vm">专业选择测试</span>
 						<span class="badge"><i class="icon-nee"></i>
-						<em class="vm">教育部考试中心独家授权</em></span>
+						<em class="vm">教育部考试中心研发，独家授权“淘志愿”平台供浙江考生免费使用</em></span>
 						<em class="underLine"></em>	
 					</span>
 				</h3>
@@ -36,13 +36,13 @@
 					<div class="media">
 						<span class="fl imgWrap"><img src="/static/web/img/test.png" class="responsive"></span>
 						<div class="media-body lh2">
-							<div class="g3">“升学指导测验——专业选择测试”由国家教育部考试中心研制，授权“淘志愿”平台供浙江考生使用。“升学指导测验——专业选择测试”系统是从中国学生职业生涯规划的角度出发，专门研发用于权威指导中国高中生大学专业选择的测试系统，为中国学生度身定制。测试结果将生成个性化的测试结果报告书，分析学生兴趣特长，推荐学生选择大学专业。</div>
+							<div class="g3">“升学指导测验——专业选择测试”由国家教育部考试中心研发，独家授权“淘志愿”平台供浙江考生免费使用。“升学指导测验——专业选择测试”系统是从中国学生职业生涯规划的角度出发，专门研发用于权威指导中国高中生大学专业选择的测试系统，为中国学生度身定制。测试结果将生成个性化的测试结果报告书，分析学生兴趣特长，推荐学生选择大学专业。</div>
 						</div>
 					</div>
 					
 					<div class="footerCnt">
 						<div class="row btnRow">
-							<a class="btn btn-primary btn-form mr30" href="/majorExamMode" target="_blank">
+							<a class="btn btn-primary btn-form mr30" href="//www.tzhiyuan.net/data/upload/career_test_model.pdf" target="_blank">
 			                        <em class="subTxt">查看样本</em>
 			                    </a>
 		                    <a href="javascript:;" class="btn btn-positive btn-form" id="goProTest">
@@ -62,5 +62,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/majorExam1.737e0c16.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/majorExam1.62a92723.js"></script></body>
 </html>

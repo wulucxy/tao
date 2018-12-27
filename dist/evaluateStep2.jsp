@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.97b27cfb.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/evaluateStep2.d2806328.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -50,7 +50,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>选择志愿信息</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
@@ -79,9 +78,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-								<a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
+								<!-- <a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
 			                        <em class="subTxt">上一步</em>
-			                    </a>
+			                    </a> -->
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
@@ -108,6 +107,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	
@@ -115,5 +115,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/evaluateStep2.289f66f9.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/evaluateStep2.561d1845.js"></script></body>
 </html>

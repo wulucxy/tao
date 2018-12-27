@@ -1,0 +1,19 @@
+<% if (majorUnscrambleList.length == 0 && page == 1) { %>
+	<li class="no_transList"><i class="noListIcon"></i><em class="vm">暂无记录</em></li>
+<% }else{ %>	
+<% for (var i = 0; i < majorUnscrambleList.length; i++) { %>
+<li class="clearfix majorUnscrambleItem">
+	<a href='/infoV3/<%= majorUnscrambleList[i].newsId %>/majorUnscrambleDetail' class="media">
+	<span class="imgWrap">
+		<img src="<%= majorUnscrambleList[i].newsIconUrl %>" class="responsive" />
+	</span>
+	<div className="media-body">
+		<h4 class="name"><%= majorUnscrambleList[i].newsTitle %></h4>
+		<div class="detail">样本院校：<%= majorUnscrambleList[i].newsUniversityName %></div>
+	</div>
+	<div class="footCnt clearfix">
+		<span class="moment"><%= majorUnscrambleList[i].date %></span>
+	</div>
+	</a>
+</li>
+<% }} %>

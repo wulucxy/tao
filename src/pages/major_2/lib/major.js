@@ -17,13 +17,11 @@ var major = {
 
 		that.province = $('[name=studentProvince]').val();
         that.year = $("[name=Year]").val();
-        that.batch = $("[name=batch]").val();
         that.orderCondition = $("[name=orderCondition]").val();
 		
 		var _data = {
-			capacty: that.capacity,
+			capacity: that.capacity,
 			year: that.year,
-			batch: that.batch,
 			majorId: that.majorId,
 			page: that.pager,
 			orderCondition: that.orderCondition
@@ -88,9 +86,6 @@ var major = {
                 });
 
                 res = res.result;
-
-                console.log(res);
-
 				that.insertData(res,that.pager);
 			}
 		});

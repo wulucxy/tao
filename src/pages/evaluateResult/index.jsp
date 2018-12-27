@@ -94,7 +94,7 @@
 												<td width="200">专业名称</td>
 												<td width="120">所属科类</td>
 											<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="120">${year.year}年平均分</td>
+												<td width="120">${year.year}年录取分</td>
 											</c:forEach>
 												<td width="120">填报建议</td>
 											</tr>

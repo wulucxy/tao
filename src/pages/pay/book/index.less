@@ -2,7 +2,14 @@ pre{display: none;}
 @color-blue: #61c0e2;
 .formWrap{background-color: #fff;padding:28px 48px 60px;margin-bottom: 30px;}
 
-.txts{color: #333;line-height: 2;}
+.payContent{
+	line-height: 1.5;
+	.planTitle{
+		color: #000; font-size: 22px; 
+	}
+.txts{color: #333;margin-bottom: 10px;}
+}
+
 
 .lh42{line-height: 42px;} .g4{color: #444;} .blue{color: @color-blue;} .f26{font-size: 26px;}
 .formWrap .col2{
@@ -19,4 +26,33 @@ pre{display: none;}
 .btn-sample{
 	width:322px;position:absolute;display:inline-block;font-size: 20px;color: #fff;line-height: 40px;text-align: center;bottom:-20px;left:50%;margin-left: -161px;background-color: #525252;padding:0;border:none;transtion:0.4s all ease;
 	&:hover{background-color:#707070; }
+}
+
+.previewBook{
+	margin-top: 10px;
+	margin-bottom: 40px;
+	background-color: #fff;
+  padding: 28px;
+  .previewTitle{
+  	margin-bottom: 20px;
+  }
+  h3{
+  	margin-bottom: 10px;
+  }
+}
+
+.detailContent{
+	margin-bottom: 20px;padding-bottom: 20px;position: relative;
+	.detail{
+		 font-size: 16px;color: #666;line-height: 1.5;
+		.field{display: inline-block;margin-right: 20px;vertical-align: middle;}
+		.label{vertical-align: middle;}
+		.field:last-child{margin-right:0;}
+	}
+}
+
+.empty{
+	font-size: 16px;
+	color: #999;
+	margin:20px 0 0 0;
 }

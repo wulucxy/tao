@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/bookStep3.4acf1b0c.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/bookStep3.b2dfb8b1.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -46,7 +46,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="#"><em>输入基本信息</em></a></li>
 						<li><a href="#"><em>选择求学地区</em></a></li>
 						<li class="current"><a href="#"><em>选择求学专业</em></a></li>
 						<li><a href="#"><em>确认提交信息</em></a></li>
@@ -86,5 +85,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/bookStep3.0336b915.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/bookStep3.acfafa3e.js"></script></body>
 </html>

@@ -85,6 +85,7 @@ var __INITDATA__ = $('.wishInput').map(function(idx, ele){
     majorId:$ele.attr('majorid'),
     majorName:$ele.attr('majorname'),
     field:$ele.attr('field'),
+    universityMajorId: $ele.attr('universitymajorid')
   }
 }).get()
 
@@ -193,6 +194,7 @@ var evaluate = {
         that.state.current.major.code = $ele.val();
         that.state.current.major.name = $ele.attr('n');
         that.state.current.major.field = $ele.attr('field');
+        that.state.current.major.universityMajorId = $ele.attr('universitymajorid')
 
         var current = that.state.current;
         var wishes = that.state.wishes;
@@ -216,6 +218,7 @@ var evaluate = {
         that.state.wishes[0].majorId = $ele.val();
         that.state.wishes[0].majorName = $ele.attr('n');
         that.state.wishes[0].field = $ele.attr('field');
+        that.state.wishes[0].universityMajorId = $ele.attr('universitymajorid');
 
         $(".btn-close").trigger("click");
         that.render();
@@ -443,7 +446,7 @@ var evaluate = {
     }).get();
 
      $.ajax({
-        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category",
+        url : preServer+provinceId+"/data/college/"+options.collegeId+"/category2018",
         type : "post",
         data : JSON.stringify({subjects: subjects}),
         success : function(res){

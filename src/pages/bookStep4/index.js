@@ -56,6 +56,14 @@ var book = {
 		});
 	},
 
+	transformArr: function(arr){
+		console.log(arr, arr.length, arr[0])
+		if(arr.length === 1 && arr[0] === "") {
+			return []
+		}
+		return arr
+	},
+
 	submitFunc : function(btn){
 		var that = this;
 
@@ -64,22 +72,23 @@ var book = {
 			mobile : $("[name=mobile]").val(),
 			courseType : $("[name=courseType]:checked").val(),
 			batch : $("[name=batch]:checked").val(),
-			score : $("[name=score]").val(),
+			score : Number($("[name=score]").val()),
+			rank : Number($("[name=rank]").val()),
 			place : $("[name=place]").val(),
-			c : $("[name=city]:checked").map(function(idx,ele){
-				return {"name":$(ele).attr("cityname"),"code":$(ele).val()}
-			}).get(),
-			majorList : $("[name=majorId]:checked").map(function(idx,ele){
-				return {"majorName":$(ele).attr("majorname"),"majorId":$(ele).val()}
-			}).get(),
-			subjects : $("[name=subjectId]:checked").map(function(idx,ele){
-				return {"name":$(ele).attr("subjectname"),"majorId":$(ele).val()}
-			}).get()
+			cities :  this.transformArr($("[name=city]:checked").map(function(idx,ele){
+				return $(ele).val()
+			}).get()),
+			majors :  this.transformArr($("[name=majorId]:checked").map(function(idx,ele){
+				return $(ele).val()
+			}).get()),
+			subjects : this.transformArr($("[name=subjectId]:checked").map(function(idx,ele){
+				return Number($(ele).val())
+			}).get())
 		};
 
 
 		$.ajax({
-			url : preServer+provinceId+"/tzy/plan/wishes/step4",
+			url : preServer+provinceId+"/tzy/plan/wishes2018",
 			type : "post",
 			contentType: "application/json",
     		data : JSON.stringify(_data),
@@ -89,7 +98,7 @@ var book = {
 				}
 
 				 if(res.code==1 && res.result.planId){
-                    window.location = "/box/plan/result?planId="+res.result.planId;
+                    window.location = "/pay/wishes?planId="+res.result.planId;
                     return false;
                 }else{
                     warn(res.msg);

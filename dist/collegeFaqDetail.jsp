@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/collegeFaqDetail.3f8631cc.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/collegeFaqDetail.3f8631cc.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -88,5 +88,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/collegeFaqDetail.e728b861.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/collegeFaqDetail.33d107ca.js"></script></body>
 </html>

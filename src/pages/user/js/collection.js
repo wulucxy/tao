@@ -150,7 +150,7 @@ var collection = {
 
                  $.each(res.favorites,function(idx,ele){
                     if(ele.news.newsDate){
-                        ele.news.newsDate = util.buildDate(ele.news.newsDate,"yyyy-MM-dd hh:mm:ss");
+                        ele.news.newsDate = util.formatDate(ele.news.newsDate,"yyyy-MM-dd hh:mm:ss");
                     }
                 })
 

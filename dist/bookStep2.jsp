@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/bookStep2.a3088ee0.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/bookStep2.2fe52d88.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -40,7 +40,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>选择求学地区</em></a></li>
 						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
@@ -77,9 +76,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-							 	<a class="btn btn-primary btn-form" href="/box/plan/book_step1">
+							 	<!-- <a class="btn btn-primary btn-form" href="/box/plan/book_step1">
 			                        <em class="subTxt">上一步</em>
-			                    </a>
+			                    </a> -->
 			                    <button type="submit" class="btn btn-positive btn-form" id="next">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
@@ -100,5 +99,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/bookStep2.0043e725.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/bookStep2.8bdd3ad7.js"></script></body>
 </html>

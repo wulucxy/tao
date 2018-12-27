@@ -1,7 +1,7 @@
 @color-orange: #fcca00;
 @color-blue: #61c0e2;
 @color-red : #e93c59;
-
+@import '../../assets/less/mod/plan.less';
 .icon() {
  	display: inline-block;vertical-align: middle;background-repeat: no-repeat;
 }
@@ -17,12 +17,19 @@
 .bannerShow .dots a.active {background: #fff;}
 
 // 3.recommend
-.s-recommend{padding: 32px 0 0;border-top:1px solid #e2e2e2;}
+.s-recommend{
+	padding: 32px 0 0;border-top:1px solid #e2e2e2;
+	.major .recommend-box{
+		border-right: 0;
+	}
+}
+
 .recommendList{
-	margin-left: -25px;margin-right: -25px;
-	li{width:50%;float: left;margin-bottom: 16px;}
+	padding: 20px 20px 0;
+	height: 278px;
+	width: 100%;
+	li{margin-bottom: 10px;}
 	.media{
-		padding:0 25px;
 		position: relative;
 		.link{color:#333;
 			&:hover{color: #666;}
@@ -49,8 +56,19 @@
 }
 
 // 4. countdown
-.countdown{line-height:48px;background-color:#fe775d; margin-bottom: 10px;color:#fff;text-align: center;}
-.cd-day{font-size: 24px;color:@color-orange;margin:0 6px;}
+.countdown{
+	background-color:#fff; color:#333;text-align: center;
+	padding-top: 24px;
+	height: 112px;
+	font-size: 24px;
+	line-height: 1;
+	.daySpan{
+		display: block;
+		color: #EB3647;
+		margin-top: 10px;
+	}
+}
+.cd-day{font-size: 32px;margin:0 6px;}
 
 
 //6.tool
@@ -71,7 +89,6 @@
 	text-align: center;
 	background-color: #fff;
 	margin-bottom: 20px;
-	margin-right: 100px;
 	line-height: 140px;
 	&.last{
 		margin-right: 0;
@@ -236,47 +253,98 @@
 }
 
 .s-recommend .title{
-	border-bottom: 6px solid #61c0e2;
-	line-height: 48px;
-	height: 54px;
+	background: #F7F7F7;
+	font-size: 20px;
+	color: #333;
+	line-height: 40px;
+	height: 40px;
+	border-bottom: none; 
+	padding: 0 20px;
+	margin-bottom: 0;
 	.s-title{
-		background-color: #61c0e2;
-		color: #fff;
-		padding-left: 30px;
-		padding-right: 30px;
+		line-height: 40px;
 	}
 	.more{
-		font-size: 16px;
-		color: #999;
-		.plus{
-			width: 16px;
-			height: 16px;
-			display: inline-block;
-			background:url(./img/v2/plus.png);
-			font:0/0 a;
-			vertical-align: middle;
-			margin-right: 4px;
-		}
+		font-size: 14px;
+		color: @color-blue;
 	}
 }
 
 .s-feature{
 	margin-top: 40px;
+	margin-bottom: 40px;
+	.container{
+		border-radius: 6px;
+		border: 1px solid #e5e5e5;
+		background-color: #fff;
+	}
 }
 
 .featureLink{
-	width: 310px;
-	height: 127px;
-	background:url(./img/v2/chaIcon.png);
+	width: 33.33%;
+	float: left;
+	height: 128px;
+	text-align: center;
+	border-right: 1px solid #e5e5e5;
 	display: inline-block;
-	&.feature_1{
-		background-position: 0 0;
+	padding: 37px 40px;
+	color: inherit;
+	line-height: 54px;
+	&:last-child{
+		border: none;
+	}
+	&:hover{
+		opacity: 0.8;
+	}
+	.featureTxt{
+		vertical-align: middle;
+		display: inline-block;
+		float: right;
+		width: 128px;
+		height: 46px;
+		border-width: 1px;
+		border-style: solid;
+		font-size: 22px;
+		border-radius: 24px;
+		line-height: 46px;
+		padding: 0 18px;
+	}
+	.icon-feature{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon-college{
+		background: url(./img/v3/college.png);
+		width: 50px;
+		height: 52px;
+	}
+	.icon-major{
+		background: url(./img/v3/major.png);
+		width: 48px;
+		height: 48px;
+	}
+	.icon-subject{
+		background: url(./img/v3/subject.png);
+		width: 43px;
+		height: 43px;
 	}
 	&.feature_2{
-		background-position: -310px 0;
+		.featureTxt{
+			color: #40CBFC;
+			border-color: #40CBFC;
+		}
 	}
 	&.feature_3{
-		background-position: -620px 0;
+		.featureTxt{
+			color: #FC836B;
+			border-color: #FC836B;
+		}
+	}
+	&.feature_1{
+		.featureTxt{
+			color: #459CF5;
+			border-color: #459CF5;
+		}
 	}
 }
 
@@ -291,4 +359,87 @@
 .collegeListWrap{
 	margin-left: 0
 }
+
+.interSection{
+	background-color: #fff;
+	.column{
+		.card{
+			height: 260px;
+		}
+	}
+}
+
+.plan-card{
+	width: 468px;
+	padding: 44px 66px;
+	border-right: 1px solid #E5E5E5;
+	.score{
+		font-size: 24px;
+		.unScore{
+			color: #333;
+			font-size: 20px;
+		}
+	}
+	.subjects{
+		color: #999;
+		font-size: 16px;
+		margin-top: 16px;
+	}
+	.h1{
+		font-size: 48px;
+	}
+	.rank{
+		font-size: 28px;
+	}
+	.btn-block{
+		margin-top: 24px;
+		line-height: 32px;
+		border-radius: 0;
+	}
+}
+
+.items-card{
+	width: 232px;
+	text-align: center;
+	.colItem{
+		height: 33.3%;
+		color: #333;
+		padding-top: 26px;
+		font-size: 20px;
+		line-height: 32px;
+		border-bottom: 1px solid #E5E5E5;
+		a{
+			color: inherit;
+		}
+		&:hover{
+			opacity: 0.8;
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+		.imgWrap{
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+.icon-edit{
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 12px;
+	width: 24px;
+	height: 24px;
+	background: url(./img/v3/i-edit.png);
+	background-size: 24px 24px;
+}
+
+.recommend-box{
+	border: 1px solid #e5e5e5;
+	background-color: #fff;
+	height: 372px;
+	overflow: hidden;
+}
+
 

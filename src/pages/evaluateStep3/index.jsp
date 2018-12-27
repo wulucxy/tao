@@ -30,6 +30,9 @@
 		<!-- 保存score属性 -->
 		<input type="hidden" name="score" value="${score}">
 
+		<!-- 保存rank属性 -->
+		<input type="hidden" name="rank" value="${rank}">
+
 		<!-- 保存place属性 -->
 		<input type="hidden" name="place" value="${place}">
 
@@ -56,7 +59,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
@@ -83,6 +85,17 @@
 								<div class="col2 inputWrap rel">
 									<span class="fieldWrap">
 										<span class="onlyTxt">${score}分</span>
+									</span>
+								</div>
+							</div>
+
+							<div class="row clearfix inline">
+								<label for="rank" class="control-label column col1 fl">
+									<i class="icon-location icon-fenshu"></i>
+									<em class="vm">位次：</em></label>
+								<div class="col2 inputWrap rel">
+									<span class="fieldWrap">
+										<span class="onlyTxt">${rank}</span>
 									</span>
 								</div>
 							</div>
@@ -157,6 +170,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	

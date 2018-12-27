@@ -1,0 +1,17 @@
+{
+	"code": "1",
+	"msg": "调用成功",
+	"result": {
+		"news": [
+			{
+			  "newsId": "2", 
+			  "newsUrl": "http://www.tzhiyuan.net/v2_1/mobile/330000/newsV3/2",
+			  "newsTitle": "标题",
+			  "newsAbstact": "只哎哟",
+			  "newsIconUrl": "http://www.tzhiyuan.net/data/upload/1.jpg",
+			  "newsDate": 1512895287000
+		}],
+		"total": 100,
+		"page": 1
+	}
+}

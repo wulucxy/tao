@@ -1,4 +1,5 @@
 <%@include file="/WEB-INF/views/include/taglib.jsp"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -49,6 +50,7 @@
 				<div class="bg bg-blue mb20 lh42 tc">支&nbsp;&nbsp;付</div>
 				<div class="formWrap">
 					<div class="payContent f18">
+					<p class="planTitle">${planTitle}</p>
 					<p class="txts">${planDes}</p>
 					<form action="#" onsubmit="return false" autocomplete="off" id="payForm" class="g4">
 						<div class="media">
@@ -75,7 +77,7 @@
 									<label>
 									<input type="radio" name="channel" value="coupon">
 									<i class="payIcon card"></i>
-									<em>支付码</em>
+									<em>预售卡&nbsp;</em>
 									<span class="inputWrap dib">
 										<input type="text" class="form-control input" id="card" placeholder="请输入支付码">
 									</span>
@@ -94,14 +96,16 @@
 
 						</div>
 
-					</form>
-
-					<a class="demoImg imgWrap rel dib" href="/sampleWishes" target="_blank">
-						<img src="./img/demo2.png" class="responsive">
-						<span class="btn btn-sample abs">样本预览</span>
-					</a>
+					</form>	
 					</div>
 				</div>
+			</div>
+			<div class="previewBook">
+				<div class="previewTitle tc">
+					<h3>方案预览</h3>
+					<p>以下预览将为您显示“冲一冲”，“平一平”， “保一保”各两个志愿</p>
+				</div>
+				<%@ include file = "../bookResultV2/tmpl/_bookRes.jsp" %>
 			</div>
 		</div>
 

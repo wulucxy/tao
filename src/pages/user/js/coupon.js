@@ -52,7 +52,7 @@ module.exports = {
                 var couponList = res.result.couponList;
                 
                  $.each(couponList,function(idx,ele){
-                    ele.availableTime = util.buildDate(ele.activeTime,"yyyy-MM-dd");
+                    ele.availableTime = util.formatDate(ele.activeTime,"yyyy-MM-dd");
                 });
 
                 that.loadList(res.result,that.pager);

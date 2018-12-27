@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/bookStep4.55aaf198.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/bookStep4.baf41ba4.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -42,7 +42,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li><a href="javascript:;"><em>选择求学地区</em></a></li>
 						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li class="current"><a href="javascript:;"><em>确认提交信息</em></a></li>
@@ -67,17 +66,6 @@
 				  </div>
 				</div>
 
-				<!-- <div class="row clearfix">
-				  <label for="province" class="control-label column col1 fl">
-				    <i class="icon-location icon-newuser"></i>
-				    <em class="vm">姓名：</em></label>
-				  <div class="col2 inputWrap rel">
-				    <div class="fieldWrap lh34">
-				      <span>${user.userName}</span>
-				    </div>
-				  </div>
-				</div> -->
-				
 				<div class="row clearfix inline">
 				  <label for="score" class="control-label column col1 fl">
 				    <i class="icon-location icon-fenshu"></i>
@@ -86,6 +74,18 @@
 				    <div class="fieldWrap lh34">
 				      <span>${score}分</span>
 				      <input type="hidden" name="score" value="${score}">
+				    </div>
+				  </div>
+				</div>
+
+				<div class="row clearfix inline">
+				  <label for="score" class="control-label column col1 fl">
+				    <i class="icon-location icon-rank"></i>
+				    <em class="vm">位次：</em></label>
+				  <div class="col2 inputWrap rel">
+				    <div class="fieldWrap lh34">
+				      <span>${rank}</span>
+				      <input type="hidden" name="rank" value="${rank}">
 				    </div>
 				  </div>
 				</div>
@@ -189,5 +189,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/bookStep4.4df52eb1.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/bookStep4.6078648b.js"></script></body>
 </html>

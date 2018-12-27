@@ -81,7 +81,7 @@ module.exports = {
                 var newList = res.wishes.concat(res.assessment).sort(that.sortNumber);
 
                 $.each(newList,function(idx,ele){
-                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
+                	ele.createTime = util.formatDate(ele.createTime,"yyyy-MM-dd");
                 });
 
                 res.caseList = newList;

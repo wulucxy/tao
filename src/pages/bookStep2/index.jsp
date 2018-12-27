@@ -40,7 +40,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>选择求学地区</em></a></li>
 						<li><a href="javascript:;"><em>选择求学专业</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
@@ -77,9 +76,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-							 	<a class="btn btn-primary btn-form" href="/box/plan/book_step1">
+							 	<!-- <a class="btn btn-primary btn-form" href="/box/plan/book_step1">
 			                        <em class="subTxt">上一步</em>
-			                    </a>
+			                    </a> -->
 			                    <button type="submit" class="btn btn-positive btn-form" id="next">
 			                        <em class="subTxt">下一步</em>
 			                    </button>

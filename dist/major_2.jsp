@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/major_2.44b38ceb.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/major_2.44b38ceb.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -104,7 +104,7 @@
 														</select>
 													</div>
 												</div>
-												<div class="row clearfix inline fl">
+												<!-- <div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
 														<em class="vm">批&emsp;&emsp;次：</em></label>
 													<div class="selectWrap rel">
@@ -114,15 +114,15 @@
 															  <option value="3">第三批</option>
 														</select>	
 													</div>
-												</div>
+												</div> -->
 												<div class="row clearfix inline fl">
 													<label for="batch" class="control-label">
 														<em class="vm">排&emsp;&emsp;序：</em></label>
 													<div class="selectWrap rel">
 														<select class="form-control trigger" name="orderCondition">
-															  <option value="liberal">文科平均分</option>
-															  <option value="science">理科平均分</option>
-															  <option value="number">录取人数</option>
+															  <option value="average">分数</option>
+															  <option value="rank">位次号</option>
+															  <option value="number">招生人数</option>
 														</select>	
 													</div>
 												</div>
@@ -160,5 +160,5 @@
 	<%@ include file = "/partials/_footer.jsp" %>
 	
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=4c31cec0e556dbd9f7755c6f3aa62d09" type="text/javascript"></script>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/major_2.2a8c201a.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/major_2.b0b4fcab.js"></script></body>
 </html>

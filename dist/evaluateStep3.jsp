@@ -9,7 +9,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>高考志愿</title>
-	<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.b89535d8.css" rel="stylesheet"></head>
+	<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/evaluateStep3.708ac43b.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%--  <%@ include file = "/partials/_header.jsp" %> --%>
@@ -29,6 +29,9 @@
 		
 		<!-- 保存score属性 -->
 		<input type="hidden" name="score" value="${score}">
+
+		<!-- 保存rank属性 -->
+		<input type="hidden" name="rank" value="${rank}">
 
 		<!-- 保存place属性 -->
 		<input type="hidden" name="place" value="${place}">
@@ -56,7 +59,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li><a href="javascript:;"><em>选择志愿信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
@@ -83,6 +85,17 @@
 								<div class="col2 inputWrap rel">
 									<span class="fieldWrap">
 										<span class="onlyTxt">${score}分</span>
+									</span>
+								</div>
+							</div>
+
+							<div class="row clearfix inline">
+								<label for="rank" class="control-label column col1 fl">
+									<i class="icon-location icon-fenshu"></i>
+									<em class="vm">位次：</em></label>
+								<div class="col2 inputWrap rel">
+									<span class="fieldWrap">
+										<span class="onlyTxt">${rank}</span>
 									</span>
 								</div>
 							</div>
@@ -157,6 +170,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	
@@ -164,5 +178,5 @@
 		<input type="hidden" class="subjectInput" name="${subject.name}" value="${subject.code}">
 	</c:forEach>
 
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/evaluateStep3.5a4d78b9.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/evaluateStep3.54d4e575.js"></script></body>
 </html>

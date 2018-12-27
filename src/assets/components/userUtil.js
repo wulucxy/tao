@@ -26,6 +26,7 @@ module.exports = {
       var that = this;
       oForm.find(".row").removeClass('errorIpt');
 
+      console.log('unvalidFields', unvalidFields)
       $.each(unvalidFields, function(index, ele) {
         var $formGroup = $(ele).closest('.row');
         if ($formGroup.length) {

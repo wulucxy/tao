@@ -1,6 +1,6 @@
 module.exports = {
 	// 页面路由
-	'/': 'home.jsp',
+	'/': 'homeV2.jsp',
 	'/default': 'homeV2.jsp',
 	'/box/plan/evaluate_step1': 'evaluateStep1.jsp',
 	'/box/plan/es2': 'evaluateStep2Back.jsp',
@@ -51,6 +51,11 @@ module.exports = {
 	'/bangMobile'   : 'bangMobile.jsp',
 	'/completeInfo'   : 'completeInfo.jsp',
 	'/scoreTransformer'   : 'scoreTransformer.jsp',
+	'/box/planEntrance'   : 'planEntrance.jsp',
+	'/infoV3/majorUnscrambleList' : 'majorUnscrambleList.jsp',
+	'/infoV3/1/majorUnscrambleDetail' : 'majorUnscrambleDetail.jsp',
+	'/infoV3/fillPolicList' : 'fillPolicList.jsp',
+	'/infoV3/1/fillPolicDetail': 'fillPolicDetail.jsp',
 	//异步加载
 	'/v2_1/client/1/tzy/mtest/all' : 'mock::api/test.json',
 	'/v2_1/client/1/profile/plan/list' : 'mock::api/history.json',
@@ -82,7 +87,7 @@ module.exports = {
 	'post::/v2_1/client/1/tzy/plan/wishes/step1' :  'mock::api/step1.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step2' : 'mock::api/step2.json',
 	'post::/v2_1/client/1/tzy/plan/wishes/step3' : 'mock::api/step3.json',
-	'post::/v2_1/client/1/tzy/plan/wishes/step4': 'mock::api/step4.json',
+	'post::/v2_1/client/1/tzy/plan/wishes2018': 'mock::api/step4.json',
 	'post::/v2_1/client/1/pay' : 'mock::api/pay.json',
 	'/v2_1/client/1/profile/score/detail' : 'mock::api/scoreDetail.json',
 	'post::/v2_1/client/1/profile/score/edit': 'mock::api/scoreEdit.json',
@@ -103,17 +108,21 @@ module.exports = {
 	'post::/v2_1/client/1/data/major/search':"mock::api/major.json",
 	'/v2_1/client/1/data/college/threshold/compare':"mock::api/compare.json",
 	'post::/v2_1/client/1/data/major/college':"mock::api/collegeDetailList.json",
-	'post::/v2_1/client/1/data/major/college':"mock::api/collegeDetailList2.json",
+	'post::/v2_1/client/0/data/major/college':"mock::api/collegeDetailList2.json",
 	'post::/v2_1/client/1/tzy/plan/abroad/assessment':"mock::api/abordDataList.json",
 	'post::/v2_1/client/1/data/subject/search':"mock::api/subjectList.json",
 	'post::/v2_1/client/1/data/subject/1872':"mock::api/subjectDetailList.json",
 	'post::/v2_1/client/1/tzy/qa/history':"mock::api/historyList.json",
-	'post::/v2_1/client/1/data/college/1872/category':"mock::api/collegeMajorList.json",
+	'post::/v2_1/client/1/data/college/1872/category2018':"mock::api/collegeMajorList.json",
 
 	'post::/v2_1/client/1/tzy/appointment/create':"mock::api/appointmentCreation.json",
 	'post::/v2_1/client/1/profile/couponListWeb':"mock::api/couponList.json",
 	'post::/v2_1/client/1/coupon/dole':"mock::api/couponDole.json",
 	'post::/v2_1/client/1/tzy/plan/scoreChange':"mock::api/scoreChange.json",
 	'/v2_1/client/1/profile/plan/param':"mock::api/profile.json",
-
+	// v3
+	'post::/v2_1/client/1/profile/fillExamInfo':"mock::api/fillExamInfo.json",
+	'post::/v2_1/client/1/newsV3/majorUnscrambleListWeb': "mock::api/majorUnscrambleList.json",
+	'post::/v2_1/client/1/newsV3/fillPolicListWeb': "mock::api/fillPolicList.json",
+	'/v2_1/client/1/profile/isFillExamInfo': "mock::api/isFillExamInfo.json"
 };

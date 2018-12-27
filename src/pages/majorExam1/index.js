@@ -108,3 +108,11 @@ function verifyCodeModal(btn){
 
 	});
 }
+
+function downloadPdf () {
+	 $('a[href$=".pdf"]')
+        .attr('download', '')
+        .attr('target', '_blank'); 
+}
+
+downloadPdf()

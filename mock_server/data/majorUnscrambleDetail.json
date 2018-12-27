@@ -1,0 +1,17 @@
+{
+    "majorUnscrambleDetial": {
+        "title":"专业解读",   
+        "moment":"2018-01-01",  
+        "universityName": "浙江大学",   
+        "universityId": "1",   
+        "videoUrl": "http://www.tzhiyuan.net/data/upload/test.mp4",
+        "videoWidth": 300, 
+        "videoHeight": 200, 
+        "majorList": [
+          {
+            "name": "种子科学与工程",    
+            "id": "0512"           
+          }
+        ]
+    }
+}

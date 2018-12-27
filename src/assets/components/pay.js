@@ -12,6 +12,7 @@ var pay = {
 			planId: '',
 			orderId: '',
 			type: 1,
+			planType: '',
 			couponCode: ''
 		},o);
 
@@ -25,6 +26,7 @@ var pay = {
 			provinceId: options.provinceId,
 			orderId: options.orderId,
 			type: options.type,
+			planType: options.planType,
 			couponCode: options.couponCode
 		};
 

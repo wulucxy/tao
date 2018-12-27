@@ -49,7 +49,7 @@ module.exports = {
 				res = res.result;
 
                 $.each(res,function(idx,ele){
-                	ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd");
+                	ele.createTime = util.formatDate(ele.createTime,"yyyy-MM-dd");
                 });
 
                 res = {codes : res};

@@ -14,6 +14,13 @@ var common = require("../../../assets/components/common");
 //
 ////弹窗模板
 var tmpl_Info = require("../../../assets/templates/applyInfo.ejs");
+var tabs = require("../../../assets/components/tabs");
+
+tabs($("#bookResultTab"),{
+	tabsItem : "nav li",
+	items : ".content-wrap > section",
+	klass : "current"
+});
 
 //ping++
 var ping = require("../../../assets/components/ping");
@@ -92,7 +99,8 @@ var pay = {
 		btn.addClass("disabled");
 
 		var _data = {
-			orderId : $("[name=orderId]").val(),
+			planId : planId,
+			planType: 1,
 			channel : $("[name=channel]:checked").val()
 		};
 

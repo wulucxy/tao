@@ -61,7 +61,7 @@ module.exports = {
                     	// courseTypeName : localData.getCourseTypeName(ele.param.courseType)
                     });
 
-                    ele.createTime = util.buildDate(ele.createTime,"yyyy-MM-dd hh:mm:ss");
+                    ele.createTime = util.formatDate(ele.createTime,"yyyy-MM-dd hh:mm:ss");
                     if(ele.price){
                     	ele.price = Math.floor(ele.price*100)/10000;
                     }
@@ -112,6 +112,7 @@ module.exports = {
 			});
 
 			payModal.init(btn, {
+				planType: 2,
 				provinceId: provinceId,
 				price: btn.attr('price'),
 				orderId:  btn.attr('orderid'),

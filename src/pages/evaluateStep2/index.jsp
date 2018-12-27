@@ -50,7 +50,6 @@
 
 				<div class="breadcrumb">
 					<ul class="clearfix">
-						<li><a href="javascript:;"><em>输入基本信息</em></a></li>
 						<li class="current"><a href="javascript:;"><em>选择志愿信息</em></a></li>
 						<li><a href="javascript:;"><em>确认提交信息</em></a></li>
 					</ul>
@@ -79,9 +78,9 @@
 						<div class="footerCnt">
 							<p id="errTxt" class="errTxt"></p>
 							<div class="row btnRow">
-								<a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
+								<!-- <a class="btn btn-primary btn-form" href="/box/plan/evaluate_step1">
 			                        <em class="subTxt">上一步</em>
-			                    </a>
+			                    </a> -->
 			                    <button type="submit" class="btn btn-positive btn-form" id="verifyBtn">
 			                        <em class="subTxt">下一步</em>
 			                    </button>
@@ -108,6 +107,7 @@
 				majorid="${wish.majorId}" 
 				majorname="${wish.majorName}" 
 				field="${wish.field}"
+				universitymajorid="${wish.universityMajorId}"
 		>
 	</c:forEach>
 	

@@ -10,7 +10,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/bookResult.7320d04a.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/bookResult.2db66991.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -107,7 +107,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -184,7 +184,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -259,7 +259,7 @@
 												<td width="240">专业名称</td>
 												<td width="140">所属科类</td>
 												<c:forEach var="year" items="${list.majors[0].scoreList}">
-												<td width="140">${year.year}年平均分</td>
+												<td width="140">${year.year}年录取分</td>
 												</c:forEach>
 											</tr>
 											<c:forEach var="major" items="${list.majors}">
@@ -300,5 +300,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/bookResult.2b40202a.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/bookResult.511ccdc2.js"></script></body>
 </html>

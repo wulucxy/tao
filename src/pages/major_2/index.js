@@ -34,7 +34,7 @@ var archive = {
     addYear : function(){
         var that = this;
 
-        var nowYear = 2017;
+        var nowYear = 2018;
         var yearArr = [];
 
         for(var i=0;i<2;i++){
@@ -44,7 +44,7 @@ var archive = {
         var optionList = [];
 
         $.each(yearArr,function(idx,ele){
-            optionList.push('<option value='+ele+'>'+ele+'</option>');
+            optionList.push('<option selected='+ (ele === (nowYear - 1)) +' value='+ele+'>'+ele+'</option>');
         });
 
         $("[name=Year]").empty().append(optionList.join(""));

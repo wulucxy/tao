@@ -21,7 +21,6 @@ var major = {
 			capacity : that.capacity,
 			province : $("[name=studentProvince]").val(),
 			year : $("[name=Year]").val(),
-			batch : $("[name=batch]").val(),
 			orderCondition:  $("[name=orderCondition]").val(),
 			collegeId : that.collegeId
 		};

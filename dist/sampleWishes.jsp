@@ -7,7 +7,7 @@
 	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<%@ include file = "/partials/_meta.jsp" %>
 	<title>淘志愿</title>
-<link href="/static/web/css/vendors.95838b90.css" rel="stylesheet"><link href="/static/web/css/sampleWishes.bd04755c.css" rel="stylesheet"></head>
+<link href="/static/web/css/vendors.f2b77075.css" rel="stylesheet"><link href="/static/web/css/sampleWishes.bd04755c.css" rel="stylesheet"></head>
 <body>
 	<!-- 公共头部 -->
 	<%@ include file = "/partials/_header.jsp" %>
@@ -72,9 +72,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -174,9 +174,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -287,9 +287,9 @@
 									<tr>
 										<th scope="col" width="20%">学校名称和历史投档线</th>
 										<th scope="col" width="20%">专业名称</th>
-										<th scope="col" width="20%">2015年专业平均分</th>
-										<th scope="col" width="20%">2014年专业平均分</th>
-										<th scope="col" width="20%">2013年专业平均分</th>
+										<th scope="col" width="20%">2015年专业录取分</th>
+										<th scope="col" width="20%">2014年专业录取分</th>
+										<th scope="col" width="20%">2013年专业录取分</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -395,5 +395,5 @@
 	</div>
 	<!-- 公共尾部 -->
 	<%@ include file = "/partials/_footer.jsp" %>
-	<script src="/static/web/js/vendors.b662b212.js"></script><script src="/static/web/js/sampleWishes.11cc8205.js"></script></body>
+	<script src="/static/web/js/vendors.34e24824.js"></script><script src="/static/web/js/sampleWishes.eb3a17d5.js"></script></body>
 </html>

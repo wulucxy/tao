@@ -9,11 +9,11 @@
 			<span class="badge squre wishBadge">
 				<% if (list.assessment == '-2') { %>
 					不建议
-				<% }else if (list.assessment == 1) { %>
+				<% }else if (list.assessment == -1) { %>
 				   	保守
 				<% }else if (list.assessment == 0) { %>
 				   	平稳
-				<% }else if (list.assessment == -1) { %>
+				<% }else if (list.assessment == 1) { %>
 				   	冲刺
 				<% } %>
 			</span>
@@ -45,13 +45,13 @@
 
 	<% if (list.scoreList.length > 0) { %>
 		<div class="tableWrap">
-			<div class="orange tc f24 mt10 mb10">2016年录取情况</div>
+			<div class="orange tc f24 mt10 mb10">2017年录取情况</div>
 				<table class="table table-bordered text-center">
 					<thead>
 						<tr>
 							<td width="240"></td>
-							<td width="240">平均分</td>
-							<td width="140">省控线分差</td>
+							<td width="240">录取分</td>
+							<td width="140">专业位次号</td>
 							<td width="140">学制</td>
 							<td width="140">人数</td>
 						</tr>
@@ -69,7 +69,7 @@
 							<% } %>
 							</td>
 					<td><%= score.admittedScore %>分</td>
-					<td><%= score.diffScore %>分</td>
+					<td><%= score.admittedRank %></td>
 					<td><%= score.eductionalSystme %>年</td>
 					<td><%= score.recruitCount %>人</td>
 					</tr>

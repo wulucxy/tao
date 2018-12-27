@@ -17,6 +17,20 @@ var util = {
         return that.formatDate(new Date(Date.parse(data.replace(/-/g,  "/"))),format);
     },
 
+    // 日期格式化,第一个参数为日期类型，第二个参数为yyy，yy,MM,dd,hh,mm,ss的组合
+    formatDate: function(date, type){
+      var norm
+      if (typeof date === 'number') {
+        norm = this.normByFormat(new Date(date))
+      } else if (typeof date === 'string') {
+        norm = this.normByFormat(this.str2Date(date))
+      }
+
+      return type.replace(/([a-z]+)/ig, function (n) {
+        return (typeof norm[n] !== 'undefined' ? (norm[n] < 10 ? '0' + norm[n] : norm[n]) : n)
+      })
+    },
+
     //字符串转时间
     str2Date : function(s){
         return new Date(Date.parse(s.replace(/-/g,  "/")));  
@@ -24,22 +38,6 @@ var util = {
 
     uuid: function(){
       return Math.random().toString(36).substring(3, 8)
-    },
-
-    //接收时间戳转时间
-    buildDate : function(time,format){
-      var that = this,date = new Date(time),data;
-
-      Y = date.getFullYear() + '-';
-      M = (date.getMonth()+1) + '-';
-      D = date.getDate() + ' ';
-      h = date.getHours() + ':';
-      m = date.getMinutes() + ':';
-      s = date.getSeconds(); 
-
-      data = (Y+M+D+h+m+s);
-
-      return that.formatTime(data,format);
     },
 
     // 格式化银行卡
@@ -78,13 +76,6 @@ var util = {
 	       'mm': date.getMinutes(),
 	       'ss': date.getSeconds()
 	    }
-	},
-	//日期格式化,第一个参数为日期类型，第二个参数为yyy，yy,MM,dd,hh,mm,ss的组合
-	formatDate : function(date,type){
-		var norm = this.normByFormat(date);
-	    return type.replace(/([a-z]+)/ig, function(n){
-	        return (typeof norm[n] !="undefined" ? (norm[n] < 10 ? '0' + norm[n] : norm[n]) : n);
-	    });
 	},
 	thousand : function(num,splitter){
 		if(typeof Number(num) != "number") return;
@@ -264,7 +255,11 @@ var util = {
 		return Object.keys(data).map(function (key) {
 			return key + '=' + data[key];
 		}).join('&');
-	}
+	},
+
+  isUndefined: function (obj) {
+    return typeof obj === 'undefined'
+  }
 };
 
 module.exports = util;

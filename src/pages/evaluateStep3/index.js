@@ -29,15 +29,14 @@ var __INITWISHES__ = $('.wishInput').map(function(idx, ele){
     majorId:$ele.attr('majorid'),
     majorName:$ele.attr('majorname'),
     field:$ele.attr('field'),
+    universityMajorId: $ele.attr('universitymajorid')
   }
 }).get()
 
 var __INITSUBJECTS__ = $('.subjectInput').map(function(idx, ele){
   var $ele = $(ele);
-  return {
-    name: $ele.attr('name'),
-    code: $ele.val()
-  }
+  return Number($ele.val())
+
 }).get()
 
 
@@ -78,13 +77,14 @@ $("#verifyBtn").on("click",function(e){
     mobile : $("[name=mobile]").val(),
     province : $("[name=province]").val(),
     score : $("[name=score]").val(),
+    rank : Number($("[name=rank]").val()),
     wishes: __INITWISHES__,
     subjects: __INITSUBJECTS__
   };
 
 
   $.ajax({
-    url : preServer+provinceId +"/tzy/plan/assessment/step3",
+    url : preServer+provinceId +"/tzy/plan/accessment2018",
     type : "post",
     contentType: "application/json",
     data : JSON.stringify(_data),
@@ -94,7 +94,7 @@ $("#verifyBtn").on("click",function(e){
       }
 
       if(res.code==1 && res.result.planId){
-          window.location = "/box/plan/result?planId="+res.result.planId;
+          window.location = "/pay/assessment?planId="+res.result.planId;
           return false;
       }else{
           warn(res.msg);
